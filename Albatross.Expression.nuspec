@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>Albatross Expression Parser Evaluator</title>
+		<authors>Rushui Guan</authors>
+		<owners>Rushui Guan</owners>
+		<licenseUrl>https://github.com/RushuiGuan/Albatross/blob/master/License.md</licenseUrl>
+		<projectUrl>https://github.com/RushuiGuan/Albatross/tree/master/Albatross.Expression</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<summary>A single statement expression parser.</summary>
+		<description>It handles common prefix, infix operations, custom operations and external variables.  The utility class ExecutionContext can be used to create and eval multiple expressions with dependencies among each other.  It has a built in Compile function that can detect circular reference among the expressions.</description>
+		<copyright>Copyright 2015</copyright>
+		<tags>Expression Parser Eval</tags>
+	</metadata>
+</package>
+
+
+
+

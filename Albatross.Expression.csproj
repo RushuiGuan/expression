@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E99334CE-CD35-4E87-A8AB-3DB256D6C5CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Albatross.Expression</RootNamespace>
+    <AssemblyName>Albatross.Expression</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT New Env|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\UAT New Env\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContextValue.cs" />
+    <Compile Include="Exceptions\CircularReferenceException.cs" />
+    <Compile Include="Exceptions\OperandException.cs" />
+    <Compile Include="Exceptions\InputNotFoundException.cs" />
+    <Compile Include="Exceptions\UnexpectedTypeException.cs" />
+    <Compile Include="Exceptions\StackException.cs" />
+    <Compile Include="ExecutionContext.cs" />
+    <Compile Include="IParser.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Operations\ComparisonInfixOperation.cs" />
+    <Compile Include="Operations\Avg.cs" />
+    <Compile Include="Operations\Coalesce.cs" />
+    <Compile Include="Operations\Text.cs" />
+    <Compile Include="Operations\Format.cs" />
+    <Compile Include="Operations\IsBlank.cs" />
+    <Compile Include="Operations\PadLeft.cs" />
+    <Compile Include="Operations\PadRight.cs" />
+    <Compile Include="Operations\ShortMonthName.cs" />
+    <Compile Include="Operations\MonthName.cs" />
+    <Compile Include="Operations\Month.cs" />
+    <Compile Include="Operations\Year.cs" />
+    <Compile Include="Operations\NotEqual.cs" />
+    <Compile Include="Operations\If.cs" />
+    <Compile Include="Operations\CurrentUser.cs" />
+    <Compile Include="Operations\Now.cs" />
+    <Compile Include="Operations\Today.cs" />
+    <Compile Include="Operations\Min.cs" />
+    <Compile Include="Operations\Max.cs" />
+    <Compile Include="Operations\LessEqual.cs" />
+    <Compile Include="Operations\LessThan.cs" />
+    <Compile Include="Operations\Equal.cs" />
+    <Compile Include="Operations\GreaterEqual.cs" />
+    <Compile Include="Operations\GreaterThan.cs" />
+    <Compile Include="Operations\Not.cs" />
+    <Compile Include="Operations\Negative.cs" />
+    <Compile Include="Operations\Positive.cs" />
+    <Compile Include="Operations\Or.cs" />
+    <Compile Include="Operations\Power.cs" />
+    <Compile Include="Operations\Multiply.cs" />
+    <Compile Include="Operations\Mod.cs" />
+    <Compile Include="Operations\Minus.cs" />
+    <Compile Include="Operations\Plus.cs" />
+    <Compile Include="Tokens\ControlToken.cs" />
+    <Compile Include="Tokens\BooleanLiteralToken.cs" />
+    <Compile Include="Tokens\IOperandToken.cs" />
+    <Compile Include="Tokens\PrefixOperationToken.cs" />
+    <Compile Include="Tokens\VariableToken.cs" />
+    <Compile Include="Tokens\InfixOperationToken.cs" />
+    <Compile Include="Tokens\StringLiteralToken.cs" />
+    <Compile Include="Tokens\NumericLiteralToken.cs" />
+    <Compile Include="Exceptions\TokenParsingException.cs" />
+    <Compile Include="Utils\Operation.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Tokens\IToken.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Operations\And.cs" />
+    <Compile Include="Operations\Divide.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

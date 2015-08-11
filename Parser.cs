@@ -1,0 +1,242 @@
+using Albatross.Expression.Utils;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Albatross.Expression.Exceptions;
+using Albatross.Expression.Tokens;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Xml;
+using Albatross.Expression.Operations;
+
+namespace Albatross.Expression {
+	public class Parser : IParser {
+		public IToken VariableToken() { return _variableToken.Clone(); }
+		public IToken StringLiteralToken() { return _stringToken.Clone(); }
+
+		public IEnumerable<PrefixOperationToken> PrefixOperationTokens { get { return _prefixOperationTokens; } }
+		public IEnumerable<InfixOperationToken> InfixOperationTokens { get { return _infixOperationTokens; } }
+
+		List<PrefixOperationToken> _prefixOperationTokens = new List<PrefixOperationToken>();
+		List<InfixOperationToken> _infixOperationTokens = new List<InfixOperationToken>();
+		IToken _variableToken, _stringToken;
+
+		public Parser() {
+			_prefixOperationTokens.Clear();
+			_infixOperationTokens.Clear();
+			_variableToken = new VariableToken();
+			_stringToken = new StringLiteralToken();
+		}
+
+		public IParser Add(IToken token) {
+			if (token is PrefixOperationToken) {
+				_prefixOperationTokens.Add((PrefixOperationToken)token);
+			} else if (token is InfixOperationToken) {
+				_infixOperationTokens.Add((InfixOperationToken)token);
+			} else {
+				throw new NotSupportedException();
+			}
+			return this;
+		}
+
+		public IParser SetVariableToken(IToken token){
+			_variableToken = token;
+			return this;
+		}
+
+		public IParser SetStringLiteralToken(IToken token){
+			_stringToken = token;
+			return this;
+		}
+
+		//parse an expression and produce queue of tokens
+		public Queue<IToken> Tokenize(string expression) {
+			if (string.IsNullOrEmpty(expression)) { throw new ArgumentException(); }
+			Queue<IToken> tokens = new Queue<IToken>();
+			int start = 0, next;
+			IToken last;
+			IEnumerable<IToken> list;
+			bool found;
+			while (start < expression.Length) {
+				found = false;
+				last = tokens.Count == 0 ? null : tokens.Last();
+				list = null;
+				if (last == null || last == ControlToken.Comma || (last is PrefixOperationToken && ((PrefixOperationToken)last).Symbolic) || last is InfixOperationToken) {
+					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(_prefixOperationTokens);
+				} else if (last == ControlToken.LeftParenthesis) {
+					list = new IToken[] { VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(_prefixOperationTokens);
+				} else if (last == ControlToken.RightParenthesis || last is IOperandToken) {
+					list = new IToken[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(_infixOperationTokens);
+				} else if (last is PrefixOperationToken && !((PrefixOperationToken)last).Symbolic) {
+					list = new IToken[] { ControlToken.LeftParenthesis };
+				}
+
+				Debug.Assert(list != null, "Forgot to check an previous operation");
+				foreach (IToken token in list) {
+					if (token.Match(expression, start, out next)) {
+						found = true;
+						start = next;
+						if (token is PrefixOperationToken || token is InfixOperationToken) {
+							tokens.Enqueue(token.Clone());
+						} else {
+							tokens.Enqueue(token);
+						}
+						break;
+					}
+				}
+				if (found) { continue; }
+
+				if (start < expression.Length) {
+					if (expression.Substring(start).Trim().Length == 0) {
+						break;
+					}
+				}
+				throw new TokenParsingException("Unexpected token: " + expression.Substring(start));
+			}
+			return tokens;
+		}
+		
+		public Stack<IToken> BuildStack(Queue<IToken> queue) {
+			IToken token;
+			Stack<IToken> postfix = new Stack<IToken>();
+			Stack<IToken> stack = new Stack<IToken>();
+
+			while (queue.Count > 0) {
+				token = queue.Dequeue();
+				if (token == ControlToken.Comma) {
+					//pop stack to postfix until we see left parenthesis
+					while (stack.Count > 0 && stack.Peek() != ControlToken.LeftParenthesis) {
+						postfix.Push(stack.Pop());
+					}
+
+					if (stack.Count == 0) {
+						throw new StackException("misplace comma or missing left parenthesis");
+					} else {
+						continue;
+					}
+				}
+				// if it is an operand, put it on the postfix stack
+				if (token is IOperandToken){
+					postfix.Push(token);
+				}
+
+				if (token == ControlToken.LeftParenthesis) {
+					stack.Push(token);
+				} else if (token == ControlToken.RightParenthesis) {
+					while (stack.Count > 0 && stack.Peek() != ControlToken.LeftParenthesis) {
+						postfix.Push(stack.Pop());
+					}
+					if (stack.Count == 0) {
+						throw new StackException("missing left parenthesis");
+					} else {
+						stack.Pop();
+					}
+				}else if(token is PrefixOperationToken){
+					stack.Push(token);
+					postfix.Push(ControlToken.FuncParamStart);
+				}else if(token is InfixOperationToken){
+					if (stack.Count == 0 || stack.Peek() == ControlToken.LeftParenthesis) {
+						stack.Push(token);
+					} else {
+						InfixOperationToken infix = (InfixOperationToken)token;
+						while (stack.Count > 0 
+								&& stack.Peek() != ControlToken.LeftParenthesis
+								&& (stack.Peek() is PrefixOperationToken 
+									|| stack.Peek() is InfixOperationToken 
+										&& infix.Precedence <= ((InfixOperationToken)stack.Peek()).Precedence)) {
+							postfix.Push(stack.Pop());
+						}
+						stack.Push(token);
+					}
+				}
+			}
+			while (stack.Count > 0) {
+				token = stack.Pop();
+				if (token == ControlToken.LeftParenthesis) {
+					throw new TokenParsingException("unbalance paranthesis");
+				} else {
+					postfix.Push(token);
+				}
+			}
+			return postfix;
+		}
+		
+		public IToken CreateTree(Stack<IToken> postfix) {
+			postfix = postfix.Reverse();
+			Stack<IToken> stack = new Stack<IToken>();
+			IToken token;
+			while (postfix.Count > 0) {
+				token = postfix.Pop();
+				if (token is IOperandToken || token == ControlToken.FuncParamStart){
+					stack.Push(token);
+				}else if(token is InfixOperationToken){
+					InfixOperationToken infixOp = (InfixOperationToken)token;
+					infixOp.Operand2 = stack.Pop();
+					infixOp.Operand1 = stack.Pop();
+					stack.Push(infixOp);
+				} else if (token is PrefixOperationToken) {
+					PrefixOperationToken prefixOp = (PrefixOperationToken)token;
+					for (IToken t = stack.Pop(); t != ControlToken.FuncParamStart; t = stack.Pop()) {
+						prefixOp.Operands.Insert(0, t);
+					}
+					stack.Push(prefixOp);
+				}
+			}
+			return stack.Pop();
+		}
+		
+		public object Eval(IToken token, Func<string, object> context) {
+			return token.EvalValue(context);
+		}
+		
+		public string EvalText(IToken token, string format) {
+			return token.EvalText(format);
+		}
+		public IToken Compile(string expression) {
+			Queue<IToken> queue = Tokenize(expression);
+			Stack<IToken> stack = BuildStack(queue);
+			return CreateTree(stack);
+		}
+		public static IParser GetParser() {
+			return new Parser()
+				.Add(new And())
+				.Add(new Avg())
+				.Add(new Coalesce())
+				.Add(new CurrentUser())
+				.Add(new Divide())
+				.Add(new Equal())
+				.Add(new Format())
+				.Add(new GreaterEqual())
+				.Add(new GreaterThan())
+				.Add(new If())
+				.Add(new IsBlank())
+				.Add(new LessEqual())
+				.Add(new LessThan())
+				.Add(new Max())
+				.Add(new Min())
+				.Add(new Minus())
+				.Add(new Mod())
+				.Add(new Month())
+				.Add(new MonthName())
+				.Add(new Multiply())
+				.Add(new Negative())
+				.Add(new Not())
+				.Add(new NotEqual())
+				.Add(new Now())
+				.Add(new Or())
+				.Add(new PadLeft())
+				.Add(new PadRight())
+				.Add(new Plus())
+				.Add(new Positive())
+				.Add(new Power())
+				.Add(new ShortMonthName())
+				.Add(new Text())
+				.Add(new Today())
+				.Add(new Year());
+		}
+
+	}
+}

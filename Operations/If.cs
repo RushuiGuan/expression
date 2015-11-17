@@ -5,7 +5,7 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-using Albatross.Expression.Utils;
+
 
 namespace Albatross.Expression.Operations {
 	public class If : PrefixOperationToken {
@@ -19,7 +19,7 @@ namespace Albatross.Expression.Operations {
 		public override object EvalValue(Func<string, object> context) {
 			object obj = Operands.First().EvalValue(context);
 
-			if (Utils.Operation.GetLogicalValue(obj)) {
+			if (Utils.GetLogicalValue(obj)) {
 				return Operands[1].EvalValue(context);
 			} else {
 				if (Operands.Count >= 3) {

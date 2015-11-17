@@ -1,5 +1,4 @@
-﻿using Albatross.Expression.Utils;
-using Albatross.Expression.Exceptions;
+﻿using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,8 @@ namespace Albatross.Expression {
 		public Dictionary<string, HashSet<string>> Dependencies { get; private set; }
 		public bool CaseSensitive { get; private set; }
 		public bool Compiled { get; private set; }
-		public Func<string, object, object> GetExternalData { get; set; }
+		public delegate bool TryGetValueDelegate(string name, object input, out object value);
+		public TryGetValueDelegate TryGetExternalData { get; set; }
 
 		public ExecutionContext(IParser parser, bool caseSensitive) {
 			_parser = parser;
@@ -31,8 +31,17 @@ namespace Albatross.Expression {
 			Store.Clear();
 			Dependencies.Clear();
 		}
+
+		public object Eval(string expression, object input) {
+			Queue<IToken> queue = _parser.Tokenize(expression);
+			Stack<IToken> stack = _parser.BuildStack(queue);
+			IToken tree = _parser.CreateTree(stack);
+			return _parser.Eval(tree, new Func<string, object>(name => GetValue(name, input)));
+		}
+
 		public object GetValue(string name, object input) {
 			ContextValue value;
+			object data;
 			if (Store.TryGetValue(name, out value)) {
 				if (value.ContextType == ContextType.Value) {
 					return value.Value;
@@ -41,10 +50,26 @@ namespace Albatross.Expression {
 				} else {
 					throw new NotSupportedException();
 				}
-			}else if(GetExternalData != null){
-				return GetExternalData(name, input);
+			}else if(TryGetExternalData != null && TryGetExternalData(name, input, out data)){
+				return data;
 			} else {
 				return null;
+			}
+		}
+		public bool TryGetValue(string name, object input, out object data) {
+			ContextValue value;
+			if (Store.TryGetValue(name, out value)) {
+				if (value.ContextType == ContextType.Value) {
+					data = value.Value;
+				} else {
+					data = value.GetValue(_parser, this, input);
+				}
+				return true;
+			} else if (TryGetExternalData != null && TryGetExternalData(name, input, out data)) {
+				return true;
+			} else {
+				data = null;
+				return false;
 			}
 		}
 		public bool TryGetContext(string name, out ContextValue value) {

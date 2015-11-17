@@ -14,11 +14,11 @@ namespace Albatross.Expression.Operations {
 
 		public override object EvalValue(Func<string, object> context) {
 			object value = Operand1.EvalValue(context);
-			if (Utils.Operation.GetLogicalValue(value)) {
+			if (Utils.GetLogicalValue(value)) {
 				return true;
 			} else {
 				value = Operand2.EvalValue(context);
-				return Utils.Operation.GetLogicalValue(value);
+				return Utils.GetLogicalValue(value);
 			}
 		}
 	}

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
-using Albatross.Expression.Utils;
 
 namespace Albatross.Expression.Operations {
 	public class Negative : PrefixOperationToken {

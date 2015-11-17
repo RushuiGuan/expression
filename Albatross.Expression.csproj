@@ -122,8 +122,7 @@
     <Compile Include="Tokens\StringLiteralToken.cs" />
     <Compile Include="Tokens\NumericLiteralToken.cs" />
     <Compile Include="Exceptions\TokenParsingException.cs" />
-    <Compile Include="Utils\Operation.cs" />
-    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Tokens\IToken.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

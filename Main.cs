@@ -33,7 +33,10 @@ namespace Albatross.Expression {
 			//a is the external dependency that comes from the dictionary object;
 			context.SetExpression("b", "a + 6");
 			context.SetExpression("c", "b * a");
-			context.GetExternalData = (name, input) => ((IDictionary<string, object>)input)[name];
+			context.TryGetExternalData = (string name, object input, out object data) => {
+				data = ((IDictionary<string, object>)input)[name]; 
+				return true;
+			};
 			Console.WriteLine(context.GetValue("c", variables));
 		}
 	}

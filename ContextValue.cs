@@ -1,5 +1,4 @@
-﻿using Albatross.Expression.Utils;
-using Albatross.Expression.Exceptions;
+﻿using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;

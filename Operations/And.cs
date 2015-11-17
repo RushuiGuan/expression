@@ -18,11 +18,11 @@ namespace Albatross.Expression.Operations {
 
 			object value = Operand1.EvalValue(context);
 			
-			if (!Utils.Operation.GetLogicalValue(value)) {
+			if (!Utils.GetLogicalValue(value)) {
 				return false;
 			} else {
 				value = Operand2.EvalValue(context);
-				return Utils.Operation.GetLogicalValue(value);
+				return Utils.GetLogicalValue(value);
 			}
 		}
 	}

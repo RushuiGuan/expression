@@ -5,7 +5,6 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-using Albatross.Expression.Utils;
 
 namespace Albatross.Expression.Operations {
 	public class Max : PrefixOperationToken {
@@ -21,11 +20,11 @@ namespace Albatross.Expression.Operations {
 			List<object> list = GetOperands(context, out type);
 
 			if (type == typeof(double)) {
-				return Operation.GetMax<double>(list);
+				return Utils.GetMax<double>(list);
 			} else if (type == typeof(DateTime)) {
-				return Operation.GetMax<DateTime>(list);
+				return Utils.GetMax<DateTime>(list);
 			} else if (type == typeof(string)) {
-				return Operation.GetMaxString(list);
+				return Utils.GetMaxString(list);
 			} else {
 				throw new UnexpectedTypeException(type);
 			}

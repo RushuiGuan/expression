@@ -5,7 +5,6 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-using Albatross.Expression.Utils;
 
 namespace Albatross.Expression.Operations {
 	public class Min : PrefixOperationToken {
@@ -19,11 +18,11 @@ namespace Albatross.Expression.Operations {
 			Type type;
 			List<object> list = GetOperands(context, out type);
 			if (type == typeof(double)) {
-				return Operation.GetMin<double>(list);
+				return Utils.GetMin<double>(list);
 			} else if (type == typeof(DateTime)) {
-				return Operation.GetMin<DateTime>(list);
+				return Utils.GetMin<DateTime>(list);
 			} else if (type == typeof(string)) {
-				return Operation.GetMinString(list);
+				return Utils.GetMinString(list);
 			} else {
 				throw new NotSupportedException();
 			}

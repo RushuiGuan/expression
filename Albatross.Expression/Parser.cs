@@ -234,7 +234,8 @@ namespace Albatross.Expression {
 				.Add(new ShortMonthName())
 				.Add(new Text())
 				.Add(new Today())
-				.Add(new Year());
+				.Add(new Year())
+				.Add(new Date());
 		}
 
 	}

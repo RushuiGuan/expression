@@ -44,6 +44,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
@@ -56,6 +57,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -83,6 +85,7 @@
     <Compile Include="Operations\ComparisonInfixOperation.cs" />
     <Compile Include="Operations\Avg.cs" />
     <Compile Include="Operations\Coalesce.cs" />
+    <Compile Include="Operations\Date.cs" />
     <Compile Include="Operations\Text.cs" />
     <Compile Include="Operations\Format.cs" />
     <Compile Include="Operations\IsBlank.cs" />
@@ -130,6 +133,9 @@
   <ItemGroup>
     <Compile Include="Operations\And.cs" />
     <Compile Include="Operations\Divide.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

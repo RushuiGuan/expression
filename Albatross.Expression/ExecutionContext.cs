@@ -51,7 +51,13 @@ namespace Albatross.Expression {
 					throw new NotSupportedException();
 				}
 			}else if(TryGetExternalData != null && TryGetExternalData(name, input, out data)){
-				return data;
+				if (data is ContextValue) {
+					value = (ContextValue)data;
+					Store.Add(value.Name, value);
+					return GetValue(name, input);
+				} else {
+					return data;
+				}
 			} else {
 				return null;
 			}

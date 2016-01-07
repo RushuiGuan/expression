@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
 namespace Albatross.Expression {
-	public enum ContextType { 
-		Expression, Value, 
+	public enum ContextType {
+		Value = 0, Expression = 1, 
 	}
 	[DataContract]
 	public class ContextValue {

@@ -165,7 +165,7 @@ namespace Albatross.Expression.Test {
 				foreach (ContextValue value in values) {
 					context.Set(value);
 				}
-				context.Compile();
+				context.GetValue("a", null);
 			});
 			Assert.Throws<CircularReferenceException>(handle);
 		}
@@ -205,8 +205,16 @@ namespace Albatross.Expression.Test {
 				}.GetEnumerator();
 			}
 		}
+
 		[TestCaseSource(typeof(ExternalValueTestCase))]
-		public object ExternalValueTesting(ContextValue[] values) {
+		public object ExternalValueTestingWithoutCaching(ContextValue[] values) {
+			return ExternalValueTesting(false, values);
+		}
+		[TestCaseSource(typeof(ExternalValueTestCase))]
+		public object ExternalValueTestingWithCaching(ContextValue[] values) {
+			return ExternalValueTesting(true, values);
+		}
+		public object ExternalValueTesting(bool caching, ContextValue[] values) {
 			Dictionary<string, object> externals = new Dictionary<string, object>();
 			foreach (ContextValue value in values) {
 				if (value.ContextType == ContextType.Value) {
@@ -216,7 +224,7 @@ namespace Albatross.Expression.Test {
 				}
 			}
 
-			ExecutionContext context = new ExecutionContext();
+			ExecutionContext context = new ExecutionContext() { CacheExternalValue = caching, };
 			context.TryGetExternalData = new ExecutionContext.TryGetValueDelegate((string name, object input, out object value) => {
 				if (input is IDictionary<string, object>) {
 					return ((IDictionary<string, object>)input).TryGetValue(name, out value);
@@ -225,11 +233,19 @@ namespace Albatross.Expression.Test {
 					return true;
 				}
 			});
-			return context.GetValue("a", externals);
+			object result =  context.GetValue("a", externals);
+			return result;
 		}
 
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
-		public void ExternalValueWithCircularReference(ContextValue[] values) {
+		public void ExternalValueWithCircularReferenceWithoutCaching(ContextValue[] values) {
+			ExternalValueWithCircularReference(false, values);
+		}
+		[TestCaseSource(typeof(CircularReferenceTestCase))]
+		public void ExternalValueWithCircularReferenceWithCaching(ContextValue[] values) {
+			ExternalValueWithCircularReference(true, values);
+		}
+		void ExternalValueWithCircularReference(bool caching, ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
 				Dictionary<string, object> externals = new Dictionary<string, object>();
 				foreach (ContextValue value in values) {
@@ -240,7 +256,7 @@ namespace Albatross.Expression.Test {
 					}
 				}
 
-				ExecutionContext context = new ExecutionContext();
+				ExecutionContext context = new ExecutionContext() { CacheExternalValue = caching, };
 				context.TryGetExternalData = new ExecutionContext.TryGetValueDelegate((string name, object input, out object value) => {
 					if (input is IDictionary<string, object>) {
 						return ((IDictionary<string, object>)input).TryGetValue(name, out value);

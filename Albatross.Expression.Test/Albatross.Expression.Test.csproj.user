@@ -2,8 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\Workspace\GitHub\expression\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
-    <StartArguments>Albatross.Expression.csproj --inprocess</StartArguments>
-    <StartWorkingDirectory>C:\Workspace\GitHub\expression\Albatross.Expression.Test\</StartWorkingDirectory>
+    <StartProgram>C:\Workspace\github\expression\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
+    <StartArguments>Albatross.Expression.Test.csproj --inprocess</StartArguments>
+    <StartWorkingDirectory>C:\Workspace\github\expression\Albatross.Expression.Test\</StartWorkingDirectory>
   </PropertyGroup>
 </Project>

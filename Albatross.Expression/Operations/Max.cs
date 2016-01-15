@@ -5,21 +5,25 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
+using System.Collections;
 
 namespace Albatross.Expression.Operations {
 	public class Max : PrefixOperationToken {
 		
 		public override string Name { get { return "max"; } }
-		public override int MinOperandCount { get { return 1; } }
+		public override int MinOperandCount { get { return 0; } }
 		public override int MaxOperandCount { get { return int.MaxValue; } }
 		public override bool Symbolic { get { return false; } }
 
 
 		public override object EvalValue(Func<string, object> context) {
+			if (Operands.Count == 0) { return null; }
 			Type type;
-			List<object> list = GetOperands(context, out type);
+			IEnumerable list = GetParamsOperands(context, out type);
 
-			if (type == typeof(double)) {
+			if (type == null) {
+				return null;
+			} else if (type == typeof(double)) {
 				return Utils.GetMax<double>(list);
 			} else if (type == typeof(DateTime)) {
 				return Utils.GetMax<DateTime>(list);
@@ -29,6 +33,5 @@ namespace Albatross.Expression.Operations {
 				throw new UnexpectedTypeException(type);
 			}
 		}
-
 	}
 }

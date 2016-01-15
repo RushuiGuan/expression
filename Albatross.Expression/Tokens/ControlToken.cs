@@ -8,7 +8,7 @@ namespace Albatross.Expression.Tokens {
 		public const string LeftParenthesis_Text= "(";
 		public const string RightParenthesis_Text = ")";
 		public const string Comma_Text = ",";
-		public const string FuncParamStart_Text = "@";	// special symbol that mark the beginning of the function parameters
+		public const string FuncParamStart_Text = "$";	// special symbol that mark the beginning of the function parameters
 
 		public static readonly ControlToken LeftParenthesis = new ControlToken(LeftParenthesis_Text);
 		public static readonly ControlToken RightParenthesis = new ControlToken(RightParenthesis_Text);

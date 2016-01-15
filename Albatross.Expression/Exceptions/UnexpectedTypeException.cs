@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Albatross.Expression.Exceptions {
 	public class UnexpectedTypeException : Exception {
+		public UnexpectedTypeException() { }
 		public UnexpectedTypeException(string msg) : base(msg) { }
 		public UnexpectedTypeException(Type type):base(string.Format("Type {0} is not expected!", type.Name)) {
 		}

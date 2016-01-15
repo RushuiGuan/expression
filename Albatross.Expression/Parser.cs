@@ -202,6 +202,7 @@ namespace Albatross.Expression {
 		public static IParser GetParser() {
 			return new Parser()
 				.Add(new And())
+				.Add(new Albatross.Expression.Operations.Array())
 				.Add(new Avg())
 				.Add(new Coalesce())
 				.Add(new CurrentUser())
@@ -214,6 +215,7 @@ namespace Albatross.Expression {
 				.Add(new IsBlank())
 				.Add(new LessEqual())
 				.Add(new LessThan())
+				.Add(new Len())
 				.Add(new Max())
 				.Add(new Min())
 				.Add(new Minus())

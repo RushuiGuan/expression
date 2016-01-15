@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Albatross.Expression.Exceptions;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,18 +35,22 @@ namespace Albatross.Expression {
 			}
 			return set;
 		}
-		public static object GetMax<T>(IEnumerable<object> list) where T : struct {
+		public static object GetMax<T>(IEnumerable list) where T : struct {
 			T? t = null;
-			foreach (T? item in list) {
-				if (item.HasValue) {
-					if (t.HasValue) {
-						if (Comparer<T>.Default.Compare(item.Value, t.Value) > 0) {
+			try {
+				foreach (T? item in list) {
+					if (item != null) {
+						if (t.HasValue) {
+							if (Comparer<T>.Default.Compare(item.Value, t.Value) > 0) {
+								t = item.Value;
+							}
+						} else {
 							t = item.Value;
 						}
-					} else {
-						t = item;
 					}
 				}
+			} catch (InvalidCastException) {
+				throw new UnexpectedTypeException();
 			}
 			if (t.HasValue) {
 				return t.Value;
@@ -52,7 +58,7 @@ namespace Albatross.Expression {
 				return null;
 			}
 		}
-		public static object GetMaxString(IEnumerable<object> list) {
+		public static object GetMaxString(IEnumerable list) {
 			string max = null, item;
 			foreach (object obj in list) {
 				item = Convert.ToString(obj);
@@ -66,18 +72,22 @@ namespace Albatross.Expression {
 			}
 			return max;
 		}
-		public static object GetMin<T>(IEnumerable<object> list) where T : struct {
+		public static object GetMin<T>(IEnumerable list) where T : struct {
 			T? t = null;
-			foreach (T? item in list) {
-				if (item.HasValue) {
-					if (t.HasValue) {
-						if (Comparer<T>.Default.Compare(item.Value, t.Value) < 0) {
+			try {
+				foreach (T? item in list) {
+					if (item != null) {
+						if (t.HasValue) {
+							if (Comparer<T>.Default.Compare(item.Value, t.Value) < 0) {
+								t = item.Value;
+							}
+						} else {
 							t = item.Value;
 						}
-					} else {
-						t = item;
 					}
 				}
+			} catch (InvalidCastException) {
+				throw new UnexpectedTypeException();
 			}
 			if (t.HasValue) {
 				return t.Value;
@@ -85,7 +95,7 @@ namespace Albatross.Expression {
 				return null;
 			}
 		}
-		public static object GetMinString(IEnumerable<object> list) {
+		public static object GetMinString(IEnumerable list) {
 			string max = null, item;
 			foreach (object obj in list) {
 				item = Convert.ToString(obj);

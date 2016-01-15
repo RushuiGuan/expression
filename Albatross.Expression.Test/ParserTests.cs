@@ -1,4 +1,5 @@
 ﻿using Albatross.Expression.Exceptions;
+using Albatross.Expression.Tokens;
 using NUnit.Framework;
 using System;
 using System.Collections;
@@ -111,6 +112,8 @@ namespace Albatross.Expression.Test {
 
 		[TestCase("min(1, 2, 3)", ExpectedResult = 1)]
 		[TestCase("min(null, 1, 3)", ExpectedResult = 1)]
+		[TestCase("len(@(null, 1, 3))", ExpectedResult = 3)]
+		[TestCase("len(\"abc\")", ExpectedResult = 3)]
 
 		public object OperationsTesting(string expression) {
 			return Parser.GetParser().Compile(expression).EvalValue(null);
@@ -128,8 +131,28 @@ namespace Albatross.Expression.Test {
 		[TestCase("(1 or 1) and 0", ExpectedResult = false)]
 		[TestCase("1--1", ExpectedResult = 2)]
 		[TestCase("1-+1", ExpectedResult = 0)]
+
+		[TestCase("10+avg(@(1,2,3,4))", ExpectedResult=12.5)]
 		public object PrecedenceTesting(string expression) {
-			return Parser.GetParser().Compile(expression).EvalValue(null);
+			IParser parser = Parser.GetParser();
+			IToken token = parser.Compile(expression);
+			return token.EvalValue(null);
+		}
+
+		[Category("focus")]
+		[TestCase("avg(4, 5,\"x\")", typeof(UnexpectedTypeException))]
+		[TestCase("min(4, 5,\"x\")", typeof(UnexpectedTypeException))]
+		[TestCase("max(4, 5,\"x\")", typeof(UnexpectedTypeException))]
+		[TestCase("1 + today()", typeof(UnexpectedTypeException))]
+		[TestCase("monthname(today())", typeof(UnexpectedTypeException))]
+		[TestCase("len(today())", typeof(UnexpectedTypeException))]
+		public void ParsingFailure(string expression, Type errType) {
+			TestDelegate handler = new TestDelegate(()=>{
+				IParser parser = Parser.GetParser();
+				IToken token = parser.Compile(expression);
+				token.EvalValue(null);
+			});
+			Assert.Throws(errType, handler);
 		}
 
 		public class CircularReferenceTestCase : IEnumerable {
@@ -214,6 +237,7 @@ namespace Albatross.Expression.Test {
 		public object ExternalValueTestingWithCaching(ContextValue[] values) {
 			return ExternalValueTesting(true, values);
 		}
+
 		public object ExternalValueTesting(bool caching, ContextValue[] values) {
 			Dictionary<string, object> externals = new Dictionary<string, object>();
 			foreach (ContextValue value in values) {
@@ -241,10 +265,12 @@ namespace Albatross.Expression.Test {
 		public void ExternalValueWithCircularReferenceWithoutCaching(ContextValue[] values) {
 			ExternalValueWithCircularReference(false, values);
 		}
+
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
 		public void ExternalValueWithCircularReferenceWithCaching(ContextValue[] values) {
 			ExternalValueWithCircularReference(true, values);
 		}
+
 		void ExternalValueWithCircularReference(bool caching, ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
 				Dictionary<string, object> externals = new Dictionary<string, object>();

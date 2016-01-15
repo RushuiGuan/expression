@@ -85,6 +85,8 @@
     <Compile Include="Operations\ComparisonInfixOperation.cs" />
     <Compile Include="Operations\Avg.cs" />
     <Compile Include="Operations\Coalesce.cs" />
+    <Compile Include="Operations\Array.cs" />
+    <Compile Include="Operations\Len.cs" />
     <Compile Include="Operations\Date.cs" />
     <Compile Include="Operations\Text.cs" />
     <Compile Include="Operations\Format.cs" />

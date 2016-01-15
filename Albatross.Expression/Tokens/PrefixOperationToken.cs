@@ -5,6 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Text.RegularExpressions;
 using Albatross.Expression.Exceptions;
+using System.Collections;
 
 namespace Albatross.Expression.Tokens {
 	public abstract class PrefixOperationToken : IToken {
@@ -86,6 +87,30 @@ namespace Albatross.Expression.Tokens {
 		public virtual object EvalValue(Func<string, object> context) {
 			return null;
 		}
+		//if the operand count = 1 and it is an array, return the array
+		//otherwise return normal operand values
+		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type firstType) {
+			firstType = null;
+			if (Operands.Count == 0) {
+				return new object[0];
+			} else if (Operands.Count == 1) {
+				object op1 = Operands.First().EvalValue(context);
+				if (op1 is IEnumerable) {
+					foreach (object obj in (IEnumerable)op1) {
+						if (obj != null) {
+							firstType = obj.GetType();
+							break;
+						}
+					}
+					return (IEnumerable)op1;
+				} else {
+					if (op1 != null) { firstType = op1.GetType(); }
+					return new object[] { op1 };
+				}
+			} else {
+				return GetOperands(context, out firstType);
+			}
+		}
 		protected List<Object> GetOperands(Func<string, object> context) {
 			List<object> list = new List<object>();
 			object value;
@@ -97,19 +122,17 @@ namespace Albatross.Expression.Tokens {
 			return list;
 		}
 		//return operands of the same type
-		protected List<Object> GetOperands(Func<string, object> context, out Type type) {
+		protected List<Object> GetOperands(Func<string, object> context, out Type firstType) {
 			List<object> list = new List<object>();
-			type = null;
+			firstType = null;
 			object value;
 			foreach (IToken token in Operands) {
 				value = token.EvalValue(context);
 				list.Add(value);
-				if (type == null) {
+				if (firstType == null) {
 					if (value != null) {
-						type = value.GetType();
+						firstType = value.GetType();
 					}
-				} else if (value != null && type != value.GetType()) {
-					throw new UnexpectedTypeException(type, value.GetType());
 				}
 			}
 			if (list.Count < MinOperandCount || list.Count > MaxOperandCount) { throw new OperandException(Name); }

@@ -3,7 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Workspace\github\expression\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
-    <StartArguments>Albatross.Expression.Test.csproj --inprocess</StartArguments>
+    <StartArguments>Albatross.Expression.Test.csproj --inprocess  --where:cat=focus</StartArguments>
     <StartWorkingDirectory>C:\Workspace\github\expression\Albatross.Expression.Test\</StartWorkingDirectory>
   </PropertyGroup>
 </Project>

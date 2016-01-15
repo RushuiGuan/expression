@@ -6,6 +6,7 @@
 
 $debug = $false;
 $category = $null;
+#$category = "focus";
 
 Set-Alias nunit "..\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe";
 $args= @(".\Albatross.Expression.Test.csproj", "--workers=10", "--inprocess");

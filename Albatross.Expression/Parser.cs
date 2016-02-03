@@ -199,8 +199,11 @@ namespace Albatross.Expression {
 			Stack<IToken> stack = BuildStack(queue);
 			return CreateTree(stack);
 		}
-		public static IParser GetParser() {
-			return new Parser()
+		public static IParser GetParser(IParser parser = null) {
+			if (parser == null) {
+				parser = new Parser();
+			}
+			return parser
 				.Add(new And())
 				.Add(new Albatross.Expression.Operations.Array())
 				.Add(new Avg())
@@ -239,6 +242,5 @@ namespace Albatross.Expression {
 				.Add(new Year())
 				.Add(new Date());
 		}
-
 	}
 }

@@ -2,38 +2,21 @@
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
 
 namespace Albatross.Expression {
 	public enum ContextType {
 		Value = 0, Expression = 1, 
 	}
-	[DataContract]
 	public class ContextValue {
-		[DataMember]
 		public string Name { get; set; }
-		[DataMember]
 		public object Value { get; set; }
-		[DataMember]
 		public ContextType ContextType { get; set; }
-		[DataMember]
-		public string TypeName { get; private set; }
 
-		Type _dataType;
-		public Type DataType { 
-			get { return _dataType; } 
-			set { 
-				_dataType = value;
-				TypeName = value == null ? null : value.AssemblyQualifiedName;
-			} 
-		}
+		public Type DataType { get; set; }
 		public IToken Tree { get; set; }
-		public HashSet<string> Dependees { get; set; }
+		public ISet<string> Dependees { get; set; }
 
-		public void Build(IParser parser, ExecutionContext context, HashSet<string> chain) {
+		public void Build(IParser parser, ExecutionContext context, ISet<string> chain) {
 			Tree = null;
 			Queue<IToken> queue = parser.Tokenize(Convert.ToString(Value));
 			Dependees = context.NewSet();
@@ -41,14 +24,14 @@ namespace Albatross.Expression {
 			Stack<IToken> stack = parser.BuildStack(queue);
 			Tree = parser.CreateTree(stack);
 		}
-		public void CheckCircularReference(IParser parser, ExecutionContext context, HashSet<string> chain, object input) {
+		public void CheckCircularReference(IParser parser, ExecutionContext context, ISet<string> chain, object input) {
 			foreach (string dependee in Dependees) {
 				if (chain.Contains(dependee)) {
-					throw new CircularReferenceException(dependee, Name);
+					throw new CircularReferenceException(dependee, string.IsNullOrEmpty(Name) ? Convert.ToString(Value) : Name);
 				}
 				ContextValue value;
 				if (context.TryGetContext(dependee, input, out value) && value.ContextType == Expression.ContextType.Expression) {
-					HashSet<string> newChain = context.NewSet();
+					ISet<string> newChain = context.NewSet();
 					newChain.AddRange(chain).Add(dependee);
 					if (value.Tree == null) {
 						value.Build(parser, context, newChain);
@@ -60,8 +43,9 @@ namespace Albatross.Expression {
 
 		public object GetValue(IParser parser, ExecutionContext context, object input) {
 			if (ContextType == Expression.ContextType.Expression) {
-				HashSet<string> chain = context.NewSet();
-				chain.Add(Name);
+				ISet<string> chain = context.NewSet();
+				if (!string.IsNullOrEmpty(Name)) { chain.Add(Name); }
+
 				if (Tree == null) {
 					Build(parser, context, chain);
 				}

@@ -65,15 +65,14 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextValue.cs" />
+    <Compile Include="IExecutionContext.cs" />
     <Compile Include="Exceptions\CircularReferenceException.cs" />
     <Compile Include="Exceptions\OperandException.cs" />
     <Compile Include="Exceptions\InputNotFoundException.cs" />
@@ -81,7 +80,6 @@
     <Compile Include="Exceptions\StackException.cs" />
     <Compile Include="ExecutionContext.cs" />
     <Compile Include="IParser.cs" />
-    <Compile Include="Main.cs" />
     <Compile Include="Operations\ComparisonInfixOperation.cs" />
     <Compile Include="Operations\Avg.cs" />
     <Compile Include="Operations\Coalesce.cs" />

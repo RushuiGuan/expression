@@ -184,7 +184,7 @@ namespace Albatross.Expression.Test {
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
 		public void CircularReferenceTesting1(ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
-				ExecutionContext context = new ExecutionContext();
+				ExecutionContext context = new ExecutionContext(Parser.GetParser());
 				foreach (ContextValue value in values) {
 					context.Set(value);
 				}
@@ -196,7 +196,7 @@ namespace Albatross.Expression.Test {
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
 		public void CircularReferenceTesting2(ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
-				ExecutionContext context = new ExecutionContext();
+				ExecutionContext context = new ExecutionContext(Parser.GetParser());
 				foreach (ContextValue value in values) {
 					context.Set(value);
 				}
@@ -248,8 +248,8 @@ namespace Albatross.Expression.Test {
 				}
 			}
 
-			ExecutionContext context = new ExecutionContext() { CacheExternalValue = caching, };
-			context.TryGetExternalData = new ExecutionContext.TryGetValueDelegate((string name, object input, out object value) => {
+			ExecutionContext context = new ExecutionContext(Parser.GetParser()) { CacheExternalValue = caching, };
+			context.TryGetExternalData = new TryGetValueDelegate((string name, object input, out object value) => {
 				if (input is IDictionary<string, object>) {
 					return ((IDictionary<string, object>)input).TryGetValue(name, out value);
 				} else {
@@ -282,8 +282,8 @@ namespace Albatross.Expression.Test {
 					}
 				}
 
-				ExecutionContext context = new ExecutionContext() { CacheExternalValue = caching, };
-				context.TryGetExternalData = new ExecutionContext.TryGetValueDelegate((string name, object input, out object value) => {
+				ExecutionContext context = new ExecutionContext(Parser.GetParser()) { CacheExternalValue = caching, };
+				context.TryGetExternalData = new TryGetValueDelegate((string name, object input, out object value) => {
 					if (input is IDictionary<string, object>) {
 						return ((IDictionary<string, object>)input).TryGetValue(name, out value);
 					} else {

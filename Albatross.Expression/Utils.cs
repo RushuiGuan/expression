@@ -29,7 +29,7 @@ namespace Albatross.Expression {
 				|| obj is uint || obj is int
 				|| obj is ulong || obj is long;
 		}
-		public static HashSet<T> AddRange<T>(this HashSet<T> set, IEnumerable<T> range) {
+		public static ISet<T> AddRange<T>(this ISet<T> set, IEnumerable<T> range) {
 			foreach (T t in range) {
 				set.Add(t);
 			}

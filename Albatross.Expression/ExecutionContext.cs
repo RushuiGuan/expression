@@ -8,38 +8,39 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
 namespace Albatross.Expression {
-	/// <summary>
-	/// this is a case sensitive execution context engine
-	/// </summary>
-	public class ExecutionContext {
-		IParser _parser;
+	public class ExecutionContext : IExecutionContext {
 		public Dictionary<string, ContextValue> Store { get; private set; }
-		public Dictionary<string, HashSet<string>> Dependencies { get; private set; }
+		public IDictionary<string, HashSet<string>> Dependencies { get; private set; }
 		public bool CaseSensitive { get; private set; }
 		public bool Compiled { get; private set; }
 		public bool CacheExternalValue { get; set; }
-		public delegate bool TryGetValueDelegate(string name, object input, out object value);
 		public TryGetValueDelegate TryGetExternalData { get; set; }
+		public IParser Parser { get; private set; }
 
-		public ExecutionContext(IParser parser, bool caseSensitive) {
-			_parser = parser;
-			CaseSensitive = caseSensitive;
+		Dictionary<string, ContextValue> _evalStacks = new Dictionary<string, ContextValue>();
+
+		public ExecutionContext(IParser parser) {
+			Parser = parser;
+			CaseSensitive = false;
 			Store = CaseSensitive ? new Dictionary<string, ContextValue>() : new Dictionary<string, ContextValue>(StringComparer.InvariantCultureIgnoreCase);
 			Dependencies = CaseSensitive ? new Dictionary<string, HashSet<string>>() : new Dictionary<string, HashSet<string>>(StringComparer.InvariantCultureIgnoreCase);
-		}
-		public ExecutionContext() : this(Parser.GetParser(), true) {
-			CacheExternalValue = false;
 		}
 		public void Clear() {
 			Store.Clear();
 			Dependencies.Clear();
 		}
 
-		public object Eval(string expression, object input) {
-			Queue<IToken> queue = _parser.Tokenize(expression);
-			Stack<IToken> stack = _parser.BuildStack(queue);
-			IToken tree = _parser.CreateTree(stack);
-			return _parser.Eval(tree, new Func<string, object>(name => GetValue(name, input)));
+		public object Eval(string expression, object input, Type outputDataType = null) {
+			ContextValue value;
+			if (!_evalStacks.TryGetValue(expression, out value)) {
+				value = new ContextValue() {
+					 Value = expression,
+					 DataType = outputDataType,
+					 ContextType = ContextType.Expression,
+				};
+				_evalStacks.Add(expression, value);
+			}
+			return value.GetValue(Parser, this, input);
 		}
 
 		bool TryGetExternal(string name, object input, bool contextOnly, out object data){
@@ -49,7 +50,7 @@ namespace Albatross.Expression {
 					value = (ContextValue)data;
 					if (CacheExternalValue) { Store.Add(name, value); }
 					if (!contextOnly) {
-						data = value.GetValue(_parser, this, input);
+						data = value.GetValue(Parser, this, input);
 					}
 				} else {
 					value = new ContextValue() { Name = name, Value = data, ContextType = ContextType.Value, };
@@ -70,7 +71,7 @@ namespace Albatross.Expression {
 				if (value.ContextType == ContextType.Value) {
 					return value.Value;
 				} else if (value.ContextType == ContextType.Expression) {
-					return value.GetValue(_parser, this, input);
+					return value.GetValue(Parser, this, input);
 				} else {
 					throw new NotSupportedException();
 				}
@@ -86,7 +87,7 @@ namespace Albatross.Expression {
 				if (value.ContextType == ContextType.Value) {
 					data = value.Value;
 				} else {
-					data = value.GetValue(_parser, this, input);
+					data = value.GetValue(Parser, this, input);
 				}
 				return true;
 			}else{
@@ -117,14 +118,14 @@ namespace Albatross.Expression {
 			Compiled = false;
 		}
 		public void Set(ContextValue value) { Store[value.Name] = value; }
-		public HashSet<string> NewSet() {
+		public ISet<string> NewSet() {
 			return CaseSensitive ? new HashSet<string>() : new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
 		}
 		public void Compile() {
 			Dependencies.Clear();
 			foreach (ContextValue value in Store.Values) {
 				if (value.ContextType == ContextType.Expression) {
-					value.Build(_parser, this, null);
+					value.Build(Parser, this, null);
 				}
 			}
 			foreach (ContextValue value in Store.Values) {
@@ -132,14 +133,16 @@ namespace Albatross.Expression {
 					AddDependency(Dependencies, value.Name, value.Dependees);
 				}
 			}
-			//HashSet<string> chain = NewSet();
-			//foreach (ContextValue value in Store.Values) {
-			//	if (value.ContextType == ContextType.Expression) {
-			//		value.CheckCircularReference(_parser, this, chain, input);
-			//	}
-			//}
 		}
-		void AddDependency(Dictionary<string, HashSet<string>> dict, string depender, IEnumerable<string> dependees) {
+		public void CheckCircularReference(object input) {
+			ISet<string> chain = NewSet();
+			foreach (ContextValue value in Store.Values) {
+				if (value.ContextType == ContextType.Expression) {
+					value.CheckCircularReference(Parser, this, chain, input);
+				}
+			}
+		}
+		void AddDependency(IDictionary<string, HashSet<string>> dict, string depender, IEnumerable<string> dependees) {
 			if (dependees != null) {
 				HashSet<string> set;
 				foreach (string f in dependees) {

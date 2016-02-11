@@ -156,5 +156,15 @@ namespace Albatross.Expression {
 				}
 			}
 		}
+
+		public void GetDependants(string name, ISet<string> dependents) {
+			HashSet<string> list;
+			if (Dependencies.TryGetValue(name, out list)) {
+				foreach (string dependent in list) {
+					dependents.Add(dependent);
+					GetDependants(dependent, dependents);
+				}
+			}
+		}
 	}
 }

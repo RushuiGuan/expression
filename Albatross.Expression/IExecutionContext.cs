@@ -25,5 +25,6 @@ namespace Albatross.Expression {
 		void CheckCircularReference(object input);
 		ISet<string> NewSet();
 		IDictionary<string, HashSet<string>> Dependencies { get; }
+		void GetDependants(string name, ISet<string> dependents);
 	}
 }

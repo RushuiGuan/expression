@@ -84,6 +84,8 @@
     <Compile Include="Operations\Avg.cs" />
     <Compile Include="Operations\Coalesce.cs" />
     <Compile Include="Operations\Array.cs" />
+    <Compile Include="Operations\CurrentApp.cs" />
+    <Compile Include="Operations\CurrentMachine.cs" />
     <Compile Include="Operations\Len.cs" />
     <Compile Include="Operations\Date.cs" />
     <Compile Include="Operations\Text.cs" />

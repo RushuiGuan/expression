@@ -209,6 +209,8 @@ namespace Albatross.Expression {
 				.Add(new Avg())
 				.Add(new Coalesce())
 				.Add(new CurrentUser())
+				.Add(new CurrentMachine())
+				.Add(new CurrentApp())
 				.Add(new Divide())
 				.Add(new Equal())
 				.Add(new Format())

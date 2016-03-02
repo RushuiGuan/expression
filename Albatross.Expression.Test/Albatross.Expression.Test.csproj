@@ -53,10 +53,6 @@
     <None Include="Test.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Albatross\Albatross.Utils\Albatross.Utils.csproj">
-      <Project>{0ff9a8c9-4c26-4309-a2db-b8181b6f7e48}</Project>
-      <Name>Albatross.Utils</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj">
       <Project>{e99334ce-cd35-4e87-a8ab-3db256d6c5cb}</Project>
       <Name>Albatross.Expression</Name>

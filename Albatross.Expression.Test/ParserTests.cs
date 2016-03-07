@@ -139,7 +139,6 @@ namespace Albatross.Expression.Test {
 			return token.EvalValue(null);
 		}
 
-		[Category("focus")]
 		[TestCase("avg(4, 5,\"x\")", typeof(UnexpectedTypeException))]
 		[TestCase("min(4, 5,\"x\")", typeof(UnexpectedTypeException))]
 		[TestCase("max(4, 5,\"x\")", typeof(UnexpectedTypeException))]

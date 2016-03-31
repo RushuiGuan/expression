@@ -11,9 +11,13 @@ namespace Albatross.Expression.Tokens {
 	/// Check the GetStringEscape function for escapable chars
 	/// </summary>
 	public class StringLiteralToken : IOperandToken {
-		public const char StringLiteralQuote = '"';
+		public const char DoubleQuote = '"';
 		public const char EscapeChar = '\\';
 
+		public StringLiteralToken() : this(DoubleQuote) { }
+		public StringLiteralToken(char boundary) { Boundary = boundary; }
+
+		public virtual char Boundary { get; private set; }
 		public string Name { get; private set; }
 		public string Group { get { return "Literal"; } }
 		public bool Match(string expression, int start, out int next) {
@@ -22,7 +26,7 @@ namespace Albatross.Expression.Tokens {
 				while (start < expression.Length && char.IsWhiteSpace(expression[start])) {
 					start++;
 				}
-				if (start < expression.Length && expression[start] == StringLiteralQuote) {
+				if (start < expression.Length && expression[start] == Boundary) {
 					StringBuilder sb = new StringBuilder();
 					bool escaped = false, closed = false;
 					char c;
@@ -30,7 +34,7 @@ namespace Albatross.Expression.Tokens {
 					for (i = start; i < expression.Length; i++) {
 						c = expression[i];
 						sb.Append(c);
-						if (c == StringLiteralQuote && i != start && !escaped) {
+						if (c == Boundary && i != start && !escaped) {
 							closed = true;
 							break;
 						}
@@ -48,16 +52,14 @@ namespace Albatross.Expression.Tokens {
 			return false;
 		}
 		char GetEscapedChar(char c) {
-			switch (c) {
-				case 'n':
-					return '\n';
-				case 't':
-					return '\t';
-				case '"':
-				case '\\':
-					return c;
-				default:
-					throw new TokenParsingException("Invalid string escape \\" + c);
+			if (c == 'n') {
+				return '\n';
+			} else if (c == 't') {
+				return '\t';
+			} else if (c == Boundary || c == '\\') {
+				return c;
+			} else {
+				throw new TokenParsingException("Invalid string escape \\" + c);
 			}
 		}
 		public override string ToString() { return Name; }
@@ -65,10 +67,7 @@ namespace Albatross.Expression.Tokens {
 			return Name;
 		}
 		public IToken Clone() {
-			return new StringLiteralToken() { Name = Name };
-		}
-		public static string Build(string input) {
-			return "\"" + input.Replace("\"", "\\\"") + "\"";
+			return new StringLiteralToken(Boundary) { Name = Name };
 		}
 		public object EvalValue(Func<string, object> context) {
 			StringBuilder sb = new StringBuilder();

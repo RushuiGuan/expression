@@ -14,14 +14,15 @@ using Albatross.Expression.Operations;
 namespace Albatross.Expression {
 	public class Parser : IParser {
 		public IToken VariableToken() { return _variableToken.Clone(); }
-		public IToken StringLiteralToken() { return _stringToken.Clone(); }
+		public IStringLiteralToken StringLiteralToken() { return (IStringLiteralToken)_stringToken.Clone(); }
 
 		public IEnumerable<PrefixOperationToken> PrefixOperationTokens { get { return _prefixOperationTokens; } }
 		public IEnumerable<InfixOperationToken> InfixOperationTokens { get { return _infixOperationTokens; } }
 
 		List<PrefixOperationToken> _prefixOperationTokens = new List<PrefixOperationToken>();
 		List<InfixOperationToken> _infixOperationTokens = new List<InfixOperationToken>();
-		IToken _variableToken, _stringToken;
+		IToken _variableToken;
+		IStringLiteralToken _stringToken;
 
 		public Parser() {
 			_prefixOperationTokens.Clear();
@@ -46,7 +47,7 @@ namespace Albatross.Expression {
 			return this;
 		}
 
-		public IParser SetStringLiteralToken(IToken token){
+		public IParser SetStringLiteralToken(IStringLiteralToken token){
 			_stringToken = token;
 			return this;
 		}

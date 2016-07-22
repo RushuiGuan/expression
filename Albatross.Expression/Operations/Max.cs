@@ -24,11 +24,11 @@ namespace Albatross.Expression.Operations {
 			if (type == null) {
 				return null;
 			} else if (type == typeof(double)) {
-				return Utils.GetMax<double>(list);
+				return ParserUtils.GetMax<double>(list);
 			} else if (type == typeof(DateTime)) {
-				return Utils.GetMax<DateTime>(list);
+				return ParserUtils.GetMax<DateTime>(list);
 			} else if (type == typeof(string)) {
-				return Utils.GetMaxString(list);
+				return ParserUtils.GetMaxString(list);
 			} else {
 				throw new UnexpectedTypeException(type);
 			}

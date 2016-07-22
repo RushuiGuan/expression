@@ -14,7 +14,7 @@ namespace Albatross.Expression.Operations {
 
 		public override object EvalValue(Func<string, object> context) {
 			object value = Operands.First().EvalValue(context);
-			return !Utils.GetLogicalValue(value);
+			return !ParserUtils.GetLogicalValue(value);
 		}
 	}
 }

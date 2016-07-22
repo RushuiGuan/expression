@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression {
-	public static class Utils {
+	public static class ParserUtils {
 		public static Stack<T> Reverse<T>(this Stack<T> src) {
 			Stack<T> dst = new Stack<T>();
 			while (src.Count > 0) {
@@ -122,6 +122,18 @@ namespace Albatross.Expression {
 			} else {
 				return false;
 			}
+		}
+
+		public static StringBuilder ConcatenateText(this StringBuilder sb, char delimiter, string text) {
+			if (sb == null) { sb = new StringBuilder(); } else { sb.Append("+"); }
+			text = text.Replace(delimiter.ToString(), $"\\{delimiter}");
+			sb.Append($"{delimiter}{text}{delimiter}");
+			return sb;
+		}
+		public static StringBuilder ConcatenateExpression(this StringBuilder sb, string expression) {
+			if (sb == null) { sb = new StringBuilder(); } else { sb.Append("+"); }
+			sb.Append($"{expression}");
+			return sb;
 		}
 	}
 }

@@ -15,9 +15,9 @@ namespace Albatross.Expression {
 		IToken Compile(string expression);
 		
 		IToken VariableToken();
-		IToken StringLiteralToken();
+		IStringLiteralToken StringLiteralToken();
 
 		IParser SetVariableToken(IToken token);
-		IParser SetStringLiteralToken(IToken token);
+		IParser SetStringLiteralToken(IStringLiteralToken token);
 	}
 }

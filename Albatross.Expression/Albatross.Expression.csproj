@@ -121,13 +121,14 @@
     <Compile Include="Tokens\ControlToken.cs" />
     <Compile Include="Tokens\BooleanLiteralToken.cs" />
     <Compile Include="Tokens\IOperandToken.cs" />
+    <Compile Include="Tokens\IStringLiteralToken.cs" />
     <Compile Include="Tokens\PrefixOperationToken.cs" />
     <Compile Include="Tokens\VariableToken.cs" />
     <Compile Include="Tokens\InfixOperationToken.cs" />
     <Compile Include="Tokens\StringLiteralToken.cs" />
     <Compile Include="Tokens\NumericLiteralToken.cs" />
     <Compile Include="Exceptions\TokenParsingException.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="ParserUtils.cs" />
     <Compile Include="Tokens\IToken.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

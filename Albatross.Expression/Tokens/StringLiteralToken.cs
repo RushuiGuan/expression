@@ -10,7 +10,7 @@ namespace Albatross.Expression.Tokens {
 	/// will take any string literal enclosed by double quotes.  use back slash to escape.  
 	/// Check the GetStringEscape function for escapable chars
 	/// </summary>
-	public class StringLiteralToken : IOperandToken {
+	public class StringLiteralToken : IOperandToken, IStringLiteralToken {
 		public const char DoubleQuote = '"';
 		public const char EscapeChar = '\\';
 
@@ -41,7 +41,7 @@ namespace Albatross.Expression.Tokens {
 						escaped = !escaped && c == EscapeChar;
 					}
 					if (!closed) {
-						throw new TokenParsingException("missing closing quote");
+						throw new TokenParsingException("missing closing boundary");
 					} else {
 						next = i + 1;
 						Name = sb.ToString();

@@ -22,11 +22,11 @@ namespace Albatross.Expression.Operations {
 			if (type == null) {
 				return null;
 			}else if (type == typeof(double)) {
-				return Utils.GetMin<double>(items);
+				return ParserUtils.GetMin<double>(items);
 			} else if (type == typeof(DateTime)) {
-				return Utils.GetMin<DateTime>(items);
+				return ParserUtils.GetMin<DateTime>(items);
 			} else if (type == typeof(string)) {
-				return Utils.GetMinString(items);
+				return ParserUtils.GetMinString(items);
 			} else {
 				throw new UnexpectedTypeException(type);
 			}

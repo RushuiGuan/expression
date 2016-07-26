@@ -42,12 +42,12 @@ namespace Albatross.Expression {
 			return this;
 		}
 
-		public IParser SetVariableToken(IToken token){
+		public IParser SetVariableToken(IToken token) {
 			_variableToken = token;
 			return this;
 		}
 
-		public IParser SetStringLiteralToken(IStringLiteralToken token){
+		public IParser SetStringLiteralToken(IStringLiteralToken token) {
 			_stringToken = token;
 			return this;
 		}
@@ -98,7 +98,18 @@ namespace Albatross.Expression {
 			}
 			return tokens;
 		}
-		
+		public bool IsValidExpression(string exp) {
+			if (string.IsNullOrWhiteSpace(exp)) {
+				return false;
+			} else {
+				try {
+					Tokenize(exp);
+					return true;
+				} catch {
+					return false;
+				}
+			}
+		}
 		public Stack<IToken> BuildStack(Queue<IToken> queue) {
 			IToken token;
 			Stack<IToken> postfix = new Stack<IToken>();

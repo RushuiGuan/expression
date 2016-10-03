@@ -41,7 +41,6 @@ namespace Albatross.Expression {
 			}
 			return this;
 		}
-
 		public IParser SetVariableToken(IToken token) {
 			_variableToken = token;
 			return this;

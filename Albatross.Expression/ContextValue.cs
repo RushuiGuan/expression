@@ -30,7 +30,7 @@ namespace Albatross.Expression {
 					throw new CircularReferenceException(dependee, string.IsNullOrEmpty(Name) ? Convert.ToString(Value) : Name);
 				}
 				ContextValue value;
-				if (context.TryGetContext(dependee, input, out value) && value.ContextType == Expression.ContextType.Expression) {
+				if (context.TryGetContext(dependee, input, out value) && value.ContextType == Albatross.Expression.ContextType.Expression) {
 					ISet<string> newChain = context.NewSet();
 					newChain.AddRange(chain).Add(dependee);
 					if (value.Tree == null) {
@@ -42,7 +42,7 @@ namespace Albatross.Expression {
 		}
 
 		public object GetValue(IParser parser, ExecutionContext context, object input) {
-			if (ContextType == Expression.ContextType.Expression) {
+			if (ContextType == Albatross.Expression.ContextType.Expression) {
 				ISet<string> chain = context.NewSet();
 				if (!string.IsNullOrEmpty(Name)) { chain.Add(Name); }
 

@@ -9,6 +9,7 @@ using System.Text;
 
 namespace Albatross.Expression.Test {
 	[TestFixture]
+	[Category("Expression")]
 	public class ParserTests {
 		//logical
 		[TestCase("true and 1", ExpectedResult = true)]

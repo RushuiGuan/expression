@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Test.ps1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj">

@@ -48,6 +48,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("1<>1", ExpectedResult = false)]
 		[TestCase("1<>2", ExpectedResult = true)]
 		[TestCase("1<>null", ExpectedResult = false)]
+		[TestCase("1+2<1+3", ExpectedResult = true)]
 
 		[TestCase("if(1, 1, 2)", ExpectedResult = 1)]
 		[TestCase("if(0, 1, 2)", ExpectedResult = 2)]

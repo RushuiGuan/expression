@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
+using System.Collections;
 
 namespace Albatross.Expression {
 	public class ExecutionContext : IExecutionContext {
@@ -165,6 +166,14 @@ namespace Albatross.Expression {
 					GetDependants(dependent, dependents);
 				}
 			}
+		}
+
+		public IEnumerator<ContextValue> GetEnumerator() {
+			return Store.Values.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator() {
+			return Store.Values.GetEnumerator();
 		}
 	}
 }

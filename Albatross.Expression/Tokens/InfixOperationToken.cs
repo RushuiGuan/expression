@@ -11,11 +11,6 @@ namespace Albatross.Expression.Tokens {
 		public abstract bool Symbolic { get;}
 		public abstract int Precedence { get;}
 
-		public string Group { get; private set; }
-		public string ClassName { get; private set; }
-        public string Definition { get; private set; }
-        public string Example { get; private set; }
-
 		public virtual bool Match(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {

@@ -19,10 +19,6 @@ namespace Albatross.Expression.Tokens {
 		public abstract bool Symbolic { get; }
 		public abstract int MinOperandCount { get; }
 		public abstract int MaxOperandCount {get;}
-		public string Group { get; protected set; }
-		public string ClassName { get; protected set; }
-		public string Definition { get; protected set; }
-		public string Example { get; protected set; }
 
 		public List<IToken> Operands { get; private set; }
 

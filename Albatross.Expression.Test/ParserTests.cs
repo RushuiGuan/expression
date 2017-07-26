@@ -1,4 +1,5 @@
 ﻿using Albatross.Expression.Exceptions;
+using Albatross.Expression.Operations;
 using Albatross.Expression.Tokens;
 using NUnit.Framework;
 using System;
@@ -118,7 +119,52 @@ namespace Albatross.Expression.Test {
 		[TestCase("len(\"abc\")", ExpectedResult = 3)]
 
 		public object OperationsTesting(string expression) {
-			return Parser.GetParser().Compile(expression).EvalValue(null);
+			return GetParser().Compile(expression).EvalValue(null);
+		}
+
+		IParser GetParser() {
+			IEnumerable<IToken> operations = new IToken[] {
+				new And(),
+				new Albatross.Expression.Operations.Array(),
+				new Avg(),
+				new Coalesce(),
+				new CurrentUser(),
+				new CurrentMachine(),
+				new CurrentApp(),
+				new Divide(),
+				new Equal(),
+				new Format(),
+				new GreaterEqual(),
+				new GreaterThan(),
+				new If(),
+				new IsBlank(),
+				new LessEqual(),
+				new LessThan(),
+				new Len(),
+				new Max(),
+				new Min(),
+				new Minus(),
+				new Mod(),
+				new Month(),
+				new MonthName(),
+				new Multiply(),
+				new Negative(),
+				new Not(),
+				new NotEqual(),
+				new Now(),
+				new Or(),
+				new PadLeft(),
+				new PadRight(),
+				new Plus(),
+				new Positive(),
+				new Power(),
+				new ShortMonthName(),
+				new Text(),
+				new Today(),
+				new Year(),
+				new Date(),
+			};
+			return new Parser(operations);
 		}
 
 		[TestCase("1+ 2/2", ExpectedResult = 2)]
@@ -136,7 +182,7 @@ namespace Albatross.Expression.Test {
 
 		[TestCase("10+avg(@(1,2,3,4))", ExpectedResult=12.5)]
 		public object PrecedenceTesting(string expression) {
-			IParser parser = Parser.GetParser();
+			IParser parser = GetParser();
 			IToken token = parser.Compile(expression);
 			return token.EvalValue(null);
 		}
@@ -149,7 +195,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("len(today())", typeof(UnexpectedTypeException))]
 		public void ParsingFailure(string expression, Type errType) {
 			TestDelegate handler = new TestDelegate(()=>{
-				IParser parser = Parser.GetParser();
+				IParser parser = GetParser();
 				IToken token = parser.Compile(expression);
 				token.EvalValue(null);
 			});
@@ -185,7 +231,7 @@ namespace Albatross.Expression.Test {
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
 		public void CircularReferenceTesting1(ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
-				ExecutionContext context = new ExecutionContext(Parser.GetParser());
+				ExecutionContext context = new ExecutionContext(GetParser());
 				foreach (ContextValue value in values) {
 					context.Set(value);
 				}
@@ -197,7 +243,7 @@ namespace Albatross.Expression.Test {
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
 		public void CircularReferenceTesting2(ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
-				ExecutionContext context = new ExecutionContext(Parser.GetParser());
+				ExecutionContext context = new ExecutionContext(GetParser());
 				foreach (ContextValue value in values) {
 					context.Set(value);
 				}
@@ -249,7 +295,7 @@ namespace Albatross.Expression.Test {
 				}
 			}
 
-			ExecutionContext context = new ExecutionContext(Parser.GetParser()) { CacheExternalValue = caching, };
+			ExecutionContext context = new ExecutionContext(GetParser()) { CacheExternalValue = caching, };
 			context.TryGetExternalData = new TryGetValueDelegate((string name, object input, out object value) => {
 				if (input is IDictionary<string, object>) {
 					return ((IDictionary<string, object>)input).TryGetValue(name, out value);
@@ -283,7 +329,7 @@ namespace Albatross.Expression.Test {
 					}
 				}
 
-				ExecutionContext context = new ExecutionContext(Parser.GetParser()) { CacheExternalValue = caching, };
+				ExecutionContext context = new ExecutionContext(GetParser()) { CacheExternalValue = caching, };
 				context.TryGetExternalData = new TryGetValueDelegate((string name, object input, out object value) => {
 					if (input is IDictionary<string, object>) {
 						return ((IDictionary<string, object>)input).TryGetValue(name, out value);

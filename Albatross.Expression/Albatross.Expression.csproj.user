@@ -8,4 +8,13 @@
     <StartWorkingDirectory>
     </StartWorkingDirectory>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Azure|AnyCPU'">
+    <StartProgram>C:\Workspace\github\albatross\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureAD|AnyCPU'">
+    <StartProgram>C:\Workspace\github\albatross\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugAzure|AnyCPU'">
+    <StartProgram>C:\Workspace\github\albatross\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
+  </PropertyGroup>
 </Project>

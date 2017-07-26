@@ -24,11 +24,14 @@ namespace Albatross.Expression {
 		IToken _variableToken;
 		IStringLiteralToken _stringToken;
 
-		public Parser() {
+		public Parser(IEnumerable<IToken> operations) {
 			_prefixOperationTokens.Clear();
 			_infixOperationTokens.Clear();
 			_variableToken = new VariableToken();
 			_stringToken = new StringLiteralToken();
+			foreach (var item in operations) {
+				Add(item);
+			}
 		}
 
 		public IParser Add(IToken token) {
@@ -209,51 +212,6 @@ namespace Albatross.Expression {
 			Queue<IToken> queue = Tokenize(expression);
 			Stack<IToken> stack = BuildStack(queue);
 			return CreateTree(stack);
-		}
-		public static IParser GetParser(IParser parser = null) {
-			if (parser == null) {
-				parser = new Parser();
-			}
-			return parser
-				.Add(new And())
-				.Add(new Albatross.Expression.Operations.Array())
-				.Add(new Avg())
-				.Add(new Coalesce())
-				.Add(new CurrentUser())
-				.Add(new CurrentMachine())
-				.Add(new CurrentApp())
-				.Add(new Divide())
-				.Add(new Equal())
-				.Add(new Format())
-				.Add(new GreaterEqual())
-				.Add(new GreaterThan())
-				.Add(new If())
-				.Add(new IsBlank())
-				.Add(new LessEqual())
-				.Add(new LessThan())
-				.Add(new Len())
-				.Add(new Max())
-				.Add(new Min())
-				.Add(new Minus())
-				.Add(new Mod())
-				.Add(new Month())
-				.Add(new MonthName())
-				.Add(new Multiply())
-				.Add(new Negative())
-				.Add(new Not())
-				.Add(new NotEqual())
-				.Add(new Now())
-				.Add(new Or())
-				.Add(new PadLeft())
-				.Add(new PadRight())
-				.Add(new Plus())
-				.Add(new Positive())
-				.Add(new Power())
-				.Add(new ShortMonthName())
-				.Add(new Text())
-				.Add(new Today())
-				.Add(new Year())
-				.Add(new Date());
 		}
 	}
 }

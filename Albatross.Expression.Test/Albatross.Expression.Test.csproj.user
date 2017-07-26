@@ -6,4 +6,22 @@
     <StartArguments>Albatross.Expression.Test.csproj --inprocess  --where:cat=focus</StartArguments>
     <StartWorkingDirectory>C:\Workspace\github\expression\Albatross.Expression.Test\</StartWorkingDirectory>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Azure|AnyCPU'">
+    <StartProgram>C:\Workspace\github\expression\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
+    <StartWorkingDirectory>C:\Workspace\github\expression\Albatross.Expression.Test\</StartWorkingDirectory>
+    <StartArguments>Albatross.Expression.Test.csproj --inprocess  --where:cat=focus</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureAD|AnyCPU'">
+    <StartProgram>C:\Workspace\github\expression\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
+    <StartWorkingDirectory>C:\Workspace\github\expression\Albatross.Expression.Test\</StartWorkingDirectory>
+    <StartArguments>Albatross.Expression.Test.csproj --inprocess  --where:cat=focus</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugAzure|AnyCPU'">
+    <StartProgram>C:\Workspace\github\expression\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe</StartProgram>
+    <StartWorkingDirectory>C:\Workspace\github\expression\Albatross.Expression.Test\</StartWorkingDirectory>
+    <StartArguments>Albatross.Expression.Test.csproj --inprocess  --where:cat=focus</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
 </Project>

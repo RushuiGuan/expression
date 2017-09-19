@@ -10,6 +10,7 @@ using System.Runtime.Serialization;
 namespace Albatross.Expression {
 	public delegate bool TryGetValueDelegate(string name, object input, out object value);
 	public interface IExecutionContext:IEnumerable<ContextValue> {
+		bool CaseSensitive { get; }
 		TryGetValueDelegate TryGetExternalData { get; set; }
 		IParser Parser { get; }
 		bool CacheExternalValue { get; set; }

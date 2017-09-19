@@ -12,19 +12,23 @@ namespace Albatross.Expression {
 	public class ExecutionContext : IExecutionContext {
 		public Dictionary<string, ContextValue> Store { get; private set; }
 		public IDictionary<string, HashSet<string>> Dependencies { get; private set; }
-		public bool CaseSensitive { get; private set; }
+
+		readonly bool _caseSensitive;
+		public bool CaseSensitive => _caseSensitive;
+
 		public bool Compiled { get; private set; }
 		public bool CacheExternalValue { get; set; }
 		public TryGetValueDelegate TryGetExternalData { get; set; }
 		public IParser Parser { get; private set; }
 
+
 		Dictionary<string, ContextValue> _evalStacks = new Dictionary<string, ContextValue>();
 
-		public ExecutionContext(IParser parser) {
+		public ExecutionContext(IParser parser, bool caseSensitive) {
 			Parser = parser;
-			CaseSensitive = false;
-			Store = CaseSensitive ? new Dictionary<string, ContextValue>() : new Dictionary<string, ContextValue>(StringComparer.InvariantCultureIgnoreCase);
-			Dependencies = CaseSensitive ? new Dictionary<string, HashSet<string>>() : new Dictionary<string, HashSet<string>>(StringComparer.InvariantCultureIgnoreCase);
+			_caseSensitive = caseSensitive;
+			Store = caseSensitive ? new Dictionary<string, ContextValue>() : new Dictionary<string, ContextValue>(StringComparer.InvariantCultureIgnoreCase);
+			Dependencies = caseSensitive ? new Dictionary<string, HashSet<string>>() : new Dictionary<string, HashSet<string>>(StringComparer.InvariantCultureIgnoreCase);
 		}
 		public void Clear() {
 			Store.Clear();

@@ -231,7 +231,7 @@ namespace Albatross.Expression.Test {
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
 		public void CircularReferenceTesting1(ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
-				ExecutionContext context = new ExecutionContext(GetParser());
+				ExecutionContext context = new ExecutionContext(GetParser(), false);
 				foreach (ContextValue value in values) {
 					context.Set(value);
 				}
@@ -243,7 +243,7 @@ namespace Albatross.Expression.Test {
 		[TestCaseSource(typeof(CircularReferenceTestCase))]
 		public void CircularReferenceTesting2(ContextValue[] values) {
 			TestDelegate handle = new TestDelegate(() => {
-				ExecutionContext context = new ExecutionContext(GetParser());
+				ExecutionContext context = new ExecutionContext(GetParser(), false);
 				foreach (ContextValue value in values) {
 					context.Set(value);
 				}
@@ -295,7 +295,7 @@ namespace Albatross.Expression.Test {
 				}
 			}
 
-			ExecutionContext context = new ExecutionContext(GetParser()) { CacheExternalValue = caching, };
+			ExecutionContext context = new ExecutionContext(GetParser(), false) { CacheExternalValue = caching, };
 			context.TryGetExternalData = new TryGetValueDelegate((string name, object input, out object value) => {
 				if (input is IDictionary<string, object>) {
 					return ((IDictionary<string, object>)input).TryGetValue(name, out value);
@@ -329,7 +329,7 @@ namespace Albatross.Expression.Test {
 					}
 				}
 
-				ExecutionContext context = new ExecutionContext(GetParser()) { CacheExternalValue = caching, };
+				ExecutionContext context = new ExecutionContext(GetParser(), false) { CacheExternalValue = caching, };
 				context.TryGetExternalData = new TryGetValueDelegate((string name, object input, out object value) => {
 					if (input is IDictionary<string, object>) {
 						return ((IDictionary<string, object>)input).TryGetValue(name, out value);

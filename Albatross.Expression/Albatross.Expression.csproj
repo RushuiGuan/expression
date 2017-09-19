@@ -116,6 +116,8 @@
     <Compile Include="Exceptions\UnexpectedTypeException.cs" />
     <Compile Include="Exceptions\StackException.cs" />
     <Compile Include="ExecutionContext.cs" />
+    <Compile Include="ExecutionContextFactory.cs" />
+    <Compile Include="IExecutionContextFactory.cs" />
     <Compile Include="IParser.cs" />
     <Compile Include="Operations\ComparisonInfixOperation.cs" />
     <Compile Include="Operations\Avg.cs" />

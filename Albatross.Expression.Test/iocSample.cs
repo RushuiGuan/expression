@@ -65,14 +65,15 @@ namespace Albatross.Expression.Test {
 					typeof(Date),
 				}
 			);
-			//register parser and the execution context concrete class
+			//register parser and the execution context factory class
 			_container.Register<IParser, Parser>();
-			_container.Register<IExecutionContext, ExecutionContext>();
+			_container.Register<IExecutionContextFactory, ExecutionContextFactory>();
 		}
 
 		[Test]
 		public void Test() {
-			IExecutionContext context = _container.GetInstance<IExecutionContext>();
+			IExecutionContextFactory factory = _container.GetInstance<IExecutionContextFactory>();
+			IExecutionContext context = factory.Create(false);
 			object result = context.Eval("1+1", null, typeof(int));
 			Assert.AreEqual(result, 2);
 

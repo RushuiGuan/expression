@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression {
-	public class ExecutionContextFactory {
+	public class ExecutionContextFactory : IExecutionContextFactory {
 		IParser _parser;
 
 		public ExecutionContextFactory(IParser parser) {

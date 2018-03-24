@@ -1,0 +1,12 @@
+﻿apiRules:
+- exclude:
+    uidRegex: ^System\.Object
+    type: Type
+
+- exclude:
+    uidRegex: ^System\.Attribute
+    type: Type
+
+- exclude:
+    uidRegex: ^System\.Management\.Automation
+    type: Namespace

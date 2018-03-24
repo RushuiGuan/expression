@@ -1,0 +1,1028 @@
+{
+  "homepages": [],
+  "source_base_path": "c:/Workspace/GitHub/expression/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.ContextType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.ContextType.html",
+          "hash": "dBucxinbZii3DTKqOFEFhw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.ContextValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.ContextValue.html",
+          "hash": "C543i4Q/O6tb473NbD85+Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Exceptions.CircularReferenceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Exceptions.CircularReferenceException.html",
+          "hash": "zVYCdjGmQBu2cwIWiQwo7A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Exceptions.InputNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Exceptions.InputNotFoundException.html",
+          "hash": "Gzl/YjKQax4r9PSvahm1fQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Exceptions.OperandException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Exceptions.OperandException.html",
+          "hash": "L2GA9X2j3vsimKgDH5e/iA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Exceptions.StackException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Exceptions.StackException.html",
+          "hash": "X/49nw4HzZxAltQ5hbqitQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Exceptions.TokenParsingException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Exceptions.TokenParsingException.html",
+          "hash": "wh06o+rhdSn2L+Y/5iUTaA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Exceptions.UnexpectedTypeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Exceptions.UnexpectedTypeException.html",
+          "hash": "HZpLneJ6EzuEGGyArhSkag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Exceptions.html",
+          "hash": "0EmEyokh31NLCgaIccrbTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.ExecutionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.ExecutionContext.html",
+          "hash": "4Old7JA+tcmcj3oavkm7OA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.ExecutionContextFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.ExecutionContextFactory.html",
+          "hash": "thWIjPJih2a2NYQDO1mvnA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.ExpressionBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.ExpressionBuilder.html",
+          "hash": "lyk0gZmruaJBroz57XoyVA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.IExecutionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.IExecutionContext.html",
+          "hash": "hcW2m749Z2c7meqJ5mfQuQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.IExecutionContextFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.IExecutionContextFactory.html",
+          "hash": "0oWZ+idxEpg+LNhabZN3iw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.IParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.IParser.html",
+          "hash": "XutD6BDRyOhesy2upEc9ig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.And.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.And.html",
+          "hash": "Q+GWkQrrGJ9bq4/jNqRF0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Array.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Array.html",
+          "hash": "YoBKfr886aADGFu+UGVb3A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Avg.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Avg.html",
+          "hash": "Q0pgI2EowOQgfglc+IMNbw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Coalesce.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Coalesce.html",
+          "hash": "jZbsbL6t4TKosYdA6r2g/A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.ComparisonInfixOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.ComparisonInfixOperation.html",
+          "hash": "Rh98ZQDUHbQS7CgR80iNmQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.CurrentApp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.CurrentApp.html",
+          "hash": "89FGT+4+H/0OxPMQUZphpQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.CurrentMachine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.CurrentMachine.html",
+          "hash": "7f2gtJcpntOWMDPizXl95w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.CurrentUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.CurrentUser.html",
+          "hash": "KJufpz0fQGG7AQlKQ4DWgA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Date.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Date.html",
+          "hash": "kZNqp5PyLhHctVvqIqzQgg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Divide.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Divide.html",
+          "hash": "Upf/narOoAE7YjoBR+Qt2A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Equal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Equal.html",
+          "hash": "2czhwwmWyrNMfAnzjGpEHw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Format.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Format.html",
+          "hash": "FuncNGBuwDQvyzOroaOP9A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.GreaterEqual.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.GreaterEqual.html",
+          "hash": "cTcEaLHPGIrU0xpyDtjeHw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.GreaterThan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.GreaterThan.html",
+          "hash": "Hu0VPOIwC6HByeq5O9KdqQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.If.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.If.html",
+          "hash": "gb/yHlHBOej99uuIbK//2w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.IsBlank.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.IsBlank.html",
+          "hash": "XJcS80+L5SlaXiZ0gHC0Pg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Len.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Len.html",
+          "hash": "vvWLRtgTN6Oguqun4KpeWA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.LessEqual.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.LessEqual.html",
+          "hash": "VBviVwQP1FUtvWU4WFHOHQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.LessThan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.LessThan.html",
+          "hash": "mTqaMMNQlcQPEcIqB0na1A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Max.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Max.html",
+          "hash": "7j7J/p26jolBr14BEzOUSw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Min.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Min.html",
+          "hash": "7gOlwDg0kJGHpvoApBnbOA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Minus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Minus.html",
+          "hash": "tteQmE0Ha34Bqs5zF9Y+Eg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Mod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Mod.html",
+          "hash": "IvcZQ9+2+GrdsG0LnzKHpg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Month.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Month.html",
+          "hash": "0RbLJ223CcUtgGKkHLAdow=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.MonthName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.MonthName.html",
+          "hash": "28OM7c8yV2eyciwXbf+weg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Multiply.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Multiply.html",
+          "hash": "6CiMpcTdrkSB7Ebc+dAoFw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Negative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Negative.html",
+          "hash": "QBgZsYtt1mGh56U6CGANIw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Not.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Not.html",
+          "hash": "UaYkUahITP1z9s222+02iQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.NotEqual.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.NotEqual.html",
+          "hash": "aTfxc7qdx10V9XK5iEam5A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Now.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Now.html",
+          "hash": "pWxZuWBvo2/7BDfYZjFXKw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Or.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Or.html",
+          "hash": "cM49cVhaC0+K5gVWxymbUg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.PadLeft.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.PadLeft.html",
+          "hash": "6E8EhvY9ezMQRmzBZoON6w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.PadRight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.PadRight.html",
+          "hash": "xG2rLkmtyOyNH682n/SzQg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Plus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Plus.html",
+          "hash": "GBtpVsu9AGdOg8X/VfJegA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Positive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Positive.html",
+          "hash": "UTmlxO43Ib1dERVwYNbgeA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Power.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Power.html",
+          "hash": "27QcomX+CRSB2ettniFNag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.ShortMonthName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.ShortMonthName.html",
+          "hash": "uCRNGYsxfx1kQceUyc2qBg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Text.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Text.html",
+          "hash": "PK5lBKqfWU2ckhrIcTGw7g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Today.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Today.html",
+          "hash": "pTr97BP+fC8dlMA4YPotGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.Year.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.Year.html",
+          "hash": "Dz6lRuqcX/B45LOIlObYpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Operations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Operations.html",
+          "hash": "mGgLemojAR3tSZt6HTbmnQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Parser.html",
+          "hash": "Q03Vpi5UrRwCa/7UTXKelg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.ParserUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.ParserUtils.html",
+          "hash": "XEjDGXSH+/O4qOcieX1xYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.html",
+          "hash": "r3IHmKH/ghyrqfui82A5Uw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Test.ParserTests.ExternalValueTestCase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Test.ParserTests.ExternalValueTestCase.html",
+          "hash": "pergrrIby1WTUATLtBkYVw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Test.ParserTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Test.ParserTests.html",
+          "hash": "amnxZ6In8bjNLLTps4yiyQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Test.iocSample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Test.iocSample.html",
+          "hash": "EOwxVclo+pybp17fWyhDOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Test.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Test.html",
+          "hash": "AFVkfB3GgUcZn382sn0R+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.BooleanLiteralToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.BooleanLiteralToken.html",
+          "hash": "UmCQkyxaVmOuFSi8X5r6Qg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.ControlToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.ControlToken.html",
+          "hash": "POJJlh03eDHKIc9jAZ/QOQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.IOperandToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.IOperandToken.html",
+          "hash": "xMGeKYVrNNIk6JwKrqEZhw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.IStringLiteralToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.IStringLiteralToken.html",
+          "hash": "+zJfEqXhzIOCQBaoF3duFA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.IToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.IToken.html",
+          "hash": "TvKH/xKt/EYO+DN//tN5Nw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.InfixOperationToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.InfixOperationToken.html",
+          "hash": "ZWGgxEKRi5eLLv/uQxahNQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.NumericLiteralToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.NumericLiteralToken.html",
+          "hash": "8IOEubYzUNv8bu9ojnlSAw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.PrefixOperationToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.PrefixOperationToken.html",
+          "hash": "M/DgUTo81Rh/P6DmWmsRPw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.StringLiteralToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.StringLiteralToken.html",
+          "hash": "2v8vlLqp1g+YjqMPXF8/WA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.VariableToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.VariableToken.html",
+          "hash": "5sLSmdABMHXucBg34QHE8Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.Tokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.Tokens.html",
+          "hash": "8THcmXzHFvHGno1IIm1lag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.TryGetValueDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.TryGetValueDelegate.html",
+          "hash": "9pkFTkSbRcgwshcYLEuFww=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Albatross.Expression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Albatross.Expression.html",
+          "hash": "3wjCxAjR20ZAHLawr3+zJQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "AuuIYvN6RDI4UmgYbssBKQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "mltCJB/cAfCqHSiL176O7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "VWdkmt9JVaE9RUO1bjm9Mg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "xVlQaX7Tk85omoiWv3O+Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "240JX48/HFZWF5zyd93AYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "zUEcqxeC8MmPdFio0fKEQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

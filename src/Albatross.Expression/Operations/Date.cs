@@ -6,6 +6,7 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class Date : PrefixOperationToken {
 		public override string Name { get { return "date"; } }
 		public override int MinOperandCount { get { return 1; } }

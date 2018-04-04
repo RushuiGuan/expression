@@ -9,6 +9,7 @@ using Albatross.Expression.Exceptions;
 using System.Globalization;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class Text : PrefixOperationToken {
 
 		public override string Name { get { return "Text"; } }

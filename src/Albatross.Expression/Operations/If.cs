@@ -8,6 +8,7 @@ using Albatross.Expression.Exceptions;
 
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class If : PrefixOperationToken {
 
 		public override string Name { get { return "If"; } }

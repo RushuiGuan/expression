@@ -6,6 +6,12 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Concrete class with implentation for the infix AND operation.
+	/// Usage: 3 > 2 and 2 > 1
+	/// The operation has a precedence of 300.  It is less than 
+	/// </summary>
+	[ParserOperation]
 	public class And : InfixOperationToken {
 
 		public override string Name { get { return "and"; } }

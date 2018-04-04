@@ -8,6 +8,7 @@ using Albatross.Expression.Exceptions;
 using System.Collections;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class Max : PrefixOperationToken {
 		
 		public override string Name { get { return "max"; } }

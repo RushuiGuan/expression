@@ -9,6 +9,7 @@ using System.Collections;
 
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class Len : PrefixOperationToken {
 
 		public override string Name { get { return "len"; } }

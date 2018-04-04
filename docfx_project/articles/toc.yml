@@ -1,2 +1,6 @@
-- name: Introduction
+- name: Intro
   href: intro.md
+- name: Execution Context
+  href: ExecutionContext.md
+- name: Custom Operation
+  href: CustomOperation.md

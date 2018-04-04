@@ -14,27 +14,14 @@ namespace Albatross.Expression {
 			}
 			return dst;
 		}
-		public static bool IsNumeric(object obj) {
-			return obj is sbyte || obj is byte
-				|| obj is ushort || obj is short
-				|| obj is uint || obj is int
-				|| obj is ulong || obj is long
-				|| obj is float
-				|| obj is decimal
-				|| obj is double;
-		}
-		public static bool IsInteger(object obj) {
-			return obj is sbyte || obj is byte
-				|| obj is ushort || obj is short
-				|| obj is uint || obj is int
-				|| obj is ulong || obj is long;
-		}
+
 		public static ISet<T> AddRange<T>(this ISet<T> set, IEnumerable<T> range) {
 			foreach (T t in range) {
 				set.Add(t);
 			}
 			return set;
 		}
+
 		public static object GetMax<T>(IEnumerable list) where T : struct {
 			T? t = null;
 			try {
@@ -58,6 +45,7 @@ namespace Albatross.Expression {
 				return null;
 			}
 		}
+
 		public static object GetMaxString(IEnumerable list) {
 			string max = null, item;
 			foreach (object obj in list) {
@@ -72,6 +60,7 @@ namespace Albatross.Expression {
 			}
 			return max;
 		}
+
 		public static object GetMin<T>(IEnumerable list) where T : struct {
 			T? t = null;
 			try {
@@ -95,6 +84,7 @@ namespace Albatross.Expression {
 				return null;
 			}
 		}
+
 		public static object GetMinString(IEnumerable list) {
 			string max = null, item;
 			foreach (object obj in list) {
@@ -109,6 +99,7 @@ namespace Albatross.Expression {
 			}
 			return max;
 		}
+
 		public static bool GetLogicalValue(object obj) {
 			if (obj != null) {
 				if (obj is double) {

@@ -67,6 +67,8 @@ namespace Albatross.Expression.Test {
 			);
 			//register parser and the execution context factory class
 			_container.Register<IParser, Parser>();
+			_container.Register<IVariableToken, VariableToken>();
+			_container.Register<IStringLiteralToken, StringLiteralToken>();
 			_container.Register<IExecutionContextFactory, ExecutionContextFactory>();
 		}
 

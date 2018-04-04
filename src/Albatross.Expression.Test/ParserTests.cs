@@ -53,7 +53,7 @@ namespace Albatross.Expression.Test {
 
 		[TestCase("if(1, 1, 2)", ExpectedResult = 1)]
 		[TestCase("if(0, 1, 2)", ExpectedResult = 2)]
-		[TestCase("if(null, 1, 2)", ExpectedResult = 2)]
+		[TestCase("if(null, 1, 2)", ExpectedResult = 2)]	//null is false when used as logical input value
 
 		//arithmatic
 		[TestCase("2*3", ExpectedResult = 6)]
@@ -118,6 +118,16 @@ namespace Albatross.Expression.Test {
 		[TestCase("len(@(null, 1, 3))", ExpectedResult = 3)]
 		[TestCase("len(\"abc\")", ExpectedResult = 3)]
 
+		[TestCase("left(\"abc\", 2)", ExpectedResult = "ab")]
+		[TestCase("left(\"abc\", 0)", ExpectedResult = "")]
+		[TestCase("left(\"abc\", 3)", ExpectedResult = "abc")]
+		[TestCase("left(\"abc\", 10)", ExpectedResult = "abc")]
+
+		[TestCase("right(\"123456789\", 8)", ExpectedResult = "23456789")]
+		[TestCase("right(\"123456789\", 1)", ExpectedResult = "9")]
+		[TestCase("right(\"123456789\", 0)", ExpectedResult = "")]
+		[TestCase("right(\"123456789\", 9)", ExpectedResult = "123456789")]
+		[TestCase("right(\"123456789\", 100)", ExpectedResult = "123456789")]
 		public object OperationsTesting(string expression) {
 			return GetParser().Compile(expression).EvalValue(null);
 		}
@@ -163,8 +173,10 @@ namespace Albatross.Expression.Test {
 				new Today(),
 				new Year(),
 				new Date(),
+				new Left(),
+				new Right(),
 			};
-			return new Parser(operations);
+			return new Parser(operations, new VariableToken(), new StringLiteralToken());
 		}
 
 		[TestCase("1+ 2/2", ExpectedResult = 2)]
@@ -179,8 +191,9 @@ namespace Albatross.Expression.Test {
 		[TestCase("(1 or 1) and 0", ExpectedResult = false)]
 		[TestCase("1--1", ExpectedResult = 2)]
 		[TestCase("1-+1", ExpectedResult = 0)]
-
 		[TestCase("10+avg(@(1,2,3,4))", ExpectedResult=12.5)]
+		[TestCase("(1 > 2) or (3 > 1)", ExpectedResult = true)]
+		[TestCase("1 + 2> 2 - 1", ExpectedResult = true)]
 		public object PrecedenceTesting(string expression) {
 			IParser parser = GetParser();
 			IToken token = parser.Compile(expression);
@@ -193,6 +206,8 @@ namespace Albatross.Expression.Test {
 		[TestCase("1 + today()", typeof(UnexpectedTypeException))]
 		[TestCase("monthname(today())", typeof(UnexpectedTypeException))]
 		[TestCase("len(today())", typeof(UnexpectedTypeException))]
+		[TestCase("left(1234, -1)", typeof(OperandException))]
+		[TestCase("right(1234, -1)", typeof(OperandException))]
 		public void ParsingFailure(string expression, Type errType) {
 			TestDelegate handler = new TestDelegate(()=>{
 				IParser parser = GetParser();

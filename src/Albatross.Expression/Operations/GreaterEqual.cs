@@ -6,6 +6,7 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class GreaterEqual : ComparisonInfixOperation {
 		
 		public override string Name { get { return ">="; } }

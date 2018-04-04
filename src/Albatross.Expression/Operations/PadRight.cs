@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace Albatross.Expression.Operations {
 	public class PadRight : PrefixOperationToken {
-
+		public const char DefaultPaddingCharacter = ' ';
 		public override string Name { get { return "PadRight"; } }
 		public override int MinOperandCount { get { return 2; } }
 		public override int MaxOperandCount { get { return 3; } }
@@ -30,7 +30,7 @@ namespace Albatross.Expression.Operations {
 			}
 			char paddingChar;
 			if (list.Count == 2 || string.IsNullOrEmpty(Convert.ToString(list[2]))) {
-				paddingChar = ' ';
+				paddingChar = DefaultPaddingCharacter;
 			} else {
 				paddingChar = Convert.ToString(list[2]).First();
 			}

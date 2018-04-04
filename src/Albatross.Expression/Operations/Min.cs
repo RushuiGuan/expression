@@ -8,6 +8,7 @@ using Albatross.Expression.Exceptions;
 using System.Collections;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class Min : PrefixOperationToken {
 
 		public override string Name { get { return "min"; } }

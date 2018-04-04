@@ -7,6 +7,7 @@ using System.Xml;
 using System.Text.RegularExpressions;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class LessThan : ComparisonInfixOperation {
 		const string Pattern = @"^\s*(\<)(?![=\>])";
 		static Regex regex = new Regex(Pattern, RegexOptions.Singleline| RegexOptions.Compiled);

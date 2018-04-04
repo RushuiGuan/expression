@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
-	public class VariableToken : IOperandToken {
+	public class VariableToken : IVariableToken {
 		const string VariableNamePattern = @"^\s*([a-zA-Z_]+\.?[a-zA-Z0-9_]*) \b (?!\s*\() ";
 		static Regex VariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
 

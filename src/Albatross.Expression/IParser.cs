@@ -16,10 +16,6 @@ namespace Albatross.Expression {
 		
 		IToken VariableToken();
 		IStringLiteralToken StringLiteralToken();
-
-		IParser SetVariableToken(IToken token);
-		IParser SetStringLiteralToken(IStringLiteralToken token);
 		bool IsValidExpression(string expression);
-
 	}
 }

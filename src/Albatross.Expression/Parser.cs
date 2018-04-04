@@ -13,22 +13,23 @@ using Albatross.Expression.Operations;
 
 namespace Albatross.Expression {
 	public class Parser : IParser {
-		public IToken VariableToken() { return _variableToken.Clone(); }
-		public IStringLiteralToken StringLiteralToken() { return (IStringLiteralToken)_stringToken.Clone(); }
+		public IToken VariableToken() { return variableToken.Clone(); }
+		public IStringLiteralToken StringLiteralToken() { return (IStringLiteralToken)stringLiteralToken.Clone(); }
 
-		public IEnumerable<PrefixOperationToken> PrefixOperationTokens { get { return _prefixOperationTokens; } }
-		public IEnumerable<InfixOperationToken> InfixOperationTokens { get { return _infixOperationTokens; } }
+		public IEnumerable<PrefixOperationToken> PrefixOperationTokens { get { return prefixOperationTokens; } }
+		public IEnumerable<InfixOperationToken> InfixOperationTokens { get { return infixOperationTokens; } }
 
-		List<PrefixOperationToken> _prefixOperationTokens = new List<PrefixOperationToken>();
-		List<InfixOperationToken> _infixOperationTokens = new List<InfixOperationToken>();
-		IToken _variableToken;
-		IStringLiteralToken _stringToken;
+		List<PrefixOperationToken> prefixOperationTokens = new List<PrefixOperationToken>();
+		List<InfixOperationToken> infixOperationTokens = new List<InfixOperationToken>();
+		IToken variableToken;
+		IStringLiteralToken stringLiteralToken;
 
-		public Parser(IEnumerable<IToken> operations) {
-			_prefixOperationTokens.Clear();
-			_infixOperationTokens.Clear();
-			_variableToken = new VariableToken();
-			_stringToken = new StringLiteralToken();
+		public Parser(IEnumerable<IToken> operations, IVariableToken variableToken, IStringLiteralToken stringLiteralToken) {
+			prefixOperationTokens.Clear();
+			infixOperationTokens.Clear();
+
+			this.variableToken = variableToken;
+			this.stringLiteralToken = stringLiteralToken;
 			foreach (var item in operations) {
 				Add(item);
 			}
@@ -36,25 +37,17 @@ namespace Albatross.Expression {
 
 		public IParser Add(IToken token) {
 			if (token is PrefixOperationToken) {
-				_prefixOperationTokens.Add((PrefixOperationToken)token);
+				prefixOperationTokens.Add((PrefixOperationToken)token);
 			} else if (token is InfixOperationToken) {
-				_infixOperationTokens.Add((InfixOperationToken)token);
+				infixOperationTokens.Add((InfixOperationToken)token);
 			} else {
 				throw new NotSupportedException();
 			}
 			return this;
 		}
-		public IParser SetVariableToken(IToken token) {
-			_variableToken = token;
-			return this;
-		}
-
-		public IParser SetStringLiteralToken(IStringLiteralToken token) {
-			_stringToken = token;
-			return this;
-		}
 
 		//parse an expression and produce queue of tokens
+		//the expression is parse from left to right
 		public Queue<IToken> Tokenize(string expression) {
 			if (string.IsNullOrEmpty(expression)) { throw new ArgumentException(); }
 			Queue<IToken> tokens = new Queue<IToken>();
@@ -67,11 +60,11 @@ namespace Albatross.Expression {
 				last = tokens.Count == 0 ? null : tokens.Last();
 				list = null;
 				if (last == null || last == ControlToken.Comma || (last is PrefixOperationToken && ((PrefixOperationToken)last).Symbolic) || last is InfixOperationToken) {
-					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(_prefixOperationTokens);
+					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
 				} else if (last == ControlToken.LeftParenthesis) {
-					list = new IToken[] { VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(_prefixOperationTokens);
+					list = new IToken[] { VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
 				} else if (last == ControlToken.RightParenthesis || last is IOperandToken) {
-					list = new IToken[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(_infixOperationTokens);
+					list = new IToken[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(infixOperationTokens);
 				} else if (last is PrefixOperationToken && !((PrefixOperationToken)last).Symbolic) {
 					list = new IToken[] { ControlToken.LeftParenthesis };
 				}

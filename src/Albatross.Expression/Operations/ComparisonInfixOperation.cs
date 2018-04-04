@@ -6,6 +6,7 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public abstract class ComparisonInfixOperation : InfixOperationToken {
 
 		public override object EvalValue(Func<string, object> context) {

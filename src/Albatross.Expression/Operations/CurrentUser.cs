@@ -7,6 +7,7 @@ using System.Xml;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class CurrentUser : PrefixOperationToken {
 		
 		public override string Name { get { return "CurrentUser"; } }

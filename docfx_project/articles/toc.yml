@@ -1,5 +1,7 @@
 - name: Intro
   href: intro.md
+- name: Operation Precedence
+  href: precedence.md
 - name: Execution Context
   href: ExecutionContext.md
 - name: Custom Operation

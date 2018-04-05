@@ -11,15 +11,15 @@ namespace Albatross.Expression.Operations {
 		
 		public override string Name { get { return "or"; } }
 		public override bool Symbolic { get { return true; } }
-		public override int Precedence { get { return 200; } }
+		public override int Precedence { get { return 20; } }
 
 		public override object EvalValue(Func<string, object> context) {
 			object value = Operand1.EvalValue(context);
-			if (ParserUtils.GetLogicalValue(value)) {
+			if (value.ConvertToBoolean()) {
 				return true;
 			} else {
 				value = Operand2.EvalValue(context);
-				return ParserUtils.GetLogicalValue(value);
+				return value.ConvertToBoolean();
 			}
 		}
 	}

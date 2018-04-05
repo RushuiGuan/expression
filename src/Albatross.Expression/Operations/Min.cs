@@ -23,14 +23,53 @@ namespace Albatross.Expression.Operations {
 			if (type == null) {
 				return null;
 			}else if (type == typeof(double)) {
-				return ParserUtils.GetMin<double>(items);
+				return GetMin<double>(items);
 			} else if (type == typeof(DateTime)) {
-				return ParserUtils.GetMin<DateTime>(items);
+				return GetMin<DateTime>(items);
 			} else if (type == typeof(string)) {
-				return ParserUtils.GetMinString(items);
+				return GetMinString(items);
 			} else {
 				throw new UnexpectedTypeException(type);
 			}
+		}
+
+		public static object GetMin<T>(IEnumerable list) where T : struct {
+			T? t = null;
+			try {
+				foreach (T? item in list) {
+					if (item != null) {
+						if (t.HasValue) {
+							if (Comparer<T>.Default.Compare(item.Value, t.Value) < 0) {
+								t = item.Value;
+							}
+						} else {
+							t = item.Value;
+						}
+					}
+				}
+			} catch (InvalidCastException) {
+				throw new UnexpectedTypeException();
+			}
+			if (t.HasValue) {
+				return t.Value;
+			} else {
+				return null;
+			}
+		}
+
+		public static object GetMinString(IEnumerable list) {
+			string max = null, item;
+			foreach (object obj in list) {
+				item = Convert.ToString(obj);
+				if (item != null) {
+					if (max == null) {
+						max = item;
+					} else if (string.Compare(item, max) < 0) {
+						max = item;
+					}
+				}
+			}
+			return max;
 		}
 	}
 }

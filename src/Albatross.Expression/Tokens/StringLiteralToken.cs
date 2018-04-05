@@ -10,14 +10,11 @@ namespace Albatross.Expression.Tokens {
 	/// will take any string literal enclosed by double quotes.  use back slash to escape.  
 	/// Check the GetStringEscape function for escapable chars
 	/// </summary>
-	public class StringLiteralToken : IOperandToken, IStringLiteralToken {
-		public const char DoubleQuote = '"';
+	public abstract class StringLiteralToken : IOperandToken, IStringLiteralToken {
 		public const char EscapeChar = '\\';
+		public abstract char Boundary { get; }
+		public abstract IToken Clone();
 
-		public StringLiteralToken() : this(DoubleQuote) { }
-		public StringLiteralToken(char boundary) { Boundary = boundary; }
-
-		public virtual char Boundary { get; private set; }
 		public string Name { get; private set; }
 		public string Group { get { return "Literal"; } }
 		public bool Match(string expression, int start, out int next) {
@@ -65,9 +62,6 @@ namespace Albatross.Expression.Tokens {
 		public override string ToString() { return Name; }
 		public string EvalText(string format) {
 			return Name;
-		}
-		public IToken Clone() {
-			return new StringLiteralToken(Boundary) { Name = Name };
 		}
 		public object EvalValue(Func<string, object> context) {
 			StringBuilder sb = new StringBuilder();

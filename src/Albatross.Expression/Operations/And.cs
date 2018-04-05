@@ -16,7 +16,7 @@ namespace Albatross.Expression.Operations {
 
 		public override string Name { get { return "and"; } }
 		public override bool Symbolic { get { return true; } }
-		public override int Precedence { get { return 300; } }
+		public override int Precedence { get { return 30; } }
 
 
 		public override object EvalValue(Func<string, object> context) {
@@ -24,11 +24,11 @@ namespace Albatross.Expression.Operations {
 
 			object value = Operand1.EvalValue(context);
 			
-			if (!ParserUtils.GetLogicalValue(value)) {
+			if (!value.ConvertToBoolean()) {
 				return false;
 			} else {
 				value = Operand2.EvalValue(context);
-				return ParserUtils.GetLogicalValue(value);
+				return value.ConvertToBoolean();
 			}
 		}
 	}

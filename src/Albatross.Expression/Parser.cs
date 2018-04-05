@@ -171,7 +171,7 @@ namespace Albatross.Expression {
 		}
 		
 		public IToken CreateTree(Stack<IToken> postfix) {
-			postfix = postfix.Reverse();
+			postfix = Reverse(postfix);
 			Stack<IToken> stack = new Stack<IToken>();
 			IToken token;
 			while (postfix.Count > 0) {
@@ -205,6 +205,13 @@ namespace Albatross.Expression {
 			Queue<IToken> queue = Tokenize(expression);
 			Stack<IToken> stack = BuildStack(queue);
 			return CreateTree(stack);
+		}
+		public static Stack<T> Reverse<T>(Stack<T> src) {
+			Stack<T> dst = new Stack<T>();
+			while (src.Count > 0) {
+				dst.Push(src.Pop());
+			}
+			return dst;
 		}
 	}
 }

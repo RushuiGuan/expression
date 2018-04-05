@@ -20,7 +20,7 @@ namespace Albatross.Expression.Operations {
 		public override object EvalValue(Func<string, object> context) {
 			object obj = Operands.First().EvalValue(context);
 
-			if (ParserUtils.GetLogicalValue(obj)) {
+			if (obj.ConvertToBoolean()) {
 				return Operands[1].EvalValue(context);
 			} else {
 				if (Operands.Count >= 3) {

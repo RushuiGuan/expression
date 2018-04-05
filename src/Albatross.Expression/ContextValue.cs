@@ -32,7 +32,11 @@ namespace Albatross.Expression {
 				ContextValue value;
 				if (context.TryGetContext(dependee, input, out value) && value.ContextType == Albatross.Expression.ContextType.Expression) {
 					ISet<string> newChain = context.NewSet();
-					newChain.AddRange(chain).Add(dependee);
+					foreach (var item in chain) {
+						newChain.Add(item);
+					}
+					newChain.Add(dependee);
+
 					if (value.Tree == null) {
 						value.Build(parser, context, newChain);
 					}

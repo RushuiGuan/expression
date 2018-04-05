@@ -9,6 +9,7 @@ using Albatross.Expression.Exceptions;
 using System.Globalization;
 
 namespace Albatross.Expression.Operations {
+	[ParserOperation]
 	public class PadRight : PrefixOperationToken {
 		public const char DefaultPaddingCharacter = ' ';
 		public override string Name { get { return "PadRight"; } }

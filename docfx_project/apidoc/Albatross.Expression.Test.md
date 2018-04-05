@@ -1,5 +1,5 @@
 ---
-uid: Albatross.Database.UnitTest
+uid: Albatross.Database.Test
 summary: *content
 ---
 

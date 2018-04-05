@@ -695,6 +695,145 @@ references:
   commentId: Overload:Albatross.Expression.ExpressionBuilder.ToString
   fullName: Albatross.Expression.ExpressionBuilder.ToString
   nameWithType: ExpressionBuilder.ToString
+- uid: Albatross.Expression.Extensions
+  name: Extensions
+  href: api/Albatross.Expression.Extensions.html
+  commentId: T:Albatross.Expression.Extensions
+  fullName: Albatross.Expression.Extensions
+  nameWithType: Extensions
+- uid: Albatross.Expression.Extensions.ConvertToBoolean(System.Object)
+  name: ConvertToBoolean(Object)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_System_Object_
+  commentId: M:Albatross.Expression.Extensions.ConvertToBoolean(System.Object)
+  fullName: Albatross.Expression.Extensions.ConvertToBoolean(System.Object)
+  nameWithType: Extensions.ConvertToBoolean(Object)
+- uid: Albatross.Expression.Extensions.ConvertToBoolean*
+  name: ConvertToBoolean
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_
+  commentId: Overload:Albatross.Expression.Extensions.ConvertToBoolean
+  fullName: Albatross.Expression.Extensions.ConvertToBoolean
+  nameWithType: Extensions.ConvertToBoolean
+- uid: Albatross.Expression.Factory
+  name: Factory
+  href: api/Albatross.Expression.Factory.html
+  commentId: T:Albatross.Expression.Factory
+  fullName: Albatross.Expression.Factory
+  nameWithType: Factory
+- uid: Albatross.Expression.Factory.#ctor
+  name: Factory()
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory__ctor
+  commentId: M:Albatross.Expression.Factory.#ctor
+  fullName: Albatross.Expression.Factory.Factory()
+  nameWithType: Factory.Factory()
+- uid: Albatross.Expression.Factory.#ctor*
+  name: Factory
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory__ctor_
+  commentId: Overload:Albatross.Expression.Factory.#ctor
+  fullName: Albatross.Expression.Factory.Factory
+  nameWithType: Factory.Factory
+- uid: Albatross.Expression.Factory.Create(Albatross.Expression.Tokens.IStringLiteralToken,Albatross.Expression.Tokens.IVariableToken)
+  name: Create(IStringLiteralToken, IVariableToken)
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Create_Albatross_Expression_Tokens_IStringLiteralToken_Albatross_Expression_Tokens_IVariableToken_
+  commentId: M:Albatross.Expression.Factory.Create(Albatross.Expression.Tokens.IStringLiteralToken,Albatross.Expression.Tokens.IVariableToken)
+  fullName: Albatross.Expression.Factory.Create(Albatross.Expression.Tokens.IStringLiteralToken, Albatross.Expression.Tokens.IVariableToken)
+  nameWithType: Factory.Create(IStringLiteralToken, IVariableToken)
+- uid: Albatross.Expression.Factory.Create*
+  name: Create
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Create_
+  commentId: Overload:Albatross.Expression.Factory.Create
+  fullName: Albatross.Expression.Factory.Create
+  nameWithType: Factory.Create
+- uid: Albatross.Expression.Factory.DefaultStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
+  name: DefaultStringLiteralToken(IStringLiteralToken)
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_DefaultStringLiteralToken_Albatross_Expression_Tokens_IStringLiteralToken_
+  commentId: M:Albatross.Expression.Factory.DefaultStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
+  fullName: Albatross.Expression.Factory.DefaultStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
+  nameWithType: Factory.DefaultStringLiteralToken(IStringLiteralToken)
+- uid: Albatross.Expression.Factory.DefaultStringLiteralToken*
+  name: DefaultStringLiteralToken
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_DefaultStringLiteralToken_
+  commentId: Overload:Albatross.Expression.Factory.DefaultStringLiteralToken
+  fullName: Albatross.Expression.Factory.DefaultStringLiteralToken
+  nameWithType: Factory.DefaultStringLiteralToken
+- uid: Albatross.Expression.Factory.DefaultVariableToken(Albatross.Expression.Tokens.IVariableToken)
+  name: DefaultVariableToken(IVariableToken)
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_DefaultVariableToken_Albatross_Expression_Tokens_IVariableToken_
+  commentId: M:Albatross.Expression.Factory.DefaultVariableToken(Albatross.Expression.Tokens.IVariableToken)
+  fullName: Albatross.Expression.Factory.DefaultVariableToken(Albatross.Expression.Tokens.IVariableToken)
+  nameWithType: Factory.DefaultVariableToken(IVariableToken)
+- uid: Albatross.Expression.Factory.DefaultVariableToken*
+  name: DefaultVariableToken
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_DefaultVariableToken_
+  commentId: Overload:Albatross.Expression.Factory.DefaultVariableToken
+  fullName: Albatross.Expression.Factory.DefaultVariableToken
+  nameWithType: Factory.DefaultVariableToken
+- uid: Albatross.Expression.Factory.GetEnumerator
+  name: GetEnumerator()
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_GetEnumerator
+  commentId: M:Albatross.Expression.Factory.GetEnumerator
+  fullName: Albatross.Expression.Factory.GetEnumerator()
+  nameWithType: Factory.GetEnumerator()
+- uid: Albatross.Expression.Factory.GetEnumerator*
+  name: GetEnumerator
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_GetEnumerator_
+  commentId: Overload:Albatross.Expression.Factory.GetEnumerator
+  fullName: Albatross.Expression.Factory.GetEnumerator
+  nameWithType: Factory.GetEnumerator
+- uid: Albatross.Expression.Factory.Instance
+  name: Instance
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Instance
+  commentId: P:Albatross.Expression.Factory.Instance
+  fullName: Albatross.Expression.Factory.Instance
+  nameWithType: Factory.Instance
+- uid: Albatross.Expression.Factory.Instance*
+  name: Instance
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Instance_
+  commentId: Overload:Albatross.Expression.Factory.Instance
+  fullName: Albatross.Expression.Factory.Instance
+  nameWithType: Factory.Instance
+- uid: Albatross.Expression.Factory.Register(System.Reflection.Assembly)
+  name: Register(Assembly)
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Register_System_Reflection_Assembly_
+  commentId: M:Albatross.Expression.Factory.Register(System.Reflection.Assembly)
+  fullName: Albatross.Expression.Factory.Register(System.Reflection.Assembly)
+  nameWithType: Factory.Register(Assembly)
+- uid: Albatross.Expression.Factory.Register*
+  name: Register
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Register_
+  commentId: Overload:Albatross.Expression.Factory.Register
+  fullName: Albatross.Expression.Factory.Register
+  nameWithType: Factory.Register
+- uid: Albatross.Expression.Factory.Replace*
+  name: Replace
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Replace_
+  commentId: Overload:Albatross.Expression.Factory.Replace
+  fullName: Albatross.Expression.Factory.Replace
+  nameWithType: Factory.Replace
+- uid: Albatross.Expression.Factory.Replace``2
+  name: Replace<T, K>()
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Replace__2
+  commentId: M:Albatross.Expression.Factory.Replace``2
+  name.vb: Replace(Of T, K)()
+  fullName: Albatross.Expression.Factory.Replace<T, K>()
+  fullName.vb: Albatross.Expression.Factory.Replace(Of T, K)()
+  nameWithType: Factory.Replace<T, K>()
+  nameWithType.vb: Factory.Replace(Of T, K)()
+- uid: Albatross.Expression.Factory.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:Albatross.Expression.Factory.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: Albatross.Expression.Factory.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: Factory.IEnumerable.GetEnumerator()
+  nameWithType.vb: Factory.System.Collections.IEnumerable.GetEnumerator()
+- uid: Albatross.Expression.Factory.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:Albatross.Expression.Factory.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: Albatross.Expression.Factory.System.Collections.IEnumerable.GetEnumerator
+  nameWithType: Factory.IEnumerable.GetEnumerator
+  nameWithType.vb: Factory.System.Collections.IEnumerable.GetEnumerator
 - uid: Albatross.Expression.IExecutionContext
   name: IExecutionContext
   href: api/Albatross.Expression.IExecutionContext.html
@@ -1010,30 +1149,6 @@ references:
   commentId: Overload:Albatross.Expression.IParser.IsValidExpression
   fullName: Albatross.Expression.IParser.IsValidExpression
   nameWithType: IParser.IsValidExpression
-- uid: Albatross.Expression.IParser.SetStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
-  name: SetStringLiteralToken(IStringLiteralToken)
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_SetStringLiteralToken_Albatross_Expression_Tokens_IStringLiteralToken_
-  commentId: M:Albatross.Expression.IParser.SetStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
-  fullName: Albatross.Expression.IParser.SetStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
-  nameWithType: IParser.SetStringLiteralToken(IStringLiteralToken)
-- uid: Albatross.Expression.IParser.SetStringLiteralToken*
-  name: SetStringLiteralToken
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_SetStringLiteralToken_
-  commentId: Overload:Albatross.Expression.IParser.SetStringLiteralToken
-  fullName: Albatross.Expression.IParser.SetStringLiteralToken
-  nameWithType: IParser.SetStringLiteralToken
-- uid: Albatross.Expression.IParser.SetVariableToken(Albatross.Expression.Tokens.IToken)
-  name: SetVariableToken(IToken)
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_SetVariableToken_Albatross_Expression_Tokens_IToken_
-  commentId: M:Albatross.Expression.IParser.SetVariableToken(Albatross.Expression.Tokens.IToken)
-  fullName: Albatross.Expression.IParser.SetVariableToken(Albatross.Expression.Tokens.IToken)
-  nameWithType: IParser.SetVariableToken(IToken)
-- uid: Albatross.Expression.IParser.SetVariableToken*
-  name: SetVariableToken
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_SetVariableToken_
-  commentId: Overload:Albatross.Expression.IParser.SetVariableToken
-  fullName: Albatross.Expression.IParser.SetVariableToken
-  nameWithType: IParser.SetVariableToken
 - uid: Albatross.Expression.IParser.StringLiteralToken
   name: StringLiteralToken()
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_StringLiteralToken
@@ -2090,6 +2205,75 @@ references:
   commentId: Overload:Albatross.Expression.Operations.IsBlank.Symbolic
   fullName: Albatross.Expression.Operations.IsBlank.Symbolic
   nameWithType: IsBlank.Symbolic
+- uid: Albatross.Expression.Operations.Left
+  name: Left
+  href: api/Albatross.Expression.Operations.Left.html
+  commentId: T:Albatross.Expression.Operations.Left
+  fullName: Albatross.Expression.Operations.Left
+  nameWithType: Left
+- uid: Albatross.Expression.Operations.Left.EvalValue(System.Func{System.String,System.Object})
+  name: EvalValue(Func<String, Object>)
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_EvalValue_System_Func_System_String_System_Object__
+  commentId: M:Albatross.Expression.Operations.Left.EvalValue(System.Func{System.String,System.Object})
+  name.vb: EvalValue(Func(Of String, Object))
+  fullName: Albatross.Expression.Operations.Left.EvalValue(System.Func<System.String, System.Object>)
+  fullName.vb: Albatross.Expression.Operations.Left.EvalValue(System.Func(Of System.String, System.Object))
+  nameWithType: Left.EvalValue(Func<String, Object>)
+  nameWithType.vb: Left.EvalValue(Func(Of String, Object))
+- uid: Albatross.Expression.Operations.Left.EvalValue*
+  name: EvalValue
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_EvalValue_
+  commentId: Overload:Albatross.Expression.Operations.Left.EvalValue
+  fullName: Albatross.Expression.Operations.Left.EvalValue
+  nameWithType: Left.EvalValue
+- uid: Albatross.Expression.Operations.Left.MaxOperandCount
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_MaxOperandCount
+  commentId: P:Albatross.Expression.Operations.Left.MaxOperandCount
+  fullName: Albatross.Expression.Operations.Left.MaxOperandCount
+  nameWithType: Left.MaxOperandCount
+- uid: Albatross.Expression.Operations.Left.MaxOperandCount*
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_MaxOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.Left.MaxOperandCount
+  fullName: Albatross.Expression.Operations.Left.MaxOperandCount
+  nameWithType: Left.MaxOperandCount
+- uid: Albatross.Expression.Operations.Left.MinOperandCount
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_MinOperandCount
+  commentId: P:Albatross.Expression.Operations.Left.MinOperandCount
+  fullName: Albatross.Expression.Operations.Left.MinOperandCount
+  nameWithType: Left.MinOperandCount
+- uid: Albatross.Expression.Operations.Left.MinOperandCount*
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_MinOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.Left.MinOperandCount
+  fullName: Albatross.Expression.Operations.Left.MinOperandCount
+  nameWithType: Left.MinOperandCount
+- uid: Albatross.Expression.Operations.Left.Name
+  name: Name
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_Name
+  commentId: P:Albatross.Expression.Operations.Left.Name
+  fullName: Albatross.Expression.Operations.Left.Name
+  nameWithType: Left.Name
+- uid: Albatross.Expression.Operations.Left.Name*
+  name: Name
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_Name_
+  commentId: Overload:Albatross.Expression.Operations.Left.Name
+  fullName: Albatross.Expression.Operations.Left.Name
+  nameWithType: Left.Name
+- uid: Albatross.Expression.Operations.Left.Symbolic
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_Symbolic
+  commentId: P:Albatross.Expression.Operations.Left.Symbolic
+  fullName: Albatross.Expression.Operations.Left.Symbolic
+  nameWithType: Left.Symbolic
+- uid: Albatross.Expression.Operations.Left.Symbolic*
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_Symbolic_
+  commentId: Overload:Albatross.Expression.Operations.Left.Symbolic
+  fullName: Albatross.Expression.Operations.Left.Symbolic
+  nameWithType: Left.Symbolic
 - uid: Albatross.Expression.Operations.Len
   name: Len
   href: api/Albatross.Expression.Operations.Len.html
@@ -2303,6 +2487,33 @@ references:
   commentId: Overload:Albatross.Expression.Operations.Max.EvalValue
   fullName: Albatross.Expression.Operations.Max.EvalValue
   nameWithType: Max.EvalValue
+- uid: Albatross.Expression.Operations.Max.GetMax*
+  name: GetMax
+  href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_GetMax_
+  commentId: Overload:Albatross.Expression.Operations.Max.GetMax
+  fullName: Albatross.Expression.Operations.Max.GetMax
+  nameWithType: Max.GetMax
+- uid: Albatross.Expression.Operations.Max.GetMax``1(System.Collections.IEnumerable)
+  name: GetMax<T>(IEnumerable)
+  href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_GetMax__1_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.Operations.Max.GetMax``1(System.Collections.IEnumerable)
+  name.vb: GetMax(Of T)(IEnumerable)
+  fullName: Albatross.Expression.Operations.Max.GetMax<T>(System.Collections.IEnumerable)
+  fullName.vb: Albatross.Expression.Operations.Max.GetMax(Of T)(System.Collections.IEnumerable)
+  nameWithType: Max.GetMax<T>(IEnumerable)
+  nameWithType.vb: Max.GetMax(Of T)(IEnumerable)
+- uid: Albatross.Expression.Operations.Max.GetMaxString(System.Collections.IEnumerable)
+  name: GetMaxString(IEnumerable)
+  href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_GetMaxString_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.Operations.Max.GetMaxString(System.Collections.IEnumerable)
+  fullName: Albatross.Expression.Operations.Max.GetMaxString(System.Collections.IEnumerable)
+  nameWithType: Max.GetMaxString(IEnumerable)
+- uid: Albatross.Expression.Operations.Max.GetMaxString*
+  name: GetMaxString
+  href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_GetMaxString_
+  commentId: Overload:Albatross.Expression.Operations.Max.GetMaxString
+  fullName: Albatross.Expression.Operations.Max.GetMaxString
+  nameWithType: Max.GetMaxString
 - uid: Albatross.Expression.Operations.Max.MaxOperandCount
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_MaxOperandCount
@@ -2372,6 +2583,33 @@ references:
   commentId: Overload:Albatross.Expression.Operations.Min.EvalValue
   fullName: Albatross.Expression.Operations.Min.EvalValue
   nameWithType: Min.EvalValue
+- uid: Albatross.Expression.Operations.Min.GetMin*
+  name: GetMin
+  href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_GetMin_
+  commentId: Overload:Albatross.Expression.Operations.Min.GetMin
+  fullName: Albatross.Expression.Operations.Min.GetMin
+  nameWithType: Min.GetMin
+- uid: Albatross.Expression.Operations.Min.GetMin``1(System.Collections.IEnumerable)
+  name: GetMin<T>(IEnumerable)
+  href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_GetMin__1_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.Operations.Min.GetMin``1(System.Collections.IEnumerable)
+  name.vb: GetMin(Of T)(IEnumerable)
+  fullName: Albatross.Expression.Operations.Min.GetMin<T>(System.Collections.IEnumerable)
+  fullName.vb: Albatross.Expression.Operations.Min.GetMin(Of T)(System.Collections.IEnumerable)
+  nameWithType: Min.GetMin<T>(IEnumerable)
+  nameWithType.vb: Min.GetMin(Of T)(IEnumerable)
+- uid: Albatross.Expression.Operations.Min.GetMinString(System.Collections.IEnumerable)
+  name: GetMinString(IEnumerable)
+  href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_GetMinString_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.Operations.Min.GetMinString(System.Collections.IEnumerable)
+  fullName: Albatross.Expression.Operations.Min.GetMinString(System.Collections.IEnumerable)
+  nameWithType: Min.GetMinString(IEnumerable)
+- uid: Albatross.Expression.Operations.Min.GetMinString*
+  name: GetMinString
+  href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_GetMinString_
+  commentId: Overload:Albatross.Expression.Operations.Min.GetMinString
+  fullName: Albatross.Expression.Operations.Min.GetMinString
+  nameWithType: Min.GetMinString
 - uid: Albatross.Expression.Operations.Min.MaxOperandCount
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_MaxOperandCount
@@ -3053,6 +3291,12 @@ references:
   commentId: T:Albatross.Expression.Operations.PadLeft
   fullName: Albatross.Expression.Operations.PadLeft
   nameWithType: PadLeft
+- uid: Albatross.Expression.Operations.PadLeft.DefaultPaddingCharacter
+  name: DefaultPaddingCharacter
+  href: api/Albatross.Expression.Operations.PadLeft.html#Albatross_Expression_Operations_PadLeft_DefaultPaddingCharacter
+  commentId: F:Albatross.Expression.Operations.PadLeft.DefaultPaddingCharacter
+  fullName: Albatross.Expression.Operations.PadLeft.DefaultPaddingCharacter
+  nameWithType: PadLeft.DefaultPaddingCharacter
 - uid: Albatross.Expression.Operations.PadLeft.EvalValue(System.Func{System.String,System.Object})
   name: EvalValue(Func<String, Object>)
   href: api/Albatross.Expression.Operations.PadLeft.html#Albatross_Expression_Operations_PadLeft_EvalValue_System_Func_System_String_System_Object__
@@ -3122,6 +3366,12 @@ references:
   commentId: T:Albatross.Expression.Operations.PadRight
   fullName: Albatross.Expression.Operations.PadRight
   nameWithType: PadRight
+- uid: Albatross.Expression.Operations.PadRight.DefaultPaddingCharacter
+  name: DefaultPaddingCharacter
+  href: api/Albatross.Expression.Operations.PadRight.html#Albatross_Expression_Operations_PadRight_DefaultPaddingCharacter
+  commentId: F:Albatross.Expression.Operations.PadRight.DefaultPaddingCharacter
+  fullName: Albatross.Expression.Operations.PadRight.DefaultPaddingCharacter
+  nameWithType: PadRight.DefaultPaddingCharacter
 - uid: Albatross.Expression.Operations.PadRight.EvalValue(System.Func{System.String,System.Object})
   name: EvalValue(Func<String, Object>)
   href: api/Albatross.Expression.Operations.PadRight.html#Albatross_Expression_Operations_PadRight_EvalValue_System_Func_System_String_System_Object__
@@ -3185,6 +3435,75 @@ references:
   commentId: Overload:Albatross.Expression.Operations.PadRight.Symbolic
   fullName: Albatross.Expression.Operations.PadRight.Symbolic
   nameWithType: PadRight.Symbolic
+- uid: Albatross.Expression.Operations.Pi
+  name: Pi
+  href: api/Albatross.Expression.Operations.Pi.html
+  commentId: T:Albatross.Expression.Operations.Pi
+  fullName: Albatross.Expression.Operations.Pi
+  nameWithType: Pi
+- uid: Albatross.Expression.Operations.Pi.EvalValue(System.Func{System.String,System.Object})
+  name: EvalValue(Func<String, Object>)
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_EvalValue_System_Func_System_String_System_Object__
+  commentId: M:Albatross.Expression.Operations.Pi.EvalValue(System.Func{System.String,System.Object})
+  name.vb: EvalValue(Func(Of String, Object))
+  fullName: Albatross.Expression.Operations.Pi.EvalValue(System.Func<System.String, System.Object>)
+  fullName.vb: Albatross.Expression.Operations.Pi.EvalValue(System.Func(Of System.String, System.Object))
+  nameWithType: Pi.EvalValue(Func<String, Object>)
+  nameWithType.vb: Pi.EvalValue(Func(Of String, Object))
+- uid: Albatross.Expression.Operations.Pi.EvalValue*
+  name: EvalValue
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_EvalValue_
+  commentId: Overload:Albatross.Expression.Operations.Pi.EvalValue
+  fullName: Albatross.Expression.Operations.Pi.EvalValue
+  nameWithType: Pi.EvalValue
+- uid: Albatross.Expression.Operations.Pi.MaxOperandCount
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_MaxOperandCount
+  commentId: P:Albatross.Expression.Operations.Pi.MaxOperandCount
+  fullName: Albatross.Expression.Operations.Pi.MaxOperandCount
+  nameWithType: Pi.MaxOperandCount
+- uid: Albatross.Expression.Operations.Pi.MaxOperandCount*
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_MaxOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.Pi.MaxOperandCount
+  fullName: Albatross.Expression.Operations.Pi.MaxOperandCount
+  nameWithType: Pi.MaxOperandCount
+- uid: Albatross.Expression.Operations.Pi.MinOperandCount
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_MinOperandCount
+  commentId: P:Albatross.Expression.Operations.Pi.MinOperandCount
+  fullName: Albatross.Expression.Operations.Pi.MinOperandCount
+  nameWithType: Pi.MinOperandCount
+- uid: Albatross.Expression.Operations.Pi.MinOperandCount*
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_MinOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.Pi.MinOperandCount
+  fullName: Albatross.Expression.Operations.Pi.MinOperandCount
+  nameWithType: Pi.MinOperandCount
+- uid: Albatross.Expression.Operations.Pi.Name
+  name: Name
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_Name
+  commentId: P:Albatross.Expression.Operations.Pi.Name
+  fullName: Albatross.Expression.Operations.Pi.Name
+  nameWithType: Pi.Name
+- uid: Albatross.Expression.Operations.Pi.Name*
+  name: Name
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_Name_
+  commentId: Overload:Albatross.Expression.Operations.Pi.Name
+  fullName: Albatross.Expression.Operations.Pi.Name
+  nameWithType: Pi.Name
+- uid: Albatross.Expression.Operations.Pi.Symbolic
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_Symbolic
+  commentId: P:Albatross.Expression.Operations.Pi.Symbolic
+  fullName: Albatross.Expression.Operations.Pi.Symbolic
+  nameWithType: Pi.Symbolic
+- uid: Albatross.Expression.Operations.Pi.Symbolic*
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_Symbolic_
+  commentId: Overload:Albatross.Expression.Operations.Pi.Symbolic
+  fullName: Albatross.Expression.Operations.Pi.Symbolic
+  nameWithType: Pi.Symbolic
 - uid: Albatross.Expression.Operations.Plus
   name: Plus
   href: api/Albatross.Expression.Operations.Plus.html
@@ -3368,6 +3687,75 @@ references:
   commentId: Overload:Albatross.Expression.Operations.Power.Symbolic
   fullName: Albatross.Expression.Operations.Power.Symbolic
   nameWithType: Power.Symbolic
+- uid: Albatross.Expression.Operations.Right
+  name: Right
+  href: api/Albatross.Expression.Operations.Right.html
+  commentId: T:Albatross.Expression.Operations.Right
+  fullName: Albatross.Expression.Operations.Right
+  nameWithType: Right
+- uid: Albatross.Expression.Operations.Right.EvalValue(System.Func{System.String,System.Object})
+  name: EvalValue(Func<String, Object>)
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_EvalValue_System_Func_System_String_System_Object__
+  commentId: M:Albatross.Expression.Operations.Right.EvalValue(System.Func{System.String,System.Object})
+  name.vb: EvalValue(Func(Of String, Object))
+  fullName: Albatross.Expression.Operations.Right.EvalValue(System.Func<System.String, System.Object>)
+  fullName.vb: Albatross.Expression.Operations.Right.EvalValue(System.Func(Of System.String, System.Object))
+  nameWithType: Right.EvalValue(Func<String, Object>)
+  nameWithType.vb: Right.EvalValue(Func(Of String, Object))
+- uid: Albatross.Expression.Operations.Right.EvalValue*
+  name: EvalValue
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_EvalValue_
+  commentId: Overload:Albatross.Expression.Operations.Right.EvalValue
+  fullName: Albatross.Expression.Operations.Right.EvalValue
+  nameWithType: Right.EvalValue
+- uid: Albatross.Expression.Operations.Right.MaxOperandCount
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_MaxOperandCount
+  commentId: P:Albatross.Expression.Operations.Right.MaxOperandCount
+  fullName: Albatross.Expression.Operations.Right.MaxOperandCount
+  nameWithType: Right.MaxOperandCount
+- uid: Albatross.Expression.Operations.Right.MaxOperandCount*
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_MaxOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.Right.MaxOperandCount
+  fullName: Albatross.Expression.Operations.Right.MaxOperandCount
+  nameWithType: Right.MaxOperandCount
+- uid: Albatross.Expression.Operations.Right.MinOperandCount
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_MinOperandCount
+  commentId: P:Albatross.Expression.Operations.Right.MinOperandCount
+  fullName: Albatross.Expression.Operations.Right.MinOperandCount
+  nameWithType: Right.MinOperandCount
+- uid: Albatross.Expression.Operations.Right.MinOperandCount*
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_MinOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.Right.MinOperandCount
+  fullName: Albatross.Expression.Operations.Right.MinOperandCount
+  nameWithType: Right.MinOperandCount
+- uid: Albatross.Expression.Operations.Right.Name
+  name: Name
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_Name
+  commentId: P:Albatross.Expression.Operations.Right.Name
+  fullName: Albatross.Expression.Operations.Right.Name
+  nameWithType: Right.Name
+- uid: Albatross.Expression.Operations.Right.Name*
+  name: Name
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_Name_
+  commentId: Overload:Albatross.Expression.Operations.Right.Name
+  fullName: Albatross.Expression.Operations.Right.Name
+  nameWithType: Right.Name
+- uid: Albatross.Expression.Operations.Right.Symbolic
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_Symbolic
+  commentId: P:Albatross.Expression.Operations.Right.Symbolic
+  fullName: Albatross.Expression.Operations.Right.Symbolic
+  nameWithType: Right.Symbolic
+- uid: Albatross.Expression.Operations.Right.Symbolic*
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_Symbolic_
+  commentId: Overload:Albatross.Expression.Operations.Right.Symbolic
+  fullName: Albatross.Expression.Operations.Right.Symbolic
+  nameWithType: Right.Symbolic
 - uid: Albatross.Expression.Operations.ShortMonthName
   name: ShortMonthName
   href: api/Albatross.Expression.Operations.ShortMonthName.html
@@ -3650,15 +4038,15 @@ references:
   commentId: T:Albatross.Expression.Parser
   fullName: Albatross.Expression.Parser
   nameWithType: Parser
-- uid: Albatross.Expression.Parser.#ctor(System.Collections.Generic.IEnumerable{Albatross.Expression.Tokens.IToken})
-  name: Parser(IEnumerable<IToken>)
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser__ctor_System_Collections_Generic_IEnumerable_Albatross_Expression_Tokens_IToken__
-  commentId: M:Albatross.Expression.Parser.#ctor(System.Collections.Generic.IEnumerable{Albatross.Expression.Tokens.IToken})
-  name.vb: Parser(IEnumerable(Of IToken))
-  fullName: Albatross.Expression.Parser.Parser(System.Collections.Generic.IEnumerable<Albatross.Expression.Tokens.IToken>)
-  fullName.vb: Albatross.Expression.Parser.Parser(System.Collections.Generic.IEnumerable(Of Albatross.Expression.Tokens.IToken))
-  nameWithType: Parser.Parser(IEnumerable<IToken>)
-  nameWithType.vb: Parser.Parser(IEnumerable(Of IToken))
+- uid: Albatross.Expression.Parser.#ctor(System.Collections.Generic.IEnumerable{Albatross.Expression.Tokens.IToken},Albatross.Expression.Tokens.IVariableToken,Albatross.Expression.Tokens.IStringLiteralToken)
+  name: Parser(IEnumerable<IToken>, IVariableToken, IStringLiteralToken)
+  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser__ctor_System_Collections_Generic_IEnumerable_Albatross_Expression_Tokens_IToken__Albatross_Expression_Tokens_IVariableToken_Albatross_Expression_Tokens_IStringLiteralToken_
+  commentId: M:Albatross.Expression.Parser.#ctor(System.Collections.Generic.IEnumerable{Albatross.Expression.Tokens.IToken},Albatross.Expression.Tokens.IVariableToken,Albatross.Expression.Tokens.IStringLiteralToken)
+  name.vb: Parser(IEnumerable(Of IToken), IVariableToken, IStringLiteralToken)
+  fullName: Albatross.Expression.Parser.Parser(System.Collections.Generic.IEnumerable<Albatross.Expression.Tokens.IToken>, Albatross.Expression.Tokens.IVariableToken, Albatross.Expression.Tokens.IStringLiteralToken)
+  fullName.vb: Albatross.Expression.Parser.Parser(System.Collections.Generic.IEnumerable(Of Albatross.Expression.Tokens.IToken), Albatross.Expression.Tokens.IVariableToken, Albatross.Expression.Tokens.IStringLiteralToken)
+  nameWithType: Parser.Parser(IEnumerable<IToken>, IVariableToken, IStringLiteralToken)
+  nameWithType.vb: Parser.Parser(IEnumerable(Of IToken), IVariableToken, IStringLiteralToken)
 - uid: Albatross.Expression.Parser.#ctor*
   name: Parser
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser__ctor_
@@ -3782,30 +4170,21 @@ references:
   commentId: Overload:Albatross.Expression.Parser.PrefixOperationTokens
   fullName: Albatross.Expression.Parser.PrefixOperationTokens
   nameWithType: Parser.PrefixOperationTokens
-- uid: Albatross.Expression.Parser.SetStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
-  name: SetStringLiteralToken(IStringLiteralToken)
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_SetStringLiteralToken_Albatross_Expression_Tokens_IStringLiteralToken_
-  commentId: M:Albatross.Expression.Parser.SetStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
-  fullName: Albatross.Expression.Parser.SetStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
-  nameWithType: Parser.SetStringLiteralToken(IStringLiteralToken)
-- uid: Albatross.Expression.Parser.SetStringLiteralToken*
-  name: SetStringLiteralToken
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_SetStringLiteralToken_
-  commentId: Overload:Albatross.Expression.Parser.SetStringLiteralToken
-  fullName: Albatross.Expression.Parser.SetStringLiteralToken
-  nameWithType: Parser.SetStringLiteralToken
-- uid: Albatross.Expression.Parser.SetVariableToken(Albatross.Expression.Tokens.IToken)
-  name: SetVariableToken(IToken)
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_SetVariableToken_Albatross_Expression_Tokens_IToken_
-  commentId: M:Albatross.Expression.Parser.SetVariableToken(Albatross.Expression.Tokens.IToken)
-  fullName: Albatross.Expression.Parser.SetVariableToken(Albatross.Expression.Tokens.IToken)
-  nameWithType: Parser.SetVariableToken(IToken)
-- uid: Albatross.Expression.Parser.SetVariableToken*
-  name: SetVariableToken
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_SetVariableToken_
-  commentId: Overload:Albatross.Expression.Parser.SetVariableToken
-  fullName: Albatross.Expression.Parser.SetVariableToken
-  nameWithType: Parser.SetVariableToken
+- uid: Albatross.Expression.Parser.Reverse*
+  name: Reverse
+  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Reverse_
+  commentId: Overload:Albatross.Expression.Parser.Reverse
+  fullName: Albatross.Expression.Parser.Reverse
+  nameWithType: Parser.Reverse
+- uid: Albatross.Expression.Parser.Reverse``1(System.Collections.Generic.Stack{``0})
+  name: Reverse<T>(Stack<T>)
+  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Reverse__1_System_Collections_Generic_Stack___0__
+  commentId: M:Albatross.Expression.Parser.Reverse``1(System.Collections.Generic.Stack{``0})
+  name.vb: Reverse(Of T)(Stack(Of T))
+  fullName: Albatross.Expression.Parser.Reverse<T>(System.Collections.Generic.Stack<T>)
+  fullName.vb: Albatross.Expression.Parser.Reverse(Of T)(System.Collections.Generic.Stack(Of T))
+  nameWithType: Parser.Reverse<T>(Stack<T>)
+  nameWithType.vb: Parser.Reverse(Of T)(Stack(Of T))
 - uid: Albatross.Expression.Parser.StringLiteralToken
   name: StringLiteralToken()
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_StringLiteralToken
@@ -3842,132 +4221,12 @@ references:
   commentId: Overload:Albatross.Expression.Parser.VariableToken
   fullName: Albatross.Expression.Parser.VariableToken
   nameWithType: Parser.VariableToken
-- uid: Albatross.Expression.ParserUtils
-  name: ParserUtils
-  href: api/Albatross.Expression.ParserUtils.html
-  commentId: T:Albatross.Expression.ParserUtils
-  fullName: Albatross.Expression.ParserUtils
-  nameWithType: ParserUtils
-- uid: Albatross.Expression.ParserUtils.AddRange*
-  name: AddRange
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_AddRange_
-  commentId: Overload:Albatross.Expression.ParserUtils.AddRange
-  fullName: Albatross.Expression.ParserUtils.AddRange
-  nameWithType: ParserUtils.AddRange
-- uid: Albatross.Expression.ParserUtils.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})
-  name: AddRange<T>(ISet<T>, IEnumerable<T>)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_AddRange__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IEnumerable___0__
-  commentId: M:Albatross.Expression.ParserUtils.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})
-  name.vb: AddRange(Of T)(ISet(Of T), IEnumerable(Of T))
-  fullName: Albatross.Expression.ParserUtils.AddRange<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IEnumerable<T>)
-  fullName.vb: Albatross.Expression.ParserUtils.AddRange(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IEnumerable(Of T))
-  nameWithType: ParserUtils.AddRange<T>(ISet<T>, IEnumerable<T>)
-  nameWithType.vb: ParserUtils.AddRange(Of T)(ISet(Of T), IEnumerable(Of T))
-- uid: Albatross.Expression.ParserUtils.GetLogicalValue(System.Object)
-  name: GetLogicalValue(Object)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetLogicalValue_System_Object_
-  commentId: M:Albatross.Expression.ParserUtils.GetLogicalValue(System.Object)
-  fullName: Albatross.Expression.ParserUtils.GetLogicalValue(System.Object)
-  nameWithType: ParserUtils.GetLogicalValue(Object)
-- uid: Albatross.Expression.ParserUtils.GetLogicalValue*
-  name: GetLogicalValue
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetLogicalValue_
-  commentId: Overload:Albatross.Expression.ParserUtils.GetLogicalValue
-  fullName: Albatross.Expression.ParserUtils.GetLogicalValue
-  nameWithType: ParserUtils.GetLogicalValue
-- uid: Albatross.Expression.ParserUtils.GetMax*
-  name: GetMax
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMax_
-  commentId: Overload:Albatross.Expression.ParserUtils.GetMax
-  fullName: Albatross.Expression.ParserUtils.GetMax
-  nameWithType: ParserUtils.GetMax
-- uid: Albatross.Expression.ParserUtils.GetMax``1(System.Collections.IEnumerable)
-  name: GetMax<T>(IEnumerable)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMax__1_System_Collections_IEnumerable_
-  commentId: M:Albatross.Expression.ParserUtils.GetMax``1(System.Collections.IEnumerable)
-  name.vb: GetMax(Of T)(IEnumerable)
-  fullName: Albatross.Expression.ParserUtils.GetMax<T>(System.Collections.IEnumerable)
-  fullName.vb: Albatross.Expression.ParserUtils.GetMax(Of T)(System.Collections.IEnumerable)
-  nameWithType: ParserUtils.GetMax<T>(IEnumerable)
-  nameWithType.vb: ParserUtils.GetMax(Of T)(IEnumerable)
-- uid: Albatross.Expression.ParserUtils.GetMaxString(System.Collections.IEnumerable)
-  name: GetMaxString(IEnumerable)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMaxString_System_Collections_IEnumerable_
-  commentId: M:Albatross.Expression.ParserUtils.GetMaxString(System.Collections.IEnumerable)
-  fullName: Albatross.Expression.ParserUtils.GetMaxString(System.Collections.IEnumerable)
-  nameWithType: ParserUtils.GetMaxString(IEnumerable)
-- uid: Albatross.Expression.ParserUtils.GetMaxString*
-  name: GetMaxString
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMaxString_
-  commentId: Overload:Albatross.Expression.ParserUtils.GetMaxString
-  fullName: Albatross.Expression.ParserUtils.GetMaxString
-  nameWithType: ParserUtils.GetMaxString
-- uid: Albatross.Expression.ParserUtils.GetMin*
-  name: GetMin
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMin_
-  commentId: Overload:Albatross.Expression.ParserUtils.GetMin
-  fullName: Albatross.Expression.ParserUtils.GetMin
-  nameWithType: ParserUtils.GetMin
-- uid: Albatross.Expression.ParserUtils.GetMin``1(System.Collections.IEnumerable)
-  name: GetMin<T>(IEnumerable)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMin__1_System_Collections_IEnumerable_
-  commentId: M:Albatross.Expression.ParserUtils.GetMin``1(System.Collections.IEnumerable)
-  name.vb: GetMin(Of T)(IEnumerable)
-  fullName: Albatross.Expression.ParserUtils.GetMin<T>(System.Collections.IEnumerable)
-  fullName.vb: Albatross.Expression.ParserUtils.GetMin(Of T)(System.Collections.IEnumerable)
-  nameWithType: ParserUtils.GetMin<T>(IEnumerable)
-  nameWithType.vb: ParserUtils.GetMin(Of T)(IEnumerable)
-- uid: Albatross.Expression.ParserUtils.GetMinString(System.Collections.IEnumerable)
-  name: GetMinString(IEnumerable)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMinString_System_Collections_IEnumerable_
-  commentId: M:Albatross.Expression.ParserUtils.GetMinString(System.Collections.IEnumerable)
-  fullName: Albatross.Expression.ParserUtils.GetMinString(System.Collections.IEnumerable)
-  nameWithType: ParserUtils.GetMinString(IEnumerable)
-- uid: Albatross.Expression.ParserUtils.GetMinString*
-  name: GetMinString
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMinString_
-  commentId: Overload:Albatross.Expression.ParserUtils.GetMinString
-  fullName: Albatross.Expression.ParserUtils.GetMinString
-  nameWithType: ParserUtils.GetMinString
-- uid: Albatross.Expression.ParserUtils.IsInteger(System.Object)
-  name: IsInteger(Object)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsInteger_System_Object_
-  commentId: M:Albatross.Expression.ParserUtils.IsInteger(System.Object)
-  fullName: Albatross.Expression.ParserUtils.IsInteger(System.Object)
-  nameWithType: ParserUtils.IsInteger(Object)
-- uid: Albatross.Expression.ParserUtils.IsInteger*
-  name: IsInteger
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsInteger_
-  commentId: Overload:Albatross.Expression.ParserUtils.IsInteger
-  fullName: Albatross.Expression.ParserUtils.IsInteger
-  nameWithType: ParserUtils.IsInteger
-- uid: Albatross.Expression.ParserUtils.IsNumeric(System.Object)
-  name: IsNumeric(Object)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsNumeric_System_Object_
-  commentId: M:Albatross.Expression.ParserUtils.IsNumeric(System.Object)
-  fullName: Albatross.Expression.ParserUtils.IsNumeric(System.Object)
-  nameWithType: ParserUtils.IsNumeric(Object)
-- uid: Albatross.Expression.ParserUtils.IsNumeric*
-  name: IsNumeric
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsNumeric_
-  commentId: Overload:Albatross.Expression.ParserUtils.IsNumeric
-  fullName: Albatross.Expression.ParserUtils.IsNumeric
-  nameWithType: ParserUtils.IsNumeric
-- uid: Albatross.Expression.ParserUtils.Reverse*
-  name: Reverse
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_Reverse_
-  commentId: Overload:Albatross.Expression.ParserUtils.Reverse
-  fullName: Albatross.Expression.ParserUtils.Reverse
-  nameWithType: ParserUtils.Reverse
-- uid: Albatross.Expression.ParserUtils.Reverse``1(System.Collections.Generic.Stack{``0})
-  name: Reverse<T>(Stack<T>)
-  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_Reverse__1_System_Collections_Generic_Stack___0__
-  commentId: M:Albatross.Expression.ParserUtils.Reverse``1(System.Collections.Generic.Stack{``0})
-  name.vb: Reverse(Of T)(Stack(Of T))
-  fullName: Albatross.Expression.ParserUtils.Reverse<T>(System.Collections.Generic.Stack<T>)
-  fullName.vb: Albatross.Expression.ParserUtils.Reverse(Of T)(System.Collections.Generic.Stack(Of T))
-  nameWithType: ParserUtils.Reverse<T>(Stack<T>)
-  nameWithType.vb: ParserUtils.Reverse(Of T)(Stack(Of T))
+- uid: Albatross.Expression.ParserOperationAttribute
+  name: ParserOperationAttribute
+  href: api/Albatross.Expression.ParserOperationAttribute.html
+  commentId: T:Albatross.Expression.ParserOperationAttribute
+  fullName: Albatross.Expression.ParserOperationAttribute
+  nameWithType: ParserOperationAttribute
 - uid: Albatross.Expression.Tokens
   name: Albatross.Expression.Tokens
   href: api/Albatross.Expression.Tokens.html
@@ -4238,6 +4497,36 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.ToString
   fullName: Albatross.Expression.Tokens.ControlToken.ToString
   nameWithType: ControlToken.ToString
+- uid: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken
+  name: DoubleQuoteStringLiteralToken
+  href: api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html
+  commentId: T:Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken
+  fullName: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken
+  nameWithType: DoubleQuoteStringLiteralToken
+- uid: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary
+  name: Boundary
+  href: api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_DoubleQuoteStringLiteralToken_Boundary
+  commentId: P:Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary
+  fullName: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary
+  nameWithType: DoubleQuoteStringLiteralToken.Boundary
+- uid: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary*
+  name: Boundary
+  href: api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_DoubleQuoteStringLiteralToken_Boundary_
+  commentId: Overload:Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary
+  fullName: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary
+  nameWithType: DoubleQuoteStringLiteralToken.Boundary
+- uid: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone
+  name: Clone()
+  href: api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_DoubleQuoteStringLiteralToken_Clone
+  commentId: M:Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone
+  fullName: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone()
+  nameWithType: DoubleQuoteStringLiteralToken.Clone()
+- uid: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone*
+  name: Clone
+  href: api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_DoubleQuoteStringLiteralToken_Clone_
+  commentId: Overload:Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone
+  fullName: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone
+  nameWithType: DoubleQuoteStringLiteralToken.Clone
 - uid: Albatross.Expression.Tokens.InfixOperationToken
   name: InfixOperationToken
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html
@@ -4490,6 +4779,12 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.IToken.Name
   fullName: Albatross.Expression.Tokens.IToken.Name
   nameWithType: IToken.Name
+- uid: Albatross.Expression.Tokens.IVariableToken
+  name: IVariableToken
+  href: api/Albatross.Expression.Tokens.IVariableToken.html
+  commentId: T:Albatross.Expression.Tokens.IVariableToken
+  fullName: Albatross.Expression.Tokens.IVariableToken
+  nameWithType: IVariableToken
 - uid: Albatross.Expression.Tokens.NumericLiteralToken
   name: NumericLiteralToken
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html
@@ -4814,30 +5109,42 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.ToString
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.ToString
   nameWithType: PrefixOperationToken.ToString
+- uid: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken
+  name: SingleQuoteStringLiteralToken
+  href: api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html
+  commentId: T:Albatross.Expression.Tokens.SingleQuoteStringLiteralToken
+  fullName: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken
+  nameWithType: SingleQuoteStringLiteralToken
+- uid: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary
+  name: Boundary
+  href: api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_SingleQuoteStringLiteralToken_Boundary
+  commentId: P:Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary
+  fullName: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary
+  nameWithType: SingleQuoteStringLiteralToken.Boundary
+- uid: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary*
+  name: Boundary
+  href: api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_SingleQuoteStringLiteralToken_Boundary_
+  commentId: Overload:Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary
+  fullName: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary
+  nameWithType: SingleQuoteStringLiteralToken.Boundary
+- uid: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone
+  name: Clone()
+  href: api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_SingleQuoteStringLiteralToken_Clone
+  commentId: M:Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone
+  fullName: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone()
+  nameWithType: SingleQuoteStringLiteralToken.Clone()
+- uid: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone*
+  name: Clone
+  href: api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_SingleQuoteStringLiteralToken_Clone_
+  commentId: Overload:Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone
+  fullName: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone
+  nameWithType: SingleQuoteStringLiteralToken.Clone
 - uid: Albatross.Expression.Tokens.StringLiteralToken
   name: StringLiteralToken
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html
   commentId: T:Albatross.Expression.Tokens.StringLiteralToken
   fullName: Albatross.Expression.Tokens.StringLiteralToken
   nameWithType: StringLiteralToken
-- uid: Albatross.Expression.Tokens.StringLiteralToken.#ctor
-  name: StringLiteralToken()
-  href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken__ctor
-  commentId: M:Albatross.Expression.Tokens.StringLiteralToken.#ctor
-  fullName: Albatross.Expression.Tokens.StringLiteralToken.StringLiteralToken()
-  nameWithType: StringLiteralToken.StringLiteralToken()
-- uid: Albatross.Expression.Tokens.StringLiteralToken.#ctor(System.Char)
-  name: StringLiteralToken(Char)
-  href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken__ctor_System_Char_
-  commentId: M:Albatross.Expression.Tokens.StringLiteralToken.#ctor(System.Char)
-  fullName: Albatross.Expression.Tokens.StringLiteralToken.StringLiteralToken(System.Char)
-  nameWithType: StringLiteralToken.StringLiteralToken(Char)
-- uid: Albatross.Expression.Tokens.StringLiteralToken.#ctor*
-  name: StringLiteralToken
-  href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken__ctor_
-  commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.#ctor
-  fullName: Albatross.Expression.Tokens.StringLiteralToken.StringLiteralToken
-  nameWithType: StringLiteralToken.StringLiteralToken
 - uid: Albatross.Expression.Tokens.StringLiteralToken.Boundary
   name: Boundary
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_Boundary
@@ -4862,12 +5169,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.Clone
   fullName: Albatross.Expression.Tokens.StringLiteralToken.Clone
   nameWithType: StringLiteralToken.Clone
-- uid: Albatross.Expression.Tokens.StringLiteralToken.DoubleQuote
-  name: DoubleQuote
-  href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_DoubleQuote
-  commentId: F:Albatross.Expression.Tokens.StringLiteralToken.DoubleQuote
-  fullName: Albatross.Expression.Tokens.StringLiteralToken.DoubleQuote
-  nameWithType: StringLiteralToken.DoubleQuote
 - uid: Albatross.Expression.Tokens.StringLiteralToken.EscapeChar
   name: EscapeChar
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_EscapeChar

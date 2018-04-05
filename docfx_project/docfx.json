@@ -13,7 +13,7 @@
             "filter": "filterConfig.yml",
             "disableGitFeatures": false,
             "properties": {
-                "TargetFramework": "net40"
+                "TargetFramework": "net45"
             }
         }
     ],

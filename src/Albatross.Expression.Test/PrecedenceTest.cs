@@ -41,7 +41,7 @@ namespace Albatross.Expression.Test {
 			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {
 				using (StreamWriter writer = new StreamWriter(stream)) {
 					foreach (InfixOperationToken token in tokens) {
-						writer.WriteLine($"{token.Name}\t{token.Precedence}");
+						writer.WriteLine($"{token.Name} | [{token.GetType().FullName}](xref:{token.GetType().FullName}) | {token.Precedence}");
 					}
 					writer.Flush();
 					stream.SetLength(stream.Position);

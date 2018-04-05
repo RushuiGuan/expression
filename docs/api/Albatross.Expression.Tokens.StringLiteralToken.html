@@ -80,6 +80,8 @@
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">StringLiteralToken</span></div>
+      <div class="level2"><a class="xref" href="Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html">DoubleQuoteStringLiteralToken</a></div>
+      <div class="level2"><a class="xref" href="Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html">SingleQuoteStringLiteralToken</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -91,94 +93,16 @@
   <h6><strong>Assembly</strong>: Albatross.Expression.dll</h6>
   <h5 id="Albatross_Expression_Tokens_StringLiteralToken_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StringLiteralToken : IOperandToken, IStringLiteralToken, IToken</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class StringLiteralToken : IOperandToken, IStringLiteralToken, IToken</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken__ctor.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L17">View Source</a>
-  </span>
-  <a id="Albatross_Expression_Tokens_StringLiteralToken__ctor_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.#ctor*"></a>
-  <h4 id="Albatross_Expression_Tokens_StringLiteralToken__ctor" data-uid="Albatross.Expression.Tokens.StringLiteralToken.#ctor">StringLiteralToken()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public StringLiteralToken()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken__ctor_System_Char_.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.%23ctor(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L18">View Source</a>
-  </span>
-  <a id="Albatross_Expression_Tokens_StringLiteralToken__ctor_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.#ctor*"></a>
-  <h4 id="Albatross_Expression_Tokens_StringLiteralToken__ctor_System_Char_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.#ctor(System.Char)">StringLiteralToken(Char)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public StringLiteralToken(char boundary)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">boundary</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="fields">Fields
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_DoubleQuote.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.DoubleQuote%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L14">View Source</a>
-  </span>
-  <h4 id="Albatross_Expression_Tokens_StringLiteralToken_DoubleQuote" data-uid="Albatross.Expression.Tokens.StringLiteralToken.DoubleQuote">DoubleQuote</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char DoubleQuote = '&quot;'</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_EscapeChar.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.EscapeChar%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L15">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L14">View Source</a>
   </span>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_EscapeChar" data-uid="Albatross.Expression.Tokens.StringLiteralToken.EscapeChar">EscapeChar</h4>
   <div class="markdown level1 summary"></div>
@@ -209,7 +133,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_Boundary.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.Boundary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L20">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L15">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_Boundary_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Boundary*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_Boundary" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Boundary">Boundary</h4>
@@ -217,7 +141,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual char Boundary { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract char Boundary { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -239,7 +163,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_Group.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.Group%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L22">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L19">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_Group_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Group*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_Group" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Group">Group</h4>
@@ -269,7 +193,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_IsVariable.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.IsVariable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L86">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L80">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_IsVariable_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.IsVariable*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_IsVariable" data-uid="Albatross.Expression.Tokens.StringLiteralToken.IsVariable">IsVariable</h4>
@@ -299,7 +223,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_Name.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L21">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L18">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_Name_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Name*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_Name" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Name">Name</h4>
@@ -331,7 +255,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_Clone.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L69">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L16">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_Clone_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Clone*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_Clone" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Clone">Clone()</h4>
@@ -339,7 +263,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IToken Clone()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract IToken Clone()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -361,7 +285,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_EvalText_System_String_.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.EvalText(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L66">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L63">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_EvalText_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.EvalText*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_EvalText_System_String_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.EvalText(System.String)">EvalText(String)</h4>
@@ -408,7 +332,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_EvalValue_System_Func_System_String_System_Object__.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.EvalValue(System.Func%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L72">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L66">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_EvalValue_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.EvalValue*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_EvalValue_System_Func_System_String_System_Object__" data-uid="Albatross.Expression.Tokens.StringLiteralToken.EvalValue(System.Func{System.String,System.Object})">EvalValue(Func&lt;String, Object&gt;)</h4>
@@ -455,7 +379,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_Match_System_String_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.Match(System.String%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L23">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L20">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_Match_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Match*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_Match_System_String_System_Int32_System_Int32__" data-uid="Albatross.Expression.Tokens.StringLiteralToken.Match(System.String,System.Int32,System.Int32@)">Match(String, Int32, out Int32)</h4>
@@ -512,7 +436,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_StringLiteralToken_ToString.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.StringLiteralToken.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L65">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/StringLiteralToken.cs/#L62">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_StringLiteralToken_ToString_" data-uid="Albatross.Expression.Tokens.StringLiteralToken.ToString*"></a>
   <h4 id="Albatross_Expression_Tokens_StringLiteralToken_ToString" data-uid="Albatross.Expression.Tokens.StringLiteralToken.ToString">ToString()</h4>
@@ -548,6 +472,10 @@
   </div>
   <div>
       <a class="xref" href="Albatross.Expression.Tokens.IToken.html">IToken</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_System_Object_">Extensions.ConvertToBoolean(Object)</a>
   </div>
 </article>
           </div>

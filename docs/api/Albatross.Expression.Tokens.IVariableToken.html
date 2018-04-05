@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace Albatross.Expression
+    <title>Interface IVariableToken
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace Albatross.Expression
+    <meta name="title" content="Interface IVariableToken
    ">
     <meta name="generator" content="docfx 2.31.0.0">
     
@@ -68,47 +68,44 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Albatross.Expression">
+            <article class="content wrap" id="_content" data-uid="Albatross.Expression.Tokens.IVariableToken">
   
-  <h1 id="Albatross_Expression" data-uid="Albatross.Expression" class="text-break">Namespace Albatross.Expression
+  
+  <h1 id="Albatross_Expression_Tokens_IVariableToken" data-uid="Albatross.Expression.Tokens.IVariableToken" class="text-break">Interface IVariableToken
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
-  </h3>
-      <h4><a class="xref" href="Albatross.Expression.ContextValue.html">ContextValue</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.ExecutionContext.html">ExecutionContext</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.ExecutionContextFactory.html">ExecutionContextFactory</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.ExpressionBuilder.html">ExpressionBuilder</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.Extensions.html">Extensions</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.Factory.html">Factory</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.Parser.html">Parser</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.ParserOperationAttribute.html">ParserOperationAttribute</a></h4>
-      <section></section>
-    <h3 id="interfaces">Interfaces
-  </h3>
-      <h4><a class="xref" href="Albatross.Expression.IExecutionContext.html">IExecutionContext</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.IExecutionContextFactory.html">IExecutionContextFactory</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Albatross.Expression.IParser.html">IParser</a></h4>
-      <section></section>
-    <h3 id="enums">Enums
-  </h3>
-      <h4><a class="xref" href="Albatross.Expression.ContextType.html">ContextType</a></h4>
-      <section></section>
-    <h3 id="delegates">Delegates
-  </h3>
-      <h4><a class="xref" href="Albatross.Expression.TryGetValueDelegate.html">TryGetValueDelegate</a></h4>
-      <section></section>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_Name">IToken.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_Match_System_String_System_Int32_System_Int32__">IToken.Match(String, Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalText_System_String_">IToken.EvalText(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalValue_System_Func_System_String_System_Object__">IToken.EvalValue(Func&lt;String, Object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_Clone">IToken.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_IsVariable">IToken.IsVariable</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Albatross.Expression.Tokens.html">Albatross.Expression.Tokens</a></h6>
+  <h6><strong>Assembly</strong>: Albatross.Expression.dll</h6>
+  <h5 id="Albatross_Expression_Tokens_IVariableToken_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IVariableToken : IOperandToken, IToken</code></pre>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_System_Object_">Extensions.ConvertToBoolean(Object)</a>
+  </div>
 </article>
           </div>
           
@@ -116,6 +113,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_IVariableToken.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.IVariableToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/IVariableToken.cs/#L2" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

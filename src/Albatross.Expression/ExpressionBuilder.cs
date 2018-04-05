@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression {
+	[Obsolete]
 	public class ExpressionBuilder {
 		public IParser Parser { get; private set; }
 		public StringBuilder Content { get; private set; } = new StringBuilder();

@@ -10,3 +10,7 @@
 - exclude:
     uidRegex: ^System\.Management\.Automation
     type: Namespace
+
+- exclude:
+    uidRegex: ^System\.Exception
+    type: Type

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Albatross.Expression.Operations
    ">
-    <meta name="generator" content="docfx 2.31.0.0">
+    <meta name="generator" content="docfx 2.33.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -78,14 +78,28 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="Albatross.Expression.Operations.And.html">And</a></h4>
-      <section><p>Concrete class with implentation for the infix AND operation.
+      <section><p>Infix AND operation.
+Operand Count: 2
+Operand Type: Any, see the <a class="xref" href="Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_System_Object_">ConvertToBoolean(Object)</a> method for the conversion logic
+Output Type: Boolean
 Usage: 3 &gt; 2 and 2 &gt; 1
-The operation has a precedence of 300.  It is less than </p>
+Precedance: 30</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Array.html">Array</a></h4>
-      <section></section>
+      <section><p>Prefix operation that create an object array
+Operand Count: 0 to infinite
+Operand Type: Any
+Output Type: <span class="xref">System.Collections.Generic.List&lt;T&gt;</span> where T is Object
+Usage: @(1, 2, 3, 4, 5)</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Avg.html">Avg</a></h4>
-      <section></section>
+      <section><p>Prefix operation that return the average of a set of numbers
+Operand Count: 0 to infinite
+Operand Type: number, if the operand count is 1, it can be an array
+Output Type: double
+Usage: avg(1, 2, 3, 4, 5) or avg(@(1, 2, 3, 4, 5))
+Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Coalesce.html">Coalesce</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.ComparisonInfixOperation.html">ComparisonInfixOperation</a></h4>

@@ -35,7 +35,7 @@ namespace Albatross.Expression.Test {
 		}
 
 
-		[TestCase(@"c:\temp\output.txt")]
+		[TestCase(@"c:\temp\precedence.printout.txt")]
 		public void PrintAllInfixOperations(string file) {
 			var tokens = from token in Factory.Instance where token is InfixOperationToken orderby ((InfixOperationToken)token).Precedence ascending select token;
 			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {

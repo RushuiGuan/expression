@@ -44,6 +44,7 @@ references:
   name: Build
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Build_
   commentId: Overload:Albatross.Expression.ContextValue.Build
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.Build
   nameWithType: ContextValue.Build
 - uid: Albatross.Expression.ContextValue.CheckCircularReference(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Collections.Generic.ISet{System.String},System.Object)
@@ -59,6 +60,7 @@ references:
   name: CheckCircularReference
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_CheckCircularReference_
   commentId: Overload:Albatross.Expression.ContextValue.CheckCircularReference
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.CheckCircularReference
   nameWithType: ContextValue.CheckCircularReference
 - uid: Albatross.Expression.ContextValue.ContextType
@@ -71,6 +73,7 @@ references:
   name: ContextType
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_ContextType_
   commentId: Overload:Albatross.Expression.ContextValue.ContextType
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.ContextType
   nameWithType: ContextValue.ContextType
 - uid: Albatross.Expression.ContextValue.DataType
@@ -83,6 +86,7 @@ references:
   name: DataType
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_DataType_
   commentId: Overload:Albatross.Expression.ContextValue.DataType
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.DataType
   nameWithType: ContextValue.DataType
 - uid: Albatross.Expression.ContextValue.Dependees
@@ -95,6 +99,7 @@ references:
   name: Dependees
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Dependees_
   commentId: Overload:Albatross.Expression.ContextValue.Dependees
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.Dependees
   nameWithType: ContextValue.Dependees
 - uid: Albatross.Expression.ContextValue.GetValue(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Object)
@@ -107,6 +112,7 @@ references:
   name: GetValue
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_GetValue_
   commentId: Overload:Albatross.Expression.ContextValue.GetValue
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.GetValue
   nameWithType: ContextValue.GetValue
 - uid: Albatross.Expression.ContextValue.Name
@@ -119,6 +125,7 @@ references:
   name: Name
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Name_
   commentId: Overload:Albatross.Expression.ContextValue.Name
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.Name
   nameWithType: ContextValue.Name
 - uid: Albatross.Expression.ContextValue.Tree
@@ -131,6 +138,7 @@ references:
   name: Tree
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Tree_
   commentId: Overload:Albatross.Expression.ContextValue.Tree
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.Tree
   nameWithType: ContextValue.Tree
 - uid: Albatross.Expression.ContextValue.Value
@@ -143,6 +151,7 @@ references:
   name: Value
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Value_
   commentId: Overload:Albatross.Expression.ContextValue.Value
+  isSpec: "True"
   fullName: Albatross.Expression.ContextValue.Value
   nameWithType: ContextValue.Value
 - uid: Albatross.Expression.Exceptions
@@ -167,6 +176,7 @@ references:
   name: CircularReferenceException
   href: api/Albatross.Expression.Exceptions.CircularReferenceException.html#Albatross_Expression_Exceptions_CircularReferenceException__ctor_
   commentId: Overload:Albatross.Expression.Exceptions.CircularReferenceException.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.CircularReferenceException.CircularReferenceException
   nameWithType: CircularReferenceException.CircularReferenceException
 - uid: Albatross.Expression.Exceptions.InputNotFoundException
@@ -185,6 +195,7 @@ references:
   name: InputNotFoundException
   href: api/Albatross.Expression.Exceptions.InputNotFoundException.html#Albatross_Expression_Exceptions_InputNotFoundException__ctor_
   commentId: Overload:Albatross.Expression.Exceptions.InputNotFoundException.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.InputNotFoundException.InputNotFoundException
   nameWithType: InputNotFoundException.InputNotFoundException
 - uid: Albatross.Expression.Exceptions.InputNotFoundException.VariableName
@@ -197,6 +208,7 @@ references:
   name: VariableName
   href: api/Albatross.Expression.Exceptions.InputNotFoundException.html#Albatross_Expression_Exceptions_InputNotFoundException_VariableName_
   commentId: Overload:Albatross.Expression.Exceptions.InputNotFoundException.VariableName
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.InputNotFoundException.VariableName
   nameWithType: InputNotFoundException.VariableName
 - uid: Albatross.Expression.Exceptions.OperandException
@@ -215,6 +227,7 @@ references:
   name: OperandException
   href: api/Albatross.Expression.Exceptions.OperandException.html#Albatross_Expression_Exceptions_OperandException__ctor_
   commentId: Overload:Albatross.Expression.Exceptions.OperandException.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.OperandException.OperandException
   nameWithType: OperandException.OperandException
 - uid: Albatross.Expression.Exceptions.OperandException.Operation
@@ -227,6 +240,7 @@ references:
   name: Operation
   href: api/Albatross.Expression.Exceptions.OperandException.html#Albatross_Expression_Exceptions_OperandException_Operation_
   commentId: Overload:Albatross.Expression.Exceptions.OperandException.Operation
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.OperandException.Operation
   nameWithType: OperandException.Operation
 - uid: Albatross.Expression.Exceptions.StackException
@@ -245,6 +259,7 @@ references:
   name: StackException
   href: api/Albatross.Expression.Exceptions.StackException.html#Albatross_Expression_Exceptions_StackException__ctor_
   commentId: Overload:Albatross.Expression.Exceptions.StackException.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.StackException.StackException
   nameWithType: StackException.StackException
 - uid: Albatross.Expression.Exceptions.TokenParsingException
@@ -263,6 +278,7 @@ references:
   name: TokenParsingException
   href: api/Albatross.Expression.Exceptions.TokenParsingException.html#Albatross_Expression_Exceptions_TokenParsingException__ctor_
   commentId: Overload:Albatross.Expression.Exceptions.TokenParsingException.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.TokenParsingException.TokenParsingException
   nameWithType: TokenParsingException.TokenParsingException
 - uid: Albatross.Expression.Exceptions.UnexpectedTypeException
@@ -299,6 +315,7 @@ references:
   name: UnexpectedTypeException
   href: api/Albatross.Expression.Exceptions.UnexpectedTypeException.html#Albatross_Expression_Exceptions_UnexpectedTypeException__ctor_
   commentId: Overload:Albatross.Expression.Exceptions.UnexpectedTypeException.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Exceptions.UnexpectedTypeException.UnexpectedTypeException
   nameWithType: UnexpectedTypeException.UnexpectedTypeException
 - uid: Albatross.Expression.ExecutionContext
@@ -317,6 +334,7 @@ references:
   name: ExecutionContext
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext__ctor_
   commentId: Overload:Albatross.Expression.ExecutionContext.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.ExecutionContext
   nameWithType: ExecutionContext.ExecutionContext
 - uid: Albatross.Expression.ExecutionContext.CacheExternalValue
@@ -329,6 +347,7 @@ references:
   name: CacheExternalValue
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CacheExternalValue_
   commentId: Overload:Albatross.Expression.ExecutionContext.CacheExternalValue
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.CacheExternalValue
   nameWithType: ExecutionContext.CacheExternalValue
 - uid: Albatross.Expression.ExecutionContext.CaseSensitive
@@ -341,6 +360,7 @@ references:
   name: CaseSensitive
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CaseSensitive_
   commentId: Overload:Albatross.Expression.ExecutionContext.CaseSensitive
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.CaseSensitive
   nameWithType: ExecutionContext.CaseSensitive
 - uid: Albatross.Expression.ExecutionContext.CheckCircularReference(System.Object)
@@ -353,6 +373,7 @@ references:
   name: CheckCircularReference
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CheckCircularReference_
   commentId: Overload:Albatross.Expression.ExecutionContext.CheckCircularReference
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.CheckCircularReference
   nameWithType: ExecutionContext.CheckCircularReference
 - uid: Albatross.Expression.ExecutionContext.Clear
@@ -365,6 +386,7 @@ references:
   name: Clear
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Clear_
   commentId: Overload:Albatross.Expression.ExecutionContext.Clear
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Clear
   nameWithType: ExecutionContext.Clear
 - uid: Albatross.Expression.ExecutionContext.Compile
@@ -377,6 +399,7 @@ references:
   name: Compile
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Compile_
   commentId: Overload:Albatross.Expression.ExecutionContext.Compile
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Compile
   nameWithType: ExecutionContext.Compile
 - uid: Albatross.Expression.ExecutionContext.Compiled
@@ -389,6 +412,7 @@ references:
   name: Compiled
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Compiled_
   commentId: Overload:Albatross.Expression.ExecutionContext.Compiled
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Compiled
   nameWithType: ExecutionContext.Compiled
 - uid: Albatross.Expression.ExecutionContext.Dependencies
@@ -401,6 +425,7 @@ references:
   name: Dependencies
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Dependencies_
   commentId: Overload:Albatross.Expression.ExecutionContext.Dependencies
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Dependencies
   nameWithType: ExecutionContext.Dependencies
 - uid: Albatross.Expression.ExecutionContext.Eval(System.String,System.Object,System.Type)
@@ -413,6 +438,7 @@ references:
   name: Eval
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Eval_
   commentId: Overload:Albatross.Expression.ExecutionContext.Eval
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Eval
   nameWithType: ExecutionContext.Eval
 - uid: Albatross.Expression.ExecutionContext.GetDependants(System.String,System.Collections.Generic.ISet{System.String})
@@ -428,6 +454,7 @@ references:
   name: GetDependants
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetDependants_
   commentId: Overload:Albatross.Expression.ExecutionContext.GetDependants
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.GetDependants
   nameWithType: ExecutionContext.GetDependants
 - uid: Albatross.Expression.ExecutionContext.GetEnumerator
@@ -440,6 +467,7 @@ references:
   name: GetEnumerator
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetEnumerator_
   commentId: Overload:Albatross.Expression.ExecutionContext.GetEnumerator
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.GetEnumerator
   nameWithType: ExecutionContext.GetEnumerator
 - uid: Albatross.Expression.ExecutionContext.GetValue(System.String,System.Object)
@@ -452,6 +480,7 @@ references:
   name: GetValue
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetValue_
   commentId: Overload:Albatross.Expression.ExecutionContext.GetValue
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.GetValue
   nameWithType: ExecutionContext.GetValue
 - uid: Albatross.Expression.ExecutionContext.NewSet
@@ -464,6 +493,7 @@ references:
   name: NewSet
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_NewSet_
   commentId: Overload:Albatross.Expression.ExecutionContext.NewSet
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.NewSet
   nameWithType: ExecutionContext.NewSet
 - uid: Albatross.Expression.ExecutionContext.Parser
@@ -476,6 +506,7 @@ references:
   name: Parser
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Parser_
   commentId: Overload:Albatross.Expression.ExecutionContext.Parser
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Parser
   nameWithType: ExecutionContext.Parser
 - uid: Albatross.Expression.ExecutionContext.Set(Albatross.Expression.ContextValue)
@@ -488,6 +519,7 @@ references:
   name: Set
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Set_
   commentId: Overload:Albatross.Expression.ExecutionContext.Set
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Set
   nameWithType: ExecutionContext.Set
 - uid: Albatross.Expression.ExecutionContext.SetExpression(System.String,System.String)
@@ -506,6 +538,7 @@ references:
   name: SetExpression
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_SetExpression_
   commentId: Overload:Albatross.Expression.ExecutionContext.SetExpression
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.SetExpression
   nameWithType: ExecutionContext.SetExpression
 - uid: Albatross.Expression.ExecutionContext.SetValue(System.String,System.Object)
@@ -518,6 +551,7 @@ references:
   name: SetValue
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_SetValue_
   commentId: Overload:Albatross.Expression.ExecutionContext.SetValue
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.SetValue
   nameWithType: ExecutionContext.SetValue
 - uid: Albatross.Expression.ExecutionContext.Store
@@ -530,6 +564,7 @@ references:
   name: Store
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Store_
   commentId: Overload:Albatross.Expression.ExecutionContext.Store
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.Store
   nameWithType: ExecutionContext.Store
 - uid: Albatross.Expression.ExecutionContext.System#Collections#IEnumerable#GetEnumerator
@@ -544,6 +579,7 @@ references:
   name: IEnumerable.GetEnumerator
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_System_Collections_IEnumerable_GetEnumerator_
   commentId: Overload:Albatross.Expression.ExecutionContext.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
   name.vb: System.Collections.IEnumerable.GetEnumerator
   fullName: Albatross.Expression.ExecutionContext.System.Collections.IEnumerable.GetEnumerator
   nameWithType: ExecutionContext.IEnumerable.GetEnumerator
@@ -558,6 +594,7 @@ references:
   name: TryGetExternalData
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_TryGetExternalData_
   commentId: Overload:Albatross.Expression.ExecutionContext.TryGetExternalData
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.TryGetExternalData
   nameWithType: ExecutionContext.TryGetExternalData
 - uid: Albatross.Expression.ExecutionContext.TryGetValue(System.String,System.Object,System.Object@)
@@ -573,6 +610,7 @@ references:
   name: TryGetValue
   href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_TryGetValue_
   commentId: Overload:Albatross.Expression.ExecutionContext.TryGetValue
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContext.TryGetValue
   nameWithType: ExecutionContext.TryGetValue
 - uid: Albatross.Expression.ExecutionContextFactory
@@ -591,6 +629,7 @@ references:
   name: ExecutionContextFactory
   href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory__ctor_
   commentId: Overload:Albatross.Expression.ExecutionContextFactory.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContextFactory.ExecutionContextFactory
   nameWithType: ExecutionContextFactory.ExecutionContextFactory
 - uid: Albatross.Expression.ExecutionContextFactory.Create(System.Boolean)
@@ -603,6 +642,7 @@ references:
   name: Create
   href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_Create_
   commentId: Overload:Albatross.Expression.ExecutionContextFactory.Create
+  isSpec: "True"
   fullName: Albatross.Expression.ExecutionContextFactory.Create
   nameWithType: ExecutionContextFactory.Create
 - uid: Albatross.Expression.ExpressionBuilder
@@ -621,6 +661,7 @@ references:
   name: ExpressionBuilder
   href: api/Albatross.Expression.ExpressionBuilder.html#Albatross_Expression_ExpressionBuilder__ctor_
   commentId: Overload:Albatross.Expression.ExpressionBuilder.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.ExpressionBuilder.ExpressionBuilder
   nameWithType: ExpressionBuilder.ExpressionBuilder
 - uid: Albatross.Expression.ExpressionBuilder.Boundary
@@ -633,6 +674,7 @@ references:
   name: Boundary
   href: api/Albatross.Expression.ExpressionBuilder.html#Albatross_Expression_ExpressionBuilder_Boundary_
   commentId: Overload:Albatross.Expression.ExpressionBuilder.Boundary
+  isSpec: "True"
   fullName: Albatross.Expression.ExpressionBuilder.Boundary
   nameWithType: ExpressionBuilder.Boundary
 - uid: Albatross.Expression.ExpressionBuilder.Content
@@ -645,6 +687,7 @@ references:
   name: Content
   href: api/Albatross.Expression.ExpressionBuilder.html#Albatross_Expression_ExpressionBuilder_Content_
   commentId: Overload:Albatross.Expression.ExpressionBuilder.Content
+  isSpec: "True"
   fullName: Albatross.Expression.ExpressionBuilder.Content
   nameWithType: ExpressionBuilder.Content
 - uid: Albatross.Expression.ExpressionBuilder.Expression(System.String)
@@ -657,6 +700,7 @@ references:
   name: Expression
   href: api/Albatross.Expression.ExpressionBuilder.html#Albatross_Expression_ExpressionBuilder_Expression_
   commentId: Overload:Albatross.Expression.ExpressionBuilder.Expression
+  isSpec: "True"
   fullName: Albatross.Expression.ExpressionBuilder.Expression
   nameWithType: ExpressionBuilder.Expression
 - uid: Albatross.Expression.ExpressionBuilder.Parser
@@ -669,6 +713,7 @@ references:
   name: Parser
   href: api/Albatross.Expression.ExpressionBuilder.html#Albatross_Expression_ExpressionBuilder_Parser_
   commentId: Overload:Albatross.Expression.ExpressionBuilder.Parser
+  isSpec: "True"
   fullName: Albatross.Expression.ExpressionBuilder.Parser
   nameWithType: ExpressionBuilder.Parser
 - uid: Albatross.Expression.ExpressionBuilder.Text(System.String)
@@ -681,6 +726,7 @@ references:
   name: Text
   href: api/Albatross.Expression.ExpressionBuilder.html#Albatross_Expression_ExpressionBuilder_Text_
   commentId: Overload:Albatross.Expression.ExpressionBuilder.Text
+  isSpec: "True"
   fullName: Albatross.Expression.ExpressionBuilder.Text
   nameWithType: ExpressionBuilder.Text
 - uid: Albatross.Expression.ExpressionBuilder.ToString
@@ -693,6 +739,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.ExpressionBuilder.html#Albatross_Expression_ExpressionBuilder_ToString_
   commentId: Overload:Albatross.Expression.ExpressionBuilder.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.ExpressionBuilder.ToString
   nameWithType: ExpressionBuilder.ToString
 - uid: Albatross.Expression.Extensions
@@ -711,6 +758,7 @@ references:
   name: ConvertToBoolean
   href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_
   commentId: Overload:Albatross.Expression.Extensions.ConvertToBoolean
+  isSpec: "True"
   fullName: Albatross.Expression.Extensions.ConvertToBoolean
   nameWithType: Extensions.ConvertToBoolean
 - uid: Albatross.Expression.Factory
@@ -729,6 +777,7 @@ references:
   name: Factory
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory__ctor_
   commentId: Overload:Albatross.Expression.Factory.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.Factory
   nameWithType: Factory.Factory
 - uid: Albatross.Expression.Factory.Create(Albatross.Expression.Tokens.IStringLiteralToken,Albatross.Expression.Tokens.IVariableToken)
@@ -741,6 +790,7 @@ references:
   name: Create
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Create_
   commentId: Overload:Albatross.Expression.Factory.Create
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.Create
   nameWithType: Factory.Create
 - uid: Albatross.Expression.Factory.DefaultStringLiteralToken(Albatross.Expression.Tokens.IStringLiteralToken)
@@ -753,6 +803,7 @@ references:
   name: DefaultStringLiteralToken
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_DefaultStringLiteralToken_
   commentId: Overload:Albatross.Expression.Factory.DefaultStringLiteralToken
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.DefaultStringLiteralToken
   nameWithType: Factory.DefaultStringLiteralToken
 - uid: Albatross.Expression.Factory.DefaultVariableToken(Albatross.Expression.Tokens.IVariableToken)
@@ -765,6 +816,7 @@ references:
   name: DefaultVariableToken
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_DefaultVariableToken_
   commentId: Overload:Albatross.Expression.Factory.DefaultVariableToken
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.DefaultVariableToken
   nameWithType: Factory.DefaultVariableToken
 - uid: Albatross.Expression.Factory.GetEnumerator
@@ -777,6 +829,7 @@ references:
   name: GetEnumerator
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_GetEnumerator_
   commentId: Overload:Albatross.Expression.Factory.GetEnumerator
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.GetEnumerator
   nameWithType: Factory.GetEnumerator
 - uid: Albatross.Expression.Factory.Instance
@@ -789,6 +842,7 @@ references:
   name: Instance
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Instance_
   commentId: Overload:Albatross.Expression.Factory.Instance
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.Instance
   nameWithType: Factory.Instance
 - uid: Albatross.Expression.Factory.Register(System.Reflection.Assembly)
@@ -801,12 +855,14 @@ references:
   name: Register
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Register_
   commentId: Overload:Albatross.Expression.Factory.Register
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.Register
   nameWithType: Factory.Register
 - uid: Albatross.Expression.Factory.Replace*
   name: Replace
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Replace_
   commentId: Overload:Albatross.Expression.Factory.Replace
+  isSpec: "True"
   fullName: Albatross.Expression.Factory.Replace
   nameWithType: Factory.Replace
 - uid: Albatross.Expression.Factory.Replace``2
@@ -830,6 +886,7 @@ references:
   name: IEnumerable.GetEnumerator
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_System_Collections_IEnumerable_GetEnumerator_
   commentId: Overload:Albatross.Expression.Factory.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
   name.vb: System.Collections.IEnumerable.GetEnumerator
   fullName: Albatross.Expression.Factory.System.Collections.IEnumerable.GetEnumerator
   nameWithType: Factory.IEnumerable.GetEnumerator
@@ -850,6 +907,7 @@ references:
   name: CacheExternalValue
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CacheExternalValue_
   commentId: Overload:Albatross.Expression.IExecutionContext.CacheExternalValue
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.CacheExternalValue
   nameWithType: IExecutionContext.CacheExternalValue
 - uid: Albatross.Expression.IExecutionContext.CaseSensitive
@@ -862,6 +920,7 @@ references:
   name: CaseSensitive
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CaseSensitive_
   commentId: Overload:Albatross.Expression.IExecutionContext.CaseSensitive
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.CaseSensitive
   nameWithType: IExecutionContext.CaseSensitive
 - uid: Albatross.Expression.IExecutionContext.CheckCircularReference(System.Object)
@@ -874,6 +933,7 @@ references:
   name: CheckCircularReference
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CheckCircularReference_
   commentId: Overload:Albatross.Expression.IExecutionContext.CheckCircularReference
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.CheckCircularReference
   nameWithType: IExecutionContext.CheckCircularReference
 - uid: Albatross.Expression.IExecutionContext.Clear
@@ -886,6 +946,7 @@ references:
   name: Clear
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Clear_
   commentId: Overload:Albatross.Expression.IExecutionContext.Clear
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.Clear
   nameWithType: IExecutionContext.Clear
 - uid: Albatross.Expression.IExecutionContext.Compile
@@ -898,6 +959,7 @@ references:
   name: Compile
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Compile_
   commentId: Overload:Albatross.Expression.IExecutionContext.Compile
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.Compile
   nameWithType: IExecutionContext.Compile
 - uid: Albatross.Expression.IExecutionContext.Dependencies
@@ -910,6 +972,7 @@ references:
   name: Dependencies
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Dependencies_
   commentId: Overload:Albatross.Expression.IExecutionContext.Dependencies
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.Dependencies
   nameWithType: IExecutionContext.Dependencies
 - uid: Albatross.Expression.IExecutionContext.Eval(System.String,System.Object,System.Type)
@@ -922,6 +985,7 @@ references:
   name: Eval
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Eval_
   commentId: Overload:Albatross.Expression.IExecutionContext.Eval
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.Eval
   nameWithType: IExecutionContext.Eval
 - uid: Albatross.Expression.IExecutionContext.GetDependants(System.String,System.Collections.Generic.ISet{System.String})
@@ -937,6 +1001,7 @@ references:
   name: GetDependants
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_GetDependants_
   commentId: Overload:Albatross.Expression.IExecutionContext.GetDependants
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.GetDependants
   nameWithType: IExecutionContext.GetDependants
 - uid: Albatross.Expression.IExecutionContext.GetValue(System.String,System.Object)
@@ -949,6 +1014,7 @@ references:
   name: GetValue
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_GetValue_
   commentId: Overload:Albatross.Expression.IExecutionContext.GetValue
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.GetValue
   nameWithType: IExecutionContext.GetValue
 - uid: Albatross.Expression.IExecutionContext.NewSet
@@ -961,6 +1027,7 @@ references:
   name: NewSet
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_NewSet_
   commentId: Overload:Albatross.Expression.IExecutionContext.NewSet
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.NewSet
   nameWithType: IExecutionContext.NewSet
 - uid: Albatross.Expression.IExecutionContext.Parser
@@ -973,6 +1040,7 @@ references:
   name: Parser
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Parser_
   commentId: Overload:Albatross.Expression.IExecutionContext.Parser
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.Parser
   nameWithType: IExecutionContext.Parser
 - uid: Albatross.Expression.IExecutionContext.Set(Albatross.Expression.ContextValue)
@@ -985,6 +1053,7 @@ references:
   name: Set
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Set_
   commentId: Overload:Albatross.Expression.IExecutionContext.Set
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.Set
   nameWithType: IExecutionContext.Set
 - uid: Albatross.Expression.IExecutionContext.SetExpression(System.String,System.String)
@@ -1003,6 +1072,7 @@ references:
   name: SetExpression
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_SetExpression_
   commentId: Overload:Albatross.Expression.IExecutionContext.SetExpression
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.SetExpression
   nameWithType: IExecutionContext.SetExpression
 - uid: Albatross.Expression.IExecutionContext.SetValue(System.String,System.Object)
@@ -1015,6 +1085,7 @@ references:
   name: SetValue
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_SetValue_
   commentId: Overload:Albatross.Expression.IExecutionContext.SetValue
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.SetValue
   nameWithType: IExecutionContext.SetValue
 - uid: Albatross.Expression.IExecutionContext.TryGetExternalData
@@ -1027,6 +1098,7 @@ references:
   name: TryGetExternalData
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_TryGetExternalData_
   commentId: Overload:Albatross.Expression.IExecutionContext.TryGetExternalData
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.TryGetExternalData
   nameWithType: IExecutionContext.TryGetExternalData
 - uid: Albatross.Expression.IExecutionContext.TryGetValue(System.String,System.Object,System.Object@)
@@ -1042,6 +1114,7 @@ references:
   name: TryGetValue
   href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_TryGetValue_
   commentId: Overload:Albatross.Expression.IExecutionContext.TryGetValue
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContext.TryGetValue
   nameWithType: IExecutionContext.TryGetValue
 - uid: Albatross.Expression.IExecutionContextFactory
@@ -1060,6 +1133,7 @@ references:
   name: Create
   href: api/Albatross.Expression.IExecutionContextFactory.html#Albatross_Expression_IExecutionContextFactory_Create_
   commentId: Overload:Albatross.Expression.IExecutionContextFactory.Create
+  isSpec: "True"
   fullName: Albatross.Expression.IExecutionContextFactory.Create
   nameWithType: IExecutionContextFactory.Create
 - uid: Albatross.Expression.IParser
@@ -1078,6 +1152,7 @@ references:
   name: Add
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Add_
   commentId: Overload:Albatross.Expression.IParser.Add
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.Add
   nameWithType: IParser.Add
 - uid: Albatross.Expression.IParser.BuildStack(System.Collections.Generic.Queue{Albatross.Expression.Tokens.IToken})
@@ -1093,6 +1168,7 @@ references:
   name: BuildStack
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_BuildStack_
   commentId: Overload:Albatross.Expression.IParser.BuildStack
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.BuildStack
   nameWithType: IParser.BuildStack
 - uid: Albatross.Expression.IParser.Compile(System.String)
@@ -1105,6 +1181,7 @@ references:
   name: Compile
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Compile_
   commentId: Overload:Albatross.Expression.IParser.Compile
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.Compile
   nameWithType: IParser.Compile
 - uid: Albatross.Expression.IParser.CreateTree(System.Collections.Generic.Stack{Albatross.Expression.Tokens.IToken})
@@ -1120,6 +1197,7 @@ references:
   name: CreateTree
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_CreateTree_
   commentId: Overload:Albatross.Expression.IParser.CreateTree
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.CreateTree
   nameWithType: IParser.CreateTree
 - uid: Albatross.Expression.IParser.Eval(Albatross.Expression.Tokens.IToken,System.Func{System.String,System.Object})
@@ -1135,6 +1213,7 @@ references:
   name: Eval
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Eval_
   commentId: Overload:Albatross.Expression.IParser.Eval
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.Eval
   nameWithType: IParser.Eval
 - uid: Albatross.Expression.IParser.IsValidExpression(System.String)
@@ -1147,6 +1226,7 @@ references:
   name: IsValidExpression
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_IsValidExpression_
   commentId: Overload:Albatross.Expression.IParser.IsValidExpression
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.IsValidExpression
   nameWithType: IParser.IsValidExpression
 - uid: Albatross.Expression.IParser.StringLiteralToken
@@ -1159,6 +1239,7 @@ references:
   name: StringLiteralToken
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_StringLiteralToken_
   commentId: Overload:Albatross.Expression.IParser.StringLiteralToken
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.StringLiteralToken
   nameWithType: IParser.StringLiteralToken
 - uid: Albatross.Expression.IParser.Tokenize(System.String)
@@ -1171,6 +1252,7 @@ references:
   name: Tokenize
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Tokenize_
   commentId: Overload:Albatross.Expression.IParser.Tokenize
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.Tokenize
   nameWithType: IParser.Tokenize
 - uid: Albatross.Expression.IParser.VariableToken
@@ -1183,6 +1265,7 @@ references:
   name: VariableToken
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_VariableToken_
   commentId: Overload:Albatross.Expression.IParser.VariableToken
+  isSpec: "True"
   fullName: Albatross.Expression.IParser.VariableToken
   nameWithType: IParser.VariableToken
 - uid: Albatross.Expression.Operations
@@ -1210,6 +1293,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.And.html#Albatross_Expression_Operations_And_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.And.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.And.EvalValue
   nameWithType: And.EvalValue
 - uid: Albatross.Expression.Operations.And.Name
@@ -1222,6 +1306,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.And.html#Albatross_Expression_Operations_And_Name_
   commentId: Overload:Albatross.Expression.Operations.And.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.And.Name
   nameWithType: And.Name
 - uid: Albatross.Expression.Operations.And.Precedence
@@ -1234,6 +1319,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.And.html#Albatross_Expression_Operations_And_Precedence_
   commentId: Overload:Albatross.Expression.Operations.And.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.And.Precedence
   nameWithType: And.Precedence
 - uid: Albatross.Expression.Operations.And.Symbolic
@@ -1246,6 +1332,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.And.html#Albatross_Expression_Operations_And_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.And.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.And.Symbolic
   nameWithType: And.Symbolic
 - uid: Albatross.Expression.Operations.Array
@@ -1267,6 +1354,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Array.html#Albatross_Expression_Operations_Array_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Array.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Array.EvalValue
   nameWithType: Array.EvalValue
 - uid: Albatross.Expression.Operations.Array.MaxOperandCount
@@ -1279,6 +1367,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Array.html#Albatross_Expression_Operations_Array_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Array.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Array.MaxOperandCount
   nameWithType: Array.MaxOperandCount
 - uid: Albatross.Expression.Operations.Array.MinOperandCount
@@ -1291,6 +1380,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Array.html#Albatross_Expression_Operations_Array_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Array.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Array.MinOperandCount
   nameWithType: Array.MinOperandCount
 - uid: Albatross.Expression.Operations.Array.Name
@@ -1303,6 +1393,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Array.html#Albatross_Expression_Operations_Array_Name_
   commentId: Overload:Albatross.Expression.Operations.Array.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Array.Name
   nameWithType: Array.Name
 - uid: Albatross.Expression.Operations.Array.Symbolic
@@ -1315,6 +1406,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Array.html#Albatross_Expression_Operations_Array_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Array.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Array.Symbolic
   nameWithType: Array.Symbolic
 - uid: Albatross.Expression.Operations.Avg
@@ -1336,6 +1428,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Avg.html#Albatross_Expression_Operations_Avg_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Avg.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Avg.EvalValue
   nameWithType: Avg.EvalValue
 - uid: Albatross.Expression.Operations.Avg.MaxOperandCount
@@ -1348,6 +1441,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Avg.html#Albatross_Expression_Operations_Avg_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Avg.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Avg.MaxOperandCount
   nameWithType: Avg.MaxOperandCount
 - uid: Albatross.Expression.Operations.Avg.MinOperandCount
@@ -1360,6 +1454,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Avg.html#Albatross_Expression_Operations_Avg_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Avg.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Avg.MinOperandCount
   nameWithType: Avg.MinOperandCount
 - uid: Albatross.Expression.Operations.Avg.Name
@@ -1372,6 +1467,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Avg.html#Albatross_Expression_Operations_Avg_Name_
   commentId: Overload:Albatross.Expression.Operations.Avg.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Avg.Name
   nameWithType: Avg.Name
 - uid: Albatross.Expression.Operations.Avg.Symbolic
@@ -1384,6 +1480,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Avg.html#Albatross_Expression_Operations_Avg_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Avg.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Avg.Symbolic
   nameWithType: Avg.Symbolic
 - uid: Albatross.Expression.Operations.Coalesce
@@ -1405,6 +1502,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Coalesce.html#Albatross_Expression_Operations_Coalesce_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Coalesce.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Coalesce.EvalValue
   nameWithType: Coalesce.EvalValue
 - uid: Albatross.Expression.Operations.Coalesce.MaxOperandCount
@@ -1417,6 +1515,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Coalesce.html#Albatross_Expression_Operations_Coalesce_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Coalesce.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Coalesce.MaxOperandCount
   nameWithType: Coalesce.MaxOperandCount
 - uid: Albatross.Expression.Operations.Coalesce.MinOperandCount
@@ -1429,6 +1528,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Coalesce.html#Albatross_Expression_Operations_Coalesce_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Coalesce.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Coalesce.MinOperandCount
   nameWithType: Coalesce.MinOperandCount
 - uid: Albatross.Expression.Operations.Coalesce.Name
@@ -1441,6 +1541,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Coalesce.html#Albatross_Expression_Operations_Coalesce_Name_
   commentId: Overload:Albatross.Expression.Operations.Coalesce.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Coalesce.Name
   nameWithType: Coalesce.Name
 - uid: Albatross.Expression.Operations.Coalesce.Symbolic
@@ -1453,6 +1554,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Coalesce.html#Albatross_Expression_Operations_Coalesce_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Coalesce.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Coalesce.Symbolic
   nameWithType: Coalesce.Symbolic
 - uid: Albatross.Expression.Operations.ComparisonInfixOperation
@@ -1474,6 +1576,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.ComparisonInfixOperation.html#Albatross_Expression_Operations_ComparisonInfixOperation_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.ComparisonInfixOperation.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.ComparisonInfixOperation.EvalValue
   nameWithType: ComparisonInfixOperation.EvalValue
 - uid: Albatross.Expression.Operations.ComparisonInfixOperation.interpret(System.Int32)
@@ -1486,6 +1589,7 @@ references:
   name: interpret
   href: api/Albatross.Expression.Operations.ComparisonInfixOperation.html#Albatross_Expression_Operations_ComparisonInfixOperation_interpret_
   commentId: Overload:Albatross.Expression.Operations.ComparisonInfixOperation.interpret
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.ComparisonInfixOperation.interpret
   nameWithType: ComparisonInfixOperation.interpret
 - uid: Albatross.Expression.Operations.CurrentApp
@@ -1507,6 +1611,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.CurrentApp.html#Albatross_Expression_Operations_CurrentApp_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.CurrentApp.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentApp.EvalValue
   nameWithType: CurrentApp.EvalValue
 - uid: Albatross.Expression.Operations.CurrentApp.MaxOperandCount
@@ -1519,6 +1624,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.CurrentApp.html#Albatross_Expression_Operations_CurrentApp_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.CurrentApp.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentApp.MaxOperandCount
   nameWithType: CurrentApp.MaxOperandCount
 - uid: Albatross.Expression.Operations.CurrentApp.MinOperandCount
@@ -1531,6 +1637,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.CurrentApp.html#Albatross_Expression_Operations_CurrentApp_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.CurrentApp.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentApp.MinOperandCount
   nameWithType: CurrentApp.MinOperandCount
 - uid: Albatross.Expression.Operations.CurrentApp.Name
@@ -1543,6 +1650,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.CurrentApp.html#Albatross_Expression_Operations_CurrentApp_Name_
   commentId: Overload:Albatross.Expression.Operations.CurrentApp.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentApp.Name
   nameWithType: CurrentApp.Name
 - uid: Albatross.Expression.Operations.CurrentApp.Symbolic
@@ -1555,6 +1663,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.CurrentApp.html#Albatross_Expression_Operations_CurrentApp_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.CurrentApp.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentApp.Symbolic
   nameWithType: CurrentApp.Symbolic
 - uid: Albatross.Expression.Operations.CurrentMachine
@@ -1576,6 +1685,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.CurrentMachine.html#Albatross_Expression_Operations_CurrentMachine_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.CurrentMachine.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentMachine.EvalValue
   nameWithType: CurrentMachine.EvalValue
 - uid: Albatross.Expression.Operations.CurrentMachine.MaxOperandCount
@@ -1588,6 +1698,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.CurrentMachine.html#Albatross_Expression_Operations_CurrentMachine_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.CurrentMachine.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentMachine.MaxOperandCount
   nameWithType: CurrentMachine.MaxOperandCount
 - uid: Albatross.Expression.Operations.CurrentMachine.MinOperandCount
@@ -1600,6 +1711,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.CurrentMachine.html#Albatross_Expression_Operations_CurrentMachine_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.CurrentMachine.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentMachine.MinOperandCount
   nameWithType: CurrentMachine.MinOperandCount
 - uid: Albatross.Expression.Operations.CurrentMachine.Name
@@ -1612,6 +1724,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.CurrentMachine.html#Albatross_Expression_Operations_CurrentMachine_Name_
   commentId: Overload:Albatross.Expression.Operations.CurrentMachine.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentMachine.Name
   nameWithType: CurrentMachine.Name
 - uid: Albatross.Expression.Operations.CurrentMachine.Symbolic
@@ -1624,6 +1737,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.CurrentMachine.html#Albatross_Expression_Operations_CurrentMachine_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.CurrentMachine.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentMachine.Symbolic
   nameWithType: CurrentMachine.Symbolic
 - uid: Albatross.Expression.Operations.CurrentUser
@@ -1645,6 +1759,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.CurrentUser.html#Albatross_Expression_Operations_CurrentUser_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.CurrentUser.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentUser.EvalValue
   nameWithType: CurrentUser.EvalValue
 - uid: Albatross.Expression.Operations.CurrentUser.MaxOperandCount
@@ -1657,6 +1772,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.CurrentUser.html#Albatross_Expression_Operations_CurrentUser_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.CurrentUser.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentUser.MaxOperandCount
   nameWithType: CurrentUser.MaxOperandCount
 - uid: Albatross.Expression.Operations.CurrentUser.MinOperandCount
@@ -1669,6 +1785,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.CurrentUser.html#Albatross_Expression_Operations_CurrentUser_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.CurrentUser.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentUser.MinOperandCount
   nameWithType: CurrentUser.MinOperandCount
 - uid: Albatross.Expression.Operations.CurrentUser.Name
@@ -1681,6 +1798,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.CurrentUser.html#Albatross_Expression_Operations_CurrentUser_Name_
   commentId: Overload:Albatross.Expression.Operations.CurrentUser.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentUser.Name
   nameWithType: CurrentUser.Name
 - uid: Albatross.Expression.Operations.CurrentUser.Symbolic
@@ -1693,6 +1811,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.CurrentUser.html#Albatross_Expression_Operations_CurrentUser_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.CurrentUser.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.CurrentUser.Symbolic
   nameWithType: CurrentUser.Symbolic
 - uid: Albatross.Expression.Operations.Date
@@ -1714,6 +1833,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Date.html#Albatross_Expression_Operations_Date_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Date.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Date.EvalValue
   nameWithType: Date.EvalValue
 - uid: Albatross.Expression.Operations.Date.MaxOperandCount
@@ -1726,6 +1846,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Date.html#Albatross_Expression_Operations_Date_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Date.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Date.MaxOperandCount
   nameWithType: Date.MaxOperandCount
 - uid: Albatross.Expression.Operations.Date.MinOperandCount
@@ -1738,6 +1859,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Date.html#Albatross_Expression_Operations_Date_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Date.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Date.MinOperandCount
   nameWithType: Date.MinOperandCount
 - uid: Albatross.Expression.Operations.Date.Name
@@ -1750,6 +1872,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Date.html#Albatross_Expression_Operations_Date_Name_
   commentId: Overload:Albatross.Expression.Operations.Date.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Date.Name
   nameWithType: Date.Name
 - uid: Albatross.Expression.Operations.Date.Symbolic
@@ -1762,6 +1885,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Date.html#Albatross_Expression_Operations_Date_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Date.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Date.Symbolic
   nameWithType: Date.Symbolic
 - uid: Albatross.Expression.Operations.Divide
@@ -1783,6 +1907,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Divide.html#Albatross_Expression_Operations_Divide_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Divide.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Divide.EvalValue
   nameWithType: Divide.EvalValue
 - uid: Albatross.Expression.Operations.Divide.Name
@@ -1795,6 +1920,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Divide.html#Albatross_Expression_Operations_Divide_Name_
   commentId: Overload:Albatross.Expression.Operations.Divide.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Divide.Name
   nameWithType: Divide.Name
 - uid: Albatross.Expression.Operations.Divide.Precedence
@@ -1807,6 +1933,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Divide.html#Albatross_Expression_Operations_Divide_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Divide.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Divide.Precedence
   nameWithType: Divide.Precedence
 - uid: Albatross.Expression.Operations.Divide.Symbolic
@@ -1819,6 +1946,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Divide.html#Albatross_Expression_Operations_Divide_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Divide.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Divide.Symbolic
   nameWithType: Divide.Symbolic
 - uid: Albatross.Expression.Operations.Equal
@@ -1837,6 +1965,7 @@ references:
   name: interpret
   href: api/Albatross.Expression.Operations.Equal.html#Albatross_Expression_Operations_Equal_interpret_
   commentId: Overload:Albatross.Expression.Operations.Equal.interpret
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Equal.interpret
   nameWithType: Equal.interpret
 - uid: Albatross.Expression.Operations.Equal.Name
@@ -1849,6 +1978,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Equal.html#Albatross_Expression_Operations_Equal_Name_
   commentId: Overload:Albatross.Expression.Operations.Equal.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Equal.Name
   nameWithType: Equal.Name
 - uid: Albatross.Expression.Operations.Equal.Precedence
@@ -1861,6 +1991,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Equal.html#Albatross_Expression_Operations_Equal_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Equal.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Equal.Precedence
   nameWithType: Equal.Precedence
 - uid: Albatross.Expression.Operations.Equal.Symbolic
@@ -1873,6 +2004,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Equal.html#Albatross_Expression_Operations_Equal_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Equal.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Equal.Symbolic
   nameWithType: Equal.Symbolic
 - uid: Albatross.Expression.Operations.Format
@@ -1894,6 +2026,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Format.html#Albatross_Expression_Operations_Format_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Format.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Format.EvalValue
   nameWithType: Format.EvalValue
 - uid: Albatross.Expression.Operations.Format.MaxOperandCount
@@ -1906,6 +2039,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Format.html#Albatross_Expression_Operations_Format_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Format.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Format.MaxOperandCount
   nameWithType: Format.MaxOperandCount
 - uid: Albatross.Expression.Operations.Format.MinOperandCount
@@ -1918,6 +2052,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Format.html#Albatross_Expression_Operations_Format_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Format.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Format.MinOperandCount
   nameWithType: Format.MinOperandCount
 - uid: Albatross.Expression.Operations.Format.Name
@@ -1930,6 +2065,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Format.html#Albatross_Expression_Operations_Format_Name_
   commentId: Overload:Albatross.Expression.Operations.Format.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Format.Name
   nameWithType: Format.Name
 - uid: Albatross.Expression.Operations.Format.Symbolic
@@ -1942,6 +2078,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Format.html#Albatross_Expression_Operations_Format_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Format.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Format.Symbolic
   nameWithType: Format.Symbolic
 - uid: Albatross.Expression.Operations.GreaterEqual
@@ -1960,6 +2097,7 @@ references:
   name: interpret
   href: api/Albatross.Expression.Operations.GreaterEqual.html#Albatross_Expression_Operations_GreaterEqual_interpret_
   commentId: Overload:Albatross.Expression.Operations.GreaterEqual.interpret
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterEqual.interpret
   nameWithType: GreaterEqual.interpret
 - uid: Albatross.Expression.Operations.GreaterEqual.Name
@@ -1972,6 +2110,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.GreaterEqual.html#Albatross_Expression_Operations_GreaterEqual_Name_
   commentId: Overload:Albatross.Expression.Operations.GreaterEqual.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterEqual.Name
   nameWithType: GreaterEqual.Name
 - uid: Albatross.Expression.Operations.GreaterEqual.Precedence
@@ -1984,6 +2123,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.GreaterEqual.html#Albatross_Expression_Operations_GreaterEqual_Precedence_
   commentId: Overload:Albatross.Expression.Operations.GreaterEqual.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterEqual.Precedence
   nameWithType: GreaterEqual.Precedence
 - uid: Albatross.Expression.Operations.GreaterEqual.Symbolic
@@ -1996,6 +2136,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.GreaterEqual.html#Albatross_Expression_Operations_GreaterEqual_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.GreaterEqual.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterEqual.Symbolic
   nameWithType: GreaterEqual.Symbolic
 - uid: Albatross.Expression.Operations.GreaterThan
@@ -2014,6 +2155,7 @@ references:
   name: interpret
   href: api/Albatross.Expression.Operations.GreaterThan.html#Albatross_Expression_Operations_GreaterThan_interpret_
   commentId: Overload:Albatross.Expression.Operations.GreaterThan.interpret
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterThan.interpret
   nameWithType: GreaterThan.interpret
 - uid: Albatross.Expression.Operations.GreaterThan.Match(System.String,System.Int32,System.Int32@)
@@ -2029,6 +2171,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Operations.GreaterThan.html#Albatross_Expression_Operations_GreaterThan_Match_
   commentId: Overload:Albatross.Expression.Operations.GreaterThan.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterThan.Match
   nameWithType: GreaterThan.Match
 - uid: Albatross.Expression.Operations.GreaterThan.Name
@@ -2041,6 +2184,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.GreaterThan.html#Albatross_Expression_Operations_GreaterThan_Name_
   commentId: Overload:Albatross.Expression.Operations.GreaterThan.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterThan.Name
   nameWithType: GreaterThan.Name
 - uid: Albatross.Expression.Operations.GreaterThan.Precedence
@@ -2053,6 +2197,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.GreaterThan.html#Albatross_Expression_Operations_GreaterThan_Precedence_
   commentId: Overload:Albatross.Expression.Operations.GreaterThan.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterThan.Precedence
   nameWithType: GreaterThan.Precedence
 - uid: Albatross.Expression.Operations.GreaterThan.Symbolic
@@ -2065,6 +2210,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.GreaterThan.html#Albatross_Expression_Operations_GreaterThan_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.GreaterThan.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.GreaterThan.Symbolic
   nameWithType: GreaterThan.Symbolic
 - uid: Albatross.Expression.Operations.If
@@ -2086,6 +2232,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.If.html#Albatross_Expression_Operations_If_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.If.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.If.EvalValue
   nameWithType: If.EvalValue
 - uid: Albatross.Expression.Operations.If.MaxOperandCount
@@ -2098,6 +2245,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.If.html#Albatross_Expression_Operations_If_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.If.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.If.MaxOperandCount
   nameWithType: If.MaxOperandCount
 - uid: Albatross.Expression.Operations.If.MinOperandCount
@@ -2110,6 +2258,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.If.html#Albatross_Expression_Operations_If_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.If.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.If.MinOperandCount
   nameWithType: If.MinOperandCount
 - uid: Albatross.Expression.Operations.If.Name
@@ -2122,6 +2271,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.If.html#Albatross_Expression_Operations_If_Name_
   commentId: Overload:Albatross.Expression.Operations.If.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.If.Name
   nameWithType: If.Name
 - uid: Albatross.Expression.Operations.If.Symbolic
@@ -2134,6 +2284,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.If.html#Albatross_Expression_Operations_If_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.If.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.If.Symbolic
   nameWithType: If.Symbolic
 - uid: Albatross.Expression.Operations.IsBlank
@@ -2155,6 +2306,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.IsBlank.html#Albatross_Expression_Operations_IsBlank_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.IsBlank.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.IsBlank.EvalValue
   nameWithType: IsBlank.EvalValue
 - uid: Albatross.Expression.Operations.IsBlank.MaxOperandCount
@@ -2167,6 +2319,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.IsBlank.html#Albatross_Expression_Operations_IsBlank_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.IsBlank.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.IsBlank.MaxOperandCount
   nameWithType: IsBlank.MaxOperandCount
 - uid: Albatross.Expression.Operations.IsBlank.MinOperandCount
@@ -2179,6 +2332,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.IsBlank.html#Albatross_Expression_Operations_IsBlank_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.IsBlank.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.IsBlank.MinOperandCount
   nameWithType: IsBlank.MinOperandCount
 - uid: Albatross.Expression.Operations.IsBlank.Name
@@ -2191,6 +2345,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.IsBlank.html#Albatross_Expression_Operations_IsBlank_Name_
   commentId: Overload:Albatross.Expression.Operations.IsBlank.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.IsBlank.Name
   nameWithType: IsBlank.Name
 - uid: Albatross.Expression.Operations.IsBlank.Symbolic
@@ -2203,6 +2358,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.IsBlank.html#Albatross_Expression_Operations_IsBlank_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.IsBlank.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.IsBlank.Symbolic
   nameWithType: IsBlank.Symbolic
 - uid: Albatross.Expression.Operations.Left
@@ -2224,6 +2380,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Left.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Left.EvalValue
   nameWithType: Left.EvalValue
 - uid: Albatross.Expression.Operations.Left.MaxOperandCount
@@ -2236,6 +2393,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Left.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Left.MaxOperandCount
   nameWithType: Left.MaxOperandCount
 - uid: Albatross.Expression.Operations.Left.MinOperandCount
@@ -2248,6 +2406,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Left.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Left.MinOperandCount
   nameWithType: Left.MinOperandCount
 - uid: Albatross.Expression.Operations.Left.Name
@@ -2260,6 +2419,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_Name_
   commentId: Overload:Albatross.Expression.Operations.Left.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Left.Name
   nameWithType: Left.Name
 - uid: Albatross.Expression.Operations.Left.Symbolic
@@ -2272,6 +2432,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Left.html#Albatross_Expression_Operations_Left_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Left.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Left.Symbolic
   nameWithType: Left.Symbolic
 - uid: Albatross.Expression.Operations.Len
@@ -2293,6 +2454,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Len.html#Albatross_Expression_Operations_Len_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Len.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Len.EvalValue
   nameWithType: Len.EvalValue
 - uid: Albatross.Expression.Operations.Len.MaxOperandCount
@@ -2305,6 +2467,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Len.html#Albatross_Expression_Operations_Len_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Len.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Len.MaxOperandCount
   nameWithType: Len.MaxOperandCount
 - uid: Albatross.Expression.Operations.Len.MinOperandCount
@@ -2317,6 +2480,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Len.html#Albatross_Expression_Operations_Len_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Len.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Len.MinOperandCount
   nameWithType: Len.MinOperandCount
 - uid: Albatross.Expression.Operations.Len.Name
@@ -2329,6 +2493,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Len.html#Albatross_Expression_Operations_Len_Name_
   commentId: Overload:Albatross.Expression.Operations.Len.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Len.Name
   nameWithType: Len.Name
 - uid: Albatross.Expression.Operations.Len.Symbolic
@@ -2341,6 +2506,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Len.html#Albatross_Expression_Operations_Len_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Len.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Len.Symbolic
   nameWithType: Len.Symbolic
 - uid: Albatross.Expression.Operations.LessEqual
@@ -2359,6 +2525,7 @@ references:
   name: interpret
   href: api/Albatross.Expression.Operations.LessEqual.html#Albatross_Expression_Operations_LessEqual_interpret_
   commentId: Overload:Albatross.Expression.Operations.LessEqual.interpret
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessEqual.interpret
   nameWithType: LessEqual.interpret
 - uid: Albatross.Expression.Operations.LessEqual.Name
@@ -2371,6 +2538,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.LessEqual.html#Albatross_Expression_Operations_LessEqual_Name_
   commentId: Overload:Albatross.Expression.Operations.LessEqual.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessEqual.Name
   nameWithType: LessEqual.Name
 - uid: Albatross.Expression.Operations.LessEqual.Precedence
@@ -2383,6 +2551,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.LessEqual.html#Albatross_Expression_Operations_LessEqual_Precedence_
   commentId: Overload:Albatross.Expression.Operations.LessEqual.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessEqual.Precedence
   nameWithType: LessEqual.Precedence
 - uid: Albatross.Expression.Operations.LessEqual.Symbolic
@@ -2395,6 +2564,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.LessEqual.html#Albatross_Expression_Operations_LessEqual_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.LessEqual.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessEqual.Symbolic
   nameWithType: LessEqual.Symbolic
 - uid: Albatross.Expression.Operations.LessThan
@@ -2413,6 +2583,7 @@ references:
   name: interpret
   href: api/Albatross.Expression.Operations.LessThan.html#Albatross_Expression_Operations_LessThan_interpret_
   commentId: Overload:Albatross.Expression.Operations.LessThan.interpret
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessThan.interpret
   nameWithType: LessThan.interpret
 - uid: Albatross.Expression.Operations.LessThan.Match(System.String,System.Int32,System.Int32@)
@@ -2428,6 +2599,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Operations.LessThan.html#Albatross_Expression_Operations_LessThan_Match_
   commentId: Overload:Albatross.Expression.Operations.LessThan.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessThan.Match
   nameWithType: LessThan.Match
 - uid: Albatross.Expression.Operations.LessThan.Name
@@ -2440,6 +2612,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.LessThan.html#Albatross_Expression_Operations_LessThan_Name_
   commentId: Overload:Albatross.Expression.Operations.LessThan.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessThan.Name
   nameWithType: LessThan.Name
 - uid: Albatross.Expression.Operations.LessThan.Precedence
@@ -2452,6 +2625,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.LessThan.html#Albatross_Expression_Operations_LessThan_Precedence_
   commentId: Overload:Albatross.Expression.Operations.LessThan.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessThan.Precedence
   nameWithType: LessThan.Precedence
 - uid: Albatross.Expression.Operations.LessThan.Symbolic
@@ -2464,6 +2638,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.LessThan.html#Albatross_Expression_Operations_LessThan_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.LessThan.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.LessThan.Symbolic
   nameWithType: LessThan.Symbolic
 - uid: Albatross.Expression.Operations.Max
@@ -2485,12 +2660,14 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Max.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Max.EvalValue
   nameWithType: Max.EvalValue
 - uid: Albatross.Expression.Operations.Max.GetMax*
   name: GetMax
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_GetMax_
   commentId: Overload:Albatross.Expression.Operations.Max.GetMax
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Max.GetMax
   nameWithType: Max.GetMax
 - uid: Albatross.Expression.Operations.Max.GetMax``1(System.Collections.IEnumerable)
@@ -2512,6 +2689,7 @@ references:
   name: GetMaxString
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_GetMaxString_
   commentId: Overload:Albatross.Expression.Operations.Max.GetMaxString
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Max.GetMaxString
   nameWithType: Max.GetMaxString
 - uid: Albatross.Expression.Operations.Max.MaxOperandCount
@@ -2524,6 +2702,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Max.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Max.MaxOperandCount
   nameWithType: Max.MaxOperandCount
 - uid: Albatross.Expression.Operations.Max.MinOperandCount
@@ -2536,6 +2715,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Max.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Max.MinOperandCount
   nameWithType: Max.MinOperandCount
 - uid: Albatross.Expression.Operations.Max.Name
@@ -2548,6 +2728,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_Name_
   commentId: Overload:Albatross.Expression.Operations.Max.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Max.Name
   nameWithType: Max.Name
 - uid: Albatross.Expression.Operations.Max.Symbolic
@@ -2560,6 +2741,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Max.html#Albatross_Expression_Operations_Max_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Max.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Max.Symbolic
   nameWithType: Max.Symbolic
 - uid: Albatross.Expression.Operations.Min
@@ -2581,12 +2763,14 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Min.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Min.EvalValue
   nameWithType: Min.EvalValue
 - uid: Albatross.Expression.Operations.Min.GetMin*
   name: GetMin
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_GetMin_
   commentId: Overload:Albatross.Expression.Operations.Min.GetMin
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Min.GetMin
   nameWithType: Min.GetMin
 - uid: Albatross.Expression.Operations.Min.GetMin``1(System.Collections.IEnumerable)
@@ -2608,6 +2792,7 @@ references:
   name: GetMinString
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_GetMinString_
   commentId: Overload:Albatross.Expression.Operations.Min.GetMinString
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Min.GetMinString
   nameWithType: Min.GetMinString
 - uid: Albatross.Expression.Operations.Min.MaxOperandCount
@@ -2620,6 +2805,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Min.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Min.MaxOperandCount
   nameWithType: Min.MaxOperandCount
 - uid: Albatross.Expression.Operations.Min.MinOperandCount
@@ -2632,6 +2818,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Min.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Min.MinOperandCount
   nameWithType: Min.MinOperandCount
 - uid: Albatross.Expression.Operations.Min.Name
@@ -2644,6 +2831,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_Name_
   commentId: Overload:Albatross.Expression.Operations.Min.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Min.Name
   nameWithType: Min.Name
 - uid: Albatross.Expression.Operations.Min.Symbolic
@@ -2656,6 +2844,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Min.html#Albatross_Expression_Operations_Min_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Min.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Min.Symbolic
   nameWithType: Min.Symbolic
 - uid: Albatross.Expression.Operations.Minus
@@ -2677,6 +2866,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Minus.html#Albatross_Expression_Operations_Minus_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Minus.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Minus.EvalValue
   nameWithType: Minus.EvalValue
 - uid: Albatross.Expression.Operations.Minus.Name
@@ -2689,6 +2879,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Minus.html#Albatross_Expression_Operations_Minus_Name_
   commentId: Overload:Albatross.Expression.Operations.Minus.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Minus.Name
   nameWithType: Minus.Name
 - uid: Albatross.Expression.Operations.Minus.Precedence
@@ -2701,6 +2892,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Minus.html#Albatross_Expression_Operations_Minus_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Minus.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Minus.Precedence
   nameWithType: Minus.Precedence
 - uid: Albatross.Expression.Operations.Minus.Symbolic
@@ -2713,6 +2905,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Minus.html#Albatross_Expression_Operations_Minus_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Minus.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Minus.Symbolic
   nameWithType: Minus.Symbolic
 - uid: Albatross.Expression.Operations.Mod
@@ -2734,6 +2927,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Mod.html#Albatross_Expression_Operations_Mod_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Mod.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Mod.EvalValue
   nameWithType: Mod.EvalValue
 - uid: Albatross.Expression.Operations.Mod.Name
@@ -2746,6 +2940,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Mod.html#Albatross_Expression_Operations_Mod_Name_
   commentId: Overload:Albatross.Expression.Operations.Mod.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Mod.Name
   nameWithType: Mod.Name
 - uid: Albatross.Expression.Operations.Mod.Precedence
@@ -2758,6 +2953,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Mod.html#Albatross_Expression_Operations_Mod_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Mod.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Mod.Precedence
   nameWithType: Mod.Precedence
 - uid: Albatross.Expression.Operations.Mod.Symbolic
@@ -2770,6 +2966,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Mod.html#Albatross_Expression_Operations_Mod_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Mod.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Mod.Symbolic
   nameWithType: Mod.Symbolic
 - uid: Albatross.Expression.Operations.Month
@@ -2791,6 +2988,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Month.html#Albatross_Expression_Operations_Month_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Month.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Month.EvalValue
   nameWithType: Month.EvalValue
 - uid: Albatross.Expression.Operations.Month.MaxOperandCount
@@ -2803,6 +3001,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Month.html#Albatross_Expression_Operations_Month_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Month.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Month.MaxOperandCount
   nameWithType: Month.MaxOperandCount
 - uid: Albatross.Expression.Operations.Month.MinOperandCount
@@ -2815,6 +3014,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Month.html#Albatross_Expression_Operations_Month_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Month.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Month.MinOperandCount
   nameWithType: Month.MinOperandCount
 - uid: Albatross.Expression.Operations.Month.Name
@@ -2827,6 +3027,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Month.html#Albatross_Expression_Operations_Month_Name_
   commentId: Overload:Albatross.Expression.Operations.Month.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Month.Name
   nameWithType: Month.Name
 - uid: Albatross.Expression.Operations.Month.Symbolic
@@ -2839,6 +3040,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Month.html#Albatross_Expression_Operations_Month_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Month.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Month.Symbolic
   nameWithType: Month.Symbolic
 - uid: Albatross.Expression.Operations.MonthName
@@ -2860,6 +3062,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.MonthName.html#Albatross_Expression_Operations_MonthName_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.MonthName.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.MonthName.EvalValue
   nameWithType: MonthName.EvalValue
 - uid: Albatross.Expression.Operations.MonthName.MaxOperandCount
@@ -2872,6 +3075,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.MonthName.html#Albatross_Expression_Operations_MonthName_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.MonthName.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.MonthName.MaxOperandCount
   nameWithType: MonthName.MaxOperandCount
 - uid: Albatross.Expression.Operations.MonthName.MinOperandCount
@@ -2884,6 +3088,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.MonthName.html#Albatross_Expression_Operations_MonthName_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.MonthName.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.MonthName.MinOperandCount
   nameWithType: MonthName.MinOperandCount
 - uid: Albatross.Expression.Operations.MonthName.Name
@@ -2896,6 +3101,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.MonthName.html#Albatross_Expression_Operations_MonthName_Name_
   commentId: Overload:Albatross.Expression.Operations.MonthName.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.MonthName.Name
   nameWithType: MonthName.Name
 - uid: Albatross.Expression.Operations.MonthName.Symbolic
@@ -2908,6 +3114,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.MonthName.html#Albatross_Expression_Operations_MonthName_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.MonthName.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.MonthName.Symbolic
   nameWithType: MonthName.Symbolic
 - uid: Albatross.Expression.Operations.Multiply
@@ -2929,6 +3136,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Multiply.html#Albatross_Expression_Operations_Multiply_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Multiply.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Multiply.EvalValue
   nameWithType: Multiply.EvalValue
 - uid: Albatross.Expression.Operations.Multiply.Name
@@ -2941,6 +3149,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Multiply.html#Albatross_Expression_Operations_Multiply_Name_
   commentId: Overload:Albatross.Expression.Operations.Multiply.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Multiply.Name
   nameWithType: Multiply.Name
 - uid: Albatross.Expression.Operations.Multiply.Precedence
@@ -2953,6 +3162,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Multiply.html#Albatross_Expression_Operations_Multiply_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Multiply.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Multiply.Precedence
   nameWithType: Multiply.Precedence
 - uid: Albatross.Expression.Operations.Multiply.Symbolic
@@ -2965,6 +3175,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Multiply.html#Albatross_Expression_Operations_Multiply_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Multiply.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Multiply.Symbolic
   nameWithType: Multiply.Symbolic
 - uid: Albatross.Expression.Operations.Negative
@@ -2986,6 +3197,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Negative.html#Albatross_Expression_Operations_Negative_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Negative.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Negative.EvalValue
   nameWithType: Negative.EvalValue
 - uid: Albatross.Expression.Operations.Negative.MaxOperandCount
@@ -2998,6 +3210,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Negative.html#Albatross_Expression_Operations_Negative_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Negative.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Negative.MaxOperandCount
   nameWithType: Negative.MaxOperandCount
 - uid: Albatross.Expression.Operations.Negative.MinOperandCount
@@ -3010,6 +3223,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Negative.html#Albatross_Expression_Operations_Negative_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Negative.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Negative.MinOperandCount
   nameWithType: Negative.MinOperandCount
 - uid: Albatross.Expression.Operations.Negative.Name
@@ -3022,6 +3236,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Negative.html#Albatross_Expression_Operations_Negative_Name_
   commentId: Overload:Albatross.Expression.Operations.Negative.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Negative.Name
   nameWithType: Negative.Name
 - uid: Albatross.Expression.Operations.Negative.Symbolic
@@ -3034,6 +3249,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Negative.html#Albatross_Expression_Operations_Negative_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Negative.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Negative.Symbolic
   nameWithType: Negative.Symbolic
 - uid: Albatross.Expression.Operations.Not
@@ -3055,6 +3271,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Not.html#Albatross_Expression_Operations_Not_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Not.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Not.EvalValue
   nameWithType: Not.EvalValue
 - uid: Albatross.Expression.Operations.Not.MaxOperandCount
@@ -3067,6 +3284,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Not.html#Albatross_Expression_Operations_Not_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Not.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Not.MaxOperandCount
   nameWithType: Not.MaxOperandCount
 - uid: Albatross.Expression.Operations.Not.MinOperandCount
@@ -3079,6 +3297,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Not.html#Albatross_Expression_Operations_Not_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Not.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Not.MinOperandCount
   nameWithType: Not.MinOperandCount
 - uid: Albatross.Expression.Operations.Not.Name
@@ -3091,6 +3310,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Not.html#Albatross_Expression_Operations_Not_Name_
   commentId: Overload:Albatross.Expression.Operations.Not.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Not.Name
   nameWithType: Not.Name
 - uid: Albatross.Expression.Operations.Not.Symbolic
@@ -3103,6 +3323,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Not.html#Albatross_Expression_Operations_Not_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Not.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Not.Symbolic
   nameWithType: Not.Symbolic
 - uid: Albatross.Expression.Operations.NotEqual
@@ -3121,6 +3342,7 @@ references:
   name: interpret
   href: api/Albatross.Expression.Operations.NotEqual.html#Albatross_Expression_Operations_NotEqual_interpret_
   commentId: Overload:Albatross.Expression.Operations.NotEqual.interpret
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.NotEqual.interpret
   nameWithType: NotEqual.interpret
 - uid: Albatross.Expression.Operations.NotEqual.Name
@@ -3133,6 +3355,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.NotEqual.html#Albatross_Expression_Operations_NotEqual_Name_
   commentId: Overload:Albatross.Expression.Operations.NotEqual.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.NotEqual.Name
   nameWithType: NotEqual.Name
 - uid: Albatross.Expression.Operations.NotEqual.Precedence
@@ -3145,6 +3368,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.NotEqual.html#Albatross_Expression_Operations_NotEqual_Precedence_
   commentId: Overload:Albatross.Expression.Operations.NotEqual.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.NotEqual.Precedence
   nameWithType: NotEqual.Precedence
 - uid: Albatross.Expression.Operations.NotEqual.Symbolic
@@ -3157,6 +3381,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.NotEqual.html#Albatross_Expression_Operations_NotEqual_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.NotEqual.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.NotEqual.Symbolic
   nameWithType: NotEqual.Symbolic
 - uid: Albatross.Expression.Operations.Now
@@ -3178,6 +3403,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Now.html#Albatross_Expression_Operations_Now_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Now.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Now.EvalValue
   nameWithType: Now.EvalValue
 - uid: Albatross.Expression.Operations.Now.MaxOperandCount
@@ -3190,6 +3416,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Now.html#Albatross_Expression_Operations_Now_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Now.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Now.MaxOperandCount
   nameWithType: Now.MaxOperandCount
 - uid: Albatross.Expression.Operations.Now.MinOperandCount
@@ -3202,6 +3429,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Now.html#Albatross_Expression_Operations_Now_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Now.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Now.MinOperandCount
   nameWithType: Now.MinOperandCount
 - uid: Albatross.Expression.Operations.Now.Name
@@ -3214,6 +3442,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Now.html#Albatross_Expression_Operations_Now_Name_
   commentId: Overload:Albatross.Expression.Operations.Now.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Now.Name
   nameWithType: Now.Name
 - uid: Albatross.Expression.Operations.Now.Symbolic
@@ -3226,6 +3455,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Now.html#Albatross_Expression_Operations_Now_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Now.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Now.Symbolic
   nameWithType: Now.Symbolic
 - uid: Albatross.Expression.Operations.Or
@@ -3247,6 +3477,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Or.html#Albatross_Expression_Operations_Or_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Or.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Or.EvalValue
   nameWithType: Or.EvalValue
 - uid: Albatross.Expression.Operations.Or.Name
@@ -3259,6 +3490,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Or.html#Albatross_Expression_Operations_Or_Name_
   commentId: Overload:Albatross.Expression.Operations.Or.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Or.Name
   nameWithType: Or.Name
 - uid: Albatross.Expression.Operations.Or.Precedence
@@ -3271,6 +3503,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Or.html#Albatross_Expression_Operations_Or_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Or.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Or.Precedence
   nameWithType: Or.Precedence
 - uid: Albatross.Expression.Operations.Or.Symbolic
@@ -3283,6 +3516,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Or.html#Albatross_Expression_Operations_Or_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Or.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Or.Symbolic
   nameWithType: Or.Symbolic
 - uid: Albatross.Expression.Operations.PadLeft
@@ -3310,6 +3544,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.PadLeft.html#Albatross_Expression_Operations_PadLeft_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.PadLeft.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadLeft.EvalValue
   nameWithType: PadLeft.EvalValue
 - uid: Albatross.Expression.Operations.PadLeft.MaxOperandCount
@@ -3322,6 +3557,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.PadLeft.html#Albatross_Expression_Operations_PadLeft_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.PadLeft.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadLeft.MaxOperandCount
   nameWithType: PadLeft.MaxOperandCount
 - uid: Albatross.Expression.Operations.PadLeft.MinOperandCount
@@ -3334,6 +3570,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.PadLeft.html#Albatross_Expression_Operations_PadLeft_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.PadLeft.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadLeft.MinOperandCount
   nameWithType: PadLeft.MinOperandCount
 - uid: Albatross.Expression.Operations.PadLeft.Name
@@ -3346,6 +3583,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.PadLeft.html#Albatross_Expression_Operations_PadLeft_Name_
   commentId: Overload:Albatross.Expression.Operations.PadLeft.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadLeft.Name
   nameWithType: PadLeft.Name
 - uid: Albatross.Expression.Operations.PadLeft.Symbolic
@@ -3358,6 +3596,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.PadLeft.html#Albatross_Expression_Operations_PadLeft_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.PadLeft.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadLeft.Symbolic
   nameWithType: PadLeft.Symbolic
 - uid: Albatross.Expression.Operations.PadRight
@@ -3385,6 +3624,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.PadRight.html#Albatross_Expression_Operations_PadRight_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.PadRight.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadRight.EvalValue
   nameWithType: PadRight.EvalValue
 - uid: Albatross.Expression.Operations.PadRight.MaxOperandCount
@@ -3397,6 +3637,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.PadRight.html#Albatross_Expression_Operations_PadRight_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.PadRight.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadRight.MaxOperandCount
   nameWithType: PadRight.MaxOperandCount
 - uid: Albatross.Expression.Operations.PadRight.MinOperandCount
@@ -3409,6 +3650,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.PadRight.html#Albatross_Expression_Operations_PadRight_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.PadRight.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadRight.MinOperandCount
   nameWithType: PadRight.MinOperandCount
 - uid: Albatross.Expression.Operations.PadRight.Name
@@ -3421,6 +3663,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.PadRight.html#Albatross_Expression_Operations_PadRight_Name_
   commentId: Overload:Albatross.Expression.Operations.PadRight.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadRight.Name
   nameWithType: PadRight.Name
 - uid: Albatross.Expression.Operations.PadRight.Symbolic
@@ -3433,6 +3676,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.PadRight.html#Albatross_Expression_Operations_PadRight_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.PadRight.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.PadRight.Symbolic
   nameWithType: PadRight.Symbolic
 - uid: Albatross.Expression.Operations.Pi
@@ -3454,6 +3698,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Pi.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Pi.EvalValue
   nameWithType: Pi.EvalValue
 - uid: Albatross.Expression.Operations.Pi.MaxOperandCount
@@ -3466,6 +3711,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Pi.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Pi.MaxOperandCount
   nameWithType: Pi.MaxOperandCount
 - uid: Albatross.Expression.Operations.Pi.MinOperandCount
@@ -3478,6 +3724,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Pi.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Pi.MinOperandCount
   nameWithType: Pi.MinOperandCount
 - uid: Albatross.Expression.Operations.Pi.Name
@@ -3490,6 +3737,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_Name_
   commentId: Overload:Albatross.Expression.Operations.Pi.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Pi.Name
   nameWithType: Pi.Name
 - uid: Albatross.Expression.Operations.Pi.Symbolic
@@ -3502,6 +3750,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Pi.html#Albatross_Expression_Operations_Pi_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Pi.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Pi.Symbolic
   nameWithType: Pi.Symbolic
 - uid: Albatross.Expression.Operations.Plus
@@ -3523,6 +3772,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Plus.html#Albatross_Expression_Operations_Plus_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Plus.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Plus.EvalValue
   nameWithType: Plus.EvalValue
 - uid: Albatross.Expression.Operations.Plus.Name
@@ -3535,6 +3785,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Plus.html#Albatross_Expression_Operations_Plus_Name_
   commentId: Overload:Albatross.Expression.Operations.Plus.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Plus.Name
   nameWithType: Plus.Name
 - uid: Albatross.Expression.Operations.Plus.Precedence
@@ -3547,6 +3798,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Plus.html#Albatross_Expression_Operations_Plus_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Plus.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Plus.Precedence
   nameWithType: Plus.Precedence
 - uid: Albatross.Expression.Operations.Plus.Symbolic
@@ -3559,6 +3811,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Plus.html#Albatross_Expression_Operations_Plus_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Plus.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Plus.Symbolic
   nameWithType: Plus.Symbolic
 - uid: Albatross.Expression.Operations.Positive
@@ -3580,6 +3833,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Positive.html#Albatross_Expression_Operations_Positive_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Positive.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Positive.EvalValue
   nameWithType: Positive.EvalValue
 - uid: Albatross.Expression.Operations.Positive.MaxOperandCount
@@ -3592,6 +3846,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Positive.html#Albatross_Expression_Operations_Positive_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Positive.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Positive.MaxOperandCount
   nameWithType: Positive.MaxOperandCount
 - uid: Albatross.Expression.Operations.Positive.MinOperandCount
@@ -3604,6 +3859,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Positive.html#Albatross_Expression_Operations_Positive_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Positive.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Positive.MinOperandCount
   nameWithType: Positive.MinOperandCount
 - uid: Albatross.Expression.Operations.Positive.Name
@@ -3616,6 +3872,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Positive.html#Albatross_Expression_Operations_Positive_Name_
   commentId: Overload:Albatross.Expression.Operations.Positive.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Positive.Name
   nameWithType: Positive.Name
 - uid: Albatross.Expression.Operations.Positive.Symbolic
@@ -3628,6 +3885,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Positive.html#Albatross_Expression_Operations_Positive_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Positive.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Positive.Symbolic
   nameWithType: Positive.Symbolic
 - uid: Albatross.Expression.Operations.Power
@@ -3649,6 +3907,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Power.html#Albatross_Expression_Operations_Power_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Power.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Power.EvalValue
   nameWithType: Power.EvalValue
 - uid: Albatross.Expression.Operations.Power.Name
@@ -3661,6 +3920,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Power.html#Albatross_Expression_Operations_Power_Name_
   commentId: Overload:Albatross.Expression.Operations.Power.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Power.Name
   nameWithType: Power.Name
 - uid: Albatross.Expression.Operations.Power.Precedence
@@ -3673,6 +3933,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Operations.Power.html#Albatross_Expression_Operations_Power_Precedence_
   commentId: Overload:Albatross.Expression.Operations.Power.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Power.Precedence
   nameWithType: Power.Precedence
 - uid: Albatross.Expression.Operations.Power.Symbolic
@@ -3685,6 +3946,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Power.html#Albatross_Expression_Operations_Power_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Power.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Power.Symbolic
   nameWithType: Power.Symbolic
 - uid: Albatross.Expression.Operations.Right
@@ -3706,6 +3968,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Right.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Right.EvalValue
   nameWithType: Right.EvalValue
 - uid: Albatross.Expression.Operations.Right.MaxOperandCount
@@ -3718,6 +3981,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Right.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Right.MaxOperandCount
   nameWithType: Right.MaxOperandCount
 - uid: Albatross.Expression.Operations.Right.MinOperandCount
@@ -3730,6 +3994,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Right.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Right.MinOperandCount
   nameWithType: Right.MinOperandCount
 - uid: Albatross.Expression.Operations.Right.Name
@@ -3742,6 +4007,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_Name_
   commentId: Overload:Albatross.Expression.Operations.Right.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Right.Name
   nameWithType: Right.Name
 - uid: Albatross.Expression.Operations.Right.Symbolic
@@ -3754,6 +4020,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Right.html#Albatross_Expression_Operations_Right_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Right.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Right.Symbolic
   nameWithType: Right.Symbolic
 - uid: Albatross.Expression.Operations.ShortMonthName
@@ -3775,6 +4042,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.ShortMonthName.html#Albatross_Expression_Operations_ShortMonthName_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.ShortMonthName.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.ShortMonthName.EvalValue
   nameWithType: ShortMonthName.EvalValue
 - uid: Albatross.Expression.Operations.ShortMonthName.MaxOperandCount
@@ -3787,6 +4055,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.ShortMonthName.html#Albatross_Expression_Operations_ShortMonthName_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.ShortMonthName.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.ShortMonthName.MaxOperandCount
   nameWithType: ShortMonthName.MaxOperandCount
 - uid: Albatross.Expression.Operations.ShortMonthName.MinOperandCount
@@ -3799,6 +4068,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.ShortMonthName.html#Albatross_Expression_Operations_ShortMonthName_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.ShortMonthName.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.ShortMonthName.MinOperandCount
   nameWithType: ShortMonthName.MinOperandCount
 - uid: Albatross.Expression.Operations.ShortMonthName.Name
@@ -3811,6 +4081,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.ShortMonthName.html#Albatross_Expression_Operations_ShortMonthName_Name_
   commentId: Overload:Albatross.Expression.Operations.ShortMonthName.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.ShortMonthName.Name
   nameWithType: ShortMonthName.Name
 - uid: Albatross.Expression.Operations.ShortMonthName.Symbolic
@@ -3823,6 +4094,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.ShortMonthName.html#Albatross_Expression_Operations_ShortMonthName_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.ShortMonthName.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.ShortMonthName.Symbolic
   nameWithType: ShortMonthName.Symbolic
 - uid: Albatross.Expression.Operations.Text
@@ -3844,6 +4116,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Text.html#Albatross_Expression_Operations_Text_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Text.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Text.EvalValue
   nameWithType: Text.EvalValue
 - uid: Albatross.Expression.Operations.Text.MaxOperandCount
@@ -3856,6 +4129,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Text.html#Albatross_Expression_Operations_Text_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Text.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Text.MaxOperandCount
   nameWithType: Text.MaxOperandCount
 - uid: Albatross.Expression.Operations.Text.MinOperandCount
@@ -3868,6 +4142,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Text.html#Albatross_Expression_Operations_Text_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Text.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Text.MinOperandCount
   nameWithType: Text.MinOperandCount
 - uid: Albatross.Expression.Operations.Text.Name
@@ -3880,6 +4155,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Text.html#Albatross_Expression_Operations_Text_Name_
   commentId: Overload:Albatross.Expression.Operations.Text.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Text.Name
   nameWithType: Text.Name
 - uid: Albatross.Expression.Operations.Text.Symbolic
@@ -3892,6 +4168,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Text.html#Albatross_Expression_Operations_Text_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Text.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Text.Symbolic
   nameWithType: Text.Symbolic
 - uid: Albatross.Expression.Operations.Today
@@ -3913,6 +4190,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Today.html#Albatross_Expression_Operations_Today_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Today.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Today.EvalValue
   nameWithType: Today.EvalValue
 - uid: Albatross.Expression.Operations.Today.MaxOperandCount
@@ -3925,6 +4203,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Today.html#Albatross_Expression_Operations_Today_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Today.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Today.MaxOperandCount
   nameWithType: Today.MaxOperandCount
 - uid: Albatross.Expression.Operations.Today.MinOperandCount
@@ -3937,6 +4216,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Today.html#Albatross_Expression_Operations_Today_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Today.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Today.MinOperandCount
   nameWithType: Today.MinOperandCount
 - uid: Albatross.Expression.Operations.Today.Name
@@ -3949,6 +4229,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Today.html#Albatross_Expression_Operations_Today_Name_
   commentId: Overload:Albatross.Expression.Operations.Today.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Today.Name
   nameWithType: Today.Name
 - uid: Albatross.Expression.Operations.Today.Symbolic
@@ -3961,6 +4242,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Today.html#Albatross_Expression_Operations_Today_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Today.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Today.Symbolic
   nameWithType: Today.Symbolic
 - uid: Albatross.Expression.Operations.Year
@@ -3982,6 +4264,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Operations.Year.html#Albatross_Expression_Operations_Year_EvalValue_
   commentId: Overload:Albatross.Expression.Operations.Year.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Year.EvalValue
   nameWithType: Year.EvalValue
 - uid: Albatross.Expression.Operations.Year.MaxOperandCount
@@ -3994,6 +4277,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Operations.Year.html#Albatross_Expression_Operations_Year_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Year.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Year.MaxOperandCount
   nameWithType: Year.MaxOperandCount
 - uid: Albatross.Expression.Operations.Year.MinOperandCount
@@ -4006,6 +4290,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Operations.Year.html#Albatross_Expression_Operations_Year_MinOperandCount_
   commentId: Overload:Albatross.Expression.Operations.Year.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Year.MinOperandCount
   nameWithType: Year.MinOperandCount
 - uid: Albatross.Expression.Operations.Year.Name
@@ -4018,6 +4303,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Operations.Year.html#Albatross_Expression_Operations_Year_Name_
   commentId: Overload:Albatross.Expression.Operations.Year.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Year.Name
   nameWithType: Year.Name
 - uid: Albatross.Expression.Operations.Year.Symbolic
@@ -4030,6 +4316,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Operations.Year.html#Albatross_Expression_Operations_Year_Symbolic_
   commentId: Overload:Albatross.Expression.Operations.Year.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Operations.Year.Symbolic
   nameWithType: Year.Symbolic
 - uid: Albatross.Expression.Parser
@@ -4051,6 +4338,7 @@ references:
   name: Parser
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser__ctor_
   commentId: Overload:Albatross.Expression.Parser.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.Parser
   nameWithType: Parser.Parser
 - uid: Albatross.Expression.Parser.Add(Albatross.Expression.Tokens.IToken)
@@ -4063,6 +4351,7 @@ references:
   name: Add
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Add_
   commentId: Overload:Albatross.Expression.Parser.Add
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.Add
   nameWithType: Parser.Add
 - uid: Albatross.Expression.Parser.BuildStack(System.Collections.Generic.Queue{Albatross.Expression.Tokens.IToken})
@@ -4078,6 +4367,7 @@ references:
   name: BuildStack
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_BuildStack_
   commentId: Overload:Albatross.Expression.Parser.BuildStack
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.BuildStack
   nameWithType: Parser.BuildStack
 - uid: Albatross.Expression.Parser.Compile(System.String)
@@ -4090,6 +4380,7 @@ references:
   name: Compile
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Compile_
   commentId: Overload:Albatross.Expression.Parser.Compile
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.Compile
   nameWithType: Parser.Compile
 - uid: Albatross.Expression.Parser.CreateTree(System.Collections.Generic.Stack{Albatross.Expression.Tokens.IToken})
@@ -4105,6 +4396,7 @@ references:
   name: CreateTree
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_CreateTree_
   commentId: Overload:Albatross.Expression.Parser.CreateTree
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.CreateTree
   nameWithType: Parser.CreateTree
 - uid: Albatross.Expression.Parser.Eval(Albatross.Expression.Tokens.IToken,System.Func{System.String,System.Object})
@@ -4120,6 +4412,7 @@ references:
   name: Eval
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Eval_
   commentId: Overload:Albatross.Expression.Parser.Eval
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.Eval
   nameWithType: Parser.Eval
 - uid: Albatross.Expression.Parser.EvalText(Albatross.Expression.Tokens.IToken,System.String)
@@ -4132,6 +4425,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_EvalText_
   commentId: Overload:Albatross.Expression.Parser.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.EvalText
   nameWithType: Parser.EvalText
 - uid: Albatross.Expression.Parser.InfixOperationTokens
@@ -4144,6 +4438,7 @@ references:
   name: InfixOperationTokens
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_InfixOperationTokens_
   commentId: Overload:Albatross.Expression.Parser.InfixOperationTokens
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.InfixOperationTokens
   nameWithType: Parser.InfixOperationTokens
 - uid: Albatross.Expression.Parser.IsValidExpression(System.String)
@@ -4156,6 +4451,7 @@ references:
   name: IsValidExpression
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_IsValidExpression_
   commentId: Overload:Albatross.Expression.Parser.IsValidExpression
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.IsValidExpression
   nameWithType: Parser.IsValidExpression
 - uid: Albatross.Expression.Parser.PrefixOperationTokens
@@ -4168,12 +4464,14 @@ references:
   name: PrefixOperationTokens
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_PrefixOperationTokens_
   commentId: Overload:Albatross.Expression.Parser.PrefixOperationTokens
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.PrefixOperationTokens
   nameWithType: Parser.PrefixOperationTokens
 - uid: Albatross.Expression.Parser.Reverse*
   name: Reverse
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Reverse_
   commentId: Overload:Albatross.Expression.Parser.Reverse
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.Reverse
   nameWithType: Parser.Reverse
 - uid: Albatross.Expression.Parser.Reverse``1(System.Collections.Generic.Stack{``0})
@@ -4195,6 +4493,7 @@ references:
   name: StringLiteralToken
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_StringLiteralToken_
   commentId: Overload:Albatross.Expression.Parser.StringLiteralToken
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.StringLiteralToken
   nameWithType: Parser.StringLiteralToken
 - uid: Albatross.Expression.Parser.Tokenize(System.String)
@@ -4207,6 +4506,7 @@ references:
   name: Tokenize
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Tokenize_
   commentId: Overload:Albatross.Expression.Parser.Tokenize
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.Tokenize
   nameWithType: Parser.Tokenize
 - uid: Albatross.Expression.Parser.VariableToken
@@ -4219,6 +4519,7 @@ references:
   name: VariableToken
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_VariableToken_
   commentId: Overload:Albatross.Expression.Parser.VariableToken
+  isSpec: "True"
   fullName: Albatross.Expression.Parser.VariableToken
   nameWithType: Parser.VariableToken
 - uid: Albatross.Expression.ParserOperationAttribute
@@ -4227,6 +4528,413 @@ references:
   commentId: T:Albatross.Expression.ParserOperationAttribute
   fullName: Albatross.Expression.ParserOperationAttribute
   nameWithType: ParserOperationAttribute
+- uid: Albatross.Expression.ParserOperationAttribute.Description
+  name: Description
+  href: api/Albatross.Expression.ParserOperationAttribute.html#Albatross_Expression_ParserOperationAttribute_Description
+  commentId: P:Albatross.Expression.ParserOperationAttribute.Description
+  fullName: Albatross.Expression.ParserOperationAttribute.Description
+  nameWithType: ParserOperationAttribute.Description
+- uid: Albatross.Expression.ParserOperationAttribute.Description*
+  name: Description
+  href: api/Albatross.Expression.ParserOperationAttribute.html#Albatross_Expression_ParserOperationAttribute_Description_
+  commentId: Overload:Albatross.Expression.ParserOperationAttribute.Description
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserOperationAttribute.Description
+  nameWithType: ParserOperationAttribute.Description
+- uid: Albatross.Expression.ParserOperationAttribute.Group
+  name: Group
+  href: api/Albatross.Expression.ParserOperationAttribute.html#Albatross_Expression_ParserOperationAttribute_Group
+  commentId: P:Albatross.Expression.ParserOperationAttribute.Group
+  fullName: Albatross.Expression.ParserOperationAttribute.Group
+  nameWithType: ParserOperationAttribute.Group
+- uid: Albatross.Expression.ParserOperationAttribute.Group*
+  name: Group
+  href: api/Albatross.Expression.ParserOperationAttribute.html#Albatross_Expression_ParserOperationAttribute_Group_
+  commentId: Overload:Albatross.Expression.ParserOperationAttribute.Group
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserOperationAttribute.Group
+  nameWithType: ParserOperationAttribute.Group
+- uid: Albatross.Expression.ParserUtils
+  name: ParserUtils
+  href: api/Albatross.Expression.ParserUtils.html
+  commentId: T:Albatross.Expression.ParserUtils
+  fullName: Albatross.Expression.ParserUtils
+  nameWithType: ParserUtils
+- uid: Albatross.Expression.ParserUtils.AddRange*
+  name: AddRange
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_AddRange_
+  commentId: Overload:Albatross.Expression.ParserUtils.AddRange
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.AddRange
+  nameWithType: ParserUtils.AddRange
+- uid: Albatross.Expression.ParserUtils.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})
+  name: AddRange<T>(ISet<T>, IEnumerable<T>)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_AddRange__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IEnumerable___0__
+  commentId: M:Albatross.Expression.ParserUtils.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})
+  name.vb: AddRange(Of T)(ISet(Of T), IEnumerable(Of T))
+  fullName: Albatross.Expression.ParserUtils.AddRange<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Albatross.Expression.ParserUtils.AddRange(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ParserUtils.AddRange<T>(ISet<T>, IEnumerable<T>)
+  nameWithType.vb: ParserUtils.AddRange(Of T)(ISet(Of T), IEnumerable(Of T))
+- uid: Albatross.Expression.ParserUtils.GetLogicalValue(System.Object)
+  name: GetLogicalValue(Object)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetLogicalValue_System_Object_
+  commentId: M:Albatross.Expression.ParserUtils.GetLogicalValue(System.Object)
+  fullName: Albatross.Expression.ParserUtils.GetLogicalValue(System.Object)
+  nameWithType: ParserUtils.GetLogicalValue(Object)
+- uid: Albatross.Expression.ParserUtils.GetLogicalValue*
+  name: GetLogicalValue
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetLogicalValue_
+  commentId: Overload:Albatross.Expression.ParserUtils.GetLogicalValue
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.GetLogicalValue
+  nameWithType: ParserUtils.GetLogicalValue
+- uid: Albatross.Expression.ParserUtils.GetMax*
+  name: GetMax
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMax_
+  commentId: Overload:Albatross.Expression.ParserUtils.GetMax
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.GetMax
+  nameWithType: ParserUtils.GetMax
+- uid: Albatross.Expression.ParserUtils.GetMax``1(System.Collections.IEnumerable)
+  name: GetMax<T>(IEnumerable)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMax__1_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.ParserUtils.GetMax``1(System.Collections.IEnumerable)
+  name.vb: GetMax(Of T)(IEnumerable)
+  fullName: Albatross.Expression.ParserUtils.GetMax<T>(System.Collections.IEnumerable)
+  fullName.vb: Albatross.Expression.ParserUtils.GetMax(Of T)(System.Collections.IEnumerable)
+  nameWithType: ParserUtils.GetMax<T>(IEnumerable)
+  nameWithType.vb: ParserUtils.GetMax(Of T)(IEnumerable)
+- uid: Albatross.Expression.ParserUtils.GetMaxString(System.Collections.IEnumerable)
+  name: GetMaxString(IEnumerable)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMaxString_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.ParserUtils.GetMaxString(System.Collections.IEnumerable)
+  fullName: Albatross.Expression.ParserUtils.GetMaxString(System.Collections.IEnumerable)
+  nameWithType: ParserUtils.GetMaxString(IEnumerable)
+- uid: Albatross.Expression.ParserUtils.GetMaxString*
+  name: GetMaxString
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMaxString_
+  commentId: Overload:Albatross.Expression.ParserUtils.GetMaxString
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.GetMaxString
+  nameWithType: ParserUtils.GetMaxString
+- uid: Albatross.Expression.ParserUtils.GetMin*
+  name: GetMin
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMin_
+  commentId: Overload:Albatross.Expression.ParserUtils.GetMin
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.GetMin
+  nameWithType: ParserUtils.GetMin
+- uid: Albatross.Expression.ParserUtils.GetMin``1(System.Collections.IEnumerable)
+  name: GetMin<T>(IEnumerable)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMin__1_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.ParserUtils.GetMin``1(System.Collections.IEnumerable)
+  name.vb: GetMin(Of T)(IEnumerable)
+  fullName: Albatross.Expression.ParserUtils.GetMin<T>(System.Collections.IEnumerable)
+  fullName.vb: Albatross.Expression.ParserUtils.GetMin(Of T)(System.Collections.IEnumerable)
+  nameWithType: ParserUtils.GetMin<T>(IEnumerable)
+  nameWithType.vb: ParserUtils.GetMin(Of T)(IEnumerable)
+- uid: Albatross.Expression.ParserUtils.GetMinString(System.Collections.IEnumerable)
+  name: GetMinString(IEnumerable)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMinString_System_Collections_IEnumerable_
+  commentId: M:Albatross.Expression.ParserUtils.GetMinString(System.Collections.IEnumerable)
+  fullName: Albatross.Expression.ParserUtils.GetMinString(System.Collections.IEnumerable)
+  nameWithType: ParserUtils.GetMinString(IEnumerable)
+- uid: Albatross.Expression.ParserUtils.GetMinString*
+  name: GetMinString
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_GetMinString_
+  commentId: Overload:Albatross.Expression.ParserUtils.GetMinString
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.GetMinString
+  nameWithType: ParserUtils.GetMinString
+- uid: Albatross.Expression.ParserUtils.IsInteger(System.Object)
+  name: IsInteger(Object)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsInteger_System_Object_
+  commentId: M:Albatross.Expression.ParserUtils.IsInteger(System.Object)
+  fullName: Albatross.Expression.ParserUtils.IsInteger(System.Object)
+  nameWithType: ParserUtils.IsInteger(Object)
+- uid: Albatross.Expression.ParserUtils.IsInteger*
+  name: IsInteger
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsInteger_
+  commentId: Overload:Albatross.Expression.ParserUtils.IsInteger
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.IsInteger
+  nameWithType: ParserUtils.IsInteger
+- uid: Albatross.Expression.ParserUtils.IsNumeric(System.Object)
+  name: IsNumeric(Object)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsNumeric_System_Object_
+  commentId: M:Albatross.Expression.ParserUtils.IsNumeric(System.Object)
+  fullName: Albatross.Expression.ParserUtils.IsNumeric(System.Object)
+  nameWithType: ParserUtils.IsNumeric(Object)
+- uid: Albatross.Expression.ParserUtils.IsNumeric*
+  name: IsNumeric
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_IsNumeric_
+  commentId: Overload:Albatross.Expression.ParserUtils.IsNumeric
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.IsNumeric
+  nameWithType: ParserUtils.IsNumeric
+- uid: Albatross.Expression.ParserUtils.Reverse*
+  name: Reverse
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_Reverse_
+  commentId: Overload:Albatross.Expression.ParserUtils.Reverse
+  isSpec: "True"
+  fullName: Albatross.Expression.ParserUtils.Reverse
+  nameWithType: ParserUtils.Reverse
+- uid: Albatross.Expression.ParserUtils.Reverse``1(System.Collections.Generic.Stack{``0})
+  name: Reverse<T>(Stack<T>)
+  href: api/Albatross.Expression.ParserUtils.html#Albatross_Expression_ParserUtils_Reverse__1_System_Collections_Generic_Stack___0__
+  commentId: M:Albatross.Expression.ParserUtils.Reverse``1(System.Collections.Generic.Stack{``0})
+  name.vb: Reverse(Of T)(Stack(Of T))
+  fullName: Albatross.Expression.ParserUtils.Reverse<T>(System.Collections.Generic.Stack<T>)
+  fullName.vb: Albatross.Expression.ParserUtils.Reverse(Of T)(System.Collections.Generic.Stack(Of T))
+  nameWithType: ParserUtils.Reverse<T>(Stack<T>)
+  nameWithType.vb: ParserUtils.Reverse(Of T)(Stack(Of T))
+- uid: Albatross.Expression.Test
+  name: Albatross.Expression.Test
+  href: api/Albatross.Expression.Test.html
+  commentId: N:Albatross.Expression.Test
+  fullName: Albatross.Expression.Test
+  nameWithType: Albatross.Expression.Test
+- uid: Albatross.Expression.Test.iocSample
+  name: iocSample
+  href: api/Albatross.Expression.Test.iocSample.html
+  commentId: T:Albatross.Expression.Test.iocSample
+  fullName: Albatross.Expression.Test.iocSample
+  nameWithType: iocSample
+- uid: Albatross.Expression.Test.iocSample.Setup
+  name: Setup()
+  href: api/Albatross.Expression.Test.iocSample.html#Albatross_Expression_Test_iocSample_Setup
+  commentId: M:Albatross.Expression.Test.iocSample.Setup
+  fullName: Albatross.Expression.Test.iocSample.Setup()
+  nameWithType: iocSample.Setup()
+- uid: Albatross.Expression.Test.iocSample.Setup*
+  name: Setup
+  href: api/Albatross.Expression.Test.iocSample.html#Albatross_Expression_Test_iocSample_Setup_
+  commentId: Overload:Albatross.Expression.Test.iocSample.Setup
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.iocSample.Setup
+  nameWithType: iocSample.Setup
+- uid: Albatross.Expression.Test.iocSample.TearDown
+  name: TearDown()
+  href: api/Albatross.Expression.Test.iocSample.html#Albatross_Expression_Test_iocSample_TearDown
+  commentId: M:Albatross.Expression.Test.iocSample.TearDown
+  fullName: Albatross.Expression.Test.iocSample.TearDown()
+  nameWithType: iocSample.TearDown()
+- uid: Albatross.Expression.Test.iocSample.TearDown*
+  name: TearDown
+  href: api/Albatross.Expression.Test.iocSample.html#Albatross_Expression_Test_iocSample_TearDown_
+  commentId: Overload:Albatross.Expression.Test.iocSample.TearDown
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.iocSample.TearDown
+  nameWithType: iocSample.TearDown
+- uid: Albatross.Expression.Test.iocSample.Test
+  name: Test()
+  href: api/Albatross.Expression.Test.iocSample.html#Albatross_Expression_Test_iocSample_Test
+  commentId: M:Albatross.Expression.Test.iocSample.Test
+  fullName: Albatross.Expression.Test.iocSample.Test()
+  nameWithType: iocSample.Test()
+- uid: Albatross.Expression.Test.iocSample.Test*
+  name: Test
+  href: api/Albatross.Expression.Test.iocSample.html#Albatross_Expression_Test_iocSample_Test_
+  commentId: Overload:Albatross.Expression.Test.iocSample.Test
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.iocSample.Test
+  nameWithType: iocSample.Test
+- uid: Albatross.Expression.Test.ParserTests
+  name: ParserTests
+  href: api/Albatross.Expression.Test.ParserTests.html
+  commentId: T:Albatross.Expression.Test.ParserTests
+  fullName: Albatross.Expression.Test.ParserTests
+  nameWithType: ParserTests
+- uid: Albatross.Expression.Test.ParserTests.CircularReferenceTestCase
+  name: ParserTests.CircularReferenceTestCase
+  href: api/Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.html
+  commentId: T:Albatross.Expression.Test.ParserTests.CircularReferenceTestCase
+  fullName: Albatross.Expression.Test.ParserTests.CircularReferenceTestCase
+  nameWithType: ParserTests.CircularReferenceTestCase
+- uid: Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.GetEnumerator
+  name: GetEnumerator()
+  href: api/Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.html#Albatross_Expression_Test_ParserTests_CircularReferenceTestCase_GetEnumerator
+  commentId: M:Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.GetEnumerator
+  fullName: Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.GetEnumerator()
+  nameWithType: ParserTests.CircularReferenceTestCase.GetEnumerator()
+- uid: Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.GetEnumerator*
+  name: GetEnumerator
+  href: api/Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.html#Albatross_Expression_Test_ParserTests_CircularReferenceTestCase_GetEnumerator_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.GetEnumerator
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.CircularReferenceTestCase.GetEnumerator
+  nameWithType: ParserTests.CircularReferenceTestCase.GetEnumerator
+- uid: Albatross.Expression.Test.ParserTests.CircularReferenceTesting1(Albatross.Expression.ContextValue[])
+  name: CircularReferenceTesting1(ContextValue[])
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_CircularReferenceTesting1_Albatross_Expression_ContextValue___
+  commentId: M:Albatross.Expression.Test.ParserTests.CircularReferenceTesting1(Albatross.Expression.ContextValue[])
+  name.vb: CircularReferenceTesting1(ContextValue())
+  fullName: Albatross.Expression.Test.ParserTests.CircularReferenceTesting1(Albatross.Expression.ContextValue[])
+  fullName.vb: Albatross.Expression.Test.ParserTests.CircularReferenceTesting1(Albatross.Expression.ContextValue())
+  nameWithType: ParserTests.CircularReferenceTesting1(ContextValue[])
+  nameWithType.vb: ParserTests.CircularReferenceTesting1(ContextValue())
+- uid: Albatross.Expression.Test.ParserTests.CircularReferenceTesting1*
+  name: CircularReferenceTesting1
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_CircularReferenceTesting1_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.CircularReferenceTesting1
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.CircularReferenceTesting1
+  nameWithType: ParserTests.CircularReferenceTesting1
+- uid: Albatross.Expression.Test.ParserTests.CircularReferenceTesting2(Albatross.Expression.ContextValue[])
+  name: CircularReferenceTesting2(ContextValue[])
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_CircularReferenceTesting2_Albatross_Expression_ContextValue___
+  commentId: M:Albatross.Expression.Test.ParserTests.CircularReferenceTesting2(Albatross.Expression.ContextValue[])
+  name.vb: CircularReferenceTesting2(ContextValue())
+  fullName: Albatross.Expression.Test.ParserTests.CircularReferenceTesting2(Albatross.Expression.ContextValue[])
+  fullName.vb: Albatross.Expression.Test.ParserTests.CircularReferenceTesting2(Albatross.Expression.ContextValue())
+  nameWithType: ParserTests.CircularReferenceTesting2(ContextValue[])
+  nameWithType.vb: ParserTests.CircularReferenceTesting2(ContextValue())
+- uid: Albatross.Expression.Test.ParserTests.CircularReferenceTesting2*
+  name: CircularReferenceTesting2
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_CircularReferenceTesting2_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.CircularReferenceTesting2
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.CircularReferenceTesting2
+  nameWithType: ParserTests.CircularReferenceTesting2
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTestCase
+  name: ParserTests.ExternalValueTestCase
+  href: api/Albatross.Expression.Test.ParserTests.ExternalValueTestCase.html
+  commentId: T:Albatross.Expression.Test.ParserTests.ExternalValueTestCase
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTestCase
+  nameWithType: ParserTests.ExternalValueTestCase
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTestCase.GetEnumerator
+  name: GetEnumerator()
+  href: api/Albatross.Expression.Test.ParserTests.ExternalValueTestCase.html#Albatross_Expression_Test_ParserTests_ExternalValueTestCase_GetEnumerator
+  commentId: M:Albatross.Expression.Test.ParserTests.ExternalValueTestCase.GetEnumerator
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTestCase.GetEnumerator()
+  nameWithType: ParserTests.ExternalValueTestCase.GetEnumerator()
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTestCase.GetEnumerator*
+  name: GetEnumerator
+  href: api/Albatross.Expression.Test.ParserTests.ExternalValueTestCase.html#Albatross_Expression_Test_ParserTests_ExternalValueTestCase_GetEnumerator_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.ExternalValueTestCase.GetEnumerator
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTestCase.GetEnumerator
+  nameWithType: ParserTests.ExternalValueTestCase.GetEnumerator
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTesting(System.Boolean,Albatross.Expression.ContextValue[])
+  name: ExternalValueTesting(Boolean, ContextValue[])
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueTesting_System_Boolean_Albatross_Expression_ContextValue___
+  commentId: M:Albatross.Expression.Test.ParserTests.ExternalValueTesting(System.Boolean,Albatross.Expression.ContextValue[])
+  name.vb: ExternalValueTesting(Boolean, ContextValue())
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTesting(System.Boolean, Albatross.Expression.ContextValue[])
+  fullName.vb: Albatross.Expression.Test.ParserTests.ExternalValueTesting(System.Boolean, Albatross.Expression.ContextValue())
+  nameWithType: ParserTests.ExternalValueTesting(Boolean, ContextValue[])
+  nameWithType.vb: ParserTests.ExternalValueTesting(Boolean, ContextValue())
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTesting*
+  name: ExternalValueTesting
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueTesting_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.ExternalValueTesting
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTesting
+  nameWithType: ParserTests.ExternalValueTesting
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithCaching(Albatross.Expression.ContextValue[])
+  name: ExternalValueTestingWithCaching(ContextValue[])
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueTestingWithCaching_Albatross_Expression_ContextValue___
+  commentId: M:Albatross.Expression.Test.ParserTests.ExternalValueTestingWithCaching(Albatross.Expression.ContextValue[])
+  name.vb: ExternalValueTestingWithCaching(ContextValue())
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithCaching(Albatross.Expression.ContextValue[])
+  fullName.vb: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithCaching(Albatross.Expression.ContextValue())
+  nameWithType: ParserTests.ExternalValueTestingWithCaching(ContextValue[])
+  nameWithType.vb: ParserTests.ExternalValueTestingWithCaching(ContextValue())
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithCaching*
+  name: ExternalValueTestingWithCaching
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueTestingWithCaching_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.ExternalValueTestingWithCaching
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithCaching
+  nameWithType: ParserTests.ExternalValueTestingWithCaching
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithoutCaching(Albatross.Expression.ContextValue[])
+  name: ExternalValueTestingWithoutCaching(ContextValue[])
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueTestingWithoutCaching_Albatross_Expression_ContextValue___
+  commentId: M:Albatross.Expression.Test.ParserTests.ExternalValueTestingWithoutCaching(Albatross.Expression.ContextValue[])
+  name.vb: ExternalValueTestingWithoutCaching(ContextValue())
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithoutCaching(Albatross.Expression.ContextValue[])
+  fullName.vb: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithoutCaching(Albatross.Expression.ContextValue())
+  nameWithType: ParserTests.ExternalValueTestingWithoutCaching(ContextValue[])
+  nameWithType.vb: ParserTests.ExternalValueTestingWithoutCaching(ContextValue())
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithoutCaching*
+  name: ExternalValueTestingWithoutCaching
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueTestingWithoutCaching_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.ExternalValueTestingWithoutCaching
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueTestingWithoutCaching
+  nameWithType: ParserTests.ExternalValueTestingWithoutCaching
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithCaching(Albatross.Expression.ContextValue[])
+  name: ExternalValueWithCircularReferenceWithCaching(ContextValue[])
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueWithCircularReferenceWithCaching_Albatross_Expression_ContextValue___
+  commentId: M:Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithCaching(Albatross.Expression.ContextValue[])
+  name.vb: ExternalValueWithCircularReferenceWithCaching(ContextValue())
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithCaching(Albatross.Expression.ContextValue[])
+  fullName.vb: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithCaching(Albatross.Expression.ContextValue())
+  nameWithType: ParserTests.ExternalValueWithCircularReferenceWithCaching(ContextValue[])
+  nameWithType.vb: ParserTests.ExternalValueWithCircularReferenceWithCaching(ContextValue())
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithCaching*
+  name: ExternalValueWithCircularReferenceWithCaching
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueWithCircularReferenceWithCaching_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithCaching
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithCaching
+  nameWithType: ParserTests.ExternalValueWithCircularReferenceWithCaching
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithoutCaching(Albatross.Expression.ContextValue[])
+  name: ExternalValueWithCircularReferenceWithoutCaching(ContextValue[])
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueWithCircularReferenceWithoutCaching_Albatross_Expression_ContextValue___
+  commentId: M:Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithoutCaching(Albatross.Expression.ContextValue[])
+  name.vb: ExternalValueWithCircularReferenceWithoutCaching(ContextValue())
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithoutCaching(Albatross.Expression.ContextValue[])
+  fullName.vb: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithoutCaching(Albatross.Expression.ContextValue())
+  nameWithType: ParserTests.ExternalValueWithCircularReferenceWithoutCaching(ContextValue[])
+  nameWithType.vb: ParserTests.ExternalValueWithCircularReferenceWithoutCaching(ContextValue())
+- uid: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithoutCaching*
+  name: ExternalValueWithCircularReferenceWithoutCaching
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ExternalValueWithCircularReferenceWithoutCaching_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithoutCaching
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.ExternalValueWithCircularReferenceWithoutCaching
+  nameWithType: ParserTests.ExternalValueWithCircularReferenceWithoutCaching
+- uid: Albatross.Expression.Test.ParserTests.OperationsTesting(System.String)
+  name: OperationsTesting(String)
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_OperationsTesting_System_String_
+  commentId: M:Albatross.Expression.Test.ParserTests.OperationsTesting(System.String)
+  fullName: Albatross.Expression.Test.ParserTests.OperationsTesting(System.String)
+  nameWithType: ParserTests.OperationsTesting(String)
+- uid: Albatross.Expression.Test.ParserTests.OperationsTesting*
+  name: OperationsTesting
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_OperationsTesting_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.OperationsTesting
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.OperationsTesting
+  nameWithType: ParserTests.OperationsTesting
+- uid: Albatross.Expression.Test.ParserTests.ParsingFailure(System.String,System.Type)
+  name: ParsingFailure(String, Type)
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ParsingFailure_System_String_System_Type_
+  commentId: M:Albatross.Expression.Test.ParserTests.ParsingFailure(System.String,System.Type)
+  fullName: Albatross.Expression.Test.ParserTests.ParsingFailure(System.String, System.Type)
+  nameWithType: ParserTests.ParsingFailure(String, Type)
+- uid: Albatross.Expression.Test.ParserTests.ParsingFailure*
+  name: ParsingFailure
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_ParsingFailure_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.ParsingFailure
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.ParsingFailure
+  nameWithType: ParserTests.ParsingFailure
+- uid: Albatross.Expression.Test.ParserTests.PrecedenceTesting(System.String)
+  name: PrecedenceTesting(String)
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_PrecedenceTesting_System_String_
+  commentId: M:Albatross.Expression.Test.ParserTests.PrecedenceTesting(System.String)
+  fullName: Albatross.Expression.Test.ParserTests.PrecedenceTesting(System.String)
+  nameWithType: ParserTests.PrecedenceTesting(String)
+- uid: Albatross.Expression.Test.ParserTests.PrecedenceTesting*
+  name: PrecedenceTesting
+  href: api/Albatross.Expression.Test.ParserTests.html#Albatross_Expression_Test_ParserTests_PrecedenceTesting_
+  commentId: Overload:Albatross.Expression.Test.ParserTests.PrecedenceTesting
+  isSpec: "True"
+  fullName: Albatross.Expression.Test.ParserTests.PrecedenceTesting
+  nameWithType: ParserTests.PrecedenceTesting
 - uid: Albatross.Expression.Tokens
   name: Albatross.Expression.Tokens
   href: api/Albatross.Expression.Tokens.html
@@ -4249,6 +4957,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.Clone
   nameWithType: BooleanLiteralToken.Clone
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.EvalText(System.String)
@@ -4261,6 +4970,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.EvalText
   nameWithType: BooleanLiteralToken.EvalText
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.EvalValue(System.Func{System.String,System.Object})
@@ -4276,6 +4986,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.EvalValue
   nameWithType: BooleanLiteralToken.EvalValue
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.Group
@@ -4288,6 +4999,7 @@ references:
   name: Group
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_Group_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.Group
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.Group
   nameWithType: BooleanLiteralToken.Group
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
@@ -4300,6 +5012,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
   nameWithType: BooleanLiteralToken.IsVariable
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.Match(System.String,System.Int32,System.Int32@)
@@ -4315,6 +5028,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.Match
   nameWithType: BooleanLiteralToken.Match
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.Name
@@ -4327,6 +5041,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.Name
   nameWithType: BooleanLiteralToken.Name
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.ToString
@@ -4339,6 +5054,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_ToString_
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.ToString
   nameWithType: BooleanLiteralToken.ToString
 - uid: Albatross.Expression.Tokens.ControlToken
@@ -4357,6 +5073,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.Clone
   nameWithType: ControlToken.Clone
 - uid: Albatross.Expression.Tokens.ControlToken.Comma
@@ -4381,6 +5098,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.EvalText
   nameWithType: ControlToken.EvalText
 - uid: Albatross.Expression.Tokens.ControlToken.EvalValue(System.Func{System.String,System.Object})
@@ -4396,6 +5114,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.EvalValue
   nameWithType: ControlToken.EvalValue
 - uid: Albatross.Expression.Tokens.ControlToken.FuncParamStart
@@ -4420,6 +5139,7 @@ references:
   name: Group
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_Group_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.Group
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.Group
   nameWithType: ControlToken.Group
 - uid: Albatross.Expression.Tokens.ControlToken.IsVariable
@@ -4432,6 +5152,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.IsVariable
   nameWithType: ControlToken.IsVariable
 - uid: Albatross.Expression.Tokens.ControlToken.LeftParenthesis
@@ -4459,6 +5180,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.Match
   nameWithType: ControlToken.Match
 - uid: Albatross.Expression.Tokens.ControlToken.Name
@@ -4471,6 +5193,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.Name
   nameWithType: ControlToken.Name
 - uid: Albatross.Expression.Tokens.ControlToken.RightParenthesis
@@ -4495,6 +5218,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_ToString_
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.ControlToken.ToString
   nameWithType: ControlToken.ToString
 - uid: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken
@@ -4513,6 +5237,7 @@ references:
   name: Boundary
   href: api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_DoubleQuoteStringLiteralToken_Boundary_
   commentId: Overload:Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Boundary
   nameWithType: DoubleQuoteStringLiteralToken.Boundary
 - uid: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone
@@ -4525,6 +5250,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_DoubleQuoteStringLiteralToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.Clone
   nameWithType: DoubleQuoteStringLiteralToken.Clone
 - uid: Albatross.Expression.Tokens.InfixOperationToken
@@ -4543,6 +5269,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.Clone
   nameWithType: InfixOperationToken.Clone
 - uid: Albatross.Expression.Tokens.InfixOperationToken.EvalText(System.String)
@@ -4555,6 +5282,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.EvalText
   nameWithType: InfixOperationToken.EvalText
 - uid: Albatross.Expression.Tokens.InfixOperationToken.EvalValue(System.Func{System.String,System.Object})
@@ -4570,6 +5298,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.EvalValue
   nameWithType: InfixOperationToken.EvalValue
 - uid: Albatross.Expression.Tokens.InfixOperationToken.IsVariable
@@ -4582,6 +5311,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.IsVariable
   nameWithType: InfixOperationToken.IsVariable
 - uid: Albatross.Expression.Tokens.InfixOperationToken.Match(System.String,System.Int32,System.Int32@)
@@ -4597,6 +5327,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.Match
   nameWithType: InfixOperationToken.Match
 - uid: Albatross.Expression.Tokens.InfixOperationToken.Name
@@ -4609,6 +5340,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.Name
   nameWithType: InfixOperationToken.Name
 - uid: Albatross.Expression.Tokens.InfixOperationToken.Operand1
@@ -4621,6 +5353,7 @@ references:
   name: Operand1
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Operand1_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.Operand1
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.Operand1
   nameWithType: InfixOperationToken.Operand1
 - uid: Albatross.Expression.Tokens.InfixOperationToken.Operand2
@@ -4633,6 +5366,7 @@ references:
   name: Operand2
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Operand2_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.Operand2
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.Operand2
   nameWithType: InfixOperationToken.Operand2
 - uid: Albatross.Expression.Tokens.InfixOperationToken.Precedence
@@ -4645,6 +5379,7 @@ references:
   name: Precedence
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Precedence_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.Precedence
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.Precedence
   nameWithType: InfixOperationToken.Precedence
 - uid: Albatross.Expression.Tokens.InfixOperationToken.Symbolic
@@ -4657,6 +5392,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Symbolic_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.Symbolic
   nameWithType: InfixOperationToken.Symbolic
 - uid: Albatross.Expression.Tokens.InfixOperationToken.ToString
@@ -4669,6 +5405,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_ToString_
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.InfixOperationToken.ToString
   nameWithType: InfixOperationToken.ToString
 - uid: Albatross.Expression.Tokens.IOperandToken
@@ -4693,6 +5430,7 @@ references:
   name: Boundary
   href: api/Albatross.Expression.Tokens.IStringLiteralToken.html#Albatross_Expression_Tokens_IStringLiteralToken_Boundary_
   commentId: Overload:Albatross.Expression.Tokens.IStringLiteralToken.Boundary
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.IStringLiteralToken.Boundary
   nameWithType: IStringLiteralToken.Boundary
 - uid: Albatross.Expression.Tokens.IToken
@@ -4711,6 +5449,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.IToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.IToken.Clone
   nameWithType: IToken.Clone
 - uid: Albatross.Expression.Tokens.IToken.EvalText(System.String)
@@ -4723,6 +5462,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.IToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.IToken.EvalText
   nameWithType: IToken.EvalText
 - uid: Albatross.Expression.Tokens.IToken.EvalValue(System.Func{System.String,System.Object})
@@ -4738,6 +5478,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.IToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.IToken.EvalValue
   nameWithType: IToken.EvalValue
 - uid: Albatross.Expression.Tokens.IToken.IsVariable
@@ -4750,6 +5491,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.IToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.IToken.IsVariable
   nameWithType: IToken.IsVariable
 - uid: Albatross.Expression.Tokens.IToken.Match(System.String,System.Int32,System.Int32@)
@@ -4765,6 +5507,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.IToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.IToken.Match
   nameWithType: IToken.Match
 - uid: Albatross.Expression.Tokens.IToken.Name
@@ -4777,6 +5520,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.IToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.IToken.Name
   nameWithType: IToken.Name
 - uid: Albatross.Expression.Tokens.IVariableToken
@@ -4801,6 +5545,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.Clone
   nameWithType: NumericLiteralToken.Clone
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.EvalText(System.String)
@@ -4813,6 +5558,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.EvalText
   nameWithType: NumericLiteralToken.EvalText
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.EvalValue(System.Func{System.String,System.Object})
@@ -4828,6 +5574,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.EvalValue
   nameWithType: NumericLiteralToken.EvalValue
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.Group
@@ -4840,6 +5587,7 @@ references:
   name: Group
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_Group_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.Group
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.Group
   nameWithType: NumericLiteralToken.Group
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
@@ -4852,6 +5600,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
   nameWithType: NumericLiteralToken.IsVariable
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.Match(System.String,System.Int32,System.Int32@)
@@ -4867,6 +5616,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.Match
   nameWithType: NumericLiteralToken.Match
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.Name
@@ -4879,6 +5629,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.Name
   nameWithType: NumericLiteralToken.Name
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.ToString
@@ -4891,6 +5642,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_ToString_
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.ToString
   nameWithType: NumericLiteralToken.ToString
 - uid: Albatross.Expression.Tokens.PrefixOperationToken
@@ -4909,6 +5661,7 @@ references:
   name: PrefixOperationToken
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken__ctor_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.#ctor
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.PrefixOperationToken
   nameWithType: PrefixOperationToken.PrefixOperationToken
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.Clone
@@ -4921,6 +5674,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.Clone
   nameWithType: PrefixOperationToken.Clone
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.EvalText(System.String)
@@ -4933,6 +5687,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.EvalText
   nameWithType: PrefixOperationToken.EvalText
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.EvalValue(System.Func{System.String,System.Object})
@@ -4948,6 +5703,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.EvalValue
   nameWithType: PrefixOperationToken.EvalValue
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.GetOperands(System.Func{System.String,System.Object})
@@ -4972,6 +5728,7 @@ references:
   name: GetOperands
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_GetOperands_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.GetOperands
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.GetOperands
   nameWithType: PrefixOperationToken.GetOperands
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.GetOperands``1(System.Func{System.String,System.Object})
@@ -4993,6 +5750,7 @@ references:
   name: GetOperandText
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_GetOperandText_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.GetOperandText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.GetOperandText
   nameWithType: PrefixOperationToken.GetOperandText
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.GetParamsOperands(System.Func{System.String,System.Object},System.Type@)
@@ -5008,6 +5766,7 @@ references:
   name: GetParamsOperands
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_GetParamsOperands_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.GetParamsOperands
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.GetParamsOperands
   nameWithType: PrefixOperationToken.GetParamsOperands
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
@@ -5020,6 +5779,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
   nameWithType: PrefixOperationToken.IsVariable
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.Match(System.String,System.Int32,System.Int32@)
@@ -5035,6 +5795,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.Match
   nameWithType: PrefixOperationToken.Match
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.MaxOperandCount
@@ -5047,6 +5808,7 @@ references:
   name: MaxOperandCount
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_MaxOperandCount_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.MaxOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.MaxOperandCount
   nameWithType: PrefixOperationToken.MaxOperandCount
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.MinOperandCount
@@ -5059,6 +5821,7 @@ references:
   name: MinOperandCount
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_MinOperandCount_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.MinOperandCount
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.MinOperandCount
   nameWithType: PrefixOperationToken.MinOperandCount
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.Name
@@ -5071,6 +5834,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.Name
   nameWithType: PrefixOperationToken.Name
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.Operands
@@ -5083,6 +5847,7 @@ references:
   name: Operands
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_Operands_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.Operands
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.Operands
   nameWithType: PrefixOperationToken.Operands
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.Symbolic
@@ -5095,6 +5860,7 @@ references:
   name: Symbolic
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_Symbolic_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.Symbolic
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.Symbolic
   nameWithType: PrefixOperationToken.Symbolic
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.ToString
@@ -5107,6 +5873,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_ToString_
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.ToString
   nameWithType: PrefixOperationToken.ToString
 - uid: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken
@@ -5125,6 +5892,7 @@ references:
   name: Boundary
   href: api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_SingleQuoteStringLiteralToken_Boundary_
   commentId: Overload:Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Boundary
   nameWithType: SingleQuoteStringLiteralToken.Boundary
 - uid: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone
@@ -5137,6 +5905,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html#Albatross_Expression_Tokens_SingleQuoteStringLiteralToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.Clone
   nameWithType: SingleQuoteStringLiteralToken.Clone
 - uid: Albatross.Expression.Tokens.StringLiteralToken
@@ -5155,6 +5924,7 @@ references:
   name: Boundary
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_Boundary_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.Boundary
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.Boundary
   nameWithType: StringLiteralToken.Boundary
 - uid: Albatross.Expression.Tokens.StringLiteralToken.Clone
@@ -5167,6 +5937,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.Clone
   nameWithType: StringLiteralToken.Clone
 - uid: Albatross.Expression.Tokens.StringLiteralToken.EscapeChar
@@ -5185,6 +5956,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.EvalText
   nameWithType: StringLiteralToken.EvalText
 - uid: Albatross.Expression.Tokens.StringLiteralToken.EvalValue(System.Func{System.String,System.Object})
@@ -5200,6 +5972,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.EvalValue
   nameWithType: StringLiteralToken.EvalValue
 - uid: Albatross.Expression.Tokens.StringLiteralToken.Group
@@ -5212,6 +5985,7 @@ references:
   name: Group
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_Group_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.Group
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.Group
   nameWithType: StringLiteralToken.Group
 - uid: Albatross.Expression.Tokens.StringLiteralToken.IsVariable
@@ -5224,6 +5998,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.IsVariable
   nameWithType: StringLiteralToken.IsVariable
 - uid: Albatross.Expression.Tokens.StringLiteralToken.Match(System.String,System.Int32,System.Int32@)
@@ -5239,6 +6014,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.Match
   nameWithType: StringLiteralToken.Match
 - uid: Albatross.Expression.Tokens.StringLiteralToken.Name
@@ -5251,6 +6027,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.Name
   nameWithType: StringLiteralToken.Name
 - uid: Albatross.Expression.Tokens.StringLiteralToken.ToString
@@ -5263,6 +6040,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_ToString_
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.StringLiteralToken.ToString
   nameWithType: StringLiteralToken.ToString
 - uid: Albatross.Expression.Tokens.VariableToken
@@ -5281,6 +6059,7 @@ references:
   name: Calculated
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_Calculated_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Calculated
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.Calculated
   nameWithType: VariableToken.Calculated
 - uid: Albatross.Expression.Tokens.VariableToken.Clone
@@ -5293,6 +6072,7 @@ references:
   name: Clone
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_Clone_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Clone
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.Clone
   nameWithType: VariableToken.Clone
 - uid: Albatross.Expression.Tokens.VariableToken.CompareTo(Albatross.Expression.Tokens.IOperandToken)
@@ -5305,6 +6085,7 @@ references:
   name: CompareTo
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_CompareTo_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.CompareTo
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.CompareTo
   nameWithType: VariableToken.CompareTo
 - uid: Albatross.Expression.Tokens.VariableToken.EvalText(System.String)
@@ -5317,6 +6098,7 @@ references:
   name: EvalText
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_EvalText_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.EvalText
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.EvalText
   nameWithType: VariableToken.EvalText
 - uid: Albatross.Expression.Tokens.VariableToken.EvalValue(System.Func{System.String,System.Object})
@@ -5332,6 +6114,7 @@ references:
   name: EvalValue
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_EvalValue_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.EvalValue
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.EvalValue
   nameWithType: VariableToken.EvalValue
 - uid: Albatross.Expression.Tokens.VariableToken.Group
@@ -5344,6 +6127,7 @@ references:
   name: Group
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_Group_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Group
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.Group
   nameWithType: VariableToken.Group
 - uid: Albatross.Expression.Tokens.VariableToken.IsVariable
@@ -5356,6 +6140,7 @@ references:
   name: IsVariable
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_IsVariable_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.IsVariable
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.IsVariable
   nameWithType: VariableToken.IsVariable
 - uid: Albatross.Expression.Tokens.VariableToken.Match(System.String,System.Int32,System.Int32@)
@@ -5371,6 +6156,7 @@ references:
   name: Match
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_Match_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Match
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.Match
   nameWithType: VariableToken.Match
 - uid: Albatross.Expression.Tokens.VariableToken.Name
@@ -5383,6 +6169,7 @@ references:
   name: Name
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_Name_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Name
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.Name
   nameWithType: VariableToken.Name
 - uid: Albatross.Expression.Tokens.VariableToken.ToString
@@ -5395,6 +6182,7 @@ references:
   name: ToString
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_ToString_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.ToString
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.ToString
   nameWithType: VariableToken.ToString
 - uid: Albatross.Expression.Tokens.VariableToken.Value
@@ -5407,6 +6195,7 @@ references:
   name: Value
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_Value_
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Value
+  isSpec: "True"
   fullName: Albatross.Expression.Tokens.VariableToken.Value
   nameWithType: VariableToken.Value
 - uid: Albatross.Expression.TryGetValueDelegate

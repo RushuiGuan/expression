@@ -8,7 +8,7 @@
     <title>Introduction </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Introduction ">
-    <meta name="generator" content="docfx 2.31.0.0">
+    <meta name="generator" content="docfx 2.33.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,7 +69,13 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="introduction">Introduction</h1>
 
-<p>Albatross.Expression api is created to parse and evaluate single statement expressions.  It supports the following kinds of operations:</p>
+<p>Albatross.Expression api is created to process text based expression strings.  The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and using it to generate certain expression such as a sql query statement.</p>
+<h1 id="usage">Usage</h1>
+<p>Use the easiest way to use the parser is by calling the singleton instance of the <a class="xref" href="../api/Albatross.Expression.Factory.html">Factory</a> class.</p>
+<pre><code class="lang-csharp">var parser = Factory.Instance.Create();
+parser.Compile(&quot;1 + 5&quot;).EvalValue(null);
+</code></pre><h1 id="supported-operations">Supported Operations</h1>
+<p>The api supports three diffent kinds of operations</p>
 <ul>
 <li>Infix operation <ul>
 <li><code>1 + 1</code></li>
@@ -89,12 +95,8 @@
 </ul>
 </li>
 </ul>
-<p>It supports <code>string</code>, <code>boolean</code> and <code>numeric</code> literals.  It treats all numbers as <code>double</code>.</p>
-<h1 id="usage">Usage</h1>
-<p>Use the easiest way to use the parser is by calling the singleton instance of the <a class="xref" href="../api/Albatross.Expression.Factory.html">Factory</a> class.</p>
-<pre><code class="lang-csharp">var parser = Factory.Instance.Create();
-parser.Compile(&quot;1 + 5&quot;).EvalValue(null);
-</code></pre></article>
+<p>It supports <code>string</code>, <code>boolean</code> and <code>numeric</code> literals.  It treats all numbers as <code>double</code>.  Reference the <a href="Operations.html">operations</a> page to see the list of supported operations.</p>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

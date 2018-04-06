@@ -1,7 +1,7 @@
 # Albatross Expression Api
 
 ## Summary
-This is an expression parsing and evaluation Api.  The api can parse groups of single statement expressions.  It supports math operations as well as some of the programming and string operations such as ``if, left, right, max, min`` etc.
+Albatross.Expression api is created to process text based expression strings.  The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and using it to generate certain expression such as a sql query statement.
 
 ## Release
 * Current

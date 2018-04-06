@@ -7,11 +7,14 @@ using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Concrete class with implentation for the infix AND operation.
+	/// Infix AND operation.
+	/// Operand Count: 2
+	/// Operand Type: Any, see the <see cref="Albatross.Expression.Extensions.ConvertToBoolean(object)"/> method for the conversion logic
+	/// Output Type: Boolean
 	/// Usage: 3 > 2 and 2 > 1
-	/// The operation has a precedence of 300.  It is less than 
+	/// Precedance: 30
 	/// </summary>
-	[ParserOperation]
+	[ParserOperation(Group = "Logical")]
 	public class And : InfixOperationToken {
 
 		public override string Name { get { return "and"; } }

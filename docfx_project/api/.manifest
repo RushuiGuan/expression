@@ -373,6 +373,8 @@
   "Albatross.Expression.Parser.Tokenize(System.String)": "Albatross.Expression.Parser.yml",
   "Albatross.Expression.Parser.VariableToken": "Albatross.Expression.Parser.yml",
   "Albatross.Expression.ParserOperationAttribute": "Albatross.Expression.ParserOperationAttribute.yml",
+  "Albatross.Expression.ParserOperationAttribute.Description": "Albatross.Expression.ParserOperationAttribute.yml",
+  "Albatross.Expression.ParserOperationAttribute.Group": "Albatross.Expression.ParserOperationAttribute.yml",
   "Albatross.Expression.Tokens": "Albatross.Expression.Tokens.yml",
   "Albatross.Expression.Tokens.BooleanLiteralToken": "Albatross.Expression.Tokens.BooleanLiteralToken.yml",
   "Albatross.Expression.Tokens.BooleanLiteralToken.Clone": "Albatross.Expression.Tokens.BooleanLiteralToken.yml",

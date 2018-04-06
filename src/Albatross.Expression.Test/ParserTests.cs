@@ -5,6 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -65,6 +66,9 @@ namespace Albatross.Expression.Test {
 		[TestCase("-12", ExpectedResult = -12)]
 		[TestCase("+12", ExpectedResult = 12)]
 
+		[TestCase("-  12", ExpectedResult = -12)]
+		[TestCase("+  12", ExpectedResult = 12)]
+
 		[TestCase("1-2", ExpectedResult = -1)]
 		[TestCase("1-null", ExpectedResult = null)]
 
@@ -106,6 +110,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("avg(3, 4, 5 )", ExpectedResult = 4)]
 		[TestCase("avg(null, 4, 5 )", ExpectedResult = 4.5)]
 		[TestCase("avg(0, 4, 5 )", ExpectedResult = 3)]
+		[TestCase("avg(@(0, 4, 5))", ExpectedResult = 3)]
 
 		[TestCase("coalesce(2, 1)", ExpectedResult = 2)]
 		[TestCase("coalesce(null, 1)", ExpectedResult = 1)]
@@ -148,6 +153,33 @@ namespace Albatross.Expression.Test {
 				token.EvalValue(null);
 			});
 			Assert.Throws(errType, handler);
+		}
+
+		[TestCase(@"c:\temp\operation.printout.txt")]
+		public void PrintOperations(string file) {
+			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {
+				using (StreamWriter writer = new StreamWriter(stream)) {
+					foreach (var token in from item in new Factory() orderby item.Name select item) {
+						writer.WriteLine($"{token.Name} | [{token.GetType().FullName}](xref:{token.GetType().FullName}) | {GetOperationType(token)}");
+					}
+					writer.Flush();
+					stream.SetLength(stream.Position);
+				}
+			}
+		}
+
+		string GetOperationType(IToken token) {
+			if (token is PrefixOperationToken) {
+				if (((PrefixOperationToken)token).Symbolic) {
+					return "Unary";
+				} else {
+					return "prefix";
+				}
+			} else if (token is InfixOperationToken) {
+				return "infix";
+			} else {
+				throw new NotSupportedException();
+			}
 		}
 	}
 }

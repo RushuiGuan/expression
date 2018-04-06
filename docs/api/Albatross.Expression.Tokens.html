@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Albatross.Expression.Tokens
    ">
-    <meta name="generator" content="docfx 2.33.1.0">
+    <meta name="generator" content="docfx 2.31.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -99,7 +99,19 @@
       <section><p>will take any string literal enclosed by double quotes.  use back slash to escape.<br>Check the GetStringEscape function for escapable chars</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Tokens.VariableToken.html">VariableToken</a></h4>
-      <section></section>
+      <section><p>
+VariableToken class will look for names in the expression string.  It follows the same rule as C# variable names which allows alpha numeric 
+and underline characters.  The leading character of a variable cannot be numeric.  In addition, it allows two name to be joined together using a period.  So &quot;name1.name2&quot; is also OK.  However &quot;name1.name2.name3&quot; 
+is not allowed.
+</p>
+
+<p>
+Note: a variable name cannot be followed by a open parentheses because it will become a function.  Please keep that in mind when creating a custom <a class="xref" href="Albatross.Expression.Tokens.IVariableToken.html">IVariableToken</a> implementation.
+</p>
+
+<p><p><strong>Legal Variable Names</strong></p><ul><li>cat</li><li><em>cat</em></li><li>cat</li><li>cat0_</li><li>field.cat0_</li><li>field0.cat0_</li></ul></p>
+<p><p><strong>Illegal Variable Names</strong></p><ul><li>test.field0.cat0_</li><li>0cat</li><li>cat.1cat</li><li>0cat.cat</li><li>$cat$</li></ul></p>
+</section>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Albatross.Expression.Tokens.IOperandToken.html">IOperandToken</a></h4>

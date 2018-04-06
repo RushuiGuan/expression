@@ -10,8 +10,10 @@ using System.Collections;
 
 namespace Albatross.Expression {
 	public class ExecutionContext : IExecutionContext {
+		#region fields
 		public Dictionary<string, ContextValue> Store { get; private set; }
 		public IDictionary<string, HashSet<string>> Dependencies { get; private set; }
+		Dictionary<string, ContextValue> _evalStacks = new Dictionary<string, ContextValue>();
 
 		readonly bool _caseSensitive;
 		public bool CaseSensitive => _caseSensitive;
@@ -20,9 +22,7 @@ namespace Albatross.Expression {
 		public bool CacheExternalValue { get; set; }
 		public TryGetValueDelegate TryGetExternalData { get; set; }
 		public IParser Parser { get; private set; }
-
-
-		Dictionary<string, ContextValue> _evalStacks = new Dictionary<string, ContextValue>();
+		#endregion
 
 		public ExecutionContext(IParser parser, bool caseSensitive) {
 			Parser = parser;
@@ -30,6 +30,7 @@ namespace Albatross.Expression {
 			Store = caseSensitive ? new Dictionary<string, ContextValue>() : new Dictionary<string, ContextValue>(StringComparer.InvariantCultureIgnoreCase);
 			Dependencies = caseSensitive ? new Dictionary<string, HashSet<string>>() : new Dictionary<string, HashSet<string>>(StringComparer.InvariantCultureIgnoreCase);
 		}
+
 		public void Clear() {
 			Store.Clear();
 			Dependencies.Clear();
@@ -113,16 +114,13 @@ namespace Albatross.Expression {
 			}
 		}
 
-		public void SetValue(string name, object value) { Set(new ContextValue() { Name = name, Value = value, ContextType = ContextType.Value, }); }
-		public void SetExpression(string name, string expression) { 
-			Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, });
-			Compiled = false;
+		
+		public void Set(ContextValue value) {
+			Store[value.Name] = value;
+			if (value.ContextType == ContextType.Expression) {
+				Compiled = false;
+			}
 		}
-		public void SetExpression(string name, string expression, Type dataType) {
-			Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, DataType = dataType });
-			Compiled = false;
-		}
-		public void Set(ContextValue value) { Store[value.Name] = value; }
 		public ISet<string> NewSet() {
 			return CaseSensitive ? new HashSet<string>() : new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
 		}
@@ -172,12 +170,13 @@ namespace Albatross.Expression {
 			}
 		}
 
+		#region IEnumerator
 		public IEnumerator<ContextValue> GetEnumerator() {
 			return Store.Values.GetEnumerator();
 		}
-
 		IEnumerator IEnumerable.GetEnumerator() {
 			return Store.Values.GetEnumerator();
 		}
+		#endregion
 	}
 }

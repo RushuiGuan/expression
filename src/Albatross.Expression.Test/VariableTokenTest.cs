@@ -11,18 +11,26 @@ namespace Albatross.Expression.Test
 	[TestFixture]
     public class VariableTokenTest {
 
+		//legal names
+		[TestCase(" _cat + 1", 0, ExpectedResult = "_cat")]
+		[TestCase("cat_1 + 1", 0, ExpectedResult = "cat_1")]
+		[TestCase("cat + 1", 0, ExpectedResult ="cat")]
+		[TestCase("cat + mouse", 5, ExpectedResult = "mouse")]
+		[TestCase("+ cat + mouse", 0, ExpectedResult = null)]  
+		[TestCase("+ cat + mouse", 1, ExpectedResult = "cat")]
+		[TestCase("field.cat + 1", 0, ExpectedResult = "field.cat")]
+		[TestCase("f0.cat0 + 1", 0, ExpectedResult = "f0.cat0")]
 
-		[TestCase("_a1 b c d", 0, ExpectedResult = "_a1")]
-		[TestCase("a_1 b c d", 0, ExpectedResult = "a_1")]
-		[TestCase("a b c d", 0, ExpectedResult ="a")]
-		[TestCase("a b c d", 2, ExpectedResult = "b")]
-		[TestCase("+ b c d", 0, ExpectedResult = null)]     //+ is a operator
-		[TestCase("+ b c d", 1, ExpectedResult = " b")]     //starting from the space after the + sign
-		[TestCase("4_xx c d", 0, ExpectedResult = null)]	//4_xx is not a valid variable name
+		//illegal names
+		[TestCase("1_cat + 1", 0, ExpectedResult = null)]
+		[TestCase("field.0_cat + 1", 0, ExpectedResult = "field")]
+		[TestCase("0field._cat + 1", 0, ExpectedResult = null)]
+		[TestCase("field.cat.age + 1", 0, ExpectedResult = "field.cat")]
 		public string Tokenize(string expression, int start) {
 			int next;
-			if (new VariableToken().Match(expression, start, out next)){
-				return expression.Substring(start, next - start);
+			VariableToken token = new VariableToken();
+			if (token.Match(expression, start, out next)){
+				return token.Name;
 			} else {
 				return null;
 			}

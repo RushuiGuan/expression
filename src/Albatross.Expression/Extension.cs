@@ -21,5 +21,16 @@ namespace Albatross.Expression {
 				return false;
 			}
 		}
+		#region IExecutionContext
+		public static void SetExpression(this IExecutionContext context, string name, string expression) {
+			context.Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, });
+		}
+		public static void SetExpression(this IExecutionContext context, string name, string expression, Type dataType) {
+			context.Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, DataType = dataType });
+		}
+		public static void SetValue(this IExecutionContext context, string name, object value) {
+			context.Set(new ContextValue() { Name = name, Value = value, ContextType = ContextType.Value, });
+		}
+		#endregion
 	}
 }

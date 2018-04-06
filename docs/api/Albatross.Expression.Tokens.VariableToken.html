@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class VariableToken
    ">
-    <meta name="generator" content="docfx 2.33.1.0">
+    <meta name="generator" content="docfx 2.31.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,19 @@
   
   <h1 id="Albatross_Expression_Tokens_VariableToken" data-uid="Albatross.Expression.Tokens.VariableToken" class="text-break">Class VariableToken
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>
+VariableToken class will look for names in the expression string.  It follows the same rule as C# variable names which allows alpha numeric 
+and underline characters.  The leading character of a variable cannot be numeric.  In addition, it allows two name to be joined together using a period.  So &quot;name1.name2&quot; is also OK.  However &quot;name1.name2.name3&quot; 
+is not allowed.
+</p>
+
+<p>
+Note: a variable name cannot be followed by a open parentheses because it will become a function.  Please keep that in mind when creating a custom <a class="xref" href="Albatross.Expression.Tokens.IVariableToken.html">IVariableToken</a> implementation.
+</p>
+
+<p><p><strong>Legal Variable Names</strong></p><ul><li>cat</li><li><em>cat</em></li><li>cat</li><li>cat0_</li><li>field.cat0_</li><li>field0.cat0_</li></ul></p>
+<p><p><strong>Illegal Variable Names</strong></p><ul><li>test.field0.cat0_</li><li>0cat</li><li>cat.1cat</li><li>0cat.cat</li><li>$cat$</li></ul></p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -99,7 +111,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_Calculated.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.Calculated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L29">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L64">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_Calculated_" data-uid="Albatross.Expression.Tokens.VariableToken.Calculated*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_Calculated" data-uid="Albatross.Expression.Tokens.VariableToken.Calculated">Calculated</h4>
@@ -129,7 +141,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_Group.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.Group%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L14">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L49">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_Group_" data-uid="Albatross.Expression.Tokens.VariableToken.Group*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_Group" data-uid="Albatross.Expression.Tokens.VariableToken.Group">Group</h4>
@@ -159,7 +171,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_IsVariable.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.IsVariable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L52">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L87">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_IsVariable_" data-uid="Albatross.Expression.Tokens.VariableToken.IsVariable*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_IsVariable" data-uid="Albatross.Expression.Tokens.VariableToken.IsVariable">IsVariable</h4>
@@ -189,7 +201,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_Name.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L13">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L48">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_Name_" data-uid="Albatross.Expression.Tokens.VariableToken.Name*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_Name" data-uid="Albatross.Expression.Tokens.VariableToken.Name">Name</h4>
@@ -219,7 +231,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_Value.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L28">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L63">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_Value_" data-uid="Albatross.Expression.Tokens.VariableToken.Value*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_Value" data-uid="Albatross.Expression.Tokens.VariableToken.Value">Value</h4>
@@ -251,7 +263,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_Clone.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L36">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L71">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_Clone_" data-uid="Albatross.Expression.Tokens.VariableToken.Clone*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_Clone" data-uid="Albatross.Expression.Tokens.VariableToken.Clone">Clone()</h4>
@@ -281,7 +293,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_CompareTo_Albatross_Expression_Tokens_IOperandToken_.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.CompareTo(Albatross.Expression.Tokens.IOperandToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L30">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L65">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_CompareTo_" data-uid="Albatross.Expression.Tokens.VariableToken.CompareTo*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_CompareTo_Albatross_Expression_Tokens_IOperandToken_" data-uid="Albatross.Expression.Tokens.VariableToken.CompareTo(Albatross.Expression.Tokens.IOperandToken)">CompareTo(IOperandToken)</h4>
@@ -328,7 +340,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_EvalText_System_String_.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.EvalText(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L33">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L68">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_EvalText_" data-uid="Albatross.Expression.Tokens.VariableToken.EvalText*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_EvalText_System_String_" data-uid="Albatross.Expression.Tokens.VariableToken.EvalText(System.String)">EvalText(String)</h4>
@@ -375,7 +387,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_EvalValue_System_Func_System_String_System_Object__.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.EvalValue(System.Func%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L39">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L74">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_EvalValue_" data-uid="Albatross.Expression.Tokens.VariableToken.EvalValue*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_EvalValue_System_Func_System_String_System_Object__" data-uid="Albatross.Expression.Tokens.VariableToken.EvalValue(System.Func{System.String,System.Object})">EvalValue(Func&lt;String, Object&gt;)</h4>
@@ -422,7 +434,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_Match_System_String_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.Match(System.String%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L15">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L50">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_Match_" data-uid="Albatross.Expression.Tokens.VariableToken.Match*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_Match_System_String_System_Int32_System_Int32__" data-uid="Albatross.Expression.Tokens.VariableToken.Match(System.String,System.Int32,System.Int32@)">Match(String, Int32, out Int32)</h4>
@@ -479,7 +491,7 @@
     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken_ToString.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L27">View Source</a>
+    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L62">View Source</a>
   </span>
   <a id="Albatross_Expression_Tokens_VariableToken_ToString_" data-uid="Albatross.Expression.Tokens.VariableToken.ToString*"></a>
   <h4 id="Albatross_Expression_Tokens_VariableToken_ToString" data-uid="Albatross.Expression.Tokens.VariableToken.ToString">ToString()</h4>
@@ -531,7 +543,7 @@
                     <a href="https://github.com/RushuiGuan/expression/new/master/apiSpec/new?filename=Albatross_Expression_Tokens_VariableToken.md&amp;value=---%0Auid%3A%20Albatross.Expression.Tokens.VariableToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/RushuiGuan/expression/blob/master/src/Albatross.Expression/Tokens/VariableToken.cs/#L43" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

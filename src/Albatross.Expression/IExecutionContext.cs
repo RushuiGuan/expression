@@ -18,9 +18,6 @@ namespace Albatross.Expression {
 		object Eval(string expression, object input, Type outputDataType);
 		object GetValue(string name, object input);
 		bool TryGetValue(string name, object input, out object data);
-		void SetValue(string name, object value);
-		void SetExpression(string name, string expression);
-		void SetExpression(string name, string expression, Type dataType);
 		void Set(ContextValue value);
 		void Compile();
 		void CheckCircularReference(object input);

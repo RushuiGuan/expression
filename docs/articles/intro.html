@@ -85,8 +85,10 @@ parser.Compile(&quot;1 + 5&quot;).EvalValue(null);
     context.SetValue(&quot;a&quot;, 2);
     result = context.Eval(&quot;a + b&quot;, null);
     //the result should be 4 now.
-</code></pre><p>In the code sample above, the context was able to store the value of variable <code>a</code> and <code>b</code> and use it to calculate expressions that have those variables.  The <a class="xref" href="../api/Albatross.Expression.ExecutionContext.html">ExecutionContext</a> class can also reference data externally so that the value of the variables doesn&#39;t need to be established in the object itself.  It is useful in situations where users are allowed to define custom calculations using a formula and the application is expected to perform the calculation of the dynamically defined formulas.</p>
-<h1 id="supported-operations">Supported Operations</h1>
+</code></pre><p>In the code sample above, the context was able to store the value of variable <code>a</code> and <code>b</code> and use it to calculate expressions that have those variables.  It is useful in situations where users are allowed to define custom calculations using a formula and the application is expected to perform the calculation of the dynamically defined formulas.</p>
+<p>The <a class="xref" href="../api/Albatross.Expression.ExecutionContext.html">ExecutionContext</a> class can also reference data externally so that the value of the variables doesn&#39;t need to be established in the object itself.  It is a nessary feature because when data change, instead of calling the SetValue method, it is more efficient for the context to access the external data directly.  Here is a code sample:</p>
+<pre><code class="lang-csharp">    //working on it!
+</code></pre><h1 id="supported-operations">Supported Operations</h1>
 <p>The api supports three diffent kinds of operations</p>
 <ul>
 <li>Infix operation <ul>

@@ -20,7 +20,13 @@ The evaluation of expressions made of literals is not very helpful and it doesn'
     result = context.Eval("a + b", null);
     //the result should be 4 now.
 ```
-In the code sample above, the context was able to store the value of variable `a` and `b` and use it to calculate expressions that have those variables.  The [ExecutionContext](xref:Albatross.Expression.ExecutionContext) class can also reference data externally so that the value of the variables doesn't need to be established in the object itself.  It is useful in situations where users are allowed to define custom calculations using a formula and the application is expected to perform the calculation of the dynamically defined formulas.
+In the code sample above, the context was able to store the value of variable `a` and `b` and use it to calculate expressions that have those variables.  It is useful in situations where users are allowed to define custom calculations using a formula and the application is expected to perform the calculation of the dynamically defined formulas.
+
+The [ExecutionContext](xref:Albatross.Expression.ExecutionContext) class can also reference data externally so that the value of the variables doesn't need to be established in the object itself.  It is a nessary feature because when data change, instead of calling the SetValue method, it is more efficient for the context to access the external data directly.  Here is a code sample:
+
+```csharp
+    //working on it!
+```
 
 # Supported Operations
 The api supports three diffent kinds of operations

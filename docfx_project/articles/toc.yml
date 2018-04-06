@@ -1,8 +1,10 @@
 - name: Intro
   href: intro.md
-- name: Operation Precedence
-  href: precedence.md
+- name: Built-In Operations
+  href: operations.md
 - name: Execution Context
   href: ExecutionContext.md
 - name: Custom Operation
   href: CustomOperation.md
+- name: Expression Generation
+  href: Generation.md

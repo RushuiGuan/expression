@@ -290,6 +290,101 @@
 </tr>
 </tbody>
 </table>
+<h2 id="what-is-an-infix-operation">What is an <strong>Infix operation</strong>?</h2>
+<p>It is a math expression with an operator in the middle and two operands, one on each side of the operator.  Here are some examples.</p>
+<ol>
+<li><code>1 + 2</code></li>
+<li><code>1 + 2 + 3</code></li>
+<li><code>2 + 5 * 4</code></li>
+<li><code>1 &gt; 2 or 3 &gt; 2</code></li>
+<li><code>(1 + 2) * 3</code></li>
+<li><code>1 * -1</code></li>
+</ol>
+<p>Infix operation can be chained as the examples shown above.  When chained, the precedence of the operator will decide who gets executed first.  If two operator has the same precedence, the operator should be executed from left to right.  For example <code>2 + 5 * 4</code> will execute <code>5 * 4</code> first because the <code>*</code> operator has a precedence of 200 which is larger than the precedence of the <code>+</code> operator.  The <code>+</code> operator will then execute <code>2 + 20</code>.  The second operand <code>20</code> comes from the output of the <code>*</code> operator.</p>
+<p>The <strong>parentheses</strong> can be used to supersede the precedence of the operators as show in #5.</p>
+<p>A <strong>unary operator</strong> such as the negative sign in #6 will always have precedence over any infix operators.</p>
+<h2 id="the-precedence-of-infix-operations">The Precedence of Infix Operations</h2>
+<table>
+<thead>
+<tr>
+<th>Infix Operation</th>
+<th>Class</th>
+<th>Precedence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>or</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Or.html">Albatross.Expression.Operations.Or</a></td>
+<td>20</td>
+</tr>
+<tr>
+<td>and</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.And.html">Albatross.Expression.Operations.And</a></td>
+<td>30</td>
+</tr>
+<tr>
+<td>=</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Equal.html">Albatross.Expression.Operations.Equal</a></td>
+<td>50</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.GreaterEqual.html">Albatross.Expression.Operations.GreaterEqual</a></td>
+<td>50</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.GreaterThan.html">Albatross.Expression.Operations.GreaterThan</a></td>
+<td>50</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.LessEqual.html">Albatross.Expression.Operations.LessEqual</a></td>
+<td>50</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.LessThan.html">Albatross.Expression.Operations.LessThan</a></td>
+<td>50</td>
+</tr>
+<tr>
+<td>-</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Minus.html">Albatross.Expression.Operations.Minus</a></td>
+<td>100</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.NotEqual.html">Albatross.Expression.Operations.NotEqual</a></td>
+<td>100</td>
+</tr>
+<tr>
+<td>+</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Plus.html">Albatross.Expression.Operations.Plus</a></td>
+<td>100</td>
+</tr>
+<tr>
+<td>/</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Divide.html">Albatross.Expression.Operations.Divide</a></td>
+<td>200</td>
+</tr>
+<tr>
+<td>%</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Mod.html">Albatross.Expression.Operations.Mod</a></td>
+<td>200</td>
+</tr>
+<tr>
+<td>*</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Multiply.html">Albatross.Expression.Operations.Multiply</a></td>
+<td>200</td>
+</tr>
+<tr>
+<td>^</td>
+<td><a class="xref" href="../api/Albatross.Expression.Operations.Power.html">Albatross.Expression.Operations.Power</a></td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

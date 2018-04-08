@@ -51,6 +51,6 @@ namespace Albatross.Expression.Tokens {
 				throw new FormatException();
 			}
 		}
-		public bool IsVariable { get { return false; } }
+
 	}
 }

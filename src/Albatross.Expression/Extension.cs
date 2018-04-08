@@ -1,4 +1,5 @@
 ﻿using Albatross.Expression.Exceptions;
+using Albatross.Expression.Tokens;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace Albatross.Expression {
 				return false;
 			}
 		}
+
 		#region IExecutionContext
 		public static void SetExpression(this IExecutionContext context, string name, string expression) {
 			context.Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, });
@@ -30,6 +32,12 @@ namespace Albatross.Expression {
 		}
 		public static void SetValue(this IExecutionContext context, string name, object value) {
 			context.Set(new ContextValue() { Name = name, Value = value, ContextType = ContextType.Value, });
+		}
+		#endregion
+
+		#region IToken
+		public static bool IsVariable(this IToken token) {
+			return token is IVariableToken;
 		}
 		#endregion
 	}

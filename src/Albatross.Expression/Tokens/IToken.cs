@@ -10,7 +10,5 @@ namespace Albatross.Expression.Tokens {
 		string EvalText(string format);
 		object EvalValue(Func<string, object> context);
 		IToken Clone();
-
-		bool IsVariable { get; }
 	}
 }

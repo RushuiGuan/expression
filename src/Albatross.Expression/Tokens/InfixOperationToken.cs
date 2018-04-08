@@ -62,6 +62,6 @@ namespace Albatross.Expression.Tokens {
 		public virtual object EvalValue(Func<string, object> context) {
 			return null;
 		}
-		public bool IsVariable { get { return false; } }
+
 	}
 }

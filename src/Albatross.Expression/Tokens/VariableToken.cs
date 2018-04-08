@@ -84,6 +84,5 @@ namespace Albatross.Expression.Tokens {
 				//throw new VariableNotFoundException(Name);
 			}
 		}
-		public bool IsVariable { get { return true; } }
 	}
 }

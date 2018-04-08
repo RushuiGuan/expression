@@ -41,6 +41,6 @@ namespace Albatross.Expression.Tokens {
 		public object EvalValue(Func<string, object> context) {
 			throw new NotSupportedException();
 		}
-		public bool IsVariable { get { return false; } }
+
 	}
 }

@@ -161,6 +161,5 @@ namespace Albatross.Expression.Tokens {
 			}
 			return text;
 		}
-		public bool IsVariable { get { return false; } }
 	}
 }

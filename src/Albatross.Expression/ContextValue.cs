@@ -20,10 +20,11 @@ namespace Albatross.Expression {
 			Tree = null;
 			Queue<IToken> queue = parser.Tokenize(Convert.ToString(Value));
 			Dependees = context.NewSet();
-			foreach (IToken token in queue) { if (token.IsVariable) { Dependees.Add(token.Name); } }
+			foreach (IToken token in queue) { if (token.IsVariable()) { Dependees.Add(token.Name); } }
 			Stack<IToken> stack = parser.BuildStack(queue);
 			Tree = parser.CreateTree(stack);
 		}
+
 		public void CheckCircularReference(IParser parser, ExecutionContext context, ISet<string> chain, object input) {
 			foreach (string dependee in Dependees) {
 				if (chain.Contains(dependee)) {

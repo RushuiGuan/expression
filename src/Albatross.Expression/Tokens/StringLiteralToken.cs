@@ -77,6 +77,6 @@ namespace Albatross.Expression.Tokens {
 			}
 			return sb.ToString();
 		}
-		public bool IsVariable { get { return false; } }
+
 	}
 }

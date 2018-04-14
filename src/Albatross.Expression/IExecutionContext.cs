@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
 namespace Albatross.Expression {
-	public delegate bool TryGetValueDelegate(string name, object input, out object value);
-	public interface IExecutionContext:IEnumerable<ContextValue> {
+	public delegate bool TryGetValueDelegate<T>(string name, T input, out object value);
+
+	public interface IExecutionContext<T> :IEnumerable<ContextValue> {
 		bool CaseSensitive { get; }
-		TryGetValueDelegate TryGetExternalData { get; set; }
+		bool CacheExternalValue { get; }
+		bool FailWhenMissingVariable { get; }
 		IParser Parser { get; }
-		bool CacheExternalValue { get; set; }
+
 		void Clear();
-		object Eval(string expression, object input, Type outputDataType);
-		object GetValue(string name, object input);
-		bool TryGetValue(string name, object input, out object data);
+		object Eval(string expression, T input, Type outputDataType);
+		object GetValue(string name, T input);
+		bool TryGetValue(string name, T input, out object data);
 		void Set(ContextValue value);
 		void Compile();
-		void CheckCircularReference(object input);
-		ISet<string> NewSet();
-		IDictionary<string, HashSet<string>> Dependencies { get; }
-		void GetDependants(string name, ISet<string> dependents);
 	}
 }

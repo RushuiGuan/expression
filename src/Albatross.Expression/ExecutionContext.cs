@@ -9,139 +9,124 @@ using System.Runtime.Serialization;
 using System.Collections;
 
 namespace Albatross.Expression {
-	public class ExecutionContext : IExecutionContext {
+	public class ExecutionContext<T> : IExecutionContext<T> {
 		#region fields
 		public Dictionary<string, ContextValue> Store { get; private set; }
 		public IDictionary<string, HashSet<string>> Dependencies { get; private set; }
 		Dictionary<string, ContextValue> _evalStacks = new Dictionary<string, ContextValue>();
 
-		readonly bool _caseSensitive;
-		public bool CaseSensitive => _caseSensitive;
-
 		public bool Compiled { get; private set; }
-		public bool CacheExternalValue { get; set; }
-		public TryGetValueDelegate TryGetExternalData { get; set; }
+		public bool CaseSensitive { get; private set; }
+		public bool CacheExternalValue { get; private set; }
+		public bool FailWhenMissingVariable { get; private set; }
+		public TryGetValueDelegate<T> TryGetExternalData { get; private set; }
 		public IParser Parser { get; private set; }
 		#endregion
 
-		public ExecutionContext(IParser parser, bool caseSensitive) {
-			Parser = parser;
-			_caseSensitive = caseSensitive;
+		public ExecutionContext(IParser parser, bool caseSensitive, bool cacheExternalValue, bool failWhenMissingVariable, TryGetValueDelegate<T> tryGetValueDelegate) {
+			this.Parser = parser;
+			this.CaseSensitive = caseSensitive;
+			this.CacheExternalValue = cacheExternalValue;
+			this.TryGetExternalData = tryGetValueDelegate;
+			this.FailWhenMissingVariable = failWhenMissingVariable;
+
 			Store = caseSensitive ? new Dictionary<string, ContextValue>() : new Dictionary<string, ContextValue>(StringComparer.InvariantCultureIgnoreCase);
-			Dependencies = caseSensitive ? new Dictionary<string, HashSet<string>>() : new Dictionary<string, HashSet<string>>(StringComparer.InvariantCultureIgnoreCase);
+			Dependencies = caseSensitive? new Dictionary<string, HashSet<string>>() : new Dictionary<string, HashSet<string>>(StringComparer.InvariantCultureIgnoreCase);
 		}
 
+		#region state management
 		public void Clear() {
 			Store.Clear();
-			Dependencies.Clear();
+			Compiled = false;
 		}
-
-		public object Eval(string expression, object input, Type outputDataType = null) {
-			ContextValue value;
-			if (!_evalStacks.TryGetValue(expression, out value)) {
-				value = new ContextValue() {
-					 Value = expression,
-					 DataType = outputDataType,
-					 ContextType = ContextType.Expression,
-				};
-				_evalStacks.Add(expression, value);
-			}
-			return value.GetValue(Parser, this, input);
-		}
-
-		bool TryGetExternal(string name, object input, bool contextOnly, out object data){
-			ContextValue value;
-			if (TryGetExternalData != null && TryGetExternalData(name, input, out data)) {
-				if (data is ContextValue) {
-					value = (ContextValue)data;
-					if (CacheExternalValue) { Store.Add(name, value); }
-					if (!contextOnly) {
-						data = value.GetValue(Parser, this, input);
-					}
-				} else {
-					value = new ContextValue() { Name = name, Value = data, ContextType = ContextType.Value, };
-					if (CacheExternalValue) { Store.Add(name, value); }
-					if (contextOnly) { data = value; }
-				}
-				return true;
-			} else {
-				data = null;
-				return false;
-			}
-		}
-
-		public object GetValue(string name, object input) {
-			ContextValue value;
-			object data;
-			if (Store.TryGetValue(name, out value)) {
-				if (value.ContextType == ContextType.Value) {
-					return value.Value;
-				} else if (value.ContextType == ContextType.Expression) {
-					return value.GetValue(Parser, this, input);
-				} else {
-					throw new NotSupportedException();
-				}
-			}else if(TryGetExternal(name, input, false, out data)){
-				return data;
-			} else {
-				return null;
-			}
-		}
-		public bool TryGetValue(string name, object input, out object data) {
-			ContextValue value;
-			if (Store.TryGetValue(name, out value)) {
-				if (value.ContextType == ContextType.Value) {
-					data = value.Value;
-				} else {
-					data = value.GetValue(Parser, this, input);
-				}
-				return true;
-			}else{
-				return TryGetExternal(name, input, false, out data);
-			}
-		}
-
-		internal bool TryGetContext(string name, object input, out ContextValue value) {
-			Object data;
-			if (Store.TryGetValue(name, out value)) {
-				return true;
-			} else if (TryGetExternal(name, input, true, out data)) {
-				value = (ContextValue)data;
-				return true;
-			} else {
-				value = null;
-				return false;
-			}
-		}
-
-		
 		public void Set(ContextValue value) {
 			Store[value.Name] = value;
 			if (value.ContextType == ContextType.Expression) {
 				Compiled = false;
 			}
 		}
-		public ISet<string> NewSet() {
-			return CaseSensitive ? new HashSet<string>() : new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
-		}
-		public void Compile() {
-			Dependencies.Clear();
-			foreach (ContextValue value in Store.Values) {
-				if (value.ContextType == ContextType.Expression) {
-					value.Build(Parser, this, null);
+		#endregion
+
+		#region data retrieval
+		public object GetValue(string name, T input) {
+			object value;
+			if (TryGetValue(name, input, out value)) {
+				return value;
+			} else {
+				if (FailWhenMissingVariable) {
+					throw new MissingVariableException(name);
+				} else {
+					return null;
 				}
 			}
-			foreach (ContextValue value in Store.Values) {
-				if (value.ContextType == ContextType.Expression) {
-					AddDependency(Dependencies, value.Name, value.Dependees);
-				}
+		}
+		public bool TryGetValue(string name, T input, out object data) {
+			ContextValue value;
+			if (TryGetContext(name, input, out value)) {
+				data = GetContextValue(value, input);
+				return true;
+			} else {
+				data = null;
+				return false;
 			}
 		}
-		public void CheckCircularReference(object input) {
-			ISet<string> chain = NewSet();
-			foreach (ContextValue value in Store.Values) {
-				if (value.ContextType == ContextType.Expression) {
-					value.CheckCircularReference(Parser, this, chain, input);
+		object GetContextValue(ContextValue contextValue, T input) {
+			if (contextValue.ContextType == Albatross.Expression.ContextType.Expression) {
+				ISet<string> chain = NewSet();
+				if (!string.IsNullOrEmpty(contextValue.Name)) { chain.Add(contextValue.Name); }
+
+				if (contextValue.Tree == null) {
+					Build(contextValue, chain);
+				}
+				CheckCircularReference(contextValue, chain, input);
+				object data = Parser.Eval(contextValue.Tree, new Func<string, object>(name => GetValue(name, input)));
+				if (data != null && contextValue.DataType != null && contextValue.DataType != data.GetType()) {
+					data = Convert.ChangeType(data, contextValue.DataType);
+				}
+				return data;
+			} else {
+				return contextValue.Value;
+			}
+		}
+		bool TryGetExternal(string name, T input, out ContextValue value){
+			object data;
+			if (TryGetExternalData != null && TryGetExternalData(name, input, out data)) {
+				if (data is ContextValue) {
+					value = (ContextValue)data;
+				} else {
+					value = new ContextValue() { Name = name, Value = data, ContextType = ContextType.Value, };
+				}
+				value.External = true;
+				if (value.ContextType == ContextType.Expression || CacheExternalValue) { Store.Add(name, value); }
+				return true;
+			} else {
+				value = null;
+				return false;
+			}
+		}
+		bool TryGetContext(string name, T input, out ContextValue value) {
+			return Store.TryGetValue(name, out value) || TryGetExternal(name, input, out value);
+		}
+		#endregion
+
+		#region dependency check
+		void CheckCircularReference(ContextValue contextValue, ISet<string> chain, T input) {
+			foreach (string dependee in contextValue.Dependees) {
+				if (chain.Contains(dependee)) {
+					throw new CircularReferenceException(dependee, string.IsNullOrEmpty(contextValue.Name) ? Convert.ToString(contextValue.Value) : contextValue.Name);
+				}
+				ContextValue value;
+				if (TryGetContext(dependee, input, out value) && value.ContextType == Albatross.Expression.ContextType.Expression) {
+					ISet<string> newChain = NewSet();
+					foreach (var item in chain) {
+						newChain.Add(item);
+					}
+					newChain.Add(dependee);
+
+					if (value.Tree == null) {
+						Build(value, newChain);
+					}
+					CheckCircularReference(value, newChain, input);
 				}
 			}
 		}
@@ -159,15 +144,54 @@ namespace Albatross.Expression {
 				}
 			}
 		}
+		//public void GetDependants(string name, ISet<string> dependents) {
+		//	HashSet<string> list;
+		//	if (Dependencies.TryGetValue(name, out list)) {
+		//		foreach (string dependent in list) {
+		//			dependents.Add(dependent);
+		//			GetDependants(dependent, dependents);
+		//		}
+		//	}
+		//}
+		ISet<string> NewSet() {
+			return CaseSensitive ? new HashSet<string>() : new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+		}
+		#endregion
 
-		public void GetDependants(string name, ISet<string> dependents) {
-			HashSet<string> list;
-			if (Dependencies.TryGetValue(name, out list)) {
-				foreach (string dependent in list) {
-					dependents.Add(dependent);
-					GetDependants(dependent, dependents);
+		public object Eval(string expression, T input, Type outputDataType = null) {
+			ContextValue value;
+			if (!_evalStacks.TryGetValue(expression, out value)) {
+				value = new ContextValue() {
+					 Value = expression,
+					 DataType = outputDataType,
+					 ContextType = ContextType.Expression,
+				};
+				_evalStacks.Add(expression, value);
+			}
+			return GetContextValue(value, input);
+		}
+
+
+		void Build(ContextValue contextValue, ISet<string> chain) {
+			contextValue.Tree = null;
+			Queue<IToken> queue = Parser.Tokenize(Convert.ToString(contextValue.Value));
+			contextValue.Dependees = NewSet();
+			foreach (IToken token in queue) { if (token.IsVariable()) { contextValue.Dependees.Add(token.Name); } }
+			Stack<IToken> stack = Parser.BuildStack(queue);
+			contextValue.Tree = Parser.CreateTree(stack);
+		}
+
+		public void Compile() {
+			foreach (ContextValue value in Store.Values) {
+				if (value.ContextType == ContextType.Expression) {
+					Build(value, null);
 				}
 			}
+			//foreach (ContextValue value in Store.Values) {
+			//	if (value.ContextType == ContextType.Expression) {
+			//		AddDependency(Dependencies, value.Name, value.Dependees);
+			//	}
+			//}
 		}
 
 		#region IEnumerator

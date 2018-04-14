@@ -12,6 +12,7 @@ namespace Albatross.Expression.Test
     public class VariableTokenTest {
 
 		//legal names
+		[TestCase("a+b+c+d", 0, ExpectedResult = "a")]
 		[TestCase(" _cat + 1", 0, ExpectedResult = "_cat")]
 		[TestCase("cat_1 + 1", 0, ExpectedResult = "cat_1")]
 		[TestCase("cat + 1", 0, ExpectedResult ="cat")]

@@ -4,15 +4,25 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression {
-	public class ExecutionContextFactory : IExecutionContextFactory {
-		IParser _parser;
+	public class ExecutionContextFactory : IExecutionContextFactory<object> {
+		public TryGetValueDelegate<object> DefaultTryGetValueDelegate { get; set; }
+		public bool CaseSensitive { get;set; }
+		public bool CacheExternalValue { get;set; }
+		public bool FailWhenMissingVariable { get;set; }
+
+		IParser parser;
 
 		public ExecutionContextFactory(IParser parser) {
-			_parser = parser;
+			this.parser = parser;
 		}
 
-		public IExecutionContext Create(bool caseSensitive) {
-			return new ExecutionContext(_parser, caseSensitive);
+		public IExecutionContext<object> Create() {
+			return new ExecutionContext<object>(parser, CaseSensitive, CacheExternalValue, FailWhenMissingVariable, DefaultTryGetValueDelegate);
+		}
+
+		public bool TryGetExternalValue(string name, object input, out object value) {
+			value = null;
+			return DefaultTryGetValueDelegate?.Invoke(name, input, out value) == true;
 		}
 	}
 }

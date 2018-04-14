@@ -11,8 +11,8 @@ using System.Text;
 
 namespace Albatross.Expression.Test {
 	[TestFixture]
-	[Category("Expression")]
-	public class ParserTests {
+	[Category("Operations")]
+	public class OperationTests {
 		//logical
 		[TestCase("true and 1", ExpectedResult = true)]
 		[TestCase("1 and 1", ExpectedResult = true)]
@@ -122,6 +122,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("min(null, 1, 3)", ExpectedResult = 1)]
 		[TestCase("len(@(null, 1, 3))", ExpectedResult = 3)]
 		[TestCase("len(\"abc\")", ExpectedResult = 3)]
+		[TestCase("len(@(1,2,3))", ExpectedResult = 3)]
 
 		[TestCase("left(\"abc\", 2)", ExpectedResult = "ab")]
 		[TestCase("left(\"abc\", 0)", ExpectedResult = "")]

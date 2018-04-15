@@ -477,6 +477,22 @@ references:
   fullName.vb: Albatross.Expression.ExecutionContext(Of T).ExecutionContext
   nameWithType: ExecutionContext<T>.ExecutionContext
   nameWithType.vb: ExecutionContext(Of T).ExecutionContext
+- uid: Albatross.Expression.ExecutionContext`1.Build
+  name: Build()
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Build
+  commentId: M:Albatross.Expression.ExecutionContext`1.Build
+  fullName: Albatross.Expression.ExecutionContext<T>.Build()
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Build()
+  nameWithType: ExecutionContext<T>.Build()
+  nameWithType.vb: ExecutionContext(Of T).Build()
+- uid: Albatross.Expression.ExecutionContext`1.Build*
+  name: Build
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Build_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Build
+  fullName: Albatross.Expression.ExecutionContext<T>.Build
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Build
+  nameWithType: ExecutionContext<T>.Build
+  nameWithType.vb: ExecutionContext(Of T).Build
 - uid: Albatross.Expression.ExecutionContext`1.CacheExternalValue
   name: CacheExternalValue
   href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_CacheExternalValue
@@ -525,22 +541,6 @@ references:
   fullName.vb: Albatross.Expression.ExecutionContext(Of T).Clear
   nameWithType: ExecutionContext<T>.Clear
   nameWithType.vb: ExecutionContext(Of T).Clear
-- uid: Albatross.Expression.ExecutionContext`1.Compile
-  name: Compile()
-  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Compile
-  commentId: M:Albatross.Expression.ExecutionContext`1.Compile
-  fullName: Albatross.Expression.ExecutionContext<T>.Compile()
-  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Compile()
-  nameWithType: ExecutionContext<T>.Compile()
-  nameWithType.vb: ExecutionContext(Of T).Compile()
-- uid: Albatross.Expression.ExecutionContext`1.Compile*
-  name: Compile
-  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Compile_
-  commentId: Overload:Albatross.Expression.ExecutionContext`1.Compile
-  fullName: Albatross.Expression.ExecutionContext<T>.Compile
-  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Compile
-  nameWithType: ExecutionContext<T>.Compile
-  nameWithType.vb: ExecutionContext(Of T).Compile
 - uid: Albatross.Expression.ExecutionContext`1.Compiled
   name: Compiled
   href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Compiled
@@ -557,22 +557,6 @@ references:
   fullName.vb: Albatross.Expression.ExecutionContext(Of T).Compiled
   nameWithType: ExecutionContext<T>.Compiled
   nameWithType.vb: ExecutionContext(Of T).Compiled
-- uid: Albatross.Expression.ExecutionContext`1.Dependencies
-  name: Dependencies
-  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Dependencies
-  commentId: P:Albatross.Expression.ExecutionContext`1.Dependencies
-  fullName: Albatross.Expression.ExecutionContext<T>.Dependencies
-  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Dependencies
-  nameWithType: ExecutionContext<T>.Dependencies
-  nameWithType.vb: ExecutionContext(Of T).Dependencies
-- uid: Albatross.Expression.ExecutionContext`1.Dependencies*
-  name: Dependencies
-  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Dependencies_
-  commentId: Overload:Albatross.Expression.ExecutionContext`1.Dependencies
-  fullName: Albatross.Expression.ExecutionContext<T>.Dependencies
-  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Dependencies
-  nameWithType: ExecutionContext<T>.Dependencies
-  nameWithType.vb: ExecutionContext(Of T).Dependencies
 - uid: Albatross.Expression.ExecutionContext`1.Eval(System.String,`0,System.Type)
   name: Eval(String, T, Type)
   href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Eval_System_String__0_System_Type_
@@ -1160,6 +1144,22 @@ references:
   fullName.vb: Albatross.Expression.IExecutionContext(Of T)
   nameWithType: IExecutionContext<T>
   nameWithType.vb: IExecutionContext(Of T)
+- uid: Albatross.Expression.IExecutionContext`1.Build
+  name: Build()
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Build
+  commentId: M:Albatross.Expression.IExecutionContext`1.Build
+  fullName: Albatross.Expression.IExecutionContext<T>.Build()
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Build()
+  nameWithType: IExecutionContext<T>.Build()
+  nameWithType.vb: IExecutionContext(Of T).Build()
+- uid: Albatross.Expression.IExecutionContext`1.Build*
+  name: Build
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Build_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.Build
+  fullName: Albatross.Expression.IExecutionContext<T>.Build
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Build
+  nameWithType: IExecutionContext<T>.Build
+  nameWithType.vb: IExecutionContext(Of T).Build
 - uid: Albatross.Expression.IExecutionContext`1.CacheExternalValue
   name: CacheExternalValue
   href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_CacheExternalValue
@@ -1208,22 +1208,6 @@ references:
   fullName.vb: Albatross.Expression.IExecutionContext(Of T).Clear
   nameWithType: IExecutionContext<T>.Clear
   nameWithType.vb: IExecutionContext(Of T).Clear
-- uid: Albatross.Expression.IExecutionContext`1.Compile
-  name: Compile()
-  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Compile
-  commentId: M:Albatross.Expression.IExecutionContext`1.Compile
-  fullName: Albatross.Expression.IExecutionContext<T>.Compile()
-  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Compile()
-  nameWithType: IExecutionContext<T>.Compile()
-  nameWithType.vb: IExecutionContext(Of T).Compile()
-- uid: Albatross.Expression.IExecutionContext`1.Compile*
-  name: Compile
-  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Compile_
-  commentId: Overload:Albatross.Expression.IExecutionContext`1.Compile
-  fullName: Albatross.Expression.IExecutionContext<T>.Compile
-  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Compile
-  nameWithType: IExecutionContext<T>.Compile
-  nameWithType.vb: IExecutionContext(Of T).Compile
 - uid: Albatross.Expression.IExecutionContext`1.Eval(System.String,`0,System.Type)
   name: Eval(String, T, Type)
   href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Eval_System_String__0_System_Type_
@@ -1837,6 +1821,75 @@ references:
   commentId: Overload:Albatross.Expression.Operations.ComparisonInfixOperation.interpret
   fullName: Albatross.Expression.Operations.ComparisonInfixOperation.interpret
   nameWithType: ComparisonInfixOperation.interpret
+- uid: Albatross.Expression.Operations.CreateDate
+  name: CreateDate
+  href: api/Albatross.Expression.Operations.CreateDate.html
+  commentId: T:Albatross.Expression.Operations.CreateDate
+  fullName: Albatross.Expression.Operations.CreateDate
+  nameWithType: CreateDate
+- uid: Albatross.Expression.Operations.CreateDate.EvalValue(System.Func{System.String,System.Object})
+  name: EvalValue(Func<String, Object>)
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_EvalValue_System_Func_System_String_System_Object__
+  commentId: M:Albatross.Expression.Operations.CreateDate.EvalValue(System.Func{System.String,System.Object})
+  name.vb: EvalValue(Func(Of String, Object))
+  fullName: Albatross.Expression.Operations.CreateDate.EvalValue(System.Func<System.String, System.Object>)
+  fullName.vb: Albatross.Expression.Operations.CreateDate.EvalValue(System.Func(Of System.String, System.Object))
+  nameWithType: CreateDate.EvalValue(Func<String, Object>)
+  nameWithType.vb: CreateDate.EvalValue(Func(Of String, Object))
+- uid: Albatross.Expression.Operations.CreateDate.EvalValue*
+  name: EvalValue
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_EvalValue_
+  commentId: Overload:Albatross.Expression.Operations.CreateDate.EvalValue
+  fullName: Albatross.Expression.Operations.CreateDate.EvalValue
+  nameWithType: CreateDate.EvalValue
+- uid: Albatross.Expression.Operations.CreateDate.MaxOperandCount
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_MaxOperandCount
+  commentId: P:Albatross.Expression.Operations.CreateDate.MaxOperandCount
+  fullName: Albatross.Expression.Operations.CreateDate.MaxOperandCount
+  nameWithType: CreateDate.MaxOperandCount
+- uid: Albatross.Expression.Operations.CreateDate.MaxOperandCount*
+  name: MaxOperandCount
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_MaxOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.CreateDate.MaxOperandCount
+  fullName: Albatross.Expression.Operations.CreateDate.MaxOperandCount
+  nameWithType: CreateDate.MaxOperandCount
+- uid: Albatross.Expression.Operations.CreateDate.MinOperandCount
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_MinOperandCount
+  commentId: P:Albatross.Expression.Operations.CreateDate.MinOperandCount
+  fullName: Albatross.Expression.Operations.CreateDate.MinOperandCount
+  nameWithType: CreateDate.MinOperandCount
+- uid: Albatross.Expression.Operations.CreateDate.MinOperandCount*
+  name: MinOperandCount
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_MinOperandCount_
+  commentId: Overload:Albatross.Expression.Operations.CreateDate.MinOperandCount
+  fullName: Albatross.Expression.Operations.CreateDate.MinOperandCount
+  nameWithType: CreateDate.MinOperandCount
+- uid: Albatross.Expression.Operations.CreateDate.Name
+  name: Name
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_Name
+  commentId: P:Albatross.Expression.Operations.CreateDate.Name
+  fullName: Albatross.Expression.Operations.CreateDate.Name
+  nameWithType: CreateDate.Name
+- uid: Albatross.Expression.Operations.CreateDate.Name*
+  name: Name
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_Name_
+  commentId: Overload:Albatross.Expression.Operations.CreateDate.Name
+  fullName: Albatross.Expression.Operations.CreateDate.Name
+  nameWithType: CreateDate.Name
+- uid: Albatross.Expression.Operations.CreateDate.Symbolic
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_Symbolic
+  commentId: P:Albatross.Expression.Operations.CreateDate.Symbolic
+  fullName: Albatross.Expression.Operations.CreateDate.Symbolic
+  nameWithType: CreateDate.Symbolic
+- uid: Albatross.Expression.Operations.CreateDate.Symbolic*
+  name: Symbolic
+  href: api/Albatross.Expression.Operations.CreateDate.html#Albatross_Expression_Operations_CreateDate_Symbolic_
+  commentId: Overload:Albatross.Expression.Operations.CreateDate.Symbolic
+  fullName: Albatross.Expression.Operations.CreateDate.Symbolic
+  nameWithType: CreateDate.Symbolic
 - uid: Albatross.Expression.Operations.CurrentApp
   name: CurrentApp
   href: api/Albatross.Expression.Operations.CurrentApp.html

@@ -101,17 +101,42 @@ Usage: avg(1, 2, 3, 4, 5) or avg(@(1, 2, 3, 4, 5))
 Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Coalesce.html">Coalesce</a></h4>
-      <section></section>
+      <section><p>Prefix operation that return the first non null operand
+Operand Count: 1 to infinite
+Operand Type: any
+Example: Coalesce(null, 1, 2, 3) will return 1</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.ComparisonInfixOperation.html">ComparisonInfixOperation</a></h4>
       <section></section>
+      <h4><a class="xref" href="Albatross.Expression.Operations.CreateDate.html">CreateDate</a></h4>
+      <section><p>Prefix operation that create an date
+Operand Count: 3
+<p><strong>Operands</strong></p><ol><li>year</li><li>month</li><li>day</li></ol>
+Operand Type: int
+Output Type: System.DateTime
+Usage: CreateDate(2018, 1, 31)</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.CurrentApp.html">CurrentApp</a></h4>
-      <section></section>
+      <section><p>Prefix operation that returns the current app domain friendly name
+Operand Count: 0
+Output Type: string</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.CurrentMachine.html">CurrentMachine</a></h4>
-      <section></section>
+      <section><p>Prefix operation that returns the current machine host name
+Operand Count: 0
+Output Type: string</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.CurrentUser.html">CurrentUser</a></h4>
-      <section></section>
+      <section><p>Prefix operation that returns the current windows user name
+Operand Count: 0
+Output Type: string</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Date.html">Date</a></h4>
-      <section></section>
+      <section><p>Prefix operation that convert input to date.  The operand is converted to text first and parsed to a datetime object
+Operand Count: 1
+Operand Type: any
+Output Type: System.DateTime</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Divide.html">Divide</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Equal.html">Equal</a></h4>

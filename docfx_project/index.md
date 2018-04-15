@@ -11,8 +11,8 @@ Albatross.Expression api is created to process text based expression strings.  T
         * Precedence for ``and, or`` operations has been set to the lowest (30, 20) among all infix operations.  As the result of this change, the following expression will now return true: ``2 > 1 and 3 > 1``.
         * [IParser](xref:Albatross.Expression.IParser) interface no longer has the ``SetVariableToken`` and ``SetStringLiteralToken`` methods.  That means Variabletoken or StringLiteralToken types can no longer be changed after the parser has been created.
         * Change to the constructor of the [Parser](xref:Albatross.Expression.Parser) class to require two additional parameter [IVariableToken](xref:Albatross.Expression.Tokens.IVariableToken) and [IStringLiteralToken](xref:Albatross.Expression.Tokens.IVariableToken).
-        * [IExecutionContextFactory](xref:Albatross.Expression.IExecutionContextFactory<T>) is now a generic interface.  It requires a type to specify the input data type.
-        * [IExecutionContext](xref:Albatross.Expression.IExecutionContext<T>) interface is now a generic interface as well.  It has been redefined and reduced so that it is easier to use.  THe old interface exposed a few internal methods used by the concrete class.  
+        * [IExecutionContextFactory](xref:Albatross.Expression.IExecutionContextFactory`1) is now a generic interface.  It requires a type to specify the input data type.
+        * [IExecutionContext](xref:Albatross.Expression.IExecutionContext`1) interface is now a generic interface as well.  It has been redefined and reduced so that it is easier to use.  THe old interface exposed a few internal methods used by the concrete class.  
     * [ParserOperationAttribute](xref:Albatross.Expression.ParserOperationAttribute) (new)
         * A custom attribute used to mark the operations so that it will be used by the Factory class when constructing a parser object.
     * [Factory](xref:Albatross.Expression.Factory) class (new)

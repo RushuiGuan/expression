@@ -7,7 +7,7 @@ Use the easiest way to use the parser is by calling the default instance of the 
 var parser = Factory.Instance.Create();
 parser.Compile("1 + 5").EvalValue(null);
 ```
-## Use of [ExecutionContext<T>](xref:Albatross.Expression.ExecutionContext<T>) class with variables
+## Use of [ExecutionContext<T>](xref:Albatross.Expression.ExecutionContext`1) class with variables
 The evaluation of expressions made of literals is not very helpful and it doesn't have many use cases.  The api was created to solve a different problem - the problem of user defined calculations.  Here is a code sample:
 ```csharp
     ExecutionContext context = new ExecutionContext(Factory.Instance, true);
@@ -22,7 +22,7 @@ The evaluation of expressions made of literals is not very helpful and it doesn'
 ```
 In the code sample above, the context was able to store the value of variable `a` and `b` and use it to calculate expressions that have those variables.  It is useful in situations where users are allowed to define custom calculations using a formula and the application is expected to perform the calculation of the dynamically defined formulas.
 
-The [ExecutionContext<T>](xref:Albatross.Expression.ExecutionContext<T>) class can also reference data of type T externally so that the value of the variables doesn't need to be established in the object itself.  It is a nessary feature because when data change, instead of calling the SetValue method, it is more efficient for the context to access the external data directly.  Here is a code sample:
+The [ExecutionContext<T>](xref:Albatross.Expression.ExecutionContext`1) class can also reference data of type T externally so that the value of the variables doesn't need to be established in the object itself.  It is a nessary feature because when data change, instead of calling the SetValue method, it is more efficient for the context to access the external data directly.  Here is a code sample:
 
 ```csharp
     public class Program {

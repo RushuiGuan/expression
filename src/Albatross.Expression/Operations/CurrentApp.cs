@@ -7,6 +7,11 @@ using System.Xml;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Prefix operation that returns the current app domain friendly name
+	/// Operand Count: 0
+	/// Output Type: string
+	/// </summary>
 	[ParserOperation]
 	public class CurrentApp : PrefixOperationToken {
 		

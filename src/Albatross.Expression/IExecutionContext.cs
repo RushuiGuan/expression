@@ -21,6 +21,6 @@ namespace Albatross.Expression {
 		object GetValue(string name, T input);
 		bool TryGetValue(string name, T input, out object data);
 		void Set(ContextValue value);
-		void Compile();
+		void Build();
 	}
 }

@@ -12,8 +12,7 @@ namespace Albatross.Expression {
 	public class ExecutionContext<T> : IExecutionContext<T> {
 		#region fields
 		public Dictionary<string, ContextValue> Store { get; private set; }
-		public IDictionary<string, HashSet<string>> Dependencies { get; private set; }
-		Dictionary<string, ContextValue> _evalStacks = new Dictionary<string, ContextValue>();
+		Dictionary<string, ContextValue> _expressions = new Dictionary<string, ContextValue>();
 
 		public bool Compiled { get; private set; }
 		public bool CaseSensitive { get; private set; }
@@ -31,7 +30,6 @@ namespace Albatross.Expression {
 			this.FailWhenMissingVariable = failWhenMissingVariable;
 
 			Store = caseSensitive ? new Dictionary<string, ContextValue>() : new Dictionary<string, ContextValue>(StringComparer.InvariantCultureIgnoreCase);
-			Dependencies = caseSensitive? new Dictionary<string, HashSet<string>>() : new Dictionary<string, HashSet<string>>(StringComparer.InvariantCultureIgnoreCase);
 		}
 
 		#region state management
@@ -130,20 +128,20 @@ namespace Albatross.Expression {
 				}
 			}
 		}
-		void AddDependency(IDictionary<string, HashSet<string>> dict, string depender, IEnumerable<string> dependees) {
-			if (dependees != null) {
-				HashSet<string> set;
-				foreach (string f in dependees) {
-					if (dict.TryGetValue(f, out set)) {
-						set.Add(depender);
-					} else {
-						set = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
-						set.Add(depender);
-						dict.Add(f, set);
-					}
-				}
-			}
-		}
+		//void AddDependency(IDictionary<string, HashSet<string>> dict, string depender, IEnumerable<string> dependees) {
+		//	if (dependees != null) {
+		//		HashSet<string> set;
+		//		foreach (string f in dependees) {
+		//			if (dict.TryGetValue(f, out set)) {
+		//				set.Add(depender);
+		//			} else {
+		//				set = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+		//				set.Add(depender);
+		//				dict.Add(f, set);
+		//			}
+		//		}
+		//	}
+		//}
 		//public void GetDependants(string name, ISet<string> dependents) {
 		//	HashSet<string> list;
 		//	if (Dependencies.TryGetValue(name, out list)) {
@@ -160,18 +158,16 @@ namespace Albatross.Expression {
 
 		public object Eval(string expression, T input, Type outputDataType = null) {
 			ContextValue value;
-			if (!_evalStacks.TryGetValue(expression, out value)) {
+			if (!_expressions.TryGetValue(expression, out value)) {
 				value = new ContextValue() {
 					 Value = expression,
 					 DataType = outputDataType,
 					 ContextType = ContextType.Expression,
 				};
-				_evalStacks.Add(expression, value);
+				_expressions.Add(expression, value);
 			}
 			return GetContextValue(value, input);
 		}
-
-
 		void Build(ContextValue contextValue, ISet<string> chain) {
 			contextValue.Tree = null;
 			Queue<IToken> queue = Parser.Tokenize(Convert.ToString(contextValue.Value));
@@ -180,18 +176,12 @@ namespace Albatross.Expression {
 			Stack<IToken> stack = Parser.BuildStack(queue);
 			contextValue.Tree = Parser.CreateTree(stack);
 		}
-
-		public void Compile() {
+		public void Build() {
 			foreach (ContextValue value in Store.Values) {
 				if (value.ContextType == ContextType.Expression) {
 					Build(value, null);
 				}
 			}
-			//foreach (ContextValue value in Store.Values) {
-			//	if (value.ContextType == ContextType.Expression) {
-			//		AddDependency(Dependencies, value.Name, value.Dependees);
-			//	}
-			//}
 		}
 
 		#region IEnumerator

@@ -8,6 +8,12 @@ using Albatross.Expression.Exceptions;
 
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Prefix operation that return the first non null operand
+	/// Operand Count: 1 to infinite
+	/// Operand Type: any
+	/// Example: Coalesce(null, 1, 2, 3) will return 1
+	/// </summary>
 	[ParserOperation]
 	public class Coalesce : PrefixOperationToken {
 

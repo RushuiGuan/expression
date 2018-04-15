@@ -31,36 +31,24 @@ references:
   commentId: T:Albatross.Expression.ContextValue
   fullName: Albatross.Expression.ContextValue
   nameWithType: ContextValue
-- uid: Albatross.Expression.ContextValue.Build(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Collections.Generic.ISet{System.String})
-  name: Build(IParser, ExecutionContext, ISet<String>)
-  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Build_Albatross_Expression_IParser_Albatross_Expression_ExecutionContext_System_Collections_Generic_ISet_System_String__
-  commentId: M:Albatross.Expression.ContextValue.Build(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Collections.Generic.ISet{System.String})
-  name.vb: Build(IParser, ExecutionContext, ISet(Of String))
-  fullName: Albatross.Expression.ContextValue.Build(Albatross.Expression.IParser, Albatross.Expression.ExecutionContext, System.Collections.Generic.ISet<System.String>)
-  fullName.vb: Albatross.Expression.ContextValue.Build(Albatross.Expression.IParser, Albatross.Expression.ExecutionContext, System.Collections.Generic.ISet(Of System.String))
-  nameWithType: ContextValue.Build(IParser, ExecutionContext, ISet<String>)
-  nameWithType.vb: ContextValue.Build(IParser, ExecutionContext, ISet(Of String))
-- uid: Albatross.Expression.ContextValue.Build*
-  name: Build
-  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Build_
-  commentId: Overload:Albatross.Expression.ContextValue.Build
-  fullName: Albatross.Expression.ContextValue.Build
-  nameWithType: ContextValue.Build
-- uid: Albatross.Expression.ContextValue.CheckCircularReference(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Collections.Generic.ISet{System.String},System.Object)
-  name: CheckCircularReference(IParser, ExecutionContext, ISet<String>, Object)
-  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_CheckCircularReference_Albatross_Expression_IParser_Albatross_Expression_ExecutionContext_System_Collections_Generic_ISet_System_String__System_Object_
-  commentId: M:Albatross.Expression.ContextValue.CheckCircularReference(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Collections.Generic.ISet{System.String},System.Object)
-  name.vb: CheckCircularReference(IParser, ExecutionContext, ISet(Of String), Object)
-  fullName: Albatross.Expression.ContextValue.CheckCircularReference(Albatross.Expression.IParser, Albatross.Expression.ExecutionContext, System.Collections.Generic.ISet<System.String>, System.Object)
-  fullName.vb: Albatross.Expression.ContextValue.CheckCircularReference(Albatross.Expression.IParser, Albatross.Expression.ExecutionContext, System.Collections.Generic.ISet(Of System.String), System.Object)
-  nameWithType: ContextValue.CheckCircularReference(IParser, ExecutionContext, ISet<String>, Object)
-  nameWithType.vb: ContextValue.CheckCircularReference(IParser, ExecutionContext, ISet(Of String), Object)
-- uid: Albatross.Expression.ContextValue.CheckCircularReference*
-  name: CheckCircularReference
-  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_CheckCircularReference_
-  commentId: Overload:Albatross.Expression.ContextValue.CheckCircularReference
-  fullName: Albatross.Expression.ContextValue.CheckCircularReference
-  nameWithType: ContextValue.CheckCircularReference
+- uid: Albatross.Expression.ContextValue.#ctor
+  name: ContextValue()
+  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue__ctor
+  commentId: M:Albatross.Expression.ContextValue.#ctor
+  fullName: Albatross.Expression.ContextValue.ContextValue()
+  nameWithType: ContextValue.ContextValue()
+- uid: Albatross.Expression.ContextValue.#ctor(System.String,System.Object)
+  name: ContextValue(String, Object)
+  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue__ctor_System_String_System_Object_
+  commentId: M:Albatross.Expression.ContextValue.#ctor(System.String,System.Object)
+  fullName: Albatross.Expression.ContextValue.ContextValue(System.String, System.Object)
+  nameWithType: ContextValue.ContextValue(String, Object)
+- uid: Albatross.Expression.ContextValue.#ctor*
+  name: ContextValue
+  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue__ctor_
+  commentId: Overload:Albatross.Expression.ContextValue.#ctor
+  fullName: Albatross.Expression.ContextValue.ContextValue
+  nameWithType: ContextValue.ContextValue
 - uid: Albatross.Expression.ContextValue.ContextType
   name: ContextType
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_ContextType
@@ -97,18 +85,18 @@ references:
   commentId: Overload:Albatross.Expression.ContextValue.Dependees
   fullName: Albatross.Expression.ContextValue.Dependees
   nameWithType: ContextValue.Dependees
-- uid: Albatross.Expression.ContextValue.GetValue(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Object)
-  name: GetValue(IParser, ExecutionContext, Object)
-  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_GetValue_Albatross_Expression_IParser_Albatross_Expression_ExecutionContext_System_Object_
-  commentId: M:Albatross.Expression.ContextValue.GetValue(Albatross.Expression.IParser,Albatross.Expression.ExecutionContext,System.Object)
-  fullName: Albatross.Expression.ContextValue.GetValue(Albatross.Expression.IParser, Albatross.Expression.ExecutionContext, System.Object)
-  nameWithType: ContextValue.GetValue(IParser, ExecutionContext, Object)
-- uid: Albatross.Expression.ContextValue.GetValue*
-  name: GetValue
-  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_GetValue_
-  commentId: Overload:Albatross.Expression.ContextValue.GetValue
-  fullName: Albatross.Expression.ContextValue.GetValue
-  nameWithType: ContextValue.GetValue
+- uid: Albatross.Expression.ContextValue.External
+  name: External
+  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_External
+  commentId: P:Albatross.Expression.ContextValue.External
+  fullName: Albatross.Expression.ContextValue.External
+  nameWithType: ContextValue.External
+- uid: Albatross.Expression.ContextValue.External*
+  name: External
+  href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_External_
+  commentId: Overload:Albatross.Expression.ContextValue.External
+  fullName: Albatross.Expression.ContextValue.External
+  nameWithType: ContextValue.External
 - uid: Albatross.Expression.ContextValue.Name
   name: Name
   href: api/Albatross.Expression.ContextValue.html#Albatross_Expression_ContextValue_Name
@@ -145,6 +133,168 @@ references:
   commentId: Overload:Albatross.Expression.ContextValue.Value
   fullName: Albatross.Expression.ContextValue.Value
   nameWithType: ContextValue.Value
+- uid: Albatross.Expression.DataRowExecutionContextFactory
+  name: DataRowExecutionContextFactory
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html
+  commentId: T:Albatross.Expression.DataRowExecutionContextFactory
+  fullName: Albatross.Expression.DataRowExecutionContextFactory
+  nameWithType: DataRowExecutionContextFactory
+- uid: Albatross.Expression.DataRowExecutionContextFactory.#ctor(Albatross.Expression.IParser)
+  name: DataRowExecutionContextFactory(IParser)
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory__ctor_Albatross_Expression_IParser_
+  commentId: M:Albatross.Expression.DataRowExecutionContextFactory.#ctor(Albatross.Expression.IParser)
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.DataRowExecutionContextFactory(Albatross.Expression.IParser)
+  nameWithType: DataRowExecutionContextFactory.DataRowExecutionContextFactory(IParser)
+- uid: Albatross.Expression.DataRowExecutionContextFactory.#ctor*
+  name: DataRowExecutionContextFactory
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory__ctor_
+  commentId: Overload:Albatross.Expression.DataRowExecutionContextFactory.#ctor
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.DataRowExecutionContextFactory
+  nameWithType: DataRowExecutionContextFactory.DataRowExecutionContextFactory
+- uid: Albatross.Expression.DataRowExecutionContextFactory.CacheExternalValue
+  name: CacheExternalValue
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_CacheExternalValue
+  commentId: P:Albatross.Expression.DataRowExecutionContextFactory.CacheExternalValue
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.CacheExternalValue
+  nameWithType: DataRowExecutionContextFactory.CacheExternalValue
+- uid: Albatross.Expression.DataRowExecutionContextFactory.CacheExternalValue*
+  name: CacheExternalValue
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_CacheExternalValue_
+  commentId: Overload:Albatross.Expression.DataRowExecutionContextFactory.CacheExternalValue
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.CacheExternalValue
+  nameWithType: DataRowExecutionContextFactory.CacheExternalValue
+- uid: Albatross.Expression.DataRowExecutionContextFactory.CaseSensitive
+  name: CaseSensitive
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_CaseSensitive
+  commentId: P:Albatross.Expression.DataRowExecutionContextFactory.CaseSensitive
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.CaseSensitive
+  nameWithType: DataRowExecutionContextFactory.CaseSensitive
+- uid: Albatross.Expression.DataRowExecutionContextFactory.CaseSensitive*
+  name: CaseSensitive
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_CaseSensitive_
+  commentId: Overload:Albatross.Expression.DataRowExecutionContextFactory.CaseSensitive
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.CaseSensitive
+  nameWithType: DataRowExecutionContextFactory.CaseSensitive
+- uid: Albatross.Expression.DataRowExecutionContextFactory.Create
+  name: Create()
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_Create
+  commentId: M:Albatross.Expression.DataRowExecutionContextFactory.Create
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.Create()
+  nameWithType: DataRowExecutionContextFactory.Create()
+- uid: Albatross.Expression.DataRowExecutionContextFactory.Create*
+  name: Create
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_Create_
+  commentId: Overload:Albatross.Expression.DataRowExecutionContextFactory.Create
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.Create
+  nameWithType: DataRowExecutionContextFactory.Create
+- uid: Albatross.Expression.DataRowExecutionContextFactory.FailWhenMissingVariable
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_FailWhenMissingVariable
+  commentId: P:Albatross.Expression.DataRowExecutionContextFactory.FailWhenMissingVariable
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.FailWhenMissingVariable
+  nameWithType: DataRowExecutionContextFactory.FailWhenMissingVariable
+- uid: Albatross.Expression.DataRowExecutionContextFactory.FailWhenMissingVariable*
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_FailWhenMissingVariable_
+  commentId: Overload:Albatross.Expression.DataRowExecutionContextFactory.FailWhenMissingVariable
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.FailWhenMissingVariable
+  nameWithType: DataRowExecutionContextFactory.FailWhenMissingVariable
+- uid: Albatross.Expression.DataRowExecutionContextFactory.TryGetExternalValue(System.String,System.Data.DataRow,System.Object@)
+  name: TryGetExternalValue(String, DataRow, out Object)
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_TryGetExternalValue_System_String_System_Data_DataRow_System_Object__
+  commentId: M:Albatross.Expression.DataRowExecutionContextFactory.TryGetExternalValue(System.String,System.Data.DataRow,System.Object@)
+  name.vb: TryGetExternalValue(String, DataRow, ByRef Object)
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.TryGetExternalValue(System.String, System.Data.DataRow, out System.Object)
+  fullName.vb: Albatross.Expression.DataRowExecutionContextFactory.TryGetExternalValue(System.String, System.Data.DataRow, ByRef System.Object)
+  nameWithType: DataRowExecutionContextFactory.TryGetExternalValue(String, DataRow, out Object)
+  nameWithType.vb: DataRowExecutionContextFactory.TryGetExternalValue(String, DataRow, ByRef Object)
+- uid: Albatross.Expression.DataRowExecutionContextFactory.TryGetExternalValue*
+  name: TryGetExternalValue
+  href: api/Albatross.Expression.DataRowExecutionContextFactory.html#Albatross_Expression_DataRowExecutionContextFactory_TryGetExternalValue_
+  commentId: Overload:Albatross.Expression.DataRowExecutionContextFactory.TryGetExternalValue
+  fullName: Albatross.Expression.DataRowExecutionContextFactory.TryGetExternalValue
+  nameWithType: DataRowExecutionContextFactory.TryGetExternalValue
+- uid: Albatross.Expression.DictionaryExecutionContextFactory
+  name: DictionaryExecutionContextFactory
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html
+  commentId: T:Albatross.Expression.DictionaryExecutionContextFactory
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory
+  nameWithType: DictionaryExecutionContextFactory
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.#ctor(Albatross.Expression.IParser)
+  name: DictionaryExecutionContextFactory(IParser)
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory__ctor_Albatross_Expression_IParser_
+  commentId: M:Albatross.Expression.DictionaryExecutionContextFactory.#ctor(Albatross.Expression.IParser)
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.DictionaryExecutionContextFactory(Albatross.Expression.IParser)
+  nameWithType: DictionaryExecutionContextFactory.DictionaryExecutionContextFactory(IParser)
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.#ctor*
+  name: DictionaryExecutionContextFactory
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory__ctor_
+  commentId: Overload:Albatross.Expression.DictionaryExecutionContextFactory.#ctor
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.DictionaryExecutionContextFactory
+  nameWithType: DictionaryExecutionContextFactory.DictionaryExecutionContextFactory
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.CacheExternalValue
+  name: CacheExternalValue
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_CacheExternalValue
+  commentId: P:Albatross.Expression.DictionaryExecutionContextFactory.CacheExternalValue
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.CacheExternalValue
+  nameWithType: DictionaryExecutionContextFactory.CacheExternalValue
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.CacheExternalValue*
+  name: CacheExternalValue
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_CacheExternalValue_
+  commentId: Overload:Albatross.Expression.DictionaryExecutionContextFactory.CacheExternalValue
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.CacheExternalValue
+  nameWithType: DictionaryExecutionContextFactory.CacheExternalValue
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.CaseSensitive
+  name: CaseSensitive
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_CaseSensitive
+  commentId: P:Albatross.Expression.DictionaryExecutionContextFactory.CaseSensitive
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.CaseSensitive
+  nameWithType: DictionaryExecutionContextFactory.CaseSensitive
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.CaseSensitive*
+  name: CaseSensitive
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_CaseSensitive_
+  commentId: Overload:Albatross.Expression.DictionaryExecutionContextFactory.CaseSensitive
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.CaseSensitive
+  nameWithType: DictionaryExecutionContextFactory.CaseSensitive
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.Create
+  name: Create()
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_Create
+  commentId: M:Albatross.Expression.DictionaryExecutionContextFactory.Create
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.Create()
+  nameWithType: DictionaryExecutionContextFactory.Create()
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.Create*
+  name: Create
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_Create_
+  commentId: Overload:Albatross.Expression.DictionaryExecutionContextFactory.Create
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.Create
+  nameWithType: DictionaryExecutionContextFactory.Create
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.FailWhenMissingVariable
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_FailWhenMissingVariable
+  commentId: P:Albatross.Expression.DictionaryExecutionContextFactory.FailWhenMissingVariable
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.FailWhenMissingVariable
+  nameWithType: DictionaryExecutionContextFactory.FailWhenMissingVariable
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.FailWhenMissingVariable*
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_FailWhenMissingVariable_
+  commentId: Overload:Albatross.Expression.DictionaryExecutionContextFactory.FailWhenMissingVariable
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.FailWhenMissingVariable
+  nameWithType: DictionaryExecutionContextFactory.FailWhenMissingVariable
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.TryGetExternalValue(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Object@)
+  name: TryGetExternalValue(String, IDictionary<String, Object>, out Object)
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_TryGetExternalValue_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__System_Object__
+  commentId: M:Albatross.Expression.DictionaryExecutionContextFactory.TryGetExternalValue(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Object@)
+  name.vb: TryGetExternalValue(String, IDictionary(Of String, Object), ByRef Object)
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.TryGetExternalValue(System.String, System.Collections.Generic.IDictionary<System.String, System.Object>, out System.Object)
+  fullName.vb: Albatross.Expression.DictionaryExecutionContextFactory.TryGetExternalValue(System.String, System.Collections.Generic.IDictionary(Of System.String, System.Object), ByRef System.Object)
+  nameWithType: DictionaryExecutionContextFactory.TryGetExternalValue(String, IDictionary<String, Object>, out Object)
+  nameWithType.vb: DictionaryExecutionContextFactory.TryGetExternalValue(String, IDictionary(Of String, Object), ByRef Object)
+- uid: Albatross.Expression.DictionaryExecutionContextFactory.TryGetExternalValue*
+  name: TryGetExternalValue
+  href: api/Albatross.Expression.DictionaryExecutionContextFactory.html#Albatross_Expression_DictionaryExecutionContextFactory_TryGetExternalValue_
+  commentId: Overload:Albatross.Expression.DictionaryExecutionContextFactory.TryGetExternalValue
+  fullName: Albatross.Expression.DictionaryExecutionContextFactory.TryGetExternalValue
+  nameWithType: DictionaryExecutionContextFactory.TryGetExternalValue
 - uid: Albatross.Expression.Exceptions
   name: Albatross.Expression.Exceptions
   href: api/Albatross.Expression.Exceptions.html
@@ -169,36 +319,36 @@ references:
   commentId: Overload:Albatross.Expression.Exceptions.CircularReferenceException.#ctor
   fullName: Albatross.Expression.Exceptions.CircularReferenceException.CircularReferenceException
   nameWithType: CircularReferenceException.CircularReferenceException
-- uid: Albatross.Expression.Exceptions.InputNotFoundException
-  name: InputNotFoundException
-  href: api/Albatross.Expression.Exceptions.InputNotFoundException.html
-  commentId: T:Albatross.Expression.Exceptions.InputNotFoundException
-  fullName: Albatross.Expression.Exceptions.InputNotFoundException
-  nameWithType: InputNotFoundException
-- uid: Albatross.Expression.Exceptions.InputNotFoundException.#ctor(System.String)
-  name: InputNotFoundException(String)
-  href: api/Albatross.Expression.Exceptions.InputNotFoundException.html#Albatross_Expression_Exceptions_InputNotFoundException__ctor_System_String_
-  commentId: M:Albatross.Expression.Exceptions.InputNotFoundException.#ctor(System.String)
-  fullName: Albatross.Expression.Exceptions.InputNotFoundException.InputNotFoundException(System.String)
-  nameWithType: InputNotFoundException.InputNotFoundException(String)
-- uid: Albatross.Expression.Exceptions.InputNotFoundException.#ctor*
-  name: InputNotFoundException
-  href: api/Albatross.Expression.Exceptions.InputNotFoundException.html#Albatross_Expression_Exceptions_InputNotFoundException__ctor_
-  commentId: Overload:Albatross.Expression.Exceptions.InputNotFoundException.#ctor
-  fullName: Albatross.Expression.Exceptions.InputNotFoundException.InputNotFoundException
-  nameWithType: InputNotFoundException.InputNotFoundException
-- uid: Albatross.Expression.Exceptions.InputNotFoundException.VariableName
+- uid: Albatross.Expression.Exceptions.MissingVariableException
+  name: MissingVariableException
+  href: api/Albatross.Expression.Exceptions.MissingVariableException.html
+  commentId: T:Albatross.Expression.Exceptions.MissingVariableException
+  fullName: Albatross.Expression.Exceptions.MissingVariableException
+  nameWithType: MissingVariableException
+- uid: Albatross.Expression.Exceptions.MissingVariableException.#ctor(System.String)
+  name: MissingVariableException(String)
+  href: api/Albatross.Expression.Exceptions.MissingVariableException.html#Albatross_Expression_Exceptions_MissingVariableException__ctor_System_String_
+  commentId: M:Albatross.Expression.Exceptions.MissingVariableException.#ctor(System.String)
+  fullName: Albatross.Expression.Exceptions.MissingVariableException.MissingVariableException(System.String)
+  nameWithType: MissingVariableException.MissingVariableException(String)
+- uid: Albatross.Expression.Exceptions.MissingVariableException.#ctor*
+  name: MissingVariableException
+  href: api/Albatross.Expression.Exceptions.MissingVariableException.html#Albatross_Expression_Exceptions_MissingVariableException__ctor_
+  commentId: Overload:Albatross.Expression.Exceptions.MissingVariableException.#ctor
+  fullName: Albatross.Expression.Exceptions.MissingVariableException.MissingVariableException
+  nameWithType: MissingVariableException.MissingVariableException
+- uid: Albatross.Expression.Exceptions.MissingVariableException.VariableName
   name: VariableName
-  href: api/Albatross.Expression.Exceptions.InputNotFoundException.html#Albatross_Expression_Exceptions_InputNotFoundException_VariableName
-  commentId: P:Albatross.Expression.Exceptions.InputNotFoundException.VariableName
-  fullName: Albatross.Expression.Exceptions.InputNotFoundException.VariableName
-  nameWithType: InputNotFoundException.VariableName
-- uid: Albatross.Expression.Exceptions.InputNotFoundException.VariableName*
+  href: api/Albatross.Expression.Exceptions.MissingVariableException.html#Albatross_Expression_Exceptions_MissingVariableException_VariableName
+  commentId: P:Albatross.Expression.Exceptions.MissingVariableException.VariableName
+  fullName: Albatross.Expression.Exceptions.MissingVariableException.VariableName
+  nameWithType: MissingVariableException.VariableName
+- uid: Albatross.Expression.Exceptions.MissingVariableException.VariableName*
   name: VariableName
-  href: api/Albatross.Expression.Exceptions.InputNotFoundException.html#Albatross_Expression_Exceptions_InputNotFoundException_VariableName_
-  commentId: Overload:Albatross.Expression.Exceptions.InputNotFoundException.VariableName
-  fullName: Albatross.Expression.Exceptions.InputNotFoundException.VariableName
-  nameWithType: InputNotFoundException.VariableName
+  href: api/Albatross.Expression.Exceptions.MissingVariableException.html#Albatross_Expression_Exceptions_MissingVariableException_VariableName_
+  commentId: Overload:Albatross.Expression.Exceptions.MissingVariableException.VariableName
+  fullName: Albatross.Expression.Exceptions.MissingVariableException.VariableName
+  nameWithType: MissingVariableException.VariableName
 - uid: Albatross.Expression.Exceptions.OperandException
   name: OperandException
   href: api/Albatross.Expression.Exceptions.OperandException.html
@@ -301,250 +451,291 @@ references:
   commentId: Overload:Albatross.Expression.Exceptions.UnexpectedTypeException.#ctor
   fullName: Albatross.Expression.Exceptions.UnexpectedTypeException.UnexpectedTypeException
   nameWithType: UnexpectedTypeException.UnexpectedTypeException
-- uid: Albatross.Expression.ExecutionContext
+- uid: Albatross.Expression.ExecutionContext`1
+  name: ExecutionContext<T>
+  href: api/Albatross.Expression.ExecutionContext-1.html
+  commentId: T:Albatross.Expression.ExecutionContext`1
+  name.vb: ExecutionContext(Of T)
+  fullName: Albatross.Expression.ExecutionContext<T>
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T)
+  nameWithType: ExecutionContext<T>
+  nameWithType.vb: ExecutionContext(Of T)
+- uid: Albatross.Expression.ExecutionContext`1.#ctor(Albatross.Expression.IParser,System.Boolean,System.Boolean,System.Boolean,Albatross.Expression.TryGetValueDelegate{`0})
+  name: ExecutionContext(IParser, Boolean, Boolean, Boolean, TryGetValueDelegate<T>)
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1__ctor_Albatross_Expression_IParser_System_Boolean_System_Boolean_System_Boolean_Albatross_Expression_TryGetValueDelegate__0__
+  commentId: M:Albatross.Expression.ExecutionContext`1.#ctor(Albatross.Expression.IParser,System.Boolean,System.Boolean,System.Boolean,Albatross.Expression.TryGetValueDelegate{`0})
+  name.vb: ExecutionContext(IParser, Boolean, Boolean, Boolean, TryGetValueDelegate(Of T))
+  fullName: Albatross.Expression.ExecutionContext<T>.ExecutionContext(Albatross.Expression.IParser, System.Boolean, System.Boolean, System.Boolean, Albatross.Expression.TryGetValueDelegate<T>)
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).ExecutionContext(Albatross.Expression.IParser, System.Boolean, System.Boolean, System.Boolean, Albatross.Expression.TryGetValueDelegate(Of T))
+  nameWithType: ExecutionContext<T>.ExecutionContext(IParser, Boolean, Boolean, Boolean, TryGetValueDelegate<T>)
+  nameWithType.vb: ExecutionContext(Of T).ExecutionContext(IParser, Boolean, Boolean, Boolean, TryGetValueDelegate(Of T))
+- uid: Albatross.Expression.ExecutionContext`1.#ctor*
   name: ExecutionContext
-  href: api/Albatross.Expression.ExecutionContext.html
-  commentId: T:Albatross.Expression.ExecutionContext
-  fullName: Albatross.Expression.ExecutionContext
-  nameWithType: ExecutionContext
-- uid: Albatross.Expression.ExecutionContext.#ctor(Albatross.Expression.IParser,System.Boolean)
-  name: ExecutionContext(IParser, Boolean)
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext__ctor_Albatross_Expression_IParser_System_Boolean_
-  commentId: M:Albatross.Expression.ExecutionContext.#ctor(Albatross.Expression.IParser,System.Boolean)
-  fullName: Albatross.Expression.ExecutionContext.ExecutionContext(Albatross.Expression.IParser, System.Boolean)
-  nameWithType: ExecutionContext.ExecutionContext(IParser, Boolean)
-- uid: Albatross.Expression.ExecutionContext.#ctor*
-  name: ExecutionContext
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext__ctor_
-  commentId: Overload:Albatross.Expression.ExecutionContext.#ctor
-  fullName: Albatross.Expression.ExecutionContext.ExecutionContext
-  nameWithType: ExecutionContext.ExecutionContext
-- uid: Albatross.Expression.ExecutionContext.CacheExternalValue
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1__ctor_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.#ctor
+  fullName: Albatross.Expression.ExecutionContext<T>.ExecutionContext
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).ExecutionContext
+  nameWithType: ExecutionContext<T>.ExecutionContext
+  nameWithType.vb: ExecutionContext(Of T).ExecutionContext
+- uid: Albatross.Expression.ExecutionContext`1.CacheExternalValue
   name: CacheExternalValue
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CacheExternalValue
-  commentId: P:Albatross.Expression.ExecutionContext.CacheExternalValue
-  fullName: Albatross.Expression.ExecutionContext.CacheExternalValue
-  nameWithType: ExecutionContext.CacheExternalValue
-- uid: Albatross.Expression.ExecutionContext.CacheExternalValue*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_CacheExternalValue
+  commentId: P:Albatross.Expression.ExecutionContext`1.CacheExternalValue
+  fullName: Albatross.Expression.ExecutionContext<T>.CacheExternalValue
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).CacheExternalValue
+  nameWithType: ExecutionContext<T>.CacheExternalValue
+  nameWithType.vb: ExecutionContext(Of T).CacheExternalValue
+- uid: Albatross.Expression.ExecutionContext`1.CacheExternalValue*
   name: CacheExternalValue
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CacheExternalValue_
-  commentId: Overload:Albatross.Expression.ExecutionContext.CacheExternalValue
-  fullName: Albatross.Expression.ExecutionContext.CacheExternalValue
-  nameWithType: ExecutionContext.CacheExternalValue
-- uid: Albatross.Expression.ExecutionContext.CaseSensitive
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_CacheExternalValue_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.CacheExternalValue
+  fullName: Albatross.Expression.ExecutionContext<T>.CacheExternalValue
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).CacheExternalValue
+  nameWithType: ExecutionContext<T>.CacheExternalValue
+  nameWithType.vb: ExecutionContext(Of T).CacheExternalValue
+- uid: Albatross.Expression.ExecutionContext`1.CaseSensitive
   name: CaseSensitive
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CaseSensitive
-  commentId: P:Albatross.Expression.ExecutionContext.CaseSensitive
-  fullName: Albatross.Expression.ExecutionContext.CaseSensitive
-  nameWithType: ExecutionContext.CaseSensitive
-- uid: Albatross.Expression.ExecutionContext.CaseSensitive*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_CaseSensitive
+  commentId: P:Albatross.Expression.ExecutionContext`1.CaseSensitive
+  fullName: Albatross.Expression.ExecutionContext<T>.CaseSensitive
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).CaseSensitive
+  nameWithType: ExecutionContext<T>.CaseSensitive
+  nameWithType.vb: ExecutionContext(Of T).CaseSensitive
+- uid: Albatross.Expression.ExecutionContext`1.CaseSensitive*
   name: CaseSensitive
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CaseSensitive_
-  commentId: Overload:Albatross.Expression.ExecutionContext.CaseSensitive
-  fullName: Albatross.Expression.ExecutionContext.CaseSensitive
-  nameWithType: ExecutionContext.CaseSensitive
-- uid: Albatross.Expression.ExecutionContext.CheckCircularReference(System.Object)
-  name: CheckCircularReference(Object)
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CheckCircularReference_System_Object_
-  commentId: M:Albatross.Expression.ExecutionContext.CheckCircularReference(System.Object)
-  fullName: Albatross.Expression.ExecutionContext.CheckCircularReference(System.Object)
-  nameWithType: ExecutionContext.CheckCircularReference(Object)
-- uid: Albatross.Expression.ExecutionContext.CheckCircularReference*
-  name: CheckCircularReference
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_CheckCircularReference_
-  commentId: Overload:Albatross.Expression.ExecutionContext.CheckCircularReference
-  fullName: Albatross.Expression.ExecutionContext.CheckCircularReference
-  nameWithType: ExecutionContext.CheckCircularReference
-- uid: Albatross.Expression.ExecutionContext.Clear
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_CaseSensitive_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.CaseSensitive
+  fullName: Albatross.Expression.ExecutionContext<T>.CaseSensitive
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).CaseSensitive
+  nameWithType: ExecutionContext<T>.CaseSensitive
+  nameWithType.vb: ExecutionContext(Of T).CaseSensitive
+- uid: Albatross.Expression.ExecutionContext`1.Clear
   name: Clear()
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Clear
-  commentId: M:Albatross.Expression.ExecutionContext.Clear
-  fullName: Albatross.Expression.ExecutionContext.Clear()
-  nameWithType: ExecutionContext.Clear()
-- uid: Albatross.Expression.ExecutionContext.Clear*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Clear
+  commentId: M:Albatross.Expression.ExecutionContext`1.Clear
+  fullName: Albatross.Expression.ExecutionContext<T>.Clear()
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Clear()
+  nameWithType: ExecutionContext<T>.Clear()
+  nameWithType.vb: ExecutionContext(Of T).Clear()
+- uid: Albatross.Expression.ExecutionContext`1.Clear*
   name: Clear
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Clear_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Clear
-  fullName: Albatross.Expression.ExecutionContext.Clear
-  nameWithType: ExecutionContext.Clear
-- uid: Albatross.Expression.ExecutionContext.Compile
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Clear_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Clear
+  fullName: Albatross.Expression.ExecutionContext<T>.Clear
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Clear
+  nameWithType: ExecutionContext<T>.Clear
+  nameWithType.vb: ExecutionContext(Of T).Clear
+- uid: Albatross.Expression.ExecutionContext`1.Compile
   name: Compile()
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Compile
-  commentId: M:Albatross.Expression.ExecutionContext.Compile
-  fullName: Albatross.Expression.ExecutionContext.Compile()
-  nameWithType: ExecutionContext.Compile()
-- uid: Albatross.Expression.ExecutionContext.Compile*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Compile
+  commentId: M:Albatross.Expression.ExecutionContext`1.Compile
+  fullName: Albatross.Expression.ExecutionContext<T>.Compile()
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Compile()
+  nameWithType: ExecutionContext<T>.Compile()
+  nameWithType.vb: ExecutionContext(Of T).Compile()
+- uid: Albatross.Expression.ExecutionContext`1.Compile*
   name: Compile
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Compile_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Compile
-  fullName: Albatross.Expression.ExecutionContext.Compile
-  nameWithType: ExecutionContext.Compile
-- uid: Albatross.Expression.ExecutionContext.Compiled
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Compile_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Compile
+  fullName: Albatross.Expression.ExecutionContext<T>.Compile
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Compile
+  nameWithType: ExecutionContext<T>.Compile
+  nameWithType.vb: ExecutionContext(Of T).Compile
+- uid: Albatross.Expression.ExecutionContext`1.Compiled
   name: Compiled
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Compiled
-  commentId: P:Albatross.Expression.ExecutionContext.Compiled
-  fullName: Albatross.Expression.ExecutionContext.Compiled
-  nameWithType: ExecutionContext.Compiled
-- uid: Albatross.Expression.ExecutionContext.Compiled*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Compiled
+  commentId: P:Albatross.Expression.ExecutionContext`1.Compiled
+  fullName: Albatross.Expression.ExecutionContext<T>.Compiled
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Compiled
+  nameWithType: ExecutionContext<T>.Compiled
+  nameWithType.vb: ExecutionContext(Of T).Compiled
+- uid: Albatross.Expression.ExecutionContext`1.Compiled*
   name: Compiled
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Compiled_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Compiled
-  fullName: Albatross.Expression.ExecutionContext.Compiled
-  nameWithType: ExecutionContext.Compiled
-- uid: Albatross.Expression.ExecutionContext.Dependencies
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Compiled_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Compiled
+  fullName: Albatross.Expression.ExecutionContext<T>.Compiled
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Compiled
+  nameWithType: ExecutionContext<T>.Compiled
+  nameWithType.vb: ExecutionContext(Of T).Compiled
+- uid: Albatross.Expression.ExecutionContext`1.Dependencies
   name: Dependencies
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Dependencies
-  commentId: P:Albatross.Expression.ExecutionContext.Dependencies
-  fullName: Albatross.Expression.ExecutionContext.Dependencies
-  nameWithType: ExecutionContext.Dependencies
-- uid: Albatross.Expression.ExecutionContext.Dependencies*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Dependencies
+  commentId: P:Albatross.Expression.ExecutionContext`1.Dependencies
+  fullName: Albatross.Expression.ExecutionContext<T>.Dependencies
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Dependencies
+  nameWithType: ExecutionContext<T>.Dependencies
+  nameWithType.vb: ExecutionContext(Of T).Dependencies
+- uid: Albatross.Expression.ExecutionContext`1.Dependencies*
   name: Dependencies
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Dependencies_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Dependencies
-  fullName: Albatross.Expression.ExecutionContext.Dependencies
-  nameWithType: ExecutionContext.Dependencies
-- uid: Albatross.Expression.ExecutionContext.Eval(System.String,System.Object,System.Type)
-  name: Eval(String, Object, Type)
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Eval_System_String_System_Object_System_Type_
-  commentId: M:Albatross.Expression.ExecutionContext.Eval(System.String,System.Object,System.Type)
-  fullName: Albatross.Expression.ExecutionContext.Eval(System.String, System.Object, System.Type)
-  nameWithType: ExecutionContext.Eval(String, Object, Type)
-- uid: Albatross.Expression.ExecutionContext.Eval*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Dependencies_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Dependencies
+  fullName: Albatross.Expression.ExecutionContext<T>.Dependencies
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Dependencies
+  nameWithType: ExecutionContext<T>.Dependencies
+  nameWithType.vb: ExecutionContext(Of T).Dependencies
+- uid: Albatross.Expression.ExecutionContext`1.Eval(System.String,`0,System.Type)
+  name: Eval(String, T, Type)
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Eval_System_String__0_System_Type_
+  commentId: M:Albatross.Expression.ExecutionContext`1.Eval(System.String,`0,System.Type)
+  fullName: Albatross.Expression.ExecutionContext<T>.Eval(System.String, T, System.Type)
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Eval(System.String, T, System.Type)
+  nameWithType: ExecutionContext<T>.Eval(String, T, Type)
+  nameWithType.vb: ExecutionContext(Of T).Eval(String, T, Type)
+- uid: Albatross.Expression.ExecutionContext`1.Eval*
   name: Eval
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Eval_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Eval
-  fullName: Albatross.Expression.ExecutionContext.Eval
-  nameWithType: ExecutionContext.Eval
-- uid: Albatross.Expression.ExecutionContext.GetDependants(System.String,System.Collections.Generic.ISet{System.String})
-  name: GetDependants(String, ISet<String>)
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetDependants_System_String_System_Collections_Generic_ISet_System_String__
-  commentId: M:Albatross.Expression.ExecutionContext.GetDependants(System.String,System.Collections.Generic.ISet{System.String})
-  name.vb: GetDependants(String, ISet(Of String))
-  fullName: Albatross.Expression.ExecutionContext.GetDependants(System.String, System.Collections.Generic.ISet<System.String>)
-  fullName.vb: Albatross.Expression.ExecutionContext.GetDependants(System.String, System.Collections.Generic.ISet(Of System.String))
-  nameWithType: ExecutionContext.GetDependants(String, ISet<String>)
-  nameWithType.vb: ExecutionContext.GetDependants(String, ISet(Of String))
-- uid: Albatross.Expression.ExecutionContext.GetDependants*
-  name: GetDependants
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetDependants_
-  commentId: Overload:Albatross.Expression.ExecutionContext.GetDependants
-  fullName: Albatross.Expression.ExecutionContext.GetDependants
-  nameWithType: ExecutionContext.GetDependants
-- uid: Albatross.Expression.ExecutionContext.GetEnumerator
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Eval_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Eval
+  fullName: Albatross.Expression.ExecutionContext<T>.Eval
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Eval
+  nameWithType: ExecutionContext<T>.Eval
+  nameWithType.vb: ExecutionContext(Of T).Eval
+- uid: Albatross.Expression.ExecutionContext`1.FailWhenMissingVariable
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_FailWhenMissingVariable
+  commentId: P:Albatross.Expression.ExecutionContext`1.FailWhenMissingVariable
+  fullName: Albatross.Expression.ExecutionContext<T>.FailWhenMissingVariable
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).FailWhenMissingVariable
+  nameWithType: ExecutionContext<T>.FailWhenMissingVariable
+  nameWithType.vb: ExecutionContext(Of T).FailWhenMissingVariable
+- uid: Albatross.Expression.ExecutionContext`1.FailWhenMissingVariable*
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_FailWhenMissingVariable_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.FailWhenMissingVariable
+  fullName: Albatross.Expression.ExecutionContext<T>.FailWhenMissingVariable
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).FailWhenMissingVariable
+  nameWithType: ExecutionContext<T>.FailWhenMissingVariable
+  nameWithType.vb: ExecutionContext(Of T).FailWhenMissingVariable
+- uid: Albatross.Expression.ExecutionContext`1.GetEnumerator
   name: GetEnumerator()
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetEnumerator
-  commentId: M:Albatross.Expression.ExecutionContext.GetEnumerator
-  fullName: Albatross.Expression.ExecutionContext.GetEnumerator()
-  nameWithType: ExecutionContext.GetEnumerator()
-- uid: Albatross.Expression.ExecutionContext.GetEnumerator*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_GetEnumerator
+  commentId: M:Albatross.Expression.ExecutionContext`1.GetEnumerator
+  fullName: Albatross.Expression.ExecutionContext<T>.GetEnumerator()
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).GetEnumerator()
+  nameWithType: ExecutionContext<T>.GetEnumerator()
+  nameWithType.vb: ExecutionContext(Of T).GetEnumerator()
+- uid: Albatross.Expression.ExecutionContext`1.GetEnumerator*
   name: GetEnumerator
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetEnumerator_
-  commentId: Overload:Albatross.Expression.ExecutionContext.GetEnumerator
-  fullName: Albatross.Expression.ExecutionContext.GetEnumerator
-  nameWithType: ExecutionContext.GetEnumerator
-- uid: Albatross.Expression.ExecutionContext.GetValue(System.String,System.Object)
-  name: GetValue(String, Object)
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetValue_System_String_System_Object_
-  commentId: M:Albatross.Expression.ExecutionContext.GetValue(System.String,System.Object)
-  fullName: Albatross.Expression.ExecutionContext.GetValue(System.String, System.Object)
-  nameWithType: ExecutionContext.GetValue(String, Object)
-- uid: Albatross.Expression.ExecutionContext.GetValue*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_GetEnumerator_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.GetEnumerator
+  fullName: Albatross.Expression.ExecutionContext<T>.GetEnumerator
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).GetEnumerator
+  nameWithType: ExecutionContext<T>.GetEnumerator
+  nameWithType.vb: ExecutionContext(Of T).GetEnumerator
+- uid: Albatross.Expression.ExecutionContext`1.GetValue(System.String,`0)
+  name: GetValue(String, T)
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_GetValue_System_String__0_
+  commentId: M:Albatross.Expression.ExecutionContext`1.GetValue(System.String,`0)
+  fullName: Albatross.Expression.ExecutionContext<T>.GetValue(System.String, T)
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).GetValue(System.String, T)
+  nameWithType: ExecutionContext<T>.GetValue(String, T)
+  nameWithType.vb: ExecutionContext(Of T).GetValue(String, T)
+- uid: Albatross.Expression.ExecutionContext`1.GetValue*
   name: GetValue
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_GetValue_
-  commentId: Overload:Albatross.Expression.ExecutionContext.GetValue
-  fullName: Albatross.Expression.ExecutionContext.GetValue
-  nameWithType: ExecutionContext.GetValue
-- uid: Albatross.Expression.ExecutionContext.NewSet
-  name: NewSet()
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_NewSet
-  commentId: M:Albatross.Expression.ExecutionContext.NewSet
-  fullName: Albatross.Expression.ExecutionContext.NewSet()
-  nameWithType: ExecutionContext.NewSet()
-- uid: Albatross.Expression.ExecutionContext.NewSet*
-  name: NewSet
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_NewSet_
-  commentId: Overload:Albatross.Expression.ExecutionContext.NewSet
-  fullName: Albatross.Expression.ExecutionContext.NewSet
-  nameWithType: ExecutionContext.NewSet
-- uid: Albatross.Expression.ExecutionContext.Parser
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_GetValue_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.GetValue
+  fullName: Albatross.Expression.ExecutionContext<T>.GetValue
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).GetValue
+  nameWithType: ExecutionContext<T>.GetValue
+  nameWithType.vb: ExecutionContext(Of T).GetValue
+- uid: Albatross.Expression.ExecutionContext`1.Parser
   name: Parser
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Parser
-  commentId: P:Albatross.Expression.ExecutionContext.Parser
-  fullName: Albatross.Expression.ExecutionContext.Parser
-  nameWithType: ExecutionContext.Parser
-- uid: Albatross.Expression.ExecutionContext.Parser*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Parser
+  commentId: P:Albatross.Expression.ExecutionContext`1.Parser
+  fullName: Albatross.Expression.ExecutionContext<T>.Parser
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Parser
+  nameWithType: ExecutionContext<T>.Parser
+  nameWithType.vb: ExecutionContext(Of T).Parser
+- uid: Albatross.Expression.ExecutionContext`1.Parser*
   name: Parser
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Parser_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Parser
-  fullName: Albatross.Expression.ExecutionContext.Parser
-  nameWithType: ExecutionContext.Parser
-- uid: Albatross.Expression.ExecutionContext.Set(Albatross.Expression.ContextValue)
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Parser_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Parser
+  fullName: Albatross.Expression.ExecutionContext<T>.Parser
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Parser
+  nameWithType: ExecutionContext<T>.Parser
+  nameWithType.vb: ExecutionContext(Of T).Parser
+- uid: Albatross.Expression.ExecutionContext`1.Set(Albatross.Expression.ContextValue)
   name: Set(ContextValue)
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Set_Albatross_Expression_ContextValue_
-  commentId: M:Albatross.Expression.ExecutionContext.Set(Albatross.Expression.ContextValue)
-  fullName: Albatross.Expression.ExecutionContext.Set(Albatross.Expression.ContextValue)
-  nameWithType: ExecutionContext.Set(ContextValue)
-- uid: Albatross.Expression.ExecutionContext.Set*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Set_Albatross_Expression_ContextValue_
+  commentId: M:Albatross.Expression.ExecutionContext`1.Set(Albatross.Expression.ContextValue)
+  fullName: Albatross.Expression.ExecutionContext<T>.Set(Albatross.Expression.ContextValue)
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Set(Albatross.Expression.ContextValue)
+  nameWithType: ExecutionContext<T>.Set(ContextValue)
+  nameWithType.vb: ExecutionContext(Of T).Set(ContextValue)
+- uid: Albatross.Expression.ExecutionContext`1.Set*
   name: Set
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Set_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Set
-  fullName: Albatross.Expression.ExecutionContext.Set
-  nameWithType: ExecutionContext.Set
-- uid: Albatross.Expression.ExecutionContext.Store
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Set_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Set
+  fullName: Albatross.Expression.ExecutionContext<T>.Set
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Set
+  nameWithType: ExecutionContext<T>.Set
+  nameWithType.vb: ExecutionContext(Of T).Set
+- uid: Albatross.Expression.ExecutionContext`1.Store
   name: Store
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Store
-  commentId: P:Albatross.Expression.ExecutionContext.Store
-  fullName: Albatross.Expression.ExecutionContext.Store
-  nameWithType: ExecutionContext.Store
-- uid: Albatross.Expression.ExecutionContext.Store*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Store
+  commentId: P:Albatross.Expression.ExecutionContext`1.Store
+  fullName: Albatross.Expression.ExecutionContext<T>.Store
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Store
+  nameWithType: ExecutionContext<T>.Store
+  nameWithType.vb: ExecutionContext(Of T).Store
+- uid: Albatross.Expression.ExecutionContext`1.Store*
   name: Store
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_Store_
-  commentId: Overload:Albatross.Expression.ExecutionContext.Store
-  fullName: Albatross.Expression.ExecutionContext.Store
-  nameWithType: ExecutionContext.Store
-- uid: Albatross.Expression.ExecutionContext.System#Collections#IEnumerable#GetEnumerator
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_Store_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.Store
+  fullName: Albatross.Expression.ExecutionContext<T>.Store
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).Store
+  nameWithType: ExecutionContext<T>.Store
+  nameWithType.vb: ExecutionContext(Of T).Store
+- uid: Albatross.Expression.ExecutionContext`1.System#Collections#IEnumerable#GetEnumerator
   name: IEnumerable.GetEnumerator()
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_System_Collections_IEnumerable_GetEnumerator
-  commentId: M:Albatross.Expression.ExecutionContext.System#Collections#IEnumerable#GetEnumerator
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:Albatross.Expression.ExecutionContext`1.System#Collections#IEnumerable#GetEnumerator
   name.vb: System.Collections.IEnumerable.GetEnumerator()
-  fullName: Albatross.Expression.ExecutionContext.System.Collections.IEnumerable.GetEnumerator()
-  nameWithType: ExecutionContext.IEnumerable.GetEnumerator()
-  nameWithType.vb: ExecutionContext.System.Collections.IEnumerable.GetEnumerator()
-- uid: Albatross.Expression.ExecutionContext.System#Collections#IEnumerable#GetEnumerator*
+  fullName: Albatross.Expression.ExecutionContext<T>.System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: ExecutionContext<T>.IEnumerable.GetEnumerator()
+  nameWithType.vb: ExecutionContext(Of T).System.Collections.IEnumerable.GetEnumerator()
+- uid: Albatross.Expression.ExecutionContext`1.System#Collections#IEnumerable#GetEnumerator*
   name: IEnumerable.GetEnumerator
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_System_Collections_IEnumerable_GetEnumerator_
-  commentId: Overload:Albatross.Expression.ExecutionContext.System#Collections#IEnumerable#GetEnumerator
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.System#Collections#IEnumerable#GetEnumerator
   name.vb: System.Collections.IEnumerable.GetEnumerator
-  fullName: Albatross.Expression.ExecutionContext.System.Collections.IEnumerable.GetEnumerator
-  nameWithType: ExecutionContext.IEnumerable.GetEnumerator
-  nameWithType.vb: ExecutionContext.System.Collections.IEnumerable.GetEnumerator
-- uid: Albatross.Expression.ExecutionContext.TryGetExternalData
+  fullName: Albatross.Expression.ExecutionContext<T>.System.Collections.IEnumerable.GetEnumerator
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).System.Collections.IEnumerable.GetEnumerator
+  nameWithType: ExecutionContext<T>.IEnumerable.GetEnumerator
+  nameWithType.vb: ExecutionContext(Of T).System.Collections.IEnumerable.GetEnumerator
+- uid: Albatross.Expression.ExecutionContext`1.TryGetExternalData
   name: TryGetExternalData
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_TryGetExternalData
-  commentId: P:Albatross.Expression.ExecutionContext.TryGetExternalData
-  fullName: Albatross.Expression.ExecutionContext.TryGetExternalData
-  nameWithType: ExecutionContext.TryGetExternalData
-- uid: Albatross.Expression.ExecutionContext.TryGetExternalData*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_TryGetExternalData
+  commentId: P:Albatross.Expression.ExecutionContext`1.TryGetExternalData
+  fullName: Albatross.Expression.ExecutionContext<T>.TryGetExternalData
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).TryGetExternalData
+  nameWithType: ExecutionContext<T>.TryGetExternalData
+  nameWithType.vb: ExecutionContext(Of T).TryGetExternalData
+- uid: Albatross.Expression.ExecutionContext`1.TryGetExternalData*
   name: TryGetExternalData
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_TryGetExternalData_
-  commentId: Overload:Albatross.Expression.ExecutionContext.TryGetExternalData
-  fullName: Albatross.Expression.ExecutionContext.TryGetExternalData
-  nameWithType: ExecutionContext.TryGetExternalData
-- uid: Albatross.Expression.ExecutionContext.TryGetValue(System.String,System.Object,System.Object@)
-  name: TryGetValue(String, Object, out Object)
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_TryGetValue_System_String_System_Object_System_Object__
-  commentId: M:Albatross.Expression.ExecutionContext.TryGetValue(System.String,System.Object,System.Object@)
-  name.vb: TryGetValue(String, Object, ByRef Object)
-  fullName: Albatross.Expression.ExecutionContext.TryGetValue(System.String, System.Object, out System.Object)
-  fullName.vb: Albatross.Expression.ExecutionContext.TryGetValue(System.String, System.Object, ByRef System.Object)
-  nameWithType: ExecutionContext.TryGetValue(String, Object, out Object)
-  nameWithType.vb: ExecutionContext.TryGetValue(String, Object, ByRef Object)
-- uid: Albatross.Expression.ExecutionContext.TryGetValue*
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_TryGetExternalData_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.TryGetExternalData
+  fullName: Albatross.Expression.ExecutionContext<T>.TryGetExternalData
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).TryGetExternalData
+  nameWithType: ExecutionContext<T>.TryGetExternalData
+  nameWithType.vb: ExecutionContext(Of T).TryGetExternalData
+- uid: Albatross.Expression.ExecutionContext`1.TryGetValue(System.String,`0,System.Object@)
+  name: TryGetValue(String, T, out Object)
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_TryGetValue_System_String__0_System_Object__
+  commentId: M:Albatross.Expression.ExecutionContext`1.TryGetValue(System.String,`0,System.Object@)
+  name.vb: TryGetValue(String, T, ByRef Object)
+  fullName: Albatross.Expression.ExecutionContext<T>.TryGetValue(System.String, T, out System.Object)
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).TryGetValue(System.String, T, ByRef System.Object)
+  nameWithType: ExecutionContext<T>.TryGetValue(String, T, out Object)
+  nameWithType.vb: ExecutionContext(Of T).TryGetValue(String, T, ByRef Object)
+- uid: Albatross.Expression.ExecutionContext`1.TryGetValue*
   name: TryGetValue
-  href: api/Albatross.Expression.ExecutionContext.html#Albatross_Expression_ExecutionContext_TryGetValue_
-  commentId: Overload:Albatross.Expression.ExecutionContext.TryGetValue
-  fullName: Albatross.Expression.ExecutionContext.TryGetValue
-  nameWithType: ExecutionContext.TryGetValue
+  href: api/Albatross.Expression.ExecutionContext-1.html#Albatross_Expression_ExecutionContext_1_TryGetValue_
+  commentId: Overload:Albatross.Expression.ExecutionContext`1.TryGetValue
+  fullName: Albatross.Expression.ExecutionContext<T>.TryGetValue
+  fullName.vb: Albatross.Expression.ExecutionContext(Of T).TryGetValue
+  nameWithType: ExecutionContext<T>.TryGetValue
+  nameWithType.vb: ExecutionContext(Of T).TryGetValue
 - uid: Albatross.Expression.ExecutionContextFactory
   name: ExecutionContextFactory
   href: api/Albatross.Expression.ExecutionContextFactory.html
@@ -563,18 +754,81 @@ references:
   commentId: Overload:Albatross.Expression.ExecutionContextFactory.#ctor
   fullName: Albatross.Expression.ExecutionContextFactory.ExecutionContextFactory
   nameWithType: ExecutionContextFactory.ExecutionContextFactory
-- uid: Albatross.Expression.ExecutionContextFactory.Create(System.Boolean)
-  name: Create(Boolean)
-  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_Create_System_Boolean_
-  commentId: M:Albatross.Expression.ExecutionContextFactory.Create(System.Boolean)
-  fullName: Albatross.Expression.ExecutionContextFactory.Create(System.Boolean)
-  nameWithType: ExecutionContextFactory.Create(Boolean)
+- uid: Albatross.Expression.ExecutionContextFactory.CacheExternalValue
+  name: CacheExternalValue
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_CacheExternalValue
+  commentId: P:Albatross.Expression.ExecutionContextFactory.CacheExternalValue
+  fullName: Albatross.Expression.ExecutionContextFactory.CacheExternalValue
+  nameWithType: ExecutionContextFactory.CacheExternalValue
+- uid: Albatross.Expression.ExecutionContextFactory.CacheExternalValue*
+  name: CacheExternalValue
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_CacheExternalValue_
+  commentId: Overload:Albatross.Expression.ExecutionContextFactory.CacheExternalValue
+  fullName: Albatross.Expression.ExecutionContextFactory.CacheExternalValue
+  nameWithType: ExecutionContextFactory.CacheExternalValue
+- uid: Albatross.Expression.ExecutionContextFactory.CaseSensitive
+  name: CaseSensitive
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_CaseSensitive
+  commentId: P:Albatross.Expression.ExecutionContextFactory.CaseSensitive
+  fullName: Albatross.Expression.ExecutionContextFactory.CaseSensitive
+  nameWithType: ExecutionContextFactory.CaseSensitive
+- uid: Albatross.Expression.ExecutionContextFactory.CaseSensitive*
+  name: CaseSensitive
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_CaseSensitive_
+  commentId: Overload:Albatross.Expression.ExecutionContextFactory.CaseSensitive
+  fullName: Albatross.Expression.ExecutionContextFactory.CaseSensitive
+  nameWithType: ExecutionContextFactory.CaseSensitive
+- uid: Albatross.Expression.ExecutionContextFactory.Create
+  name: Create()
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_Create
+  commentId: M:Albatross.Expression.ExecutionContextFactory.Create
+  fullName: Albatross.Expression.ExecutionContextFactory.Create()
+  nameWithType: ExecutionContextFactory.Create()
 - uid: Albatross.Expression.ExecutionContextFactory.Create*
   name: Create
   href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_Create_
   commentId: Overload:Albatross.Expression.ExecutionContextFactory.Create
   fullName: Albatross.Expression.ExecutionContextFactory.Create
   nameWithType: ExecutionContextFactory.Create
+- uid: Albatross.Expression.ExecutionContextFactory.DefaultTryGetValueDelegate
+  name: DefaultTryGetValueDelegate
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_DefaultTryGetValueDelegate
+  commentId: P:Albatross.Expression.ExecutionContextFactory.DefaultTryGetValueDelegate
+  fullName: Albatross.Expression.ExecutionContextFactory.DefaultTryGetValueDelegate
+  nameWithType: ExecutionContextFactory.DefaultTryGetValueDelegate
+- uid: Albatross.Expression.ExecutionContextFactory.DefaultTryGetValueDelegate*
+  name: DefaultTryGetValueDelegate
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_DefaultTryGetValueDelegate_
+  commentId: Overload:Albatross.Expression.ExecutionContextFactory.DefaultTryGetValueDelegate
+  fullName: Albatross.Expression.ExecutionContextFactory.DefaultTryGetValueDelegate
+  nameWithType: ExecutionContextFactory.DefaultTryGetValueDelegate
+- uid: Albatross.Expression.ExecutionContextFactory.FailWhenMissingVariable
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_FailWhenMissingVariable
+  commentId: P:Albatross.Expression.ExecutionContextFactory.FailWhenMissingVariable
+  fullName: Albatross.Expression.ExecutionContextFactory.FailWhenMissingVariable
+  nameWithType: ExecutionContextFactory.FailWhenMissingVariable
+- uid: Albatross.Expression.ExecutionContextFactory.FailWhenMissingVariable*
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_FailWhenMissingVariable_
+  commentId: Overload:Albatross.Expression.ExecutionContextFactory.FailWhenMissingVariable
+  fullName: Albatross.Expression.ExecutionContextFactory.FailWhenMissingVariable
+  nameWithType: ExecutionContextFactory.FailWhenMissingVariable
+- uid: Albatross.Expression.ExecutionContextFactory.TryGetExternalValue(System.String,System.Object,System.Object@)
+  name: TryGetExternalValue(String, Object, out Object)
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_TryGetExternalValue_System_String_System_Object_System_Object__
+  commentId: M:Albatross.Expression.ExecutionContextFactory.TryGetExternalValue(System.String,System.Object,System.Object@)
+  name.vb: TryGetExternalValue(String, Object, ByRef Object)
+  fullName: Albatross.Expression.ExecutionContextFactory.TryGetExternalValue(System.String, System.Object, out System.Object)
+  fullName.vb: Albatross.Expression.ExecutionContextFactory.TryGetExternalValue(System.String, System.Object, ByRef System.Object)
+  nameWithType: ExecutionContextFactory.TryGetExternalValue(String, Object, out Object)
+  nameWithType.vb: ExecutionContextFactory.TryGetExternalValue(String, Object, ByRef Object)
+- uid: Albatross.Expression.ExecutionContextFactory.TryGetExternalValue*
+  name: TryGetExternalValue
+  href: api/Albatross.Expression.ExecutionContextFactory.html#Albatross_Expression_ExecutionContextFactory_TryGetExternalValue_
+  commentId: Overload:Albatross.Expression.ExecutionContextFactory.TryGetExternalValue
+  fullName: Albatross.Expression.ExecutionContextFactory.TryGetExternalValue
+  nameWithType: ExecutionContextFactory.TryGetExternalValue
 - uid: Albatross.Expression.ExpressionBuilder
   name: ExpressionBuilder
   href: api/Albatross.Expression.ExpressionBuilder.html
@@ -683,36 +937,99 @@ references:
   commentId: Overload:Albatross.Expression.Extensions.ConvertToBoolean
   fullName: Albatross.Expression.Extensions.ConvertToBoolean
   nameWithType: Extensions.ConvertToBoolean
-- uid: Albatross.Expression.Extensions.SetExpression(Albatross.Expression.IExecutionContext,System.String,System.String)
-  name: SetExpression(IExecutionContext, String, String)
-  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetExpression_Albatross_Expression_IExecutionContext_System_String_System_String_
-  commentId: M:Albatross.Expression.Extensions.SetExpression(Albatross.Expression.IExecutionContext,System.String,System.String)
-  fullName: Albatross.Expression.Extensions.SetExpression(Albatross.Expression.IExecutionContext, System.String, System.String)
-  nameWithType: Extensions.SetExpression(IExecutionContext, String, String)
-- uid: Albatross.Expression.Extensions.SetExpression(Albatross.Expression.IExecutionContext,System.String,System.String,System.Type)
-  name: SetExpression(IExecutionContext, String, String, Type)
-  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetExpression_Albatross_Expression_IExecutionContext_System_String_System_String_System_Type_
-  commentId: M:Albatross.Expression.Extensions.SetExpression(Albatross.Expression.IExecutionContext,System.String,System.String,System.Type)
-  fullName: Albatross.Expression.Extensions.SetExpression(Albatross.Expression.IExecutionContext, System.String, System.String, System.Type)
-  nameWithType: Extensions.SetExpression(IExecutionContext, String, String, Type)
+- uid: Albatross.Expression.Extensions.GetValue*
+  name: GetValue
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_GetValue_
+  commentId: Overload:Albatross.Expression.Extensions.GetValue
+  fullName: Albatross.Expression.Extensions.GetValue
+  nameWithType: Extensions.GetValue
+- uid: Albatross.Expression.Extensions.GetValue``1(Albatross.Expression.IExecutionContext{``0},System.String,``0)
+  name: GetValue<T>(IExecutionContext<T>, String, T)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_GetValue__1_Albatross_Expression_IExecutionContext___0__System_String___0_
+  commentId: M:Albatross.Expression.Extensions.GetValue``1(Albatross.Expression.IExecutionContext{``0},System.String,``0)
+  name.vb: GetValue(Of T)(IExecutionContext(Of T), String, T)
+  fullName: Albatross.Expression.Extensions.GetValue<T>(Albatross.Expression.IExecutionContext<T>, System.String, T)
+  fullName.vb: Albatross.Expression.Extensions.GetValue(Of T)(Albatross.Expression.IExecutionContext(Of T), System.String, T)
+  nameWithType: Extensions.GetValue<T>(IExecutionContext<T>, String, T)
+  nameWithType.vb: Extensions.GetValue(Of T)(IExecutionContext(Of T), String, T)
+- uid: Albatross.Expression.Extensions.IsVariable(Albatross.Expression.Tokens.IToken)
+  name: IsVariable(IToken)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_IsVariable_Albatross_Expression_Tokens_IToken_
+  commentId: M:Albatross.Expression.Extensions.IsVariable(Albatross.Expression.Tokens.IToken)
+  fullName: Albatross.Expression.Extensions.IsVariable(Albatross.Expression.Tokens.IToken)
+  nameWithType: Extensions.IsVariable(IToken)
+- uid: Albatross.Expression.Extensions.IsVariable*
+  name: IsVariable
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_IsVariable_
+  commentId: Overload:Albatross.Expression.Extensions.IsVariable
+  fullName: Albatross.Expression.Extensions.IsVariable
+  nameWithType: Extensions.IsVariable
+- uid: Albatross.Expression.Extensions.Set*
+  name: Set
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Set_
+  commentId: Overload:Albatross.Expression.Extensions.Set
+  fullName: Albatross.Expression.Extensions.Set
+  nameWithType: Extensions.Set
+- uid: Albatross.Expression.Extensions.Set``1(Albatross.Expression.IExecutionContext{``0},System.String)
+  name: Set<T>(IExecutionContext<T>, String)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Set__1_Albatross_Expression_IExecutionContext___0__System_String_
+  commentId: M:Albatross.Expression.Extensions.Set``1(Albatross.Expression.IExecutionContext{``0},System.String)
+  name.vb: Set(Of T)(IExecutionContext(Of T), String)
+  fullName: Albatross.Expression.Extensions.Set<T>(Albatross.Expression.IExecutionContext<T>, System.String)
+  fullName.vb: Albatross.Expression.Extensions.Set(Of T)(Albatross.Expression.IExecutionContext(Of T), System.String)
+  nameWithType: Extensions.Set<T>(IExecutionContext<T>, String)
+  nameWithType.vb: Extensions.Set(Of T)(IExecutionContext(Of T), String)
 - uid: Albatross.Expression.Extensions.SetExpression*
   name: SetExpression
   href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetExpression_
   commentId: Overload:Albatross.Expression.Extensions.SetExpression
   fullName: Albatross.Expression.Extensions.SetExpression
   nameWithType: Extensions.SetExpression
-- uid: Albatross.Expression.Extensions.SetValue(Albatross.Expression.IExecutionContext,System.String,System.Object)
-  name: SetValue(IExecutionContext, String, Object)
-  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetValue_Albatross_Expression_IExecutionContext_System_String_System_Object_
-  commentId: M:Albatross.Expression.Extensions.SetValue(Albatross.Expression.IExecutionContext,System.String,System.Object)
-  fullName: Albatross.Expression.Extensions.SetValue(Albatross.Expression.IExecutionContext, System.String, System.Object)
-  nameWithType: Extensions.SetValue(IExecutionContext, String, Object)
+- uid: Albatross.Expression.Extensions.SetExpression``1(Albatross.Expression.IExecutionContext{``0},System.String,System.String)
+  name: SetExpression<T>(IExecutionContext<T>, String, String)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetExpression__1_Albatross_Expression_IExecutionContext___0__System_String_System_String_
+  commentId: M:Albatross.Expression.Extensions.SetExpression``1(Albatross.Expression.IExecutionContext{``0},System.String,System.String)
+  name.vb: SetExpression(Of T)(IExecutionContext(Of T), String, String)
+  fullName: Albatross.Expression.Extensions.SetExpression<T>(Albatross.Expression.IExecutionContext<T>, System.String, System.String)
+  fullName.vb: Albatross.Expression.Extensions.SetExpression(Of T)(Albatross.Expression.IExecutionContext(Of T), System.String, System.String)
+  nameWithType: Extensions.SetExpression<T>(IExecutionContext<T>, String, String)
+  nameWithType.vb: Extensions.SetExpression(Of T)(IExecutionContext(Of T), String, String)
+- uid: Albatross.Expression.Extensions.SetExpression``1(Albatross.Expression.IExecutionContext{``0},System.String,System.String,System.Type)
+  name: SetExpression<T>(IExecutionContext<T>, String, String, Type)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetExpression__1_Albatross_Expression_IExecutionContext___0__System_String_System_String_System_Type_
+  commentId: M:Albatross.Expression.Extensions.SetExpression``1(Albatross.Expression.IExecutionContext{``0},System.String,System.String,System.Type)
+  name.vb: SetExpression(Of T)(IExecutionContext(Of T), String, String, Type)
+  fullName: Albatross.Expression.Extensions.SetExpression<T>(Albatross.Expression.IExecutionContext<T>, System.String, System.String, System.Type)
+  fullName.vb: Albatross.Expression.Extensions.SetExpression(Of T)(Albatross.Expression.IExecutionContext(Of T), System.String, System.String, System.Type)
+  nameWithType: Extensions.SetExpression<T>(IExecutionContext<T>, String, String, Type)
+  nameWithType.vb: Extensions.SetExpression(Of T)(IExecutionContext(Of T), String, String, Type)
 - uid: Albatross.Expression.Extensions.SetValue*
   name: SetValue
   href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetValue_
   commentId: Overload:Albatross.Expression.Extensions.SetValue
   fullName: Albatross.Expression.Extensions.SetValue
   nameWithType: Extensions.SetValue
+- uid: Albatross.Expression.Extensions.SetValue``1(Albatross.Expression.IExecutionContext{``0},System.String,System.Object)
+  name: SetValue<T>(IExecutionContext<T>, String, Object)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SetValue__1_Albatross_Expression_IExecutionContext___0__System_String_System_Object_
+  commentId: M:Albatross.Expression.Extensions.SetValue``1(Albatross.Expression.IExecutionContext{``0},System.String,System.Object)
+  name.vb: SetValue(Of T)(IExecutionContext(Of T), String, Object)
+  fullName: Albatross.Expression.Extensions.SetValue<T>(Albatross.Expression.IExecutionContext<T>, System.String, System.Object)
+  fullName.vb: Albatross.Expression.Extensions.SetValue(Of T)(Albatross.Expression.IExecutionContext(Of T), System.String, System.Object)
+  nameWithType: Extensions.SetValue<T>(IExecutionContext<T>, String, Object)
+  nameWithType.vb: Extensions.SetValue(Of T)(IExecutionContext(Of T), String, Object)
+- uid: Albatross.Expression.Extensions.SkipSpace(System.String,System.Int32)
+  name: SkipSpace(String, Int32)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SkipSpace_System_String_System_Int32_
+  commentId: M:Albatross.Expression.Extensions.SkipSpace(System.String,System.Int32)
+  fullName: Albatross.Expression.Extensions.SkipSpace(System.String, System.Int32)
+  nameWithType: Extensions.SkipSpace(String, Int32)
+- uid: Albatross.Expression.Extensions.SkipSpace*
+  name: SkipSpace
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_SkipSpace_
+  commentId: Overload:Albatross.Expression.Extensions.SkipSpace
+  fullName: Albatross.Expression.Extensions.SkipSpace
+  nameWithType: Extensions.SkipSpace
 - uid: Albatross.Expression.Factory
   name: Factory
   href: api/Albatross.Expression.Factory.html
@@ -834,204 +1151,266 @@ references:
   fullName: Albatross.Expression.Factory.System.Collections.IEnumerable.GetEnumerator
   nameWithType: Factory.IEnumerable.GetEnumerator
   nameWithType.vb: Factory.System.Collections.IEnumerable.GetEnumerator
-- uid: Albatross.Expression.IExecutionContext
-  name: IExecutionContext
-  href: api/Albatross.Expression.IExecutionContext.html
-  commentId: T:Albatross.Expression.IExecutionContext
-  fullName: Albatross.Expression.IExecutionContext
-  nameWithType: IExecutionContext
-- uid: Albatross.Expression.IExecutionContext.CacheExternalValue
+- uid: Albatross.Expression.IExecutionContext`1
+  name: IExecutionContext<T>
+  href: api/Albatross.Expression.IExecutionContext-1.html
+  commentId: T:Albatross.Expression.IExecutionContext`1
+  name.vb: IExecutionContext(Of T)
+  fullName: Albatross.Expression.IExecutionContext<T>
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T)
+  nameWithType: IExecutionContext<T>
+  nameWithType.vb: IExecutionContext(Of T)
+- uid: Albatross.Expression.IExecutionContext`1.CacheExternalValue
   name: CacheExternalValue
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CacheExternalValue
-  commentId: P:Albatross.Expression.IExecutionContext.CacheExternalValue
-  fullName: Albatross.Expression.IExecutionContext.CacheExternalValue
-  nameWithType: IExecutionContext.CacheExternalValue
-- uid: Albatross.Expression.IExecutionContext.CacheExternalValue*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_CacheExternalValue
+  commentId: P:Albatross.Expression.IExecutionContext`1.CacheExternalValue
+  fullName: Albatross.Expression.IExecutionContext<T>.CacheExternalValue
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).CacheExternalValue
+  nameWithType: IExecutionContext<T>.CacheExternalValue
+  nameWithType.vb: IExecutionContext(Of T).CacheExternalValue
+- uid: Albatross.Expression.IExecutionContext`1.CacheExternalValue*
   name: CacheExternalValue
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CacheExternalValue_
-  commentId: Overload:Albatross.Expression.IExecutionContext.CacheExternalValue
-  fullName: Albatross.Expression.IExecutionContext.CacheExternalValue
-  nameWithType: IExecutionContext.CacheExternalValue
-- uid: Albatross.Expression.IExecutionContext.CaseSensitive
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_CacheExternalValue_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.CacheExternalValue
+  fullName: Albatross.Expression.IExecutionContext<T>.CacheExternalValue
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).CacheExternalValue
+  nameWithType: IExecutionContext<T>.CacheExternalValue
+  nameWithType.vb: IExecutionContext(Of T).CacheExternalValue
+- uid: Albatross.Expression.IExecutionContext`1.CaseSensitive
   name: CaseSensitive
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CaseSensitive
-  commentId: P:Albatross.Expression.IExecutionContext.CaseSensitive
-  fullName: Albatross.Expression.IExecutionContext.CaseSensitive
-  nameWithType: IExecutionContext.CaseSensitive
-- uid: Albatross.Expression.IExecutionContext.CaseSensitive*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_CaseSensitive
+  commentId: P:Albatross.Expression.IExecutionContext`1.CaseSensitive
+  fullName: Albatross.Expression.IExecutionContext<T>.CaseSensitive
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).CaseSensitive
+  nameWithType: IExecutionContext<T>.CaseSensitive
+  nameWithType.vb: IExecutionContext(Of T).CaseSensitive
+- uid: Albatross.Expression.IExecutionContext`1.CaseSensitive*
   name: CaseSensitive
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CaseSensitive_
-  commentId: Overload:Albatross.Expression.IExecutionContext.CaseSensitive
-  fullName: Albatross.Expression.IExecutionContext.CaseSensitive
-  nameWithType: IExecutionContext.CaseSensitive
-- uid: Albatross.Expression.IExecutionContext.CheckCircularReference(System.Object)
-  name: CheckCircularReference(Object)
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CheckCircularReference_System_Object_
-  commentId: M:Albatross.Expression.IExecutionContext.CheckCircularReference(System.Object)
-  fullName: Albatross.Expression.IExecutionContext.CheckCircularReference(System.Object)
-  nameWithType: IExecutionContext.CheckCircularReference(Object)
-- uid: Albatross.Expression.IExecutionContext.CheckCircularReference*
-  name: CheckCircularReference
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_CheckCircularReference_
-  commentId: Overload:Albatross.Expression.IExecutionContext.CheckCircularReference
-  fullName: Albatross.Expression.IExecutionContext.CheckCircularReference
-  nameWithType: IExecutionContext.CheckCircularReference
-- uid: Albatross.Expression.IExecutionContext.Clear
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_CaseSensitive_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.CaseSensitive
+  fullName: Albatross.Expression.IExecutionContext<T>.CaseSensitive
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).CaseSensitive
+  nameWithType: IExecutionContext<T>.CaseSensitive
+  nameWithType.vb: IExecutionContext(Of T).CaseSensitive
+- uid: Albatross.Expression.IExecutionContext`1.Clear
   name: Clear()
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Clear
-  commentId: M:Albatross.Expression.IExecutionContext.Clear
-  fullName: Albatross.Expression.IExecutionContext.Clear()
-  nameWithType: IExecutionContext.Clear()
-- uid: Albatross.Expression.IExecutionContext.Clear*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Clear
+  commentId: M:Albatross.Expression.IExecutionContext`1.Clear
+  fullName: Albatross.Expression.IExecutionContext<T>.Clear()
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Clear()
+  nameWithType: IExecutionContext<T>.Clear()
+  nameWithType.vb: IExecutionContext(Of T).Clear()
+- uid: Albatross.Expression.IExecutionContext`1.Clear*
   name: Clear
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Clear_
-  commentId: Overload:Albatross.Expression.IExecutionContext.Clear
-  fullName: Albatross.Expression.IExecutionContext.Clear
-  nameWithType: IExecutionContext.Clear
-- uid: Albatross.Expression.IExecutionContext.Compile
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Clear_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.Clear
+  fullName: Albatross.Expression.IExecutionContext<T>.Clear
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Clear
+  nameWithType: IExecutionContext<T>.Clear
+  nameWithType.vb: IExecutionContext(Of T).Clear
+- uid: Albatross.Expression.IExecutionContext`1.Compile
   name: Compile()
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Compile
-  commentId: M:Albatross.Expression.IExecutionContext.Compile
-  fullName: Albatross.Expression.IExecutionContext.Compile()
-  nameWithType: IExecutionContext.Compile()
-- uid: Albatross.Expression.IExecutionContext.Compile*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Compile
+  commentId: M:Albatross.Expression.IExecutionContext`1.Compile
+  fullName: Albatross.Expression.IExecutionContext<T>.Compile()
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Compile()
+  nameWithType: IExecutionContext<T>.Compile()
+  nameWithType.vb: IExecutionContext(Of T).Compile()
+- uid: Albatross.Expression.IExecutionContext`1.Compile*
   name: Compile
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Compile_
-  commentId: Overload:Albatross.Expression.IExecutionContext.Compile
-  fullName: Albatross.Expression.IExecutionContext.Compile
-  nameWithType: IExecutionContext.Compile
-- uid: Albatross.Expression.IExecutionContext.Dependencies
-  name: Dependencies
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Dependencies
-  commentId: P:Albatross.Expression.IExecutionContext.Dependencies
-  fullName: Albatross.Expression.IExecutionContext.Dependencies
-  nameWithType: IExecutionContext.Dependencies
-- uid: Albatross.Expression.IExecutionContext.Dependencies*
-  name: Dependencies
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Dependencies_
-  commentId: Overload:Albatross.Expression.IExecutionContext.Dependencies
-  fullName: Albatross.Expression.IExecutionContext.Dependencies
-  nameWithType: IExecutionContext.Dependencies
-- uid: Albatross.Expression.IExecutionContext.Eval(System.String,System.Object,System.Type)
-  name: Eval(String, Object, Type)
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Eval_System_String_System_Object_System_Type_
-  commentId: M:Albatross.Expression.IExecutionContext.Eval(System.String,System.Object,System.Type)
-  fullName: Albatross.Expression.IExecutionContext.Eval(System.String, System.Object, System.Type)
-  nameWithType: IExecutionContext.Eval(String, Object, Type)
-- uid: Albatross.Expression.IExecutionContext.Eval*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Compile_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.Compile
+  fullName: Albatross.Expression.IExecutionContext<T>.Compile
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Compile
+  nameWithType: IExecutionContext<T>.Compile
+  nameWithType.vb: IExecutionContext(Of T).Compile
+- uid: Albatross.Expression.IExecutionContext`1.Eval(System.String,`0,System.Type)
+  name: Eval(String, T, Type)
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Eval_System_String__0_System_Type_
+  commentId: M:Albatross.Expression.IExecutionContext`1.Eval(System.String,`0,System.Type)
+  fullName: Albatross.Expression.IExecutionContext<T>.Eval(System.String, T, System.Type)
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Eval(System.String, T, System.Type)
+  nameWithType: IExecutionContext<T>.Eval(String, T, Type)
+  nameWithType.vb: IExecutionContext(Of T).Eval(String, T, Type)
+- uid: Albatross.Expression.IExecutionContext`1.Eval*
   name: Eval
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Eval_
-  commentId: Overload:Albatross.Expression.IExecutionContext.Eval
-  fullName: Albatross.Expression.IExecutionContext.Eval
-  nameWithType: IExecutionContext.Eval
-- uid: Albatross.Expression.IExecutionContext.GetDependants(System.String,System.Collections.Generic.ISet{System.String})
-  name: GetDependants(String, ISet<String>)
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_GetDependants_System_String_System_Collections_Generic_ISet_System_String__
-  commentId: M:Albatross.Expression.IExecutionContext.GetDependants(System.String,System.Collections.Generic.ISet{System.String})
-  name.vb: GetDependants(String, ISet(Of String))
-  fullName: Albatross.Expression.IExecutionContext.GetDependants(System.String, System.Collections.Generic.ISet<System.String>)
-  fullName.vb: Albatross.Expression.IExecutionContext.GetDependants(System.String, System.Collections.Generic.ISet(Of System.String))
-  nameWithType: IExecutionContext.GetDependants(String, ISet<String>)
-  nameWithType.vb: IExecutionContext.GetDependants(String, ISet(Of String))
-- uid: Albatross.Expression.IExecutionContext.GetDependants*
-  name: GetDependants
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_GetDependants_
-  commentId: Overload:Albatross.Expression.IExecutionContext.GetDependants
-  fullName: Albatross.Expression.IExecutionContext.GetDependants
-  nameWithType: IExecutionContext.GetDependants
-- uid: Albatross.Expression.IExecutionContext.GetValue(System.String,System.Object)
-  name: GetValue(String, Object)
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_GetValue_System_String_System_Object_
-  commentId: M:Albatross.Expression.IExecutionContext.GetValue(System.String,System.Object)
-  fullName: Albatross.Expression.IExecutionContext.GetValue(System.String, System.Object)
-  nameWithType: IExecutionContext.GetValue(String, Object)
-- uid: Albatross.Expression.IExecutionContext.GetValue*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Eval_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.Eval
+  fullName: Albatross.Expression.IExecutionContext<T>.Eval
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Eval
+  nameWithType: IExecutionContext<T>.Eval
+  nameWithType.vb: IExecutionContext(Of T).Eval
+- uid: Albatross.Expression.IExecutionContext`1.FailWhenMissingVariable
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_FailWhenMissingVariable
+  commentId: P:Albatross.Expression.IExecutionContext`1.FailWhenMissingVariable
+  fullName: Albatross.Expression.IExecutionContext<T>.FailWhenMissingVariable
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).FailWhenMissingVariable
+  nameWithType: IExecutionContext<T>.FailWhenMissingVariable
+  nameWithType.vb: IExecutionContext(Of T).FailWhenMissingVariable
+- uid: Albatross.Expression.IExecutionContext`1.FailWhenMissingVariable*
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_FailWhenMissingVariable_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.FailWhenMissingVariable
+  fullName: Albatross.Expression.IExecutionContext<T>.FailWhenMissingVariable
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).FailWhenMissingVariable
+  nameWithType: IExecutionContext<T>.FailWhenMissingVariable
+  nameWithType.vb: IExecutionContext(Of T).FailWhenMissingVariable
+- uid: Albatross.Expression.IExecutionContext`1.GetValue(System.String,`0)
+  name: GetValue(String, T)
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_GetValue_System_String__0_
+  commentId: M:Albatross.Expression.IExecutionContext`1.GetValue(System.String,`0)
+  fullName: Albatross.Expression.IExecutionContext<T>.GetValue(System.String, T)
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).GetValue(System.String, T)
+  nameWithType: IExecutionContext<T>.GetValue(String, T)
+  nameWithType.vb: IExecutionContext(Of T).GetValue(String, T)
+- uid: Albatross.Expression.IExecutionContext`1.GetValue*
   name: GetValue
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_GetValue_
-  commentId: Overload:Albatross.Expression.IExecutionContext.GetValue
-  fullName: Albatross.Expression.IExecutionContext.GetValue
-  nameWithType: IExecutionContext.GetValue
-- uid: Albatross.Expression.IExecutionContext.NewSet
-  name: NewSet()
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_NewSet
-  commentId: M:Albatross.Expression.IExecutionContext.NewSet
-  fullName: Albatross.Expression.IExecutionContext.NewSet()
-  nameWithType: IExecutionContext.NewSet()
-- uid: Albatross.Expression.IExecutionContext.NewSet*
-  name: NewSet
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_NewSet_
-  commentId: Overload:Albatross.Expression.IExecutionContext.NewSet
-  fullName: Albatross.Expression.IExecutionContext.NewSet
-  nameWithType: IExecutionContext.NewSet
-- uid: Albatross.Expression.IExecutionContext.Parser
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_GetValue_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.GetValue
+  fullName: Albatross.Expression.IExecutionContext<T>.GetValue
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).GetValue
+  nameWithType: IExecutionContext<T>.GetValue
+  nameWithType.vb: IExecutionContext(Of T).GetValue
+- uid: Albatross.Expression.IExecutionContext`1.Parser
   name: Parser
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Parser
-  commentId: P:Albatross.Expression.IExecutionContext.Parser
-  fullName: Albatross.Expression.IExecutionContext.Parser
-  nameWithType: IExecutionContext.Parser
-- uid: Albatross.Expression.IExecutionContext.Parser*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Parser
+  commentId: P:Albatross.Expression.IExecutionContext`1.Parser
+  fullName: Albatross.Expression.IExecutionContext<T>.Parser
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Parser
+  nameWithType: IExecutionContext<T>.Parser
+  nameWithType.vb: IExecutionContext(Of T).Parser
+- uid: Albatross.Expression.IExecutionContext`1.Parser*
   name: Parser
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Parser_
-  commentId: Overload:Albatross.Expression.IExecutionContext.Parser
-  fullName: Albatross.Expression.IExecutionContext.Parser
-  nameWithType: IExecutionContext.Parser
-- uid: Albatross.Expression.IExecutionContext.Set(Albatross.Expression.ContextValue)
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Parser_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.Parser
+  fullName: Albatross.Expression.IExecutionContext<T>.Parser
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Parser
+  nameWithType: IExecutionContext<T>.Parser
+  nameWithType.vb: IExecutionContext(Of T).Parser
+- uid: Albatross.Expression.IExecutionContext`1.Set(Albatross.Expression.ContextValue)
   name: Set(ContextValue)
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Set_Albatross_Expression_ContextValue_
-  commentId: M:Albatross.Expression.IExecutionContext.Set(Albatross.Expression.ContextValue)
-  fullName: Albatross.Expression.IExecutionContext.Set(Albatross.Expression.ContextValue)
-  nameWithType: IExecutionContext.Set(ContextValue)
-- uid: Albatross.Expression.IExecutionContext.Set*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Set_Albatross_Expression_ContextValue_
+  commentId: M:Albatross.Expression.IExecutionContext`1.Set(Albatross.Expression.ContextValue)
+  fullName: Albatross.Expression.IExecutionContext<T>.Set(Albatross.Expression.ContextValue)
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Set(Albatross.Expression.ContextValue)
+  nameWithType: IExecutionContext<T>.Set(ContextValue)
+  nameWithType.vb: IExecutionContext(Of T).Set(ContextValue)
+- uid: Albatross.Expression.IExecutionContext`1.Set*
   name: Set
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_Set_
-  commentId: Overload:Albatross.Expression.IExecutionContext.Set
-  fullName: Albatross.Expression.IExecutionContext.Set
-  nameWithType: IExecutionContext.Set
-- uid: Albatross.Expression.IExecutionContext.TryGetExternalData
-  name: TryGetExternalData
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_TryGetExternalData
-  commentId: P:Albatross.Expression.IExecutionContext.TryGetExternalData
-  fullName: Albatross.Expression.IExecutionContext.TryGetExternalData
-  nameWithType: IExecutionContext.TryGetExternalData
-- uid: Albatross.Expression.IExecutionContext.TryGetExternalData*
-  name: TryGetExternalData
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_TryGetExternalData_
-  commentId: Overload:Albatross.Expression.IExecutionContext.TryGetExternalData
-  fullName: Albatross.Expression.IExecutionContext.TryGetExternalData
-  nameWithType: IExecutionContext.TryGetExternalData
-- uid: Albatross.Expression.IExecutionContext.TryGetValue(System.String,System.Object,System.Object@)
-  name: TryGetValue(String, Object, out Object)
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_TryGetValue_System_String_System_Object_System_Object__
-  commentId: M:Albatross.Expression.IExecutionContext.TryGetValue(System.String,System.Object,System.Object@)
-  name.vb: TryGetValue(String, Object, ByRef Object)
-  fullName: Albatross.Expression.IExecutionContext.TryGetValue(System.String, System.Object, out System.Object)
-  fullName.vb: Albatross.Expression.IExecutionContext.TryGetValue(System.String, System.Object, ByRef System.Object)
-  nameWithType: IExecutionContext.TryGetValue(String, Object, out Object)
-  nameWithType.vb: IExecutionContext.TryGetValue(String, Object, ByRef Object)
-- uid: Albatross.Expression.IExecutionContext.TryGetValue*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_Set_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.Set
+  fullName: Albatross.Expression.IExecutionContext<T>.Set
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).Set
+  nameWithType: IExecutionContext<T>.Set
+  nameWithType.vb: IExecutionContext(Of T).Set
+- uid: Albatross.Expression.IExecutionContext`1.TryGetValue(System.String,`0,System.Object@)
+  name: TryGetValue(String, T, out Object)
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_TryGetValue_System_String__0_System_Object__
+  commentId: M:Albatross.Expression.IExecutionContext`1.TryGetValue(System.String,`0,System.Object@)
+  name.vb: TryGetValue(String, T, ByRef Object)
+  fullName: Albatross.Expression.IExecutionContext<T>.TryGetValue(System.String, T, out System.Object)
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).TryGetValue(System.String, T, ByRef System.Object)
+  nameWithType: IExecutionContext<T>.TryGetValue(String, T, out Object)
+  nameWithType.vb: IExecutionContext(Of T).TryGetValue(String, T, ByRef Object)
+- uid: Albatross.Expression.IExecutionContext`1.TryGetValue*
   name: TryGetValue
-  href: api/Albatross.Expression.IExecutionContext.html#Albatross_Expression_IExecutionContext_TryGetValue_
-  commentId: Overload:Albatross.Expression.IExecutionContext.TryGetValue
-  fullName: Albatross.Expression.IExecutionContext.TryGetValue
-  nameWithType: IExecutionContext.TryGetValue
-- uid: Albatross.Expression.IExecutionContextFactory
-  name: IExecutionContextFactory
-  href: api/Albatross.Expression.IExecutionContextFactory.html
-  commentId: T:Albatross.Expression.IExecutionContextFactory
-  fullName: Albatross.Expression.IExecutionContextFactory
-  nameWithType: IExecutionContextFactory
-- uid: Albatross.Expression.IExecutionContextFactory.Create(System.Boolean)
-  name: Create(Boolean)
-  href: api/Albatross.Expression.IExecutionContextFactory.html#Albatross_Expression_IExecutionContextFactory_Create_System_Boolean_
-  commentId: M:Albatross.Expression.IExecutionContextFactory.Create(System.Boolean)
-  fullName: Albatross.Expression.IExecutionContextFactory.Create(System.Boolean)
-  nameWithType: IExecutionContextFactory.Create(Boolean)
-- uid: Albatross.Expression.IExecutionContextFactory.Create*
+  href: api/Albatross.Expression.IExecutionContext-1.html#Albatross_Expression_IExecutionContext_1_TryGetValue_
+  commentId: Overload:Albatross.Expression.IExecutionContext`1.TryGetValue
+  fullName: Albatross.Expression.IExecutionContext<T>.TryGetValue
+  fullName.vb: Albatross.Expression.IExecutionContext(Of T).TryGetValue
+  nameWithType: IExecutionContext<T>.TryGetValue
+  nameWithType.vb: IExecutionContext(Of T).TryGetValue
+- uid: Albatross.Expression.IExecutionContextFactory`1
+  name: IExecutionContextFactory<T>
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html
+  commentId: T:Albatross.Expression.IExecutionContextFactory`1
+  name.vb: IExecutionContextFactory(Of T)
+  fullName: Albatross.Expression.IExecutionContextFactory<T>
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T)
+  nameWithType: IExecutionContextFactory<T>
+  nameWithType.vb: IExecutionContextFactory(Of T)
+- uid: Albatross.Expression.IExecutionContextFactory`1.CacheExternalValue
+  name: CacheExternalValue
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_CacheExternalValue
+  commentId: P:Albatross.Expression.IExecutionContextFactory`1.CacheExternalValue
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.CacheExternalValue
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).CacheExternalValue
+  nameWithType: IExecutionContextFactory<T>.CacheExternalValue
+  nameWithType.vb: IExecutionContextFactory(Of T).CacheExternalValue
+- uid: Albatross.Expression.IExecutionContextFactory`1.CacheExternalValue*
+  name: CacheExternalValue
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_CacheExternalValue_
+  commentId: Overload:Albatross.Expression.IExecutionContextFactory`1.CacheExternalValue
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.CacheExternalValue
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).CacheExternalValue
+  nameWithType: IExecutionContextFactory<T>.CacheExternalValue
+  nameWithType.vb: IExecutionContextFactory(Of T).CacheExternalValue
+- uid: Albatross.Expression.IExecutionContextFactory`1.CaseSensitive
+  name: CaseSensitive
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_CaseSensitive
+  commentId: P:Albatross.Expression.IExecutionContextFactory`1.CaseSensitive
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.CaseSensitive
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).CaseSensitive
+  nameWithType: IExecutionContextFactory<T>.CaseSensitive
+  nameWithType.vb: IExecutionContextFactory(Of T).CaseSensitive
+- uid: Albatross.Expression.IExecutionContextFactory`1.CaseSensitive*
+  name: CaseSensitive
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_CaseSensitive_
+  commentId: Overload:Albatross.Expression.IExecutionContextFactory`1.CaseSensitive
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.CaseSensitive
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).CaseSensitive
+  nameWithType: IExecutionContextFactory<T>.CaseSensitive
+  nameWithType.vb: IExecutionContextFactory(Of T).CaseSensitive
+- uid: Albatross.Expression.IExecutionContextFactory`1.Create
+  name: Create()
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_Create
+  commentId: M:Albatross.Expression.IExecutionContextFactory`1.Create
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.Create()
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).Create()
+  nameWithType: IExecutionContextFactory<T>.Create()
+  nameWithType.vb: IExecutionContextFactory(Of T).Create()
+- uid: Albatross.Expression.IExecutionContextFactory`1.Create*
   name: Create
-  href: api/Albatross.Expression.IExecutionContextFactory.html#Albatross_Expression_IExecutionContextFactory_Create_
-  commentId: Overload:Albatross.Expression.IExecutionContextFactory.Create
-  fullName: Albatross.Expression.IExecutionContextFactory.Create
-  nameWithType: IExecutionContextFactory.Create
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_Create_
+  commentId: Overload:Albatross.Expression.IExecutionContextFactory`1.Create
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.Create
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).Create
+  nameWithType: IExecutionContextFactory<T>.Create
+  nameWithType.vb: IExecutionContextFactory(Of T).Create
+- uid: Albatross.Expression.IExecutionContextFactory`1.FailWhenMissingVariable
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_FailWhenMissingVariable
+  commentId: P:Albatross.Expression.IExecutionContextFactory`1.FailWhenMissingVariable
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.FailWhenMissingVariable
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).FailWhenMissingVariable
+  nameWithType: IExecutionContextFactory<T>.FailWhenMissingVariable
+  nameWithType.vb: IExecutionContextFactory(Of T).FailWhenMissingVariable
+- uid: Albatross.Expression.IExecutionContextFactory`1.FailWhenMissingVariable*
+  name: FailWhenMissingVariable
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_FailWhenMissingVariable_
+  commentId: Overload:Albatross.Expression.IExecutionContextFactory`1.FailWhenMissingVariable
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.FailWhenMissingVariable
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).FailWhenMissingVariable
+  nameWithType: IExecutionContextFactory<T>.FailWhenMissingVariable
+  nameWithType.vb: IExecutionContextFactory(Of T).FailWhenMissingVariable
+- uid: Albatross.Expression.IExecutionContextFactory`1.TryGetExternalValue(System.String,`0,System.Object@)
+  name: TryGetExternalValue(String, T, out Object)
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_TryGetExternalValue_System_String__0_System_Object__
+  commentId: M:Albatross.Expression.IExecutionContextFactory`1.TryGetExternalValue(System.String,`0,System.Object@)
+  name.vb: TryGetExternalValue(String, T, ByRef Object)
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.TryGetExternalValue(System.String, T, out System.Object)
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).TryGetExternalValue(System.String, T, ByRef System.Object)
+  nameWithType: IExecutionContextFactory<T>.TryGetExternalValue(String, T, out Object)
+  nameWithType.vb: IExecutionContextFactory(Of T).TryGetExternalValue(String, T, ByRef Object)
+- uid: Albatross.Expression.IExecutionContextFactory`1.TryGetExternalValue*
+  name: TryGetExternalValue
+  href: api/Albatross.Expression.IExecutionContextFactory-1.html#Albatross_Expression_IExecutionContextFactory_1_TryGetExternalValue_
+  commentId: Overload:Albatross.Expression.IExecutionContextFactory`1.TryGetExternalValue
+  fullName: Albatross.Expression.IExecutionContextFactory<T>.TryGetExternalValue
+  fullName.vb: Albatross.Expression.IExecutionContextFactory(Of T).TryGetExternalValue
+  nameWithType: IExecutionContextFactory<T>.TryGetExternalValue
+  nameWithType.vb: IExecutionContextFactory(Of T).TryGetExternalValue
 - uid: Albatross.Expression.IParser
   name: IParser
   href: api/Albatross.Expression.IParser.html
@@ -4227,6 +4606,102 @@ references:
   commentId: N:Albatross.Expression.Tokens
   fullName: Albatross.Expression.Tokens
   nameWithType: Albatross.Expression.Tokens
+- uid: Albatross.Expression.Tokens.AssignmentToken
+  name: AssignmentToken
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html
+  commentId: T:Albatross.Expression.Tokens.AssignmentToken
+  fullName: Albatross.Expression.Tokens.AssignmentToken
+  nameWithType: AssignmentToken
+- uid: Albatross.Expression.Tokens.AssignmentToken.Clone
+  name: Clone()
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Clone
+  commentId: M:Albatross.Expression.Tokens.AssignmentToken.Clone
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Clone()
+  nameWithType: AssignmentToken.Clone()
+- uid: Albatross.Expression.Tokens.AssignmentToken.Clone*
+  name: Clone
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Clone_
+  commentId: Overload:Albatross.Expression.Tokens.AssignmentToken.Clone
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Clone
+  nameWithType: AssignmentToken.Clone
+- uid: Albatross.Expression.Tokens.AssignmentToken.EvalText(System.String)
+  name: EvalText(String)
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_EvalText_System_String_
+  commentId: M:Albatross.Expression.Tokens.AssignmentToken.EvalText(System.String)
+  fullName: Albatross.Expression.Tokens.AssignmentToken.EvalText(System.String)
+  nameWithType: AssignmentToken.EvalText(String)
+- uid: Albatross.Expression.Tokens.AssignmentToken.EvalText*
+  name: EvalText
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_EvalText_
+  commentId: Overload:Albatross.Expression.Tokens.AssignmentToken.EvalText
+  fullName: Albatross.Expression.Tokens.AssignmentToken.EvalText
+  nameWithType: AssignmentToken.EvalText
+- uid: Albatross.Expression.Tokens.AssignmentToken.EvalValue(System.Func{System.String,System.Object})
+  name: EvalValue(Func<String, Object>)
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_EvalValue_System_Func_System_String_System_Object__
+  commentId: M:Albatross.Expression.Tokens.AssignmentToken.EvalValue(System.Func{System.String,System.Object})
+  name.vb: EvalValue(Func(Of String, Object))
+  fullName: Albatross.Expression.Tokens.AssignmentToken.EvalValue(System.Func<System.String, System.Object>)
+  fullName.vb: Albatross.Expression.Tokens.AssignmentToken.EvalValue(System.Func(Of System.String, System.Object))
+  nameWithType: AssignmentToken.EvalValue(Func<String, Object>)
+  nameWithType.vb: AssignmentToken.EvalValue(Func(Of String, Object))
+- uid: Albatross.Expression.Tokens.AssignmentToken.EvalValue*
+  name: EvalValue
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_EvalValue_
+  commentId: Overload:Albatross.Expression.Tokens.AssignmentToken.EvalValue
+  fullName: Albatross.Expression.Tokens.AssignmentToken.EvalValue
+  nameWithType: AssignmentToken.EvalValue
+- uid: Albatross.Expression.Tokens.AssignmentToken.Group
+  name: Group
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Group
+  commentId: P:Albatross.Expression.Tokens.AssignmentToken.Group
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Group
+  nameWithType: AssignmentToken.Group
+- uid: Albatross.Expression.Tokens.AssignmentToken.Group*
+  name: Group
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Group_
+  commentId: Overload:Albatross.Expression.Tokens.AssignmentToken.Group
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Group
+  nameWithType: AssignmentToken.Group
+- uid: Albatross.Expression.Tokens.AssignmentToken.Match(System.String,System.Int32,System.Int32@)
+  name: Match(String, Int32, out Int32)
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Match_System_String_System_Int32_System_Int32__
+  commentId: M:Albatross.Expression.Tokens.AssignmentToken.Match(System.String,System.Int32,System.Int32@)
+  name.vb: Match(String, Int32, ByRef Int32)
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Match(System.String, System.Int32, out System.Int32)
+  fullName.vb: Albatross.Expression.Tokens.AssignmentToken.Match(System.String, System.Int32, ByRef System.Int32)
+  nameWithType: AssignmentToken.Match(String, Int32, out Int32)
+  nameWithType.vb: AssignmentToken.Match(String, Int32, ByRef Int32)
+- uid: Albatross.Expression.Tokens.AssignmentToken.Match*
+  name: Match
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Match_
+  commentId: Overload:Albatross.Expression.Tokens.AssignmentToken.Match
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Match
+  nameWithType: AssignmentToken.Match
+- uid: Albatross.Expression.Tokens.AssignmentToken.Name
+  name: Name
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Name
+  commentId: P:Albatross.Expression.Tokens.AssignmentToken.Name
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Name
+  nameWithType: AssignmentToken.Name
+- uid: Albatross.Expression.Tokens.AssignmentToken.Name*
+  name: Name
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_Name_
+  commentId: Overload:Albatross.Expression.Tokens.AssignmentToken.Name
+  fullName: Albatross.Expression.Tokens.AssignmentToken.Name
+  nameWithType: AssignmentToken.Name
+- uid: Albatross.Expression.Tokens.AssignmentToken.ToString
+  name: ToString()
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_ToString
+  commentId: M:Albatross.Expression.Tokens.AssignmentToken.ToString
+  fullName: Albatross.Expression.Tokens.AssignmentToken.ToString()
+  nameWithType: AssignmentToken.ToString()
+- uid: Albatross.Expression.Tokens.AssignmentToken.ToString*
+  name: ToString
+  href: api/Albatross.Expression.Tokens.AssignmentToken.html#Albatross_Expression_Tokens_AssignmentToken_ToString_
+  commentId: Overload:Albatross.Expression.Tokens.AssignmentToken.ToString
+  fullName: Albatross.Expression.Tokens.AssignmentToken.ToString
+  nameWithType: AssignmentToken.ToString
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken
   name: BooleanLiteralToken
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html
@@ -4284,18 +4759,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.Group
   fullName: Albatross.Expression.Tokens.BooleanLiteralToken.Group
   nameWithType: BooleanLiteralToken.Group
-- uid: Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
-  fullName: Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
-  nameWithType: BooleanLiteralToken.IsVariable
-- uid: Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
-  fullName: Albatross.Expression.Tokens.BooleanLiteralToken.IsVariable
-  nameWithType: BooleanLiteralToken.IsVariable
 - uid: Albatross.Expression.Tokens.BooleanLiteralToken.Match(System.String,System.Int32,System.Int32@)
   name: Match(String, Int32, out Int32)
   href: api/Albatross.Expression.Tokens.BooleanLiteralToken.html#Albatross_Expression_Tokens_BooleanLiteralToken_Match_System_String_System_Int32_System_Int32__
@@ -4416,18 +4879,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.ControlToken.Group
   fullName: Albatross.Expression.Tokens.ControlToken.Group
   nameWithType: ControlToken.Group
-- uid: Albatross.Expression.Tokens.ControlToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.ControlToken.IsVariable
-  fullName: Albatross.Expression.Tokens.ControlToken.IsVariable
-  nameWithType: ControlToken.IsVariable
-- uid: Albatross.Expression.Tokens.ControlToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.ControlToken.IsVariable
-  fullName: Albatross.Expression.Tokens.ControlToken.IsVariable
-  nameWithType: ControlToken.IsVariable
 - uid: Albatross.Expression.Tokens.ControlToken.LeftParenthesis
   name: LeftParenthesis
   href: api/Albatross.Expression.Tokens.ControlToken.html#Albatross_Expression_Tokens_ControlToken_LeftParenthesis
@@ -4566,18 +5017,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.EvalValue
   fullName: Albatross.Expression.Tokens.InfixOperationToken.EvalValue
   nameWithType: InfixOperationToken.EvalValue
-- uid: Albatross.Expression.Tokens.InfixOperationToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.InfixOperationToken.IsVariable
-  fullName: Albatross.Expression.Tokens.InfixOperationToken.IsVariable
-  nameWithType: InfixOperationToken.IsVariable
-- uid: Albatross.Expression.Tokens.InfixOperationToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.InfixOperationToken.IsVariable
-  fullName: Albatross.Expression.Tokens.InfixOperationToken.IsVariable
-  nameWithType: InfixOperationToken.IsVariable
 - uid: Albatross.Expression.Tokens.InfixOperationToken.Match(System.String,System.Int32,System.Int32@)
   name: Match(String, Int32, out Int32)
   href: api/Albatross.Expression.Tokens.InfixOperationToken.html#Albatross_Expression_Tokens_InfixOperationToken_Match_System_String_System_Int32_System_Int32__
@@ -4734,18 +5173,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.IToken.EvalValue
   fullName: Albatross.Expression.Tokens.IToken.EvalValue
   nameWithType: IToken.EvalValue
-- uid: Albatross.Expression.Tokens.IToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.IToken.IsVariable
-  fullName: Albatross.Expression.Tokens.IToken.IsVariable
-  nameWithType: IToken.IsVariable
-- uid: Albatross.Expression.Tokens.IToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.IToken.IsVariable
-  fullName: Albatross.Expression.Tokens.IToken.IsVariable
-  nameWithType: IToken.IsVariable
 - uid: Albatross.Expression.Tokens.IToken.Match(System.String,System.Int32,System.Int32@)
   name: Match(String, Int32, out Int32)
   href: api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_Match_System_String_System_Int32_System_Int32__
@@ -4836,18 +5263,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.Group
   fullName: Albatross.Expression.Tokens.NumericLiteralToken.Group
   nameWithType: NumericLiteralToken.Group
-- uid: Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
-  fullName: Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
-  nameWithType: NumericLiteralToken.IsVariable
-- uid: Albatross.Expression.Tokens.NumericLiteralToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
-  fullName: Albatross.Expression.Tokens.NumericLiteralToken.IsVariable
-  nameWithType: NumericLiteralToken.IsVariable
 - uid: Albatross.Expression.Tokens.NumericLiteralToken.Match(System.String,System.Int32,System.Int32@)
   name: Match(String, Int32, out Int32)
   href: api/Albatross.Expression.Tokens.NumericLiteralToken.html#Albatross_Expression_Tokens_NumericLiteralToken_Match_System_String_System_Int32_System_Int32__
@@ -5004,18 +5419,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.GetParamsOperands
   fullName: Albatross.Expression.Tokens.PrefixOperationToken.GetParamsOperands
   nameWithType: PrefixOperationToken.GetParamsOperands
-- uid: Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
-  fullName: Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
-  nameWithType: PrefixOperationToken.IsVariable
-- uid: Albatross.Expression.Tokens.PrefixOperationToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
-  fullName: Albatross.Expression.Tokens.PrefixOperationToken.IsVariable
-  nameWithType: PrefixOperationToken.IsVariable
 - uid: Albatross.Expression.Tokens.PrefixOperationToken.Match(System.String,System.Int32,System.Int32@)
   name: Match(String, Int32, out Int32)
   href: api/Albatross.Expression.Tokens.PrefixOperationToken.html#Albatross_Expression_Tokens_PrefixOperationToken_Match_System_String_System_Int32_System_Int32__
@@ -5208,18 +5611,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.Group
   fullName: Albatross.Expression.Tokens.StringLiteralToken.Group
   nameWithType: StringLiteralToken.Group
-- uid: Albatross.Expression.Tokens.StringLiteralToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.StringLiteralToken.IsVariable
-  fullName: Albatross.Expression.Tokens.StringLiteralToken.IsVariable
-  nameWithType: StringLiteralToken.IsVariable
-- uid: Albatross.Expression.Tokens.StringLiteralToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.StringLiteralToken.IsVariable
-  fullName: Albatross.Expression.Tokens.StringLiteralToken.IsVariable
-  nameWithType: StringLiteralToken.IsVariable
 - uid: Albatross.Expression.Tokens.StringLiteralToken.Match(System.String,System.Int32,System.Int32@)
   name: Match(String, Int32, out Int32)
   href: api/Albatross.Expression.Tokens.StringLiteralToken.html#Albatross_Expression_Tokens_StringLiteralToken_Match_System_String_System_Int32_System_Int32__
@@ -5340,18 +5731,6 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Group
   fullName: Albatross.Expression.Tokens.VariableToken.Group
   nameWithType: VariableToken.Group
-- uid: Albatross.Expression.Tokens.VariableToken.IsVariable
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_IsVariable
-  commentId: P:Albatross.Expression.Tokens.VariableToken.IsVariable
-  fullName: Albatross.Expression.Tokens.VariableToken.IsVariable
-  nameWithType: VariableToken.IsVariable
-- uid: Albatross.Expression.Tokens.VariableToken.IsVariable*
-  name: IsVariable
-  href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_IsVariable_
-  commentId: Overload:Albatross.Expression.Tokens.VariableToken.IsVariable
-  fullName: Albatross.Expression.Tokens.VariableToken.IsVariable
-  nameWithType: VariableToken.IsVariable
 - uid: Albatross.Expression.Tokens.VariableToken.Match(System.String,System.Int32,System.Int32@)
   name: Match(String, Int32, out Int32)
   href: api/Albatross.Expression.Tokens.VariableToken.html#Albatross_Expression_Tokens_VariableToken_Match_System_String_System_Int32_System_Int32__
@@ -5403,9 +5782,12 @@ references:
   commentId: Overload:Albatross.Expression.Tokens.VariableToken.Value
   fullName: Albatross.Expression.Tokens.VariableToken.Value
   nameWithType: VariableToken.Value
-- uid: Albatross.Expression.TryGetValueDelegate
-  name: TryGetValueDelegate
-  href: api/Albatross.Expression.TryGetValueDelegate.html
-  commentId: T:Albatross.Expression.TryGetValueDelegate
-  fullName: Albatross.Expression.TryGetValueDelegate
-  nameWithType: TryGetValueDelegate
+- uid: Albatross.Expression.TryGetValueDelegate`1
+  name: TryGetValueDelegate<T>
+  href: api/Albatross.Expression.TryGetValueDelegate-1.html
+  commentId: T:Albatross.Expression.TryGetValueDelegate`1
+  name.vb: TryGetValueDelegate(Of T)
+  fullName: Albatross.Expression.TryGetValueDelegate<T>
+  fullName.vb: Albatross.Expression.TryGetValueDelegate(Of T)
+  nameWithType: TryGetValueDelegate<T>
+  nameWithType.vb: TryGetValueDelegate(Of T)

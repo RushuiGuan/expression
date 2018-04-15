@@ -66,7 +66,13 @@ namespace Albatross.Expression.Tokens {
 			} else {
 				sb.Append(Name);
 				sb.Append(ControlToken.LeftParenthesis);
-				sb.Append(string.Join(ControlToken.Comma.ToString(), from token in Operands select token.EvalText(format)));
+				foreach (var token in Operands) {
+					sb.Append(token.EvalText(format));
+					if (token != Operands.Last()) {
+						sb.Append(ControlToken.Comma.ToString()).Append(" ");
+					}
+				}
+				//sb.Append(string.Join(ControlToken.Comma.ToString(), from token in Operands select token.EvalText(format)));
 				sb.Append(ControlToken.RightParenthesis);
 			}
 			return sb.ToString();

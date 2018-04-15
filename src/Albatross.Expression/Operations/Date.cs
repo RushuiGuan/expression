@@ -6,6 +6,12 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Prefix operation that convert input to date.  The operand is converted to text first and parsed to a datetime object
+	/// Operand Count: 1
+	/// Operand Type: any
+	/// Output Type: System.DateTime
+	/// </summary>
 	[ParserOperation]
 	public class Date : PrefixOperationToken {
 		public override string Name { get { return "date"; } }
@@ -15,7 +21,11 @@ namespace Albatross.Expression.Operations {
 
 		public override object EvalValue(Func<string, object> context) {
 			object value = Operands.First().EvalValue(context);
-			return DateTime.Parse(Convert.ToString(value));
+			if (value is DateTime) {
+				return value;
+			} else {
+				return DateTime.Parse(Convert.ToString(value));
+			}
 		}
 	}
 }

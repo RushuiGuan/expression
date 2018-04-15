@@ -74,7 +74,7 @@
 <p>Use the easiest way to use the parser is by calling the default instance of the <a class="xref" href="../api/Albatross.Expression.Factory.html">Factory</a> class.</p>
 <pre><code class="lang-csharp">var parser = Factory.Instance.Create();
 parser.Compile(&quot;1 + 5&quot;).EvalValue(null);
-</code></pre><h2 id="use-of-executioncontextxrefalbatrossexpressionexecutioncontext-class-with-variables">Use of <a class="xref" href="../api/Albatross.Expression.ExecutionContext.html">ExecutionContext</a> class with variables</h2>
+</code></pre><h2 id="use-of-executioncontexttxrefalbatrossexpressionexecutioncontextt-class-with-variables">Use of <a href="xref:Albatross.Expression.ExecutionContext&lt;T">ExecutionContext<t></t></a> class with variables</h2>
 <p>The evaluation of expressions made of literals is not very helpful and it doesn&#39;t have many use cases.  The api was created to solve a different problem - the problem of user defined calculations.  Here is a code sample:</p>
 <pre><code class="lang-csharp">    ExecutionContext context = new ExecutionContext(Factory.Instance, true);
     context.SetValue(&quot;a&quot;, 1);
@@ -86,9 +86,38 @@ parser.Compile(&quot;1 + 5&quot;).EvalValue(null);
     result = context.Eval(&quot;a + b&quot;, null);
     //the result should be 4 now.
 </code></pre><p>In the code sample above, the context was able to store the value of variable <code>a</code> and <code>b</code> and use it to calculate expressions that have those variables.  It is useful in situations where users are allowed to define custom calculations using a formula and the application is expected to perform the calculation of the dynamically defined formulas.</p>
-<p>The <a class="xref" href="../api/Albatross.Expression.ExecutionContext.html">ExecutionContext</a> class can also reference data externally so that the value of the variables doesn&#39;t need to be established in the object itself.  It is a nessary feature because when data change, instead of calling the SetValue method, it is more efficient for the context to access the external data directly.  Here is a code sample:</p>
-<pre><code class="lang-csharp">    //working on it!
-</code></pre><h1 id="supported-operations">Supported Operations</h1>
+<p>The <a href="xref:Albatross.Expression.ExecutionContext&lt;T">ExecutionContext<t></t></a> class can also reference data of type T externally so that the value of the variables doesn&#39;t need to be established in the object itself.  It is a nessary feature because when data change, instead of calling the SetValue method, it is more efficient for the context to access the external data directly.  Here is a code sample:</p>
+<pre><code class="lang-csharp">    public class Program {
+        static void Main(string[] args) {
+            DataTable table = SetupTable();
+            Generate(table);
+            DataRowExecutionContextFactory factory = new DataRowExecutionContextFactory(Factory.Instance.Create());
+            IExecutionContext&lt;DataRow&gt; context = factory.Create();
+            context.SetExpression(&quot;age&quot;, &quot;Year(Today()) - Year(DOB)&quot;);
+
+            foreach (DataRow row in table.Rows) {
+                row[&quot;age&quot;] = context.GetValue(&quot;age&quot;, row);
+                Console.WriteLine(row[&quot;age&quot;]);
+            }
+        }
+
+        static DataTable SetupTable() {
+            DataTable table = new DataTable();
+            table.Columns.Add(new DataColumn(&quot;FirstName&quot;) { DataType = typeof(string), });
+            table.Columns.Add(new DataColumn(&quot;LastName&quot;) { DataType = typeof(string), });
+            table.Columns.Add(new DataColumn(&quot;DOB&quot;) { DataType = typeof(DateTime), });
+            table.Columns.Add(new DataColumn(&quot;Age&quot;) { DataType = typeof(int), });
+            return table;
+        }
+
+
+        static void Generate(DataTable table) {
+            table.Rows.Add(&quot;John&quot;, &quot;Doe&quot;, new DateTime(1976, 1, 1));
+            table.Rows.Add(&quot;Jane&quot;, &quot;Doe&quot;, new DateTime(2000, 5, 8));
+        }
+    }
+</code></pre><p>In this example, the Age column is a user defined column with a formula that needs to be computed dynamically.  </p>
+<h1 id="supported-operations">Supported Operations</h1>
 <p>The api supports three diffent kinds of operations</p>
 <ul>
 <li>Infix operation <ul>
@@ -118,7 +147,7 @@ parser.Compile(&quot;1 + 5&quot;).EvalValue(null);
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/RushuiGuan/expression/blob/master/docfx_project/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/RushuiGuan/expression/blob/develop/docfx_project/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

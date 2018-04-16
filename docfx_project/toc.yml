@@ -6,4 +6,6 @@
   homepage: api/index.md
 - name: Source Code
   href: https://github.com/rushuiguan/expression
+- name: Nuget Package
+  href: https://www.nuget.org/packages/Albatross.Expression
 

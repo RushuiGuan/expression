@@ -22,7 +22,6 @@ namespace Albatross.Expression.Operations {
 	/// Output Type: string
 	/// Usage: Left("test", 1) should return "t"
 	/// </summary>
-	/// </summary>
 	[ParserOperation]
 	public class Left : PrefixOperationToken {
 		public override string Name { get { return "Left"; } }

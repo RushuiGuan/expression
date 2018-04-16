@@ -69,6 +69,6 @@ The api supports three diffent kinds of operations
     * `today()`
     * `left(string, length)`
 * Unary operation
-    * `-1`  \\negative 1
+    * `-1` is negative 1
 
 It supports `string`, `boolean` and `numeric` literals.  It treats all numbers as `double`.  Reference the [operations](operations.md) page to see the list of built-in operations.

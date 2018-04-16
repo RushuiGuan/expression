@@ -7,9 +7,9 @@ using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Infix OR operation.
+	/// <para>Infix OR operation.</para>
 	/// 
-	/// /// Operand Count: 2
+	/// <para>Operand Count: 2</para>
 	/// <list type="number">
 	///		<listheader>
 	///		<description>Operands</description>
@@ -18,9 +18,9 @@ namespace Albatross.Expression.Operations {
 	///		<item><description>Operand2 : any</description></item>
 	/// </list>
 	/// 
-	/// Output Type: Boolean
-	/// Usage: 3 > 2 or 2 > 1
-	/// Precedance: 20
+	/// <para>Output Type: Boolean</para>
+	/// <para>Usage: 3 > 2 or 2 > 1</para>
+	/// <para>Precedance: 20</para>
 	/// </summary>
 	[ParserOperation]
 	public class Or : InfixOperationToken {

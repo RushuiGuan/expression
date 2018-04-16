@@ -7,9 +7,8 @@ using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Infix AND operation.
-	/// 
-	/// /// Operand Count: 2
+	/// <para>Infix AND operation.</para>
+	/// <para>Operand Count: 2</para>
 	/// <list type="number">
 	///		<listheader>
 	///		<description>Operands</description>
@@ -18,11 +17,10 @@ namespace Albatross.Expression.Operations {
 	///		<item><description>Operand2 : any</description></item>
 	/// </list>
 	/// 
-	/// The input operands are converted to boolean.  See the <see cref="Albatross.Expression.Extensions.ConvertToBoolean(object)"/> method for the conversion logic
-	/// 
-	/// Output Type: Boolean
-	/// Usage: 3 > 2 and 2 > 1
-	/// Precedance: 30
+	/// <para>The input operands are converted to boolean.  See the <see cref="Albatross.Expression.Extensions.ConvertToBoolean(object)"/> method for the conversion logic</para>
+	/// <para>Output Type: Boolean</para>
+	/// <para>Usage: 3 > 2 and 2 > 1</para>
+	/// <para>Precedance: 30</para>
 	/// </summary>
 	[ParserOperation(Group = "Logical")]
 	public class And : InfixOperationToken {

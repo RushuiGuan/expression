@@ -7,15 +7,15 @@ using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Prefix operation that convert input to date.  The operand is converted to text first and parsed to a datetime object
-	/// Operand Count: 1
+	/// <para>Prefix operation that convert input to date.  The operand is converted to text first and parsed to a datetime object</para>
+	/// <para>Operand Count: 1</para>
 	/// <list type="number">
 	///		<listheader>
 	///		<description>Operands</description>
 	///		</listheader>
 	///		<item><description>input : any</description></item>
 	/// </list>
-	/// Output Type: System.DateTime
+	/// <para>Output Type: System.DateTime</para>
 	/// </summary>
 	[ParserOperation]
 	public class Date : PrefixOperationToken {

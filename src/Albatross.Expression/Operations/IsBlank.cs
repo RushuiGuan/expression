@@ -9,9 +9,9 @@ using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Prefix operation to check if the input IsBlank
-	/// Operand Type: any
-	/// Null, empty string and string with only white space are considered as blank
+	/// <para>Prefix operation to check if the input IsBlank</para>
+	/// <para>Operand Type: any</para>
+	/// <para>Null, empty string and string with only white space are considered as blank</para>
 	/// </summary>
 	[ParserOperation]
 	public class IsBlank : PrefixOperationToken {

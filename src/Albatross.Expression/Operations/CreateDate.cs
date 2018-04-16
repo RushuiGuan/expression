@@ -7,8 +7,8 @@ using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Prefix operation that create an date
-	/// Operand Count: 3
+	/// <para>Prefix operation that create an date</para>
+	/// <para>Operand Count: 3</para>
 	/// <list type="number">
 	///		<listheader>
 	///		<description>Operands</description>
@@ -17,9 +17,9 @@ namespace Albatross.Expression.Operations {
 	///		<item><description>month : double</description></item>
 	///		<item><description>day : double</description></item>
 	/// </list>
-	/// Operand Type: int
-	/// Output Type: System.DateTime
-	/// Usage: CreateDate(2018, 1, 31)
+	/// <para>Operand Type: int</para>
+	/// <para>Output Type: System.DateTime</para>
+	/// <para>Usage: CreateDate(2018, 1, 31)</para>
 	/// </summary>
 	[ParserOperation]
 	public class CreateDate : PrefixOperationToken {

@@ -7,8 +7,8 @@ using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Infix operation that perform an power operation
-	/// Operand Count: 2
+	/// <para>Infix operation that perform an power operation</para>
+	/// <para>Operand Count: 2</para>
 	/// <list type="number">
 	///		<listheader>
 	///		<description>Operands</description>
@@ -16,7 +16,7 @@ namespace Albatross.Expression.Operations {
 	///		<item><description>base : double</description></item>
 	///		<item><description>operand : double</description></item>
 	/// </list>
-	/// Output Type: double
+	/// <para>Output Type: double</para>
 	/// </summary>
 	[ParserOperation]
 	public class Power : InfixOperationToken {

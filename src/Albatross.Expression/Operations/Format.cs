@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Prefix operation that will take an input and C# format string and produced a formatted string
+	/// <para>Prefix operation that will take an input and C# format string and produced a formatted string</para>
 	/// 
 	/// </summary>
 	[ParserOperation]

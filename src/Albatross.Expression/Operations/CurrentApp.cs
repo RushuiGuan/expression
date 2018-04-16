@@ -8,9 +8,9 @@ using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Prefix operation that returns the current app domain friendly name
-	/// Operand Count: 0
-	/// Output Type: string
+	/// <para>Prefix operation that returns the current app domain friendly name</para>
+	/// <para>Operand Count: 0</para>
+	/// <para>Output Type: string</para>
 	/// </summary>
 	[ParserOperation]
 	public class CurrentApp : PrefixOperationToken {

@@ -9,9 +9,8 @@ using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Prefix if operation
-	/// 
-	/// /// Operand Count: 2 or 3
+	/// <para>Prefix if operation</para>
+	/// <para>Operand Count: 2 or 3</para>
 	/// <list type="number">
 	///		<listheader>
 	///		<description>Operands</description>
@@ -21,8 +20,8 @@ namespace Albatross.Expression.Operations {
 	///		<item><description>result when false, if omitted, will be default to null: any</description></item>
 	/// </list>
 	/// 
-	/// Output Type: any
-	/// Usage: if( 3 > 2, "OK", "No")
+	/// <para>Output Type: any</para>
+	/// <para>Usage: if( 3 > 2, "OK", "No")</para>
 	/// </summary>
 	[ParserOperation]
 	public class If : PrefixOperationToken {

@@ -8,9 +8,8 @@ using System.Text.RegularExpressions;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Infix GreaterThan operation.
-	/// 
-	/// /// Operand Count: 2
+	/// <para>Infix GreaterThan operation.</para>
+	/// <para>Operand Count: 2</para>
 	/// <list type="number">
 	///		<listheader>
 	///		<description>Operands</description>
@@ -19,9 +18,9 @@ namespace Albatross.Expression.Operations {
 	///		<item><description>Operand2 : any</description></item>
 	/// </list>
 	/// 
-	/// Output Type: Boolean
-	/// Usage: 3 > 2
-	/// Precedance: 50
+	/// <para>Output Type: Boolean</para>
+	/// <para>Usage: 3 > 2</para>
+	/// <para>Precedance: 50</para>
 	/// </summary>
 	[ParserOperation]
 	public class GreaterThan : ComparisonInfixOperation {

@@ -9,10 +9,10 @@ using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// Prefix operation that return the first non null operand
-	/// Operand Count: 1 to infinite
-	/// Operand Type: any
-	/// Example: Coalesce(null, 1, 2, 3) will return 1
+	/// <para>Prefix operation that return the first non null operand</para>
+	/// <para>Operand Count: 1 to infinite</para>
+	/// <para>Operand Type: any</para>
+	/// <para>Example: Coalesce(null, 1, 2, 3) will return 1</para>
 	/// </summary>
 	[ParserOperation]
 	public class Coalesce : PrefixOperationToken {

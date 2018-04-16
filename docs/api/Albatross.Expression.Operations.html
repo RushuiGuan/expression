@@ -79,114 +79,120 @@
   </h3>
       <h4><a class="xref" href="Albatross.Expression.Operations.And.html">And</a></h4>
       <section><p>Infix AND operation.</p>
-<p>/// Operand Count: 2
-<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol></p>
+<p>Operand Count: 2</p>
+<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol>
+
 <p>The input operands are converted to boolean.  See the <a class="xref" href="Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_System_Object_">ConvertToBoolean(Object)</a> method for the conversion logic</p>
-<p>Output Type: Boolean
-Usage: 3 &gt; 2 and 2 &gt; 1
-Precedance: 30</p>
+<p>Output Type: Boolean</p>
+<p>Usage: 3 &gt; 2 and 2 &gt; 1</p>
+<p>Precedance: 30</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Array.html">Array</a></h4>
-      <section><p>Prefix operation that create an object array
-Operand Count: 0 to infinite
-Operand Type: Any
-Output Type: <span class="xref">System.Collections.Generic.List&lt;T&gt;</span> where T is Object
-Usage: @(1, 2, 3, 4, 5)</p>
+      <section><p>Prefix operation that create an object array</p>
+<p>Operand Count: 0 to infinite</p>
+<p>Operand Type: Any</p>
+<p>Output Type: <span class="xref">System.Collections.Generic.List&lt;T&gt;</span> where T is Object</p>
+<p>Usage: @(1, 2, 3, 4, 5)</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Avg.html">Avg</a></h4>
-      <section><p>Prefix operation that return the average of a set of numbers
-Operand Count: 0 to infinite
-Operand Type: number, if the operand count is 1, it can be an array
-Output Type: double</p>
-<p>Usage: avg(1, 2, 3, 4, 5) or avg(@(1, 2, 3, 4, 5))
-Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.</p>
+      <section><p>Prefix operation that return the average of a set of numbers</p>
+<p>Operand Count: 0 to infinite</p>
+<p>Operand Type: number, if the operand count is 1, it can be an array</p>
+<p>Output Type: double</p>
+
+<p>Usage: avg(1, 2, 3, 4, 5) or avg(@(1, 2, 3, 4, 5))</p>
+<p>Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Coalesce.html">Coalesce</a></h4>
-      <section><p>Prefix operation that return the first non null operand
-Operand Count: 1 to infinite
-Operand Type: any
-Example: Coalesce(null, 1, 2, 3) will return 1</p>
+      <section><p>Prefix operation that return the first non null operand</p>
+<p>Operand Count: 1 to infinite</p>
+<p>Operand Type: any</p>
+<p>Example: Coalesce(null, 1, 2, 3) will return 1</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.ComparisonInfixOperation.html">ComparisonInfixOperation</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.CreateDate.html">CreateDate</a></h4>
-      <section><p>Prefix operation that create an date
-Operand Count: 3
+      <section><p>Prefix operation that create an date</p>
+<p>Operand Count: 3</p>
 <p><strong>Operands</strong></p><ol><li>year : double</li><li>month : double</li><li>day : double</li></ol>
-Operand Type: int
-Output Type: System.DateTime
-Usage: CreateDate(2018, 1, 31)</p>
+<p>Operand Type: int</p>
+<p>Output Type: System.DateTime</p>
+<p>Usage: CreateDate(2018, 1, 31)</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.CurrentApp.html">CurrentApp</a></h4>
-      <section><p>Prefix operation that returns the current app domain friendly name
-Operand Count: 0
-Output Type: string</p>
+      <section><p>Prefix operation that returns the current app domain friendly name</p>
+<p>Operand Count: 0</p>
+<p>Output Type: string</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.CurrentMachine.html">CurrentMachine</a></h4>
-      <section><p>Prefix operation that returns the current machine host name
-Operand Count: 0
-Output Type: string</p>
+      <section><p>Prefix operation that returns the current machine host name</p>
+<p>Operand Count: 0</p>
+<p>Output Type: string</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.CurrentUser.html">CurrentUser</a></h4>
-      <section><p>Prefix operation that returns the current windows user name
-Operand Count: 0
-Output Type: string</p>
+      <section><p>Prefix operation that returns the current windows user name&gt;</p>
+<p>Operand Count: 0</p>
+<p>Output Type: string</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Date.html">Date</a></h4>
-      <section><p>Prefix operation that convert input to date.  The operand is converted to text first and parsed to a datetime object
-Operand Count: 1
+      <section><p>Prefix operation that convert input to date.  The operand is converted to text first and parsed to a datetime object</p>
+<p>Operand Count: 1</p>
 <p><strong>Operands</strong></p><ol><li>input : any</li></ol>
-Output Type: System.DateTime</p>
+<p>Output Type: System.DateTime</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Divide.html">Divide</a></h4>
-      <section><p>Infix operation that perform divide
-Operand Count: 2
+      <section><p>Infix operation that perform divide</p>
+<p>Operand Count: 2</p>
 <p><strong>Operands</strong></p><ol><li>Operrand1 : double</li><li>Operrand2 : double</li></ol>
-Output Type: double</p>
+<p>Output Type: double</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Equal.html">Equal</a></h4>
-      <section><p>Infix operation that perform an equal check
-Operand Count: 2
+      <section><p>Infix operation that perform an equal check</p>
+<p>Operand Count: 2</p>
 <p><strong>Operands</strong></p><ol><li>Operrand1 : double</li><li>Operrand2 : double</li></ol>
-Output Type: double</p>
+<p>Output Type: double</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Format.html">Format</a></h4>
       <section><p>Prefix operation that will take an input and C# format string and produced a formatted string</p>
+
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.GreaterEqual.html">GreaterEqual</a></h4>
       <section><p>Infix GreaterEqual operation.</p>
-<p>/// Operand Count: 2
-<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol></p>
-<p>Output Type: Boolean
-Usage: 3 &gt;= 2
-Precedance: 50</p>
+<p>Operand Count: 2</p>
+<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol>
+
+<p>Output Type: Boolean</p>
+<p>Usage: 3 &gt;= 2</p>
+<p>Precedance: 50</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.GreaterThan.html">GreaterThan</a></h4>
       <section><p>Infix GreaterThan operation.</p>
-<p>/// Operand Count: 2
-<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol></p>
-<p>Output Type: Boolean
-Usage: 3 &gt; 2
-Precedance: 50</p>
+<p>Operand Count: 2</p>
+<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol>
+
+<p>Output Type: Boolean</p>
+<p>Usage: 3 &gt; 2</p>
+<p>Precedance: 50</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.If.html">If</a></h4>
       <section><p>Prefix if operation</p>
-<p>/// Operand Count: 2 or 3
-<p><strong>Operands</strong></p><ol><li>condition: any</li><li>result when true: any</li><li>result when false, if omitted, will be default to null: any</li></ol></p>
-<p>Output Type: any
-Usage: if( 3 &gt; 2, &quot;OK&quot;, &quot;No&quot;)</p>
+<p>Operand Count: 2 or 3</p>
+<p><strong>Operands</strong></p><ol><li>condition: any</li><li>result when true: any</li><li>result when false, if omitted, will be default to null: any</li></ol>
+
+<p>Output Type: any</p>
+<p>Usage: if( 3 &gt; 2, &quot;OK&quot;, &quot;No&quot;)</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.IsBlank.html">IsBlank</a></h4>
-      <section><p>Prefix operation to check if the input IsBlank
-Operand Type: any
-Null, empty string and string with only white space are considered as blank</p>
+      <section><p>Prefix operation to check if the input IsBlank</p>
+<p>Operand Type: any</p>
+<p>Null, empty string and string with only white space are considered as blank</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Left.html">Left</a></h4>
-      <section><p>Prefix operation that return the substring of the input text with the specified length and start index of 0
-Operand Count: 2
+      <section><p>Prefix operation that return the substring of the input text with the specified length and start index of 0</p>
+<p>Operand Count: 2</p>
 <p><strong>Operands</strong></p><ol><li>input: string</li><li>count: double</li></ol>
-Output Type: string
-Usage: Left(&quot;test&quot;, 1) should return &quot;t&quot;</p>
+<p>Output Type: string</p>
+<p>Usage: Left(&quot;test&quot;, 1) should return &quot;t&quot;</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Len.html">Len</a></h4>
       <section></section>
@@ -201,20 +207,20 @@ Usage: Left(&quot;test&quot;, 1) should return &quot;t&quot;</p>
       <h4><a class="xref" href="Albatross.Expression.Operations.Minus.html">Minus</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Mod.html">Mod</a></h4>
-      <section><p>Infix operation that perform an mod operation
-Operand Count: 2
+      <section><p>Infix operation that perform an mod operation</p>
+<p>Operand Count: 2</p>
 <p><strong>Operands</strong></p><ol><li>Operrand1 : double</li><li>Operrand2 : double</li></ol>
-Output Type: double</p>
+<p>Output Type: double</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Month.html">Month</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.MonthName.html">MonthName</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Multiply.html">Multiply</a></h4>
-      <section><p>Infix operation that perform an multiply operation
-Operand Count: 2
+      <section><p>Infix operation that perform an multiply operation</p>
+<p>Operand Count: 2</p>
 <p><strong>Operands</strong></p><ol><li>Operrand1 : double</li><li>Operrand2 : double</li></ol>
-Output Type: double</p>
+<p>Output Type: double</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Negative.html">Negative</a></h4>
       <section></section>
@@ -226,11 +232,13 @@ Output Type: double</p>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Or.html">Or</a></h4>
       <section><p>Infix OR operation.</p>
-<p>/// Operand Count: 2
-<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol></p>
-<p>Output Type: Boolean
-Usage: 3 &gt; 2 or 2 &gt; 1
-Precedance: 20</p>
+
+<p>Operand Count: 2</p>
+<p><strong>Operands</strong></p><ol><li>Operand1 : any</li><li>Operand2 : any</li></ol>
+
+<p>Output Type: Boolean</p>
+<p>Usage: 3 &gt; 2 or 2 &gt; 1</p>
+<p>Precedance: 20</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.PadLeft.html">PadLeft</a></h4>
       <section></section>
@@ -239,18 +247,18 @@ Precedance: 20</p>
       <h4><a class="xref" href="Albatross.Expression.Operations.Pi.html">Pi</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Plus.html">Plus</a></h4>
-      <section><p>Infix operation that perform an plus operation
-Operand Count: 2
+      <section><p>Infix operation that perform an plus operation</p>
+<p>Operand Count: 2</p>
 <p><strong>Operands</strong></p><ol><li>Operrand1 : double</li><li>Operrand2 : double</li></ol>
-Output Type: double</p>
+<p>Output Type: double</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Positive.html">Positive</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Power.html">Power</a></h4>
-      <section><p>Infix operation that perform an power operation
-Operand Count: 2
+      <section><p>Infix operation that perform an power operation</p>
+<p>Operand Count: 2</p>
 <p><strong>Operands</strong></p><ol><li>base : double</li><li>operand : double</li></ol>
-Output Type: double</p>
+<p>Output Type: double</p>
 </section>
       <h4><a class="xref" href="Albatross.Expression.Operations.Right.html">Right</a></h4>
       <section></section>

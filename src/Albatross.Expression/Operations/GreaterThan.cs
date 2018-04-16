@@ -7,6 +7,22 @@ using System.Xml;
 using System.Text.RegularExpressions;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Infix GreaterThan operation.
+	/// 
+	/// /// Operand Count: 2
+	/// <list type="number">
+	///		<listheader>
+	///		<description>Operands</description>
+	///		</listheader>
+	///		<item><description>Operand1 : any</description></item>
+	///		<item><description>Operand2 : any</description></item>
+	/// </list>
+	/// 
+	/// Output Type: Boolean
+	/// Usage: 3 > 2
+	/// Precedance: 50
+	/// </summary>
 	[ParserOperation]
 	public class GreaterThan : ComparisonInfixOperation {
 		const string Pattern = @"^\s*(\>)(?!=)";

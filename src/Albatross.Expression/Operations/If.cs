@@ -8,6 +8,22 @@ using Albatross.Expression.Exceptions;
 
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Prefix if operation
+	/// 
+	/// /// Operand Count: 2 or 3
+	/// <list type="number">
+	///		<listheader>
+	///		<description>Operands</description>
+	///		</listheader>
+	///		<item><description>condition: any</description></item>
+	///		<item><description>result when true: any</description></item>
+	///		<item><description>result when false, if omitted, will be default to null: any</description></item>
+	/// </list>
+	/// 
+	/// Output Type: any
+	/// Usage: if( 3 > 2, "OK", "No")
+	/// </summary>
 	[ParserOperation]
 	public class If : PrefixOperationToken {
 

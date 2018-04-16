@@ -6,6 +6,18 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Infix operation that perform an power operation
+	/// Operand Count: 2
+	/// <list type="number">
+	///		<listheader>
+	///		<description>Operands</description>
+	///		</listheader>
+	///		<item><description>base : double</description></item>
+	///		<item><description>operand : double</description></item>
+	/// </list>
+	/// Output Type: double
+	/// </summary>
 	[ParserOperation]
 	public class Power : InfixOperationToken {
 

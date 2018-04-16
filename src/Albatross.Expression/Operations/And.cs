@@ -8,8 +8,18 @@ using System.Xml;
 namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// Infix AND operation.
-	/// Operand Count: 2
-	/// Operand Type: Any, see the <see cref="Albatross.Expression.Extensions.ConvertToBoolean(object)"/> method for the conversion logic
+	/// 
+	/// /// Operand Count: 2
+	/// <list type="number">
+	///		<listheader>
+	///		<description>Operands</description>
+	///		</listheader>
+	///		<item><description>Operand1 : any</description></item>
+	///		<item><description>Operand2 : any</description></item>
+	/// </list>
+	/// 
+	/// The input operands are converted to boolean.  See the <see cref="Albatross.Expression.Extensions.ConvertToBoolean(object)"/> method for the conversion logic
+	/// 
 	/// Output Type: Boolean
 	/// Usage: 3 > 2 and 2 > 1
 	/// Precedance: 30

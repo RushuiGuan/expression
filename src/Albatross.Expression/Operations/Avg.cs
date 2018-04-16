@@ -14,6 +14,7 @@ namespace Albatross.Expression.Operations {
 	/// Operand Count: 0 to infinite
 	/// Operand Type: number, if the operand count is 1, it can be an array
 	/// Output Type: double
+	/// 
 	/// Usage: avg(1, 2, 3, 4, 5) or avg(@(1, 2, 3, 4, 5))
 	/// Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.
 	/// </summary>

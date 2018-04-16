@@ -8,6 +8,11 @@ using Albatross.Expression.Exceptions;
 
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Prefix operation to check if the input IsBlank
+	/// Operand Type: any
+	/// Null, empty string and string with only white space are considered as blank
+	/// </summary>
 	[ParserOperation]
 	public class IsBlank : PrefixOperationToken {
 

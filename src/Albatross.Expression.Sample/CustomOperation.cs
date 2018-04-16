@@ -1,14 +1,10 @@
 ﻿using Albatross.Expression.Operations;
 using Albatross.Expression.Tokens;
 using NUnit.Framework;
-using SimpleInjector;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Albatross.Expression.Test {
+namespace Albatross.Expression.Sample {
 	[ParserOperation]
 	public class Sin : PrefixOperationToken {
 		public override IToken Clone() {
@@ -47,10 +43,10 @@ namespace Albatross.Expression.Test {
 	}
 
 	[TestFixture]
-	public class CustomOperationSample {
+	public class CustomOperation {
 
 		[TestCase("custom_sin(pi()/2)", ExpectedResult = 1)]
-		public object TestCustomOperation(string expression) {
+		public object TestSinOperation(string expression) {
 			Factory factory = new Factory().Register(this.GetType().Assembly);
 			return factory.Create().Compile(expression).EvalValue(null);
 		}
@@ -61,8 +57,11 @@ namespace Albatross.Expression.Test {
 			return factory.Create().Compile(expression).EvalValue(null);
 		}
 
+		/// <summary>
+		/// The default max operation is replaced by class <see cref="Albatross.Expression.Sample.AbsoluteMax"/> using the <see cref="Albatross.Expression.Factory.Replace{T, K}"/> function.
+		/// </summary>
 		[TestCase("max(-1, -2, -3)", ExpectedResult = 3)]
-		public object TestOverrideMaxOperation(string expression) {
+		public object TestAbsoluteMaxOperation(string expression) {
 			Factory factory = new Factory().Replace<Max, AbsoluteMax>();
 			return factory.Create().Compile(expression).EvalValue(null);
 		}

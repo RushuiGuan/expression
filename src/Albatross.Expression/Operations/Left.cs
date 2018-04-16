@@ -9,6 +9,20 @@ using Albatross.Expression.Exceptions;
 using System.Globalization;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Prefix operation that return the substring of the input text with the specified length and start index of 0
+	/// Operand Count: 2
+	/// <list type="number">
+	///		<listheader>
+	///		<description>Operands</description>
+	///		</listheader>
+	///		<item><description>input: string</description></item>
+	///		<item><description>count: double</description></item>
+	/// </list>
+	/// Output Type: string
+	/// Usage: Left("test", 1) should return "t"
+	/// </summary>
+	/// </summary>
 	[ParserOperation]
 	public class Left : PrefixOperationToken {
 		public override string Name { get { return "Left"; } }

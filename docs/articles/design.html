@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design ">
+    <meta name="generator" content="docfx 2.31.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav container-fluid navbar navbar-default">
+          <div class="hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container-fluid body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="design">Design</h1>
+
+<p><a class="xref" href="../api/Albatross.Expression.html">Albatross.Expression</a> parses the expression by</p>
+<ol>
+<li>Tokenize the text</li>
+<li>Build a stack</li>
+<li>Create a token tree</li>
+</ol>
+<p>Once the token tree is created, the parser can evaluate the result of the expression by evaluating the tree nodes recursively.  </p>
+<p>The implementation of the design supports the following functionalties:</p>
+<ul>
+<li>Tokens<ul>
+<li>String Literal - <code>&quot;yes&quot;</code></li>
+<li>Numeric Literal - <code>100 + 4.0</code><ul>
+<li>The <a class="xref" href="../api/Albatross.Expression.Tokens.NumericLiteralToken.html">NumericLiteralToken</a> class handles number and it converts all numeric value to C# type <code>System.Double</code>.</li>
+</ul>
+</li>
+<li>Variable - <code>a + 4</code></li>
+<li>Parantheses - <code>4 * (1 + 2)</code></li>
+</ul>
+</li>
+<li>Infix operation - Operations with two operands and a operator in the middle: <code>1 + 2</code><ul>
+<li>operation precedence</li>
+</ul>
+</li>
+<li>unary operation - Negative sign: <code>-1</code></li>
+<li>prefix operation - Functions with fixed or optional parameter and a return value: <code>Now(), Left(&quot;Orange&quot;, 4)</code></li>
+<li>unlimited optional function parameters - <code>max(1,2,3,4,5)</code></li>
+<li>Array - Array is a special function that returns an array object: <code>@(1, 2, 3, 4, 5s)</code></li>
+</ul>
+<h2 id="tokenization">Tokenization</h2>
+<p>Tokenization reads the expression from left to right.  Its function is to recognize individual components (tokens) of an expression.  This step will throw <a class="xref" href="../api/Albatross.Expression.Exceptions.TokenParsingException.html">TokenParsingException</a> if the expression has errors.  The resulting tokens are inserted into a queue.  The code lives in the <a class="xref" href="../api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Tokenize_System_String_">Tokenize</a> method of the <a class="xref" href="../api/Albatross.Expression.Parser.html">Parser</a> class.</p>
+<p>Here are some examples:</p>
+<ul>
+<li>Expression: <code>4 + 5 * 6 - max(7, 1)</code><ul>
+<li><code>4</code></li>
+<li><code>+</code></li>
+<li><code>5</code></li>
+<li><code>*</code></li>
+<li><code>6</code></li>
+<li><code>-</code></li>
+<li><code>max</code></li>
+<li><code>(</code></li>
+<li><code>7</code></li>
+<li><code>,</code></li>
+<li><code>1</code></li>
+<li><code>)</code></li>
+</ul>
+</li>
+<li>Expression: <code>if (a &gt; b, &quot;Yes&quot;, &quot;No&quot;)</code><ul>
+<li><code>if</code></li>
+<li><code>(</code></li>
+<li><code>a</code></li>
+<li><code>&gt;</code></li>
+<li><code>b</code></li>
+<li><code>,</code></li>
+<li><code>&quot;Yes&quot;</code></li>
+<li><code>,</code></li>
+<li><code>&quot;No&quot;</code></li>
+<li><code>)</code></li>
+</ul>
+</li>
+</ul>
+<p>Notice that comma and parentheses are considered as control tokens but the string boundary (double quote) are not.  String boundaries are part of the string token and will be stripped and disgarded by the <a class="xref" href="../api/Albatross.Expression.Tokens.StringLiteralToken.html">StringLiteralToken</a> class during the evaluation process.</p>
+<h2 id="create-a-stack">Create a Stack</h2>
+<p>This step converts the tokenized queue into a postfix stack using the <a href="https://en.wikipedia.org/wiki/Shunting-yard_algorithm">Shunting-yard algorithm</a>.  The code lives in the <a class="xref" href="../api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_BuildStack_System_Collections_Generic_Queue_Albatross_Expression_Tokens_IToken__">BuildStack</a> method of the <a class="xref" href="../api/Albatross.Expression.Parser.html">Parser</a> class.  A postfix stack is also called a <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse polish notion</a>.  </p>
+<p>Here are the top popping stack for the example above:</p>
+<ul>
+<li><p>Expression: <code>4 + 5 * 6 - max(7, 1)</code></p>
+<ul>
+<li><code>-</code></li>
+<li><code>max</code></li>
+<li><code>1</code></li>
+<li><code>7</code></li>
+<li><code>$</code></li>
+<li><code>+</code></li>
+<li><code>*</code></li>
+<li><code>6</code></li>
+<li><code>5</code></li>
+<li><code>4</code></li>
+</ul>
+</li>
+<li><p>Expression: <code>if (a &gt; b, &quot;Yes&quot;, &quot;No&quot;)</code></p>
+<ul>
+<li><code>If</code></li>
+<li><code>&quot;No&quot;</code></li>
+<li><code>&quot;Yes&quot;</code></li>
+<li><code>&gt;</code></li>
+<li><code>b</code></li>
+<li><code>a</code></li>
+<li><code>$</code></li>
+</ul>
+</li>
+<li>Expression: <code>Format(Today(), &quot;yyyy-MM-DD&quot;)</code><ul>
+<li><code>Format</code></li>
+<li><code>&quot;yyyy-MM-DD&quot;</code></li>
+<li><code>Today</code></li>
+<li><code>$</code></li>
+<li><code>$</code></li>
+</ul>
+</li>
+</ul>
+<p>A special control token <code>$</code> is used to indicate the end parameters for prefix operations.  It allows the creation of functions with unknown number of optional parameters.  It also simplify the tree creation logic because it doesn&#39;t need to know how many parameters the prefix function has.</p>
+<h2 id="create-a-tree">Create a Tree</h2>
+<p>This step is to create a tree from the postfix stack.  The process of converting a stack to a tree is the same process of evaluating (popping) the postfix stack.  The tree is created so that the expression can be evaluated multiple times without rebuilding the stack.
+Here are the trees for the example above:</p>
+<ul>
+<li><p>Expression: <code>4 + 5 * 6 - max(7, 1)</code></p>
+<ul>
+<li><code>-</code><ul>
+<li><code>+</code><ul>
+<li><code>4</code></li>
+<li><code>*</code><ul>
+<li><code>5</code></li>
+<li><code>6</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>max</code><ul>
+<li><code>7</code></li>
+<li><code>1</code></li>
+<li><code>1</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Expression: <code>if (a &gt; b, &quot;Yes&quot;, &quot;No&quot;)</code></p>
+<ul>
+<li><code>If</code><ul>
+<li><code>&gt;</code><ul>
+<li><code>a</code></li>
+<li><code>b</code></li>
+</ul>
+</li>
+<li><code>&quot;Yes&quot;</code></li>
+<li><code>&quot;No&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Expression: <code>Format(Today(), &quot;yyyy-MM-DD&quot;)</code></p>
+<ul>
+<li><code>Format</code><ul>
+<li><code>Today</code></li>
+<li><code>&quot;yyyy-MM-DD&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="evalute-a-tree">Evalute a tree</h2>
+<p>With a tree built, the evaluation process is a simple recursive call to the <a class="xref" href="../api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalValue_System_Func_System_String_System_Object__">EvalValue</a> function of the token class.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/RushuiGuan/expression/blob/master/docfx_project/articles/design.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2018</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

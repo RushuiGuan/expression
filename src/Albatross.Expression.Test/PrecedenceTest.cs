@@ -23,6 +23,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("1 or 1 and 0", ExpectedResult = true)]
 		[TestCase("(1 or 1) and 0", ExpectedResult = false)]
 		[TestCase("1--1", ExpectedResult = 2)]
+		[TestCase("1--(1+1)", ExpectedResult = 3)]
 		[TestCase("1-+1", ExpectedResult = 0)]
 		[TestCase("10+avg(@(1,2,3,4))", ExpectedResult = 12.5)]
 		[TestCase("(1 > 2) or (3 > 1)", ExpectedResult = true)]
@@ -32,21 +33,6 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			return token.EvalValue(null);
-		}
-
-
-		[TestCase(@"c:\temp\precedence.printout.txt")]
-		public void PrintAllInfixOperations(string file) {
-			var tokens = from token in Factory.Instance where token is InfixOperationToken orderby ((InfixOperationToken)token).Precedence ascending select token;
-			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {
-				using (StreamWriter writer = new StreamWriter(stream)) {
-					foreach (InfixOperationToken token in tokens) {
-						writer.WriteLine($"{token.Name} | [{token.GetType().FullName}](xref:{token.GetType().FullName}) | {token.Precedence}");
-					}
-					writer.Flush();
-					stream.SetLength(stream.Position);
-				}
-			}
 		}
 	}
 }

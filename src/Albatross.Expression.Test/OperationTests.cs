@@ -157,32 +157,5 @@ namespace Albatross.Expression.Test {
 			});
 			Assert.Throws(errType, handler);
 		}
-
-		[TestCase(@"c:\temp\operation.printout.txt")]
-		public void PrintOperations(string file) {
-			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {
-				using (StreamWriter writer = new StreamWriter(stream)) {
-					foreach (var token in from item in new Factory() orderby item.Name select item) {
-						writer.WriteLine($"{token.Name} | [{token.GetType().FullName}](xref:{token.GetType().FullName}) | {GetOperationType(token)}");
-					}
-					writer.Flush();
-					stream.SetLength(stream.Position);
-				}
-			}
-		}
-
-		string GetOperationType(IToken token) {
-			if (token is PrefixOperationToken) {
-				if (((PrefixOperationToken)token).Symbolic) {
-					return "Unary";
-				} else {
-					return "prefix";
-				}
-			} else if (token is InfixOperationToken) {
-				return "infix";
-			} else {
-				throw new NotSupportedException();
-			}
-		}
 	}
 }

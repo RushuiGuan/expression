@@ -1,10 +1,12 @@
 - name: Intro
   href: intro.md
+- name: Design
+  href: design.md
 - name: Built-In Operations
-  href: Operations.md
+  href: operations.md
 - name: Execution Context
-  href: ExecutionContext.md
+  href: executionContext.md
 - name: Customization
-  href: Customization.md
+  href: customization.md
 - name: Expression Generation
-  href: Generation.md
+  href: generation.md

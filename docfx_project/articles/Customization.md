@@ -1,8 +1,8 @@
-# Custom Variable
+## Custom Variable
 
-# Custom String Literal
+## Custom String Literal
 
-# Custom Operations
+## Custom Operations
 
 ## Custom Infix Operation
 
@@ -10,5 +10,4 @@
 
 ## Custom Prefix Operation
 
-# Custom ExecutionContextFactory
-
+## Custom ExecutionContextFactory

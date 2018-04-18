@@ -135,8 +135,7 @@
 <p>This step converts the tokenized queue into a postfix stack using the <a href="https://en.wikipedia.org/wiki/Shunting-yard_algorithm">Shunting-yard algorithm</a>.  The code lives in the <a class="xref" href="../api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_BuildStack_System_Collections_Generic_Queue_Albatross_Expression_Tokens_IToken__">BuildStack</a> method of the <a class="xref" href="../api/Albatross.Expression.Parser.html">Parser</a> class.  A postfix stack is also called a <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse polish notion</a>.  </p>
 <p>Here are the top popping stack for the example above:</p>
 <ul>
-<li><p>Expression: <code>4 + 5 * 6 - max(7, 1)</code></p>
-<ul>
+<li>Expression: <code>4 + 5 * 6 - max(7, 1)</code><ul>
 <li><code>-</code></li>
 <li><code>max</code></li>
 <li><code>1</code></li>
@@ -149,8 +148,7 @@
 <li><code>4</code></li>
 </ul>
 </li>
-<li><p>Expression: <code>if (a &gt; b, &quot;Yes&quot;, &quot;No&quot;)</code></p>
-<ul>
+<li>Expression: <code>if (a &gt; b, &quot;Yes&quot;, &quot;No&quot;)</code><ul>
 <li><code>If</code></li>
 <li><code>&quot;No&quot;</code></li>
 <li><code>&quot;Yes&quot;</code></li>
@@ -174,8 +172,7 @@
 <p>This step is to create a tree from the postfix stack.  The process of converting a stack to a tree is the same process of evaluating (popping) the postfix stack.  The tree is created so that the expression can be evaluated multiple times without rebuilding the stack.
 Here are the trees for the example above:</p>
 <ul>
-<li><p>Expression: <code>4 + 5 * 6 - max(7, 1)</code></p>
-<ul>
+<li>Expression: <code>4 + 5 * 6 - max(7, 1)</code><ul>
 <li><code>-</code><ul>
 <li><code>+</code><ul>
 <li><code>4</code></li>
@@ -189,15 +186,13 @@ Here are the trees for the example above:</p>
 <li><code>max</code><ul>
 <li><code>7</code></li>
 <li><code>1</code></li>
-<li><code>1</code></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Expression: <code>if (a &gt; b, &quot;Yes&quot;, &quot;No&quot;)</code></p>
-<ul>
+<li>Expression: <code>if (a &gt; b, &quot;Yes&quot;, &quot;No&quot;)</code><ul>
 <li><code>If</code><ul>
 <li><code>&gt;</code><ul>
 <li><code>a</code></li>
@@ -210,8 +205,7 @@ Here are the trees for the example above:</p>
 </li>
 </ul>
 </li>
-<li><p>Expression: <code>Format(Today(), &quot;yyyy-MM-DD&quot;)</code></p>
-<ul>
+<li>Expression: <code>Format(Today(), &quot;yyyy-MM-DD&quot;)</code><ul>
 <li><code>Format</code><ul>
 <li><code>Today</code></li>
 <li><code>&quot;yyyy-MM-DD&quot;</code></li>
@@ -220,7 +214,7 @@ Here are the trees for the example above:</p>
 </ul>
 </li>
 </ul>
-<h2 id="evalute-a-tree">Evalute a tree</h2>
+<h2 id="evaluate-a-tree">Evaluate a tree</h2>
 <p>With a tree built, the evaluation process is a simple recursive call to the <a class="xref" href="../api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalValue_System_Func_System_String_System_Object__">EvalValue</a> function of the token class.</p>
 </article>
           </div>

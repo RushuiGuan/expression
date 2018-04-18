@@ -65,6 +65,8 @@ namespace Albatross.Expression.Test
 						IToken token = stack.Pop();
 						writer.WriteLine("\t* `{0}`", token.Name);
 					}
+					writer.Flush();
+					stream.SetLength(stream.Position);
 				}
 			}
 		}
@@ -79,7 +81,9 @@ namespace Albatross.Expression.Test
 			var token = parser.CreateTree(stack);
 			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {
 				using (StreamWriter writer = new StreamWriter(stream)) {
-					PrintToken(writer, token, 0);
+					PrintToken(writer, token, 1);
+					writer.Flush();
+					stream.SetLength(stream.Position);
 				}
 			}
 		}

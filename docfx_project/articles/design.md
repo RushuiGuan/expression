@@ -67,7 +67,6 @@ Here are the top popping stack for the example above:
 	* `6`
 	* `5`
 	* `4`
-
 * Expression: `if (a > b, "Yes", "No")`
 	* `If`
 	* `"No"`
@@ -89,32 +88,28 @@ A special control token `$` is used to indicate the end parameters for prefix op
 ## Create a Tree
 This step is to create a tree from the postfix stack.  The process of converting a stack to a tree is the same process of evaluating (popping) the postfix stack.  The tree is created so that the expression can be evaluated multiple times without rebuilding the stack.
 Here are the trees for the example above:
+
 * Expression: `4 + 5 * 6 - max(7, 1)`
-    * `-`
-        * `+`
-            * `4`
-            * `*`
-                * `5`
-                * `6`
-        * `max`
-            * `7`
-            * `1`
-            * `1`
-
-
+	* `-`
+		* `+`
+			* `4`
+			* `*`
+				* `5`
+				* `6`
+		* `max`
+			* `7`
+			* `1`
 * Expression: `if (a > b, "Yes", "No")`
-    * `If`
-        * `>`
-            * `a`
-            * `b`
-        * `"Yes"`
-        * `"No"`
-
-
+	* `If`
+		* `>`
+			* `a`
+			* `b`
+		* `"Yes"`
+		* `"No"`
 * Expression: `Format(Today(), "yyyy-MM-DD")`
-    * `Format`
-        * `Today`
-        * `"yyyy-MM-DD"`
+	* `Format`
+		* `Today`
+		* `"yyyy-MM-DD"`
 
-## Evalute a tree
+## Evaluate a tree
 With a tree built, the evaluation process is a simple recursive call to the [EvalValue](xref:Albatross.Expression.Tokens.IToken.EvalValue(System.Func{System.String,System.Object})) function of the token class.

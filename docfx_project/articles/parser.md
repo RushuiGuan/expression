@@ -1,5 +1,8 @@
-# Design
-[Albatross.Expression](xref:Albatross.Expression) parses the expression by
+# Parser
+The class [Albatross.Expression.Parser](xref:Albatross.Expression.Parser) implements interface [Albatross.Expression.IParser](xref:Albatross.Expression.IParser).  It performs the function of processing, evaluating and generating of expressions.
+
+## Design
+The [Parser](xref:Albatross.Expression.Parser) class parses the expression by
 1. Tokenize the text
 1. Build a stack
 1. Create a token tree
@@ -85,7 +88,8 @@ Here are the top popping stack for the example above:
 A special control token `$` is used to indicate the end of parameters for prefix operations.  This allows functions with unknown number of optional parameters.  It also simplify the tree creation logic because it doesn't need to know how many parameters the prefix function has.
 
 ## Create a Tree
-This step is to create a tree from the postfix stack.  The process of converting a stack to a tree is the same process of evaluating (popping) the postfix stack.  The tree is created so that the expression can be evaluated multiple times without rebuilding the stack.
+This step is to create a tree from the postfix stack.  The process of converting a stack to a tree is the same process of evaluating (popping) the postfix stack.  The tree is created so that the expression can be evaluated multiple times without rebuilding the stack.  The result object is of type [IToken](xref:Albatross.Expression.Tokens.IToken).
+
 Here are the trees for the example above:
 
 * Expression: `4 + 5 * 6 - max(7, 1)`
@@ -112,3 +116,6 @@ Here are the trees for the example above:
 
 ## Evaluate a tree
 With a tree built, the evaluation process is a simple recursive call to the [EvalValue](xref:Albatross.Expression.Tokens.IToken.EvalValue(System.Func{System.String,System.Object})) function of the [IToken](xref:Albatross.Expression.Tokens.IToken) interface.
+
+## Regenerate the expression
+Using the same [IToken](xref:Albatross.Expression.Tokens.IToken) object, the parser can regenerate the original expression or convert it to an expression of different format by calling the [EvalText](xref:Albatross.Expression.Tokens.IToken.EvalText(System.String)) method.  Please reference the [custimization](customization.md) page on how to convert expressions to a different format.  The default EvalText method will produce an expression string with equal functionality as the original with consistent spacing and mininum usage of parantheses.  For example: if the original expression is `1+(2*3)`, the regenerated expression will be: `1 + 2 * 3`.

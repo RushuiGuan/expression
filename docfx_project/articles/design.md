@@ -22,7 +22,7 @@ The implementation of the design supports the following functionalties:
 
 
 ## Tokenization
-Tokenization reads the expression from left to right.  Its function is to recognize individual components (tokens) of an expression.  This step will throw [TokenParsingException](xref:Albatross.Expression.Exceptions.TokenParsingException) if the expression has errors.  The resulting tokens are inserted into a queue.  The code lives in the [Tokenize](xref:Albatross.Expression.Parser.Tokenize(System.String)) method of the [Parser](xref:Albatross.Expression.Parser) class.
+Tokenization reads the expression from left to right.  Its function is to recognize individual components (tokens) of an expression.  This step will throw [TokenParsingException](xref:Albatross.Expression.Exceptions.TokenParsingException) if the expression has errors.  The resulting tokens are inserted into a queue.  The implementation is in the [Tokenize](xref:Albatross.Expression.Parser.Tokenize(System.String)) method of the [Parser](xref:Albatross.Expression.Parser) class.
 
 Here are some examples:
 * Expression: `4 + 5 * 6 - max(7, 1)`
@@ -53,7 +53,7 @@ Here are some examples:
 Notice that comma and parentheses are considered as control tokens but the string boundary (double quote) are not.  String boundaries are part of the string token and will be stripped and disgarded by the [StringLiteralToken](xref:Albatross.Expression.Tokens.StringLiteralToken) class during the evaluation process.
 
 ## Create a Stack
-This step converts the tokenized queue into a postfix stack using the [Shunting-yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm).  The code lives in the [BuildStack](xref:Albatross.Expression.Parser.BuildStack(System.Collections.Generic.Queue{Albatross.Expression.Tokens.IToken})) method of the [Parser](xref:Albatross.Expression.Parser) class.  A postfix stack is also called a [Reverse polish notion](https://en.wikipedia.org/wiki/Reverse_Polish_notation).  
+This step converts the tokenized queue into a postfix stack using the [Shunting-yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm).  The implementation is in the [BuildStack](xref:Albatross.Expression.Parser.BuildStack(System.Collections.Generic.Queue{Albatross.Expression.Tokens.IToken})) method of the [Parser](xref:Albatross.Expression.Parser) class.  A postfix stack is also called a [Reverse polish notion](https://en.wikipedia.org/wiki/Reverse_Polish_notation).  
 
 Here are the top popping stack for the example above:
 * Expression: `4 + 5 * 6 - max(7, 1)`
@@ -82,7 +82,7 @@ Here are the top popping stack for the example above:
 	* `$`
 	* `$`
 
-A special control token `$` is used to indicate the end parameters for prefix operations.  It allows the creation of functions with unknown number of optional parameters.  It also simplify the tree creation logic because it doesn't need to know how many parameters the prefix function has.
+A special control token `$` is used to indicate the end of parameters for prefix operations.  This allows functions with unknown number of optional parameters.  It also simplify the tree creation logic because it doesn't need to know how many parameters the prefix function has.
 
 
 ## Create a Tree

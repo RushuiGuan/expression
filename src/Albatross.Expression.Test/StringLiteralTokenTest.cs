@@ -9,21 +9,109 @@ using System.Threading.Tasks;
 
 namespace Albatross.Expression.Test
 {
+	public class Scenario {
+		public Scenario(string expression, int index, string token, string result) {
+			Expression = expression;
+			StartingIndex = index;
+			TokenizedPart = token;
+			Result = result;
+		}
+		public string Expression { get; set; }
+		public int StartingIndex { get; set; }
+		public string Result { get; set; }
+		public string TokenizedPart { get; set; }
+	}
+
 	[TestFixture]
     public class StringLiteralTokenTest{
-		[TestCase("\"normal string\"", 0, ExpectedResult = "\"normal string\"", Description = "Basic scenario")]
-		[TestCase("  \"normal string\"", 0, ExpectedResult = "  \"normal string\"", Description = "Leading white space")]
-		[TestCase("  \"normal string\"", 2, ExpectedResult = "\"normal string\"")]
-		[TestCase("\"normal string\" + 1", 0, ExpectedResult = "\"normal string\"", Description = "Trailing symbols")]
-		[TestCase(" + \"normal string\" + 1", 0, ExpectedResult = null, Description = "Leading symbols")]
-		[TestCase(" + \"normal string\" + 1", 3, ExpectedResult = "\"normal string\"", Description = "Leading symbols")]
-		[TestCase("\"normal\\\tstring\" + 1", 0, ExpectedResult = "\"normal\\\tstring\"", Description = "Escape")]
-		[TestCase("\"normal\\nstring\" + 1", 0, ExpectedResult = "\"normal\\nstring\"", Description = "Escape")]
-		[TestCase("", 0, ExpectedResult = null, Description = "Empty string")]
-		[TestCase("abc", 0, ExpectedResult = null, Description = "No string found")]
-		[TestCase("\"abc\" + \"xxx", 0, ExpectedResult = "\"abc\"", Description = "invalid expression, but the first string should be tokenized")]
-		public string DoubleQuoteStringLiteralTokenTest(string text, int start) {
-			StringLiteralToken token = new DoubleQuoteStringLiteralToken();
+		static IEnumerable<Scenario> DoubleQuoteScenarios() {
+			return new Scenario[] {
+				//Basic scenario
+				new Scenario("\"normal string\"", 0,"\"normal string\"", "normal string" ),
+				new Scenario("  \"normal string\"", 2,"\"normal string\"", "normal string" ),
+				// Leading white space
+				new Scenario("  \"normal string\"", 0,"  \"normal string\"" , "normal string" ),
+				// Trailing symbols
+				new Scenario("\"normal string\" + 1", 0,"\"normal string\"" , "normal string" ),
+				// Leading symbols
+				new Scenario(" + \"normal string\" + 1", 0,null , null),
+				new Scenario(" + \"normal string\" + 1", 3,"\"normal string\"" , "normal string" ),
+				// Escape
+				new Scenario("\"normal\\tstring\" + 1", 0,"\"normal\\tstring\"" , "normal\tstring" ),
+				new Scenario("\"normal\\nstring\" + 1", 0,"\"normal\\nstring\"" , "normal\nstring" ),
+				new Scenario("\"normal\\\"string\" + 1", 0,"\"normal\\\"string\"", "normal\"string" ),
+
+				// Mixing single quotes
+				new Scenario("\"normal 'big' string\"", 0,"\"normal 'big' string\"", "normal 'big' string" ),
+				// Mixing both single and double quote
+				new Scenario("\"normal\\\"'test'string\" + 1", 0,"\"normal\\\"'test'string\"" , "normal\"'test'string" ),
+				// Empty string
+				new Scenario("", 0,null , null),
+				// No string found
+				new Scenario("abc", 0,null , null),
+				// invalid expression, but the first string should be tokenized
+				new Scenario("\"abc\" + \"xxx", 0,"\"abc\"" , "abc"),
+			};
+		}
+
+		static IEnumerable<Scenario> SingleQuoteScenarios() {
+			return new Scenario[] {
+				//Basic scenario
+				new Scenario("  'normal string'", 2,"'normal string'", "normal string"),
+				new Scenario("'normal string'", 0,"'normal string'","normal string"),
+				// Leading white space
+				new Scenario("  'normal string'", 0,"  'normal string'","normal string"),
+				// Trailing symbols
+				new Scenario("'normal string' + 1", 0,"'normal string'","normal string"),
+				// Leading symbols
+				new Scenario(" + 'normal string' + 1", 0,null,null),
+				new Scenario(" + 'normal string' + 1", 3,"'normal string'","normal string"),
+				// Escape
+				new Scenario("'normal\\tstring' + 1", 0,"'normal\\tstring'","normal\tstring"),
+				new Scenario("'normal\\nstring' + 1", 0,"'normal\\nstring'","normal\nstring"),
+
+				// Mixing double quotes
+				new Scenario("'normal \"big\" string'", 0,"'normal \"big\" string'" ,"normal \"big\" string"),
+				// Mixing both single and double quote
+				new Scenario("'normal\"\\'test\\'string' + 1", 0,"'normal\"\\'test\\'string'" ,"normal\"'test'string"),
+				// Empty string
+				new Scenario("", 0,null ,null),
+				// No string found
+				new Scenario("abc", 0,null ,null),
+				// invalid expression, but the first string should be tokenized
+				new Scenario("'abc' + 'xxx", 0,"'abc'" ,"abc"),
+			};
+		}
+
+		static IEnumerable<TestCaseData> GetTokenizationTestCases() {
+			List<TestCaseData> list = new List<TestCaseData>();
+			foreach (var item in DoubleQuoteScenarios()) {
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(DoubleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.TokenizedPart });
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(SingleDoubleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.TokenizedPart });
+			}
+			foreach (var item in SingleQuoteScenarios()) {
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(SingleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.TokenizedPart });
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(SingleDoubleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.TokenizedPart });
+			}
+			return list;
+		}
+		static IEnumerable<TestCaseData> GetEvalTestCases() {
+			List<TestCaseData> list = new List<TestCaseData>();
+			foreach (var item in DoubleQuoteScenarios()) {
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(DoubleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.Result });
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(SingleDoubleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.Result });
+			}
+			foreach (var item in SingleQuoteScenarios()) {
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(SingleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.Result });
+				list.Add(new TestCaseData(item.Expression, item.StartingIndex, typeof(SingleDoubleQuoteStringLiteralToken).AssemblyQualifiedName) { ExpectedResult = item.Result });
+			}
+			return list;
+		}
+
+
+		[TestCaseSource(nameof(GetTokenizationTestCases))]
+		public string StringLiteralTokenizationTest(string text, int start, string className) {
+			IToken token = (IToken)Activator.CreateInstance(Type.GetType(className));
 			int next;
 			if (token.Match(text, start, out next)) {
 				return text.Substring(start, next - start);
@@ -32,50 +120,9 @@ namespace Albatross.Expression.Test
 			}
 		}
 
-		[TestCase("'normal string'", 0, ExpectedResult = "'normal string'", Description = "Basic scenario")]
-		[TestCase("  'normal string'", 0, ExpectedResult = "  'normal string'", Description = "Leading white space")]
-		[TestCase("  'normal string'", 2, ExpectedResult = "'normal string'")]
-		[TestCase("'normal string' + 1", 0, ExpectedResult = "'normal string'", Description = "Trailing symbols")]
-		[TestCase(" + 'normal string' + 1", 0, ExpectedResult = null, Description = "Leading symbols")]
-		[TestCase(" + 'normal string' + 1", 3, ExpectedResult = "'normal string'", Description = "Leading symbols")]
-		[TestCase("'normal\\\tstring' + 1", 0, ExpectedResult = "'normal\\\tstring'", Description = "Escape")]
-		[TestCase("'normal\\nstring' + 1", 0, ExpectedResult = "'normal\\nstring'", Description = "Escape")]
-		public string SingleQuoteStringLiteralTokenTest(string text, int start) {
-			StringLiteralToken token = new SingleQuoteStringLiteralToken();
-			int next;
-			if (token.Match(text, start, out next)) {
-				return text.Substring(start, next - start);
-			} else {
-				return null;
-			}
-		}
-
-		[TestCase("\"normal string\"", 0, ExpectedResult = "normal string", Description = "Basic scenario")]
-		[TestCase("  \"normal string\"", 0, ExpectedResult = "normal string", Description = "Leading white space")]
-		[TestCase("  \"normal string\"", 2, ExpectedResult = "normal string")]
-		[TestCase("\"normal string\" + 1", 0, ExpectedResult = "normal string", Description = "Trailing symbols")]
-		[TestCase(" + \"normal string\" + 1", 0, ExpectedResult = null, Description = "Leading symbols")]
-		[TestCase(" + \"normal string\" + 1", 3, ExpectedResult = "normal string", Description = "Leading symbols")]
-		[TestCase("\"normal\\nstring\" + 1", 0, ExpectedResult = "normal\nstring", Description = "Escape")]
-		public object DoubleQuoteStringLiteralEval(string text, int start) {
-			StringLiteralToken token = new DoubleQuoteStringLiteralToken();
-			int next;
-			if (token.Match(text, start, out next)) {
-				return token.EvalValue(null);
-			} else {
-				return null;
-			}
-		}
-
-		[TestCase("\'normal string\'", 0, ExpectedResult = "normal string", Description = "Basic scenario")]
-		[TestCase("  \'normal string\'", 0, ExpectedResult = "normal string", Description = "Leading white space")]
-		[TestCase("  \'normal string\'", 2, ExpectedResult = "normal string")]
-		[TestCase("\'normal string\' + 1", 0, ExpectedResult = "normal string", Description = "Trailing symbols")]
-		[TestCase(" + \'normal string\' + 1", 0, ExpectedResult = null, Description = "Leading symbols")]
-		[TestCase(" + 'normal string' + 1", 3, ExpectedResult = "normal string", Description = "Leading symbols")]
-		[TestCase("\'normal\\nstring\' + 1", 0, ExpectedResult = "normal\nstring", Description = "Escape")]
-		public object SingleQuoteStringLiteralEval(string text, int start) {
-			StringLiteralToken token = new SingleQuoteStringLiteralToken();
+		[TestCaseSource(nameof(GetEvalTestCases))]
+		public object StringLiteralEvalTest(string text, int start, string className) {
+			IToken token = (IToken)Activator.CreateInstance(Type.GetType(className));
 			int next;
 			if (token.Match(text, start, out next)) {
 				return token.EvalValue(null);
@@ -85,6 +132,8 @@ namespace Albatross.Expression.Test
 		}
 
 		[TestCase("this string is missing the opening quote\"", 0, ExpectedResult =false)]
+		[TestCase("'this string is missing the opening quote\"", 0, ExpectedResult = false)]
+
 		[TestCase("+ \"test\"", 0, ExpectedResult = false)]
 		[TestCase("x \"test\"", 0, ExpectedResult = false)]
 		[TestCase("( \"test\"", 0, ExpectedResult = false)]
@@ -97,6 +146,7 @@ namespace Albatross.Expression.Test
 		}
 
 		[TestCase("\"this string is missing the closing quote", 0)]
+		[TestCase("\"this string is missing the closing quote'", 0)]
 		public void CrashTest(string text, int start) {
 			TestDelegate testDelegate = new TestDelegate(() => {
 				StringLiteralToken token = new DoubleQuoteStringLiteralToken();

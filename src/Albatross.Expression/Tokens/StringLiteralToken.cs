@@ -15,9 +15,9 @@ namespace Albatross.Expression.Tokens {
 		public abstract char Boundary { get; }
 		public abstract IToken Clone();
 
-		public string Name { get; private set; }
+		public string Name { get; protected set; }
 		public string Group { get { return "Literal"; } }
-		public bool Match(string expression, int start, out int next) {
+		public virtual bool Match(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {
 				while (start < expression.Length && char.IsWhiteSpace(expression[start])) {

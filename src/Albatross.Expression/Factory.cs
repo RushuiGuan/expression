@@ -8,21 +8,21 @@ using System.Text;
 namespace Albatross.Expression {
 	public class Factory : IEnumerable<IToken> {
 
-		IStringLiteralToken stringLiteralToken = new DoubleQuoteStringLiteralToken();
+		IStringLiteralToken defaultStringLiteralToken = new SingleDoubleQuoteStringLiteralToken();
 		public Factory DefaultStringLiteralToken(IStringLiteralToken token) {
 			if (token == null) {
 				throw new ArgumentNullException();
 			}
-			stringLiteralToken = token;
+			defaultStringLiteralToken = token;
 			return this;
 		}
 
-		IVariableToken variableToken = new VariableToken();
+		IVariableToken defaultVariableToken = new VariableToken();
 		public Factory DefaultVariableToken(IVariableToken variableToken) {
 			if (variableToken == null) {
 				throw new ArgumentNullException();
 			}
-			this.variableToken = variableToken;
+			this.defaultVariableToken = variableToken;
 			return this;
 		}
 
@@ -44,7 +44,7 @@ namespace Albatross.Expression {
 			return this;
 		}
 		public IParser Create(IStringLiteralToken stringLiteralToken = null, IVariableToken variableToken = null) {
-			return new Parser(operations.Values, variableToken ?? this.variableToken, stringLiteralToken?? this.stringLiteralToken);
+			return new Parser(operations.Values, variableToken ?? this.defaultVariableToken, stringLiteralToken?? this.defaultStringLiteralToken);
 		}
 
 		public IEnumerator<IToken> GetEnumerator() {

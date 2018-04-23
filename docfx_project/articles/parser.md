@@ -119,3 +119,26 @@ With a tree built, the evaluation process is a simple recursive call to the [Eva
 
 ## Regenerate the expression
 Using the same [IToken](xref:Albatross.Expression.Tokens.IToken) object, the parser can regenerate the original expression or convert it to an expression of different format by calling the [EvalText](xref:Albatross.Expression.Tokens.IToken.EvalText(System.String)) method.  Please reference the [expression generation](generation.md) page on how to convert expressions to a different format.  The default EvalText method will produce an expression string with equal functionality as the original with consistent spacing and mininum usage of parantheses.  For example: if the original expression is `1+(2*3)`, the regenerated expression will be: `1 + 2 * 3`.
+
+## Use of variable in an expression
+When evaluating expressions with variables, the [EvalValue](xref:Albatross.Expression.Tokens.IToken.EvalValue(System.Func{System.String,System.Object})) has a second parameter of type `Func<object, string>` that can be used to return the value of a variable. Here is an example:
+```csharp
+[TestCase("a + b * c", ExpectedResult = 7)]
+[TestCase("a + b + c", ExpectedResult =6)]
+public object Run(string expression) {
+	Func<string, object> func = name => {
+		switch (name.ToLower()) {
+			case "a":
+				return 1;
+			case "b":
+				return 2;
+			case "c":
+				return 3;
+			default:
+				return null;
+		}
+	};
+	IParser parser = Factory.Instance.Create();
+	return parser.Compile(expression).EvalValue(func);
+}	
+```

@@ -8,6 +8,9 @@ The api tokenizes the expression text and create a tree model from the tokens.  
 
 ## Release
 * Current
+	* Breaking Changes
+		* The Add method of the [IParser](xref:Albatross.Expression.IParser) interface has been removed.  Adding new operations to the instance of [Parser](xref:Albatross.Expression.Parser) class will alter its state.  This change will make the [Parser](xref:Albatross.Expression.Parser) class immutable.
+		* The Compile method of the [IParser](xref:Albatross.Expression.IParser) interface has been removed.  It is replaced by a static [IParser](xref:Albatross.Expression.IParser) interface extension method [Extensions](xref:Albatross.Expression.Extensions.Compile(Albatross.Expression.IParser,System.String)).  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn't introduce any functionality therefore it doesn't belong in the interface.
     * New StringTokenLiteral - [SingleDoubleQuoteStringLiteralToken](xref:Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken) class has been created to accept single quote or double quote strings.
     * New ExecutionContextFactory - [ReflectionExecutionContextFactory<T>](xref:Albatross.Expression.ReflectionExecutionContextFactory`1) class has been created to supply variable value from the public instance properties of the input object (of class T) using reflection.  The execution context created by this factory is always case sensitive.
 * 2.02

@@ -68,6 +68,11 @@
 <p>The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and use it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.</p>
 <h2 id="release">Release</h2>
 <ul>
+<li>Current<ul>
+<li>New StringTokenLiteral - <a class="xref" href="api/Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.html">SingleDoubleQuoteStringLiteralToken</a> class has been created to accept single quote or double quote strings.</li>
+<li>New ExecutionContextFactory - <a class="xref" href="api/Albatross.Expression.ReflectionExecutionContextFactory-1.html">ReflectionExecutionContextFactory<t></t></a> class has been created to supply variable value from the public instance properties of the input object (of class T) using reflection.  The execution context created by this factory is always case sensitive.</li>
+</ul>
+</li>
 <li>2.02<ul>
 <li>Breaking Changes<ul>
 <li>Mininum target framework has been changed from net40 to net45.</li>

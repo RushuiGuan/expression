@@ -220,7 +220,27 @@
 <p>With a tree built, the evaluation process is a simple recursive call to the <a class="xref" href="../api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalValue_System_Func_System_String_System_Object__">EvalValue</a> function of the <a class="xref" href="../api/Albatross.Expression.Tokens.IToken.html">IToken</a> interface.</p>
 <h2 id="regenerate-the-expression">Regenerate the expression</h2>
 <p>Using the same <a class="xref" href="../api/Albatross.Expression.Tokens.IToken.html">IToken</a> object, the parser can regenerate the original expression or convert it to an expression of different format by calling the <a class="xref" href="../api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalText_System_String_">EvalText</a> method.  Please reference the <a href="generation.html">expression generation</a> page on how to convert expressions to a different format.  The default EvalText method will produce an expression string with equal functionality as the original with consistent spacing and mininum usage of parantheses.  For example: if the original expression is <code>1+(2*3)</code>, the regenerated expression will be: <code>1 + 2 * 3</code>.</p>
-</article>
+<h2 id="use-of-variable-in-an-expression">Use of variable in an expression</h2>
+<p>When evaluating expressions with variables, the <a class="xref" href="../api/Albatross.Expression.Tokens.IToken.html#Albatross_Expression_Tokens_IToken_EvalValue_System_Func_System_String_System_Object__">EvalValue</a> has a second parameter of type <code>Func&lt;object, string&gt;</code> that can be used to return the value of a variable. Here is an example:</p>
+<pre><code class="lang-csharp">[TestCase(&quot;a + b * c&quot;, ExpectedResult = 7)]
+[TestCase(&quot;a + b + c&quot;, ExpectedResult =6)]
+public object Run(string expression) {
+    Func&lt;string, object&gt; func = name =&gt; {
+        switch (name.ToLower()) {
+            case &quot;a&quot;:
+                return 1;
+            case &quot;b&quot;:
+                return 2;
+            case &quot;c&quot;:
+                return 3;
+            default:
+                return null;
+        }
+    };
+    IParser parser = Factory.Instance.Create();
+    return parser.Compile(expression).EvalValue(func);
+}   
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

@@ -12,6 +12,9 @@ using System.Xml;
 using Albatross.Expression.Operations;
 
 namespace Albatross.Expression {
+	/// <summary>
+	/// An immutable implementation of the <see cref="Albatross.Expression.IParser"/> interface.
+	/// </summary>
 	public class Parser : IParser {
 		public IToken VariableToken() { return variableToken.Clone(); }
 		public IStringLiteralToken StringLiteralToken() { return (IStringLiteralToken)stringLiteralToken.Clone(); }
@@ -35,7 +38,7 @@ namespace Albatross.Expression {
 			}
 		}
 
-		public IParser Add(IToken token) {
+		IParser Add(IToken token) {
 			if (token is PrefixOperationToken) {
 				prefixOperationTokens.Add((PrefixOperationToken)token);
 			} else if (token is InfixOperationToken) {
@@ -200,11 +203,6 @@ namespace Albatross.Expression {
 		
 		public string EvalText(IToken token, string format) {
 			return token.EvalText(format);
-		}
-		public IToken Compile(string expression) {
-			Queue<IToken> queue = Tokenize(expression);
-			Stack<IToken> stack = BuildStack(queue);
-			return CreateTree(stack);
 		}
 		public static Stack<T> Reverse<T>(Stack<T> src) {
 			Stack<T> dst = new Stack<T>();

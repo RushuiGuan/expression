@@ -6,13 +6,14 @@ using System.Text;
 using Albatross.Expression.Tokens;
 
 namespace Albatross.Expression {
+	/// <summary>
+	/// The interface contains functionalities to process an expression string.
+	/// </summary>
 	public interface IParser {
 		Queue<IToken> Tokenize(string expression);
 		Stack<IToken> BuildStack(Queue<IToken> queue);
 		IToken CreateTree(Stack<IToken> postfix);
 		object Eval(IToken token, Func<string, object> context);
-		IParser Add(IToken operation);
-		IToken Compile(string expression);
 		
 		IToken VariableToken();
 		IStringLiteralToken StringLiteralToken();

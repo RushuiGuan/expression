@@ -967,6 +967,19 @@ references:
   commentId: T:Albatross.Expression.Extensions
   fullName: Albatross.Expression.Extensions
   nameWithType: Extensions
+- uid: Albatross.Expression.Extensions.Compile(Albatross.Expression.IParser,System.String)
+  name: Compile(IParser, String)
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Compile_Albatross_Expression_IParser_System_String_
+  commentId: M:Albatross.Expression.Extensions.Compile(Albatross.Expression.IParser,System.String)
+  fullName: Albatross.Expression.Extensions.Compile(Albatross.Expression.IParser, System.String)
+  nameWithType: Extensions.Compile(IParser, String)
+- uid: Albatross.Expression.Extensions.Compile*
+  name: Compile
+  href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Compile_
+  commentId: Overload:Albatross.Expression.Extensions.Compile
+  isSpec: "True"
+  fullName: Albatross.Expression.Extensions.Compile
+  nameWithType: Extensions.Compile
 - uid: Albatross.Expression.Extensions.ConvertToBoolean(System.Object)
   name: ConvertToBoolean(Object)
   href: api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_ConvertToBoolean_System_Object_
@@ -1490,19 +1503,6 @@ references:
   commentId: T:Albatross.Expression.IParser
   fullName: Albatross.Expression.IParser
   nameWithType: IParser
-- uid: Albatross.Expression.IParser.Add(Albatross.Expression.Tokens.IToken)
-  name: Add(IToken)
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Add_Albatross_Expression_Tokens_IToken_
-  commentId: M:Albatross.Expression.IParser.Add(Albatross.Expression.Tokens.IToken)
-  fullName: Albatross.Expression.IParser.Add(Albatross.Expression.Tokens.IToken)
-  nameWithType: IParser.Add(IToken)
-- uid: Albatross.Expression.IParser.Add*
-  name: Add
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Add_
-  commentId: Overload:Albatross.Expression.IParser.Add
-  isSpec: "True"
-  fullName: Albatross.Expression.IParser.Add
-  nameWithType: IParser.Add
 - uid: Albatross.Expression.IParser.BuildStack(System.Collections.Generic.Queue{Albatross.Expression.Tokens.IToken})
   name: BuildStack(Queue<IToken>)
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_BuildStack_System_Collections_Generic_Queue_Albatross_Expression_Tokens_IToken__
@@ -1519,19 +1519,6 @@ references:
   isSpec: "True"
   fullName: Albatross.Expression.IParser.BuildStack
   nameWithType: IParser.BuildStack
-- uid: Albatross.Expression.IParser.Compile(System.String)
-  name: Compile(String)
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Compile_System_String_
-  commentId: M:Albatross.Expression.IParser.Compile(System.String)
-  fullName: Albatross.Expression.IParser.Compile(System.String)
-  nameWithType: IParser.Compile(String)
-- uid: Albatross.Expression.IParser.Compile*
-  name: Compile
-  href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_Compile_
-  commentId: Overload:Albatross.Expression.IParser.Compile
-  isSpec: "True"
-  fullName: Albatross.Expression.IParser.Compile
-  nameWithType: IParser.Compile
 - uid: Albatross.Expression.IParser.CreateTree(System.Collections.Generic.Stack{Albatross.Expression.Tokens.IToken})
   name: CreateTree(Stack<IToken>)
   href: api/Albatross.Expression.IParser.html#Albatross_Expression_IParser_CreateTree_System_Collections_Generic_Stack_Albatross_Expression_Tokens_IToken__
@@ -4763,19 +4750,6 @@ references:
   isSpec: "True"
   fullName: Albatross.Expression.Parser.Parser
   nameWithType: Parser.Parser
-- uid: Albatross.Expression.Parser.Add(Albatross.Expression.Tokens.IToken)
-  name: Add(IToken)
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Add_Albatross_Expression_Tokens_IToken_
-  commentId: M:Albatross.Expression.Parser.Add(Albatross.Expression.Tokens.IToken)
-  fullName: Albatross.Expression.Parser.Add(Albatross.Expression.Tokens.IToken)
-  nameWithType: Parser.Add(IToken)
-- uid: Albatross.Expression.Parser.Add*
-  name: Add
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Add_
-  commentId: Overload:Albatross.Expression.Parser.Add
-  isSpec: "True"
-  fullName: Albatross.Expression.Parser.Add
-  nameWithType: Parser.Add
 - uid: Albatross.Expression.Parser.BuildStack(System.Collections.Generic.Queue{Albatross.Expression.Tokens.IToken})
   name: BuildStack(Queue<IToken>)
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_BuildStack_System_Collections_Generic_Queue_Albatross_Expression_Tokens_IToken__
@@ -4792,19 +4766,6 @@ references:
   isSpec: "True"
   fullName: Albatross.Expression.Parser.BuildStack
   nameWithType: Parser.BuildStack
-- uid: Albatross.Expression.Parser.Compile(System.String)
-  name: Compile(String)
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Compile_System_String_
-  commentId: M:Albatross.Expression.Parser.Compile(System.String)
-  fullName: Albatross.Expression.Parser.Compile(System.String)
-  nameWithType: Parser.Compile(String)
-- uid: Albatross.Expression.Parser.Compile*
-  name: Compile
-  href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Compile_
-  commentId: Overload:Albatross.Expression.Parser.Compile
-  isSpec: "True"
-  fullName: Albatross.Expression.Parser.Compile
-  nameWithType: Parser.Compile
 - uid: Albatross.Expression.Parser.CreateTree(System.Collections.Generic.Stack{Albatross.Expression.Tokens.IToken})
   name: CreateTree(Stack<IToken>)
   href: api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_CreateTree_System_Collections_Generic_Stack_Albatross_Expression_Tokens_IToken__

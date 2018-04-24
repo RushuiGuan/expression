@@ -6,6 +6,17 @@ using System.Reflection;
 using System.Text;
 
 namespace Albatross.Expression {
+	/// <summary>
+	/// <para>
+	/// The default parser factory class.  This class can be accessed using its lazy static instance <see cref="Albatross.Expression.Factory.Instance"/> or by creating a new instance.
+	/// The factory class by default will register any class with the <see cref="Albatross.Expression.ParserOperationAttribute"/> attribute within this assembly.  Additional assemblies
+	/// can be registered using the <see cref="Albatross.Expression.Factory.Register(Assembly)"/> function.  
+	/// </para>
+	/// 
+	/// <para>By default, the factory will use <see cref="Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken"/> for string literal token and 
+	/// <see cref="Albatross.Expression.Tokens.VariableToken"/> for variable token.  These defaults can be changed for the factory instance object.</para>
+	/// 
+	/// </summary>
 	public class Factory : IEnumerable<IToken> {
 
 		IStringLiteralToken defaultStringLiteralToken = new SingleDoubleQuoteStringLiteralToken();

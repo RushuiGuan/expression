@@ -71,7 +71,7 @@
 <li>Current<ul>
 <li>Breaking Changes<ul>
 <li>The Add method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  Adding new operations to the instance of <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class will alter its state.  This change will make the <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class immutable.</li>
-<li>The Compile method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  It is replaced by a extension method - <a href="xref:Albatross.Expression.Extensions.Compile(Albatross.Expression.IParser,System.String)">Compile</a>.  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn&#39;t introduce any functionality therefore it doesn&#39;t belong in the interface.</li>
+<li>The Compile method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  It is replaced by a extension method - <a class="xref" href="api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Compile_Albatross_Expression_IParser_System_String_">Compile</a>.  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn&#39;t introduce any functionality therefore it doesn&#39;t belong in the interface.</li>
 </ul>
 </li>
 <li>New StringTokenLiteral - <a class="xref" href="api/Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.html">SingleDoubleQuoteStringLiteralToken</a> class has been created to accept single quote or double quote strings.</li>

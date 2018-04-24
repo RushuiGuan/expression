@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.ContextType.html",
-          "hash": "uVglusjF4QQ2WKyMheWWbg=="
+          "hash": "ZvgTP4JYCm7NCKSjyJD1Ew=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.ContextValue.html",
-          "hash": "sTxOs3mO+idS6a7f7IpGVw=="
+          "hash": "wFuF5uIuZWKe0Q966s7Pug=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.DataRowExecutionContextFactory.html",
-          "hash": "e94ntNVTcX7evKEJldVl4g=="
+          "hash": "EhHm5XVLE/Ilcyf/WJKDtw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.DictionaryExecutionContextFactory.html",
-          "hash": "T/QeKApl+QlnmE6c+ACQ+A=="
+          "hash": "M2nAA1nxJmx8o48MROBp7w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Exceptions.CircularReferenceException.html",
-          "hash": "1oHOx+FJuemkl0oM1+mqTQ=="
+          "hash": "BBKTAEdaEUTLGRxdxjBVSA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Exceptions.MissingVariableException.html",
-          "hash": "5n/+XrDB4phoeOW7V0vBdA=="
+          "hash": "VhZZp6cQaMCaBu/CaMAunw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Exceptions.OperandException.html",
-          "hash": "8HFykxalZKr+ekXIoLF41Q=="
+          "hash": "G7o0pLi4QpGETOGwagDzqA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Exceptions.StackException.html",
-          "hash": "hVQkKdl8me72FQsmx3kXmQ=="
+          "hash": "Cx6akDvHbSb6tgkU0Y6ZVw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Exceptions.TokenParsingException.html",
-          "hash": "ommjHqn0hRIf1VaKcnsa0g=="
+          "hash": "q1pjA4ysz+XS5Iewz4hKrQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -117,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Exceptions.UnexpectedTypeException.html",
-          "hash": "lfVRD2QCqa27q4KKH5PruQ=="
+          "hash": "dYr8KlSkdh6HZpQhW5Wv3g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -132,7 +132,7 @@
           "hash": "LSkb+yC9B0ZqLLgAcL2gIA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.ExecutionContext-1.html",
-          "hash": "RKO7aHZ68BB3tgFQjsIBdg=="
+          "hash": "8KzTuwfzkPPoUedpNBBBfw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.ExecutionContextFactory.html",
-          "hash": "b7YJ/rmeL0dDVHQ03+Fwgg=="
+          "hash": "hpEiPLmzelYYvBjSdrc1Ug=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -165,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.ExpressionBuilder.html",
-          "hash": "JVihbigpfD3XPCfdvkr91A=="
+          "hash": "WGcvtAkvSLwdqQBlKYCf7w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Extensions.html",
-          "hash": "fhmQgAv/2u4Qw+vS593ZpQ=="
+          "hash": "aw2hp7cGdZEd4i2Ad0NmQw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -189,10 +189,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Factory.html",
-          "hash": "EI2/Fgd94phk6tBSuOSxIA=="
+          "hash": "df6dDv3IYZQpD06MFTtSEg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -201,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.IExecutionContext-1.html",
-          "hash": "3FhLdOaAM8JKspfeGS5VEw=="
+          "hash": "TJrW6b0/jkGginMuXu+/nA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -213,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.IExecutionContextFactory-1.html",
-          "hash": "8j37Ih+G6PRep2EyNeAOPA=="
+          "hash": "c57xcrRDQUMKFmAxMxpM0g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -225,10 +225,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.IParser.html",
-          "hash": "S5qbSTWvOzHTZCRUFCXxZA=="
+          "hash": "SMfSYzInHaME7WbZpL8xpQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -237,10 +237,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.And.html",
-          "hash": "lnshXHmR6d7/zV2IRNIHfw=="
+          "hash": "BrnSr+QNCHvB7x/rXFGOIg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -249,10 +249,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Array.html",
-          "hash": "0PoDon/aO6E1mBFQ3TlXIQ=="
+          "hash": "f2PwGEQIYPZl4jzakaUtoA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -261,10 +261,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Avg.html",
-          "hash": "SIzzLEHS+hgCZ4MgPhnKKA=="
+          "hash": "iyI7U+XsIPKM1EM+3jVhdA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -273,10 +273,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Coalesce.html",
-          "hash": "70bmQbxCiScbQ2tnIaBW5g=="
+          "hash": "Jcg4toWdp9FhbLCaNPgJqA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -285,10 +285,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.ComparisonInfixOperation.html",
-          "hash": "kzcLooPHAHfDgQyJ5PgGHg=="
+          "hash": "cqkZxQbOzIncYFSM9zOrOg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -297,10 +297,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.CreateDate.html",
-          "hash": "S5wnWh5sMDs8VpNXbrhaKw=="
+          "hash": "kdTuN1ILziCYa4QwDEsW/Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -309,10 +309,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.CurrentApp.html",
-          "hash": "lSKMv2QUislEJYmbNUuwzw=="
+          "hash": "D0kUbGyhtmJYjKzC/TehMQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -321,10 +321,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.CurrentMachine.html",
-          "hash": "XQ4z64KnQlA0cFsAnRwKKg=="
+          "hash": "SKVaGv7uatZClf4FzVJmCA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -333,10 +333,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.CurrentUser.html",
-          "hash": "7V/ODtSCL26PGwv2d0cOag=="
+          "hash": "vr02ZkbAMkrgVKFw/pAf+w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -345,10 +345,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Date.html",
-          "hash": "0HgUwbcELaqLFF6b71/d2A=="
+          "hash": "RrlDn1D2pvBOiPwhsekMpw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -357,10 +357,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Divide.html",
-          "hash": "9svZowHWCqeto/ywtAwPtw=="
+          "hash": "m6deTI4dK5TvTwl/xEAzWA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -369,10 +369,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Equal.html",
-          "hash": "y677P4+5w859YglApmURhA=="
+          "hash": "t7q1CjaMuboxs1kQCGIS1w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -381,10 +381,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Format.html",
-          "hash": "GR3iXtBYBqDpfKXUQ11yrw=="
+          "hash": "XYqCvrp84SXx8+qrUwdycA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -393,10 +393,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.GreaterEqual.html",
-          "hash": "41diaweNAwiEP4buOs7e2A=="
+          "hash": "ksBkBTD7ISXdY5CrSN0DUw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -405,10 +405,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.GreaterThan.html",
-          "hash": "KURbqQdqbcKIi1Skwewdng=="
+          "hash": "T0Q6E1v0Ht2dYRvcyhyAGw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -417,10 +417,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.If.html",
-          "hash": "i0X4svt2kq9mRCaI3Q+0Ew=="
+          "hash": "eB3kSY9Ou7+44rqzy+UuAA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -429,10 +429,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.IsBlank.html",
-          "hash": "v78zsXTPnWB8C+imly6/0A=="
+          "hash": "YmKfwJoaXbUE+LL8iC10RA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -441,10 +441,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Left.html",
-          "hash": "VkioV0JRzbKR3G59YFiW3w=="
+          "hash": "V0EHOc1+36IaRpblpambcQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -453,10 +453,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Len.html",
-          "hash": "kIXhI1PCKi3okAlyI5KBqQ=="
+          "hash": "9Xi5fBUU24oCWKxd+7MvMg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -465,10 +465,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.LessEqual.html",
-          "hash": "5xrJ++mv6r/IGQIb6YyvUA=="
+          "hash": "37wDbFYlGTZDZa7Xe555rA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -477,10 +477,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.LessThan.html",
-          "hash": "VqmKGC+slHPeMSdK4uAnPg=="
+          "hash": "XiaKd7lzjwdMKimDFTXJmg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -489,10 +489,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Max.html",
-          "hash": "ugM6OjYUbxXMIWoxkarwkg=="
+          "hash": "x73PasJSfJweQ8vLj6LnLg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -501,10 +501,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Min.html",
-          "hash": "SdHEdddBuaJ9vo6gnhB7PA=="
+          "hash": "qBZYj7mdGOyxHRlmWFq59Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -513,10 +513,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Minus.html",
-          "hash": "SoX6MJ/ideihkeLwWVqJQA=="
+          "hash": "vhLj/8rkoAh1n1xS93NFKA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -525,10 +525,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Mod.html",
-          "hash": "fQiLEFMkDyMtRmOJ+p53Qw=="
+          "hash": "pUWMMrPNoMQsK11TtdqTQA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -537,10 +537,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Month.html",
-          "hash": "UNeRtQj5Pr2czsoB1CxiYQ=="
+          "hash": "6cgIHFr2xdKRyTAdR4TY8Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -549,10 +549,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.MonthName.html",
-          "hash": "G1TKMrEkpy2PlZnbCEnN6w=="
+          "hash": "LpevVG+Z+FflmeGLhAEGrg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -561,10 +561,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Multiply.html",
-          "hash": "TnUHvO7r7to9cLrP4/QaJw=="
+          "hash": "HHEIEWVQll1sol1TrshgQg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -573,10 +573,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Negative.html",
-          "hash": "5wn/e5GQFoyMW2ctC7wE1A=="
+          "hash": "5gpwZ2PzApJVCDGaKjzBjg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -585,10 +585,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Not.html",
-          "hash": "PwB1R1BLekpYJ9vSDoLrHA=="
+          "hash": "HofVY1ilNA70cyOoP0yp7w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -597,10 +597,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.NotEqual.html",
-          "hash": "u6y+ouF4oTV/bGk8GVqQBA=="
+          "hash": "2Ks2bPqNrlRkzngtBbTxuw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -609,10 +609,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Now.html",
-          "hash": "xgN2URDt3G5DfyRTvoWUpQ=="
+          "hash": "vm/nUNOt0wmpWVDpmWH9Ew=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -621,10 +621,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Or.html",
-          "hash": "ywMxewr9VuqqYJf9hBey5g=="
+          "hash": "Ron2nyGn7Us6fOOwzhb73w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -633,10 +633,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.PadLeft.html",
-          "hash": "7dqsa/jdZeDWkfBmfHpWUw=="
+          "hash": "TQrfBA1qWJFWLF3i7L+w/A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -645,10 +645,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.PadRight.html",
-          "hash": "EaqOCSAh0xrzSX5AtKq6zQ=="
+          "hash": "vsmVqjQnFErtfdFCWlF/Rg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -657,10 +657,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Pi.html",
-          "hash": "j1NalVsrx/PD9QmOk6sLqw=="
+          "hash": "89XcBUTVb22LYNGL2lqc+w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -669,10 +669,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Plus.html",
-          "hash": "NyTFeQR3GIZ//oQ85gai3A=="
+          "hash": "2aSZ4K7KyWqeUq39KMQ0Ug=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -681,10 +681,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Positive.html",
-          "hash": "D5vmCllV1vVvHTrsB5G8oQ=="
+          "hash": "oQ1tOdvIGzViS6rqYUdq5g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -693,10 +693,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Power.html",
-          "hash": "1CvA0fcBcdLFA1G6xVfS1A=="
+          "hash": "jxn5/bnEAaZj1pKdhCw16Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -705,10 +705,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Right.html",
-          "hash": "d2/hUiTu5c5cJKzAqppHuA=="
+          "hash": "LsIKn87wL3Q8EZXB6reYlQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -717,10 +717,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.ShortMonthName.html",
-          "hash": "K8lTpfbut6sy3tM1SXTu1w=="
+          "hash": "J4CIZg8rRhu3x0BJpI0PAQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -729,10 +729,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Text.html",
-          "hash": "fe4vmzCvE0VXfBevNV7oog=="
+          "hash": "+T0LdyUNBOGVXWZnaXMLCw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -741,10 +741,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Today.html",
-          "hash": "7Ur2oh1lJQlztmdxU1Nbmw=="
+          "hash": "aUkpOXwysCZRPqm69hef/w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -753,10 +753,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Operations.Year.html",
-          "hash": "L6EdVwzcIsNX9SBduAK95g=="
+          "hash": "Ac3uOVGhAzP2xF8PYEhoDQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -768,7 +768,7 @@
           "hash": "J8AvU/qXkZFB4+cBm47Q8w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -777,10 +777,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Parser.html",
-          "hash": "SkX3H4StKulGhWt00GbHMg=="
+          "hash": "BEVocLA1B/JbNev7RAaCEw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -789,10 +789,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.ParserOperationAttribute.html",
-          "hash": "J7LKtb/lqhAIRygQL33VnQ=="
+          "hash": "VrQXdHV0wkVDRSfjzzUV0Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -801,10 +801,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.ReflectionExecutionContextFactory-1.html",
-          "hash": "0FiZTicMmPLeAzlKZH8kog=="
+          "hash": "xoT4SUXcG1BGmsLMvxkwUA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -813,10 +813,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.AssignmentToken.html",
-          "hash": "LLGpxtTVK1jEUP4EIMK22g=="
+          "hash": "TOISzwL5D5esbmhvD80dsg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -825,10 +825,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.BooleanLiteralToken.html",
-          "hash": "WIjDGWsMKiyGxYJ9eaVE0A=="
+          "hash": "J+yeE8MCjK+OS8i46hXZlA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -837,10 +837,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.ControlToken.html",
-          "hash": "vdnhq2TXu4kMnnxMnt7cDA=="
+          "hash": "PmffKYvwl2HEFt+FdL9ohw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -849,10 +849,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html",
-          "hash": "tJpzHGZ3RmZNpfocEXzApQ=="
+          "hash": "OAV/R3NeCLBP9khn+DwCyA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -861,10 +861,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.IOperandToken.html",
-          "hash": "+3hv7RZMTNtQB3UpouyrCQ=="
+          "hash": "8hanttlZdjFwjaB3/NL8rA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -873,10 +873,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.IStringLiteralToken.html",
-          "hash": "r4dkm8wU0GEswm2xgUlmOA=="
+          "hash": "QIMv5qKQECH/s6/yiglpNQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -885,10 +885,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.IToken.html",
-          "hash": "woBaA9ML0VHy8K6BVRmptQ=="
+          "hash": "0Qrfs5vC3j+TjKvJk4lWsg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -897,10 +897,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.IVariableToken.html",
-          "hash": "FlFZjCf+qe4TVsR0ip3AbA=="
+          "hash": "hxfdPjb7DMiSxlVr3NeGOg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -909,10 +909,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.InfixOperationToken.html",
-          "hash": "KURLUBehmASTO53xrhwxDQ=="
+          "hash": "18sgsJQZAQMRBlROnma0sA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -921,10 +921,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.NumericLiteralToken.html",
-          "hash": "cdvzN7rkhPhfDkDlYdGkfQ=="
+          "hash": "qPbobpe+YsDkfvoGUPk/sg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -933,10 +933,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.PrefixOperationToken.html",
-          "hash": "+G/2fGaqFIp+bKNDo3dHqw=="
+          "hash": "4qimvnxEANCefiUoYUgmhw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -945,10 +945,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.html",
-          "hash": "bayrFtnUuHoNv60ZO0WbSg=="
+          "hash": "86HPbYS1hHUkq1EPRsQnGA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -957,10 +957,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html",
-          "hash": "uxTJ8McOAYyEMMld3llIxA=="
+          "hash": "RFjY2M1Tps5vRhFO6ben8g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -969,10 +969,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.StringLiteralToken.html",
-          "hash": "zBsJDoxL97TeJyncyCo53g=="
+          "hash": "tNM6zK1oLMgcwHf5t2zlaQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -981,10 +981,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.VariableToken.html",
-          "hash": "jdGQTKTDuLdN6Me0U81LFw=="
+          "hash": "SHIfuAo2vdulqeIF0x6asw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -993,10 +993,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.Tokens.html",
-          "hash": "211NIC3VMZnM7xsVhIfSZg=="
+          "hash": "lj1QsG4zyNENV64dTSxfYQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1005,10 +1005,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.TryGetValueDelegate-1.html",
-          "hash": "eyk3egEIurxNRthdI7JTvw=="
+          "hash": "oaccIIPR9gpWylGSUTBFVQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1017,10 +1017,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Albatross.Expression.html",
-          "hash": "sN16x1ypOPc+/huIL96mxA=="
+          "hash": "rW6PWA1SK608Nujw7tv1UA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1068,7 +1068,7 @@
           "hash": "CbsePTNPYDXWZ6vWK1VOpA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1116,7 +1116,7 @@
           "hash": "z2kApumEwO4tfRdCPCy2/A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1137,10 +1137,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "deiTaTRuCWdz+KVzbSVPrQ=="
+          "hash": "NZ0ou6FNAVmYr+UC0izuFw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1163,17 +1163,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

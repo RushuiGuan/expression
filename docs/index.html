@@ -69,6 +69,11 @@
 <h2 id="release">Release</h2>
 <ul>
 <li>Current<ul>
+<li>Breaking Changes<ul>
+<li>The Add method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  Adding new operations to the instance of <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class will alter its state.  This change will make the <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class immutable.</li>
+<li>The Compile method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  It is replaced by a static <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface extension method <a class="xref" href="api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Compile_Albatross_Expression_IParser_System_String_">Extensions</a>.  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn&#39;t introduce any functionality therefore it doesn&#39;t belong in the interface.</li>
+</ul>
+</li>
 <li>New StringTokenLiteral - <a class="xref" href="api/Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.html">SingleDoubleQuoteStringLiteralToken</a> class has been created to accept single quote or double quote strings.</li>
 <li>New ExecutionContextFactory - <a class="xref" href="api/Albatross.Expression.ReflectionExecutionContextFactory-1.html">ReflectionExecutionContextFactory<t></t></a> class has been created to supply variable value from the public instance properties of the input object (of class T) using reflection.  The execution context created by this factory is always case sensitive.</li>
 </ul>
@@ -119,7 +124,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/RushuiGuan/expression/blob/master/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/RushuiGuan/expression/blob/develop/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -7,6 +7,9 @@ Albatross.Expression api is created to process and evaluate text based expressio
 The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and use it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.
 
 ## Release
+* Current
+    * New StringTokenLiteral - [SingleDoubleQuoteStringLiteralToken](xref:Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken) class has been created to accept single quote or double quote strings.
+    * New ExecutionContextFactory - [ReflectionExecutionContextFactory<T>](xref:Albatross.Expression.ReflectionExecutionContextFactory`1) class has been created to supply variable value from the public instance properties of the input object (of class T) using reflection.  The execution context created by this factory is always case sensitive.
 * 2.02
     * Breaking Changes
         * Mininum target framework has been changed from net40 to net45.

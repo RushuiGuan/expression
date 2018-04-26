@@ -21,7 +21,7 @@ The implementation of the design supports the following functionalties:
 * unary operation - Negative sign: `-1`
 * prefix operation - Functions with fixed or optional parameter and a return value: `Now(), Left("Orange", 4)`
 * unlimited optional function parameters - `max(1,2,3,4,5)`
-* Array - Array is a special function that returns an array object: `@(1, 2, 3, 4, 5s)`
+* Array - Array is a special function that returns an array object: `@(1, 2, 3, 4, 5)`
 
 
 ## Tokenization

@@ -92,9 +92,18 @@
       <h4><a class="xref" href="Albatross.Expression.Extensions.html">Extensions</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.Factory.html">Factory</a></h4>
-      <section></section>
+      <section><p>
+The default parser factory class.  This class can be accessed using its lazy static instance <a class="xref" href="Albatross.Expression.Factory.html#Albatross_Expression_Factory_Instance">Instance</a> or by creating a new instance.
+The factory class by default will register any class with the <a class="xref" href="Albatross.Expression.ParserOperationAttribute.html">ParserOperationAttribute</a> attribute within this assembly.  Additional assemblies
+can be registered using the <a class="xref" href="Albatross.Expression.Factory.html#Albatross_Expression_Factory_Register_System_Reflection_Assembly_">Register(Assembly)</a> function.<br></p>
+
+<p>By default, the factory will use <a class="xref" href="Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.html">SingleDoubleQuoteStringLiteralToken</a> for string literal token and 
+<a class="xref" href="Albatross.Expression.Tokens.VariableToken.html">VariableToken</a> for variable token.  These defaults can be changed for the factory instance object.</p>
+
+</section>
       <h4><a class="xref" href="Albatross.Expression.Parser.html">Parser</a></h4>
-      <section></section>
+      <section><p>An immutable implementation of the <a class="xref" href="Albatross.Expression.IParser.html">IParser</a> interface.</p>
+</section>
       <h4><a class="xref" href="Albatross.Expression.ParserOperationAttribute.html">ParserOperationAttribute</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.ReflectionExecutionContextFactory-1.html">ReflectionExecutionContextFactory&lt;T&gt;</a></h4>
@@ -106,7 +115,8 @@
       <h4><a class="xref" href="Albatross.Expression.IExecutionContextFactory-1.html">IExecutionContextFactory&lt;T&gt;</a></h4>
       <section></section>
       <h4><a class="xref" href="Albatross.Expression.IParser.html">IParser</a></h4>
-      <section></section>
+      <section><p>The interface contains functionalities to process an expression string.</p>
+</section>
     <h3 id="enums">Enums
   </h3>
       <h4><a class="xref" href="Albatross.Expression.ContextType.html">ContextType</a></h4>

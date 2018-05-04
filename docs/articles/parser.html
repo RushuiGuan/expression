@@ -97,7 +97,7 @@
 <li>unary operation - Negative sign: <code>-1</code></li>
 <li>prefix operation - Functions with fixed or optional parameter and a return value: <code>Now(), Left(&quot;Orange&quot;, 4)</code></li>
 <li>unlimited optional function parameters - <code>max(1,2,3,4,5)</code></li>
-<li>Array - Array is a special function that returns an array object: <code>@(1, 2, 3, 4, 5s)</code></li>
+<li>Array - Array is a special function that returns an array object: <code>@(1, 2, 3, 4, 5)</code></li>
 </ul>
 <h2 id="tokenization">Tokenization</h2>
 <p>Tokenization reads the expression from left to right.  Its function is to recognize individual components (tokens) of an expression.  This step will throw <a class="xref" href="../api/Albatross.Expression.Exceptions.TokenParsingException.html">TokenParsingException</a> if the expression has errors.  The resulting tokens are inserted into a queue.  The implementation is in the <a class="xref" href="../api/Albatross.Expression.Parser.html#Albatross_Expression_Parser_Tokenize_System_String_">Tokenize</a> method of the <a class="xref" href="../api/Albatross.Expression.Parser.html">Parser</a> class.</p>

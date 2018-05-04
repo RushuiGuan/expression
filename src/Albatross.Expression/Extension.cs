@@ -78,5 +78,13 @@ namespace Albatross.Expression {
 			return start;
 		}
 		#endregion
+
+		#region IParser
+		public static IToken Compile(this IParser parser, string expression) {
+			Queue<IToken> queue = parser.Tokenize(expression);
+			Stack<IToken> stack = parser.BuildStack(queue);
+			return parser.CreateTree(stack);
+		}
+		#endregion
 	}
 }

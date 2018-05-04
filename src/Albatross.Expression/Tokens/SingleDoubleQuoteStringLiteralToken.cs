@@ -6,6 +6,10 @@ using System.Text.RegularExpressions;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
+	/// <summary>
+	/// A string literal token that can use either single quote or double quote as the string boundary.  The <see cref="Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.Boundary"/>
+	/// property is set to double quote by default.  It will be changed to the correct boundary when the expression is parsed.
+	/// </summary>
 	public class SingleDoubleQuoteStringLiteralToken : StringLiteralToken {
 		const char SingleQuote = '\'';
 		const char DoubleQuote = '"';

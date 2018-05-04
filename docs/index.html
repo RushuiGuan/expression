@@ -68,7 +68,7 @@
 <p>The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and use it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.</p>
 <h2 id="release">Release</h2>
 <ul>
-<li>Current<ul>
+<li>2.03<ul>
 <li>Breaking Changes<ul>
 <li>The Add method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  Adding new operations to the instance of <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class will alter its state.  This change will make the <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class immutable.</li>
 <li>The Compile method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  It is replaced by a extension method - <a class="xref" href="api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Compile_Albatross_Expression_IParser_System_String_">Compile</a>.  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn&#39;t introduce any functionality therefore it doesn&#39;t belong in the interface.</li>
@@ -124,7 +124,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/RushuiGuan/expression/blob/develop/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/RushuiGuan/expression/blob/master/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

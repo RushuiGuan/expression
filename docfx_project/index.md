@@ -7,7 +7,7 @@ Albatross.Expression api is created to process and evaluate text based expressio
 The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and use it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.
 
 ## Release
-* Current
+* 2.03
 	* Breaking Changes
 		* The Add method of the [IParser](xref:Albatross.Expression.IParser) interface has been removed.  Adding new operations to the instance of [Parser](xref:Albatross.Expression.Parser) class will alter its state.  This change will make the [Parser](xref:Albatross.Expression.Parser) class immutable.
 		* The Compile method of the [IParser](xref:Albatross.Expression.IParser) interface has been removed.  It is replaced by a extension method - [Compile](xref:Albatross.Expression.Extensions.Compile(Albatross.Expression.IParser,System.String)).  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn't introduce any functionality therefore it doesn't belong in the interface.

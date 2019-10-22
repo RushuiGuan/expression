@@ -82,8 +82,8 @@ namespace Albatross.Expression.Test {
 		[TestCase("2^null", ExpectedResult = null)]
 		[TestCase("null^2", ExpectedResult = null)]
 
-		//text
-		[TestCase("isblank(\"\")", ExpectedResult = true)]
+        //text
+        [TestCase("isblank(\"\")", ExpectedResult = true)]
 		[TestCase("isblank(\"   \")", ExpectedResult = true)]
 		[TestCase("isblank(\" a  \")", ExpectedResult = false)]
 		[TestCase("isblank(null)", ExpectedResult = true)]

@@ -42,20 +42,34 @@ namespace Albatross.Expression {
 		public Factory Register(Assembly asm) {
 			foreach (Type type in asm.GetTypes()) {
 				if (type.GetCustomAttribute<ParserOperationAttribute>() != null) {
-					if (typeof(IToken).IsAssignableFrom(type)) { 
+					if (typeof(IToken).IsAssignableFrom(type)) {
 						operations[type] = (IToken)Activator.CreateInstance(type);
 					}
 				}
 			}
 			return this;
 		}
+
+		/// <summary>
+		/// Register instances of tokens/operations
+		/// </summary>
+		/// <param name="tokens">Token/operations instances to register</param>
+		/// <returns></returns>
+		public Factory Register(IEnumerable<IToken> tokens) {
+			foreach (var token in tokens) {
+				operations[token.GetType()] = token;
+			}
+
+			return this;
+		}
+
 		public Factory Replace<T, K>() where T : IToken where K : IToken, new() {
 			operations.Remove(typeof(T));
 			operations[typeof(K)] = new K();
 			return this;
 		}
 		public IParser Create(IStringLiteralToken stringLiteralToken = null, IVariableToken variableToken = null) {
-			return new Parser(operations.Values, variableToken ?? this.defaultVariableToken, stringLiteralToken?? this.defaultStringLiteralToken);
+			return new Parser(operations.Values, variableToken ?? this.defaultVariableToken, stringLiteralToken ?? this.defaultStringLiteralToken);
 		}
 
 		public IEnumerator<IToken> GetEnumerator() {
@@ -71,7 +85,7 @@ namespace Albatross.Expression {
 		}
 
 		#region singleton
-		private static readonly Lazy<Factory> lazy = new Lazy<Factory>(()=>new Factory());
+		private static readonly Lazy<Factory> lazy = new Lazy<Factory>(() => new Factory());
 		public static Factory Instance { get { return lazy.Value; } }
 		#endregion
 	}

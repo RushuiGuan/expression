@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albatross.Expression", "Alb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albatross.Expression.Test", "Albatross.Expression.Test\Albatross.Expression.Test.csproj", "{EA9C58B6-95F2-452A-AEC1-4509F5D75F85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albatross.Expression.Sample", "Albatross.Expression.Sample\Albatross.Expression.Sample.csproj", "{466C10B5-2E80-4975-823D-A6A80D12749C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albatross.Expression.Sample", "Albatross.Expression.Sample\Albatross.Expression.Sample.csproj", "{466C10B5-2E80-4975-823D-A6A80D12749C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE3FA07A-9BC9-4888-A9C4-5041E76F3E2F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,3 @@
   href: executionContext.md
 - name: Built-In Operations
   href: operations.md
-- name: Customization
-  href: customization.md
-- name: Expression Generation
-  href: generation.md

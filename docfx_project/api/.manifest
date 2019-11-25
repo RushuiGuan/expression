@@ -95,6 +95,7 @@
   "Albatross.Expression.Factory.DefaultVariableToken(Albatross.Expression.Tokens.IVariableToken)": "Albatross.Expression.Factory.yml",
   "Albatross.Expression.Factory.GetEnumerator": "Albatross.Expression.Factory.yml",
   "Albatross.Expression.Factory.Instance": "Albatross.Expression.Factory.yml",
+  "Albatross.Expression.Factory.Register(System.Collections.Generic.IEnumerable{Albatross.Expression.Tokens.IToken})": "Albatross.Expression.Factory.yml",
   "Albatross.Expression.Factory.Register(System.Reflection.Assembly)": "Albatross.Expression.Factory.yml",
   "Albatross.Expression.Factory.Replace``2": "Albatross.Expression.Factory.yml",
   "Albatross.Expression.Factory.System#Collections#IEnumerable#GetEnumerator": "Albatross.Expression.Factory.yml",

@@ -4,6 +4,7 @@
     <div class="sidefilter">
       <form class="toc-filter">
         <span class="glyphicon glyphicon-filter filter-icon"></span>
+        <span class="glyphicon glyphicon-remove clear-icon" id="toc_filter_clear"></span>
         <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
       </form>
     </div>
@@ -11,274 +12,279 @@
       <div class="toc" id="toc">
           
           <ul class="nav level1">
-            <li>
-              <span class="expand-stub"></span>
-              <a href="Albatross.Expression.html" name="" title="Albatross.Expression">Albatross.Expression</a>
-                
-                <ul class="nav level2">
-                  <li>
-                    <a href="Albatross.Expression.ContextType.html" name="" title="ContextType">ContextType</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.ContextValue.html" name="" title="ContextValue">ContextValue</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.DataRowExecutionContextFactory.html" name="" title="DataRowExecutionContextFactory">DataRowExecutionContextFactory</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.DictionaryExecutionContextFactory.html" name="" title="DictionaryExecutionContextFactory">DictionaryExecutionContextFactory</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.ExecutionContext-1.html" name="" title="ExecutionContext&lt;T&gt;">ExecutionContext&lt;T&gt;</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.ExecutionContextFactory.html" name="" title="ExecutionContextFactory">ExecutionContextFactory</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.ExpressionBuilder.html" name="" title="ExpressionBuilder">ExpressionBuilder</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Extensions.html" name="" title="Extensions">Extensions</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Factory.html" name="" title="Factory">Factory</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.IExecutionContext-1.html" name="" title="IExecutionContext&lt;T&gt;">IExecutionContext&lt;T&gt;</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.IExecutionContextFactory-1.html" name="" title="IExecutionContextFactory&lt;T&gt;">IExecutionContextFactory&lt;T&gt;</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.IParser.html" name="" title="IParser">IParser</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Parser.html" name="" title="Parser">Parser</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.ParserOperationAttribute.html" name="" title="ParserOperationAttribute">ParserOperationAttribute</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.ReflectionExecutionContextFactory-1.html" name="" title="ReflectionExecutionContextFactory&lt;T&gt;">ReflectionExecutionContextFactory&lt;T&gt;</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.TryGetValueDelegate-1.html" name="" title="TryGetValueDelegate&lt;T&gt;">TryGetValueDelegate&lt;T&gt;</a>
-                  </li>
-                </ul>  </li>
-            <li>
-              <span class="expand-stub"></span>
-              <a href="Albatross.Expression.Exceptions.html" name="" title="Albatross.Expression.Exceptions">Albatross.Expression.Exceptions</a>
-                
-                <ul class="nav level2">
-                  <li>
-                    <a href="Albatross.Expression.Exceptions.CircularReferenceException.html" name="" title="CircularReferenceException">CircularReferenceException</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Exceptions.MissingVariableException.html" name="" title="MissingVariableException">MissingVariableException</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Exceptions.OperandException.html" name="" title="OperandException">OperandException</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Exceptions.StackException.html" name="" title="StackException">StackException</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Exceptions.TokenParsingException.html" name="" title="TokenParsingException">TokenParsingException</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Exceptions.UnexpectedTypeException.html" name="" title="UnexpectedTypeException">UnexpectedTypeException</a>
-                  </li>
-                </ul>  </li>
-            <li>
-              <span class="expand-stub"></span>
-              <a href="Albatross.Expression.Operations.html" name="" title="Albatross.Expression.Operations">Albatross.Expression.Operations</a>
-                
-                <ul class="nav level2">
-                  <li>
-                    <a href="Albatross.Expression.Operations.And.html" name="" title="And">And</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Array.html" name="" title="Array">Array</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Avg.html" name="" title="Avg">Avg</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Coalesce.html" name="" title="Coalesce">Coalesce</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.ComparisonInfixOperation.html" name="" title="ComparisonInfixOperation">ComparisonInfixOperation</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.CreateDate.html" name="" title="CreateDate">CreateDate</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.CurrentApp.html" name="" title="CurrentApp">CurrentApp</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.CurrentMachine.html" name="" title="CurrentMachine">CurrentMachine</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.CurrentUser.html" name="" title="CurrentUser">CurrentUser</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Date.html" name="" title="Date">Date</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Divide.html" name="" title="Divide">Divide</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Equal.html" name="" title="Equal">Equal</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Format.html" name="" title="Format">Format</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.GreaterEqual.html" name="" title="GreaterEqual">GreaterEqual</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.GreaterThan.html" name="" title="GreaterThan">GreaterThan</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.If.html" name="" title="If">If</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.IsBlank.html" name="" title="IsBlank">IsBlank</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Left.html" name="" title="Left">Left</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Len.html" name="" title="Len">Len</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.LessEqual.html" name="" title="LessEqual">LessEqual</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.LessThan.html" name="" title="LessThan">LessThan</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Max.html" name="" title="Max">Max</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Min.html" name="" title="Min">Min</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Minus.html" name="" title="Minus">Minus</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Mod.html" name="" title="Mod">Mod</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Month.html" name="" title="Month">Month</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.MonthName.html" name="" title="MonthName">MonthName</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Multiply.html" name="" title="Multiply">Multiply</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Negative.html" name="" title="Negative">Negative</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Not.html" name="" title="Not">Not</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.NotEqual.html" name="" title="NotEqual">NotEqual</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Now.html" name="" title="Now">Now</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Or.html" name="" title="Or">Or</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.PadLeft.html" name="" title="PadLeft">PadLeft</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.PadRight.html" name="" title="PadRight">PadRight</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Pi.html" name="" title="Pi">Pi</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Plus.html" name="" title="Plus">Plus</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Positive.html" name="" title="Positive">Positive</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Power.html" name="" title="Power">Power</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Right.html" name="" title="Right">Right</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.ShortMonthName.html" name="" title="ShortMonthName">ShortMonthName</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Text.html" name="" title="Text">Text</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Today.html" name="" title="Today">Today</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Operations.Year.html" name="" title="Year">Year</a>
-                  </li>
-                </ul>  </li>
-            <li>
-              <span class="expand-stub"></span>
-              <a href="Albatross.Expression.Tokens.html" name="" title="Albatross.Expression.Tokens">Albatross.Expression.Tokens</a>
-                
-                <ul class="nav level2">
-                  <li>
-                    <a href="Albatross.Expression.Tokens.AssignmentToken.html" name="" title="AssignmentToken">AssignmentToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.BooleanLiteralToken.html" name="" title="BooleanLiteralToken">BooleanLiteralToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.ControlToken.html" name="" title="ControlToken">ControlToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html" name="" title="DoubleQuoteStringLiteralToken">DoubleQuoteStringLiteralToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.InfixOperationToken.html" name="" title="InfixOperationToken">InfixOperationToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.IOperandToken.html" name="" title="IOperandToken">IOperandToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.IStringLiteralToken.html" name="" title="IStringLiteralToken">IStringLiteralToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.IToken.html" name="" title="IToken">IToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.IVariableToken.html" name="" title="IVariableToken">IVariableToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.NumericLiteralToken.html" name="" title="NumericLiteralToken">NumericLiteralToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.PrefixOperationToken.html" name="" title="PrefixOperationToken">PrefixOperationToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.html" name="" title="SingleDoubleQuoteStringLiteralToken">SingleDoubleQuoteStringLiteralToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html" name="" title="SingleQuoteStringLiteralToken">SingleQuoteStringLiteralToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.StringLiteralToken.html" name="" title="StringLiteralToken">StringLiteralToken</a>
-                  </li>
-                  <li>
-                    <a href="Albatross.Expression.Tokens.VariableToken.html" name="" title="VariableToken">VariableToken</a>
-                  </li>
-                </ul>  </li>
-          </ul>      </div>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="Albatross.Expression.html" name="" title="Albatross.Expression">Albatross.Expression</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="Albatross.Expression.ContextType.html" name="" title="ContextType">ContextType</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.ContextValue.html" name="" title="ContextValue">ContextValue</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.DataRowExecutionContextFactory.html" name="" title="DataRowExecutionContextFactory">DataRowExecutionContextFactory</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.DictionaryExecutionContextFactory.html" name="" title="DictionaryExecutionContextFactory">DictionaryExecutionContextFactory</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.ExecutionContext-1.html" name="" title="ExecutionContext&lt;T&gt;">ExecutionContext&lt;T&gt;</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.ExecutionContextFactory.html" name="" title="ExecutionContextFactory">ExecutionContextFactory</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.ExpressionBuilder.html" name="" title="ExpressionBuilder">ExpressionBuilder</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Extensions.html" name="" title="Extensions">Extensions</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Factory.html" name="" title="Factory">Factory</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.IExecutionContext-1.html" name="" title="IExecutionContext&lt;T&gt;">IExecutionContext&lt;T&gt;</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.IExecutionContextFactory-1.html" name="" title="IExecutionContextFactory&lt;T&gt;">IExecutionContextFactory&lt;T&gt;</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.IParser.html" name="" title="IParser">IParser</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Parser.html" name="" title="Parser">Parser</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.ParserOperationAttribute.html" name="" title="ParserOperationAttribute">ParserOperationAttribute</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.ReflectionExecutionContextFactory-1.html" name="" title="ReflectionExecutionContextFactory&lt;T&gt;">ReflectionExecutionContextFactory&lt;T&gt;</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.TryGetValueDelegate-1.html" name="" title="TryGetValueDelegate&lt;T&gt;">TryGetValueDelegate&lt;T&gt;</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="Albatross.Expression.Exceptions.html" name="" title="Albatross.Expression.Exceptions">Albatross.Expression.Exceptions</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="Albatross.Expression.Exceptions.CircularReferenceException.html" name="" title="CircularReferenceException">CircularReferenceException</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Exceptions.MissingVariableException.html" name="" title="MissingVariableException">MissingVariableException</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Exceptions.OperandException.html" name="" title="OperandException">OperandException</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Exceptions.StackException.html" name="" title="StackException">StackException</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Exceptions.TokenParsingException.html" name="" title="TokenParsingException">TokenParsingException</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Exceptions.UnexpectedTypeException.html" name="" title="UnexpectedTypeException">UnexpectedTypeException</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="Albatross.Expression.Operations.html" name="" title="Albatross.Expression.Operations">Albatross.Expression.Operations</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="Albatross.Expression.Operations.And.html" name="" title="And">And</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Array.html" name="" title="Array">Array</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Avg.html" name="" title="Avg">Avg</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Coalesce.html" name="" title="Coalesce">Coalesce</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.ComparisonInfixOperation.html" name="" title="ComparisonInfixOperation">ComparisonInfixOperation</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.CreateDate.html" name="" title="CreateDate">CreateDate</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.CurrentApp.html" name="" title="CurrentApp">CurrentApp</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.CurrentMachine.html" name="" title="CurrentMachine">CurrentMachine</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.CurrentUser.html" name="" title="CurrentUser">CurrentUser</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Date.html" name="" title="Date">Date</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Divide.html" name="" title="Divide">Divide</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Equal.html" name="" title="Equal">Equal</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Format.html" name="" title="Format">Format</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.GreaterEqual.html" name="" title="GreaterEqual">GreaterEqual</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.GreaterThan.html" name="" title="GreaterThan">GreaterThan</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.If.html" name="" title="If">If</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.IsBlank.html" name="" title="IsBlank">IsBlank</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Left.html" name="" title="Left">Left</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Len.html" name="" title="Len">Len</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.LessEqual.html" name="" title="LessEqual">LessEqual</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.LessThan.html" name="" title="LessThan">LessThan</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Max.html" name="" title="Max">Max</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Min.html" name="" title="Min">Min</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Minus.html" name="" title="Minus">Minus</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Mod.html" name="" title="Mod">Mod</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Month.html" name="" title="Month">Month</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.MonthName.html" name="" title="MonthName">MonthName</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Multiply.html" name="" title="Multiply">Multiply</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Negative.html" name="" title="Negative">Negative</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Not.html" name="" title="Not">Not</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.NotEqual.html" name="" title="NotEqual">NotEqual</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Now.html" name="" title="Now">Now</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Or.html" name="" title="Or">Or</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.PadLeft.html" name="" title="PadLeft">PadLeft</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.PadRight.html" name="" title="PadRight">PadRight</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Pi.html" name="" title="Pi">Pi</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Plus.html" name="" title="Plus">Plus</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Positive.html" name="" title="Positive">Positive</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Power.html" name="" title="Power">Power</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Right.html" name="" title="Right">Right</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.ShortMonthName.html" name="" title="ShortMonthName">ShortMonthName</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Text.html" name="" title="Text">Text</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Today.html" name="" title="Today">Today</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Operations.Year.html" name="" title="Year">Year</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="Albatross.Expression.Tokens.html" name="" title="Albatross.Expression.Tokens">Albatross.Expression.Tokens</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="Albatross.Expression.Tokens.AssignmentToken.html" name="" title="AssignmentToken">AssignmentToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.BooleanLiteralToken.html" name="" title="BooleanLiteralToken">BooleanLiteralToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.ControlToken.html" name="" title="ControlToken">ControlToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.DoubleQuoteStringLiteralToken.html" name="" title="DoubleQuoteStringLiteralToken">DoubleQuoteStringLiteralToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.InfixOperationToken.html" name="" title="InfixOperationToken">InfixOperationToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.IOperandToken.html" name="" title="IOperandToken">IOperandToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.IStringLiteralToken.html" name="" title="IStringLiteralToken">IStringLiteralToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.IToken.html" name="" title="IToken">IToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.IVariableToken.html" name="" title="IVariableToken">IVariableToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.NumericLiteralToken.html" name="" title="NumericLiteralToken">NumericLiteralToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.PrefixOperationToken.html" name="" title="PrefixOperationToken">PrefixOperationToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken.html" name="" title="SingleDoubleQuoteStringLiteralToken">SingleDoubleQuoteStringLiteralToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.SingleQuoteStringLiteralToken.html" name="" title="SingleQuoteStringLiteralToken">SingleQuoteStringLiteralToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.StringLiteralToken.html" name="" title="StringLiteralToken">StringLiteralToken</a>
+                          </li>
+                          <li>
+                              <a href="Albatross.Expression.Tokens.VariableToken.html" name="" title="VariableToken">VariableToken</a>
+                          </li>
+                    </ul>
+                </li>
+          </ul>
+      </div>
     </div>
   </div>
 </div>

@@ -1176,6 +1176,15 @@ references:
   isSpec: "True"
   fullName: Albatross.Expression.Factory.Instance
   nameWithType: Factory.Instance
+- uid: Albatross.Expression.Factory.Register(System.Collections.Generic.IEnumerable{Albatross.Expression.Tokens.IToken})
+  name: Register(IEnumerable<IToken>)
+  href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Register_System_Collections_Generic_IEnumerable_Albatross_Expression_Tokens_IToken__
+  commentId: M:Albatross.Expression.Factory.Register(System.Collections.Generic.IEnumerable{Albatross.Expression.Tokens.IToken})
+  name.vb: Register(IEnumerable(Of IToken))
+  fullName: Albatross.Expression.Factory.Register(System.Collections.Generic.IEnumerable<Albatross.Expression.Tokens.IToken>)
+  fullName.vb: Albatross.Expression.Factory.Register(System.Collections.Generic.IEnumerable(Of Albatross.Expression.Tokens.IToken))
+  nameWithType: Factory.Register(IEnumerable<IToken>)
+  nameWithType.vb: Factory.Register(IEnumerable(Of IToken))
 - uid: Albatross.Expression.Factory.Register(System.Reflection.Assembly)
   name: Register(Assembly)
   href: api/Albatross.Expression.Factory.html#Albatross_Expression_Factory_Register_System_Reflection_Assembly_

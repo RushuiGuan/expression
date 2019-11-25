@@ -8,7 +8,7 @@
     <title>Albatross Expression Api </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Albatross Expression Api ">
-    <meta name="generator" content="docfx 2.34.0.0">
+    <meta name="generator" content="docfx 2.47.0.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -20,12 +20,12 @@
     
     
   </head>
-  <body data-spy="scroll" data-target="#affix">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container-fluid">
+          <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -48,15 +48,15 @@
           </div>
         </nav>
         
-        <div class="subnav container-fluid navbar navbar-default">
-          <div class="hide-when-search" id="breadcrumb">
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
               <li></li>
             </ul>
           </div>
         </div>
       </header>
-      <div role="main" class="container-fluid body-content hide-when-search">
+      <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
@@ -68,7 +68,13 @@
 <p>The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and use it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.</p>
 <h2 id="release">Release</h2>
 <ul>
-<li>2.03<ul>
+<li>2.0.4<ul>
+<li>No breaking changes.</li>
+<li>License change from GNU GPLv3 to MIT.</li>
+<li>Allow direct registration of IToken instances in the <a class="xref" href="api/Albatross.Expression.Factory.html">Factory</a> class.</li>
+</ul>
+</li>
+<li>2.0.3<ul>
 <li>Breaking Changes<ul>
 <li>The Add method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  Adding new operations to the instance of <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class will alter its state.  This change will make the <a class="xref" href="api/Albatross.Expression.Parser.html">Parser</a> class immutable.</li>
 <li>The Compile method of the <a class="xref" href="api/Albatross.Expression.IParser.html">IParser</a> interface has been removed.  It is replaced by a extension method - <a class="xref" href="api/Albatross.Expression.Extensions.html#Albatross_Expression_Extensions_Compile_Albatross_Expression_IParser_System_String_">Compile</a>.  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn&#39;t introduce any functionality therefore it doesn&#39;t belong in the interface.</li>
@@ -78,7 +84,7 @@
 <li>New ExecutionContextFactory - <a class="xref" href="api/Albatross.Expression.ReflectionExecutionContextFactory-1.html">ReflectionExecutionContextFactory<t></t></a> class has been created to supply variable value from the public instance properties of the input object (of class T) using reflection.  The execution context created by this factory is always case sensitive.</li>
 </ul>
 </li>
-<li>2.02<ul>
+<li>2.0.2<ul>
 <li>Breaking Changes<ul>
 <li>Mininum target framework has been changed from net40 to net45.</li>
 <li>Precedence for <code>and, or</code> operations has been set to the lowest (30, 20) among all infix operations.  As the result of this change, the following expression will now return true: <code>2 &gt; 1 and 3 &gt; 1</code>.</li>
@@ -123,9 +129,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/RushuiGuan/expression/blob/master/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
@@ -139,12 +142,12 @@
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-          <div class="container-fluid">
+          <div class="container">
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
             
-            <span>Copyright © 2018</span>
+            <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>

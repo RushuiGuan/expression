@@ -18,7 +18,7 @@ namespace Albatross.Expression.Functions.Date
 			DateTime date1 = (DateTime)Convert.ChangeType(Operands[0].EvalValue(context), typeof(DateTime));
 			DateTime date2 = (DateTime)Convert.ChangeType(Operands[1].EvalValue(context), typeof(DateTime));
 
-			var result = date2.Subtract(date1).TotalDays;
+			var result = date1.Subtract(date2).TotalDays;
 			return result;
 		}
 	}

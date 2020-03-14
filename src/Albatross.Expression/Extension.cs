@@ -1,10 +1,6 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Tokens;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Albatross.Expression {
 	public static class Extensions {
@@ -12,13 +8,16 @@ namespace Albatross.Expression {
 			if (obj != null) {
 				if (obj is double) {
 					return (double)obj != 0;
-				} else if (obj is bool) {
+				}
+				else if (obj is bool) {
 					return (bool)obj;
-				} else {
+				}
+				else {
 					return true;
 				}
 
-			} else {
+			}
+			else {
 				return false;
 			}
 		}
@@ -37,7 +36,8 @@ namespace Albatross.Expression {
 			object data;
 			if (context.TryGetValue(name, input, out data)) {
 				return data;
-			} else {
+			}
+			else {
 				return null;
 			}
 		}

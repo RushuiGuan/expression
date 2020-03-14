@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Albatross.Expression {
 	public class DictionaryExecutionContextFactory : IExecutionContextFactory<IDictionary<string, object>> {
@@ -26,7 +23,8 @@ namespace Albatross.Expression {
 		public bool TryGetExternalValue(string name, IDictionary<string, object> input, out object value) {
 			if (input != null) {
 				return input.TryGetValue(name, out value);
-			} else { 
+			}
+			else {
 				value = null;
 				return false;
 			}

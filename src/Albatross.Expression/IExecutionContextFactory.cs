@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Albatross.Expression {
+﻿namespace Albatross.Expression {
 	public interface IExecutionContextFactory<T> {
 		bool CaseSensitive { get; set; }
 		bool CacheExternalValue { get; set; }

@@ -2,10 +2,6 @@
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
 using System.Collections;
 
 namespace Albatross.Expression {
@@ -50,10 +46,12 @@ namespace Albatross.Expression {
 			object value;
 			if (TryGetValue(name, input, out value)) {
 				return value;
-			} else {
+			}
+			else {
 				if (FailWhenMissingVariable) {
 					throw new MissingVariableException(name);
-				} else {
+				}
+				else {
 					return null;
 				}
 			}
@@ -63,7 +61,8 @@ namespace Albatross.Expression {
 			if (TryGetContext(name, input, out value)) {
 				data = GetContextValue(value, input);
 				return true;
-			} else {
+			}
+			else {
 				data = null;
 				return false;
 			}
@@ -82,22 +81,25 @@ namespace Albatross.Expression {
 					data = Convert.ChangeType(data, contextValue.DataType);
 				}
 				return data;
-			} else {
+			}
+			else {
 				return contextValue.Value;
 			}
 		}
-		bool TryGetExternal(string name, T input, out ContextValue value){
+		bool TryGetExternal(string name, T input, out ContextValue value) {
 			object data;
 			if (TryGetExternalData != null && TryGetExternalData(name, input, out data)) {
 				if (data is ContextValue) {
 					value = (ContextValue)data;
-				} else {
+				}
+				else {
 					value = new ContextValue() { Name = name, Value = data, ContextType = ContextType.Value, };
 				}
 				value.External = true;
 				if (value.ContextType == ContextType.Expression || CacheExternalValue) { Store.Add(name, value); }
 				return true;
-			} else {
+			}
+			else {
 				value = null;
 				return false;
 			}
@@ -160,9 +162,9 @@ namespace Albatross.Expression {
 			ContextValue value;
 			if (!_expressions.TryGetValue(expression, out value)) {
 				value = new ContextValue() {
-					 Value = expression,
-					 DataType = outputDataType,
-					 ContextType = ContextType.Expression,
+					Value = expression,
+					DataType = outputDataType,
+					ContextType = ContextType.Expression,
 				};
 				_expressions.Add(expression, value);
 			}

@@ -5,11 +5,17 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
+using Albatross.Expression.Numeric;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Minus : InfixOperationToken {
-		
+		private readonly ISubtractNumber subtractNumber;
+
+		public Minus(ISubtractNumber subtractNumber) {
+			this.subtractNumber = subtractNumber;
+		}
+
 		public override string Name { get { return "-"; } }
 		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 100; } }
@@ -17,16 +23,7 @@ namespace Albatross.Expression.Operations {
 		public override object EvalValue(Func<string, object> context) {
 			object a = Operand1.EvalValue(context);
 			object b = Operand2.EvalValue(context);
-
-			if (a == null || b == null) {
-				return null;
-			}else if(a is double && b is double){
-				return (double)a - (double)b;
-			}else if(a is DateTime && b is double){
-				return ((DateTime)a).AddDays(-1 * Convert.ToDouble(b));
-			} else {
-				throw new UnexpectedTypeException(a.GetType());
-			}
+			return this.subtractNumber.Run(a, b);
 		}
 	}
 }

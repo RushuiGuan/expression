@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
+using Albatross.Expression.Numeric;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -20,17 +21,24 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Plus : InfixOperationToken {
+		private readonly IAddNumber addNumber;
 
 		public override string Name { get { return "+"; } }
 		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 100; } }
+
+		public Plus(IAddNumber addNumber) {
+			this.addNumber = addNumber;
+		}
 
 		public override object EvalValue(Func<string, object> context) {
 			object a = Operand1.EvalValue(context);
 			object b = Operand2.EvalValue(context);
 
 			if (a == null || b == null) { return null; }
-			
+
+			return addNumber.Run(a, b);
+
 			if (a is double && b is double) {
 				return (double)a + (double)b;
 			}else if(a is DateTime && b is double){

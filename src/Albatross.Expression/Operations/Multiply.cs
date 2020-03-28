@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
+using Albatross.Expression.Numeric;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -20,6 +21,11 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Multiply : InfixOperationToken {
+		private readonly IMultiplyNumber multiplyNumber;
+
+		public Multiply(IMultiplyNumber multiplyNumber) {
+			this.multiplyNumber = multiplyNumber;
+		}
 
 		public override string Name { get { return "*"; } }
 		public override bool Symbolic { get { return true; } }
@@ -28,14 +34,7 @@ namespace Albatross.Expression.Operations {
 		public override object EvalValue(Func<string, object> context) {
 			object a = Operand1.EvalValue(context);
 			object b = Operand2.EvalValue(context);
-
-			if (a == null || b == null) { return null; }
-
-			if (a is double && b is double){
-				return (double)a * (double)b;
-			} else {
-				throw new FormatException();
-			}
+			return multiplyNumber.Run(a, b);
 		}
 	}
 }

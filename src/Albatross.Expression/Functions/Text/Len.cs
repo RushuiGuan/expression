@@ -8,28 +8,38 @@ using Albatross.Expression.Exceptions;
 using System.Collections;
 
 
-namespace Albatross.Expression.Operations {
-	[ParserOperation]
-	public class Len : PrefixOperationToken {
+namespace Albatross.Expression.Operations
+{
+    [ParserOperation]
+    public class Len : PrefixOperationToken
+    {
 
-		public override string Name { get { return "len"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
+        public override string Name { get { return "len"; } }
+        public override int MinOperandCount { get { return 1; } }
+        public override int MaxOperandCount { get { return 1; } }
+        public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			List<object> list =  GetOperands(context);
+        public override object EvalValue(Func<string, object> context)
+        {
+            List<object> list = GetOperands(context);
 
-			object value = list[0];
-			if (value == null) {
-				return null;
-			}else  if (value is ICollection) {
-				return ((ICollection)value).Count;
-			}if(value is string){
-				return ((string)value).Length;
-			} else {
-				throw new UnexpectedTypeException(value.GetType());
-			}
-		}
-	}
+            object value = list[0];
+            if (value == null)
+            {
+                return null;
+            }
+            else if (value is ICollection)
+            {
+                return ((ICollection)value).Count;
+            }
+            if (value is string)
+            {
+                return ((string)value).Length;
+            }
+            else
+            {
+                throw new UnexpectedTypeException(value.GetType());
+            }
+        }
+    }
 }

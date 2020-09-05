@@ -137,6 +137,16 @@ namespace Albatross.Expression.Test
         [TestCase("right(\"123456789\", 0)", ExpectedResult = "")]
         [TestCase("right(\"123456789\", 9)", ExpectedResult = "123456789")]
         [TestCase("right(\"123456789\", 100)", ExpectedResult = "123456789")]
+        [TestCase("right(\"123456789\", 100)", ExpectedResult = "123456789")]
+
+        [TestCase("indexof(\"123456789\", \"3\")", ExpectedResult = 2)]
+        [TestCase("indexof(\"123456789\", \"a\")", ExpectedResult = -1)]
+        [TestCase("indexof(\"121212\", \"2\")", ExpectedResult = 1)]
+
+        [TestCase("substring(\"123456789\", 3)", ExpectedResult = "456789")]
+        [TestCase("substring(\"123456789\", 5)", ExpectedResult = "6789")]
+        [TestCase("substring(\"123456789\", 0, 2)", ExpectedResult = "12")]
+        [TestCase("substring(\"123\", 3)", ExpectedResult = "")]
 
         [TestCase("Format(CreateDate(1985, 5,27), \"yyyy-MM-dd\")", ExpectedResult = "1985-05-27")]
         [TestCase("SubtractDate(CreateDate(2020, 1, 4), CreateDate(2020, 1, 1))", ExpectedResult = 3)]
@@ -155,6 +165,8 @@ namespace Albatross.Expression.Test
         [TestCase("len(today())", typeof(UnexpectedTypeException))]
         [TestCase("left(1234, -1)", typeof(OperandException))]
         [TestCase("right(1234, -1)", typeof(OperandException))]
+        [TestCase("substring(\"123456789\", -5)", typeof(OperandException))]
+        [TestCase("substring(\"123456789\", 100)", typeof(OperandException))]
         public void ParsingFailure(string expression, Type errType)
         {
             TestDelegate handler = new TestDelegate(() =>

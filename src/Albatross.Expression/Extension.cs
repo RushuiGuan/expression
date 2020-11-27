@@ -59,6 +59,19 @@ namespace Albatross.Expression {
 			}
 			throw new Exceptions.TokenParsingException("Invalid assignment expression");
 		}
+		public static ValueType Eval<T, ValueType>(this IExecutionContext<T> context, string expression, T input) {
+			object result = context.Eval(expression, input, typeof(ValueType));
+			return (ValueType)Convert.ChangeType(result, typeof(ValueType));
+		}
+		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType data) {
+			if (context.TryGetValue(name, input, out object value)){
+				data = (ValueType)Convert.ChangeType(value, typeof(ValueType));
+				return true;
+			} else {
+				data = default(ValueType);
+				return false;
+			}
+		}
 		#endregion
 
 		#region IToken

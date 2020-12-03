@@ -2,10 +2,6 @@
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
 using System.Collections;
 
 namespace Albatross.Expression {
@@ -170,7 +166,12 @@ namespace Albatross.Expression {
 		}
 		void Build(ContextValue contextValue, ISet<string> chain) {
 			contextValue.Tree = null;
-			Queue<IToken> queue = Parser.Tokenize(Convert.ToString(contextValue.Value));
+			string text = Convert.ToString(contextValue.Value);
+			if (string.IsNullOrEmpty(text))
+			{
+				throw new ArgumentException($"ContextValue {contextValue.Name} has no expression value");
+			}
+			Queue<IToken> queue = Parser.Tokenize(text);
 			contextValue.Dependees = NewSet();
 			foreach (IToken token in queue) { if (token.IsVariable()) { contextValue.Dependees.Add(token.Name); } }
 			Stack<IToken> stack = Parser.BuildStack(queue);

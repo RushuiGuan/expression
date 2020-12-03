@@ -6,7 +6,7 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 using System.Collections;
-
+using System.Text.Json;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
@@ -25,8 +25,11 @@ namespace Albatross.Expression.Operations {
 				return null;
 			}else  if (value is ICollection) {
 				return ((ICollection)value).Count;
-			}if(value is string){
+			}if (value is string) {
 				return ((string)value).Length;
+			}else if(value is JsonElement) {
+				JsonElement elem = (JsonElement)value;
+				return elem.GetArrayLength();
 			} else {
 				throw new UnexpectedTypeException(value.GetType());
 			}

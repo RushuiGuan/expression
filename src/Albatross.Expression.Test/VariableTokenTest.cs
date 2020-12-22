@@ -27,6 +27,7 @@ namespace Albatross.Expression.Test
 		[TestCase("field.0_cat + 1", 0, ExpectedResult = "field")]
 		[TestCase("0field._cat + 1", 0, ExpectedResult = null)]
 		[TestCase("field.cat.age + 1", 0, ExpectedResult = "field.cat")]
+		[TestCase("f.c + 1", 0, ExpectedResult = "f.c")]
 		public string Tokenize(string expression, int start) {
 			int next;
 			VariableToken token = new VariableToken();

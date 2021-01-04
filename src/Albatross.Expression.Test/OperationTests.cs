@@ -157,5 +157,14 @@ namespace Albatross.Expression.Test {
 			});
 			Assert.Throws(errType, handler);
 		}
+
+
+		[TestCase("UnixTimestamp(now())")]
+		public void TestUnixTimeStamp(string expression) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = 	token.EvalValue(null);
+			Assert.True(result is long);
+		}
 	}
 }

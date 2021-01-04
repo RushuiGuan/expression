@@ -1,0 +1,30 @@
+﻿using System;
+using System.Linq;
+using Albatross.Expression.Tokens;
+
+namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// <para>Prefix operation that convert a DateTime to unix timestamp integer.  If the input is not DateTime, the operand is converted to text first and parsed to a datetime object</para>
+	/// <para>Operand Count: 1</para>
+	/// <list type="number">
+	///		<listheader>
+	///		<description>Operands</description>
+	///		</listheader>
+	///		<item><description>input : any</description></item>
+	/// </list>
+	/// <para>Output Type: long</para>
+	/// </summary>
+	[ParserOperation]
+	public class UnixTimestamp : PrefixOperationToken {
+		public override string Name { get { return "UnixTimestamp"; } }
+		public override int MinOperandCount { get { return 1; } }
+		public override int MaxOperandCount { get { return 1; } }
+		public override bool Symbolic { get { return false; } }
+
+		public override object EvalValue(Func<string, object> context) {
+			object value = Operands.First().EvalValue(context);
+			DateTime dateTime = (value as DateTime?) ?? DateTime.Parse(Convert.ToString(value));
+			return new DateTimeOffset(dateTime).ToUnixTimeSeconds();
+		}
+	}
+}

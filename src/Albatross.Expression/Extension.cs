@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 
 namespace Albatross.Expression {
 	public static class Extensions {
@@ -20,6 +21,26 @@ namespace Albatross.Expression {
 
 			} else {
 				return false;
+			}
+		}
+
+		public static object GetJsonValue(this JsonElement elem) {
+			switch (elem.ValueKind) {
+				case JsonValueKind.Array:
+					return elem.EnumerateArray().Select(args => GetJsonValue(args)).ToArray();
+				case JsonValueKind.Null:
+				case JsonValueKind.Undefined:
+					return null;
+				case JsonValueKind.True:
+					return true;
+				case JsonValueKind.False:
+					return false;
+				case JsonValueKind.Number:
+					return elem.GetDouble();
+				case JsonValueKind.String:
+					return elem.GetString();
+				default:
+					return elem;
 			}
 		}
 

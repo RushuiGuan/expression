@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using Albatross.Expression.Exceptions;
 
@@ -77,6 +78,8 @@ namespace Albatross.Expression.Tokens {
 				value = context(Name);
 				if (value is int || value is float || value is long || value is short || value is uint || value is decimal || value is ushort || value is ulong) {
 					value = Convert.ToDouble(value);
+				}else if(value is JsonElement) {
+					value = ((JsonElement)value).GetJsonValue();
 				}
 				return value;
 			} else {

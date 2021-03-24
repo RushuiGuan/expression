@@ -166,5 +166,37 @@ namespace Albatross.Expression.Test {
 			var result = 	token.EvalValue(null);
 			Assert.True(result is long);
 		}
+
+
+		[TestCase("NextWeekDay(\"2021-03-24\")", "2021-03-25")]
+		[TestCase("NextWeekDay(\"2021-03-26\")", "2021-03-29")]
+		[TestCase("NextWeekDay(\"2021-03-27\")", "2021-03-29")]
+		[TestCase("NextWeekDay(\"2021-03-28\")", "2021-03-29")]
+		public void TestNextWeekDay(string expression, string expected) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = token.EvalValue(null);
+			Assert.AreEqual(result, DateTime.Parse(expected));
+		}
+
+		[TestCase("PreviousWeekDay(\"2021-03-24\")", "2021-03-23")]
+		[TestCase("PreviousWeekDay(\"2021-03-22\")", "2021-03-19")]
+		[TestCase("PreviousWeekDay(\"2021-03-21\")", "2021-03-19")]
+		[TestCase("PreviousWeekDay(\"2021-03-20\")", "2021-03-19")]
+		public void TestPreviousWeekDay(string expression, string expected) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = token.EvalValue(null);
+			Assert.AreEqual(result, DateTime.Parse(expected));
+		}
+
+		[TestCase("DayOfWeek(\"2021-03-24\")", 3)]
+		[TestCase("DayOfWeek(\"2021-03-21\")", 0)]
+		public void TestDayOfWeek(string expression, int expected) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = token.EvalValue(null);
+			Assert.AreEqual(result, expected);
+		}
 	}
 }

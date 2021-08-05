@@ -6,11 +6,11 @@ using System.Collections.Generic;
 namespace Albatross.Expression.Operations
 {
     [ParserOperation]
-    public class IndexOf : PrefixOperationToken
+    public class Replace : PrefixOperationToken
     {
-        public override string Name { get { return "IndexOf"; } }
-        public override int MinOperandCount { get { return 2; } }
-        public override int MaxOperandCount { get { return 2; } }
+        public override string Name { get { return "replace"; } }
+        public override int MinOperandCount { get { return 3; } }
+        public override int MaxOperandCount { get { return 3; } }
         public override bool Symbolic { get { return false; } }
 
         public override object EvalValue(Func<string, object> context)
@@ -19,17 +19,18 @@ namespace Albatross.Expression.Operations
             if (list.Count == 0)
                 return null;
 
+            if (list.Count != 3)
+            {
+                throw new OperandException("Replace function expects 3 operand");
+            }
+
             object value1 = list[0];
             object value2 = list[1];
+            object value3 = list[2];
 
             string text;
-            string value;
-
-            if (value1 == null)
-                return null;
-
-            if (value2 == null)
-                return -1;
+            string oldValue;
+            string newValue;
 
             if (value1 is string)
             {
@@ -42,7 +43,16 @@ namespace Albatross.Expression.Operations
 
             if (value2 is string)
             {
-                value = Convert.ToString(value2);
+                oldValue = Convert.ToString(value2);
+            }
+            else
+            {
+                throw new UnexpectedTypeException(value2.GetType());
+            }
+
+            if (value3 is string)
+            {
+               newValue = Convert.ToString(value3);
             }
             else
             {
@@ -50,7 +60,8 @@ namespace Albatross.Expression.Operations
             }
 
 
-            return (double)text.IndexOf(value);
+
+            return text.Replace(oldValue,newValue);
         }
     }
 }

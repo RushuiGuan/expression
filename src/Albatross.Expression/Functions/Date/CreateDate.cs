@@ -20,7 +20,8 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Operand Type: int</para>
     /// <para>Output Type: System.DateTime</para>
-    /// <para>Usage: CreateDate(2018, 1, 31)</para>
+    /// <para>Usage: Create
+    /// 2018, 1, 31)</para>
     /// <para>Usage: CreateDate(2018, 1, 31, 10,10,00)</para>
     /// </summary>
     [ParserOperation]

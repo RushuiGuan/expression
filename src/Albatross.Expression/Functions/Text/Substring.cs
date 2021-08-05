@@ -21,15 +21,15 @@ namespace Albatross.Expression.Operations
 
             object value1 = list[0];
             object value2 = list[1];
-            
+
 
             string text;
             int start;
-            int? length= null;
+            int? length = null;
 
             if (value1 == null)
                 return null;
-           
+
 
             if (value1 is string)
             {
@@ -40,7 +40,11 @@ namespace Albatross.Expression.Operations
                 throw new UnexpectedTypeException(value1.GetType());
             }
 
-            if (value2 is double)
+            if (value2 is int)
+            {
+                start = (int)value2;
+            }
+            else if (value2 is double)
             {
                 start = (int)Math.Round((double)value2, 0);
             }

@@ -9,7 +9,7 @@ namespace Albatross.Expression.Functions.Number
     [ParserOperation]
     public class GetRandom : PrefixOperationToken
     {
-        public override string Name { get { return "GetRandom"; } }
+        public override string Name { get { return "getRandom"; } }
         public override int MinOperandCount { get { return 0; } }
         public override int MaxOperandCount { get { return 2; } }
         public override bool Symbolic { get { return false; } }
@@ -19,11 +19,11 @@ namespace Albatross.Expression.Functions.Number
             var input = Operands.Select(item => (int)Convert.ChangeType(item.EvalValue(context), typeof(int))).ToArray();
 
             if (input.Length == 1)
-                return new Random().Next(input[0]);
+                return (double)new Random().Next(input[0]);
             else if (input.Length == 2)
-                return new Random().Next(input[0], input[1]);
+                return (double)new Random().Next(input[0], input[1]);
 
-            return new Random().Next();
+            return (double)new Random().Next();
         }
     }
 }

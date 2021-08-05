@@ -7,9 +7,9 @@ using System.Text;
 namespace Albatross.Expression.Functions.Number
 {
     [ParserOperation]
-    public class ToNumber : PrefixOperationToken
+    public class Number : PrefixOperationToken
     {
-        public override string Name { get { return "toNumber"; } }
+        public override string Name { get { return "number"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 1; } }
         public override bool Symbolic { get { return false; } }
@@ -17,14 +17,7 @@ namespace Albatross.Expression.Functions.Number
         public override object EvalValue(Func<string, object> context)
         {
             object value = Operands.First().EvalValue(context);
-            if (value is string)
-            {
-                return Convert.ToDouble(value.ToString());
-            }
-            else
-            {
-                return DateTime.Parse(Convert.ToString(value));
-            }
+            return Convert.ToDouble(value.ToString());
         }
     }
 }

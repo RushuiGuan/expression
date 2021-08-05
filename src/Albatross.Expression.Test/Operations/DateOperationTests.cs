@@ -18,8 +18,8 @@ namespace Albatross.Expression.Test
         [TestCase("day(\"2015-5-14\")", ExpectedResult = 14)]
         [TestCase("month(\"2015-5-1\")", ExpectedResult = 5)]
         [TestCase("year(\"2015-1-1\")", ExpectedResult = 2015)]
-        [TestCase("Date(\"2015-2-10\") = createDate(\"2015, 2, 14\")", ExpectedResult = true)]
-        [TestCase("createDate(\"2015, 2, 14\"), Date(\"2015-2-10\")", ExpectedResult = true)]
+        [TestCase("Date(\"2015-2-10\") = createDate(2015, 2, 10)", ExpectedResult = true)]
+        [TestCase("createDate(2015, 2, 14) = Date(\"2015-2-14\")", ExpectedResult = true)]
 
         // Month Name
         [TestCase("monthName(1)", ExpectedResult = "January")]

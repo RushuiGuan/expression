@@ -1,8 +1,5 @@
 ﻿using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Tokens;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 
 namespace Albatross.Expression.Documentation
@@ -13,18 +10,16 @@ namespace Albatross.Expression.Documentation
         {
             var lst = new List<DocItem>();
 
-            var types = Assembly
-                .GetExecutingAssembly()
-                .GetTypes()
-                .Where(x => typeof(IToken).IsAssignableFrom(x) && !x.IsAbstract)
-            ;
+            var tokens = new Factory().Operations;
 
-            foreach (var type in types)
+            foreach (var token in tokens)
             {
+                var type = token.Key;
+                var instance = token.Value;
+
                 var docAttribute = type.GetCustomAttribute<DocAttribute>();
                 if (docAttribute != null)
                 {
-                    var instance = (IToken)Activator.CreateInstance(type);
                     var isFunction = docAttribute is FunctionDocAttribute;
                     docAttribute.ReplaceTokenWithName(instance.Name);
 
@@ -36,6 +31,13 @@ namespace Albatross.Expression.Documentation
                         Group = docAttribute.Group.ToString(),
                         Description = docAttribute.Description,
                         Type = (isFunction ? Type.Function : Type.Operation).ToString(),
+                    });
+                }
+                else
+                {
+                    lst.Add(new DocItem
+                    {
+                        Name = instance.Name
                     });
                 }
             }

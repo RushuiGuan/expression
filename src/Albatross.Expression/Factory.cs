@@ -39,6 +39,8 @@ namespace Albatross.Expression {
 
 		Dictionary<Type, IToken> operations = new Dictionary<Type, IToken>();
 
+		internal Dictionary<Type, IToken> Operations => operations;
+
 		public Factory Register(Assembly asm) {
 			foreach (Type type in asm.GetTypes()) {
 				if (type.GetCustomAttribute<ParserOperationAttribute>() != null) {

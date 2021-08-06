@@ -1,11 +1,27 @@
-﻿using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Tokens;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Albatross.Expression.Functions.Date
 {
+    [FunctionDoc(Group.Date, "{token}(@date,@day)",
+        @"
+### Add working days
+#### Inputs:
+- date: Date
+- day: Number
+
+#### Outputs:
+- Date at working time from Mondey to Friday.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(Date(2015-10-2), 5)
+        "
+    )]
     [ParserOperation]
     public class AddWorkingDays : PrefixOperationToken
     {

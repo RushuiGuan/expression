@@ -7,12 +7,30 @@ using System.Xml;
 using Albatross.Expression.Exceptions;
 
 using System.Globalization;
+using Albatross.Expression.Documentation.Attributes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// <para>Prefix operation that will take an input and C# format string and produced a formatted string</para>
 	/// 
 	/// </summary>
+	[FunctionDoc(Documentation.Group.Text, "{token}(@data,@format)",
+		@"
+### Format
+#### Inputs:
+- data: Object
+- format: String
+
+#### Outputs:
+- formatted string.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(Now(),""yyyy-MM-dd"")
+        "
+	)]
 	[ParserOperation]
 	public class Format : PrefixOperationToken {
 

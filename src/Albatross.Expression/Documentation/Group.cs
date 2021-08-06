@@ -6,6 +6,7 @@
         Text,
         Date,
         Number,
+        Boolean,
         Environment,
     }    
 }

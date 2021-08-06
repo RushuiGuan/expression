@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
 using Albatross.Expression.Tokens;
-using System.Xml;
+using System;
+using System.Linq;
 
 namespace Albatross.Expression.Operations
 {
@@ -24,6 +23,31 @@ namespace Albatross.Expression.Operations
     /// 2018, 1, 31)</para>
     /// <para>Usage: CreateDate(2018, 1, 31, 10,10,00)</para>
     /// </summary>
+    [FunctionDoc(Group.Date, "{token}(@date,@day)",
+        @"
+### Create new date, date time
+
+#### Inputs:
+- year: double
+- month: double
+- day: double
+- hour: double (optional)
+- minute: double (optional)
+- second: double (optional)
+
+#### Outputs:
+- Date or Date with time.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(2021, 12, 31)
+{token}(2021, 12, 31, 11)
+{token}(2021, 12, 31, 11, 59)
+{token}(2021, 12, 31, 11, 59, 59)
+        "
+    )]
     [ParserOperation]
     public class CreateDate : PrefixOperationToken
     {
@@ -35,14 +59,26 @@ namespace Albatross.Expression.Operations
         public override object EvalValue(Func<string, object> context)
         {
             var input = Operands.Select(item => (int)Convert.ChangeType(item.EvalValue(context), typeof(int))).ToArray();
+            var year = input[0];
+            var month = input[1];
+            var day = input[2];
+            var hour = 0;
+            var minute = 0;
+            var second = 0;
 
-            if (input.Count() == 3)
-                return new DateTime(input[0], input[1], input[2]);
-            else if (input.Count() == 6)
-                return new DateTime(input[0], input[1], input[2], input[3], input[4], input[5]);
+            if (input.Count() > 3)
+                hour = input[3];
 
-            else
-                throw new FormatException("Invalid Datetime input. The function should receive 3 parameters (year, month, date) or 6 (year, month, date, hours, minutes, seconds)");
+            if (input.Count() > 4)
+                minute = input[4];
+
+            if (input.Count() > 5)
+                second = input[5];
+
+            if (input.Count() > 6)
+                throw new FormatException("Invalid Datetime input. max inputs count is 6 (year, month, date, hours, minutes, seconds)");
+
+            return new DateTime(year, month, day, hour, minute, second);
         }
     }
 }

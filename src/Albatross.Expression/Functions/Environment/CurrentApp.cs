@@ -5,6 +5,8 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -12,6 +14,17 @@ namespace Albatross.Expression.Operations {
 	/// <para>Operand Count: 0</para>
 	/// <para>Output Type: string</para>
 	/// </summary>
+	[FunctionDoc(Group.Environment, "{token}()",
+		@"
+### Current application name
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}()
+        "
+	)]
 	[ParserOperation]
 	public class CurrentApp : PrefixOperationToken {
 		

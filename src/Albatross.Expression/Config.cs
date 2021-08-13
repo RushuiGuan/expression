@@ -14,5 +14,10 @@ namespace Albatross.Expression
 
             public static int SecoundInterval { get; set; } = 1;
         }
+
+        public static class NumericLiteral
+        {
+            public static string Culture { get; set; } = "en-US";
+        }
     }
 }

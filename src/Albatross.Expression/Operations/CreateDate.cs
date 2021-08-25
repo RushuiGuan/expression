@@ -29,7 +29,9 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			int[] input = (from item in Operands select (int)System.Convert.ChangeType(item.EvalValue(context), typeof(int))).ToArray();
+			var list = GetOperands(context);
+			int[] input = (from item in list 
+						   select (int)System.Convert.ChangeType(item, typeof(int))).ToArray();
 			return new DateTime(input[0], input[1], input[2]);
 		}
 	}

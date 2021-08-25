@@ -15,9 +15,9 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return true; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			object a = Operands.First().EvalValue(context);
+			object a = GetOperands(context).First();
 
-			if(a == null || a is double) { return a; }
+			if (a == null || a is double) { return a; }
 			throw new Exceptions.UnexpectedTypeException(a.GetType());
 		}
 	}

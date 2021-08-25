@@ -33,6 +33,7 @@ namespace Albatross.Expression.Operations {
 
 
 		public override object EvalValue(Func<string, object> context) {
+			ValidateOperands();
 			object obj = Operands.First().EvalValue(context);
 
 			if (obj.ConvertToBoolean()) {

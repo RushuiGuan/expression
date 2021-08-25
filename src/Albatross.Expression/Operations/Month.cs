@@ -17,7 +17,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			object a = Operands.First().EvalValue(context);
+			object a = GetOperands(context).First();
 			if (a == null) { return null; }
 			if (a is DateTime) {
 				return Convert.ToDouble(((DateTime)a).Month);

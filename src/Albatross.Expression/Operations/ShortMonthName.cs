@@ -18,7 +18,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			object value = Operands.First().EvalValue(context);
+			object value = GetOperands(context).First();
 
 			if (value is double){
 				return CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Convert.ToInt32(value));

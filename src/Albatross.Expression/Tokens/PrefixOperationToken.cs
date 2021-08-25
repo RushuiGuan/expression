@@ -89,6 +89,12 @@ namespace Albatross.Expression.Tokens {
 		public virtual object EvalValue(Func<string, object> context) {
 			return null;
 		}
+
+		protected void ValidateOperands() {
+			if(Operands.Count() < MinOperandCount || Operands.Count() > MaxOperandCount) {
+				throw new OperandException(Name);
+			}
+		}
 		//if the operand count = 1 and it is an array, return the array
 		//otherwise return normal operand values
 		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type firstType) {

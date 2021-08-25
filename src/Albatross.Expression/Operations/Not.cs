@@ -14,7 +14,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			object value = Operands.First().EvalValue(context);
+			object value = GetOperands(context).First();
 			return !value.ConvertToBoolean();
 		}
 	}

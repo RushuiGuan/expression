@@ -16,6 +16,9 @@ namespace Albatross.Expression.Functions.Number
 
         public override object EvalValue(Func<string, object> context)
         {
+            if (ExpressionMode.IsValidationMode)
+                return 1D;
+
             object value = Operands.First().EvalValue(context);
             return Convert.ToDouble(value.ToString());
         }

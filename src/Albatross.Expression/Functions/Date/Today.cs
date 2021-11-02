@@ -3,10 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
 
 namespace Albatross.Expression.Operations {
+	[FunctionDoc(Group.Date, "{token}()",
+		@"
+### Create date object represent current date
+
+#### Inputs:
+- No inputs
+
+#### Outputs:
+- Date.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}()
+        "
+	)]
 	[ParserOperation]
 	public class Today : PrefixOperationToken {
 		

@@ -26,7 +26,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[OperationDoc(Group.Boolean,"@expression {token} @expression",
 		@"
-### Logical and operation
+### Logical AND operation
 
 #### References:
 - [{token}](https://help.workiom.com/article/formula#{token})

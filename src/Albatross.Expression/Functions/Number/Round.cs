@@ -3,10 +3,28 @@ using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Functions.Number
 {
+    [FunctionDoc(Group.Number, "{token}(@number, @digits)",
+        @"
+### Returns the Round of decimal numbers with specified number of digits.
+#### Inputs:
+- number: The number to round.
+- digits: How many digits after decimal point.
+
+#### Outputs:
+- Decimal number after round.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(4.23121, 2)
+        "
+    )]
     [ParserOperation]
     public class Round : PrefixOperationToken
     {

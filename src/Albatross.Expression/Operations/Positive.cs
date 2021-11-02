@@ -4,8 +4,21 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
+	[OperationDoc(Group.Boolean, "{token} @v",
+		@"
+### Positive sign
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token} 1
+        "
+	)]
 	[ParserOperation]
 	public class Positive : PrefixOperationToken {
 

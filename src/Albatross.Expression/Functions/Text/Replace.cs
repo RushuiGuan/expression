@@ -2,9 +2,28 @@
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
+    [FunctionDoc(Group.Text, "{token}(@text,@oldValue,@newValue)",
+        @"
+### Replace all occurence of the oldValue with the newValue in the text.
+#### Inputs:
+- text: String
+- oldValue: String
+- newValue: String
+#### Outputs:
+- String
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(""Old text"",""New text"")
+        "
+    )]
     [ParserOperation]
     public class Replace : PrefixOperationToken
     {

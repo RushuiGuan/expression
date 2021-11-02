@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -18,6 +20,17 @@ namespace Albatross.Expression.Operations {
 	/// </list>
 	/// <para>Output Type: double</para>
 	/// </summary>
+	[OperationDoc(Group.Boolean, "@base {token} @exp",
+		@"
+### Power of a numeric value.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+5 {token} 2
+        "
+	)]
 	[ParserOperation]
 	public class Power : InfixOperationToken {
 

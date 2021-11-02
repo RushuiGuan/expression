@@ -3,11 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
 
 
 namespace Albatross.Expression.Operations {
+	[FunctionDoc(Group.Date, "{token}(@date)",
+		@"
+### Returns the year of the given date as a number.
+
+#### Inputs:
+- date: date
+
+#### Outputs:
+- The year value as number.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(2021-12-31)
+        "
+	)]
 	[ParserOperation]
 	public class Year : PrefixOperationToken {
 
@@ -19,8 +36,8 @@ namespace Albatross.Expression.Operations {
 		public override object EvalValue(Func<string, object> context) {
 			object value = Operands.First().EvalValue(context);
 			if (value == null) { return null; }
-			else if (value is DateTime) {
-				return Convert.ToDouble(((DateTime)value).Year);
+			else if (value is DateTime time) {
+				return Convert.ToDouble(time.Year);
 			} else {
 				DateTime datetime;
 				if (DateTime.TryParse(Convert.ToString(value), out datetime)) {

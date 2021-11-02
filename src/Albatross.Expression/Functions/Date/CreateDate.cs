@@ -23,7 +23,7 @@ namespace Albatross.Expression.Operations
     /// 2018, 1, 31)</para>
     /// <para>Usage: CreateDate(2018, 1, 31, 10,10,00)</para>
     /// </summary>
-    [FunctionDoc(Group.Date, "{token}(@date,@day)",
+    [FunctionDoc(Group.Date, "{token}(@year,@month,@day,@hour,@minute,@second)",
         @"
 ### Create new date, date time
 

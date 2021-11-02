@@ -3,12 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
 
 using System.Globalization;
 
 namespace Albatross.Expression.Operations {
+	[FunctionDoc(Group.Date, "{token}(@date)",
+		@"
+### Returns the shortened version of month name as a text.
+
+#### Inputs:
+- date: date
+
+#### Outputs:
+- Abbreviated month name
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(2021-12-31)
+        "
+	)]
 	[ParserOperation]
 	public class ShortMonthName : PrefixOperationToken {
 

@@ -4,8 +4,21 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
+	[OperationDoc(Group.Boolean, "{token} @v",
+		@"
+### Multiply the numeric value with -1.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token} 3
+        "
+	)]
 	[ParserOperation]
 	public class Negative : PrefixOperationToken {
 		

@@ -3,10 +3,27 @@ using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Functions.Number
 {
+    [FunctionDoc(Group.Number, "{token}(@number)",
+        @"
+### Returns larget integer less than or equal the decimal number.
+#### Inputs:
+- number: The decimal number to round.
+
+#### Outputs:
+- Integer.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(4.23)
+        "
+    )]
     [ParserOperation]
     public class RoundDown : PrefixOperationToken
     {

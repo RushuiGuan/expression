@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -22,6 +24,17 @@ namespace Albatross.Expression.Operations {
 	/// <para>Usage: 3 > 2 or 2 > 1</para>
 	/// <para>Precedance: 20</para>
 	/// </summary>
+	[OperationDoc(Group.Boolean, "@expression {token} @expression",
+		@"
+### Logical OR operation
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+(a > 5) {token} (b > 6)
+        "
+	)]
 	[ParserOperation]
 	public class Or : InfixOperationToken {
 		

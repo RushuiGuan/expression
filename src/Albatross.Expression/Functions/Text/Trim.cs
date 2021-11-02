@@ -5,10 +5,27 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-
 using System.Globalization;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
+	[FunctionDoc(Group.Text, "{token}(@text)",
+		@"
+### Removes the empty spaces from the beginning and the end of the string.
+#### Inputs:
+- text: String
+
+#### Outputs:
+- String
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}("" Sample text "")
+        "
+	)]
 	[ParserOperation]
 	public class Trim : PrefixOperationToken {
 

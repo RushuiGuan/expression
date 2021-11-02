@@ -6,8 +6,21 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 using System.Collections;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
+	[OperationDoc(Group.Boolean, "{token}(@v1, @v2, ...)",
+		@"
+### Returns the largest of the given numbers.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(1,2,3)
+        "
+	)]
 	[ParserOperation]
 	public class Max : PrefixOperationToken {
 		
@@ -19,7 +32,7 @@ namespace Albatross.Expression.Operations {
 
 		public override object EvalValue(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
-			Type type;
+            System.Type type;
 			IEnumerable list = GetParamsOperands(context, out type);
 
 			if (type == null) {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 
 namespace Albatross.Expression.Operations {
@@ -14,6 +14,17 @@ namespace Albatross.Expression.Operations {
 	/// <para>Operand Type: any</para>
 	/// <para>Example: Coalesce(null, 1, 2, 3) will return 1</para>
 	/// </summary>
+	[OperationDoc(Group.Boolean, "{token}(o1,o2,...)",
+		@"
+### Prefix operation that returns the first non-null operand.	
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(null,1,2,3)
+        "
+	)]
 	[ParserOperation]
 	public class Coalesce : PrefixOperationToken {
 

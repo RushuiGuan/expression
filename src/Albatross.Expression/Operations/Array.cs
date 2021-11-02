@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 
 namespace Albatross.Expression.Operations {
@@ -15,6 +15,17 @@ namespace Albatross.Expression.Operations {
 	/// <para>Output Type: <see cref="System.Collections.Generic.List{T}"/> where T is Object</para>
 	/// <para>Usage: @(1, 2, 3, 4, 5)</para>
 	/// </summary>
+	[OperationDoc(Group.Boolean, "{token}(v1,v2,...)",
+		@"
+### Return array of passed values
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(1,2,3)
+        "
+	)]
 	[ParserOperation]
 	public class Array : PrefixOperationToken {
 		public override string Name { get { return "@"; } }

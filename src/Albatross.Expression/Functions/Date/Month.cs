@@ -3,12 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
 
 
 namespace Albatross.Expression.Operations
 {
+    [FunctionDoc(Group.Date, "{token}(@date)",
+        @"
+### Returns the month of the given date as a number.
+
+#### Inputs:
+- date: date
+
+#### Outputs:
+- The month value between 1 and 12.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(2021-12-31)
+        "
+    )]
     [ParserOperation]
     public class Month : PrefixOperationToken
     {

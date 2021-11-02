@@ -5,7 +5,8 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -23,6 +24,17 @@ namespace Albatross.Expression.Operations {
 	/// <para>Output Type: any</para>
 	/// <para>Usage: if( 3 > 2, "OK", "No")</para>
 	/// </summary>
+	[OperationDoc(Group.Boolean, "{token}(@cond,@v1,@v2)",
+		@"
+### Returns the first given value if true and second given value if false. 
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(5>3, 1, 2)
+        "
+	)]
 	[ParserOperation]
 	public class If : PrefixOperationToken {
 

@@ -3,9 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
+	[OperationDoc(Group.Boolean, "{token} @v",
+		@"
+### Returns true if the operand is not true.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(5>10)
+        "
+	)]
 	[ParserOperation]
 	public class Not : PrefixOperationToken {
 		public override string Name { get { return "not"; } }

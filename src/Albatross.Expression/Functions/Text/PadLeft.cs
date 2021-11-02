@@ -5,10 +5,27 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-
 using System.Globalization;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
+	[FunctionDoc(Group.Text, "{token}(@totalWidth,@paddingChar)",
+		@"
+### Returns a new string that right-aligns the characters in this instance by padding them on the left with a specified Unicode character, for a specified total length.
+#### Inputs:
+- totalWidth: Integer
+- paddingChar: Char
+#### Outputs:
+- String
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(5,'.')
+        "
+	)]
 	[ParserOperation]
 	public class PadLeft : PrefixOperationToken {
 		public const char DefaultPaddingCharacter = ' ';

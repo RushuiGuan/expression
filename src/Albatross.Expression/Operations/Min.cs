@@ -6,8 +6,21 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 using System.Collections;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
+	[OperationDoc(Group.Boolean, "{token}(@v1, @v2, ...)",
+		@"
+### Returns the smallest of the given numbers.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(1,2,3)
+        "
+	)]
 	[ParserOperation]
 	public class Min : PrefixOperationToken {
 
@@ -17,7 +30,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			Type type;
+            System.Type type;
 			IEnumerable items = GetParamsOperands(context, out type);
 
 			if (type == null) {

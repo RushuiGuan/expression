@@ -6,10 +6,26 @@ using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 using System.Collections;
-
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
+    [FunctionDoc(Group.Text, "{token}(@string)",
+        @"
+### Returns the number of characters in a string.
+#### Inputs:
+- string: String
+#### Outputs:
+- Integer
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(""Hello World"")
+        "
+    )]
     [ParserOperation]
     public class Len : PrefixOperationToken
     {

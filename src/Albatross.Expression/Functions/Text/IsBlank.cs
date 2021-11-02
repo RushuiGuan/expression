@@ -5,7 +5,8 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -13,6 +14,22 @@ namespace Albatross.Expression.Operations {
 	/// <para>Operand Type: any</para>
 	/// <para>Null, empty string and string with only white space are considered as blank</para>
 	/// </summary>
+	[FunctionDoc(Group.Text, "{token}(@value)",
+		@"
+### Returns boolean value, true if the value is blank, false if not.  Null, empty string, string with only white space are considered as blank.
+#### Inputs:
+- value: String
+
+#### Outputs:
+- Boolean
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}("""")
+        "
+	)]
 	[ParserOperation]
 	public class IsBlank : PrefixOperationToken {
 

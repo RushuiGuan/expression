@@ -2,10 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Functions.Number
 {
+    [FunctionDoc(Group.Number, "{token}(@val)",
+        @"
+### Return number value of the passed string
+#### Inputs:
+- @val: Number as a string
+#### Outputs:
+- Double.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}('1')
+        "
+    )]
     [ParserOperation]
     public class Number : PrefixOperationToken
     {
@@ -16,9 +32,6 @@ namespace Albatross.Expression.Functions.Number
 
         public override object EvalValue(Func<string, object> context)
         {
-            if (ExpressionMode.IsValidationMode)
-                return 1D;
-
             object value = Operands.First().EvalValue(context);
             return Convert.ToDouble(value.ToString());
         }

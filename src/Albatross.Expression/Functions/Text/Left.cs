@@ -5,8 +5,9 @@ using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
 using Albatross.Expression.Exceptions;
-
 using System.Globalization;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -22,6 +23,22 @@ namespace Albatross.Expression.Operations {
 	/// <para>Output Type: string</para>
 	/// <para>Usage: Left("test", 1) should return "t"</para>
 	/// </summary>
+	[FunctionDoc(Group.Text, "{token}(@string,@num)",
+		@"
+### Extracts the specified number of characters from the beginning of the string.
+#### Inputs:
+- string: String
+- num: Integer
+#### Outputs:
+- String
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(""Hello World"", 5)
+        "
+	)]
 	[ParserOperation]
 	public class Left : PrefixOperationToken {
 		public override string Name { get { return "Left"; } }

@@ -1,11 +1,28 @@
 ﻿using Albatross.Expression.Tokens;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
 
 namespace Albatross.Expression.Functions.Date
 {
+	[FunctionDoc(Group.Date, "{token}(@datetime1,@datetime2)",
+		@"
+### Subtacts the given date-time values to return the minutes between them.
+
+#### Inputs:
+- datetime1: datetime
+- datetime2: datetime
+
+#### Outputs:
+- The total minutes between the two dates.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+		@"
+{token}(2021-12-31 11:15:00, 2021-12-31 10:15:00)
+        "
+	)]
 	[ParserOperation]
 	public class SubtractTime : PrefixOperationToken
 	{

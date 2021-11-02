@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Tokens;
 using System.Xml;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
@@ -19,6 +21,17 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Output Type: double</para>
     /// </summary>
+    [OperationDoc(Group.Boolean, "@v1 {token} @v2",
+        @"
+### Add together two numeric values.
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+2 {token} 1
+        "
+    )]
     [ParserOperation]
     public class Plus : InfixOperationToken
     {

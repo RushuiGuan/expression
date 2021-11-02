@@ -2,9 +2,27 @@
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
+    [FunctionDoc(Group.Text, "{token}(@text,@num)",
+        @"
+### Extracts the specified number of characters from the end of the string.
+#### Inputs:
+- text: String
+- num: Integer
+#### Outputs:
+- String
+
+#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})
+        ",
+        @"
+{token}(""Hello World"", 5)
+        "
+    )]
     [ParserOperation]
     public class Right : PrefixOperationToken
     {

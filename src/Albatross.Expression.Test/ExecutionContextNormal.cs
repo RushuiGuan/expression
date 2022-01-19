@@ -47,5 +47,16 @@ namespace Albatross.Expression.Test {
 			}
 			return context.GetValue(target, input);
 		}
+
+
+		[TestCase]
+		public void TestEval() {
+			var context = factory.Create();
+			context.Set(new ContextValue { Name = "a", ContextType = ContextType.Value, Value = "text", });
+			Dictionary<string, object> dict = new Dictionary<string, object>();
+			var result = context.Eval("a", dict, typeof(string));
+			Assert.AreEqual("text", result);
+
+		}
 	}
 }

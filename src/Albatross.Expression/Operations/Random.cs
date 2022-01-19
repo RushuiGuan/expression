@@ -5,7 +5,7 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Random : PrefixOperationToken {
 
-		public override string Name { get { return "max"; } }
+		public override string Name { get { return "random"; } }
 		public override int MinOperandCount { get { return 2; } }
 		public override int MaxOperandCount { get { return 2; } }
 		public override bool Symbolic { get { return false; } }

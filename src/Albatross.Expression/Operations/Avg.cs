@@ -28,8 +28,7 @@ namespace Albatross.Expression.Operations {
 
 		public override object EvalValue(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
-			Type type;
-			IEnumerable items = GetParamsOperands(context, out type);
+			IEnumerable items = GetParamsOperands(context, out _);
 			
 			double sum = 0;
 			int count = 0;

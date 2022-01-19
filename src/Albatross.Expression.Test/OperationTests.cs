@@ -198,5 +198,17 @@ namespace Albatross.Expression.Test {
 			var result = token.EvalValue(null);
 			Assert.AreEqual(result, expected);
 		}
+
+		[TestCase("Random(0, 2)", 0, 2)]
+		[TestCase("Random(1, 10)", 1, 10)]
+		public void TestRandom(string expression, int min, int max) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = token.EvalValue(null);
+			Assert.That(result is int);
+			int number = (int)result;
+			Assert.True(number >= min);
+			Assert.True(number <= max);
+		}
 	}
 }

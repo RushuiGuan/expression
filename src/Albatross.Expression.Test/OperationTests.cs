@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 
 namespace Albatross.Expression.Test {
 	[TestFixture]
@@ -209,6 +210,27 @@ namespace Albatross.Expression.Test {
 			int number = (int)result;
 			Assert.True(number >= min);
 			Assert.True(number <= max);
+		}
+
+		[TestCase("GetJsonValue('{\"number\":1}', \"number\")", ExpectedResult = "1")]
+		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\", \"number\")", ExpectedResult = "2")]
+		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\")", ExpectedResult = "{ \"number\": 2 }")]
+		public object TestGetJsonValue(string expression) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = token.EvalValue(null);
+			return Convert.ToString(result);
+		}
+
+		[TestCase("GetJsonValue('{\"number\":1}', \"value\")")]
+		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\", \"name\")")]
+		public void TestGetJsonValueException(string expression) {
+			TestDelegate action = () => {
+				IParser parser = Factory.Instance.Create();
+				IToken token = parser.Compile(expression);
+				var result = token.EvalValue(null);
+			};
+			Assert.Throws<KeyNotFoundException>(action);
 		}
 	}
 }

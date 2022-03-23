@@ -27,7 +27,7 @@ namespace Albatross.Expression {
 		public static object GetJsonValue(this JsonElement elem) {
 			switch (elem.ValueKind) {
 				case JsonValueKind.Array:
-					return elem.EnumerateArray().Select(args => GetJsonValue(args)).ToArray();
+					return elem;
 				case JsonValueKind.Null:
 				case JsonValueKind.Undefined:
 					return null;

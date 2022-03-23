@@ -23,7 +23,7 @@ namespace Albatross.Expression.Operations {
 				}
 			}
 			if (elem.ValueKind == JsonValueKind.Array) {
-				return elem.GetArrayLength();
+				return Convert.ToDouble(elem.GetArrayLength());
 			} else {
 				throw new InvalidOperationException("Input value is not an array");
 			}

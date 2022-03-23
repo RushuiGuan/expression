@@ -214,25 +214,23 @@ namespace Albatross.Expression.Test {
 			Assert.True(number <= max);
 		}
 
-		[TestCase("GetJsonValue('{\"number\":1}', \"number\")", ExpectedResult = "1")]
-		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\", \"number\")", ExpectedResult = "2")]
-		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\")", ExpectedResult = "{ \"number\": 2 }")]
+		[TestCase("GetJsonValue('{\"number\":1}', \"number\")", ExpectedResult = 1)]
+		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\", \"number\")", ExpectedResult = 2)]
+		[TestCase("GetJsonValue('{\"number\":1}', \"value\")", ExpectedResult =null)]
+		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\", \"name\")", ExpectedResult =null)]
 		public object TestGetJsonValue(string expression) {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = token.EvalValue(null);
-			return Convert.ToString(result);
+			return result;
 		}
 
-		[TestCase("GetJsonValue('{\"number\":1}', \"value\")")]
-		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\", \"name\")")]
-		public void TestGetJsonValueException(string expression) {
-			TestDelegate action = () => {
-				IParser parser = Factory.Instance.Create();
-				IToken token = parser.Compile(expression);
-				var result = token.EvalValue(null);
-			};
-			Assert.Throws<KeyNotFoundException>(action);
+		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\")", ExpectedResult = "{ \"number\": 2 }")]
+		public object TestGetJsonValue2(string expression) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = token.EvalValue(null);
+			return Convert.ToString(result);
 		}
 	}
 }

@@ -26,9 +26,9 @@ namespace Albatross.Expression.Operations {
 			for (int i = 1; i < operands.Count; i++) {
 				string member = Convert.ToString(operands[i]);
 				if (elem.ValueKind == JsonValueKind.Object) {
-					elem = elem.GetProperty(member);
-				} else {
-					return null;
+					if (!elem.TryGetProperty(member, out elem)) {
+						return null;
+					}
 				}
 			}
 			return elem.GetJsonValue();

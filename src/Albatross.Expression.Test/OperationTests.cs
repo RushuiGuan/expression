@@ -74,6 +74,8 @@ namespace Albatross.Expression.Test {
 		[TestCase("1-null", ExpectedResult = null)]
 
 		[TestCase("1+2", ExpectedResult = 3)]
+		[TestCase("\"a\"+\"b\"", ExpectedResult = "ab")]
+		[TestCase("\"\\\\\\\\server\\\\\"+\"b\"", ExpectedResult = "\\\\server\\b")]
 		[TestCase("1+null", ExpectedResult = null)]
 
 		[TestCase("null%3", ExpectedResult = null)]

@@ -18,8 +18,9 @@ namespace Albatross.Expression.Operations {
 			if (value is JsonElement) {
 				elem = (JsonElement)value;
 			} else {
-				var doc = JsonDocument.Parse(Convert.ToString(value));
-				elem = doc.RootElement;
+				using (var doc = JsonDocument.Parse(Convert.ToString(value))) {
+					elem = doc.RootElement.Clone();
+				}
 			}
 			if (elem.ValueKind == JsonValueKind.Array) {
 				return elem.GetArrayLength();

@@ -5,7 +5,7 @@
     <Title>Albatross Expression Api</Title>
     <Description>Albatross.Expression api is created to process and evaluate text based expression strings.  The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and using it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.</Description>
     <Authors>Rushui Guan</Authors>
-    <Version>3.0.8</Version>
+    <Version>3.0.9</Version>
     <PackageProjectUrl>https://rushuiguan.github.io/expression/</PackageProjectUrl>
     <PackageTags>csharp expression parser eval context</PackageTags>
     <Copyright>Copyright 2018</Copyright>

@@ -139,6 +139,14 @@ namespace Albatross.Expression.Test {
 		[TestCase("right(\"123456789\", 100)", ExpectedResult = "123456789")]
 
 		[TestCase("Format(CreateDate(1985, 5,27), \"yyyy-MM-dd\")", ExpectedResult ="1985-05-27")]
+
+		[TestCase("Round(3.14, 0)", ExpectedResult = 3)]
+		[TestCase("Round(3.14, 1)", ExpectedResult = 3.1)]
+		[TestCase("Round(3.14, 2)", ExpectedResult = 3.14)]
+		[TestCase("Round(3.9, 0)", ExpectedResult = 4)]
+		[TestCase("Floor(3.9)", ExpectedResult = 3)]
+		[TestCase("Floor(3)", ExpectedResult = 3)]
+		[TestCase("Floor(-3.1)", ExpectedResult = -4)]
 		public object OperationsTesting(string expression) {
 			return Factory.Instance.Create().Compile(expression).EvalValue(null);
 		}

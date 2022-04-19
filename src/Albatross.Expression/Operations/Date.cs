@@ -29,7 +29,8 @@ namespace Albatross.Expression.Operations {
 			if (value is DateTime) {
 				return value;
 			} else {
-				return DateTime.Parse(Convert.ToString(value));
+				var item = DateTime.Parse(Convert.ToString(value));
+				return item;
 			}
 		}
 	}

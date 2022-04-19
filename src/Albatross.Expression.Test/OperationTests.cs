@@ -240,5 +240,17 @@ namespace Albatross.Expression.Test {
 			var result = token.EvalValue(null);
 			return Convert.ToString(result);
 		}
+
+		[TestCase("UnixTimestamp(Date('2022-04-19T20:40:43Z'))", ExpectedResult = 1650400843)]
+		[TestCase("Floor(Num(UnixTimestamp(Date('2022-04-19T20:40:43Z'))) /900)*900", ExpectedResult = 1650400200)]
+		[TestCase("Format(UnixTimestamp2DateTime(UnixTimestamp(Date('2022-04-19T20:40:43Z'))), 'yyyy-MM-ddTHH:mm:ssZ')", ExpectedResult = "2022-04-19T20:40:43Z")]
+		[TestCase("Format(UnixTimestamp2DateTime(Floor(Num(UnixTimestamp(Date('2022-04-19T20:40:43Z'))) /900)*900), 'u')", ExpectedResult = "2022-04-19 20:30:00Z")]
+		[TestCase("Format(UnixTimestamp2DateTime(Floor(Num(UnixTimestamp(Date('2022-04-19T20:40:43Z'))) /900)*900), 'yyyy-MM-ddTHH:mm:ssZ')", ExpectedResult = "2022-04-19T20:30:00Z")]
+		[TestCase("Format(Utc(Date('2022-04-19T20:40:43Z')), 's')", ExpectedResult = "2022-04-19T20:40:43")]
+		[TestCase("Format(Utc(Date('2022-04-19T20:40:43Z')), 'u')", ExpectedResult = "2022-04-19 20:40:43Z")]
+		public object OperationsTestingTimeAndFormats(string expression) {
+			return Factory.Instance.Create().Compile(expression).EvalValue(null);
+		}
 	}
 }
+

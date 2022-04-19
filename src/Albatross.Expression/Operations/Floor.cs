@@ -12,12 +12,11 @@ namespace Albatross.Expression.Operations {
 
 		public override object EvalValue(Func<string, object> context) {
 			List<object> list = GetOperands(context);
-			object value = list[0];
-
-			if (value is double) {
+			try {
+				var value = Convert.ToDouble(list[0]);
 				return Math.Floor((double)value);
-			} else {
-				throw new Exceptions.UnexpectedTypeException(value.GetType());
+			} catch (FormatException) {
+				throw new Exceptions.UnexpectedTypeException(list[0].GetType());
 			}
 		}
 	}

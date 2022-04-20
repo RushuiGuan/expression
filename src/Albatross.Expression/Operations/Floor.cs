@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Albatross.Expression.Tokens;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Floor the current number and remove all decimals
+	/// </summary>
 	[ParserOperation]
 	public class Floor : PrefixOperationToken {
 		public override string Name { get { return "Floor"; } }

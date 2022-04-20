@@ -4,7 +4,9 @@ using Albatross.Expression.Tokens;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
-	/// <para>Prefix operation that convert a DateTime to unix timestamp integer.  If the input is not DateTime, the operand is converted to text first and parsed to a datetime object</para>
+	/// <para>Prefix operation that convert a DateTime to the number of seconds that have elapsed since 1970-01-01T00:00:00Z.
+	/// It is also called unix timestamp.  
+	/// If the input is not DateTime, the operand is converted to text first and parsed to a datetime object</para>
 	/// <para>Operand Count: 1</para>
 	/// <list type="number">
 	///		<listheader>

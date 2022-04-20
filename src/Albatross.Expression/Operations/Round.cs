@@ -9,6 +9,9 @@ using Albatross.Expression.Exceptions;
 using System.Globalization;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Perform a mid point rounding away from zero.  First operand is the input, second operand is the number of digits.
+	/// </summary>
 	[ParserOperation]
 	public class Round : PrefixOperationToken {
 		public override string Name { get { return "Round"; } }

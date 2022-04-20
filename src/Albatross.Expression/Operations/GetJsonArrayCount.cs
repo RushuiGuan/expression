@@ -4,6 +4,9 @@ using System.Text.Json;
 using Albatross.Expression.Tokens;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Return the length of a json array
+	/// </summary>
 	[ParserOperation]
 	public class GetJsonArrayCount : PrefixOperationToken {
 

@@ -3,6 +3,9 @@ using System.Linq;
 using Albatross.Expression.Tokens;
 
 namespace Albatross.Expression.Operations {
+	/// <summary>
+	/// Convert a dateTime object to utc.  If the input operand is a string, the function will attempt to parse it first.
+	/// </summary>
 	[ParserOperation]
 	public class Utc : PrefixOperationToken {
 		public override string Name { get { return "Utc"; } }

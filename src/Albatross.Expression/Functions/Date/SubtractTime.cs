@@ -5,7 +5,7 @@ using Albatross.Expression.Documentation.Attributes;
 
 namespace Albatross.Expression.Functions.Date
 {
-	[FunctionDoc(Group.Date, "{token}(@datetime1,@datetime2)",
+    [FunctionDoc(Group.Date, "{token}(@datetime1,@datetime2)",
 		@"
 ### Subtacts the given date-time values to return the minutes between them.
 

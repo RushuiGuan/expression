@@ -1,12 +1,12 @@
-﻿using Albatross.Expression.Tokens;
-using System;
-using Albatross.Expression.Documentation;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Tokens;
+using System;
 
 namespace Albatross.Expression.Functions.Date
 {
     [FunctionDoc(Group.Date, "{token}(@datetime1,@datetime2)",
-		@"
+        @"
 ### Subtacts the given date-time values to return the minutes between them.
 
 #### Inputs:
@@ -19,25 +19,28 @@ namespace Albatross.Expression.Functions.Date
 #### References:
 - [{token}](https://help.workiom.com/article/formula#{token})
         ",
-		@"
+        @"
 {token}(2021-12-31 11:15:00, 2021-12-31 10:15:00)
         "
-	)]
-	[ParserOperation]
-	public class SubtractTime : PrefixOperationToken
-	{
-		public override string Name { get { return "subtractTime"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 2; } }
-		public override bool Symbolic { get { return false; } }
+    )]
+    [ParserOperation]
+    public class SubtractTime : PrefixOperationToken
+    {
+        public override string Name { get { return "subtractTime"; } }
+        public override int MinOperandCount { get { return 2; } }
+        public override int MaxOperandCount { get { return 2; } }
+        public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context)
-		{
-			DateTime date1 = (DateTime)Convert.ChangeType(Operands[0].EvalValue(context), typeof(DateTime));
-			DateTime date2 = (DateTime)Convert.ChangeType(Operands[1].EvalValue(context), typeof(DateTime));
+        public override object EvalValue(Func<string, object> context)
+        {
+            DateTime date1 = (DateTime)Convert.ChangeType(Operands[0].EvalValue(context), typeof(DateTime));
+            DateTime date2 = (DateTime)Convert.ChangeType(Operands[1].EvalValue(context), typeof(DateTime));
 
-			var result = (double)((long)date1.Subtract(date2).TotalMinutes);
-			return result;
-		}
-	}
+            date1 = date1.AddSeconds(-date1.Second).AddSeconds(1);
+            date2 = date2.AddSeconds(-date2.Second);
+
+            var result = (double)((long)date1.Subtract(date2).TotalMinutes);
+            return result;
+        }
+    }
 }

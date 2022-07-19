@@ -4,6 +4,8 @@ namespace Albatross.Expression
 {
     public static class Config
     {
+        public const string DefaultVariableNamePattern = @"^\s*([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]+)?) \b (?!\s*\() ";
+
         public static class NowFunction
         {
             public static DateTimeKind DateTimeKind { get; set; } = DateTimeKind.Local;

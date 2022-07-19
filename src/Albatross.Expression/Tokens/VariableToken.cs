@@ -42,7 +42,7 @@ namespace Albatross.Expression.Tokens {
 	/// </summary>
 	public class VariableToken : IVariableToken {
 		//const string VariableNamePattern = @"^\s*([a-zA-Z_]+\.?[a-zA-Z0-9_]*) \b (?!\s*\() ";
-		const string VariableNamePattern = @"^\s*([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]+)?) \b (?!\s*\() ";
+		const string VariableNamePattern = Config.DefaultVariableNamePattern;
 		static Regex VariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
 
 		public string Name { get; private set; }

@@ -1,18 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyVersion>2.3.4.3</AssemblyVersion>
-		<FileVersion>2.3.4.3</FileVersion>
+		<AssemblyVersion>2.3.5.3</AssemblyVersion>
+		<FileVersion>2.3.5.3</FileVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.3.4.3</Version>
+		<Version>2.3.5.3</Version>
 		<Authors>Workiom.Expression</Authors>
 		<PackageId>Workiom.Expression</PackageId>
 		<Product>Workiom.Expression</Product>
-		<Description>Added Indexof and Substring</Description>
+		<Description>Added ToBase64 FromBase64 and ToJsonFormat</Description>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	  <PackageReference Include="System.Security.Principal.Windows">
 	    <Version>4.4.1</Version>
 	  </PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 	</ItemGroup>
 </Project>

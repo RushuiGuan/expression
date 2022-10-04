@@ -26,7 +26,7 @@ namespace Albatross.Expression.Functions.Text
     [ParserOperation]
     public class ToHex : PrefixOperationToken
     {
-        public override string Name { get { return "ToBase64"; } }
+        public override string Name { get { return "ToHex"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 1; } }
         public override bool Symbolic { get { return false; } }

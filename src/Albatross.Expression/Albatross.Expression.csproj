@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyVersion>2.3.5.4</AssemblyVersion>
-		<FileVersion>2.3.5.4</FileVersion>
+		<AssemblyVersion>2.3.5.5</AssemblyVersion>
+		<FileVersion>2.3.5.5</FileVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.3.5.4</Version>
+		<Version>2.3.5.5</Version>
 		<Authors>Workiom.Expression</Authors>
 		<PackageId>Workiom.Expression</PackageId>
 		<Product>Workiom.Expression</Product>
-		<Description>Added ToBase64 FromBase64 and ToJsonFormat</Description>
+		<Description>Implement concat function</Description>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	  <PackageReference Include="System.Security.Principal.Windows">

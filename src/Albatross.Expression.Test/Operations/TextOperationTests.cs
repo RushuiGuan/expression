@@ -69,6 +69,7 @@ namespace Albatross.Expression.Test
         [TestCase("substring(\"hom.rcp@gmail.com\", 8)", ExpectedResult = "gmail.com")]
 
         [TestCase("substring(\"hom.rcp@gmail.com\", indexof(\"hom.rcp@gmail.com\", \"@\"))", ExpectedResult = "@gmail.com")]
+        [TestCase("concat(true,5, 8,\"-variable\")", ExpectedResult = "58-variable")]
         public object OperationsTesting(string expression)
         {
             return Factory.Instance.Create().Compile(expression).EvalValue(null);

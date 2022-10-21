@@ -45,6 +45,7 @@ namespace Albatross.Expression.Test
         [TestCase("roundDown(50.99)", ExpectedResult = 50)]
 
         [TestCase("Number(\"44\")", ExpectedResult = 44)]
+        [TestCase("SubtractTime(Date(\"2022-10-10 10:20:10\"),Date(\"2022-10-10 10:10:13\"))", ExpectedResult = 10)]
         public object OperationsTesting(string expression)
         {
             return Factory.Instance.Create().Compile(expression).EvalValue(null);

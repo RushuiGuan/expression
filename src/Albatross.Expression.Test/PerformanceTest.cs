@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -21,14 +22,14 @@ namespace Albatross.Expression.Test
             var parser = Factory.Instance.DefaultVariableToken(new FormulaVariableToken()).Create();
             var sw = Stopwatch.StartNew();
             var token = parser.Compile(expression);
-            
+
             var jsonSerializerSettings = new JsonSerializerSettings()
             {
                 TypeNameHandling = TypeNameHandling.All
             };
-            var str = JsonConvert.SerializeObject(token,jsonSerializerSettings);
+            var str = JsonConvert.SerializeObject(token, jsonSerializerSettings);
             var token2 = (IToken)JsonConvert.DeserializeObject(str, jsonSerializerSettings);
-            
+
             var result = token2.EvalValue(x =>
             {
                 return 10;
@@ -118,6 +119,28 @@ namespace Albatross.Expression.Test
                 });
                 Console.WriteLine($"Time took:{sw.ElapsedMilliseconds} ms. {expression}");
             }
+        }
+
+        [Test]
+        public void PerformanceTesting_1000()
+        {
+            var variables = new List<string>();
+            for (int i = 0; i < 1000; i++)
+                variables.Add($"_F_A_{Guid.NewGuid().ToString().Replace("-", "z")}");
+
+            var expression = string.Join(" + ", variables);
+
+            Config.NowFunction.DateTimeKind = DateTimeKind.Utc;
+            Config.NowFunction.MinuteInterval = 5;
+            Config.NowFunction.SecoundInterval = 0;
+            var parser = Factory.Instance.DefaultVariableToken(new FormulaVariableToken()).Create();
+            var sw = Stopwatch.StartNew();
+            var result = parser.Compile(expression).EvalValue(x =>
+            {                
+                return 10;
+            });
+            sw.Stop();
+            Console.WriteLine($"Time took:{sw.ElapsedMilliseconds} ms. {expression}");
         }
 
         public class FormulaVariableToken : VariableToken

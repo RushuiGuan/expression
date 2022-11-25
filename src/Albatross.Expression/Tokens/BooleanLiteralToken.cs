@@ -11,8 +11,7 @@ namespace Albatross.Expression.Tokens {
 	/// </summary>
 	public class BooleanLiteralToken : IOperandToken {
 		const string BooleanPattern = @"^\s* (true|false)";
-		static Regex BooleanPatternRegex = new Regex(BooleanPattern,
-			RegexOptions.Compiled |
+		static Regex BooleanPatternRegex = new Regex(BooleanPattern,			
 			RegexOptions.Singleline |
 			RegexOptions.IgnorePatternWhitespace |
 			RegexOptions.IgnoreCase);

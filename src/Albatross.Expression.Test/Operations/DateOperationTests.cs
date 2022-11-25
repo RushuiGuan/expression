@@ -36,6 +36,9 @@ namespace Albatross.Expression.Test
         // Subtract
         [TestCase("SubtractDate(CreateDate(2020, 1, 4), CreateDate(2020, 1, 1))", ExpectedResult = 3)]
         [TestCase("SubtractTime(CreateDate(2020, 1, 1, 11, 15, 0), CreateDate(2020, 1, 1, 10, 14, 0))", ExpectedResult = 61)]
+        [TestCase("SubtractTime(CreateDate(2020, 1, 1), CreateDate(2020, 1, 1))", ExpectedResult = 0)]
+
+
 
         // Format
         [TestCase("Format(CreateDate(1985, 5,27), \"yyyy-MM-dd\")", ExpectedResult = "1985-05-27")]

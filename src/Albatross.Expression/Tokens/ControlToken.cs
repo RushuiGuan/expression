@@ -15,8 +15,8 @@ namespace Albatross.Expression.Tokens {
 		public static readonly ControlToken Comma = new ControlToken(Comma_Text);
 		public static readonly ControlToken FuncParamStart = new ControlToken(FuncParamStart_Text);
 
-		private ControlToken(string name) { Name = name; }
-		public string Name { get; private set; }
+		public ControlToken(string name) { Name = name; }
+		public string Name { get; set; }
 		public string Group { get { return "System"; } }
 		public bool Match(string expression, int start, out int next) {
 			next = expression.Length;

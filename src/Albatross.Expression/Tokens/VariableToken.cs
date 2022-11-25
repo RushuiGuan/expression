@@ -42,7 +42,7 @@ namespace Albatross.Expression.Tokens
 		protected const string VariableNamePattern = @"^\s*([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]+)?) \b (?!\s*\() ";
 		static Regex VariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
 
-		public string Name { get; protected set; }
+		public string Name { get; set; }
 		public string Group { get { return "System"; } }
 		public virtual bool Match(string expression, int start, out int next) {
 			next = expression.Length;

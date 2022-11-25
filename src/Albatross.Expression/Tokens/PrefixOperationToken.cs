@@ -20,7 +20,7 @@ namespace Albatross.Expression.Tokens {
 		public abstract int MinOperandCount { get; }
 		public abstract int MaxOperandCount {get;}
 
-		public List<IToken> Operands { get; private set; }
+		public List<IToken> Operands { get; set; }
 
 		public bool Match(string expression, int start, out int next) {
 			next = expression.Length;

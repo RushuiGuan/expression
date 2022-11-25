@@ -17,9 +17,9 @@ namespace Albatross.Expression.Tokens {
 			RegexOptions.IgnorePatternWhitespace |
 			RegexOptions.IgnoreCase);
 
-		internal BooleanLiteralToken() { }
+		public BooleanLiteralToken() { }
 		public string Group { get { return "Literal"; } }
-		public string Name { get; private set; }
+		public string Name { get; set; }
 		public bool Match(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {

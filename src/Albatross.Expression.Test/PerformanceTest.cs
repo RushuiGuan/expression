@@ -147,8 +147,7 @@ namespace Albatross.Expression.Test
         {
             protected string[] VariableNamePatterns = new string[] { @"^\\s*_P_([0-9a-zA-Z_\-\.\'\[\] ]+])_A_([0-9a-zA-Z]+)", VariableNamePattern };
 
-            protected Regex BuildVariableNameRegex(string pattern) => new Regex(pattern,
-                RegexOptions.Compiled |
+            protected Regex BuildVariableNameRegex(string pattern) => new Regex(pattern,                
                 RegexOptions.Singleline |
                 RegexOptions.IgnorePatternWhitespace
             );

@@ -12,8 +12,7 @@ namespace Albatross.Expression.Tokens
         CultureInfo NumericCulture => CultureInfo.GetCultureInfo(Config.NumericLiteral.Culture);
         string NumericDecimalSeparator => NumericCulture?.NumberFormat?.NumberDecimalSeparator ?? ".";
         string NumericPattern => $@"^\s*([0-9]*\{NumericDecimalSeparator}?[0-9]+)";
-        Regex NumericPatternRegex => new Regex(NumericPattern,
-            RegexOptions.Compiled |
+        Regex NumericPatternRegex => new Regex(NumericPattern,            
             RegexOptions.Singleline |
             RegexOptions.IgnorePatternWhitespace |
             RegexOptions.IgnoreCase);

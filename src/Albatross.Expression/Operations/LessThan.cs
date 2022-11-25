@@ -22,7 +22,7 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class LessThan : ComparisonInfixOperation {
 		const string Pattern = @"^\s*(\<)(?![=\>])";
-		static Regex regex = new Regex(Pattern, RegexOptions.Singleline| RegexOptions.Compiled);
+		static Regex regex = new Regex(Pattern, RegexOptions.Singleline);
 
 		public override string Name { get { return "<"; } }
 		public override bool Symbolic { get { return true; } }

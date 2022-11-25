@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyVersion>2.3.6</AssemblyVersion>
-		<FileVersion>2.3.6</FileVersion>
+		<AssemblyVersion>2.3.7</AssemblyVersion>
+		<FileVersion>2.3.7</FileVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.3.6</Version>
+		<Version>2.3.7</Version>
 		<Authors>Workiom.Expression</Authors>
 		<PackageId>Workiom.Expression</PackageId>
 		<Product>Workiom.Expression</Product>
-		<Description>Make tokens serializable</Description>
+		<Description>Enhance performance</Description>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	  <PackageReference Include="System.Security.Principal.Windows">

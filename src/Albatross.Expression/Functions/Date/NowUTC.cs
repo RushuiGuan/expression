@@ -1,13 +1,13 @@
-﻿using Albatross.Expression.Tokens;
-using System;
-using Albatross.Expression.Documentation;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Tokens;
+using System;
 
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}()",
         @"
-### Returns the date and time of today.
+### Returns the date and time of UTC.
 
 #### Inputs:
 - No inputs
@@ -23,22 +23,16 @@ namespace Albatross.Expression.Operations
         "
     )]
     [ParserOperation]
-    public class Now : PrefixOperationToken
+    public class NowUTC : PrefixOperationToken
     {
-        public override string Name { get { return "Now"; } }
+        public override string Name { get { return "NowUTC"; } }
         public override int MinOperandCount { get { return 0; } }
         public override int MaxOperandCount { get { return 0; } }
         public override bool Symbolic { get { return false; } }
 
         public override object EvalValue(Func<string, object> context)
         {
-            var now = DateTime.Now;
-
-            if (Config.NowFunction.DateTimeKind == DateTimeKind.Utc)
-                now = DateTime.UtcNow;
-
-            if (Config.NowFunction.Normalizer != null)
-                now = Config.NowFunction.Normalizer(now);
+            var now = DateTime.UtcNow;
 
             var hour = now.Hour;
             var hourInterval = Config.NowFunction.HourInterval;

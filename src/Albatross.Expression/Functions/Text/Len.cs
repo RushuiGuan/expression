@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
-using System.Collections;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
+using Albatross.Expression.Exceptions;
+using Albatross.Expression.Tokens;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations
 {
@@ -46,11 +43,11 @@ namespace Albatross.Expression.Operations
             }
             else if (value is ICollection)
             {
-                return ((ICollection)value).Count;
+                return Convert.ToDouble(((ICollection)value).Count);
             }
             if (value is string)
             {
-                return ((string)value).Length;
+                return Convert.ToDouble(((string)value).Length);
             }
             else
             {

@@ -23,25 +23,17 @@ namespace Albatross.Expression.Operations
         "
     )]
     [ParserOperation]
-    public class Today : PrefixOperationToken
+    public class TodayUTC : PrefixOperationToken
     {
 
-        public override string Name { get { return "Today"; } }
+        public override string Name { get { return "TodayUTC"; } }
         public override int MinOperandCount { get { return 0; } }
         public override int MaxOperandCount { get { return 0; } }
         public override bool Symbolic { get { return false; } }
 
         public override object EvalValue(Func<string, object> context)
         {
-            var now = DateTime.Now;
-
-            if (Config.NowFunction.DateTimeKind == DateTimeKind.Utc)
-                now = DateTime.UtcNow;
-
-            if (Config.NowFunction.Normalizer != null)
-                now = Config.NowFunction.Normalizer(now);
-
-            return now.Date;
+            return DateTime.UtcNow.Date;
         }
     }
 }

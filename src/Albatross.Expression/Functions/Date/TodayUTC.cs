@@ -33,7 +33,19 @@ namespace Albatross.Expression.Operations
 
         public override object EvalValue(Func<string, object> context)
         {
-            return DateTime.UtcNow.Date;
+            if (Config.NowFunction.Normalizer != null)
+            {
+                var now = DateTime.Now;
+                if (Config.NowFunction.DateTimeKind == DateTimeKind.Utc)
+                    now = DateTime.UtcNow;
+
+                var normalizedNow = Config.NowFunction.Normalizer(now);
+                var dif = (normalizedNow - now).TotalHours;
+
+                return normalizedNow.Date.AddHours(-1 * dif);
+            }
+
+            return DateTime.Today;
         }
     }
 }

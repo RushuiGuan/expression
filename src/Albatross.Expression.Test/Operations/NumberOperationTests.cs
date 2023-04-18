@@ -1,13 +1,4 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Operations;
-using Albatross.Expression.Tokens;
-using NUnit.Framework;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using NUnit.Framework;
 
 namespace Albatross.Expression.Test
 {
@@ -46,6 +37,7 @@ namespace Albatross.Expression.Test
 
         [TestCase("Number(\"44\")", ExpectedResult = 44)]
         [TestCase("SubtractTime(Date(\"2022-10-10 10:20:10\"),Date(\"2022-10-10 10:10:13\"))", ExpectedResult = 10)]
+        [TestCase("if(rand()=rand() ,1,0)", ExpectedResult = 0)]
         public object OperationsTesting(string expression)
         {
             return Factory.Instance.Create().Compile(expression).EvalValue(null);

@@ -34,7 +34,7 @@ namespace Albatross.Expression.Functions.Number
 
         public override object EvalValue(Func<string, object> context)
         {
-            var rand = new Random(DateTime.UtcNow.Second);
+            var rand = new Random(Guid.NewGuid().GetHashCode());
             var input = Operands.Select(item => (int)Convert.ChangeType(item.EvalValue(context), typeof(int))).ToArray();
 
             if (input.Length == 1)

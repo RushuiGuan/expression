@@ -29,7 +29,7 @@ namespace Albatross.Expression.Functions.Number
 
         public override object EvalValue(Func<string, object> context)
         {
-            return new Random(DateTime.UtcNow.Second).NextDouble();
+            return new Random(Guid.NewGuid().GetHashCode()).NextDouble();
         }
     }
 }

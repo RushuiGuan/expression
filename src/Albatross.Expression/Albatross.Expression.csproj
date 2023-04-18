@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyVersion>2.3.10.2</AssemblyVersion>
-		<FileVersion>2.3.10.2</FileVersion>
+		<AssemblyVersion>2.3.10.3</AssemblyVersion>
+		<FileVersion>2.3.10.3</FileVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.3.10.2</Version>
+		<Version>2.3.10.3</Version>
 		<Authors>Workiom.Expression</Authors>
 		<PackageId>Workiom.Expression</PackageId>
 		<Product>Workiom.Expression</Product>
-		<Description>Add Rand and RandBetween functions</Description>
+		<Description>Add Rand and RandBetween functions (Fix #1)</Description>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	  <PackageReference Include="System.Security.Principal.Windows">

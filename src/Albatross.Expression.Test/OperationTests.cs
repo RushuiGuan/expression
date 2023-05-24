@@ -263,6 +263,31 @@ namespace Albatross.Expression.Test {
 		public void TestRegexParseErrorCondition(string expression) {
 			Assert.Throws<ArgumentException>(() => Factory.Instance.Create().Compile(expression).EvalValue(null));
 		}
+
+
+		[TestCase(@"'\\\\app\\data\\request\\' + '.json'", ExpectedResult = @"\\app\data\request\.json")]
+		[TestCase(@"'1' + '2'", ExpectedResult = "12")]
+		[TestCase(@"'1' + '2' + '3'", ExpectedResult = "123")]
+		public string TestStringConcate(string expression) {
+			var result = Factory.Instance.Create().Compile(expression).EvalValue(null);
+			return Convert.ToString(result);
+		}
+
+		[TestCase("GetJsonArrayItem('[1,2,3]',1)", ExpectedResult = "2")]
+		[TestCase("GetJsonArrayItem('[1,2,3]',0)", ExpectedResult = "1")]
+		public object TestGetJsonArrayItem(string expression) {
+			IParser parser = Factory.Instance.Create();
+			IToken token = parser.Compile(expression);
+			var result = token.EvalValue(null);
+			return Convert.ToString(result);
+		}
+		[TestCase("GetJsonArrayItem('[1,2,3]',3)")]
+		public void TestGetJsonArrayItemErrorCondition(string expression) {
+			Assert.Throws<ArgumentException>(() => {
+				IParser parser = Factory.Instance.Create();
+				IToken token = parser.Compile(expression);
+				token.EvalValue(null);
+			});
+		}
 	}
 }
-

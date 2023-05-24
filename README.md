@@ -1,3 +1,10 @@
+* v3.0.13
+	* New operation GetJsonArrayItem
+		* Provided a json array and an index, the operation will return the array item at the index.
+		* example 1: GetJsonArrayItem('[1, 2, 3]', 1)
+			* return value 2
+		* example 2: GetJsonArrayItem('[1, 2, 3]', 3)
+			* throw an ArgumentException since array index is out of bound
 * v3.0.12
 	* New operation RegexCapture
 		* RegexCapture can be used to extract part of a text string using regex pattern and capature groups.

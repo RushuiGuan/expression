@@ -251,6 +251,18 @@ namespace Albatross.Expression.Test {
 		public object OperationsTestingTimeAndFormats(string expression) {
 			return Factory.Instance.Create().Compile(expression).EvalValue(null);
 		}
+
+		[TestCase(@"RegexCapture('abc123', '[a-z]+(\\d+)', 1)", ExpectedResult ="123" )]
+		[TestCase(@"RegexCapture('abc123', '[a-z]+(\\d+)')", ExpectedResult = "abc123")]
+		public object TestRegexParse(string expression) {
+			var result = Factory.Instance.Create().Compile(expression).EvalValue(null);
+			return result;
+		}
+
+		[TestCase(@"RegexCapture('abc123', '[a-z]+(\\d+)', 3)")]
+		public void TestRegexParseErrorCondition(string expression) {
+			Assert.Throws<ArgumentException>(() => Factory.Instance.Create().Compile(expression).EvalValue(null));
+		}
 	}
 }
 

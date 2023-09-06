@@ -24,7 +24,7 @@ namespace Albatross.Expression.Operations
 - [{token}](https://help.workiom.com/article/formula#{token})
         ",
         @"
-{token}(Now(),""yyyy-MM-dd"")
+{token}(""Hello "",""World"")
         "
     )]
     [ParserOperation]

@@ -11,20 +11,14 @@ namespace Albatross.Expression.Operations
     /// <para>Prefix operation that will take an input and C# format string and produced a formatted string</para>
     /// 
     /// </summary>
-    [FunctionDoc(Documentation.Group.Text, "{token}(@p1,@p2,...)",
+    [FunctionDoc(Documentation.Group.Text, "{token}( , )",
         @"
-### Combines a values as one text
-#### Inputs:
-- set: Set of variables
+        ### Combines a values as one text
+        #### Inputs:
+        - set: Set of variables
 
-#### Outputs:
-- string.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""Hello "",""World"")
+        #### Outputs:
+        - string.
         "
     )]
     [ParserOperation]

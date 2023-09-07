@@ -1,26 +1,20 @@
-﻿using Albatross.Expression.Exceptions;
+﻿using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
-using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
-    [FunctionDoc(Group.Text, "{token}(@text,@index)",
+    [FunctionDoc(Group.Text, "{token}( , )",
         @"
-### Returns the rest of the string as a substring after the given index number.
-#### Inputs:
-- text: String
-- index: Number
-#### Outputs:
-- String
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""Hello World"", 5)
+        ### Returns the rest of the string as a substring after the given index number.
+        #### Inputs:
+        - text: String
+        - index: Number
+        #### Outputs:
+        - String
         "
     )]
     [ParserOperation]

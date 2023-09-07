@@ -15,21 +15,14 @@ namespace Albatross.Expression.Operations
     /// <para>Usage: avg(1, 2, 3, 4, 5) or avg(@(1, 2, 3, 4, 5))</para>
     /// <para>Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.</para>
     /// </summary>
-    [FunctionDoc(Documentation.Group.Number, "{token}(@n1,@n2,...)",
+    [FunctionDoc(Documentation.Group.Number, "{token}( , )",
         @"
-### Calculate Average
-#### Inputs:
-- set: Set of Numbers
+        ### Calculate Average
+        #### Inputs:
+        - set: Set of Numbers
 
-#### Outputs:
-- Average of a set of numbers as double.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(1,2,3)
-{token}(@(1,2,3))
+        #### Outputs:
+        - Average of a set of numbers as double.
         "
     )]
     [ParserOperation]

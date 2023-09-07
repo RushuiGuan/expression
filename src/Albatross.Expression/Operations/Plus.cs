@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
+using Albatross.Expression.Tokens;
+using System;
 
 namespace Albatross.Expression.Operations
 {
@@ -21,15 +17,9 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Output Type: double</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "@v1 {token} @v2",
+    [OperationDoc(Group.Boolean, "{token}",
         @"
-### Add together two numeric values.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-2 {token} 1
+        ### Add together two numeric values.
         "
     )]
     [ParserOperation]

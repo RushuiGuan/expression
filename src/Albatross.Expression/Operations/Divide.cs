@@ -20,16 +20,10 @@ namespace Albatross.Expression.Operations {
 	/// </list>
 	/// <para>Output Type: double</para>
 	/// </summary>
-	[OperationDoc(Group.Boolean, "@o1 {token} @o2",
+	[OperationDoc(Group.Boolean, "{token}",
 		@"
-### Divide two numeric values
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-		@"
-5 {token} 3
-        "
+		### Divide two numeric values
+		"
 	)]
 	[ParserOperation]
 	public class Divide : InfixOperationToken {

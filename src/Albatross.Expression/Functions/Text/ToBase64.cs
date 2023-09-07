@@ -6,20 +6,14 @@ using System.Linq;
 
 namespace Albatross.Expression.Functions.Text
 {
-    [FunctionDoc(Group.Text, "{token}(@object)",
+    [FunctionDoc(Group.Text, "{token}( )",
         @"
-### Transforms any object into base64 string.
-#### Inputs:
-- text: Any
+        ### Transforms any object into base64 string.
+        #### Inputs:
+        - text: Any
 
-#### Outputs:
-- String
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(1)
+        #### Outputs:
+        - String
         "
     )]
     [ParserOperation]

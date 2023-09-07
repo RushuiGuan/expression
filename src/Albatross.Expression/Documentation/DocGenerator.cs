@@ -1,4 +1,5 @@
 ﻿using Albatross.Expression.Documentation.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -18,16 +19,21 @@ namespace Albatross.Expression.Documentation
                 var instance = token.Value;
 
                 var docAttribute = type.GetCustomAttribute<DocAttribute>();
+                var references = @"                    
+                        #### References:
+                        - [{token}](https://help.workiom.com/article/formula#{token})   
+                ";
+
                 if (docAttribute != null)
                 {
                     var isFunction = docAttribute is FunctionDocAttribute;
+                    docAttribute.Description = $@"{docAttribute.Description}{Environment.NewLine}{references}";
                     docAttribute.ReplaceTokenWithName(instance.Name);
 
                     lst.Add(new DocItem
                     {
-                        Name = instance.Name,
-                        Example = docAttribute.Example,
-                        Expression = docAttribute.Expression,
+                        Token = instance.Name,
+                        Signature = docAttribute.Signature,
                         Group = docAttribute.Group.ToString(),
                         Description = docAttribute.Description,
                         Type = (isFunction ? Type.Function : Type.Operation).ToString(),
@@ -37,7 +43,9 @@ namespace Albatross.Expression.Documentation
                 {
                     lst.Add(new DocItem
                     {
-                        Name = instance.Name
+                        Token = instance.Name,
+                        Signature = instance.Name,
+                        Description = references
                     });
                 }
             }

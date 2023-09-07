@@ -23,29 +23,20 @@ namespace Albatross.Expression.Operations
     /// 2018, 1, 31)</para>
     /// <para>Usage: CreateDate(2018, 1, 31, 10,10,00)</para>
     /// </summary>
-    [FunctionDoc(Group.Date, "{token}(@year,@month,@day,@hour,@minute,@second)",
+    [FunctionDoc(Group.Date, "{token}( , , )",
         @"
-### Create new date, date time
+        ### Create new date, date time
 
-#### Inputs:
-- year: double
-- month: double
-- day: double
-- hour: double (optional)
-- minute: double (optional)
-- second: double (optional)
+        #### Inputs:
+        - year: double
+        - month: double
+        - day: double
+        - hour: double (optional)
+        - minute: double (optional)
+        - second: double (optional)
 
-#### Outputs:
-- Date or Date with time.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(2021, 12, 31)
-{token}(2021, 12, 31, 11)
-{token}(2021, 12, 31, 11, 59)
-{token}(2021, 12, 31, 11, 59, 59)
+        #### Outputs:
+        - Date or Date with time.
         "
     )]
     [ParserOperation]

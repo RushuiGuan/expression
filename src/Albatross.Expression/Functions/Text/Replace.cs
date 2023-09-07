@@ -1,27 +1,21 @@
-﻿using Albatross.Expression.Exceptions;
+﻿using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
-using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
-    [FunctionDoc(Group.Text, "{token}(@text,@oldValue,@newValue)",
+    [FunctionDoc(Group.Text, "{token}( , , )",
         @"
-### Replace all occurence of the oldValue with the newValue in the text.
-#### Inputs:
-- text: String
-- oldValue: String
-- newValue: String
-#### Outputs:
-- String
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""Old text"",""New text"")
+        ### Replace all occurence of the oldValue with the newValue in the text.
+        #### Inputs:
+        - text: String
+        - oldValue: String
+        - newValue: String
+        #### Outputs:
+        - String
         "
     )]
     [ParserOperation]
@@ -71,7 +65,7 @@ namespace Albatross.Expression.Operations
 
             if (value3 is string)
             {
-               newValue = Convert.ToString(value3);
+                newValue = Convert.ToString(value3);
             }
             else
             {
@@ -80,7 +74,7 @@ namespace Albatross.Expression.Operations
 
 
 
-            return text.Replace(oldValue,newValue);
+            return text.Replace(oldValue, newValue);
         }
     }
 }

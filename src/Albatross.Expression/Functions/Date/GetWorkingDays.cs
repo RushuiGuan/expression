@@ -1,27 +1,22 @@
-﻿using Albatross.Expression.Documentation.Attributes;
+﻿using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
 
 namespace Albatross.Expression.Functions.Date
 {
-    [FunctionDoc(Documentation.Group.Text, "{token}(@p1,@p2,...)",
+    [FunctionDoc(Group.Date, "{token}( , )",
         @"
-### Get count of working days between two dates
-#### Inputs:
-- startDate: Date (mandatory)
-- endDate: Date (mandatory)
-- startOfWeek: Start of week as a value from  1 (Monday) to 7 (Sunday)
-- weekendLength: 1 or 2
+        ### Get count of working days between two dates
+        #### Inputs:
+        - startDate: Date (mandatory)
+        - endDate: Date (mandatory)
+        - startOfWeek: Start of week as a value from  1 (Monday) to 7 (Sunday) (Optional), default = 1
+        - weekendLength: 1 or 2 (Optional), default = 2
 
-#### Outputs:
-- number.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}('25-01-2023', '20-02-2023', 1, 2)
+        #### Outputs:
+        - number: count of working days.
         "
     )]
     [ParserOperation]

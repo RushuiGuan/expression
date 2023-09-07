@@ -8,19 +8,13 @@ using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations
 {
-    [FunctionDoc(Group.Text, "{token}(@string)",
+    [FunctionDoc(Group.Text, "{token}( )",
         @"
-### Returns the number of characters in a string.
-#### Inputs:
-- string: String
-#### Outputs:
-- Integer
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""Hello World"")
+        ### Returns the number of characters in a string.
+        #### Inputs:
+        - string: String
+        #### Outputs:
+        - Integer
         "
     )]
     [ParserOperation]

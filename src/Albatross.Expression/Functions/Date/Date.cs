@@ -17,22 +17,15 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Output Type: System.DateTime</para>
     /// </summary>
-    [FunctionDoc(Group.Date, "{token}(@date)",
+    [FunctionDoc(Group.Date, "{token}( )",
         @"
-### Create date object from the passed value
+        ### Create date object from the passed value
 
-#### Inputs:
-- date: object
+        #### Inputs:
+        - date: object
 
-#### Outputs:
-- Date or Date with time.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(2021-12-31)
-{token}(""2015-10-2"")
+        #### Outputs:
+        - Date or Date with time.
         "
     )]
     [ParserOperation]

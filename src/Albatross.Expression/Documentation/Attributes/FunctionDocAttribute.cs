@@ -5,15 +5,11 @@ namespace Albatross.Expression.Documentation.Attributes
     [AttributeUsage(AttributeTargets.Class)]
     public class FunctionDocAttribute : DocAttribute
     {
-        public FunctionDocAttribute(Group group, string expression) : base(group, expression)
+        public FunctionDocAttribute(Group group, string signature) : base(group, signature)
         {
         }
 
-        public FunctionDocAttribute(Group group, string expression, string description) : base(group, expression, description)
-        {
-        }
-
-        public FunctionDocAttribute(Group group, string expression, string description, string example) : base(group, expression, description, example)
+        public FunctionDocAttribute(Group group, string signature, string description) : base(group, signature, description)
         {
         }
     }

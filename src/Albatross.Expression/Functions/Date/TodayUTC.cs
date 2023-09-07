@@ -7,19 +7,13 @@ namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}()",
         @"
-### Create date object represent current date
+        ### Create date object represent current date
 
-#### Inputs:
-- No inputs
+        #### Inputs:
+        - No inputs
 
-#### Outputs:
-- Date.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}()
+        #### Outputs:
+        - Date.
         "
     )]
     [ParserOperation]

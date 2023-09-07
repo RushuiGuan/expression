@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
+using Albatross.Expression.Exceptions;
+using Albatross.Expression.Tokens;
+using System;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "@v1 {token} @v2",
+    [OperationDoc(Group.Boolean, "{token}",
         @"
-### Subtract two numeric values.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-2 {token} 1
+        ### Subtract two numeric values.
         "
     )]
     [ParserOperation]

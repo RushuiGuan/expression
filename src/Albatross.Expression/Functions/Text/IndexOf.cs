@@ -1,27 +1,21 @@
-﻿using Albatross.Expression.Exceptions;
+﻿using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
-using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
-    [FunctionDoc(Group.Text, "{token}(@text,@value)",
+    [FunctionDoc(Group.Text, "{token}( , )",
         @"
-### Return index of value in the text
-#### Inputs:
-- text: String
-- value: String
+        ### Return index of value in the text
+        #### Inputs:
+        - text: String
+        - value: String
 
-#### Outputs:
-- Zero based index position if the value is found, or -1 if not found.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""Some text"", ""Some"")
+        #### Outputs:
+        - Zero based index position if the value is found, or -1 if not found.
         "
     )]
     [ParserOperation]

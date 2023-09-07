@@ -7,20 +7,14 @@ using System.Text;
 
 namespace Albatross.Expression.Functions.Text
 {
-    [FunctionDoc(Group.Text, "{token}(@text)",
+    [FunctionDoc(Group.Text, "{token}( )",
         @"
-### Transforms any string into hex formatted string.
-#### Inputs:
-- text: Any
+        ### Transforms any string into hex formatted string.
+        #### Inputs:
+        - text: Any
 
-#### Outputs:
-- String
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""Text"")
+        #### Outputs:
+        - String
         "
     )]
     [ParserOperation]
@@ -48,7 +42,7 @@ namespace Albatross.Expression.Functions.Text
                 stringBuilder.Append(Convert.ToString(character, 16).PadLeft(4, '0'));
             }
 
-            return stringBuilder.ToString();            
+            return stringBuilder.ToString();
         }
     }
 }

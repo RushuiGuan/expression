@@ -7,16 +7,11 @@ namespace Albatross.Expression.Functions.Number
 {
     [FunctionDoc(Group.Number, "{token}()",
         @"
-### Generate random value between 0.0 and 1.0
-#### Inputs:
-#### Outputs:
-- Random number between 0.0 and 1.0.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}()
+        ### Generate random value between 0.0 and 1.0
+        #### Inputs:
+        - No Inputs
+        #### Outputs:
+        - Random number between 0.0 and 1.0.
         "
     )]
     [ParserOperation]

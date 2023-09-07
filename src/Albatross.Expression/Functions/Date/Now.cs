@@ -1,25 +1,19 @@
-﻿using Albatross.Expression.Tokens;
-using System;
-using Albatross.Expression.Documentation;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Tokens;
+using System;
 
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}()",
         @"
-### Returns the date and time of today.
+        ### Returns the date and time of current moment in the tenant time zone.
 
-#### Inputs:
-- No inputs
+        #### Inputs:
+        - No inputs
 
-#### Outputs:
-- Date with time.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}()
+        #### Outputs:
+        - Date with time.
         "
     )]
     [ParserOperation]

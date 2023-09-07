@@ -20,16 +20,10 @@ namespace Albatross.Expression.Operations {
 	/// </list>
 	/// <para>Output Type: double</para>
 	/// </summary>
-	[OperationDoc(Group.Boolean, "@v1 {token} @v2",
+	[OperationDoc(Group.Boolean, "{token}",
 		@"
-### Returns true if the both sides of the equation are the same 
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-		@"
-5 {token} 3
-        "
+		### Returns true if the both sides of the equation are the same 
+		"
 	)]
 	[ParserOperation]
 	public class Equal : ComparisonInfixOperation {

@@ -1,29 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using Albatross.Expression.Documentation;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Tokens;
+using System;
+using System.Linq;
 
 
 namespace Albatross.Expression.Operations
 {
-    [FunctionDoc(Group.Date, "{token}(@date)",
+    [FunctionDoc(Group.Date, "{token}( )",
         @"
-### Returns the month of the given date as a number.
+        ### Returns the month of the given date as a number.
 
-#### Inputs:
-- date: date
+        #### Inputs:
+        - date: date
 
-#### Outputs:
-- The month value between 1 and 12.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(2021-12-31)
+        #### Outputs:
+        - The month value between 1 and 12.
         "
     )]
     [ParserOperation]

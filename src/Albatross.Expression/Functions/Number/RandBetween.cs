@@ -6,22 +6,14 @@ using System.Linq;
 
 namespace Albatross.Expression.Functions.Number
 {
-    [FunctionDoc(Group.Number, "{token}(@val1,@val2)",
+    [FunctionDoc(Group.Number, "{token}( , )",
         @"
-### Generate random value
-#### Inputs:
-- @val1: Max value, or minimum value of a range (optional)
-- @val2: Maximum value of the range (optional)
-#### Outputs:
-- Non negative random integer.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}()
-{token}(1)
-{token}(1,10)
+        ### Generate random value
+        #### Inputs:
+        - @val1: Max value, or minimum value of a range (optional)
+        - @val2: Maximum value of the range (optional)
+        #### Outputs:
+        - Non negative random integer.
         "
     )]
     [ParserOperation]

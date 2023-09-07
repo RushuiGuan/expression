@@ -5,21 +5,15 @@ using System;
 
 namespace Albatross.Expression.Functions.Date
 {
-    [FunctionDoc(Group.Date, "{token}(@date,@day)",
+    [FunctionDoc(Group.Date, "{token}( , )",
         @"
-### Add working days
-#### Inputs:
-- date: Date
-- day: Number
+        ### Add working days
+        #### Inputs:
+        - date: Date
+        - day: Number
 
-#### Outputs:
-- Date at working time from Mondey to Friday.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(Date(2015-10-2), 5)
+        #### Outputs:
+        - Date at working time from Mondey to Friday.
         "
     )]
     [ParserOperation]

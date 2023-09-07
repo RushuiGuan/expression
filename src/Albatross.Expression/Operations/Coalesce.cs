@@ -14,16 +14,10 @@ namespace Albatross.Expression.Operations {
 	/// <para>Operand Type: any</para>
 	/// <para>Example: Coalesce(null, 1, 2, 3) will return 1</para>
 	/// </summary>
-	[OperationDoc(Group.Boolean, "{token}(o1,o2,...)",
+	[OperationDoc(Group.Boolean, "{token}( , , )",
 		@"
-### Prefix operation that returns the first non-null operand.	
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-		@"
-{token}(null,1,2,3)
-        "
+		### Prefix operation that returns the first non-null operand.	
+		"
 	)]
 	[ParserOperation]
 	public class Coalesce : PrefixOperationToken {

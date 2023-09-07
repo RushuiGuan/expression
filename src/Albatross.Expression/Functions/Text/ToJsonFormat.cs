@@ -7,20 +7,14 @@ using System.Linq;
 
 namespace Albatross.Expression.Functions.Text
 {
-    [FunctionDoc(Group.Text, "{token}(@text)",
+    [FunctionDoc(Group.Text, "{token}( )",
         @"
-### Transforms any string into json formatted string.
-#### Inputs:
-- text: Any
+        ### Transforms any string into json formatted string.
+        #### Inputs:
+        - text: Any
 
-#### Outputs:
-- String
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""OK 👍"")
+        #### Outputs:
+        - String
         "
     )]
     [ParserOperation]

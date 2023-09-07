@@ -1,25 +1,18 @@
-﻿using Albatross.Expression.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Albatross.Expression.Documentation;
 using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
+using Albatross.Expression.Tokens;
+using System;
+using System.Linq;
 
 namespace Albatross.Expression.Functions.Number
 {
-    [FunctionDoc(Group.Number, "{token}(@val)",
+    [FunctionDoc(Group.Number, "{token}( )",
         @"
-### Return number value of the passed string
-#### Inputs:
-- @val: Number as a string
-#### Outputs:
-- Double.
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}('1')
+        ### Return number value of the passed string
+        #### Inputs:
+        - @val: Number as a string
+        #### Outputs:
+        - Double.
         "
     )]
     [ParserOperation]

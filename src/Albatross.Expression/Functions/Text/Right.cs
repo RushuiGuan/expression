@@ -1,26 +1,20 @@
-﻿using Albatross.Expression.Exceptions;
+﻿using Albatross.Expression.Documentation;
+using Albatross.Expression.Documentation.Attributes;
+using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
-using Albatross.Expression.Documentation.Attributes;
-using Albatross.Expression.Documentation;
 
 namespace Albatross.Expression.Operations
 {
-    [FunctionDoc(Group.Text, "{token}(@text,@num)",
+    [FunctionDoc(Group.Text, "{token}( , )",
         @"
-### Extracts the specified number of characters from the end of the string.
-#### Inputs:
-- text: String
-- num: Integer
-#### Outputs:
-- String
-
-#### References:
-- [{token}](https://help.workiom.com/article/formula#{token})
-        ",
-        @"
-{token}(""Hello World"", 5)
+        ### Extracts the specified number of characters from the end of the string.
+        #### Inputs:
+        - text: String
+        - num: Integer
+        #### Outputs:
+        - String
         "
     )]
     [ParserOperation]

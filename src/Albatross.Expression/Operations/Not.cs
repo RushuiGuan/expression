@@ -10,7 +10,7 @@ namespace Albatross.Expression.Operations
     [ParserOperation]
     public class Not : PrefixOperationToken
     {
-        public override string Name { get { return "not"; } }
+        public override string Name { get { return "Not"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 1; } }
         public override bool Symbolic { get { return false; } }

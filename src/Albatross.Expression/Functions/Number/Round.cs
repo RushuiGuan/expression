@@ -18,7 +18,7 @@ namespace Albatross.Expression.Functions.Number
     [ParserOperation]
     public class Round : PrefixOperationToken
     {
-        public override string Name { get { return "round"; } }
+        public override string Name { get { return "Round"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 2; } }
         public override bool Symbolic { get { return false; } }

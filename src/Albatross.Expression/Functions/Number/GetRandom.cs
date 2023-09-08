@@ -17,7 +17,7 @@ namespace Albatross.Expression.Functions.Number
     [ParserOperation]
     public class GetRandom : PrefixOperationToken
     {
-        public override string Name { get { return "getRandom"; } }
+        public override string Name { get { return "GetRandom"; } }
         public override int MinOperandCount { get { return 0; } }
         public override int MaxOperandCount { get { return 2; } }
         public override bool Symbolic { get { return false; } }

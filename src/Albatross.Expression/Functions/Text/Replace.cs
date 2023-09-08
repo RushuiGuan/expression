@@ -19,7 +19,7 @@ namespace Albatross.Expression.Operations
     [ParserOperation]
     public class Replace : PrefixOperationToken
     {
-        public override string Name { get { return "replace"; } }
+        public override string Name { get { return "Replace"; } }
         public override int MinOperandCount { get { return 3; } }
         public override int MaxOperandCount { get { return 3; } }
         public override bool Symbolic { get { return false; } }

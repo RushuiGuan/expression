@@ -16,7 +16,7 @@ namespace Albatross.Expression.Functions.Date
     [ParserOperation]
     public class SubtractTime : PrefixOperationToken
     {
-        public override string Name { get { return "subtractTime"; } }
+        public override string Name { get { return "SubtractTime"; } }
         public override int MinOperandCount { get { return 2; } }
         public override int MaxOperandCount { get { return 2; } }
         public override bool Symbolic { get { return false; } }

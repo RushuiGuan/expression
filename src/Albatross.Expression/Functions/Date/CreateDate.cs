@@ -38,7 +38,7 @@ namespace Albatross.Expression.Operations
     [ParserOperation]
     public class CreateDate : PrefixOperationToken
     {
-        public override string Name { get { return "createDate"; } }
+        public override string Name { get { return "CreateDate"; } }
         public override int MinOperandCount { get { return 3; } }
         public override int MaxOperandCount { get { return 6; } }
         public override bool Symbolic { get { return false; } }

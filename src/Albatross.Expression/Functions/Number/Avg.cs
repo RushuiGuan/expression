@@ -26,7 +26,7 @@ namespace Albatross.Expression.Operations
     public class Avg : PrefixOperationToken
     {
 
-        public override string Name { get { return "avg"; } }
+        public override string Name { get { return "Avg"; } }
         public override int MinOperandCount { get { return 0; } }
         public override int MaxOperandCount { get { return int.MaxValue; } }
         public override bool Symbolic { get { return false; } }

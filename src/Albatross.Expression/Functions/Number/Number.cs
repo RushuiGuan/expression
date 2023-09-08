@@ -16,7 +16,7 @@ namespace Albatross.Expression.Functions.Number
     [ParserOperation]
     public class Number : PrefixOperationToken
     {
-        public override string Name { get { return "number"; } }
+        public override string Name { get { return "Number"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 1; } }
         public override bool Symbolic { get { return false; } }

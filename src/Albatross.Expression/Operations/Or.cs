@@ -26,7 +26,7 @@ namespace Albatross.Expression.Operations
     public class Or : InfixOperationToken
     {
 
-        public override string Name { get { return "or"; } }
+        public override string Name { get { return "Or"; } }
         public override bool Symbolic { get { return true; } }
         public override int Precedence { get { return 20; } }
 

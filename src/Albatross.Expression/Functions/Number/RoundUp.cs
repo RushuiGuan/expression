@@ -17,7 +17,7 @@ namespace Albatross.Expression.Functions.Number
     [ParserOperation]
     public class RoundUp : PrefixOperationToken
     {
-        public override string Name { get { return "roundUp"; } }
+        public override string Name { get { return "RoundUp"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 1; } }
         public override bool Symbolic { get { return false; } }

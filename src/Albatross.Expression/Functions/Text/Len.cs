@@ -19,7 +19,7 @@ namespace Albatross.Expression.Operations
     public class Len : PrefixOperationToken
     {
 
-        public override string Name { get { return "len"; } }
+        public override string Name { get { return "Len"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 1; } }
         public override bool Symbolic { get { return false; } }

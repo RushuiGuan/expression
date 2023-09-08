@@ -16,7 +16,7 @@ namespace Albatross.Expression.Operations
     public class Pi : PrefixOperationToken
     {
 
-        public override string Name { get { return "pi"; } }
+        public override string Name { get { return "Pi"; } }
         public override int MinOperandCount { get { return 0; } }
         public override int MaxOperandCount { get { return 0; } }
         public override bool Symbolic { get { return false; } }

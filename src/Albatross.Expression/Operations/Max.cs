@@ -13,7 +13,7 @@ namespace Albatross.Expression.Operations
     public class Max : PrefixOperationToken
     {
 
-        public override string Name { get { return "max"; } }
+        public override string Name { get { return "Max"; } }
         public override int MinOperandCount { get { return 0; } }
         public override int MaxOperandCount { get { return int.MaxValue; } }
         public override bool Symbolic { get { return false; } }

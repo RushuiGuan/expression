@@ -26,7 +26,7 @@ namespace Albatross.Expression.Operations
     public class And : InfixOperationToken
     {
 
-        public override string Name { get { return "and"; } }
+        public override string Name { get { return "And"; } }
         public override bool Symbolic { get { return true; } }
         public override int Precedence { get { return 30; } }
 

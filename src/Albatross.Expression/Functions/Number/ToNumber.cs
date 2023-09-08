@@ -13,6 +13,6 @@ namespace Albatross.Expression.Functions.Number
     [ParserOperation]
     public class ToNumber : Number
     {
-        public override string Name { get { return "toNumber"; } }
+        public override string Name { get { return "ToNumber"; } }
     }
 }

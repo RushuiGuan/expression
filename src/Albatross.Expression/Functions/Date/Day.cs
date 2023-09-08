@@ -17,7 +17,7 @@ namespace Albatross.Expression.Operations
     public class Day : PrefixOperationToken
     {
 
-        public override string Name { get { return "day"; } }
+        public override string Name { get { return "Day"; } }
         public override int MinOperandCount { get { return 1; } }
         public override int MaxOperandCount { get { return 1; } }
         public override bool Symbolic { get { return false; } }

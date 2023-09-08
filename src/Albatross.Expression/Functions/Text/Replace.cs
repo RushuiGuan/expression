@@ -8,15 +8,13 @@ using System.Collections.Generic;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( , , )",
-        @"
-        ### Replace all occurence of the oldValue with the newValue in the text.
-        #### Inputs:
-        - text: String
-        - oldValue: String
-        - newValue: String
-        #### Outputs:
-        - String
-        "
+@"### Replace all occurence of the oldValue with the newValue in the text.
+#### Inputs:
+- text: String
+- oldValue: String
+- newValue: String
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class Replace : PrefixOperationToken

@@ -11,15 +11,12 @@ namespace Albatross.Expression.Operations
     /// 
     /// </summary>
     [FunctionDoc(Documentation.Group.Text, "{token}( , )",
-        @"
-		### Format
-		#### Inputs:
-		- data: Object
-		- format: String
-
-		#### Outputs:
-		- formatted string.
-		"
+@"### Format
+#### Inputs:
+- data: Object
+- format: String
+#### Outputs:
+- formatted string."
     )]
     [ParserOperation]
     public class Format : PrefixOperationToken

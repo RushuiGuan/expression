@@ -13,11 +13,7 @@ namespace Albatross.Expression.Operations
     /// <para>Output Type: <see cref="System.Collections.Generic.List{T}"/> where T is Object</para>
     /// <para>Usage: @(1, 2, 3, 4, 5)</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}( , , )",
-        @"
-		### Return array of passed values
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}( , , )", @"### Return array of passed values")]
     [ParserOperation]
     public class Array : PrefixOperationToken
     {

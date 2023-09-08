@@ -18,11 +18,7 @@ namespace Albatross.Expression.Operations
     /// <para>Usage: 3 >= 2</para>
     /// <para>Precedance: 50</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Returns true if the first numeric value is greater than or equal to the second numeric value. 
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Returns true if the first numeric value is greater than or equal to the second numeric value. ")]
     [ParserOperation]
     public class GreaterEqual : ComparisonInfixOperation
     {

@@ -6,15 +6,12 @@ using System;
 namespace Albatross.Expression.Functions.Date
 {
     [FunctionDoc(Group.Date, "{token}( , )",
-        @"
-        ### Add working days
-        #### Inputs:
-        - date: Date
-        - day: Number
-
-        #### Outputs:
-        - Date at working time from Mondey to Friday.
-        "
+@"### Add working days
+#### Inputs:
+- date: Date
+- day: Number
+#### Outputs:
+- Date at working time from Mondey to Friday."
     )]
     [ParserOperation]
     public class AddWorkingDays : PrefixOperationToken

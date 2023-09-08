@@ -24,20 +24,16 @@ namespace Albatross.Expression.Operations
     /// <para>Usage: CreateDate(2018, 1, 31, 10,10,00)</para>
     /// </summary>
     [FunctionDoc(Group.Date, "{token}( , , )",
-        @"
-        ### Create new date, date time
-
-        #### Inputs:
-        - year: double
-        - month: double
-        - day: double
-        - hour: double (optional)
-        - minute: double (optional)
-        - second: double (optional)
-
-        #### Outputs:
-        - Date or Date with time.
-        "
+@"### Create new date, date time
+#### Inputs:
+- year: double
+- month: double
+- day: double
+- hour: double (optional)
+- minute: double (optional)
+- second: double (optional)
+#### Outputs:
+- Date or Date with time."
     )]
     [ParserOperation]
     public class CreateDate : PrefixOperationToken

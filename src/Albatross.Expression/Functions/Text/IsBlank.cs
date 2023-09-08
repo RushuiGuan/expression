@@ -12,14 +12,11 @@ namespace Albatross.Expression.Operations
     /// <para>Null, empty string and string with only white space are considered as blank</para>
     /// </summary>
     [FunctionDoc(Group.Text, "{token}( )",
-        @"
-		### Returns boolean value, true if the value is blank, false if not.  Null, empty string, string with only white space are considered as blank.
-		#### Inputs:
-		- value: String
-
-		#### Outputs:
-		- Boolean
-		"
+@"### Returns boolean value, true if the value is blank, false if not.  Null, empty string, string with only white space are considered as blank.
+#### Inputs:
+- value: String
+#### Outputs:
+- Boolean"
     )]
     [ParserOperation]
     public class IsBlank : PrefixOperationToken

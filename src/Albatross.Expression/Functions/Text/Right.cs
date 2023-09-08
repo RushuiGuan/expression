@@ -8,14 +8,12 @@ using System.Collections.Generic;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( , )",
-        @"
-        ### Extracts the specified number of characters from the end of the string.
-        #### Inputs:
-        - text: String
-        - num: Integer
-        #### Outputs:
-        - String
-        "
+@"### Extracts the specified number of characters from the end of the string.
+#### Inputs:
+- text: String
+- num: Integer
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class Right : PrefixOperationToken

@@ -6,13 +6,11 @@ using System;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Number, "{token}()",
-        @"
-		### Return PI value
-		#### Inputs:
-		- No inputs
-		#### Outputs:
-		- Double.
-		"
+@"### Return PI value
+#### Inputs:
+- No inputs
+#### Outputs:
+- Double."
     )]
     [ParserOperation]
     public class Pi : PrefixOperationToken

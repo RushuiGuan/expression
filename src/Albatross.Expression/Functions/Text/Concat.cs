@@ -12,14 +12,11 @@ namespace Albatross.Expression.Operations
     /// 
     /// </summary>
     [FunctionDoc(Documentation.Group.Text, "{token}( , )",
-        @"
-        ### Combines a values as one text
-        #### Inputs:
-        - set: Set of variables
-
-        #### Outputs:
-        - string.
-        "
+@"### Combines a values as one text
+#### Inputs:
+- set: Set of variables
+#### Outputs:
+- string."
     )]
     [ParserOperation]
     public class Concat : PrefixOperationToken

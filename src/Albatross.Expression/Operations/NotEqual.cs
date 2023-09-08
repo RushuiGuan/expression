@@ -3,11 +3,7 @@ using Albatross.Expression.Documentation.Attributes;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Returns true if the both sides of the equation are not the same 
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Returns true if the both sides of the equation are not the same ")]
     [ParserOperation]
     public class NotEqual : ComparisonInfixOperation
     {

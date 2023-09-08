@@ -8,11 +8,7 @@ using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}( , )",
-        @"
-		### Returns the largest of the given numbers.
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}( , )", @"### Returns the largest of the given numbers.")]
     [ParserOperation]
     public class Max : PrefixOperationToken
     {

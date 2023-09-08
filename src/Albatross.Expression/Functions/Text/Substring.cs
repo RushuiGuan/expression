@@ -8,14 +8,12 @@ using System.Collections.Generic;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( , )",
-        @"
-        ### Returns the rest of the string as a substring after the given index number.
-        #### Inputs:
-        - text: String
-        - index: Number
-        #### Outputs:
-        - String
-        "
+@"### Returns the rest of the string as a substring after the given index number.
+#### Inputs:
+- text: String
+- index: Number
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class Substring : PrefixOperationToken

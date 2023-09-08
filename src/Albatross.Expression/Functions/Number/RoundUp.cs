@@ -8,14 +8,11 @@ using System.Linq;
 namespace Albatross.Expression.Functions.Number
 {
     [FunctionDoc(Group.Number, "{token}( )",
-        @"
-        ### Returns the smallest integer greater than or equal the decimal number.
-        #### Inputs:
-        - number: The decimal number to round.
-
-        #### Outputs:
-        - Integer.
-        "
+@"### Returns the smallest integer greater than or equal the decimal number.
+#### Inputs:
+- number: The decimal number to round.
+#### Outputs:
+- Integer."
     )]
     [ParserOperation]
     public class RoundUp : PrefixOperationToken

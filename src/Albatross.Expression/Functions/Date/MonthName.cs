@@ -9,15 +9,11 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}( )",
-        @"
-		### Returns the name of the month as a text.
-
-		#### Inputs:
-		- date: date
-
-		#### Outputs:
-		- Month name.
-		"
+@"### Returns the name of the month as a text.
+#### Inputs:
+- date: date
+#### Outputs:
+- Month name."
     )]
     [ParserOperation]
     public class MonthName : PrefixOperationToken

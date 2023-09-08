@@ -8,15 +8,11 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}( )",
-        @"
-        ### Returns the month of the given date as a number.
-
-        #### Inputs:
-        - date: date
-
-        #### Outputs:
-        - The month value between 1 and 12.
-        "
+@"### Returns the month of the given date as a number.
+#### Inputs:
+- date: date
+#### Outputs:
+- The month value between 1 and 12."
     )]
     [ParserOperation]
     public class Month : PrefixOperationToken

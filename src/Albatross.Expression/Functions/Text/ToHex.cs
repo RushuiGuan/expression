@@ -8,14 +8,11 @@ using System.Text;
 namespace Albatross.Expression.Functions.Text
 {
     [FunctionDoc(Group.Text, "{token}( )",
-        @"
-        ### Transforms any string into hex formatted string.
-        #### Inputs:
-        - text: Any
-
-        #### Outputs:
-        - String
-        "
+@"### Transforms any string into hex formatted string.
+#### Inputs:
+- text: Any
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class ToHex : PrefixOperationToken

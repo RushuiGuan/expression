@@ -8,14 +8,11 @@ using System.Linq;
 namespace Albatross.Expression.Functions.Number
 {
     [FunctionDoc(Group.Number, "{token}( )",
-        @"
-        ### Returns larget integer less than or equal the decimal number.
-        #### Inputs:
-        - number: The decimal number to round.
-
-        #### Outputs:
-        - Integer.
-        "
+@"### Returns larget integer less than or equal the decimal number.
+#### Inputs:
+- number: The decimal number to round.
+#### Outputs:
+- Integer."
     )]
     [ParserOperation]
     public class RoundDown : PrefixOperationToken

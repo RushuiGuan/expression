@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyVersion>2.3.10.5</AssemblyVersion>
-		<FileVersion>2.3.10.5</FileVersion>
+		<AssemblyVersion>2.3.10.6</AssemblyVersion>
+		<FileVersion>2.3.10.6</FileVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.3.10.5</Version>
+		<Version>2.3.10.6</Version>
 		<Authors>Workiom.Expression</Authors>
 		<PackageId>Workiom.Expression</PackageId>
 		<Product>Workiom.Expression</Product>
-		<Description>Enhance documentations</Description>
+		<Description>Enhance documentations #2</Description>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	  <PackageReference Include="System.Security.Principal.Windows">

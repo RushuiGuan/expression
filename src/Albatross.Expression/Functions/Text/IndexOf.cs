@@ -8,15 +8,12 @@ using System.Collections.Generic;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( , )",
-        @"
-        ### Return index of value in the text
-        #### Inputs:
-        - text: String
-        - value: String
-
-        #### Outputs:
-        - Zero based index position if the value is found, or -1 if not found.
-        "
+@"### Return index of value in the text
+#### Inputs:
+- text: String
+- value: String
+#### Outputs:
+- Zero based index position if the value is found, or -1 if not found."
     )]
     [ParserOperation]
     public class IndexOf : PrefixOperationToken

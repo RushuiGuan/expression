@@ -10,11 +10,7 @@ namespace Albatross.Expression.Operations
     /// <para>Operand Count: 0</para>
     /// <para>Output Type: string</para>
     /// </summary>
-    [FunctionDoc(Group.Environment, "{token}()",
-        @"
-		### Current application name
-		"
-    )]
+    [FunctionDoc(Group.Environment, "{token}()", @"### Current application name")]
     [ParserOperation]
     public class CurrentApp : PrefixOperationToken
     {

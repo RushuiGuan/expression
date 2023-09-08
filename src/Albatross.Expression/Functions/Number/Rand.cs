@@ -6,13 +6,11 @@ using System;
 namespace Albatross.Expression.Functions.Number
 {
     [FunctionDoc(Group.Number, "{token}()",
-        @"
-        ### Generate random value between 0.0 and 1.0
-        #### Inputs:
-        - No Inputs
-        #### Outputs:
-        - Random number between 0.0 and 1.0.
-        "
+@"### Generate random value between 0.0 and 1.0
+#### Inputs:
+- No Inputs
+#### Outputs:
+- Random number between 0.0 and 1.0."
     )]
     [ParserOperation]
     public class Rand : PrefixOperationToken

@@ -18,15 +18,11 @@ namespace Albatross.Expression.Operations
     /// <para>Output Type: System.DateTime</para>
     /// </summary>
     [FunctionDoc(Group.Date, "{token}( )",
-        @"
-        ### Create date object from the passed value
-
-        #### Inputs:
-        - date: object
-
-        #### Outputs:
-        - Date or Date with time.
-        "
+@"### Create date object from the passed value
+#### Inputs:
+- date: object
+#### Outputs:
+- Date or Date with time."
     )]
     [ParserOperation]
     public class Date : PrefixOperationToken

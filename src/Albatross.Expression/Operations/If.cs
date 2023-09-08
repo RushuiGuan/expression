@@ -21,11 +21,7 @@ namespace Albatross.Expression.Operations
     /// <para>Output Type: any</para>
     /// <para>Usage: if( 3 > 2, "OK", "No")</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}( , , )",
-        @"
-		### Returns the first given value if true and second given value if false. 
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}( , , )", @"### Returns the first given value if true and second given value if false. ")]
     [ParserOperation]
     public class If : PrefixOperationToken
     {

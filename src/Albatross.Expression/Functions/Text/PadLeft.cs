@@ -8,14 +8,12 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( , )",
-        @"
-		### Returns a new string that right-aligns the characters in this instance by padding them on the left with a specified Unicode character, for a specified total length.
-		#### Inputs:
-		- totalWidth: Integer
-		- paddingChar: Char
-		#### Outputs:
-		- String
-		"
+@"### Returns a new string that right-aligns the characters in this instance by padding them on the left with a specified Unicode character, for a specified total length.
+#### Inputs:
+- totalWidth: Integer
+- paddingChar: Char
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class PadLeft : PrefixOperationToken

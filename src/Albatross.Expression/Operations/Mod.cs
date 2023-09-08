@@ -17,11 +17,7 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Output Type: double</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Returns the remainder after dividing the first operand with the second.
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Returns the remainder after dividing the first operand with the second.")]
     [ParserOperation]
     public class Mod : InfixOperationToken
     {

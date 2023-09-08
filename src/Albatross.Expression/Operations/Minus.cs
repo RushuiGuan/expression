@@ -6,11 +6,7 @@ using System;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-        ### Subtract two numeric values.
-        "
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Subtract two numeric values.")]
     [ParserOperation]
     public class Minus : InfixOperationToken
     {

@@ -3,11 +3,7 @@ using Albatross.Expression.Documentation.Attributes;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Returns true if the first numeric value is less than or equal to the second numeric value. 
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Returns true if the first numeric value is less than or equal to the second numeric value. ")]
     [ParserOperation]
     public class LessEqual : ComparisonInfixOperation
     {

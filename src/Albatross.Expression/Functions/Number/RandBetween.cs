@@ -7,14 +7,12 @@ using System.Linq;
 namespace Albatross.Expression.Functions.Number
 {
     [FunctionDoc(Group.Number, "{token}( , )",
-        @"
-        ### Generate random value
-        #### Inputs:
-        - @val1: Max value, or minimum value of a range (optional)
-        - @val2: Maximum value of the range (optional)
-        #### Outputs:
-        - Non negative random integer.
-        "
+@"### Generate random value
+#### Inputs:
+- @val1: Max value, or minimum value of a range (optional)
+- @val2: Maximum value of the range (optional)
+#### Outputs:
+- Non negative random integer."
     )]
     [ParserOperation]
     public class RandBetween : PrefixOperationToken

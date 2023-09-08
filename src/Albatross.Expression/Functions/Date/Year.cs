@@ -8,15 +8,11 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}( )",
-        @"
-		### Returns the year of the given date as a number.
-
-		#### Inputs:
-		- date: date
-
-		#### Outputs:
-		- The year value as number.
-		"
+@"### Returns the year of the given date as a number.
+#### Inputs:
+- date: date
+#### Outputs:
+- The year value as number."
     )]
     [ParserOperation]
     public class Year : PrefixOperationToken

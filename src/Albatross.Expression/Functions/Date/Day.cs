@@ -7,15 +7,11 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}( )",
-        @"
-        ### Returns the day of the given date as number.
-
-        #### Inputs:
-        - date: date
-
-        #### Outputs:
-        - The day value between 1 and 31.
-        "
+@"### Returns the day of the given date as number.
+#### Inputs:
+- date: date
+#### Outputs:
+- The day value between 1 and 31."
     )]
     [ParserOperation]
     public class Day : PrefixOperationToken

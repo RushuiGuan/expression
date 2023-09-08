@@ -7,14 +7,11 @@ using System.Linq;
 namespace Albatross.Expression.Functions.Text
 {
     [FunctionDoc(Group.Text, "{token}( )",
-        @"
-        ### Transforms any base64 string into an object.
-        #### Inputs:
-        - text: Any
-
-        #### Outputs:
-        - Object
-        "
+@"### Transforms any base64 string into an object.
+#### Inputs:
+- text: Any
+#### Outputs:
+- Object"
     )]
     [ParserOperation]
     public class FromBase64 : PrefixOperationToken

@@ -8,15 +8,11 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}( )",
-        @"
-		### Returns the shortened version of month name as a text.
-
-		#### Inputs:
-		- date: date
-
-		#### Outputs:
-		- Abbreviated month name
-		"
+@"### Returns the shortened version of month name as a text.
+#### Inputs:
+- date: date
+#### Outputs:
+- Abbreviated month name"
     )]
     [ParserOperation]
     public class ShortMonthName : PrefixOperationToken

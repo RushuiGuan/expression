@@ -17,11 +17,7 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Output Type: double</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Multiply two numeric values.
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Multiply two numeric values.")]
     [ParserOperation]
     public class Multiply : InfixOperationToken
     {

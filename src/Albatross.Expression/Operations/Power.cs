@@ -17,11 +17,7 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Output Type: double</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Power of a numeric value.
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Power of a numeric value.")]
     [ParserOperation]
     public class Power : InfixOperationToken
     {

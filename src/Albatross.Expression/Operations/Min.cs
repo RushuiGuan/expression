@@ -8,11 +8,7 @@ using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}( , )",
-        @"
-		### Returns the smallest of the given numbers.
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}( , )", @"### Returns the smallest of the given numbers.")]
     [ParserOperation]
     public class Min : PrefixOperationToken
     {

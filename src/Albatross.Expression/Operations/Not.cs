@@ -6,11 +6,7 @@ using System.Linq;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Returns true if the operand is not true.
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Returns true if the operand is not true.")]
     [ParserOperation]
     public class Not : PrefixOperationToken
     {

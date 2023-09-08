@@ -7,14 +7,11 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( )",
-        @"
-		### Removes the empty spaces from the end of the string.
-		#### Inputs:
-		- string: String
-
-		#### Outputs:
-		- String
-		"
+@"### Removes the empty spaces from the end of the string.
+#### Inputs:
+- string: String
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class TrimRight : PrefixOperationToken

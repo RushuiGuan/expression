@@ -8,14 +8,11 @@ using System.Linq;
 namespace Albatross.Expression.Functions.Text
 {
     [FunctionDoc(Group.Text, "{token}( )",
-        @"
-        ### Transforms any string into json formatted string.
-        #### Inputs:
-        - text: Any
-
-        #### Outputs:
-        - String
-        "
+@"### Transforms any string into json formatted string.
+#### Inputs:
+- text: Any
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class ToJsonFormat : PrefixOperationToken

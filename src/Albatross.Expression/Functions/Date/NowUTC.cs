@@ -6,15 +6,11 @@ using System;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Date, "{token}()",
-        @"
-        ### Returns the date and time of UTC.
-
-        #### Inputs:
-        - No inputs
-
-        #### Outputs:
-        - Date with time.
-        "
+@"### Returns the date and time of UTC.
+#### Inputs:
+- No inputs
+#### Outputs:
+- Date with time."
     )]
     [ParserOperation]
     public class NowUTC : PrefixOperationToken

@@ -6,11 +6,7 @@ using System.Linq;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Positive sign
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Positive sign")]
     [ParserOperation]
     public class Positive : PrefixOperationToken
     {

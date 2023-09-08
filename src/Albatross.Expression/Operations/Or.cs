@@ -21,11 +21,7 @@ namespace Albatross.Expression.Operations
     /// <para>Usage: 3 > 2 or 2 > 1</para>
     /// <para>Precedance: 20</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Logical OR operation
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Logical OR operation")]
     [ParserOperation]
     public class Or : InfixOperationToken
     {

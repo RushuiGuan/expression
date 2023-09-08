@@ -17,11 +17,7 @@ namespace Albatross.Expression.Operations
     /// </list>
     /// <para>Output Type: double</para>
     /// </summary>
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-        ### Add together two numeric values.
-        "
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Add together two numeric values.")]
     [ParserOperation]
     public class Plus : InfixOperationToken
     {

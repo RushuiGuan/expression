@@ -8,15 +8,12 @@ using System.Linq;
 namespace Albatross.Expression.Functions.Number
 {
     [FunctionDoc(Group.Number, "{token}( , )",
-        @"
-        ### Returns the Round of decimal numbers with specified number of digits.
-        #### Inputs:
-        - number: The number to round.
-        - digits: How many digits after decimal point.
-
-        #### Outputs:
-        - Decimal number after round.
-        "
+@"### Returns the Round of decimal numbers with specified number of digits.
+#### Inputs:
+- number: The number to round.
+- digits: How many digits after decimal point.
+#### Outputs:
+- Decimal number after round."
     )]
     [ParserOperation]
     public class Round : PrefixOperationToken

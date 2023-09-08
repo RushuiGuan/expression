@@ -7,14 +7,11 @@ using System.Linq;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( )",
-        @"
-		### Transforms any object into a text.
-		#### Inputs:
-		- object: Any
-
-		#### Outputs:
-		- String
-		"
+@"### Transforms any object into a text.
+#### Inputs:
+- object: Any
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class Text : PrefixOperationToken

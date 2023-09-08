@@ -6,11 +6,7 @@ using System.Linq;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Group.Boolean, "{token}",
-        @"
-		### Multiply the numeric value with -1.
-		"
-    )]
+    [OperationDoc(Group.Boolean, "{token}", @"### Multiply the numeric value with -1.")]
     [ParserOperation]
     public class Negative : PrefixOperationToken
     {

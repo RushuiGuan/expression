@@ -16,14 +16,11 @@ namespace Albatross.Expression.Operations
     /// <para>Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.</para>
     /// </summary>
     [FunctionDoc(Documentation.Group.Number, "{token}( , )",
-        @"
-        ### Calculate Average
-        #### Inputs:
-        - set: Set of Numbers
-
-        #### Outputs:
-        - Average of a set of numbers as double.
-        "
+@"### Calculate Average
+#### Inputs:
+- set: Set of Numbers
+#### Outputs:
+- Average of a set of numbers as double."
     )]
     [ParserOperation]
     public class Avg : PrefixOperationToken

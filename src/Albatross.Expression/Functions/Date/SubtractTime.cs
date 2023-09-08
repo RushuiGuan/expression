@@ -6,16 +6,12 @@ using System;
 namespace Albatross.Expression.Functions.Date
 {
     [FunctionDoc(Group.Date, "{token}( , )",
-        @"
-        ### Subtacts the given date-time values to return the minutes between them.
-
-        #### Inputs:
-        - datetime1: datetime
-        - datetime2: datetime
-
-        #### Outputs:
-        - The total minutes between the two dates.
-        "
+@"### Subtacts the given date-time values to return the minutes between them.
+#### Inputs:
+- datetime1: datetime
+- datetime2: datetime
+#### Outputs:
+- The total minutes between the two dates."
     )]
     [ParserOperation]
     public class SubtractTime : PrefixOperationToken

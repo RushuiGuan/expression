@@ -19,10 +19,8 @@ namespace Albatross.Expression.Documentation
                 var instance = token.Value;
 
                 var docAttribute = type.GetCustomAttribute<DocAttribute>();
-                var references = @"                    
-                        #### References:
-                        - [{token}](https://help.workiom.com/article/formula#{token})   
-                ";
+                var references = @"#### References:
+- [{token}](https://help.workiom.com/article/formula#{token})";
 
                 if (docAttribute != null)
                 {

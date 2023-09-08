@@ -20,14 +20,12 @@ namespace Albatross.Expression.Operations
     /// <para>Usage: Left("test", 1) should return "t"</para>
     /// </summary>
     [FunctionDoc(Group.Text, "{token}( , )",
-        @"
-		### Extracts the specified number of characters from the beginning of the string.
-		#### Inputs:
-		- string: String
-		- num: Integer
-		#### Outputs:
-		- String
-		"
+@"### Extracts the specified number of characters from the beginning of the string.
+#### Inputs:
+- string: String
+- num: Integer
+#### Outputs:
+- String"
     )]
     [ParserOperation]
     public class Left : PrefixOperationToken

@@ -9,13 +9,11 @@ using System.Collections.Generic;
 namespace Albatross.Expression.Operations
 {
     [FunctionDoc(Group.Text, "{token}( )",
-        @"
-        ### Returns the number of characters in a string.
-        #### Inputs:
-        - string: String
-        #### Outputs:
-        - Integer
-        "
+@"### Returns the number of characters in a string.
+#### Inputs:
+- string: String
+#### Outputs:
+- Integer"
     )]
     [ParserOperation]
     public class Len : PrefixOperationToken

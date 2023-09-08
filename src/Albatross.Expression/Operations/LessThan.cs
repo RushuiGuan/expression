@@ -3,11 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Albatross.Expression.Operations
 {
-    [OperationDoc(Documentation.Group.Boolean, "{token}",
-        @"
-		### Returns true if the first numeric value is less than the second numeric value. 
-		"
-    )]
+    [OperationDoc(Documentation.Group.Boolean, "{token}", @"### Returns true if the first numeric value is less than the second numeric value. ")]
     [ParserOperation]
     public class LessThan : ComparisonInfixOperation
     {

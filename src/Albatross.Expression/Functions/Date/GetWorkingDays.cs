@@ -51,7 +51,7 @@ namespace Albatross.Expression.Functions.Date
 
             var weekendLength = 2;
             if (Operands.Count > 3)
-                weekendLength = ((int)Convert.ChangeType(Operands[3].EvalValue(context), typeof(int))) % 2;
+                weekendLength = 2 - (((int)Convert.ChangeType(Operands[3].EvalValue(context), typeof(int))) % 2);
 
             return CountWorkingDays(start, end, startOfWeek, weekendLength);
         }

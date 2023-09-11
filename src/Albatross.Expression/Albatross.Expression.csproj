@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyVersion>2.3.10.9</AssemblyVersion>
-		<FileVersion>2.3.10.9</FileVersion>
+		<AssemblyVersion>2.3.10.10</AssemblyVersion>
+		<FileVersion>2.3.10.10</FileVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.3.10.9</Version>
+		<Version>2.3.10.10</Version>
 		<Authors>Workiom.Expression</Authors>
 		<PackageId>Workiom.Expression</PackageId>
 		<Product>Workiom.Expression</Product>
-		<Description>Fix bug GetWorkingDays #2</Description>
+		<Description>Fix bug GetWorkingDays #3</Description>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	  <PackageReference Include="System.Security.Principal.Windows">

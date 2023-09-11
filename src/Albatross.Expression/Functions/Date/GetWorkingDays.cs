@@ -47,11 +47,11 @@ namespace Albatross.Expression.Functions.Date
 
             var startOfWeek = DayOfWeek.Monday;
             if (Operands.Count > 2)
-                startOfWeek = (DayOfWeek)(((int)Convert.ChangeType(Operands[2].EvalValue(context), typeof(double))) % 7);
+                startOfWeek = (DayOfWeek)(((int)Convert.ChangeType(Operands[2].EvalValue(context), typeof(int))) % 7);
 
             var weekendLength = 2;
             if (Operands.Count > 3)
-                weekendLength = ((int)Convert.ChangeType(Operands[3].EvalValue(context), typeof(double))) % 2;
+                weekendLength = ((int)Convert.ChangeType(Operands[3].EvalValue(context), typeof(int))) % 2;
 
             return CountWorkingDays(start, end, startOfWeek, weekendLength);
         }

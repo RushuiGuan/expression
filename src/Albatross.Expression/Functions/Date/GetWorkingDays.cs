@@ -38,7 +38,7 @@ namespace Albatross.Expression.Functions.Date
             start = start.Date;
             end = end.Date;
 
-            if (end > start)
+            if (start > end)
             {
                 DateTime temp = start;
                 start = end;

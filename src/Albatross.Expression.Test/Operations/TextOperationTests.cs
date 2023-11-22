@@ -70,6 +70,16 @@ namespace Albatross.Expression.Test
 
         [TestCase("substring(\"hom.rcp@gmail.com\", indexof(\"hom.rcp@gmail.com\", \"@\"))", ExpectedResult = "@gmail.com")]
         [TestCase("concat(true,5, 8,\"-variable\")", ExpectedResult = "58-variable")]
+
+        // Word Count
+        [TestCase("wordCount(\"aa ss    vv wq      w     \")", ExpectedResult = 5)]
+        [TestCase("wordCount(\"  aa .3  12  @9   vv wq      w     \")", ExpectedResult = 7)]
+        [TestCase("wordCount(\"Word\")", ExpectedResult = 1)]
+        [TestCase("wordCount(\"C Sharp\")", ExpectedResult = 2)]
+
+        // Char Count        
+        [TestCase("charCount(\"Word\")", ExpectedResult = 4)]
+        [TestCase("charCount(\"C Sharp\")", ExpectedResult = 7)]
         public object OperationsTesting(string expression)
         {
             return Factory.Instance.Create().Compile(expression).EvalValue(null);

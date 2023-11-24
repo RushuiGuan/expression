@@ -1,10 +1,11 @@
-﻿using Albatross.Expression.Documentation;
-using Albatross.Expression.Documentation.Attributes;
+﻿using Albatross.Expression.Documentation.Attributes;
 using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using Group = Albatross.Expression.Documentation.Group;
 
 namespace Albatross.Expression.Operations
 {
@@ -39,12 +40,23 @@ namespace Albatross.Expression.Operations
             }
             if (value is string)
             {
-                return Convert.ToDouble(((string)value).Length);
+                return CountChar((string)value);
             }
             else
             {
                 throw new UnexpectedTypeException(value.GetType());
             }
+        }
+
+        private double CountChar(string text)
+        {
+            string pattern = @"\s";
+
+            var matches = Regex.Replace(text, pattern, "");
+
+            var charCount = (double)matches.Length;
+
+            return charCount;
         }
     }
 }

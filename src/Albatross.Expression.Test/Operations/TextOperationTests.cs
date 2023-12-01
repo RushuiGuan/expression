@@ -71,15 +71,38 @@ namespace Albatross.Expression.Test
         [TestCase("substring(\"hom.rcp@gmail.com\", indexof(\"hom.rcp@gmail.com\", \"@\"))", ExpectedResult = "@gmail.com")]
         [TestCase("concat(true,5, 8,\"-variable\")", ExpectedResult = "58-variable")]
 
-        // Word Count
+        // Word Count plain text
+        [TestCase("wordCount(\"123\")", ExpectedResult = 1)]
+        [TestCase("wordCount(\"123 123\")", ExpectedResult = 2)]
         [TestCase("wordCount(\"aa ss    vv wq      w     \")", ExpectedResult = 5)]
         [TestCase("wordCount(\"  aa .3  12  @9   vv wq      w     \")", ExpectedResult = 7)]
         [TestCase("wordCount(\"Word\")", ExpectedResult = 1)]
         [TestCase("wordCount(\"C Sharp\")", ExpectedResult = 2)]
-
-        // Char Count        
+        
+        // Word Count markdown text
+        [TestCase("wordCount(\"**123**\")", ExpectedResult = 1)]
+        [TestCase("wordCount(\"_123_\")", ExpectedResult = 1)]
+        [TestCase("wordCount(\"**__123 123__**\")", ExpectedResult = 2)]
+        [TestCase("wordCount(\"### H3\\n\\nH2\\n--\\n\\nH1\\n==\")", ExpectedResult = 3)]
+        [TestCase("wordCount(\"**Bold **_Italic_ ~~StrikeThrough~~ **_~~BoldItalicStrikeThrough~~_****_ BoldItalic_** _~~ItalicStrikeThrough~~__ _**~~BoldStrikeThrough~~**\")", ExpectedResult = 7)]
+        [TestCase("wordCount(\"> Block Quote\\n\\n`Code`\\n\\n    Code Block\\n\\nEmoji \\n\\n[Link](https://stackedit.io/app#)\")", ExpectedResult = 7)]
+        [TestCase("wordCount(\"1. LevelOne\\n\\n2. LevelTwo\\n\\n\\n\\n* LevelOne\\n\\n* LevelTwo\")", ExpectedResult = 4)]
+        
+        // Char Count   
+        [TestCase("charCount(\"123\")", ExpectedResult = 3)]
+        [TestCase("charCount(\"123 123\")", ExpectedResult = 6)]
         [TestCase("charCount(\"Word\")", ExpectedResult = 4)]
-        [TestCase("charCount(\"C Sharp\")", ExpectedResult = 7)]
+        [TestCase("charCount(\"C Sharp\")", ExpectedResult = 6)]
+        
+        // Char Count markdown text
+        [TestCase("charCount(\"**123**\")", ExpectedResult = 3)]
+        [TestCase("charCount(\"_123_\")", ExpectedResult = 3)]
+        [TestCase("charCount(\"**__123 123__**\")", ExpectedResult = 6)]
+        [TestCase("charCount(\"### H3\\n\\nH2\\n--\\n\\nH1\\n==\")", ExpectedResult = 6)]
+        [TestCase("charCount(\"**Bold **_Italic_ ~~StrikeThrough~~ **_~~BoldItalicStrikeThrough~~_****_ BoldItalic_** _~~ItalicStrikeThrough~~__ _**~~BoldStrikeThrough~~**\")", ExpectedResult = 96)]
+        [TestCase("charCount(\"> Block Quote\\n\\n`Code`\\n\\n    Code Block\\n\\nEmoji \\n\\n[Link](https://stackedit.io/app#)\")", ExpectedResult = 32)]
+        [TestCase("charCount(\"1. LevelOne\\n\\n2. LevelTwo\\n\\n\\n\\n* LevelOne\\n\\n* LevelTwo\")", ExpectedResult = 32)]
+
         public object OperationsTesting(string expression)
         {
             return Factory.Instance.Create().Compile(expression).EvalValue(null);

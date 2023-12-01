@@ -5,10 +5,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Group = Albatross.Expression.Documentation.Group;
 
 namespace Albatross.Expression.Operations
 {
-    [FunctionDoc(Documentation.Group.Text, "{token}( )",
+    [FunctionDoc(Group.Text, "{token}( )",
 @"### Returns the number of words in a string.
 #### Inputs:
 - string: String
@@ -49,11 +50,19 @@ namespace Albatross.Expression.Operations
 
         private double CountWords(string text)
         {
+            // Strip of markdown syntax
+            var result = text.TryNormalizeText(out string normalizedText);
+
+            if (result)
+            {
+                text = normalizedText;
+            }
+
             // Define a regular expression pattern for matching words
             string pattern = @"\b\w+\b";
 
             // Use Regex.Matches to find all matches in the input text
-            var matches = Regex.Matches(text, pattern);
+            MatchCollection matches = Regex.Matches(text, pattern);
 
             // The Count property of MatchCollection gives the number of matches
             var wordCount = (double)matches.Count;

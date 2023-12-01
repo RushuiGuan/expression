@@ -40,7 +40,7 @@ namespace Albatross.Expression.Operations
             }
             if (value is string)
             {
-                return CountChar((string)value);
+                return CountChars((string)value);
             }
             else
             {
@@ -48,13 +48,24 @@ namespace Albatross.Expression.Operations
             }
         }
 
-        private double CountChar(string text)
+        private double CountChars(string text)
         {
-            string pattern = @"\s";
+            // Strip of markdown syntax
+            var result = text.TryNormalizeText(out string normalizedText);
 
-            var matches = Regex.Replace(text, pattern, "");
+            if (result)
+            {
+                text = normalizedText;
+            }
 
-            var charCount = (double)matches.Length;
+            // Define the pattern to match non-space characters
+            string pattern = @"\S";
+
+            // Use Regex.Matches to find all matches
+            MatchCollection matches = Regex.Matches(text, pattern);
+
+            // Count the number of matches
+            var charCount = (double)matches.Count;
 
             return charCount;
         }

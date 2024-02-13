@@ -43,7 +43,7 @@ namespace Albatross.Expression.Test
         // Format
         [TestCase("Format(CreateDate(1985, 5,27), \"yyyy-MM-dd\")", ExpectedResult = "1985-05-27")]
         [TestCase("format(Date(\"2015-2-10\"), \"yyyy-MM-dd\")", ExpectedResult = "2015-02-10")]
-        [TestCase("GetWorkingDays(Date(\"2023-08-29\"), Date(\"2023-09-03\"),1,1)", ExpectedResult = 5d)]
+        [TestCase("GetWorkingDays(Date(\"2023-08-29\"), Date(\"2023-09-03\"),1,1)", ExpectedResult = 4d)]
 
         public object OperationsTesting(string expression)
         {

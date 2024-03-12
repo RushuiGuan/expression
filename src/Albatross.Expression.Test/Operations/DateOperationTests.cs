@@ -1,15 +1,6 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Operations;
-using Albatross.Expression.Tokens;
-using NUnit.Framework;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using NUnit.Framework;
 
-namespace Albatross.Expression.Test
+namespace Albatross.Expression.Test.Operations
 {
     [TestFixture]
     [Category("Operations")]
@@ -32,13 +23,29 @@ namespace Albatross.Expression.Test
         // Date + / - Days
         [TestCase("Date(\"2015-2-10\") - 3 = Date(\"2015-2-7\")  ", ExpectedResult = true)]
         [TestCase("Date(\"2015-2-10\") + 4 = Date(\"2015-2-14\")  ", ExpectedResult = true)]
-
+        
+        // Tests for Between
+        [TestCase("Between(Date(\"2022-01-02\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = true)]
+        [TestCase("Between(Date(\"2022-01-01\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = true)]
+        [TestCase("Between(Date(\"2022-01-03\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = true)]
+        [TestCase("Between(Date(\"2022-01-04\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = false)]
+        [TestCase("Between(Date(\"2022-12-31\"), Date(\"2023-01-10\"), Date(\"2023-01-01\"))", ExpectedResult = false)]
+        [TestCase("Between(Date(\"2023-01-05\"), Date(\"2023-01-10\"), Date(\"2023-01-01\"))", ExpectedResult = true)]
+        [TestCase("Between(Date(\"2023-01-01\"), Date(\"2023-01-01\"), Date(\"2023-01-01\"))", ExpectedResult = true)]
+        
+        // Tests for NotBetween
+        [TestCase("NotBetween(Date(\"2022-01-02\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = false)]
+        [TestCase("NotBetween(Date(\"2022-01-01\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = false)]
+        [TestCase("NotBetween(Date(\"2022-01-03\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = false)]
+        [TestCase("NotBetween(Date(\"2022-01-04\"), Date(\"2022-01-03\"), Date(\"2022-01-01\"))", ExpectedResult = true)]
+        [TestCase("NotBetween(Date(\"2022-12-31\"), Date(\"2023-01-10\"), Date(\"2023-01-01\"))", ExpectedResult = true)]
+        [TestCase("NotBetween(Date(\"2023-01-05\"), Date(\"2023-01-10\"), Date(\"2023-01-01\"))", ExpectedResult = false)]
+        [TestCase("NotBetween(Date(\"2023-01-01\"), Date(\"2023-01-01\"), Date(\"2023-01-01\"))", ExpectedResult = false)]
+        
         // Subtract
         [TestCase("SubtractDate(CreateDate(2020, 1, 4), CreateDate(2020, 1, 1))", ExpectedResult = 3)]
         [TestCase("SubtractTime(CreateDate(2020, 1, 1, 11, 15, 0), CreateDate(2020, 1, 1, 10, 14, 0))", ExpectedResult = 61)]
         [TestCase("SubtractTime(CreateDate(2020, 1, 1), CreateDate(2020, 1, 1))", ExpectedResult = 0)]
-
-
 
         // Format
         [TestCase("Format(CreateDate(1985, 5,27), \"yyyy-MM-dd\")", ExpectedResult = "1985-05-27")]

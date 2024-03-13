@@ -13,11 +13,12 @@ namespace Albatross.Expression.Operations
     /// 
     /// </summary>
     [FunctionDoc(Documentation.Group.Text, "{token}( , )",
-        @"### Check if it contains a specific text
-#### Inputs:
-- set: text
-#### Outputs:
-- true or false."
+        "### Check if operand2 is contained within operand1\n"+
+        "#### Inputs:\n"+
+        "- operand1: a array of values or a single value\n"+
+        "- operand2: a array of values or a value to be checked\n"+
+        "#### Outputs:\n"+
+        "- true if operand2 is included in operand1, false otherwise."
     )]
     [ParserOperation]
     public class Contains : PrefixOperationToken
@@ -37,8 +38,8 @@ namespace Albatross.Expression.Operations
 
             if (operand1.Contains(",") || operand2.Contains(","))
             {
-                var operand1List = operand1.Split(',').Select(s => s.Trim()).ToList();
-                var operand2List = operand2.Split(',').Select(s => s.Trim()).ToList();
+                var operand1List = operand1.Split(',').Select(s => s.Trim()).ToArray();
+                var operand2List = operand2.Split(',').Select(s => s.Trim()).ToArray();
 
                 foreach (var item in operand2List)
                 {

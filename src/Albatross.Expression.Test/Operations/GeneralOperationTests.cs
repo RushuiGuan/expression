@@ -61,8 +61,13 @@ namespace Albatross.Expression.Test
         //arithmatic
         [TestCase("2*3", ExpectedResult = 6)]
         [TestCase("2*null", ExpectedResult = null)]
-
+        
         [TestCase("4/2", ExpectedResult = 2)]
+        [TestCase("13/3", ExpectedResult = 4.333)]
+        [TestCase("5/2", ExpectedResult = 2.500)]
+        [TestCase("15/2", ExpectedResult = 7.500)]
+        [TestCase("19/4", ExpectedResult = 4.750)]
+        [TestCase("22/7", ExpectedResult = 3.143)]
         [TestCase("4/0", ExpectedResult = double.PositiveInfinity)]
 
         [TestCase("-12", ExpectedResult = -12)]

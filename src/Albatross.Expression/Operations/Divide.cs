@@ -35,7 +35,8 @@ namespace Albatross.Expression.Operations
 
             if (a is double && b is double)
             {
-                return (double)a / (double)b;
+                var result = Math.Round((double)a / (double)b, 3);
+                return result;
             }
             else
             {

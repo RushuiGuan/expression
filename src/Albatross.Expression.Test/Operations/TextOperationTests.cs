@@ -59,6 +59,8 @@ namespace Albatross.Expression.Test
         [TestCase("Text(1)", ExpectedResult = "1")]
         
         // Compound
+        [TestCase("if(\"\", true, false)", ExpectedResult = false)]
+        [TestCase("if(\" S \", true, false)", ExpectedResult = true)]
         [TestCase("if(indexof(\"something in germany\" , \"germany\") <> -1, true , false)", ExpectedResult = true)]
         [TestCase("if(indexof(\"something in germany\" , \"germany\") <> Number(\"-1\") ,True ,False )", ExpectedResult = true)]
         

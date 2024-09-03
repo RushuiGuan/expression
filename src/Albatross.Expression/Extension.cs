@@ -12,19 +12,17 @@ namespace Albatross.Expression
         {
             if (obj != null)
             {
-                if (obj is double)
+                switch (obj)
                 {
-                    return (double)obj != 0;
+                    case string _ when obj.ToString() == string.Empty:
+                        return false;
+                    case double d:
+                        return d != 0;
+                    case bool b:
+                        return b;
+                    default:
+                        return true;
                 }
-                else if (obj is bool)
-                {
-                    return (bool)obj;
-                }
-                else
-                {
-                    return true;
-                }
-
             }
             else
             {

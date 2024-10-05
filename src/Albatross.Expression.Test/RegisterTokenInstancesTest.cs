@@ -23,7 +23,7 @@ namespace Albatross.Expression.Test
 			var retval = (double)ctx.Eval("MyToken(1)", null);
 
 			//Assert
-			Assert.AreEqual(1, retval);
+			Assert.Equals(1, retval);
 		}
 
 		[Test]

@@ -1,6 +1,4 @@
-﻿using Albatross.Expression.Exceptions;
-using NUnit.Framework;
-using System.Collections;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace Albatross.Expression.Test {
@@ -55,7 +53,7 @@ namespace Albatross.Expression.Test {
 			context.Set(new ContextValue { Name = "a", ContextType = ContextType.Value, Value = "text", });
 			Dictionary<string, object> dict = new Dictionary<string, object>();
 			var result = context.Eval("a", dict, typeof(string));
-			Assert.AreEqual("text", result);
+			Assert.Equals("text", result);
 
 		}
 	}

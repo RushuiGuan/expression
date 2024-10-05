@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml;
-using System.Text.RegularExpressions;
 using Albatross.Expression.Exceptions;
 using System.Collections;
 
@@ -86,7 +84,7 @@ namespace Albatross.Expression.Tokens {
 			return (IToken)Activator.CreateInstance(type);
 		}
 
-		public virtual object EvalValue(Func<string, object> context) {
+		public virtual object? EvalValue(Func<string, object> context) {
 			return null;
 		}
 
@@ -97,7 +95,7 @@ namespace Albatross.Expression.Tokens {
 		}
 		//if the operand count = 1 and it is an array, return the array
 		//otherwise return normal operand values
-		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type firstType) {
+		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type? firstType) {
 			firstType = null;
 			if (Operands.Count == 0) {
 				return new object[0];
@@ -113,7 +111,7 @@ namespace Albatross.Expression.Tokens {
 					return (IEnumerable)op1;
 				} else {
 					if (op1 != null) { firstType = op1.GetType(); }
-					return new object[] { op1 };
+					return new object?[] { op1 };
 				}
 			} else {
 				return GetOperands(context, out firstType);
@@ -130,7 +128,7 @@ namespace Albatross.Expression.Tokens {
 			return list;
 		}
 		//return operands of the same type
-		protected List<Object> GetOperands(Func<string, object> context, out Type firstType) {
+		protected List<Object> GetOperands(Func<string, object> context, out Type? firstType) {
 			List<object> list = new List<object>();
 			firstType = null;
 			object value;

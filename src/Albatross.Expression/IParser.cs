@@ -1,8 +1,5 @@
-﻿using Albatross.Expression.Operations;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
 
 namespace Albatross.Expression {
@@ -13,7 +10,7 @@ namespace Albatross.Expression {
 		Queue<IToken> Tokenize(string expression);
 		Stack<IToken> BuildStack(Queue<IToken> queue);
 		IToken CreateTree(Stack<IToken> postfix);
-		object Eval(IToken token, Func<string, object> context);
+		object? Eval(IToken token, Func<string, object> context);
 		
 		IToken VariableToken();
 		IStringLiteralToken StringLiteralToken();

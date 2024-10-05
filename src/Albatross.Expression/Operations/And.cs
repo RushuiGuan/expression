@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -33,7 +29,7 @@ namespace Albatross.Expression.Operations {
 		public override object EvalValue(Func<string, object> context) {
 			base.EvalValue(context);
 
-			object value = Operand1.EvalValue(context);
+			object? value = Operand1.EvalValue(context);
 			
 			if (!value.ConvertToBoolean()) {
 				return false;

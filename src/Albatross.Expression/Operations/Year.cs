@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
 
 
 namespace Albatross.Expression.Operations {
@@ -16,7 +12,7 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 1; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			object value = GetOperands(context).First();
 			if (value == null) { return null; }
 			else if (value is DateTime) {

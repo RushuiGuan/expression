@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Xml;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
@@ -24,8 +21,8 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
-		public IToken Operand1 { get; set; }
-		public IToken Operand2 { get; set; }
+		public IToken? Operand1 { get; set; }
+		public IToken? Operand2 { get; set; }
 		public override string ToString() {
 			return Name;
 		}
@@ -59,9 +56,8 @@ namespace Albatross.Expression.Tokens {
 			return (IToken)Activator.CreateInstance(type);
 		}
 
-		public virtual object EvalValue(Func<string, object> context) {
+		public virtual object? EvalValue(Func<string, object> context) {
 			return null;
 		}
-
 	}
 }

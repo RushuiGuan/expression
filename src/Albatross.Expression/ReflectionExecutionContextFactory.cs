@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using System.Text;
 
 namespace Albatross.Expression {
 	public class ReflectionExecutionContextFactory<T> : IExecutionContextFactory<T> {
@@ -30,7 +27,7 @@ namespace Albatross.Expression {
 			return new ExecutionContext<T>(parser, CaseSensitive, CacheExternalValue, FailWhenMissingVariable, TryGetExternalValue);
 		}
 
-		public bool TryGetExternalValue(string name, T obj, out object value) {
+		public bool TryGetExternalValue(string name, T obj, out object? value) {
 			PropertyInfo property;
 			if (obj != null && properties.TryGetValue(name, out property)) {
 				value = property.GetValue(obj);

@@ -3,6 +3,7 @@ using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression {
 	public class ExecutionContext<T> : IExecutionContext<T> {
@@ -14,11 +15,11 @@ namespace Albatross.Expression {
 		public bool CaseSensitive { get; private set; }
 		public bool CacheExternalValue { get; private set; }
 		public bool FailWhenMissingVariable { get; private set; }
-		public TryGetValueDelegate<T> TryGetExternalData { get; private set; }
+		public TryGetValueDelegate<T>? TryGetExternalData { get; private set; }
 		public IParser Parser { get; private set; }
 		#endregion
 
-		public ExecutionContext(IParser parser, bool caseSensitive, bool cacheExternalValue, bool failWhenMissingVariable, TryGetValueDelegate<T> tryGetValueDelegate) {
+		public ExecutionContext(IParser parser, bool caseSensitive, bool cacheExternalValue, bool failWhenMissingVariable, TryGetValueDelegate<T>? tryGetValueDelegate) {
 			this.Parser = parser;
 			this.CaseSensitive = caseSensitive;
 			this.CacheExternalValue = cacheExternalValue;
@@ -42,8 +43,8 @@ namespace Albatross.Expression {
 		#endregion
 
 		#region data retrieval
-		public object GetValue(string name, T input) {
-			object value;
+		public object? GetValue(string name, T input) {
+			object? value;
 			if (TryGetValue(name, input, out value)) {
 				return value;
 			} else {
@@ -54,7 +55,7 @@ namespace Albatross.Expression {
 				}
 			}
 		}
-		public bool TryGetValue(string name, T input, out object data) {
+		public bool TryGetValue(string name, T input, [NotNullWhen(true)] out object? data) {
 			ContextValue value;
 			if (TryGetContext(name, input, out value)) {
 				data = GetContextValue(value, input);
@@ -82,8 +83,8 @@ namespace Albatross.Expression {
 				return contextValue.Value;
 			}
 		}
-		bool TryGetExternal(string name, T input, out ContextValue value){
-			object data;
+		bool TryGetExternal(string name, T input, [NotNullWhen(true)] out ContextValue? value) {
+			object? data;
 			if (TryGetExternalData != null && TryGetExternalData(name, input, out data)) {
 				if (data is ContextValue) {
 					value = (ContextValue)data;
@@ -152,23 +153,23 @@ namespace Albatross.Expression {
 		}
 		#endregion
 
-		public object Eval(string expression, T input, Type outputDataType = null) {
+		public object Eval(string expression, T input, Type? outputDataType = null) {
 			ContextValue value;
 			if (!_expressions.TryGetValue(expression, out value)) {
 				value = new ContextValue() {
-					 Value = expression,
-					 DataType = outputDataType,
-					 ContextType = ContextType.Expression,
+					Value = expression,
+					DataType = outputDataType,
+					ContextType = ContextType.Expression,
 				};
 				_expressions.Add(expression, value);
 			}
 			return GetContextValue(value, input);
 		}
+
 		void Build(ContextValue contextValue, ISet<string> chain) {
 			contextValue.Tree = null;
 			string text = Convert.ToString(contextValue.Value);
-			if (string.IsNullOrEmpty(text))
-			{
+			if (string.IsNullOrEmpty(text)) {
 				throw new ArgumentException($"ContextValue {contextValue.Name} has no expression value");
 			}
 			Queue<IToken> queue = Parser.Tokenize(text);
@@ -177,6 +178,7 @@ namespace Albatross.Expression {
 			Stack<IToken> stack = Parser.BuildStack(queue);
 			contextValue.Tree = Parser.CreateTree(stack);
 		}
+
 		public void Build() {
 			foreach (ContextValue value in Store.Values) {
 				if (value.ContextType == ContextType.Expression) {

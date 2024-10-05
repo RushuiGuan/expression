@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression {
 	public interface IExecutionContextFactory<T> {
@@ -10,6 +7,6 @@ namespace Albatross.Expression {
 		bool FailWhenMissingVariable { get; set; }
 
 		IExecutionContext<T> Create();
-		bool TryGetExternalValue(string name, T input, out object value);
+		bool TryGetExternalValue(string name, T input, out object? value);
 	}
 }

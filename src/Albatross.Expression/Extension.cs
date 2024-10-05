@@ -1,10 +1,6 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Tokens;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 
 namespace Albatross.Expression {
@@ -24,7 +20,7 @@ namespace Albatross.Expression {
 			}
 		}
 
-		public static object GetJsonValue(this JsonElement elem) {
+		public static object? GetJsonValue(this JsonElement elem) {
 			switch (elem.ValueKind) {
 				case JsonValueKind.Null:
 				case JsonValueKind.Undefined:
@@ -52,8 +48,8 @@ namespace Albatross.Expression {
 		public static void SetValue<T>(this IExecutionContext<T> context, string name, object value) {
 			context.Set(new ContextValue() { Name = name, Value = value, ContextType = ContextType.Value, });
 		}
-		public static object GetValue<T>(this IExecutionContext<T> context, string name, T input) {
-			object data;
+		public static object? GetValue<T>(this IExecutionContext<T> context, string name, T input) {
+			object? data;
 			if (context.TryGetValue(name, input, out data)) {
 				return data;
 			} else {
@@ -82,12 +78,12 @@ namespace Albatross.Expression {
 			object result = context.Eval(expression, input, typeof(ValueType));
 			return (ValueType)Convert.ChangeType(result, typeof(ValueType));
 		}
-		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType data) {
+		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType? data) {
 			if (context.TryGetValue(name, input, out object value)){
 				data = (ValueType)Convert.ChangeType(value, typeof(ValueType));
 				return true;
 			} else {
-				data = default(ValueType);
+				data = default;
 				return false;
 			}
 		}

@@ -1,15 +1,9 @@
 using System.Linq;
-using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Albatross.Expression.Exceptions;
 using Albatross.Expression.Tokens;
 using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Xml;
-using Albatross.Expression.Operations;
 
 namespace Albatross.Expression {
 	/// <summary>
@@ -197,7 +191,7 @@ namespace Albatross.Expression {
 			return stack.Pop();
 		}
 		
-		public object Eval(IToken token, Func<string, object> context) {
+		public object? Eval(IToken token, Func<string, object> context) {
 			return token.EvalValue(context);
 		}
 		

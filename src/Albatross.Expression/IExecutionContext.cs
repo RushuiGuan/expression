@@ -1,16 +1,11 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Tokens;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression {
-	public delegate bool TryGetValueDelegate<T>(string name, T input, out object value);
+	public delegate bool TryGetValueDelegate<T>(string name, T input, out object? value);
 
-	public interface IExecutionContext<T> :IEnumerable<ContextValue> {
+	public interface IExecutionContext<T> : IEnumerable<ContextValue> {
 		bool CaseSensitive { get; }
 		bool CacheExternalValue { get; }
 		bool FailWhenMissingVariable { get; }
@@ -18,8 +13,8 @@ namespace Albatross.Expression {
 
 		void Clear();
 		object Eval(string expression, T input, Type outputDataType);
-		object GetValue(string name, T input);
-		bool TryGetValue(string name, T input, out object data);
+		object? GetValue(string name, T input);
+		bool TryGetValue(string name, T input, [NotNullWhen(true)] out object? data);
 		void Set(ContextValue value);
 		void Build();
 	}

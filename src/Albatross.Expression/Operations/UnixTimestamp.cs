@@ -23,8 +23,8 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 1; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			object value = GetOperands(context).First();
+		public override object? EvalValue(Func<string, object> context) {
+			var value = GetOperands(context).First();
 			DateTime dateTime = (value as DateTime?) ?? DateTime.Parse(Convert.ToString(value));
 			return new DateTimeOffset(dateTime).ToUnixTimeSeconds();
 		}

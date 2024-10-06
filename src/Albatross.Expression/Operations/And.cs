@@ -26,15 +26,15 @@ namespace Albatross.Expression.Operations {
 		public override int Precedence { get { return 30; } }
 
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			base.EvalValue(context);
 
-			object? value = Operand1.EvalValue(context);
+			object? value = RequiredOperand1.EvalValue(context);
 			
 			if (!value.ConvertToBoolean()) {
 				return false;
 			} else {
-				value = Operand2.EvalValue(context);
+				value = RequiredOperand2.EvalValue(context);
 				return value.ConvertToBoolean();
 			}
 		}

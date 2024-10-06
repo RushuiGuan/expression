@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
 using Albatross.Expression.Exceptions;
 using System.Collections;
 using System.Text.Json;
@@ -17,10 +14,9 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 1; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			List<object> list =  GetOperands(context);
-
-			object value = list[0];
+		public override object? EvalValue(Func<string, object> context) {
+			var list =  GetOperands(context);
+			var value = list[0];
 			if (value == null) {
 				return null;
 			}else  if (value is ICollection) {

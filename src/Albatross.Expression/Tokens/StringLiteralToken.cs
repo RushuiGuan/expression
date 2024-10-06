@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
@@ -15,7 +12,7 @@ namespace Albatross.Expression.Tokens {
 		public abstract char Boundary { get; }
 		public abstract IToken Clone();
 
-		public string Name { get; protected set; }
+		public string Name { get; protected set; } = string.Empty;
 		public string Group { get { return "Literal"; } }
 		public virtual bool Match(string expression, int start, out int next) {
 			next = expression.Length;
@@ -63,7 +60,7 @@ namespace Albatross.Expression.Tokens {
 		public string EvalText(string format) {
 			return Name;
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object? EvalValue(Func<string, object?> context) {
 			StringBuilder sb = new StringBuilder();
 			bool escaped = false;
 			for (int i = 1; i < Name.Length - 1; i++) {

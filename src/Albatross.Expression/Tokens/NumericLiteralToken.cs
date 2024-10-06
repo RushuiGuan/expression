@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
 	/// <summary>
@@ -43,7 +39,7 @@ namespace Albatross.Expression.Tokens {
 			return new NumericLiteralToken() {Name = Name };
 		}
 
-		public object EvalValue(Func<string, object> context) {
+		public object? EvalValue(Func<string, object?> context) {
 			double d;
 			if (double.TryParse(Name, out d)) {
 				return d;

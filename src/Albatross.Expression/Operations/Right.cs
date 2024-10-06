@@ -16,10 +16,10 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 2; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			int count;
-			List<object> list = GetOperands(context);
-			object value = list[1];
+			var list = GetOperands(context);
+			object? value = list[1];
 
 			if (value == null) { return list[0]; }
 

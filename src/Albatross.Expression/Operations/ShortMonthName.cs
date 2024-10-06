@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
-
 using System.Globalization;
 
 namespace Albatross.Expression.Operations {
@@ -17,13 +12,17 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 1; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			object value = GetOperands(context).First();
+		public override object? EvalValue(Func<string, object> context) {
+			var value = GetOperands(context).First();
 
-			if (value is double){
-				return CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Convert.ToInt32(value));
+			if (value == null) {
+				return null;
+			} else {
+				if (value is double) {
+					return CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Convert.ToInt32(value));
+				}
+				throw new Exceptions.UnexpectedTypeException(value.GetType());
 			}
-			throw new Exceptions.UnexpectedTypeException(value.GetType());
 		}
 	}
 }

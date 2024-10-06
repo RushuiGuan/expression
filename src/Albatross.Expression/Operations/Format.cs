@@ -23,7 +23,7 @@ namespace Albatross.Expression.Operations {
 
 
 		public override object EvalValue(Func<string, object> context) {
-			List<object> list = GetOperands(context);
+			var list = GetOperands(context);
 			string format = "{0:" + list.Last() + "}";
 			return string.Format(format, list.First());
 		}

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -25,7 +22,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			object value = GetOperands(context).First();
+			var value = GetOperands(context).First();
 			if (value is DateTime) {
 				return value;
 			} else {

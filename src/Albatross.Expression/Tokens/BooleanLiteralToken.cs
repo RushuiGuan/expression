@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
 	/// <summary>
@@ -32,15 +28,13 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
-		public override string ToString() { return Name; }
-		public string EvalText(string format) {
-			return Name;
-		}
+		public override string ToString() => Name;
+		public string EvalText(string format) => Name;
 		public IToken Clone() {
 			return new BooleanLiteralToken() { Name = Name };
 		}
 
-		public object EvalValue(Func<string, object> context) {
+		public object EvalValue(Func<string, object?> context) {
 			bool b;
 			if (bool.TryParse(Name, out b)) {
 				return b;

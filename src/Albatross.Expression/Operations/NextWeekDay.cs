@@ -12,8 +12,8 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 1; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			object a = GetOperands(context).First();
+		public override object? EvalValue(Func<string, object> context) {
+			var a = GetOperands(context).First();
 			if (a == null) { return null; }
 			DateTime date;
 			if (a is DateTime) {

@@ -32,9 +32,9 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			ValidateOperands();
-			object obj = Operands.First().EvalValue(context);
+			var obj = Operands.First().EvalValue(context);
 
 			if (obj.ConvertToBoolean()) {
 				return Operands[1].EvalValue(context);

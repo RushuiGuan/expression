@@ -181,7 +181,7 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = token.EvalValue(null);
-			Assert.Equals(result, DateTime.Parse(expected));
+			ClassicAssert.AreEqual(result, DateTime.Parse(expected));
 		}
 
 		[TestCase("PreviousWeekDay(\"2021-03-24\")", "2021-03-23")]
@@ -192,7 +192,7 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = token.EvalValue(null);
-			Assert.Equals(result, DateTime.Parse(expected));
+			ClassicAssert.AreEqual(result, DateTime.Parse(expected));
 		}
 
 		[TestCase("DayOfWeek(\"2021-03-24\")", 3)]
@@ -201,7 +201,7 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = token.EvalValue(null);
-			Assert.Equals(result, expected);
+			ClassicAssert.AreEqual(result, expected);
 		}
 
 		[TestCase("Random(0, 2)", 0, 2)]

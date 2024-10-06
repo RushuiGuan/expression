@@ -14,7 +14,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object EvalValue(Func<string, object> context) {
-			object value = GetOperands(context).First();
+			object? value = GetOperands(context).First();
 			DateTime dateTime = (value as DateTime?) ?? DateTime.Parse(Convert.ToString(value));
 			return dateTime.ToUniversalTime();
 		}

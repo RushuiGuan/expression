@@ -27,9 +27,8 @@ namespace Albatross.Expression.Tokens {
 		public IToken Clone() {
 			return new AssignmentToken();
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object? EvalValue(Func<string, object?> context) {
 			throw new NotSupportedException();
 		}
-
 	}
 }

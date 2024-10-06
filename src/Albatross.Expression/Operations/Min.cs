@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
 using Albatross.Expression.Exceptions;
 using System.Collections;
 
@@ -16,8 +13,8 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return int.MaxValue; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			Type type;
+		public override object? EvalValue(Func<string, object> context) {
+			Type? type;
 			IEnumerable items = GetParamsOperands(context, out type);
 
 			if (type == null) {
@@ -33,7 +30,7 @@ namespace Albatross.Expression.Operations {
 			}
 		}
 
-		public static object GetMin<T>(IEnumerable list) where T : struct {
+		public static object? GetMin<T>(IEnumerable list) where T : struct {
 			T? t = null;
 			try {
 				foreach (T? item in list) {
@@ -57,8 +54,8 @@ namespace Albatross.Expression.Operations {
 			}
 		}
 
-		public static object GetMinString(IEnumerable list) {
-			string max = null, item;
+		public static object? GetMinString(IEnumerable list) {
+			string? max = null, item;
 			foreach (object obj in list) {
 				item = Convert.ToString(obj);
 				if (item != null) {

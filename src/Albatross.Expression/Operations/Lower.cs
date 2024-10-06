@@ -11,9 +11,13 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 1; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			object value = GetOperands(context).First();
-			return Convert.ToString(value).ToLower();
+		public override object? EvalValue(Func<string, object> context) {
+			var value = GetOperands(context).First();
+			if (value == null) {
+				return null;
+			} else {
+				return Convert.ToString(value).ToLower();
+			}
 		}
 	}
 }

@@ -3,6 +3,9 @@ using System.Text;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
+	/// <summary>
+	/// infix operations are binary operations.  They have two operands.  They can be symbolic or not.
+	/// </summary>
 	public abstract class InfixOperationToken : IToken {
 		public abstract string Name { get; }
 		public abstract bool Symbolic { get;}
@@ -21,6 +24,8 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
+		public IToken RequiredOperand1 => Operand1 ?? throw new InvalidOperationException($"Operation {Name} is missing first operand");
+		public IToken RequiredOperand2 => Operand2 ?? throw new InvalidOperationException($"Operation {Name} is missing second operand");
 		public IToken? Operand1 { get; set; }
 		public IToken? Operand2 { get; set; }
 		public override string ToString() {
@@ -56,7 +61,7 @@ namespace Albatross.Expression.Tokens {
 			return (IToken)Activator.CreateInstance(type);
 		}
 
-		public virtual object? EvalValue(Func<string, object> context) {
+		public virtual object? EvalValue(Func<string, object?> context) {
 			return null;
 		}
 	}

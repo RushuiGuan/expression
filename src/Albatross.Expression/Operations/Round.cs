@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
-
-using System.Globalization;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -19,15 +12,17 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 2; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			List<object> list = GetOperands(context);
-			object value = list[0];
-			object digit = list[1];
+		public override object? EvalValue(Func<string, object> context) {
+			var list = GetOperands(context);
+			object? op1 = list[0];
+			object? op2 = list[1];
 
-			if (value is double) {
-				return Math.Round((double)value,Convert.ToInt32(digit), MidpointRounding.AwayFromZero);
+			if (op1 == null || op2 == null) {
+				return null;
 			} else {
-				throw new Exceptions.UnexpectedTypeException(value.GetType());
+				var value = Convert.ToDouble(op1);
+				var digit = Convert.ToInt32(op2);
+				return Math.Round(value, digit);
 			}
 		}
 	}

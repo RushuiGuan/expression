@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 
 namespace Albatross.Expression.Test {
@@ -22,13 +23,13 @@ namespace Albatross.Expression.Test {
 					new Dictionary<string, object>{
 						{ "c", 3},
 						{ "b", 2},
-						{ "a", new ContextValue { Name="a", ContextType = ContextType.Expression, Value = "c+b" } }
+						{ "a", new ContextValue ("a", "c+b") { ContextType = ContextType.Expression} }
 					},
 					null
 				){ ExpectedResult = 5 },
 				new TestCaseData("a",
 					new Dictionary<string, object>{
-						{ "a", new ContextValue { Name="a", ContextType = ContextType.Expression, Value = "c+b" } }
+						{ "a", new ContextValue("a", "c+b") { ContextType = ContextType.Expression} }
 					},
 					new string[]{ "b = 3", "c = 2" }
 				){ ExpectedResult = 5 },
@@ -50,10 +51,10 @@ namespace Albatross.Expression.Test {
 		[TestCase]
 		public void TestEval() {
 			var context = factory.Create();
-			context.Set(new ContextValue { Name = "a", ContextType = ContextType.Value, Value = "text", });
+			context.Set(new ContextValue("a", "text") { ContextType = ContextType.Value, });
 			Dictionary<string, object> dict = new Dictionary<string, object>();
 			var result = context.Eval("a", dict, typeof(string));
-			Assert.Equals("text", result);
+			ClassicAssert.AreEqual("text", result);
 
 		}
 	}

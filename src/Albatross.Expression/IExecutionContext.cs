@@ -12,9 +12,9 @@ namespace Albatross.Expression {
 		IParser Parser { get; }
 
 		void Clear();
-		object Eval(string expression, T input, Type outputDataType);
+		object? Eval(string expression, T input, Type outputDataType);
 		object? GetValue(string name, T input);
-		bool TryGetValue(string name, T input, [NotNullWhen(true)] out object? data);
+		bool TryGetValue(string name, T input, out object? data);
 		void Set(ContextValue value);
 		void Build();
 	}

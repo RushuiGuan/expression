@@ -14,9 +14,9 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 100; } }
 
-		public override object EvalValue(Func<string, object> context) {
-			object a = Operand1.EvalValue(context);
-			object b = Operand2.EvalValue(context);
+		public override object? EvalValue(Func<string, object> context) {
+			object? a = RequiredOperand2.EvalValue(context);
+			object? b = RequiredOperand2.EvalValue(context);
 
 			if (a == null || b == null) {
 				return null;

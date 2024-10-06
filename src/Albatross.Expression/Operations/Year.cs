@@ -13,7 +13,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 		public override object? EvalValue(Func<string, object> context) {
-			object value = GetOperands(context).First();
+			var value = GetOperands(context).First();
 			if (value == null) { return null; }
 			else if (value is DateTime) {
 				return Convert.ToDouble(((DateTime)value).Year);

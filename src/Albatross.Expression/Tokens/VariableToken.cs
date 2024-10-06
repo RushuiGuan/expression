@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
 	/// <summary>
@@ -61,7 +57,7 @@ namespace Albatross.Expression.Tokens {
 			return false;
 		}
 		public override string ToString() { return Name; }
-		public object Value { get; set; }
+		public object? Value { get; set; }
 		public bool Calculated { get; set; }
 		public int CompareTo(IOperandToken other) {
 			throw new NotImplementedException();
@@ -72,7 +68,7 @@ namespace Albatross.Expression.Tokens {
 		public IToken Clone() {
 			return new VariableToken() { Name = Name };
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object? EvalValue(Func<string, object?> context) {
 			object value;
 			if (context != null){
 				value = context(Name);

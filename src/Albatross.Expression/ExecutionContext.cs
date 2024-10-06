@@ -55,7 +55,7 @@ namespace Albatross.Expression {
 				}
 			}
 		}
-		public bool TryGetValue(string name, T input, [NotNullWhen(true)] out object? data) {
+		public bool TryGetValue(string name, T input, out object? data) {
 			ContextValue value;
 			if (TryGetContext(name, input, out value)) {
 				data = GetContextValue(value, input);
@@ -65,7 +65,7 @@ namespace Albatross.Expression {
 				return false;
 			}
 		}
-		object GetContextValue(ContextValue contextValue, T input) {
+		object? GetContextValue(ContextValue contextValue, T input) {
 			if (contextValue.ContextType == Albatross.Expression.ContextType.Expression) {
 				ISet<string> chain = NewSet();
 				if (!string.IsNullOrEmpty(contextValue.Name)) { chain.Add(contextValue.Name); }
@@ -74,7 +74,7 @@ namespace Albatross.Expression {
 					Build(contextValue, chain);
 				}
 				CheckCircularReference(contextValue, chain, input);
-				object data = Parser.Eval(contextValue.Tree, new Func<string, object>(name => GetValue(name, input)));
+				object? data = Parser.Eval(contextValue.RequiredTree, new Func<string, object?>(name => GetValue(name, input)));
 				if (data != null && contextValue.DataType != null && contextValue.DataType != data.GetType()) {
 					data = Convert.ChangeType(data, contextValue.DataType);
 				}
@@ -89,7 +89,7 @@ namespace Albatross.Expression {
 				if (data is ContextValue) {
 					value = (ContextValue)data;
 				} else {
-					value = new ContextValue() { Name = name, Value = data, ContextType = ContextType.Value, };
+					value = new ContextValue(name, data) { ContextType = ContextType.Value, };
 				}
 				value.External = true;
 				if (value.ContextType == ContextType.Expression || CacheExternalValue) { Store.Add(name, value); }
@@ -99,7 +99,7 @@ namespace Albatross.Expression {
 				return false;
 			}
 		}
-		bool TryGetContext(string name, T input, out ContextValue value) {
+		bool TryGetContext(string name, T input, out ContextValue? value) {
 			return Store.TryGetValue(name, out value) || TryGetExternal(name, input, out value);
 		}
 		#endregion
@@ -110,8 +110,8 @@ namespace Albatross.Expression {
 				if (chain.Contains(dependee)) {
 					throw new CircularReferenceException(dependee, string.IsNullOrEmpty(contextValue.Name) ? Convert.ToString(contextValue.Value) : contextValue.Name);
 				}
-				ContextValue value;
-				if (TryGetContext(dependee, input, out value) && value.ContextType == Albatross.Expression.ContextType.Expression) {
+				ContextValue? value;
+				if (TryGetContext(dependee, input, out value) && value?.ContextType == Albatross.Expression.ContextType.Expression) {
 					ISet<string> newChain = NewSet();
 					foreach (var item in chain) {
 						newChain.Add(item);
@@ -153,7 +153,7 @@ namespace Albatross.Expression {
 		}
 		#endregion
 
-		public object Eval(string expression, T input, Type? outputDataType = null) {
+		public object? Eval(string expression, T input, Type? outputDataType = null) {
 			ContextValue value;
 			if (!_expressions.TryGetValue(expression, out value)) {
 				value = new ContextValue() {

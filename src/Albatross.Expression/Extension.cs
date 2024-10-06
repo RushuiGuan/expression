@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace Albatross.Expression {
 	public static class Extensions {
-		public static bool ConvertToBoolean(this object obj) {
+		public static bool ConvertToBoolean(this object? obj) {
 			if (obj != null) {
 				if (obj is double) {
 					return (double)obj != 0;
@@ -40,13 +40,13 @@ namespace Albatross.Expression {
 
 		#region IExecutionContext
 		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression) {
-			context.Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, });
+			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, });
 		}
 		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression, Type dataType) {
-			context.Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, DataType = dataType });
+			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, DataType = dataType });
 		}
 		public static void SetValue<T>(this IExecutionContext<T> context, string name, object value) {
-			context.Set(new ContextValue() { Name = name, Value = value, ContextType = ContextType.Value, });
+			context.Set(new ContextValue(name, value) { ContextType = ContextType.Value, });
 		}
 		public static object? GetValue<T>(this IExecutionContext<T> context, string name, T input) {
 			object? data;
@@ -57,14 +57,14 @@ namespace Albatross.Expression {
 			}
 		}
 		public static ContextValue Set<T>(this IExecutionContext<T> context, string assignmentExpression) {
-			ContextValue value = new ContextValue {
-				ContextType = ContextType.Expression,
-			};
 			IToken token = context.Parser.VariableToken();
 			int start = 0, next;
 			if (token.Match(assignmentExpression, start, out next)) {
 				start = assignmentExpression.SkipSpace(start);
-				value.Name = assignmentExpression.Substring(start, next - start);
+				var name = assignmentExpression.Substring(start, next - start);
+				var value = new ContextValue(name, null){
+					ContextType = ContextType.Expression,
+				};
 				start = next;
 				if (new AssignmentToken().Match(assignmentExpression, start, out next)) {
 					value.Value = assignmentExpression.Substring(next);
@@ -74,12 +74,16 @@ namespace Albatross.Expression {
 			}
 			throw new Exceptions.TokenParsingException("Invalid assignment expression");
 		}
-		public static ValueType Eval<T, ValueType>(this IExecutionContext<T> context, string expression, T input) {
-			object result = context.Eval(expression, input, typeof(ValueType));
-			return (ValueType)Convert.ChangeType(result, typeof(ValueType));
+		public static ValueType? Eval<T, ValueType>(this IExecutionContext<T> context, string expression, T input) {
+			var result = context.Eval(expression, input, typeof(ValueType));
+			if (result == null) {
+				return default;
+			} else {
+				return (ValueType)Convert.ChangeType(result, typeof(ValueType));
+			}
 		}
 		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType? data) {
-			if (context.TryGetValue(name, input, out object value)){
+			if (context.TryGetValue(name, input, out var value)) {
 				data = (ValueType)Convert.ChangeType(value, typeof(ValueType));
 				return true;
 			} else {

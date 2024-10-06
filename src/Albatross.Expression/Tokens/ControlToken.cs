@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Albatross.Expression.Tokens {
 	public class ControlToken : IToken {
@@ -38,7 +35,7 @@ namespace Albatross.Expression.Tokens {
 		public IToken Clone() {
 			return new ControlToken(Name);
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object? EvalValue(Func<string, object?> context) {
 			throw new NotSupportedException();
 		}
 

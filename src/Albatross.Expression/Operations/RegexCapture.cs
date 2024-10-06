@@ -21,7 +21,7 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 3; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			var operands = GetOperands(context);
 			string text = Convert.ToString(operands[0]);
 			string pattern = Convert.ToString(operands[1]);

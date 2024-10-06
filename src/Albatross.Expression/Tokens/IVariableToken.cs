@@ -1,4 +1,3 @@
 ﻿namespace Albatross.Expression.Tokens {
-	public interface IVariableToken : IOperandToken {
-	}
+	public interface IVariableToken : IOperandToken { }
 }

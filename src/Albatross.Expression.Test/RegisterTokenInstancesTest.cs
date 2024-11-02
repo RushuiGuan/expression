@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Albatross.Expression.Exceptions;
+using NUnit.Framework.Legacy;
 
 namespace Albatross.Expression.Test
 {
@@ -23,7 +24,7 @@ namespace Albatross.Expression.Test
 			var retval = (double)ctx.Eval("MyToken(1)", null);
 
 			//Assert
-			Assert.AreEqual(1, retval);
+			ClassicAssert.AreEqual(1, retval);
 		}
 
 		[Test]

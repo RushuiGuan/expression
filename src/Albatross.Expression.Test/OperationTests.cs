@@ -1,14 +1,8 @@
 ﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Operations;
 using Albatross.Expression.Tokens;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
 
 namespace Albatross.Expression.Test {
 	[TestFixture]
@@ -175,7 +169,7 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = 	token.EvalValue(null);
-			Assert.True(result is long);
+			ClassicAssert.True(result is long);
 		}
 
 
@@ -187,7 +181,7 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = token.EvalValue(null);
-			Assert.AreEqual(result, DateTime.Parse(expected));
+			ClassicAssert.AreEqual(result, DateTime.Parse(expected));
 		}
 
 		[TestCase("PreviousWeekDay(\"2021-03-24\")", "2021-03-23")]
@@ -198,7 +192,7 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = token.EvalValue(null);
-			Assert.AreEqual(result, DateTime.Parse(expected));
+			ClassicAssert.AreEqual(result, DateTime.Parse(expected));
 		}
 
 		[TestCase("DayOfWeek(\"2021-03-24\")", 3)]
@@ -207,7 +201,7 @@ namespace Albatross.Expression.Test {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);
 			var result = token.EvalValue(null);
-			Assert.AreEqual(result, expected);
+			ClassicAssert.AreEqual(result, expected);
 		}
 
 		[TestCase("Random(0, 2)", 0, 2)]
@@ -218,8 +212,8 @@ namespace Albatross.Expression.Test {
 			var result = token.EvalValue(null);
 			Assert.That(result is int);
 			int number = (int)result;
-			Assert.True(number >= min);
-			Assert.True(number <= max);
+			ClassicAssert.True(number >= min);
+			ClassicAssert.True(number <= max);
 		}
 
 		[TestCase("GetJsonValue('{\"number\":1}', \"number\")", ExpectedResult = 1)]

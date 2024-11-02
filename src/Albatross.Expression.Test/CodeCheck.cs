@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Albatross.Expression.Test
 		[Test]
 		public void ArrayLiteral() {
 			var x = new[] { 1,2,3};
-			Assert.AreEqual(typeof(int[]), x.GetType());
+			ClassicAssert.AreEqual(typeof(int[]), x.GetType());
 		}
 
 		[Test]

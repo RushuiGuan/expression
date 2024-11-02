@@ -29,6 +29,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("(1 > 2) or (3 > 1)", ExpectedResult = true)]
 		[TestCase("1 + 2> 2 - 1", ExpectedResult = true)]
 		[TestCase("1 > 2 or 3 > 1", ExpectedResult = true)]
+		[TestCase("2 > 1 and 3 > 1", ExpectedResult = true)]
 		public object PrecedenceTesting(string expression) {
 			IParser parser = Factory.Instance.Create();
 			IToken token = parser.Compile(expression);

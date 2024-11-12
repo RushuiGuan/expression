@@ -64,7 +64,7 @@ namespace Albatross.Expression {
 				return false;
 			}
 		}
-		object GetContextValue(ContextValue contextValue, T input) {
+		object? GetContextValue(ContextValue contextValue, T input) {
 			if (contextValue.ContextType == Albatross.Expression.ContextType.Expression) {
 				ISet<string> chain = NewSet();
 				if (!string.IsNullOrEmpty(contextValue.Name)) { chain.Add(contextValue.Name); }
@@ -88,7 +88,7 @@ namespace Albatross.Expression {
 				if (data is ContextValue) {
 					value = (ContextValue)data;
 				} else {
-					value = new ContextValue() { Name = name, Value = data, ContextType = ContextType.Value, };
+					value = new ContextValue(name, data) { ContextType = ContextType.Value, };
 				}
 				value.External = true;
 				if (value.ContextType == ContextType.Expression || CacheExternalValue) { Store.Add(name, value); }
@@ -155,8 +155,7 @@ namespace Albatross.Expression {
 		public object Eval(string expression, T input, Type outputDataType = null) {
 			ContextValue value;
 			if (!_expressions.TryGetValue(expression, out value)) {
-				value = new ContextValue() {
-					 Value = expression,
+				value = new ContextValue(string.Empty, expression) {
 					 DataType = outputDataType,
 					 ContextType = ContextType.Expression,
 				};

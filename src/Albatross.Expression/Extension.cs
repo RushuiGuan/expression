@@ -44,16 +44,16 @@ namespace Albatross.Expression {
 
 		#region IExecutionContext
 		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression) {
-			context.Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, });
+			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, });
 		}
 		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression, Type dataType) {
-			context.Set(new ContextValue() { Name = name, Value = expression, ContextType = ContextType.Expression, DataType = dataType });
+			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, DataType = dataType });
 		}
 		public static void SetValue<T>(this IExecutionContext<T> context, string name, object value) {
-			context.Set(new ContextValue() { Name = name, Value = value, ContextType = ContextType.Value, });
+			context.Set(new ContextValue(name, value) { ContextType = ContextType.Value });
 		}
-		public static object GetValue<T>(this IExecutionContext<T> context, string name, T input) {
-			object data;
+		public static object? GetValue<T>(this IExecutionContext<T> context, string name, T input) {
+			object? data;
 			if (context.TryGetValue(name, input, out data)) {
 				return data;
 			} else {
@@ -61,17 +61,16 @@ namespace Albatross.Expression {
 			}
 		}
 		public static ContextValue Set<T>(this IExecutionContext<T> context, string assignmentExpression) {
-			ContextValue value = new ContextValue {
-				ContextType = ContextType.Expression,
-			};
 			IToken token = context.Parser.VariableToken();
 			int start = 0, next;
 			if (token.Match(assignmentExpression, start, out next)) {
 				start = assignmentExpression.SkipSpace(start);
-				value.Name = assignmentExpression.Substring(start, next - start);
+				var name = assignmentExpression.Substring(start, next - start);
 				start = next;
 				if (new AssignmentToken().Match(assignmentExpression, start, out next)) {
-					value.Value = assignmentExpression.Substring(next);
+					var value = new ContextValue(name, assignmentExpression.Substring(next)) {
+						ContextType = ContextType.Expression
+					};
 					context.Set(value);
 					return value;
 				}

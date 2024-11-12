@@ -13,7 +13,7 @@ namespace Albatross.Expression {
 		Queue<IToken> Tokenize(string expression);
 		Stack<IToken> BuildStack(Queue<IToken> queue);
 		IToken CreateTree(Stack<IToken> postfix);
-		object Eval(IToken token, Func<string, object> context);
+		object? Eval(IToken token, Func<string, object> context);
 		
 		IToken VariableToken();
 		IStringLiteralToken StringLiteralToken();

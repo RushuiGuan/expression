@@ -82,7 +82,7 @@ namespace Albatross.Expression {
 				return contextValue.Value;
 			}
 		}
-		bool TryGetExternal(string name, T input, out ContextValue value){
+		bool TryGetExternal(string name, T input, out ContextValue value) {
 			object data;
 			if (TryGetExternalData != null && TryGetExternalData(name, input, out data)) {
 				if (data is ContextValue) {
@@ -152,12 +152,12 @@ namespace Albatross.Expression {
 		}
 		#endregion
 
-		public object Eval(string expression, T input, Type outputDataType = null) {
+		public object? Eval(string expression, T input, Type outputDataType = null) {
 			ContextValue value;
 			if (!_expressions.TryGetValue(expression, out value)) {
 				value = new ContextValue(string.Empty, expression) {
-					 DataType = outputDataType,
-					 ContextType = ContextType.Expression,
+					DataType = outputDataType,
+					ContextType = ContextType.Expression,
 				};
 				_expressions.Add(expression, value);
 			}
@@ -166,8 +166,7 @@ namespace Albatross.Expression {
 		void Build(ContextValue contextValue, ISet<string> chain) {
 			contextValue.Tree = null;
 			string text = Convert.ToString(contextValue.Value);
-			if (string.IsNullOrEmpty(text))
-			{
+			if (string.IsNullOrEmpty(text)) {
 				throw new ArgumentException($"ContextValue {contextValue.Name} has no expression value");
 			}
 			Queue<IToken> queue = Parser.Tokenize(text);
@@ -185,12 +184,8 @@ namespace Albatross.Expression {
 		}
 
 		#region IEnumerator
-		public IEnumerator<ContextValue> GetEnumerator() {
-			return Store.Values.GetEnumerator();
-		}
-		IEnumerator IEnumerable.GetEnumerator() {
-			return Store.Values.GetEnumerator();
-		}
+		public IEnumerator<ContextValue> GetEnumerator() => Store.Values.GetEnumerator();
+		IEnumerator IEnumerable.GetEnumerator() => Store.Values.GetEnumerator();
 		#endregion
 	}
 }

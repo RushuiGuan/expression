@@ -55,8 +55,8 @@ namespace Albatross.Expression {
 			if (string.IsNullOrEmpty(expression)) { throw new ArgumentException(); }
 			Queue<IToken> tokens = new Queue<IToken>();
 			int start = 0, next;
-			IToken last;
-			IEnumerable<IToken> list;
+			IToken? last;
+			IEnumerable<IToken>? list;
 			bool found;
 			while (start < expression.Length) {
 				found = false;

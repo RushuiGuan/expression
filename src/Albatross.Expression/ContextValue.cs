@@ -18,7 +18,7 @@ namespace Albatross.Expression {
 		public ContextType ContextType { get; set; } = ContextType.Expression;
 		public bool External { get; set; }
 
-		public Type DataType { get; set; }
+		public Type? DataType { get; set; }
 		public IToken? Tree { get; set; }
 		/// <summary>
 		/// If this context value is a variable, Dependees will contain the set of variables that it depends on

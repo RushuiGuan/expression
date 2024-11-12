@@ -10,6 +10,6 @@ namespace Albatross.Expression {
 		bool FailWhenMissingVariable { get; set; }
 
 		IExecutionContext<T> Create();
-		bool TryGetExternalValue(string name, T input, out object value);
+		bool TryGetExternalValue(string name, T input, out object? value);
 	}
 }

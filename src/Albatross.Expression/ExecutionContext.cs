@@ -3,6 +3,7 @@ using Albatross.Expression.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression {
 	public class ExecutionContext<T> : IExecutionContext<T> {
@@ -42,8 +43,8 @@ namespace Albatross.Expression {
 		#endregion
 
 		#region data retrieval
-		public object GetValue(string name, T input) {
-			object value;
+		public object? GetValue(string name, T input) {
+			object? value;
 			if (TryGetValue(name, input, out value)) {
 				return value;
 			} else {
@@ -54,7 +55,7 @@ namespace Albatross.Expression {
 				}
 			}
 		}
-		public bool TryGetValue(string name, T input, out object data) {
+		public bool TryGetValue(string name, T input, out object? data) {
 			ContextValue value;
 			if (TryGetContext(name, input, out value)) {
 				data = GetContextValue(value, input);
@@ -73,7 +74,7 @@ namespace Albatross.Expression {
 					Build(contextValue, chain);
 				}
 				CheckCircularReference(contextValue, chain, input);
-				object data = Parser.Eval(contextValue.Tree, new Func<string, object>(name => GetValue(name, input)));
+				var data = Parser.Eval(contextValue.Tree, new Func<string, object>(name => GetValue(name, input)));
 				if (data != null && contextValue.DataType != null && contextValue.DataType != data.GetType()) {
 					data = Convert.ChangeType(data, contextValue.DataType);
 				}
@@ -82,8 +83,8 @@ namespace Albatross.Expression {
 				return contextValue.Value;
 			}
 		}
-		bool TryGetExternal(string name, T input, out ContextValue value) {
-			object data;
+		bool TryGetExternal(string name, T input, [NotNullWhen(true)] out ContextValue? value) {
+			object? data;
 			if (TryGetExternalData != null && TryGetExternalData(name, input, out data)) {
 				if (data is ContextValue) {
 					value = (ContextValue)data;

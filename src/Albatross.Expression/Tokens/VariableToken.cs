@@ -72,7 +72,7 @@ namespace Albatross.Expression.Tokens {
 		public IToken Clone() {
 			return new VariableToken() { Name = Name };
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object? EvalValue(Func<string, object> context) {
 			object value;
 			if (context != null){
 				value = context(Name);

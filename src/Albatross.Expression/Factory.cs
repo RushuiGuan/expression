@@ -68,7 +68,7 @@ namespace Albatross.Expression {
 			operations[typeof(K)] = new K();
 			return this;
 		}
-		public IParser Create(IStringLiteralToken stringLiteralToken = null, IVariableToken variableToken = null) {
+		public IParser Create(IStringLiteralToken? stringLiteralToken = null, IVariableToken? variableToken = null) {
 			return new Parser(operations.Values, variableToken ?? this.defaultVariableToken, stringLiteralToken ?? this.defaultStringLiteralToken);
 		}
 

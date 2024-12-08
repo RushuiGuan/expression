@@ -99,7 +99,7 @@ namespace Albatross.Expression {
 				return false;
 			}
 		}
-		bool TryGetContext(string name, T input, out ContextValue value) {
+		bool TryGetContext(string name, T input, [NotNullWhen(true)] out ContextValue? value) {
 			return Store.TryGetValue(name, out value) || TryGetExternal(name, input, out value);
 		}
 		#endregion
@@ -153,7 +153,7 @@ namespace Albatross.Expression {
 		}
 		#endregion
 
-		public object? Eval(string expression, T input, Type outputDataType = null) {
+		public object? Eval(string expression, T input, Type? outputDataType = null) {
 			ContextValue value;
 			if (!_expressions.TryGetValue(expression, out value)) {
 				value = new ContextValue(string.Empty, expression) {

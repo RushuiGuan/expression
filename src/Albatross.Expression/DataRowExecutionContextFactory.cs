@@ -24,7 +24,7 @@ namespace Albatross.Expression {
 			return new ExecutionContext<DataRow>(parser, CaseSensitive, CacheExternalValue, FailWhenMissingVariable, TryGetExternalValue);
 		}
 
-		public bool TryGetExternalValue(string name, DataRow row, out object value) {
+		public bool TryGetExternalValue(string name, DataRow row, out object? value) {
 			if (row != null) {
 				int index = row.Table.Columns.IndexOf(name);
 				if (index != -1) {

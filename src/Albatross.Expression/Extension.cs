@@ -1,15 +1,11 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Tokens;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 
 namespace Albatross.Expression {
 	public static class Extensions {
-		public static bool ConvertToBoolean(this object obj) {
+		public static bool ConvertToBoolean(this object? obj) {
 			if (obj != null) {
 				if (obj is double) {
 					return (double)obj != 0;
@@ -24,7 +20,7 @@ namespace Albatross.Expression {
 			}
 		}
 
-		public static object GetJsonValue(this JsonElement elem) {
+		public static object? GetJsonValue(this JsonElement elem) {
 			switch (elem.ValueKind) {
 				case JsonValueKind.Null:
 				case JsonValueKind.Undefined:
@@ -78,11 +74,11 @@ namespace Albatross.Expression {
 			throw new Exceptions.TokenParsingException("Invalid assignment expression");
 		}
 		public static ValueType Eval<T, ValueType>(this IExecutionContext<T> context, string expression, T input) {
-			object result = context.Eval(expression, input, typeof(ValueType));
+			var result = context.Eval(expression, input, typeof(ValueType));
 			return (ValueType)Convert.ChangeType(result, typeof(ValueType));
 		}
-		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType data) {
-			if (context.TryGetValue(name, input, out object value)){
+		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType? data) {
+			if (context.TryGetValue(name, input, out var value)){
 				data = (ValueType)Convert.ChangeType(value, typeof(ValueType));
 				return true;
 			} else {

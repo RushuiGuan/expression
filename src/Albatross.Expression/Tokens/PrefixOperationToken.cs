@@ -97,12 +97,12 @@ namespace Albatross.Expression.Tokens {
 		}
 		//if the operand count = 1 and it is an array, return the array
 		//otherwise return normal operand values
-		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type firstType) {
+		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type? firstType) {
 			firstType = null;
 			if (Operands.Count == 0) {
 				return new object[0];
 			} else if (Operands.Count == 1) {
-				object op1 = Operands.First().EvalValue(context);
+				var op1 = Operands.First().EvalValue(context);
 				if (op1 is IEnumerable) {
 					foreach (object obj in (IEnumerable)op1) {
 						if (obj != null) {
@@ -119,9 +119,9 @@ namespace Albatross.Expression.Tokens {
 				return GetOperands(context, out firstType);
 			}
 		}
-		protected List<Object> GetOperands(Func<string, object> context) {
-			List<object> list = new List<object>();
-			object value;
+		protected List<Object?> GetOperands(Func<string, object> context) {
+			var list = new List<object?>();
+			object? value;
 			foreach (IToken token in Operands) {
 				value = token.EvalValue(context);
 				list.Add(value);
@@ -130,10 +130,10 @@ namespace Albatross.Expression.Tokens {
 			return list;
 		}
 		//return operands of the same type
-		protected List<Object> GetOperands(Func<string, object> context, out Type firstType) {
-			List<object> list = new List<object>();
+		protected List<Object?> GetOperands(Func<string, object> context, out Type? firstType) {
+			var list = new List<object?>();
 			firstType = null;
-			object value;
+			object? value;
 			foreach (IToken token in Operands) {
 				value = token.EvalValue(context);
 				list.Add(value);
@@ -146,9 +146,9 @@ namespace Albatross.Expression.Tokens {
 			if (list.Count < MinOperandCount || list.Count > MaxOperandCount) { throw new OperandException(Name); }
 			return list;
 		}
-		protected List<T> GetOperands<T>(Func<string, object> context) {
-			List<T> list = new List<T>();
-			object value;
+		protected List<T?> GetOperands<T>(Func<string, object> context) {
+			var list = new List<T?>();
+			object? value;
 			foreach (IToken token in Operands) {
 				value = token.EvalValue(context);
 				if (value != null && !(value is T)) {

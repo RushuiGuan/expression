@@ -23,7 +23,7 @@ namespace Albatross.Expression {
 			return new ExecutionContext<IDictionary<string, object>>(parser, CaseSensitive, CacheExternalValue, FailWhenMissingVariable, TryGetExternalValue);
 		}
 
-		public bool TryGetExternalValue(string name, IDictionary<string, object> input, out object value) {
+		public bool TryGetExternalValue(string name, IDictionary<string, object> input, out object? value) {
 			if (input != null) {
 				return input.TryGetValue(name, out value);
 			} else { 

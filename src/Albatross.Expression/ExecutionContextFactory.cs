@@ -20,7 +20,7 @@ namespace Albatross.Expression {
 			return new ExecutionContext<object>(parser, CaseSensitive, CacheExternalValue, FailWhenMissingVariable, DefaultTryGetValueDelegate);
 		}
 
-		public bool TryGetExternalValue(string name, object input, out object value) {
+		public bool TryGetExternalValue(string name, object input, out object? value) {
 			value = null;
 			return DefaultTryGetValueDelegate?.Invoke(name, input, out value) == true;
 		}

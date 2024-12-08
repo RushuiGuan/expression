@@ -26,8 +26,8 @@ namespace Albatross.Expression.Operations {
 		public override int Precedence { get { return 300; } }
 
 		public override object? EvalValue(Func<string, object> context) {
-			object a = Operand1.EvalValue(context);
-			object b = Operand2.EvalValue(context);
+			var a = Operand1.EvalValue(context);
+			var b = Operand2.EvalValue(context);
 
 			if (a == null || b == null) { return null; }
 

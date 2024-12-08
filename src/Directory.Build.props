@@ -1,0 +1,15 @@
+<Project>
+	<PropertyGroup>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<EnableWindowsTargeting>True</EnableWindowsTargeting>
+		<LangVersion>Latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<RepositoryUrl>https://github.com/RushuiGuan/expression</RepositoryUrl>
+		<RepositoryProjectRoot>https://github.com/RushuiGuan/expression</RepositoryProjectRoot>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
+		<Authors>Rushui Guan</Authors>
+	</PropertyGroup>
+</Project>

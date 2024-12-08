@@ -17,7 +17,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
 			Type type;
 			IEnumerable list = GetParamsOperands(context, out type);

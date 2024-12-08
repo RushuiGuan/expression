@@ -86,7 +86,7 @@ namespace Albatross.Expression.Tokens {
 			return (IToken)Activator.CreateInstance(type);
 		}
 
-		public virtual object EvalValue(Func<string, object> context) {
+		public virtual object? EvalValue(Func<string, object> context) {
 			return null;
 		}
 

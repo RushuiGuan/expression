@@ -8,7 +8,7 @@ namespace Albatross.Expression.Tokens {
 		string Name { get; }
 		bool Match(string expression, int start, out int next);
 		string EvalText(string format);
-		object EvalValue(Func<string, object> context);
+		object? EvalValue(Func<string, object> context);
 		IToken Clone();
 	}
 }

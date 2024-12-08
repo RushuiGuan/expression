@@ -30,7 +30,7 @@ namespace Albatross.Expression.Operations {
 		public override int Precedence { get { return 30; } }
 
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			base.EvalValue(context);
 
 			object value = Operand1.EvalValue(context);

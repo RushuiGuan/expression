@@ -29,7 +29,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 20; } }
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object? EvalValue(Func<string, object> context) {
 			object value = Operand1.EvalValue(context);
 			if (value.ConvertToBoolean()) {
 				return true;

@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		src\.projects = src\.projects
+		src\.version = src\.version
+		src\Directory.Build.props = src\Directory.Build.props
+		pack.ps1 = pack.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albatross.Expression", "src\Albatross.Expression\Albatross.Expression.csproj", "{93C552EB-88EA-4915-B728-844819D6BBDF}"

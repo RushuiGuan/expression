@@ -1,20 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ApplicationIcon />
-    <StartupObject />
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
-    <PackageReference Include="NUnit" Version="3.13.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj" />
-  </ItemGroup>
-
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ApplicationIcon />
+		<StartupObject />
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+		<PackageReference Include="NUnit" Version="3.13.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj" />
+	</ItemGroup>
 </Project>

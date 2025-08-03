@@ -15,13 +15,12 @@
 		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
 		<PackageReference Include="System.Text.Json" Version="8.0.5" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="LICENSE">
 			<Pack>True</Pack>
-			<PackagePath></PackagePath>
+			<PackagePath>\</PackagePath>
 		</None>
 		<None Update="icon.png">
 			<Pack>True</Pack>

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Tokens;
-using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -20,7 +16,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>The input operands are converted to boolean.  See the <see cref="Albatross.Expression.Extensions.ConvertToBoolean(object)"/> method for the conversion logic</para>
 	/// <para>Output Type: Boolean</para>
 	/// <para>Usage: 3 > 2 and 2 > 1</para>
-	/// <para>Precedance: 30</para>
+	/// <para>Precedence: 30</para>
 	/// </summary>
 	[ParserOperation(Group = "Logical")]
 	public class And : InfixOperationToken {

@@ -1,11 +1,5 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Tokens;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
 
 namespace Albatross.Expression {
 	public delegate bool TryGetValueDelegate<T>(string name, T input, out object? value);

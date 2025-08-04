@@ -60,7 +60,7 @@ namespace Albatross.Expression.Tokens {
 			}
 		}
 		public override string ToString() { return Name; }
-		public string Text(string format) {
+		public string Text() {
 			return Name;
 		}
 		public object Eval(Func<string, object> context) {

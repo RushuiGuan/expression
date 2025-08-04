@@ -29,14 +29,14 @@ namespace Albatross.Expression.Tokens {
 		public override string ToString() {
 			return Name;
 		}
-		public virtual string Text(string format) {
+		public virtual string Text() {
 			if (Operand1 == null || Operand2 == null) { throw new OperandException(Name); }
 			StringBuilder sb = new StringBuilder();
 			if (Operand1 != null) {
 				if (Operand1 is InfixOperationToken && ((InfixOperationToken)Operand1).Precedence < Precedence) {
-					sb.AppendFormat("({0})", Operand1.Text(format));
+					sb.AppendFormat("({0})", Operand1.Text());
 				} else {
-					sb.Append(Operand1.Text(format));
+					sb.Append(Operand1.Text());
 				}
 			} else {
 				sb.Append("[Missing]");
@@ -44,9 +44,9 @@ namespace Albatross.Expression.Tokens {
 			sb.Append(' ').Append(Name).Append(' ');
 			if (Operand2 != null) {
 				if (Operand2 is InfixOperationToken && ((InfixOperationToken)Operand2).Precedence <= Precedence) {
-					sb.AppendFormat("({0})", Operand2.Text(format));
+					sb.AppendFormat("({0})", Operand2.Text());
 				} else {
-					sb.Append(Operand2.Text(format));
+					sb.Append(Operand2.Text());
 				}
 			} else {
 				sb.Append("[Missing]");

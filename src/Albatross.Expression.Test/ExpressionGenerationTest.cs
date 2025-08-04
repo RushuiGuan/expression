@@ -22,7 +22,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("(1+2)+3", ExpectedResult = "1 + 2 + 3")]
 		public string GenerateExpression(string expression) {
 			INode token = new Factory().Create().Compile(expression);
-			return token.Text(null);
+			return token.Text();
 		}
 	}
 }

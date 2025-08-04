@@ -216,8 +216,8 @@ namespace Albatross.Expression {
 			return token.Eval(context);
 		}
 
-		public string EvalText(INode token, string format) {
-			return token.Text(format);
+		public string EvalText(INode token) {
+			return token.Text();
 		}
 
 		public static Stack<T> Reverse<T>(Stack<T> src) {

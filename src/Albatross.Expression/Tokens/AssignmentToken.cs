@@ -17,7 +17,7 @@ namespace Albatross.Expression.Tokens {
 			return false;
 		}
 		public override string ToString() { return Name; }
-		public string Text(string format) {
+		public string Text() {
 			return Name;
 		}
 		public INode Clone() {

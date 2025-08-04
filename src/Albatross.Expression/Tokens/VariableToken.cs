@@ -66,7 +66,7 @@ namespace Albatross.Expression.Tokens {
 		public int CompareTo(IOperandToken other) {
 			throw new NotImplementedException();
 		}
-		public string Text(string format) {
+		public string Text() {
 			return Name;
 		}
 		public INode Clone() {

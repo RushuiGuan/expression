@@ -51,7 +51,7 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
-		public virtual string Text(string format) {
+		public virtual string Text() {
 			if (Operands.Count < MinOperandCount || Operands.Count > MaxOperandCount) {
 				throw new OperandException(Name);
 			}
@@ -61,13 +61,13 @@ namespace Albatross.Expression.Tokens {
 				if (Operands.Count == 0) {
 					sb.Append("[Missing]");
 				} else {
-					sb.Append(Operands.First().Text(format));
+					sb.Append(Operands.First().Text());
 				}
 			} else {
 				sb.Append(Name);
 				sb.Append(ControlToken.LeftParenthesis);
 				foreach (var token in Operands) {
-					sb.Append(token.Text(format));
+					sb.Append(token.Text());
 					if (token != Operands.Last()) {
 						sb.Append(ControlToken.Comma.ToString()).Append(" ");
 					}
@@ -166,7 +166,7 @@ namespace Albatross.Expression.Tokens {
 			string[] text = new string[count];
 			for (int i = 0; i < count; i++) {
 				if (Operands.Count > i) {
-					text[i] = Operands[i].Text(format);
+					text[i] = Operands[i].Text();
 				} else {
 					text[i] = "Missing";
 				}

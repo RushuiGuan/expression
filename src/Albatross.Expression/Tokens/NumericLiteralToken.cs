@@ -33,7 +33,7 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
-		public string Text(string format) {
+		public string Text() {
 			return Name;
 		}
 		public override string ToString() { return Name; }

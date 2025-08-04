@@ -38,7 +38,7 @@ namespace Albatross.Expression.Tokens {
 			return Name;
 		}
 
-		public string Text(string format) {
+		public string Text() {
 			return Name;
 		}
 

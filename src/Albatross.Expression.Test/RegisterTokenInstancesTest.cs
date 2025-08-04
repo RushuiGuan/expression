@@ -45,7 +45,7 @@ namespace Albatross.Expression.Test
 			public override int MinOperandCount => 1;
 			public override int MaxOperandCount => 1;
 
-			public override object EvalValue(Func<string, object> context) {
+			public override object Eval(Func<string, object> context) {
 				if (Operands.Count == 0) { return null; }
 				Type type;
 				IEnumerable items = GetParamsOperands(context, out type);

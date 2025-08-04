@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression.Tokens {
-	public class ControlToken : IToken {
+	public class ControlToken : INode {
 		public const string LeftParenthesis_Text= "(";
 		public const string RightParenthesis_Text = ")";
 		public const string Comma_Text = ",";
@@ -32,13 +32,13 @@ namespace Albatross.Expression.Tokens {
 			return false;
 		}
 		public override string ToString() { return Name; }
-		public string EvalText(string format) {
+		public string Text(string format) {
 			return Name;
 		}
-		public IToken Clone() {
+		public INode Clone() {
 			return new ControlToken(Name);
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			throw new NotSupportedException();
 		}
 

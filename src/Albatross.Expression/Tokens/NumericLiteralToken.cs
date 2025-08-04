@@ -33,17 +33,17 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
-		public string EvalText(string format) {
+		public string Text(string format) {
 			return Name;
 		}
 		public override string ToString() { return Name; }
 
 
-		public IToken Clone() {
+		public INode Clone() {
 			return new NumericLiteralToken() {Name = Name };
 		}
 
-		public object EvalValue(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			double d;
 			if (double.TryParse(Name, out d)) {
 				return d;

@@ -17,7 +17,7 @@ namespace Albatross.Expression {
 	/// <see cref="Albatross.Expression.Tokens.VariableToken"/> for variable token.  These defaults can be changed for the factory instance object.</para>
 	/// 
 	/// </summary>
-	public class Factory : IEnumerable<IToken> {
+	public class Factory : IEnumerable<INode> {
 
 		IStringLiteralToken defaultStringLiteralToken = new SingleDoubleQuoteStringLiteralToken();
 		public Factory DefaultStringLiteralToken(IStringLiteralToken token) {
@@ -37,13 +37,13 @@ namespace Albatross.Expression {
 			return this;
 		}
 
-		Dictionary<Type, IToken> operations = new Dictionary<Type, IToken>();
+		Dictionary<Type, INode> operations = new Dictionary<Type, INode>();
 
 		public Factory Register(Assembly asm) {
 			foreach (Type type in asm.GetTypes()) {
 				if (type.GetCustomAttribute<ParserOperationAttribute>() != null) {
-					if (typeof(IToken).IsAssignableFrom(type)) {
-						operations[type] = (IToken)Activator.CreateInstance(type);
+					if (typeof(INode).IsAssignableFrom(type)) {
+						operations[type] = (INode)Activator.CreateInstance(type);
 					}
 				}
 			}
@@ -55,7 +55,7 @@ namespace Albatross.Expression {
 		/// </summary>
 		/// <param name="tokens">Token/operations instances to register</param>
 		/// <returns></returns>
-		public Factory Register(IEnumerable<IToken> tokens) {
+		public Factory Register(IEnumerable<INode> tokens) {
 			foreach (var token in tokens) {
 				operations[token.GetType()] = token;
 			}
@@ -63,7 +63,7 @@ namespace Albatross.Expression {
 			return this;
 		}
 
-		public Factory Replace<T, K>() where T : IToken where K : IToken, new() {
+		public Factory Replace<T, K>() where T : INode where K : INode, new() {
 			operations.Remove(typeof(T));
 			operations[typeof(K)] = new K();
 			return this;
@@ -72,7 +72,7 @@ namespace Albatross.Expression {
 			return new Parser(operations.Values, variableToken ?? this.defaultVariableToken, stringLiteralToken ?? this.defaultStringLiteralToken);
 		}
 
-		public IEnumerator<IToken> GetEnumerator() {
+		public IEnumerator<INode> GetEnumerator() {
 			return operations.Values.GetEnumerator();
 		}
 

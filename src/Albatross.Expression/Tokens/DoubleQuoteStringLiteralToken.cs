@@ -12,7 +12,7 @@ namespace Albatross.Expression.Tokens {
 	/// </summary>
 	public class DoubleQuoteStringLiteralToken :StringLiteralToken {
 		public override char Boundary => '"';
-		public override IToken Clone() {
+		public override INode Clone() {
 			return new DoubleQuoteStringLiteralToken();
 		}
 	}

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression.Tokens {
-	public interface IStringLiteralToken : IToken {
+	public interface IStringLiteralToken : INode {
 		char Boundary { get; }
 	}
 }

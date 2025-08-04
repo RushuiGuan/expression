@@ -38,17 +38,17 @@ namespace Albatross.Expression.Tokens {
 			return Name;
 		}
 
-		public string EvalText(string format) {
+		public string Text(string format) {
 			return Name;
 		}
 
-		public IToken Clone() {
+		public INode Clone() {
 			return new BooleanLiteralToken {
 				Name = this.Name,
 			};
 		}
 
-		public object EvalValue(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			bool b;
 			if (bool.TryParse(Name, out b)) {
 				return b;

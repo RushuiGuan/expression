@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Albatross.Expression.Tokens {
-	public class AssignmentToken : IToken {
+	public class AssignmentToken : INode {
 		public string Name => "=";
 		public bool Match(string expression, int start, out int next) {
 			next = expression.Length;
@@ -17,13 +17,13 @@ namespace Albatross.Expression.Tokens {
 			return false;
 		}
 		public override string ToString() { return Name; }
-		public string EvalText(string format) {
+		public string Text(string format) {
 			return Name;
 		}
-		public IToken Clone() {
+		public INode Clone() {
 			return new AssignmentToken();
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			throw new NotSupportedException();
 		}
 

@@ -170,10 +170,10 @@ namespace Albatross.Expression {
 			if (string.IsNullOrEmpty(text)) {
 				throw new ArgumentException($"ContextValue {contextValue.Name} has no expression value");
 			}
-			Queue<IToken> queue = Parser.Tokenize(text);
+			Queue<INode> queue = Parser.Tokenize(text);
 			contextValue.Dependees = NewSet();
-			foreach (IToken token in queue) { if (token.IsVariable()) { contextValue.Dependees.Add(token.Name); } }
-			Stack<IToken> stack = Parser.BuildStack(queue);
+			foreach (INode token in queue) { if (token.IsVariable()) { contextValue.Dependees.Add(token.Name); } }
+			Stack<INode> stack = Parser.BuildStack(queue);
 			contextValue.Tree = Parser.CreateTree(stack);
 		}
 		public void Build() {

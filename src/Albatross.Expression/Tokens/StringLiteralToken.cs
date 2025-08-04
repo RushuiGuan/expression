@@ -13,7 +13,7 @@ namespace Albatross.Expression.Tokens {
 	public abstract class StringLiteralToken : IOperandToken, IStringLiteralToken {
 		public const char EscapeChar = '\\';
 		public abstract char Boundary { get; }
-		public abstract IToken Clone();
+		public abstract INode Clone();
 
 		public string Name { get; protected set; }
 		public string Group { get { return "Literal"; } }
@@ -60,10 +60,10 @@ namespace Albatross.Expression.Tokens {
 			}
 		}
 		public override string ToString() { return Name; }
-		public string EvalText(string format) {
+		public string Text(string format) {
 			return Name;
 		}
-		public object EvalValue(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			StringBuilder sb = new StringBuilder();
 			bool escaped = false;
 			for (int i = 1; i < Name.Length - 1; i++) {

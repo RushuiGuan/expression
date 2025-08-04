@@ -21,8 +21,8 @@ namespace Albatross.Expression.Test {
 		[TestCase("1+(2+3)", ExpectedResult = "1 + (2 + 3)")]
 		[TestCase("(1+2)+3", ExpectedResult = "1 + 2 + 3")]
 		public string GenerateExpression(string expression) {
-			IToken token = new Factory().Create().Compile(expression);
-			return token.EvalText(null);
+			INode token = new Factory().Create().Compile(expression);
+			return token.Text(null);
 		}
 	}
 }

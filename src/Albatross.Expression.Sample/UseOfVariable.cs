@@ -29,7 +29,7 @@ namespace Albatross.Expression.Sample
 			};
 
 			IParser parser = Factory.Instance.Create();
-			return parser.Compile(expression).EvalValue(func);
+			return parser.Compile(expression).Eval(func);
 		}
     }
 }

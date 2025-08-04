@@ -111,7 +111,7 @@ namespace Albatross.Expression.Test
 
 		[TestCaseSource(nameof(GetTokenizationTestCases))]
 		public string StringLiteralTokenizationTest(string text, int start, string className) {
-			IToken token = (IToken)Activator.CreateInstance(Type.GetType(className));
+			INode token = (INode)Activator.CreateInstance(Type.GetType(className));
 			int next;
 			if (token.Match(text, start, out next)) {
 				return text.Substring(start, next - start);
@@ -122,10 +122,10 @@ namespace Albatross.Expression.Test
 
 		[TestCaseSource(nameof(GetEvalTestCases))]
 		public object StringLiteralEvalTest(string text, int start, string className) {
-			IToken token = (IToken)Activator.CreateInstance(Type.GetType(className));
+			INode token = (INode)Activator.CreateInstance(Type.GetType(className));
 			int next;
 			if (token.Match(text, start, out next)) {
-				return token.EvalValue(null);
+				return token.Eval(null);
 			} else {
 				return null;
 			}

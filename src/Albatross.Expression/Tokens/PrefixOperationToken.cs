@@ -8,11 +8,11 @@ using Albatross.Expression.Exceptions;
 using System.Collections;
 
 namespace Albatross.Expression.Tokens {
-	public abstract class PrefixOperationToken : IToken {
+	public abstract class PrefixOperationToken : INode {
 		const char LeftParenthesis = '(';
 
 		public PrefixOperationToken() {
-			Operands = new List<IToken>();
+			Operands = new List<INode>();
 		}
 		
 		public abstract string Name { get; }
@@ -20,7 +20,7 @@ namespace Albatross.Expression.Tokens {
 		public abstract int MinOperandCount { get; }
 		public abstract int MaxOperandCount {get;}
 
-		public List<IToken> Operands { get; private set; }
+		public List<INode> Operands { get; private set; }
 
 		public bool Match(string expression, int start, out int next) {
 			next = expression.Length;
@@ -51,7 +51,7 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
-		public virtual string EvalText(string format) {
+		public virtual string Text(string format) {
 			if (Operands.Count < MinOperandCount || Operands.Count > MaxOperandCount) {
 				throw new OperandException(Name);
 			}
@@ -61,13 +61,13 @@ namespace Albatross.Expression.Tokens {
 				if (Operands.Count == 0) {
 					sb.Append("[Missing]");
 				} else {
-					sb.Append(Operands.First().EvalText(format));
+					sb.Append(Operands.First().Text(format));
 				}
 			} else {
 				sb.Append(Name);
 				sb.Append(ControlToken.LeftParenthesis);
 				foreach (var token in Operands) {
-					sb.Append(token.EvalText(format));
+					sb.Append(token.Text(format));
 					if (token != Operands.Last()) {
 						sb.Append(ControlToken.Comma.ToString()).Append(" ");
 					}
@@ -81,12 +81,12 @@ namespace Albatross.Expression.Tokens {
 			return Name;
 		}
 		//make a copy of the token without the operands data
-		public virtual IToken Clone() {
+		public virtual INode Clone() {
 			Type type = this.GetType();
-			return (IToken)Activator.CreateInstance(type);
+			return (INode)Activator.CreateInstance(type);
 		}
 
-		public virtual object? EvalValue(Func<string, object> context) {
+		public virtual object? Eval(Func<string, object> context) {
 			return null;
 		}
 
@@ -102,7 +102,7 @@ namespace Albatross.Expression.Tokens {
 			if (Operands.Count == 0) {
 				return new object[0];
 			} else if (Operands.Count == 1) {
-				var op1 = Operands.First().EvalValue(context);
+				var op1 = Operands.First().Eval(context);
 				if (op1 is IEnumerable) {
 					foreach (object obj in (IEnumerable)op1) {
 						if (obj != null) {
@@ -122,8 +122,8 @@ namespace Albatross.Expression.Tokens {
 		protected List<Object?> GetOperands(Func<string, object> context) {
 			var list = new List<object?>();
 			object? value;
-			foreach (IToken token in Operands) {
-				value = token.EvalValue(context);
+			foreach (INode token in Operands) {
+				value = token.Eval(context);
 				list.Add(value);
 			}
 			if (list.Count < MinOperandCount || list.Count > MaxOperandCount) { throw new OperandException(Name); }
@@ -134,8 +134,8 @@ namespace Albatross.Expression.Tokens {
 			var list = new List<object?>();
 			firstType = null;
 			object? value;
-			foreach (IToken token in Operands) {
-				value = token.EvalValue(context);
+			foreach (INode token in Operands) {
+				value = token.Eval(context);
 				list.Add(value);
 				if (firstType == null) {
 					if (value != null) {
@@ -149,8 +149,8 @@ namespace Albatross.Expression.Tokens {
 		protected List<T?> GetOperands<T>(Func<string, object> context) {
 			var list = new List<T?>();
 			object? value;
-			foreach (IToken token in Operands) {
-				value = token.EvalValue(context);
+			foreach (INode token in Operands) {
+				value = token.Eval(context);
 				if (value != null && !(value is T)) {
 					throw new UnexpectedTypeException(typeof(T), value.GetType());
 				}else if(value == null){
@@ -166,7 +166,7 @@ namespace Albatross.Expression.Tokens {
 			string[] text = new string[count];
 			for (int i = 0; i < count; i++) {
 				if (Operands.Count > i) {
-					text[i] = Operands[i].EvalText(format);
+					text[i] = Operands[i].Text(format);
 				} else {
 					text[i] = "Missing";
 				}

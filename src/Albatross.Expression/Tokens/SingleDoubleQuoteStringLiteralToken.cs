@@ -17,7 +17,7 @@ namespace Albatross.Expression.Tokens {
 		public override char Boundary { get { return boundary; } }
 
 
-		public override IToken Clone() {
+		public override INode Clone() {
 			return new SingleDoubleQuoteStringLiteralToken();
 		}
 

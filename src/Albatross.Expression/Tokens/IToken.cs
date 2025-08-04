@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression.Tokens {
-	public interface IToken {
+	public interface INode {
 		string Name { get; }
-		string EvalText(string format);
-		object? EvalValue(Func<string, object> context);
+		string Text(string format);
+		object? Eval(Func<string, object> context);
 	}
-	public interface ITokenFactory<T> where T : IToken {
-		bool TryMatch(string expression, int start, out int next, [MemberNotNullWhen(true)] out T? token);
+	public interface INodeFactory<T> where T : INode {
+		bool TryMatch(string text, int start, out int next, [NotNullWhen(true)] out T? node);
 	}
 }

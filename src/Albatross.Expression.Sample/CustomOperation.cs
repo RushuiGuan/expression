@@ -7,14 +7,14 @@ using System.Linq;
 namespace Albatross.Expression.Sample {
 	[ParserOperation]
 	public class Sin : PrefixOperationToken {
-		public override IToken Clone() {
+		public override INode Clone() {
 			return new Sin();
 		}
 		public override int MaxOperandCount => 1;
 		public override int MinOperandCount => 1;
 		public override string Name => "custom_sin";
 		public override bool Symbolic => false;
-		public override object EvalValue(Func<string, object> context) {
+		public override object Eval(Func<string, object> context) {
 			double input = base.GetOperands<double>(context).First<double>();
 			return Math.Sin(input);
 		}
@@ -29,7 +29,7 @@ namespace Albatross.Expression.Sample {
 		public override bool Symbolic { get { return false; } }
 
 
-		public override object EvalValue(Func<string, object> context) {
+		public override object Eval(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
 			var items = GetOperands<double>(context);
 			double max = items.First();
@@ -48,13 +48,13 @@ namespace Albatross.Expression.Sample {
 		[TestCase("custom_sin(pi()/2)", ExpectedResult = 1)]
 		public object TestSinOperation(string expression) {
 			Factory factory = new Factory().Register(this.GetType().Assembly);
-			return factory.Create().Compile(expression).EvalValue(null);
+			return factory.Create().Compile(expression).Eval(null);
 		}
 
 		[TestCase("max(-1, -2, -3)", ExpectedResult = -1)]
 		public object TestDefaultMaxOperation(string expression) {
 			Factory factory = new Factory();
-			return factory.Create().Compile(expression).EvalValue(null);
+			return factory.Create().Compile(expression).Eval(null);
 		}
 
 		/// <summary>
@@ -63,7 +63,7 @@ namespace Albatross.Expression.Sample {
 		[TestCase("max(-1, -2, -3)", ExpectedResult = 3)]
 		public object TestAbsoluteMaxOperation(string expression) {
 			Factory factory = new Factory().Replace<Max, AbsoluteMax>();
-			return factory.Create().Compile(expression).EvalValue(null);
+			return factory.Create().Compile(expression).Eval(null);
 		}
 	}
 }

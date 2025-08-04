@@ -32,8 +32,8 @@ namespace Albatross.Expression.Test {
 		[TestCase("2 > 1 and 3 > 1", ExpectedResult = true)]
 		public object PrecedenceTesting(string expression) {
 			IParser parser = Factory.Instance.Create();
-			IToken token = parser.Compile(expression);
-			return token.EvalValue(null);
+			INode token = parser.Compile(expression);
+			return token.Eval(null);
 		}
 	}
 }

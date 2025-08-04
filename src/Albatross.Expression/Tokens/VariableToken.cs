@@ -66,13 +66,13 @@ namespace Albatross.Expression.Tokens {
 		public int CompareTo(IOperandToken other) {
 			throw new NotImplementedException();
 		}
-		public string EvalText(string format) {
+		public string Text(string format) {
 			return Name;
 		}
-		public IToken Clone() {
+		public INode Clone() {
 			return new VariableToken() { Name = Name };
 		}
-		public object? EvalValue(Func<string, object> context) {
+		public object? Eval(Func<string, object> context) {
 			object value;
 			if (context != null){
 				value = context(Name);

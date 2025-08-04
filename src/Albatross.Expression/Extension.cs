@@ -57,7 +57,7 @@ namespace Albatross.Expression {
 			}
 		}
 		public static ContextValue Set<T>(this IExecutionContext<T> context, string assignmentExpression) {
-			IToken token = context.Parser.VariableToken();
+			INode token = context.Parser.VariableToken();
 			int start = 0, next;
 			if (token.Match(assignmentExpression, start, out next)) {
 				start = assignmentExpression.SkipSpace(start);
@@ -89,7 +89,7 @@ namespace Albatross.Expression {
 		#endregion
 
 		#region IToken
-		public static bool IsVariable(this IToken token) {
+		public static bool IsVariable(this INode token) {
 			return token is IVariableToken;
 		}
 		/// <summary>
@@ -107,9 +107,9 @@ namespace Albatross.Expression {
 		#endregion
 
 		#region IParser
-		public static IToken Compile(this IParser parser, string expression) {
-			Queue<IToken> queue = parser.Tokenize(expression);
-			Stack<IToken> stack = parser.BuildStack(queue);
+		public static INode Compile(this IParser parser, string expression) {
+			Queue<INode> queue = parser.Tokenize(expression);
+			Stack<INode> stack = parser.BuildStack(queue);
 			return parser.CreateTree(stack);
 		}
 		#endregion

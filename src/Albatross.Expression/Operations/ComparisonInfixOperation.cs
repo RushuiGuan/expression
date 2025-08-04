@@ -8,9 +8,9 @@ using System.Xml;
 namespace Albatross.Expression.Operations {
 	public abstract class ComparisonInfixOperation : InfixOperationToken {
 
-		public override object? EvalValue(Func<string, object> context) {
-			var a = Operand1.EvalValue(context);
-			var b = Operand2.EvalValue(context);
+		public override object? Eval(Func<string, object> context) {
+			var a = Operand1.Eval(context);
+			var b = Operand2.Eval(context);
 			if (a == null || b == null) {
 				return false;
 			}

@@ -10,7 +10,7 @@ namespace Albatross.Expression {
 	/// An immutable implementation of the <see cref="Albatross.Expression.IParser"/> interface.
 	/// </summary>
 	public class Parser : IParser {
-		public IToken VariableToken() {
+		public INode VariableToken() {
 			return variableToken.Clone();
 		}
 
@@ -20,10 +20,10 @@ namespace Albatross.Expression {
 
 		readonly List<PrefixOperationToken> prefixOperationTokens = new List<PrefixOperationToken>();
 		readonly List<InfixOperationToken> infixOperationTokens = new List<InfixOperationToken>();
-		IToken variableToken;
+		INode variableToken;
 		IStringLiteralToken stringLiteralToken;
 
-		public Parser(IEnumerable<IToken> operations, IVariableToken variableToken, IStringLiteralToken stringLiteralToken) {
+		public Parser(IEnumerable<INode> operations, IVariableToken variableToken, IStringLiteralToken stringLiteralToken) {
 			prefixOperationTokens.Clear();
 			infixOperationTokens.Clear();
 
@@ -34,7 +34,7 @@ namespace Albatross.Expression {
 			}
 		}
 
-		IParser Add(IToken token) {
+		IParser Add(INode token) {
 			if (token is PrefixOperationToken) {
 				prefixOperationTokens.Add((PrefixOperationToken)token);
 			} else if (token is InfixOperationToken) {
@@ -48,32 +48,32 @@ namespace Albatross.Expression {
 
 		//parse an expression and produce queue of tokens
 		//the expression is parse from left to right
-		public Queue<IToken> Tokenize(string expression) {
+		public Queue<INode> Tokenize(string expression) {
 			if (string.IsNullOrEmpty(expression)) {
 				throw new ArgumentException();
 			}
 
-			Queue<IToken> tokens = new Queue<IToken>();
+			Queue<INode> tokens = new Queue<INode>();
 			int start = 0, next;
-			IToken? last;
-			IEnumerable<IToken>? list;
+			INode? last;
+			IEnumerable<INode>? list;
 			bool found;
 			while (start < expression.Length) {
 				found = false;
 				last = tokens.Count == 0 ? null : tokens.Last();
 				list = null;
 				if (last == null || last == ControlToken.Comma || ( last is PrefixOperationToken && ( (PrefixOperationToken)last ).Symbolic ) || last is InfixOperationToken) {
-					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
+					list = new INode[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
 				} else if (last == ControlToken.LeftParenthesis) {
-					list = new IToken[] { VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
+					list = new INode[] { VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
 				} else if (last == ControlToken.RightParenthesis || last is IOperandToken) {
-					list = new IToken[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(infixOperationTokens);
+					list = new INode[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(infixOperationTokens);
 				} else if (last is PrefixOperationToken && !( (PrefixOperationToken)last ).Symbolic) {
-					list = new IToken[] { ControlToken.LeftParenthesis };
+					list = new INode[] { ControlToken.LeftParenthesis };
 				}
 
 				Debug.Assert(list != null, "Forgot to check an previous operation");
-				foreach (IToken token in list) {
+				foreach (INode token in list) {
 					if (token.Match(expression, start, out next)) {
 						found = true;
 						start = next;
@@ -116,10 +116,10 @@ namespace Albatross.Expression {
 			}
 		}
 
-		public Stack<IToken> BuildStack(Queue<IToken> queue) {
-			IToken token;
-			Stack<IToken> postfix = new Stack<IToken>();
-			Stack<IToken> stack = new Stack<IToken>();
+		public Stack<INode> BuildStack(Queue<INode> queue) {
+			INode token;
+			Stack<INode> postfix = new Stack<INode>();
+			Stack<INode> stack = new Stack<INode>();
 
 			while (queue.Count > 0) {
 				token = queue.Dequeue();
@@ -186,10 +186,10 @@ namespace Albatross.Expression {
 			return postfix;
 		}
 
-		public IToken CreateTree(Stack<IToken> postfix) {
+		public INode CreateTree(Stack<INode> postfix) {
 			postfix = Reverse(postfix);
-			Stack<IToken> stack = new Stack<IToken>();
-			IToken token;
+			Stack<INode> stack = new Stack<INode>();
+			INode token;
 			while (postfix.Count > 0) {
 				token = postfix.Pop();
 				if (token is IOperandToken || token == ControlToken.FuncParamStart) {
@@ -201,7 +201,7 @@ namespace Albatross.Expression {
 					stack.Push(infixOp);
 				} else if (token is PrefixOperationToken) {
 					PrefixOperationToken prefixOp = (PrefixOperationToken)token;
-					for (IToken t = stack.Pop(); t != ControlToken.FuncParamStart; t = stack.Pop()) {
+					for (INode t = stack.Pop(); t != ControlToken.FuncParamStart; t = stack.Pop()) {
 						prefixOp.Operands.Insert(0, t);
 					}
 
@@ -212,12 +212,12 @@ namespace Albatross.Expression {
 			return stack.Pop();
 		}
 
-		public object? Eval(IToken token, Func<string, object> context) {
-			return token.EvalValue(context);
+		public object? Eval(INode token, Func<string, object> context) {
+			return token.Eval(context);
 		}
 
-		public string EvalText(IToken token, string format) {
-			return token.EvalText(format);
+		public string EvalText(INode token, string format) {
+			return token.Text(format);
 		}
 
 		public static Stack<T> Reverse<T>(Stack<T> src) {

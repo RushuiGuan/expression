@@ -4,6 +4,6 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression.Tokens {
-	public interface IOperandToken : IToken{
+	public interface IOperandToken : INode{
 	}
 }

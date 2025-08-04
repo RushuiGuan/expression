@@ -22,7 +22,7 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return int.MaxValue; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object? EvalValue(Func<string, object> context) {
+		public override object? Eval(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
 			IEnumerable items = GetParamsOperands(context, out _);
 			

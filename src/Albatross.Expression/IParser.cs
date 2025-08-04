@@ -15,28 +15,28 @@ namespace Albatross.Expression {
 		/// </summary>
 		/// <param name="expression"></param>
 		/// <returns></returns>
-		Queue<IToken> Tokenize(string expression);
+		Queue<INode> Tokenize(string expression);
 		/// <summary>
 		/// Convert a token queue to stack
 		/// </summary>
 		/// <param name="queue"></param>
 		/// <returns></returns>
-		Stack<IToken> BuildStack(Queue<IToken> queue);
+		Stack<INode> BuildStack(Queue<INode> queue);
 		/// <summary>
 		/// Using the token stack to build a token tree
 		/// </summary>
 		/// <param name="postfix"></param>
 		/// <returns></returns>
-		IToken CreateTree(Stack<IToken> postfix);
+		INode CreateTree(Stack<INode> postfix);
 		/// <summary>
 		/// Provided with a token tree, eval the value of the tree based on the supplied context
 		/// </summary>
 		/// <param name="token"></param>
 		/// <param name="context"></param>
 		/// <returns></returns>
-		object? Eval(IToken token, Func<string, object> context);
+		object? Eval(INode token, Func<string, object> context);
 		
-		IToken VariableToken();
+		INode VariableToken();
 		IStringLiteralToken StringLiteralToken();
 		bool IsValidExpression(string expression);
 	}

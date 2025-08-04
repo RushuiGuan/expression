@@ -11,7 +11,7 @@ namespace Albatross.Expression.Operations {
 		public override bool Symbolic { get { return false; } }
 
 
-		public override object? EvalValue(Func<string, object> context) {
+		public override object? Eval(Func<string, object> context) {
 			var operands = GetOperands(context);
 			int min = Convert.ToInt32(operands[0]);
 			int max = Convert.ToInt32(operands[1]);

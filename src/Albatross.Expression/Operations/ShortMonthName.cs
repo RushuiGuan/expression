@@ -17,7 +17,7 @@ namespace Albatross.Expression.Operations {
 		public override int MaxOperandCount { get { return 1; } }
 		public override bool Symbolic { get { return false; } }
 
-		public override object? EvalValue(Func<string, object> context) {
+		public override object? Eval(Func<string, object> context) {
 			object value = GetOperands(context).First();
 
 			if (value is double){

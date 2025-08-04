@@ -6,7 +6,7 @@ using System.Xml;
 using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
-	public abstract class InfixOperationToken : IToken {
+	public abstract class InfixOperationToken : INode {
 		public abstract string Name { get; }
 		public abstract bool Symbolic { get;}
 		public abstract int Precedence { get;}
@@ -24,19 +24,19 @@ namespace Albatross.Expression.Tokens {
 			}
 			return false;
 		}
-		public IToken Operand1 { get; set; }
-		public IToken Operand2 { get; set; }
+		public INode Operand1 { get; set; }
+		public INode Operand2 { get; set; }
 		public override string ToString() {
 			return Name;
 		}
-		public virtual string EvalText(string format) {
+		public virtual string Text(string format) {
 			if (Operand1 == null || Operand2 == null) { throw new OperandException(Name); }
 			StringBuilder sb = new StringBuilder();
 			if (Operand1 != null) {
 				if (Operand1 is InfixOperationToken && ((InfixOperationToken)Operand1).Precedence < Precedence) {
-					sb.AppendFormat("({0})", Operand1.EvalText(format));
+					sb.AppendFormat("({0})", Operand1.Text(format));
 				} else {
-					sb.Append(Operand1.EvalText(format));
+					sb.Append(Operand1.Text(format));
 				}
 			} else {
 				sb.Append("[Missing]");
@@ -44,9 +44,9 @@ namespace Albatross.Expression.Tokens {
 			sb.Append(' ').Append(Name).Append(' ');
 			if (Operand2 != null) {
 				if (Operand2 is InfixOperationToken && ((InfixOperationToken)Operand2).Precedence <= Precedence) {
-					sb.AppendFormat("({0})", Operand2.EvalText(format));
+					sb.AppendFormat("({0})", Operand2.Text(format));
 				} else {
-					sb.Append(Operand2.EvalText(format));
+					sb.Append(Operand2.Text(format));
 				}
 			} else {
 				sb.Append("[Missing]");
@@ -54,12 +54,12 @@ namespace Albatross.Expression.Tokens {
 			return sb.ToString();
 		}
 		//make a copy of the token without the operands data
-		public virtual IToken Clone() {
+		public virtual INode Clone() {
 			Type type = this.GetType();
-			return (IToken)Activator.CreateInstance(type);
+			return (INode)Activator.CreateInstance(type);
 		}
 
-		public virtual object? EvalValue(Func<string, object> context) {
+		public virtual object? Eval(Func<string, object> context) {
 			return null;
 		}
 

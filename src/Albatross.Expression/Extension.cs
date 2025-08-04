@@ -1,4 +1,4 @@
-﻿using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
@@ -14,7 +14,6 @@ namespace Albatross.Expression {
 				} else {
 					return true;
 				}
-
 			} else {
 				return false;
 			}
@@ -39,15 +38,19 @@ namespace Albatross.Expression {
 		}
 
 		#region IExecutionContext
+
 		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression) {
 			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, });
 		}
+
 		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression, Type dataType) {
 			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, DataType = dataType });
 		}
+
 		public static void SetValue<T>(this IExecutionContext<T> context, string name, object value) {
 			context.Set(new ContextValue(name, value) { ContextType = ContextType.Value });
 		}
+
 		public static object? GetValue<T>(this IExecutionContext<T> context, string name, T input) {
 			object? data;
 			if (context.TryGetValue(name, input, out data)) {
@@ -56,6 +59,7 @@ namespace Albatross.Expression {
 				return null;
 			}
 		}
+
 		public static ContextValue Set<T>(this IExecutionContext<T> context, string assignmentExpression) {
 			INode token = context.Parser.VariableToken();
 			int start = 0, next;
@@ -63,7 +67,7 @@ namespace Albatross.Expression {
 				start = assignmentExpression.SkipSpace(start);
 				var name = assignmentExpression.Substring(start, next - start);
 				start = next;
-				if (new AssignmentToken().Match(assignmentExpression, start, out next)) {
+				if (new Assignment().Match(assignmentExpression, start, out next)) {
 					var value = new ContextValue(name, assignmentExpression.Substring(next)) {
 						ContextType = ContextType.Expression
 					};
@@ -73,12 +77,14 @@ namespace Albatross.Expression {
 			}
 			throw new Exceptions.TokenParsingException("Invalid assignment expression");
 		}
+
 		public static ValueType Eval<T, ValueType>(this IExecutionContext<T> context, string expression, T input) {
 			var result = context.Eval(expression, input, typeof(ValueType));
 			return (ValueType)Convert.ChangeType(result, typeof(ValueType));
 		}
+
 		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType? data) {
-			if (context.TryGetValue(name, input, out var value)){
+			if (context.TryGetValue(name, input, out var value)) {
 				data = (ValueType)Convert.ChangeType(value, typeof(ValueType));
 				return true;
 			} else {
@@ -86,12 +92,15 @@ namespace Albatross.Expression {
 				return false;
 			}
 		}
+
 		#endregion
 
 		#region IToken
+
 		public static bool IsVariable(this INode token) {
-			return token is IVariableToken;
+			return token is IVariable;
 		}
+
 		/// <summary>
 		/// Move find the next index that is not a space.  This method doesn't perform check of the starting index in any way.
 		/// </summary>
@@ -104,14 +113,17 @@ namespace Albatross.Expression {
 			}
 			return start;
 		}
+
 		#endregion
 
 		#region IParser
+
 		public static INode Compile(this IParser parser, string expression) {
 			Queue<INode> queue = parser.Tokenize(expression);
 			Stack<INode> stack = parser.BuildStack(queue);
 			return parser.CreateTree(stack);
 		}
+
 		#endregion
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -19,18 +19,12 @@ namespace Albatross.Expression.Operations {
 	/// <para>Precedence: 30</para>
 	/// </summary>
 	[ParserOperation(Group = "Logical")]
-	public class And : InfixOperationToken {
-
-		public override string Name { get { return "and"; } }
-		public override bool Symbolic { get { return true; } }
+	public class And : InfixExpression {
+		public override string Operator => "and";
 		public override int Precedence { get { return 30; } }
 
-
 		public override object? Eval(Func<string, object> context) {
-			base.Eval(context);
-
 			var value = Operand1.Eval(context);
-			
 			if (!value.ConvertToBoolean()) {
 				return false;
 			} else {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
@@ -22,7 +22,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Usage: CreateDate(2018, 1, 31)</para>
 	/// </summary>
 	[ParserOperation]
-	public class CreateDate : PrefixOperationToken {
+	public class CreateDate : PrefixExpression {
 		public override string Name { get { return "createDate"; } }
 		public override int MinOperandCount { get { return 3; } }
 		public override int MaxOperandCount { get { return 3; } }

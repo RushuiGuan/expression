@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Text.Json;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// Return the length of a json array
 	/// </summary>
 	[ParserOperation]
-	public class GetJsonArrayCount : PrefixOperationToken {
+	public class GetJsonArrayCount : PrefixExpression {
 
 		public override string Name { get { return "GetJsonArrayCount"; } }
 		public override int MinOperandCount { get { return 1; } }

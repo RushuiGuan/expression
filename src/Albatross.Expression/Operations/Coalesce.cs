@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.Operations {
@@ -11,7 +11,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Example: Coalesce(null, 1, 2, 3) will return 1</para>
 	/// </summary>
 	[ParserOperation]
-	public class Coalesce : PrefixOperationToken {
+	public class Coalesce : PrefixExpression {
 
 		public override string Name { get { return "Coalesce"; } }
 		public override int MinOperandCount { get { return 1; } }

@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
-
-using System.Globalization;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -23,7 +17,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Usage: Left("test", 1) should return "t"</para>
 	/// </summary>
 	[ParserOperation]
-	public class Left : PrefixOperationToken {
+	public class Left : PrefixExpression {
 		public override string Name { get { return "Left"; } }
 		public override int MinOperandCount { get { return 2; } }
 		public override int MaxOperandCount { get { return 2; } }

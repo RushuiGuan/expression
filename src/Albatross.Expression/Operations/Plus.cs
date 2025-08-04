@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using System.Xml;
 
 namespace Albatross.Expression.Operations {
@@ -19,9 +19,9 @@ namespace Albatross.Expression.Operations {
 	/// <para>Output Type: double</para>
 	/// </summary>
 	[ParserOperation]
-	public class Plus : InfixOperationToken {
+	public class Plus : InfixExpression {
 
-		public override string Name { get { return "+"; } }
+		public override string Operator { get { return "+"; } }
 		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 100; } }
 

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class PreviousWeekDay : PrefixOperationToken {
+	public class PreviousWeekDay : PrefixExpression {
 
 		public override string Name { get { return "PreviousWeekDay"; } }
 		public override int MinOperandCount { get { return 1; } }

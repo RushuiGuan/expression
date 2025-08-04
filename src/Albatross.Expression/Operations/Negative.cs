@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Negative : PrefixOperationToken {
+	public class Negative : PrefixExpression {
 		
 		public override string Name { get { return "-"; } }
 		public override int MinOperandCount { get { return 1; } }

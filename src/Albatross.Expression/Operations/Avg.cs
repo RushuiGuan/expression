@@ -1,5 +1,5 @@
 ﻿using System;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using Albatross.Expression.Exceptions;
 using System.Collections;
 
@@ -15,7 +15,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Note: null value will not be counted, therefore avg(null, 2, 2, 2) should be 6/3 = 2 not 6/4 = 1.5;  It will return null if the count is 0.</para>
 	/// </summary>
 	[ParserOperation]
-	public class Avg : PrefixOperationToken {
+	public class Avg : PrefixExpression {
 
 		public override string Name { get { return "avg"; } }
 		public override int MinOperandCount { get { return 0; } }

@@ -1,4 +1,4 @@
-﻿using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Nodes;
 using NUnit.Framework;
 using System;
 using System.Collections;
@@ -38,7 +38,7 @@ namespace Albatross.Expression.Test
 			Assert.Throws<TokenParsingException>(() => ctx.Eval("MyToken(1)", null));
 		}
 
-		private class MyToken : PrefixOperationToken {
+		private class MyToken : PrefixExpression {
 
 			public override string Name => nameof(MyToken);
 			public override bool Symbolic => false;

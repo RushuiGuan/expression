@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.Operations {
@@ -14,7 +10,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Null, empty string and string with only white space are considered as blank</para>
 	/// </summary>
 	[ParserOperation]
-	public class IsBlank : PrefixOperationToken {
+	public class IsBlank : PrefixExpression {
 
 		public override string Name { get { return "IsBlank"; } }
 		public override int MinOperandCount { get { return 1; } }

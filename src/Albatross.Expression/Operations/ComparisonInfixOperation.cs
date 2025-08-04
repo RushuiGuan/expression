@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
-	public abstract class ComparisonInfixOperation : InfixOperationToken {
-
+	public abstract class ComparisonInfixOperation : InfixExpression {
 		public override object? Eval(Func<string, object> context) {
 			var a = Operand1.Eval(context);
 			var b = Operand2.Eval(context);

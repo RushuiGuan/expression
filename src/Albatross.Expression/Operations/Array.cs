@@ -1,5 +1,5 @@
 ﻿using System;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.Operations {
@@ -11,7 +11,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Usage: @(1, 2, 3, 4, 5)</para>
 	/// </summary>
 	[ParserOperation]
-	public class Array : PrefixOperationToken {
+	public class Array : PrefixExpression {
 		public override string Name { get { return "@"; } }
 		public override int MinOperandCount { get { return 0; } }
 		public override int MaxOperandCount { get { return int.MaxValue; } }

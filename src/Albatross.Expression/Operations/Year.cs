@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Year : PrefixOperationToken {
+	public class Year : PrefixExpression {
 
 		public override string Name { get { return "Year"; } }
 		public override int MinOperandCount { get { return 1; } }

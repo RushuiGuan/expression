@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Text.Json;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// Return the value of a json array item based on the provided index
 	/// </summary>
 	[ParserOperation]
-	public class GetJsonArrayItem : PrefixOperationToken {
+	public class GetJsonArrayItem : PrefixExpression {
 		public override string Name { get { return "GetJsonArrayItem"; } }
 		public override int MinOperandCount { get { return 2; } }
 		public override int MaxOperandCount { get { return 2; } }

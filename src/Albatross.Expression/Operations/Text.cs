@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Text : PrefixOperationToken {
+	public class Text : PrefixExpression {
 
 		public override string Name { get { return "Text"; } }
 		public override int MinOperandCount { get { return 1; } }

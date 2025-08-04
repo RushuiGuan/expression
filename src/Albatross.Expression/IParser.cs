@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression {
 	/// <summary>
@@ -37,7 +37,7 @@ namespace Albatross.Expression {
 		object? Eval(INode token, Func<string, object> context);
 		
 		INode VariableToken();
-		IStringLiteralToken StringLiteralToken();
+		IStringLiteral StringLiteralToken();
 		bool IsValidExpression(string expression);
 	}
 }

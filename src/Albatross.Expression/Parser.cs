@@ -2,7 +2,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using Albatross.Expression.Exceptions;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using System.Diagnostics;
 
 namespace Albatross.Expression {
@@ -11,23 +11,23 @@ namespace Albatross.Expression {
 	/// </summary>
 	public class Parser : IParser {
 		public INode VariableToken() {
-			return variableToken.Clone();
+			return variable.Clone();
 		}
 
-		public IStringLiteralToken StringLiteralToken() {
-			return (IStringLiteralToken)stringLiteralToken.Clone();
+		public IStringLiteral StringLiteralToken() {
+			return (IStringLiteral)stringLiteralToken.Clone();
 		}
 
-		readonly List<PrefixOperationToken> prefixOperationTokens = new List<PrefixOperationToken>();
-		readonly List<InfixOperationToken> infixOperationTokens = new List<InfixOperationToken>();
-		INode variableToken;
-		IStringLiteralToken stringLiteralToken;
+		readonly List<PrefixExpression> prefixOperationTokens = new List<PrefixExpression>();
+		readonly List<InfixExpression> infixOperationTokens = new List<InfixExpression>();
+		INode variable;
+		IStringLiteral stringLiteralToken;
 
-		public Parser(IEnumerable<INode> operations, IVariableToken variableToken, IStringLiteralToken stringLiteralToken) {
+		public Parser(IEnumerable<INode> operations, IVariable variable, IStringLiteral stringLiteralToken) {
 			prefixOperationTokens.Clear();
 			infixOperationTokens.Clear();
 
-			this.variableToken = variableToken;
+			this.variable = variable;
 			this.stringLiteralToken = stringLiteralToken;
 			foreach (var item in operations) {
 				Add(item);
@@ -35,10 +35,10 @@ namespace Albatross.Expression {
 		}
 
 		IParser Add(INode token) {
-			if (token is PrefixOperationToken) {
-				prefixOperationTokens.Add((PrefixOperationToken)token);
-			} else if (token is InfixOperationToken) {
-				infixOperationTokens.Add((InfixOperationToken)token);
+			if (token is PrefixExpression) {
+				prefixOperationTokens.Add((PrefixExpression)token);
+			} else if (token is InfixExpression) {
+				infixOperationTokens.Add((InfixExpression)token);
 			} else {
 				throw new NotSupportedException();
 			}
@@ -49,11 +49,8 @@ namespace Albatross.Expression {
 		//parse an expression and produce queue of tokens
 		//the expression is parse from left to right
 		public Queue<INode> Tokenize(string expression) {
-			if (string.IsNullOrEmpty(expression)) {
-				throw new ArgumentException();
-			}
-
-			Queue<INode> tokens = new Queue<INode>();
+			if (string.IsNullOrEmpty(expression)) { throw new ArgumentException(); }
+			var tokens = new Queue<INode>();
 			int start = 0, next;
 			INode? last;
 			IEnumerable<INode>? list;
@@ -62,13 +59,13 @@ namespace Albatross.Expression {
 				found = false;
 				last = tokens.Count == 0 ? null : tokens.Last();
 				list = null;
-				if (last == null || last == ControlToken.Comma || ( last is PrefixOperationToken && ( (PrefixOperationToken)last ).Symbolic ) || last is InfixOperationToken) {
-					list = new INode[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
+				if (last == null || last == ControlToken.Comma || ( last is PrefixExpression && ( (PrefixExpression)last ).Symbolic ) || last is InfixExpression) {
+					list = new INode[] { new BooleanLiteral(), VariableToken(), StringLiteralToken(), new NumericLiteral(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
 				} else if (last == ControlToken.LeftParenthesis) {
-					list = new INode[] { VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
-				} else if (last == ControlToken.RightParenthesis || last is IOperandToken) {
+					list = new INode[] { VariableToken(), StringLiteralToken(), new NumericLiteral(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
+				} else if (last == ControlToken.RightParenthesis || last is IExpression) {
 					list = new INode[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(infixOperationTokens);
-				} else if (last is PrefixOperationToken && !( (PrefixOperationToken)last ).Symbolic) {
+				} else if (last is PrefixExpression && !( (PrefixExpression)last ).Symbolic) {
 					list = new INode[] { ControlToken.LeftParenthesis };
 				}
 
@@ -77,7 +74,7 @@ namespace Albatross.Expression {
 					if (token.Match(expression, start, out next)) {
 						found = true;
 						start = next;
-						if (token is PrefixOperationToken || token is InfixOperationToken) {
+						if (token is PrefixExpression || token is InfixExpression) {
 							tokens.Enqueue(token.Clone());
 						} else {
 							tokens.Enqueue(token);
@@ -137,7 +134,7 @@ namespace Albatross.Expression {
 				}
 
 				// if it is an operand, put it on the postfix stack
-				if (token is IOperandToken) {
+				if (token is IExpression) {
 					postfix.Push(token);
 				}
 
@@ -153,19 +150,19 @@ namespace Albatross.Expression {
 					} else {
 						stack.Pop();
 					}
-				} else if (token is PrefixOperationToken) {
+				} else if (token is PrefixExpression) {
 					stack.Push(token);
 					postfix.Push(ControlToken.FuncParamStart);
-				} else if (token is InfixOperationToken) {
+				} else if (token is InfixExpression) {
 					if (stack.Count == 0 || stack.Peek() == ControlToken.LeftParenthesis) {
 						stack.Push(token);
 					} else {
-						InfixOperationToken infix = (InfixOperationToken)token;
+						InfixExpression infix = (InfixExpression)token;
 						while (stack.Count > 0
 						       && stack.Peek() != ControlToken.LeftParenthesis
-						       && ( stack.Peek() is PrefixOperationToken
-						            || stack.Peek() is InfixOperationToken
-						            && infix.Precedence <= ( (InfixOperationToken)stack.Peek() ).Precedence )) {
+						       && ( stack.Peek() is PrefixExpression
+						            || stack.Peek() is InfixExpression
+						            && infix.Precedence <= ( (InfixExpression)stack.Peek() ).Precedence )) {
 							postfix.Push(stack.Pop());
 						}
 
@@ -177,7 +174,7 @@ namespace Albatross.Expression {
 			while (stack.Count > 0) {
 				token = stack.Pop();
 				if (token == ControlToken.LeftParenthesis) {
-					throw new TokenParsingException("unbalance paranthesis");
+					throw new TokenParsingException("unbalanced parentheses");
 				} else {
 					postfix.Push(token);
 				}
@@ -192,15 +189,15 @@ namespace Albatross.Expression {
 			INode token;
 			while (postfix.Count > 0) {
 				token = postfix.Pop();
-				if (token is IOperandToken || token == ControlToken.FuncParamStart) {
+				if (token is IExpression || token == ControlToken.FuncParamStart) {
 					stack.Push(token);
-				} else if (token is InfixOperationToken) {
-					InfixOperationToken infixOp = (InfixOperationToken)token;
+				} else if (token is InfixExpression) {
+					InfixExpression infixOp = (InfixExpression)token;
 					infixOp.Operand2 = stack.Pop();
 					infixOp.Operand1 = stack.Pop();
 					stack.Push(infixOp);
-				} else if (token is PrefixOperationToken) {
-					PrefixOperationToken prefixOp = (PrefixOperationToken)token;
+				} else if (token is PrefixExpression) {
+					PrefixExpression prefixOp = (PrefixExpression)token;
 					for (INode t = stack.Pop(); t != ControlToken.FuncParamStart; t = stack.Pop()) {
 						prefixOp.Operands.Insert(0, t);
 					}

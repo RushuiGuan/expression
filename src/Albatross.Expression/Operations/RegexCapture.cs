@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using Albatross.Expression.Exceptions;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.Operations {
@@ -14,7 +14,7 @@ namespace Albatross.Expression.Operations {
 	/// 0 if not specified
 	/// </summary>
 	[ParserOperation]
-	public class RegexCapture : PrefixOperationToken {
+	public class RegexCapture : PrefixExpression {
 
 		public override string Name { get { return "RegexCapture"; } }
 		public override int MinOperandCount { get { return 2; } }

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.Operations {
@@ -24,7 +20,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Usage: if( 3 > 2, "OK", "No")</para>
 	/// </summary>
 	[ParserOperation]
-	public class If : PrefixOperationToken {
+	public class If : PrefixExpression {
 
 		public override string Name { get { return "If"; } }
 		public override int MinOperandCount { get { return 2; } }

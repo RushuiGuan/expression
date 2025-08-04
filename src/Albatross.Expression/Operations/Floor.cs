@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// Floor the current number and remove all decimals
 	/// </summary>
 	[ParserOperation]
-	public class Floor : PrefixOperationToken {
+	public class Floor : PrefixExpression {
 		public override string Name { get { return "Floor"; } }
 		public override int MinOperandCount { get { return 1; } }
 		public override int MaxOperandCount { get { return 1; } }

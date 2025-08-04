@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 
@@ -13,7 +13,7 @@ namespace Albatross.Expression.Operations {
 	/// Perform a mid point rounding away from zero.  First operand is the input, second operand is the number of digits.
 	/// </summary>
 	[ParserOperation]
-	public class Round : PrefixOperationToken {
+	public class Round : PrefixExpression {
 		public override string Name { get { return "Round"; } }
 		public override int MinOperandCount { get { return 2; } }
 		public override int MaxOperandCount { get { return 2; } }

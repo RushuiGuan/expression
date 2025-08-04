@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 
@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Right : PrefixOperationToken {
+	public class Right : PrefixExpression {
 		public override string Name { get { return "Right"; } }
 		public override int MinOperandCount { get { return 2; } }
 		public override int MaxOperandCount { get { return 2; } }

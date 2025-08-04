@@ -1,9 +1,9 @@
 ﻿using System;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class UtcNow : PrefixOperationToken {
+	public class UtcNow : PrefixExpression {
 
 		public override string Name { get { return "UtcNow"; } }
 		public override int MinOperandCount { get { return 0; } }

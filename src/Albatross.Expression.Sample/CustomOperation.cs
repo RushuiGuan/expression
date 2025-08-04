@@ -1,12 +1,12 @@
 ﻿using Albatross.Expression.Operations;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using NUnit.Framework;
 using System;
 using System.Linq;
 
 namespace Albatross.Expression.Sample {
 	[ParserOperation]
-	public class Sin : PrefixOperationToken {
+	public class Sin : PrefixExpression {
 		public override INode Clone() {
 			return new Sin();
 		}
@@ -21,7 +21,7 @@ namespace Albatross.Expression.Sample {
 	}
 
 	[ParserOperation]
-	public class AbsoluteMax : PrefixOperationToken {
+	public class AbsoluteMax : PrefixExpression {
 
 		public override string Name { get { return "max"; } }
 		public override int MinOperandCount { get { return 0; } }

@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
+using Albatross.Expression.Nodes;
 using Albatross.Expression.Exceptions;
 using System.Collections;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Min : PrefixOperationToken {
+	public class Min : PrefixExpression {
 
 		public override string Name { get { return "min"; } }
 		public override int MinOperandCount { get { return 0; } }

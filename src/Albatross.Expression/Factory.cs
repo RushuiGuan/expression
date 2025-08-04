@@ -1,4 +1,4 @@
-﻿using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Nodes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,14 +13,14 @@ namespace Albatross.Expression {
 	/// can be registered using the <see cref="Albatross.Expression.Factory.Register(Assembly)"/> function.  
 	/// </para>
 	/// 
-	/// <para>By default, the factory will use <see cref="Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken"/> for string literal token and 
-	/// <see cref="Albatross.Expression.Tokens.VariableToken"/> for variable token.  These defaults can be changed for the factory instance object.</para>
+	/// <para>By default, the factory will use <see cref="SingleDoubleQuoteStringLiteral"/> for string literal token and 
+	/// <see cref="Variable"/> for variable token.  These defaults can be changed for the factory instance object.</para>
 	/// 
 	/// </summary>
 	public class Factory : IEnumerable<INode> {
 
-		IStringLiteralToken defaultStringLiteralToken = new SingleDoubleQuoteStringLiteralToken();
-		public Factory DefaultStringLiteralToken(IStringLiteralToken token) {
+		IStringLiteral defaultStringLiteralToken = new SingleDoubleQuoteStringLiteral();
+		public Factory DefaultStringLiteralToken(IStringLiteral token) {
 			if (token == null) {
 				throw new ArgumentNullException();
 			}
@@ -28,12 +28,12 @@ namespace Albatross.Expression {
 			return this;
 		}
 
-		IVariableToken defaultVariableToken = new VariableToken();
-		public Factory DefaultVariableToken(IVariableToken variableToken) {
-			if (variableToken == null) {
+		IVariable defaultVariable = new Variable();
+		public Factory DefaultVariableToken(IVariable variable) {
+			if (variable == null) {
 				throw new ArgumentNullException();
 			}
-			this.defaultVariableToken = variableToken;
+			this.defaultVariable = variable;
 			return this;
 		}
 
@@ -68,8 +68,8 @@ namespace Albatross.Expression {
 			operations[typeof(K)] = new K();
 			return this;
 		}
-		public IParser Create(IStringLiteralToken? stringLiteralToken = null, IVariableToken? variableToken = null) {
-			return new Parser(operations.Values, variableToken ?? this.defaultVariableToken, stringLiteralToken ?? this.defaultStringLiteralToken);
+		public IParser Create(IStringLiteral? stringLiteralToken = null, IVariable? variableToken = null) {
+			return new Parser(operations.Values, variableToken ?? this.defaultVariable, stringLiteralToken ?? this.defaultStringLiteralToken);
 		}
 
 		public IEnumerator<INode> GetEnumerator() {

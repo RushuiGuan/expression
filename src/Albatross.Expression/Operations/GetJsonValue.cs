@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.Json;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -9,7 +9,7 @@ namespace Albatross.Expression.Operations {
 	/// Operand 2 and beyond are the json property path.
 	/// </summary>
 	[ParserOperation]
-	public class GetJsonValue : PrefixOperationToken {
+	public class GetJsonValue : PrefixExpression {
 
 		public override string Name { get { return "GetJsonValue"; } }
 		public override int MinOperandCount { get { return 2; } }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -17,7 +17,7 @@ namespace Albatross.Expression.Operations {
 	/// <para>Output Type: long</para>
 	/// </summary>
 	[ParserOperation]
-	public class UnixTimestamp : PrefixOperationToken {
+	public class UnixTimestamp : PrefixExpression {
 		public override string Name { get { return "UnixTimestamp"; } }
 		public override int MinOperandCount { get { return 1; } }
 		public override int MaxOperandCount { get { return 1; } }

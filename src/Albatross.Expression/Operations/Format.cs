@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
-
-using System.Globalization;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -14,7 +9,7 @@ namespace Albatross.Expression.Operations {
 	/// 
 	/// </summary>
 	[ParserOperation]
-	public class Format : PrefixOperationToken {
+	public class Format : PrefixExpression {
 
 		public override string Name { get { return "Format"; } }
 		public override int MinOperandCount { get { return 2; } }

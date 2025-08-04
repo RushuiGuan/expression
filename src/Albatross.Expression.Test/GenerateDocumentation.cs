@@ -1,4 +1,4 @@
-﻿using Albatross.Expression.Tokens;
+﻿using Albatross.Expression.Nodes;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -24,13 +24,13 @@ namespace Albatross.Expression.Test
 			}
 		}
 		string GetOperationType(INode token) {
-			if (token is PrefixOperationToken) {
-				if (((PrefixOperationToken)token).Symbolic) {
+			if (token is PrefixExpression) {
+				if (((PrefixExpression)token).Symbolic) {
 					return "Unary";
 				} else {
 					return "prefix";
 				}
-			} else if (token is InfixOperationToken) {
+			} else if (token is InfixExpression) {
 				return "infix";
 			} else {
 				throw new NotSupportedException();
@@ -40,11 +40,11 @@ namespace Albatross.Expression.Test
 
 		[TestCase(@"c:\temp\precedence.printout.txt")]
 		public void PrintAllInfixOperations(string file) {
-			var tokens = from token in Factory.Instance where token is InfixOperationToken orderby ((InfixOperationToken)token).Precedence ascending select token;
+			var tokens = from token in Factory.Instance where token is InfixExpression orderby ((InfixExpression)token).Precedence ascending select token;
 			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {
 				using (StreamWriter writer = new StreamWriter(stream)) {
-					foreach (InfixOperationToken token in tokens) {
-						writer.WriteLine($"{token.Name} | [{token.GetType().FullName}](xref:{token.GetType().FullName}) | {token.Precedence}");
+					foreach (InfixExpression token in tokens) {
+						writer.WriteLine($"{token.Operator} | [{token.GetType().FullName}](xref:{token.GetType().FullName}) | {token.Precedence}");
 					}
 					writer.Flush();
 					stream.SetLength(stream.Position);
@@ -91,11 +91,11 @@ namespace Albatross.Expression.Test
 			writer.Write("".PadRight(level, '\t'));
 			writer.WriteLine("* `{0}`", token.Name);
 			level++;
-			if (token is InfixOperationToken) {
-				PrintToken(writer, ((InfixOperationToken)token).Operand1, level);
-				PrintToken(writer, ((InfixOperationToken)token).Operand2, level);
-			} else if (token is PrefixOperationToken) {
-				foreach (var child in ((PrefixOperationToken)token).Operands) {
+			if (token is InfixExpression) {
+				PrintToken(writer, ((InfixExpression)token).Operand1, level);
+				PrintToken(writer, ((InfixExpression)token).Operand2, level);
+			} else if (token is PrefixExpression) {
+				foreach (var child in ((PrefixExpression)token).Operands) {
 					PrintToken(writer, child, level);
 				}
 			}

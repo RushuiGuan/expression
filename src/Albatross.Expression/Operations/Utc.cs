@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// Convert a dateTime object to utc.  If the input operand is a string, the function will attempt to parse it first.
 	/// </summary>
 	[ParserOperation]
-	public class Utc : PrefixOperationToken {
+	public class Utc : PrefixExpression {
 		public override string Name { get { return "Utc"; } }
 		public override int MinOperandCount { get { return 1; } }
 		public override int MaxOperandCount { get { return 1; } }

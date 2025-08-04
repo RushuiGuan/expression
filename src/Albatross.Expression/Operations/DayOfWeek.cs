@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Albatross.Expression.Tokens;
-using System.Xml;
-using Albatross.Expression.Exceptions;
+using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class DayOfWeek : PrefixOperationToken {
+	public class DayOfWeek : PrefixExpression {
 
 		public override string Name { get { return "DayOfWeek"; } }
 		public override int MinOperandCount { get { return 1; } }

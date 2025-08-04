@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 using System.Xml;
 using Albatross.Expression.Exceptions;
 
@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class PadRight : PrefixOperationToken {
+	public class PadRight : PrefixExpression {
 		public const char DefaultPaddingCharacter = ' ';
 		public override string Name { get { return "PadRight"; } }
 		public override int MinOperandCount { get { return 2; } }

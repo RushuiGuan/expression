@@ -1,9 +1,9 @@
 ﻿using System;
-using Albatross.Expression.Tokens;
+using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Random : PrefixOperationToken {
+	public class Random : PrefixExpression {
 
 		public override string Name { get { return "random"; } }
 		public override int MinOperandCount { get { return 2; } }

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Albatross.Expression.Tokens {
 	public class AssignmentToken : IToken {
 		public string Name => "=";
-		public string Group { get { return "System"; } }
 		public bool Match(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {

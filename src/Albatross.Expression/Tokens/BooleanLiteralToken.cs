@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using Albatross.Expression.Exceptions;
 
 namespace Albatross.Expression.Tokens {
 	/// <summary>
@@ -11,15 +7,19 @@ namespace Albatross.Expression.Tokens {
 	/// </summary>
 	public class BooleanLiteralToken : IOperandToken {
 		const string BooleanPattern = @"^\s* (true|false)";
-		static Regex BooleanPatternRegex = new Regex(BooleanPattern,
+
+		static readonly Regex BooleanPatternRegex = new Regex(BooleanPattern,
 			RegexOptions.Compiled |
 			RegexOptions.Singleline |
 			RegexOptions.IgnorePatternWhitespace |
 			RegexOptions.IgnoreCase);
 
-		internal BooleanLiteralToken() { }
-		public string Group { get { return "Literal"; } }
-		public string Name { get; private set; }
+		public string Group {
+			get { return "Literal"; }
+		}
+
+		public string? Name { get; private set; }
+
 		public bool Match(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {
@@ -30,14 +30,22 @@ namespace Albatross.Expression.Tokens {
 					return true;
 				}
 			}
+
 			return false;
 		}
-		public override string ToString() { return Name; }
+
+		public override string ToString() {
+			return Name;
+		}
+
 		public string EvalText(string format) {
 			return Name;
 		}
+
 		public IToken Clone() {
-			return new BooleanLiteralToken() { Name = Name };
+			return new BooleanLiteralToken {
+				Name = this.Name,
+			};
 		}
 
 		public object EvalValue(Func<string, object> context) {
@@ -48,6 +56,5 @@ namespace Albatross.Expression.Tokens {
 				throw new FormatException();
 			}
 		}
-
 	}
 }

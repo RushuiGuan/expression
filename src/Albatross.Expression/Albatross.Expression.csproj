@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
+		<TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<Title>Albatross Expression Api</Title>
 		<Description>Albatross.Expression api is created to process and evaluate text based expression strings.  The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and using it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.</Description>
@@ -13,6 +13,7 @@
 		<PackageReleaseNotes>Please see https://rushuiguan.github.io/expression/</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageIcon>icon.png</PackageIcon>
+		<LangVersion>Latest</LangVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="System.Text.Json" Version="8.0.5" />

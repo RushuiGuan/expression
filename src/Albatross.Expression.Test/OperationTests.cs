@@ -9,6 +9,7 @@ namespace Albatross.Expression.Test {
 	[Category("Operations")]
 	public class OperationTests {
 		//logical
+		[TestCase("if(true, 1, 2)", ExpectedResult = 1)]
 		[TestCase("true and 1", ExpectedResult = true)]
 		[TestCase("1 and 1", ExpectedResult = true)]
 		[TestCase("null and 1", ExpectedResult = false)]

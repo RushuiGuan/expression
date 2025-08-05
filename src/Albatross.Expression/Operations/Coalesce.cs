@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
-
 namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// <para>Prefix operation that return the first non null operand</para>
@@ -12,11 +11,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Coalesce : PrefixExpression {
-
-		public override string Name { get { return "Coalesce"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return int.MaxValue; } }
-		public override bool Symbolic { get { return false; } }
+		public Coalesce() : base("Coalesce", 1, int.MaxValue) { }
 
 		public override object? Eval(Func<string, object> context) {
 			List<object> list = GetOperands(context);

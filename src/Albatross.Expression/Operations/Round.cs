@@ -14,10 +14,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Round : PrefixExpression {
-		public override string Name { get { return "Round"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 2; } }
-		public override bool Symbolic { get { return false; } }
+		public Round() : base("Round", 2, 2) { }
 
 		public override object? Eval(Func<string, object> context) {
 			List<object> list = GetOperands(context);

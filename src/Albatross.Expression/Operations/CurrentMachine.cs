@@ -9,11 +9,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class CurrentMachine : PrefixExpression {
-		
-		public override string Name { get { return "CurrentMachine"; } }
-		public override int MinOperandCount { get { return 0; } }
-		public override int MaxOperandCount { get { return 0; } }
-		public override bool Symbolic { get { return false; } }
+		public CurrentMachine() : base("CurrentMachine", 0, 0) { }
 
 		public override object? Eval(Func<string, object> context) {
 			return System.Net.Dns.GetHostName();

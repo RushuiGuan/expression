@@ -5,11 +5,7 @@ using Albatross.Expression.Nodes;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Upper : PrefixExpression {
-
-		public override string Name { get { return "Upper"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
+		public Upper() : base("Upper", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
 			object value = GetOperands(context).First();

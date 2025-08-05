@@ -8,10 +8,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Floor : PrefixExpression {
-		public override string Name { get { return "Floor"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
+		public Floor() : base("Floor", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
 			List<object> list = GetOperands(context);

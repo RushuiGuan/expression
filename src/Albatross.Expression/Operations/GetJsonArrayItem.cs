@@ -9,14 +9,11 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class GetJsonArrayItem : PrefixExpression {
-		public override string Name { get { return "GetJsonArrayItem"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 2; } }
-		public override bool Symbolic { get { return false; } }
+		public GetJsonArrayItem() : base("GetJsonArrayItem", 2, 2) { }
 
 		public override object? Eval(Func<string, object> context) {
 			var operands = GetOperands(context);
-			object value = operands.First();
+			object? value = operands.First();
 			JsonElement elem;
 			if (value is JsonElement) {
 				elem = (JsonElement)value;

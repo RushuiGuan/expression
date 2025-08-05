@@ -18,17 +18,16 @@ namespace Albatross.Expression.Operations {
 	public class Divide : InfixExpression {
 
 		public override string Operator { get { return "/"; } }
-		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 200; } }
 
 		public override object? Eval(Func<string, object> context) {
-			object a = Operand1.Eval(context);
-			object b = Operand2.Eval(context);
+			var a = Operand1.Eval(context);
+			var b = Operand2.Eval(context);
 			
 			if (a == null || b == null) { return null; }
 
-			if (a is double && b is double) {
-				return (double)a / (double)b;
+			if (a is double aa && b is double bb) {
+				return aa / bb;
 			} else {
 				throw new Exceptions.UnexpectedTypeException(a.GetType());
 			}

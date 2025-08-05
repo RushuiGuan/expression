@@ -10,15 +10,11 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class GetJsonValue : PrefixExpression {
-
-		public override string Name { get { return "GetJsonValue"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return int.MaxValue; } }
-		public override bool Symbolic { get { return false; } }
+		public GetJsonValue() : base("GetJsonValue", 2, int.MaxValue) { }
 
 		public override object? Eval(Func<string, object> context) {
 			var operands = GetOperands(context);
-			object value = operands.First();
+			var value = operands.First();
 			JsonElement elem;
 			if (value is JsonElement) {
 				elem = (JsonElement)value;

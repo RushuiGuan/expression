@@ -8,11 +8,8 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class UnixTimestamp2DateTime : PrefixExpression {
-		public override string Name { get { return "UnixTimestamp2DateTime"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
-
+		public UnixTimestamp2DateTime() : base("UnixTimestamp2DateTime", 1, 1) { }
+		
 		public override object? Eval(Func<string, object> context) {
 			object value = GetOperands(context).First();
 			long seconds = Convert.ToInt64(value);

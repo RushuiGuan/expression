@@ -20,9 +20,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Power : InfixExpression {
-
 		public override string Operator { get { return "^"; } }
-		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 300; } }
 
 		public override object? Eval(Func<string, object> context) {
@@ -31,8 +29,8 @@ namespace Albatross.Expression.Operations {
 
 			if (a == null || b == null) { return null; }
 
-			if(a is double && b is double){
-				return Math.Pow((double)a, (double)b);
+			if(a is double aa && b is double bb){
+				return Math.Pow(aa, bb);
 			} else {
 				throw new Exceptions.UnexpectedTypeException(a.GetType());
 			}

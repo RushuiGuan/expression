@@ -6,11 +6,7 @@ using Albatross.Expression.Nodes;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class PreviousWeekDay : PrefixExpression {
-
-		public override string Name { get { return "PreviousWeekDay"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
+		public PreviousWeekDay() : base("PreviousWeekDay", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
 			object a = GetOperands(context).First();

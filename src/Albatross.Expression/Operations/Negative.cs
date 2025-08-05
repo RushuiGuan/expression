@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Linq;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Negative : PrefixExpression {
+	public class Negative : UnaryExpression  {
+		public Negative() : base("-") { }
 		
-		public override string Name { get { return "-"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return true; } }
-
 		public override object? Eval(Func<string, object> context) {
-			object a = GetOperands(context).First();
+			var a = this.Operand.Eval(context);
 
-			if (a is double){
-				return (double)a * -1;
+			if (a is double aa){
+				return aa * -1;
 			}
 			throw new FormatException();
 		}

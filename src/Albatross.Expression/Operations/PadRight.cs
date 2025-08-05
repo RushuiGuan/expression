@@ -12,12 +12,8 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class PadRight : PrefixExpression {
 		public const char DefaultPaddingCharacter = ' ';
-		public override string Name { get { return "PadRight"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 3; } }
-		public override bool Symbolic { get { return false; } }
-
-
+		public PadRight() : base("PadRight", 2, 3) { }
+		
 		public override object? Eval(Func<string, object> context) {
 			int count;
 			List<object> list = GetOperands(context);

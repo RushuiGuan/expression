@@ -11,11 +11,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class IsBlank : PrefixExpression {
-
-		public override string Name { get { return "IsBlank"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
+		public IsBlank() : base("IsBlank", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
 			object value = GetOperands(context).First();

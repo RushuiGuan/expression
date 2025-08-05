@@ -10,11 +10,7 @@ using Albatross.Expression.Exceptions;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Year : PrefixExpression {
-
-		public override string Name { get { return "Year"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
+		public Year() : base("Year", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
 			object value = GetOperands(context).First();

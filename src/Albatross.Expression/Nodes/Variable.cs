@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 
@@ -38,34 +39,14 @@ namespace Albatross.Expression.Nodes {
 	/// </list>
 	/// </summary>
 	public class Variable : IVariable {
-		//const string VariableNamePattern = @"^\s*([a-zA-Z_]+\.?[a-zA-Z0-9_]*) \b (?!\s*\() ";
-		const string VariableNamePattern = @"^\s*([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)?) \b (?!\s*\() ";
-		static Regex VariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
-
-		public string Name { get; private set; }
-		public bool Match(string expression, int start, out int next) {
-			next = expression.Length;
-			if (start < expression.Length) {
-				Match match = VariableNameRegex.Match(expression.Substring(start));
-				if (match.Success) {
-					Name = match.Groups[1].Value;
-					next = start + match.Value.Length;
-					return true;
-				}
-			}
-			return false;
+		public Variable(string name) {
+			this.Name = name;
 		}
-		public override string ToString() { return Name; }
-		public object Value { get; set; }
-		public bool Calculated { get; set; }
-		public int CompareTo(IExpression other) {
-			throw new NotImplementedException();
-		}
+		public string Name { get; }
 		public string Text() => Name;
-		public object? Eval(Func<string, object> context) {
-			object value;
+		public object? Eval(Func<string, object>? context) {
 			if (context != null){
-				value = context(Name);
+				var value = context(Name);
 				if (value is int || value is float || value is long || value is short || value is uint || value is decimal || value is ushort || value is ulong) {
 					value = Convert.ToDouble(value);
 				}else if(value is JsonElement) {
@@ -76,6 +57,25 @@ namespace Albatross.Expression.Nodes {
 				return null;
 				//throw new VariableNotFoundException(Name);
 			}
+		}
+	}
+	
+	public class VariableFactory : IExpressionFactory<Variable> {
+		//const string VariableNamePattern = @"^\s*([a-zA-Z_]+\.?[a-zA-Z0-9_]*) \b (?!\s*\() ";
+		const string VariableNamePattern = @"^\s*([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)?) \b (?!\s*\() ";
+		static readonly Regex variableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
+		public bool TryParse(string expression, int start, out int next, [NotNullWhen(true)] out Variable? node) {
+			next = expression.Length;
+			if (start < expression.Length) {
+				Match match = variableNameRegex.Match(expression.Substring(start));
+				if (match.Success) {
+					node = new Variable(match.Groups[1].Value);
+					next = start + match.Value.Length;
+					return true;
+				}
+			}
+			node = null;
+			return false;
 		}
 	}
 }

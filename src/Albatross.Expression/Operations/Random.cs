@@ -4,12 +4,7 @@ using Albatross.Expression.Nodes;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Random : PrefixExpression {
-
-		public override string Name { get { return "random"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 2; } }
-		public override bool Symbolic { get { return false; } }
-
+		public Random() : base("Random", 2, 2) { }
 
 		public override object? Eval(Func<string, object> context) {
 			var operands = GetOperands(context);

@@ -7,16 +7,11 @@ using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Positive : PrefixExpression {
-
-		public override string Name { get { return "+"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return true; } }
+	public class Positive : UnaryExpression {
+		public Positive() : base("+") { }
 
 		public override object? Eval(Func<string, object> context) {
-			object a = GetOperands(context).First();
-
+			var a = this.Operand.Eval(context);
 			if (a == null || a is double) { return a; }
 			throw new Exceptions.UnexpectedTypeException(a.GetType());
 		}

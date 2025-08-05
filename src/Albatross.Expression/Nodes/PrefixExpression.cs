@@ -7,42 +7,40 @@ using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression.Nodes {
-	public abstract class PrefixExpression : IExpression {
-		public abstract string Name { get; }
-		public abstract bool Symbolic { get; }
-		public abstract int MinOperandCount { get; }
-		public abstract int MaxOperandCount { get; }
+	public class PrefixExpression : IExpression {
+		public PrefixExpression(string name, int minOperandCount, int maxOperandCount) {
+			Name = name;
+			MinOperandCount = minOperandCount;
+			MaxOperandCount = maxOperandCount;
+		}
+
+		public string Name { get; }
+		public int MinOperandCount { get; }
+		public int MaxOperandCount { get; }
 
 		public List<IExpression> Operands { get; private set; } = new();
 
-		public virtual string Text() {
+		public string Text() {
 			if (Operands.Count < MinOperandCount || Operands.Count > MaxOperandCount) {
 				throw new OperandException(Name);
 			}
 			var sb = new StringBuilder();
-			if (Symbolic) {
-				sb.Append(Name);
-				if (Operands.Count == 0) {
-					sb.Append("[Missing]");
-				} else {
-					sb.Append(Operands.First().Text());
+			sb.Append(Name);
+			sb.Append(ControlToken.LeftParenthesis);
+			foreach (var token in Operands) {
+				sb.Append(token.Text());
+				if (token != Operands.Last()) {
+					sb.Append(ControlToken.Comma.ToString()).Append(' ');
 				}
-			} else {
-				sb.Append(Name);
-				sb.Append(ControlToken.LeftParenthesis);
-				foreach (var token in Operands) {
-					sb.Append(token.Text());
-					if (token != Operands.Last()) {
-						sb.Append(ControlToken.Comma.ToString()).Append(' ');
-					}
-				}
-				//sb.Append(string.Join(ControlToken.Comma.ToString(), from token in Operands select token.EvalText(format)));
-				sb.Append(ControlToken.RightParenthesis);
 			}
+			//sb.Append(string.Join(ControlToken.Comma.ToString(), from token in Operands select token.EvalText(format)));
+			sb.Append(ControlToken.RightParenthesis);
 			return sb.ToString();
 		}
 
-		public abstract object? Eval(Func<string, object> context);
+		public virtual object? Eval(Func<string, object> context) {
+			throw new NotSupportedException();
+		}
 
 		protected void ValidateOperands() {
 			if (Operands.Count() < MinOperandCount || Operands.Count() > MaxOperandCount) {
@@ -55,7 +53,7 @@ namespace Albatross.Expression.Nodes {
 		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type? firstType) {
 			firstType = null;
 			if (Operands.Count == 0) {
-				return new object[0];
+				return Array.Empty<object>();
 			} else if (Operands.Count == 1) {
 				var op1 = Operands.First().Eval(context);
 				if (op1 is IEnumerable) {
@@ -77,9 +75,8 @@ namespace Albatross.Expression.Nodes {
 
 		protected List<Object?> GetOperands(Func<string, object> context) {
 			var list = new List<object?>();
-			object? value;
 			foreach (var token in Operands) {
-				value = token.Eval(context);
+				var value = token.Eval(context);
 				list.Add(value);
 			}
 			if (list.Count < MinOperandCount || list.Count > MaxOperandCount) { throw new OperandException(Name); }
@@ -90,9 +87,8 @@ namespace Albatross.Expression.Nodes {
 		protected List<Object?> GetOperands(Func<string, object> context, out Type? firstType) {
 			var list = new List<object?>();
 			firstType = null;
-			object? value;
 			foreach (var token in Operands) {
-				value = token.Eval(context);
+				var value = token.Eval(context);
 				list.Add(value);
 				if (firstType == null) {
 					if (value != null) {
@@ -106,9 +102,8 @@ namespace Albatross.Expression.Nodes {
 
 		protected List<T?> GetOperands<T>(Func<string, object> context) {
 			var list = new List<T?>();
-			object? value;
 			foreach (var token in Operands) {
-				value = token.Eval(context);
+				var value = token.Eval(context);
 				if (value != null && !( value is T )) {
 					throw new UnexpectedTypeException(typeof(T), value.GetType());
 				} else if (value == null) {
@@ -123,6 +118,14 @@ namespace Albatross.Expression.Nodes {
 	}
 
 	public class PrefixExpressionFactory<T> : IExpressionFactory<T> where T : PrefixExpression, new() {
+		private readonly string name;
+		private readonly bool caseSensitive;
+
+		public PrefixExpressionFactory(string name, bool caseSensitive = false) {
+			this.name = name;
+			this.caseSensitive = caseSensitive;
+		}
+
 		public bool TryParse(string expression, int start, out int next, [NotNullWhen(true)] out T? node) {
 			node = null;
 			next = expression.Length;
@@ -130,26 +133,19 @@ namespace Albatross.Expression.Nodes {
 				while (start < expression.Length && char.IsWhiteSpace(expression[start])) {
 					start++;
 				}
-				var t = new T();
-				if (expression.IndexOf(t.Name, start, StringComparison.InvariantCultureIgnoreCase) == start) {
-					if (t.Symbolic) {
-						next = start + t.Name.Length;
-						node = t;
-						return true;
-					} else {
-						char c;
-						//look for a left Parenthesis, but don't consume it
-						for (int i = start + t.Name.Length; i < expression.Length; i++) {
-							c = expression[i];
-							if (char.IsWhiteSpace(c)) {
-								continue;
-							} else if (c == Token.LeftParenthesis) {
-								next = start + t.Name.Length;
-								node = t;
-								return true;
-							} else {
-								return false;
-							}
+				int index = caseSensitive ? expression.IndexOf(name, start, StringComparison.Ordinal) : expression.IndexOf(name, start, StringComparison.InvariantCultureIgnoreCase);
+				if (index == start) {
+					//look for a left Parenthesis, but don't consume it
+					for (int i = start + name.Length; i < expression.Length; i++) {
+						var c = expression[i];
+						if (char.IsWhiteSpace(c)) {
+							continue;
+						} else if (c == Token.LeftParenthesis) {
+							next = start + name.Length;
+							node = new T();
+							return true;
+						} else {
+							return false;
 						}
 					}
 				}

@@ -10,13 +10,8 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Format : PrefixExpression {
-
-		public override string Name { get { return "Format"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 2; } }
-		public override bool Symbolic { get { return false; } }
-
-
+		public Format() : base("Format", 2, 2) { }
+		
 		public override object? Eval(Func<string, object> context) {
 			List<object> list = GetOperands(context);
 			string format = "{0:" + list.Last() + "}";

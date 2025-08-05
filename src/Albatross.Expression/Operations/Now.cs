@@ -9,11 +9,7 @@ using Albatross.Expression.Exceptions;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Now : PrefixExpression {
-
-		public override string Name { get { return "Now"; } }
-		public override int MinOperandCount { get { return 0; } }
-		public override int MaxOperandCount { get { return 0; } }
-		public override bool Symbolic { get { return false; } }
+		public Now() : base("Now", 0, 0) { }
 
 		public override object? Eval(Func<string, object> context) {
 			return DateTime.Now;

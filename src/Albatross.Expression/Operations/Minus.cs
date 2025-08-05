@@ -5,9 +5,7 @@ using Albatross.Expression.Exceptions;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Minus : InfixExpression {
-		
 		public override string Operator { get { return "-"; } }
-		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 100; } }
 
 		public override object? Eval(Func<string, object> context) {

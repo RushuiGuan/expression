@@ -11,11 +11,7 @@ using System.Globalization;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Numeric : PrefixExpression {
-
-		public override string Name { get { return "Num"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
+		public Numeric() : base("Numeric", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
 			object value = GetOperands(context).First();

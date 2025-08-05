@@ -23,11 +23,8 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class CreateDate : PrefixExpression {
-		public override string Name { get { return "createDate"; } }
-		public override int MinOperandCount { get { return 3; } }
-		public override int MaxOperandCount { get { return 3; } }
-		public override bool Symbolic { get { return false; } }
-
+		public CreateDate() : base("createDate", 3, 3) { }
+		
 		public override object? Eval(Func<string, object> context) {
 			var list = GetOperands(context);
 			int[] input = (from item in list 

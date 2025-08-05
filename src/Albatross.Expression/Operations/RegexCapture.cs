@@ -15,11 +15,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class RegexCapture : PrefixExpression {
-
-		public override string Name { get { return "RegexCapture"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 3; } }
-		public override bool Symbolic { get { return false; } }
+		public RegexCapture() : base("RegexCapture", 2, 3) { }
 
 		public override object? Eval(Func<string, object> context) {
 			var operands = GetOperands(context);

@@ -12,11 +12,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Array : PrefixExpression {
-		public override string Name { get { return "@"; } }
-		public override int MinOperandCount { get { return 0; } }
-		public override int MaxOperandCount { get { return int.MaxValue; } }
-		public override bool Symbolic { get { return false; } }
-
+		public Array() : base("@", 0, int.MaxValue) { }
 		public override object? Eval(Func<string, object> context) {
 			return GetOperands(context);
 		}

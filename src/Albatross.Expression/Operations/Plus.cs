@@ -22,21 +22,20 @@ namespace Albatross.Expression.Operations {
 	public class Plus : InfixExpression {
 
 		public override string Operator { get { return "+"; } }
-		public override bool Symbolic { get { return true; } }
 		public override int Precedence { get { return 100; } }
 
 		public override object? Eval(Func<string, object> context) {
-			object a = Operand1.Eval(context);
-			object b = Operand2.Eval(context);
+			var a = Operand1.Eval(context);
+			var b = Operand2.Eval(context);
 
 			if (a == null || b == null) { return null; }
 			
-			if (a is double && b is double) {
-				return (double)a + (double)b;
-			}else if(a is DateTime && b is double){
-				return ((DateTime)a).AddDays((double)b);
+			if (a is double aa && b is double bb) {
+				return aa + bb;
+			}else if(a is DateTime dateTime && b is double days){
+				return dateTime.AddDays(days);
 			}else if(a is string || b is string){
-				return string.Format("{0}{1}", a, b);
+				return $"{a}{b}";
 			} else {
 				throw new Exceptions.UnexpectedTypeException(a.GetType());
 			}

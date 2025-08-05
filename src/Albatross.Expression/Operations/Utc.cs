@@ -8,11 +8,8 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Utc : PrefixExpression {
-		public override string Name { get { return "Utc"; } }
-		public override int MinOperandCount { get { return 1; } }
-		public override int MaxOperandCount { get { return 1; } }
-		public override bool Symbolic { get { return false; } }
-
+		public Utc() : base("Utc", 1, 1) { }
+		
 		public override object? Eval(Func<string, object> context) {
 			object value = GetOperands(context).First();
 			DateTime dateTime = (value as DateTime?) ?? DateTime.Parse(Convert.ToString(value));

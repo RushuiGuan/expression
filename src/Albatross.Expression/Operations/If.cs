@@ -21,12 +21,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class If : PrefixExpression {
-
-		public override string Name { get { return "If"; } }
-		public override int MinOperandCount { get { return 2; } }
-		public override int MaxOperandCount { get { return 3; } }
-		public override bool Symbolic { get { return false; } }
-
+		public If() : base("If", 2, 3) { }
 
 		public override object? Eval(Func<string, object> context) {
 			ValidateOperands();

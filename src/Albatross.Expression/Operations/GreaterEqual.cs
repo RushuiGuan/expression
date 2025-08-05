@@ -16,10 +16,8 @@
 	/// </summary>
 	[ParserOperation]
 	public class GreaterEqual : ComparisonInfixOperation {
+		public GreaterEqual() : base(">=", 50) { }
 		
-		public override string Operator { get { return ">="; } }
-		public override int Precedence { get { return 50; } }
-
 		public override bool interpret(int comparisonResult) {
 			return comparisonResult >= 0;
 		}

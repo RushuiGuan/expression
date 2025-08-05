@@ -7,7 +7,7 @@ using System.Collections;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Min : PrefixExpression {
-		public Min() : base("min", 0, int.MaxValue) { }
+		public Min() : base("Min", 0, int.MaxValue) { }
 
 		public override object? Eval(Func<string, object> context) {
 			Type type;

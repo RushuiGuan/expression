@@ -116,41 +116,4 @@ namespace Albatross.Expression.Nodes {
 			return list;
 		}
 	}
-
-	public class PrefixExpressionFactory<T> : IExpressionFactory<T> where T : PrefixExpression, new() {
-		private readonly string name;
-		private readonly bool caseSensitive;
-
-		public PrefixExpressionFactory(string name, bool caseSensitive = false) {
-			this.name = name;
-			this.caseSensitive = caseSensitive;
-		}
-
-		public bool TryParse(string expression, int start, out int next, [NotNullWhen(true)] out T? node) {
-			node = null;
-			next = expression.Length;
-			if (start < expression.Length) {
-				while (start < expression.Length && char.IsWhiteSpace(expression[start])) {
-					start++;
-				}
-				int index = caseSensitive ? expression.IndexOf(name, start, StringComparison.Ordinal) : expression.IndexOf(name, start, StringComparison.InvariantCultureIgnoreCase);
-				if (index == start) {
-					//look for a left Parenthesis, but don't consume it
-					for (int i = start + name.Length; i < expression.Length; i++) {
-						var c = expression[i];
-						if (char.IsWhiteSpace(c)) {
-							continue;
-						} else if (c == Token.LeftParenthesis) {
-							next = start + name.Length;
-							node = new T();
-							return true;
-						} else {
-							return false;
-						}
-					}
-				}
-			}
-			return false;
-		}
-	}
 }

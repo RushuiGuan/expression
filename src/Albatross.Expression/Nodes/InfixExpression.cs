@@ -3,9 +3,14 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Albatross.Expression.Nodes {
-	public abstract class InfixExpression : IExpression {
-		public abstract string Operator { get; }
-		public abstract int Precedence { get; }
+	public class InfixExpression : IExpression {
+		public string Operator { get; }
+		public int Precedence { get; }
+		
+		public InfixExpression(string operatorText, int precedence) {
+			Operator = operatorText;
+			Precedence = precedence;
+		}
 
 		public IExpression Operand1 { get; set; } = new UndefinedExpression();
 		public IExpression Operand2 { get; set; } = new UndefinedExpression();
@@ -26,25 +31,34 @@ namespace Albatross.Expression.Nodes {
 			return sb.ToString();
 		}
 
-		public abstract object? Eval(Func<string, object> context);
+		public virtual object? Eval(Func<string, object> context) {
+			throw new NotSupportedException();
+		}
 	}
 
 	public class InfixExpressionFactory<T> : IExpressionFactory<T> where T : InfixExpression, new() {
-		public bool TryParse(string text, int start, out int next, [NotNullWhen(true)] out T? node) {
+		private readonly bool caseSensitive;
+
+		public InfixExpressionFactory(bool caseSensitive) {
+			this.caseSensitive = caseSensitive;
+		}
+
+		public T? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
 				while (start < text.Length && char.IsWhiteSpace(text[start])) {
 					start++;
 				}
 				var t = new T();
-				if (text.IndexOf(t.Operator, start, StringComparison.InvariantCultureIgnoreCase) == start) {
+				var index = caseSensitive
+					? text.IndexOf(t.Operator, start, StringComparison.Ordinal)
+					: text.IndexOf(t.Operator, start, StringComparison.InvariantCultureIgnoreCase);
+				if (index == start) {
 					next = start + t.Operator.Length;
-					node = t;
-					return true;
+					return t;
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

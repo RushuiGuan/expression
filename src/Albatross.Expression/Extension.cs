@@ -7,10 +7,10 @@ namespace Albatross.Expression {
 	public static class Extensions {
 		public static bool ConvertToBoolean(this object? obj) {
 			if (obj != null) {
-				if (obj is double) {
-					return (double)obj != 0;
-				} else if (obj is bool) {
-					return (bool)obj;
+				if (obj is double d) {
+					return d != 0;
+				} else if (obj is bool b) {
+					return b;
 				} else {
 					return true;
 				}
@@ -52,8 +52,7 @@ namespace Albatross.Expression {
 		}
 
 		public static object? GetValue<T>(this IExecutionContext<T> context, string name, T input) {
-			object? data;
-			if (context.TryGetValue(name, input, out data)) {
+			if (context.TryGetValue(name, input, out var data)) {
 				return data;
 			} else {
 				return null;

@@ -61,13 +61,22 @@ namespace Albatross.Expression.Nodes {
 	}
 	
 	public class VariableFactory : IExpressionFactory<Variable> {
+		private readonly bool caseSensitive;
+
 		//const string VariableNamePattern = @"^\s*([a-zA-Z_]+\.?[a-zA-Z0-9_]*) \b (?!\s*\() ";
 		const string VariableNamePattern = @"^\s*([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)?) \b (?!\s*\() ";
-		static readonly Regex variableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
+		static readonly Regex caseSensitiveVariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
+		static readonly Regex caseInsensitiveVariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace | RegexOptions.IgnoreCase);
+		
+		public VariableFactory(bool caseSensitive) {
+			this.caseSensitive = caseSensitive;
+		}
+		
 		public bool TryParse(string expression, int start, out int next, [NotNullWhen(true)] out Variable? node) {
 			next = expression.Length;
 			if (start < expression.Length) {
-				Match match = variableNameRegex.Match(expression.Substring(start));
+				Match match = this.caseSensitive ? caseSensitiveVariableNameRegex.Match(expression.Substring(start))
+					: caseInsensitiveVariableNameRegex.Match(expression.Substring(start));
 				if (match.Success) {
 					node = new Variable(match.Groups[1].Value);
 					next = start + match.Value.Length;

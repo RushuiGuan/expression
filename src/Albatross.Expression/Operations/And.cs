@@ -20,8 +20,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation(Group = "Logical")]
 	public class And : InfixExpression {
-		public override string Operator => "and";
-		public override int Precedence { get { return 30; } }
+		public And() : base("And", 30) { }
 
 		public override object? Eval(Func<string, object> context) {
 			var value = Operand1.Eval(context);

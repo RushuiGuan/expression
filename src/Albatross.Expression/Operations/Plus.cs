@@ -20,9 +20,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Plus : InfixExpression {
-
-		public override string Operator { get { return "+"; } }
-		public override int Precedence { get { return 100; } }
+		public Plus() : base("+", 100) { }
 
 		public override object? Eval(Func<string, object> context) {
 			var a = Operand1.Eval(context);

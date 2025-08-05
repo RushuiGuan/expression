@@ -16,7 +16,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Date : PrefixExpression {
-		public Date() : base("date", 1, 1) { }
+		public Date() : base("Date", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
 			 var value = GetOperands(context).First();

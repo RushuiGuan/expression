@@ -16,9 +16,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Mod : InfixExpression {
-
-		public override string Operator { get { return "%"; } }
-		public override int Precedence { get { return 200; } }
+		public Mod() : base("%", 200) { }
 
 		public override object? Eval(Func<string, object> context) {
 			object a = Operand1.Eval(context);

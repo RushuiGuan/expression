@@ -7,7 +7,7 @@ using System.Collections;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Max : PrefixExpression {
-		public Max() : base("max", 0, int.MaxValue) { }
+		public Max() : base("Max", 0, int.MaxValue) { }
 
 		public override object? Eval(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }

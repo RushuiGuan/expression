@@ -20,8 +20,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class GreaterThan : ComparisonInfixOperation {
-		public override string Operator { get { return ">"; } }
-		public override int Precedence { get { return 50; } }
+		public GreaterThan() : base(">", 50) { }
 
 		public override bool interpret(int comparisonResult) {
 			return comparisonResult > 0;

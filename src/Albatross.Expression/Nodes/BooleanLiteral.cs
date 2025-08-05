@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
 namespace Albatross.Expression.Nodes {
@@ -26,24 +25,23 @@ namespace Albatross.Expression.Nodes {
 	public class BooleanLiteralFactory : IExpressionFactory<BooleanLiteral> {
 		const string BooleanPattern = @"^\s* (true|false)";
 
-		static readonly Regex BooleanPatternRegex = new Regex(BooleanPattern,
+		static readonly Regex booleanPatternRegex = new Regex(BooleanPattern,
 			RegexOptions.Compiled |
 			RegexOptions.Singleline |
 			RegexOptions.IgnorePatternWhitespace |
 			RegexOptions.IgnoreCase);
 
-		public bool TryParse(string text, int start, out int next, [NotNullWhen(true)] out BooleanLiteral? node) {
+		public BooleanLiteral? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
-				Match match = BooleanPatternRegex.Match(text.Substring(start));
+				Match match = booleanPatternRegex.Match(text.Substring(start));
 				if (match.Success) {
-					node = new BooleanLiteral(match.Groups[1].Value);
+					var node = new BooleanLiteral(match.Groups[1].Value);
 					next = start + match.Value.Length;
-					return true;
+					return node;
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

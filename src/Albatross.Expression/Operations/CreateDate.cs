@@ -23,7 +23,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class CreateDate : PrefixExpression {
-		public CreateDate() : base("createDate", 3, 3) { }
+		public CreateDate() : base("CreateDate", 3, 3) { }
 		
 		public override object? Eval(Func<string, object> context) {
 			var list = GetOperands(context);

@@ -24,24 +24,23 @@ namespace Albatross.Expression.Nodes {
 	}
 	public class NumericLiteralFactory : IExpressionFactory<NumericLiteral> {
 		const string NumericPattern = @"^\s*([0-9]*\.?[0-9]+)";
-		static readonly Regex NumericPatternRegex = new Regex(NumericPattern, 
+		static readonly Regex numericPatternRegex = new Regex(NumericPattern, 
 			RegexOptions.Compiled | 
 			RegexOptions.Singleline | 
 			RegexOptions.IgnorePatternWhitespace | 
 			RegexOptions.IgnoreCase);
 		
-		public bool TryParse(string text, int start, out int next, [NotNullWhen(true)] out NumericLiteral? node) {
+		public NumericLiteral? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
-				Match match = NumericPatternRegex.Match(text.Substring(start));
+				Match match = numericPatternRegex.Match(text.Substring(start));
 				if (match.Success) {
-					node = new NumericLiteral(match.Groups[1].Value);
+					var node = new NumericLiteral(match.Groups[1].Value);
 					next = start + match.Value.Length;
-					return true;
+					return node;
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

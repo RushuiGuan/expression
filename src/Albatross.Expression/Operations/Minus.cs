@@ -5,8 +5,7 @@ using Albatross.Expression.Exceptions;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Minus : InfixExpression {
-		public override string Operator { get { return "-"; } }
-		public override int Precedence { get { return 100; } }
+		public Minus() : base("-", 100) { }
 
 		public override object? Eval(Func<string, object> context) {
 			object a = Operand1.Eval(context);
@@ -17,9 +16,9 @@ namespace Albatross.Expression.Operations {
 			} else if (a is double && b is double) {
 				return (double)a - (double)b;
 			} else if (a is DateTime && b is double) {
-				return ((DateTime)a).AddDays(-1 * Convert.ToDouble(b));
-			}else if(a is DateTime && b is DateTime) {
-				return ((DateTime)a - (DateTime)b).TotalSeconds;
+				return ( (DateTime)a ).AddDays(-1 * Convert.ToDouble(b));
+			} else if (a is DateTime && b is DateTime) {
+				return ( (DateTime)a - (DateTime)b ).TotalSeconds;
 			} else {
 				throw new UnexpectedTypeException(a.GetType());
 			}

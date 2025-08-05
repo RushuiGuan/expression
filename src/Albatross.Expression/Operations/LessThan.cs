@@ -5,8 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class LessThan : ComparisonInfixOperation {
-		public override string Operator { get { return "<"; } }
-		public override int Precedence { get { return 50; } }
+		public LessThan() : base("<", 50) { }
 
 		public override bool interpret(int comparisonResult) {
 			return comparisonResult < 0;
@@ -19,18 +18,16 @@ namespace Albatross.Expression.Operations {
 		const string Pattern = @"^\s*(\<)(?![=\>])";
 		static Regex regex = new Regex(Pattern, RegexOptions.Singleline | RegexOptions.Compiled);
 
-		public bool TryParse(string text, int start, out int next, [NotNullWhen(true)] out LessThan? node) {
+		public LessThan? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
 				Match match = regex.Match(text.Substring(start));
 				if (match.Success) {
 					next = start + match.Value.Length;
-					node = new LessThan();
-					return true;
+					return new LessThan();
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

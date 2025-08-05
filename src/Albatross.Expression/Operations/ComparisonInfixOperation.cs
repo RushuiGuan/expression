@@ -4,6 +4,8 @@ using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	public abstract class ComparisonInfixOperation : InfixExpression {
+		protected ComparisonInfixOperation(string operatorSymbol, int precedence) : base(operatorSymbol, precedence) { }
+
 		public override object? Eval(Func<string, object> context) {
 			var a = Operand1.Eval(context);
 			var b = Operand2.Eval(context);
@@ -28,6 +30,7 @@ namespace Albatross.Expression.Operations {
 			}
 			return interpret(result);
 		}
+
 		public abstract bool interpret(int comparisonResult);
 	}
 }

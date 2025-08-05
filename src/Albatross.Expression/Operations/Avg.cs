@@ -16,7 +16,7 @@ namespace Albatross.Expression.Operations {
 	/// </summary>
 	[ParserOperation]
 	public class Avg : PrefixExpression {
-		public Avg() : base("avg", 0, int.MaxValue) { }
+		public Avg() : base("Avg", 0, int.MaxValue) { }
 		public override object? Eval(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
 			IEnumerable items = GetParamsOperands(context, out _);

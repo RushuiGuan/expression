@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Albatross.Expression.Nodes {
-	public class ControlToken : INode {
+	public record class ControlToken : INode {
 		public const string LeftParenthesis_Text = "(";
 		public const string RightParenthesis_Text = ")";
 		public const string Comma_Text = ",";
@@ -28,21 +28,19 @@ namespace Albatross.Expression.Nodes {
 
 		public string TokenText { get; }
 
-		public bool TryParse(string text, int start, out int next, [NotNullWhen(true)] out ControlToken? node) {
+		public ControlToken? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
 				while (start < text.Length && char.IsWhiteSpace(text[start])) {
 					start++;
 				}
 
-				if (text.IndexOf(TokenText, start, StringComparison.InvariantCultureIgnoreCase) == start) {
+				if (text.IndexOf(TokenText, start, StringComparison.Ordinal) == start) {
 					next = start + TokenText.Length;
-					node = new ControlToken(TokenText);
-					return true;
+					return new ControlToken(TokenText);
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

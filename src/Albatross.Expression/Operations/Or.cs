@@ -25,7 +25,7 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Or : InfixExpression {
 		
-		public override string Operator { get { return "or"; } }
+		public override string Operator { get { return "Or"; } }
 		public override int Precedence { get { return 20; } }
 
 		public override object? Eval(Func<string, object> context) {

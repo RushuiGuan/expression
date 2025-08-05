@@ -29,8 +29,7 @@ namespace Albatross.Expression.Nodes {
 			this.caseSensitive = caseSensitive;
 		}
 
-		public bool TryParse(string expression, int start, out int next, [NotNullWhen(true)] out T? node) {
-			node = null;
+		public T? Parse(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {
 				while (start < expression.Length && char.IsWhiteSpace(expression[start])) {
@@ -41,11 +40,10 @@ namespace Albatross.Expression.Nodes {
 					: expression.IndexOf(name, start, StringComparison.InvariantCultureIgnoreCase);
 				if (index == start) {
 					next = start + name.Length;
-					node = new T();
-					return true;
+					return new T();
 				}
 			}
-			return false;
+			return null;
 		}
 	}
 }

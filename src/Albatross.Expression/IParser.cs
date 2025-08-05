@@ -34,10 +34,8 @@ namespace Albatross.Expression {
 		/// <param name="token"></param>
 		/// <param name="context"></param>
 		/// <returns></returns>
-		object? Eval(INode token, Func<string, object> context);
+		object? Eval(IExpression token, Func<string, object> context);
 		
-		INode VariableToken();
-		IStringLiteral StringLiteralToken();
 		bool IsValidExpression(string expression);
 	}
 }

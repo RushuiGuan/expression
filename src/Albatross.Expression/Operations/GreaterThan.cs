@@ -31,18 +31,16 @@ namespace Albatross.Expression.Operations {
 		const string Pattern = @"^\s*(\>)(?!=)";
 		static Regex regex = new Regex(Pattern, RegexOptions.Compiled | RegexOptions.Singleline);
 
-		public bool TryParse(string text, int start, out int next, [NotNullWhen(true)] out GreaterThan? node) {
+		public GreaterThan? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
 				Match match = regex.Match(text.Substring(start));
 				if (match.Success) {
 					next = start + match.Value.Length;
-					node = new GreaterThan();
-					return true;
+					return new GreaterThan();
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

@@ -59,24 +59,6 @@ namespace Albatross.Expression {
 			}
 		}
 
-		public static ContextValue Set<T>(this IExecutionContext<T> context, string assignmentExpression) {
-			INode token = context.Parser.VariableToken();
-			int start = 0, next;
-			if (token.Match(assignmentExpression, start, out next)) {
-				start = assignmentExpression.SkipSpace(start);
-				var name = assignmentExpression.Substring(start, next - start);
-				start = next;
-				if (new Assignment().Match(assignmentExpression, start, out next)) {
-					var value = new ContextValue(name, assignmentExpression.Substring(next)) {
-						ContextType = ContextType.Expression
-					};
-					context.Set(value);
-					return value;
-				}
-			}
-			throw new Exceptions.TokenParsingException("Invalid assignment expression");
-		}
-
 		public static ValueType Eval<T, ValueType>(this IExecutionContext<T> context, string expression, T input) {
 			var result = context.Eval(expression, input, typeof(ValueType));
 			return (ValueType)Convert.ChangeType(result, typeof(ValueType));

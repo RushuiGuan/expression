@@ -4,77 +4,68 @@ using System.Collections.Generic;
 using Albatross.Expression.Exceptions;
 using Albatross.Expression.Nodes;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression {
 	/// <summary>
 	/// An immutable implementation of the <see cref="Albatross.Expression.IParser"/> interface.
 	/// </summary>
 	public class Parser2 : IParser {
-		private readonly VariableFactory variableFactory;
-		public Parser2(VariableFactory variableFactory) {
-			this.variableFactory = variableFactory;
-		}
-
-		public IStringLiteral StringLiteralToken() {
-			return (IStringLiteral)stringLiteralToken.Clone();
-		}
-
-		private readonly List<IExpressionFactory<INode>> prefixOperationTokens = new();
-		private readonly List<IExpressionFactory<INode>> infixOperationTokens = new();
-		INode variable;
-		IStringLiteral stringLiteralToken;
+		private readonly IReadOnlyList<IExpressionFactory<INode>> other_left;
+		private readonly IReadOnlyList<IExpressionFactory<INode>> other_left_right;
+		private readonly IReadOnlyList<IExpressionFactory<INode>> infix_comma_right;
+		private readonly IReadOnlyList<IExpressionFactory<INode>> left_parenthesis_only;
 
 		public Parser2(IEnumerable<IExpressionFactory<INode>> factories) {
-			prefixOperationTokens.Clear();
-			infixOperationTokens.Clear();
-
-			this.variable = variable;
-			this.stringLiteralToken = stringLiteralToken;
-			foreach (var item in operations) {
-				Add(item);
+			var leftParenthesis = new ControlTokenFactory("(");
+			var rightParenthesis = new ControlTokenFactory(")");
+			var comma = new ControlTokenFactory(",");
+			var infix = new List<IExpressionFactory<INode>>();
+			var others = new List<IExpressionFactory<INode>>();
+			foreach (var factory in factories) {
+				if (factory is IExpressionFactory<InfixExpression> infixFactory) {
+					infix.Add(infixFactory);
+				} else {
+					others.Add(factory);
+				}
 			}
+			this.other_left = others.Union([leftParenthesis]).ToArray();
+			this.other_left_right = others.Union([leftParenthesis, rightParenthesis]).ToArray();
+			this.infix_comma_right = infix.Union([comma, rightParenthesis]).ToArray();
+			this.left_parenthesis_only = [leftParenthesis];
 		}
 
 		//parse an expression and produce queue of tokens
 		//the expression is parse from left to right
 		public Queue<INode> Tokenize(string expression) {
 			var tokens = new Queue<INode>();
-			int start = 0, next;
-			INode? last;
-			IEnumerable<INode>? list;
-			bool found;
+			int start = 0;
 			while (start < expression.Length) {
-				found = false;
-				last = tokens.Count == 0 ? null : tokens.Last();
-				list = null;
-				if (last == null || last == ControlToken.Comma || ( last is UnaryExpression) || last is InfixExpression) {
-					list = new INode[] { new BooleanLiteral(), VariableToken(), StringLiteralToken(), new NumericLiteral(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
+				bool found = false;
+				var last = tokens.LastOrDefault();
+				IEnumerable<IExpressionFactory<INode>>? factories = null;
+				if (last == null || last == ControlToken.Comma || ( last is UnaryExpression ) || last is InfixExpression) {
+					factories = other_left;
 				} else if (last == ControlToken.LeftParenthesis) {
-					list = new INode[] { VariableToken(), StringLiteralToken(), new NumericLiteral(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
+					factories = other_left_right;
 				} else if (last == ControlToken.RightParenthesis || last is IExpression) {
-					list = new INode[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(infixOperationTokens);
+					factories = infix_comma_right;
 				} else if (last is PrefixExpression) {
-					list = new INode[] { ControlToken.LeftParenthesis };
+					factories = left_parenthesis_only;
 				}
 
-				Debug.Assert(list != null, "Forgot to check an previous operation");
-				foreach (INode token in list) {
-					if (token.Match(expression, start, out next)) {
+				Debug.Assert(factories != null, "Forgot to check an previous operation");
+				foreach (var factory in factories) {
+					var node = factory.Parse(expression, start, out var next);
+					if (node != null) {
 						found = true;
 						start = next;
-						if (token is PrefixExpression || token is InfixExpression) {
-							tokens.Enqueue(token.Clone());
-						} else {
-							tokens.Enqueue(token);
-						}
-
+						tokens.Enqueue(node);
 						break;
 					}
 				}
 
-				if (found) {
-					continue;
-				}
+				if (found) { continue; }
 
 				if (start < expression.Length) {
 					if (expression.Substring(start).Trim().Length == 0) {
@@ -181,13 +172,12 @@ namespace Albatross.Expression {
 					stack.Push(token);
 				} else if (token is InfixExpression) {
 					InfixExpression infixOp = (InfixExpression)token;
-					infixOp.Operand2 = stack.Pop();
-					infixOp.Operand1 = stack.Pop();
+					infixOp.Operand2 = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand1");
+					infixOp.Operand1 = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand2");
 					stack.Push(infixOp);
-				} else if (token is PrefixExpression) {
-					PrefixExpression prefixOp = (PrefixExpression)token;
+				} else if (token is PrefixExpression prefixOp) {
 					for (INode t = stack.Pop(); t != ControlToken.FuncParamStart; t = stack.Pop()) {
-						prefixOp.Operands.Insert(0, t);
+						prefixOp.Operands.Insert(0, t as IExpression ?? throw new StackException("missing expression for prefix operand"));
 					}
 
 					stack.Push(prefixOp);
@@ -197,11 +187,11 @@ namespace Albatross.Expression {
 			return stack.Pop();
 		}
 
-		public object? Eval(INode token, Func<string, object> context) {
+		public object? Eval(IExpression token, Func<string, object> context) {
 			return token.Eval(context);
 		}
 
-		public string EvalText(INode token) {
+		public string Text(INode token) {
 			return token.Text();
 		}
 

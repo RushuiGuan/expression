@@ -51,7 +51,7 @@ namespace Albatross.Expression.Nodes {
 		public StringLiteralFactory(char boundary) {
 			this.boundary = boundary;
 		}
-		public bool TryParse(string text, int start, out int next, [NotNullWhen(true)] out StringLiteral? node) {
+		public StringLiteral? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
 				while (start < text.Length && char.IsWhiteSpace(text[start])) {
@@ -75,13 +75,11 @@ namespace Albatross.Expression.Nodes {
 						throw new TokenParsingException("missing closing boundary");
 					} else {
 						next = i + 1;
-						node = new StringLiteral(boundary, sb.ToString());
-						return true;
+						return new StringLiteral(boundary, sb.ToString());
 					}
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

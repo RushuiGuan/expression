@@ -72,19 +72,18 @@ namespace Albatross.Expression.Nodes {
 			this.caseSensitive = caseSensitive;
 		}
 		
-		public bool TryParse(string expression, int start, out int next, [NotNullWhen(true)] out Variable? node) {
+		public Variable? Parse(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {
 				Match match = this.caseSensitive ? caseSensitiveVariableNameRegex.Match(expression.Substring(start))
 					: caseInsensitiveVariableNameRegex.Match(expression.Substring(start));
 				if (match.Success) {
-					node = new Variable(match.Groups[1].Value);
+					var node = new Variable(match.Groups[1].Value);
 					next = start + match.Value.Length;
-					return true;
+					return node;
 				}
 			}
-			node = null;
-			return false;
+			return null;
 		}
 	}
 }

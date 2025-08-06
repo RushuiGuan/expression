@@ -9,13 +9,13 @@ namespace Albatross.Expression.Operations {
 		public PreviousWeekDay() : base("PreviousWeekDay", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
-			object a = GetOperands(context).First();
+			object a = GetRequiredOperandValues(context).First();
 			if (a == null) { return null; }
-			DateTime date;
-			if (a is DateTime) {
-				date = (DateTime)a;
+			System.DateTime date;
+			if (a is System.DateTime) {
+				date = (System.DateTime)a;
 			} else {
-				if (!DateTime.TryParse(Convert.ToString(a), out date)) {
+				if (!System.DateTime.TryParse(Convert.ToString(a), out date)) {
 					throw new FormatException("Invalid Datetime Format");
 				}
 			}

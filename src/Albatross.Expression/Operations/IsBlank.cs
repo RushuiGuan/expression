@@ -14,12 +14,12 @@ namespace Albatross.Expression.Operations {
 		public IsBlank() : base("IsBlank", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
-			object value = GetOperands(context).First();
-
+			var value = this.GetValue(0, context);
+			
 			if (value == null) {
 				return true;
-			} else if (value is string) {
-				return string.IsNullOrWhiteSpace((string)value);
+			} else if (value is string text) {
+				return string.IsNullOrWhiteSpace(text);
 			} else {
 				return false;
 			}

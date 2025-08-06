@@ -18,7 +18,7 @@ namespace Albatross.Expression.Operations {
 		public RegexCapture() : base("RegexCapture", 2, 3) { }
 
 		public override object? Eval(Func<string, object> context) {
-			var operands = GetOperands(context);
+			var operands = GetRequiredOperandValues(context);
 			string text = Convert.ToString(operands[0]);
 			string pattern = Convert.ToString(operands[1]);
 			int index = 0;

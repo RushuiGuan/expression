@@ -21,8 +21,8 @@ namespace Albatross.Expression.Operations {
 		public UnixTimestamp() : base("UnixTimestamp", 1, 1) { }
 		
 		public override object? Eval(Func<string, object> context) {
-			object value = GetOperands(context).First();
-			DateTime dateTime = (value as DateTime?) ?? DateTime.Parse(Convert.ToString(value));
+			object value = GetRequiredOperandValues(context).First();
+			System.DateTime dateTime = (value as System.DateTime?) ?? System.DateTime.Parse(Convert.ToString(value));
 			return new DateTimeOffset(dateTime).ToUnixTimeSeconds();
 		}
 	}

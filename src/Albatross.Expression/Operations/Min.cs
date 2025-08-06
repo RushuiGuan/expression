@@ -11,14 +11,14 @@ namespace Albatross.Expression.Operations {
 
 		public override object? Eval(Func<string, object> context) {
 			Type type;
-			IEnumerable items = GetParamsOperands(context, out type);
+			IEnumerable items = GetParamsOperandValues(context, out type);
 
 			if (type == null) {
 				return null;
 			}else if (type == typeof(double)) {
 				return GetMin<double>(items);
-			} else if (type == typeof(DateTime)) {
-				return GetMin<DateTime>(items);
+			} else if (type == typeof(System.DateTime)) {
+				return GetMin<System.DateTime>(items);
 			} else if (type == typeof(string)) {
 				return GetMinString(items);
 			} else {

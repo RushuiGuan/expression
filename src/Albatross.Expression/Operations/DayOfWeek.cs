@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Albatross.Expression.Nodes;
 
 
@@ -8,18 +7,16 @@ namespace Albatross.Expression.Operations {
 	public class DayOfWeek : PrefixExpression {
 		public DayOfWeek() : base("DayOfWeek", 1, 1) { }
 		public override object? Eval(Func<string, object> context) {
-			object a = GetOperands(context).First();
-			if (a == null) { return null; }
-			if (a is DateTime) {
-				return Convert.ToDouble(((DateTime)a).DayOfWeek);
-			} else {
-				DateTime datetime;
-				if (DateTime.TryParse(Convert.ToString(a), out datetime)) {
-					return Convert.ToDouble(datetime.DayOfWeek);
-				} else {
-					throw new FormatException("Invalid Datetime Format");
-				}
+			var value = this.GetValue(0, context);
+			if (value == null) { return null; }
+			if (value is System.DateTime datetime) {
+				return Convert.ToDouble(datetime.DayOfWeek);
+			} else if (value is DateOnly dateOnly) {
+				return Convert.ToDouble(dateOnly.DayOfWeek);
+			} else if (value is string text && DateOnly.TryParse(text, out dateOnly)) {
+				return Convert.ToDouble(dateOnly.DayOfWeek);
 			}
+			throw new FormatException($"Cannot calculate DayOfWeek from {value}.  Expected DateTime, DateOnly, or parsable string representation of a date.");
 		}
 	}
 }

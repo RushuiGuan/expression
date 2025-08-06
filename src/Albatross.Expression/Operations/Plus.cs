@@ -30,7 +30,7 @@ namespace Albatross.Expression.Operations {
 			
 			if (a is double aa && b is double bb) {
 				return aa + bb;
-			}else if(a is DateTime dateTime && b is double days){
+			}else if(a is System.DateTime dateTime && b is double days){
 				return dateTime.AddDays(days);
 			}else if(a is string || b is string){
 				return $"{a}{b}";

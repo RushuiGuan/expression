@@ -13,7 +13,7 @@ namespace Albatross.Expression.Operations {
 		public GetJsonValue() : base("GetJsonValue", 2, int.MaxValue) { }
 
 		public override object? Eval(Func<string, object> context) {
-			var operands = GetOperands(context);
+			var operands = GetRequiredOperandValues(context);
 			var value = operands.First();
 			JsonElement elem;
 			if (value is JsonElement) {

@@ -22,7 +22,7 @@ namespace Albatross.Expression.Operations {
 
 		public override object? Eval(Func<string, object> context) {
 			int count;
-			List<object> list = GetOperands(context);
+			List<object> list = GetRequiredOperandValues(context);
 			object value = list[1];
 
 			if (value == null) { return list[0]; }

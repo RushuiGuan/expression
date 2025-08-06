@@ -1,6 +1,5 @@
 ﻿using System;
 using Albatross.Expression.Nodes;
-using Albatross.Expression.Exceptions;
 using System.Collections;
 
 
@@ -19,20 +18,16 @@ namespace Albatross.Expression.Operations {
 		public Avg() : base("Avg", 0, int.MaxValue) { }
 		public override object? Eval(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
-			IEnumerable items = GetParamsOperands(context, out _);
+			IEnumerable items = this.GetOperandValues(context);
 			
 			double sum = 0;
 			int count = 0;
 
-			try {
-				foreach (double? item in items) {
-					if (item != null) {
-						sum += (double)item;
-						count++;
-					}
+			foreach (var item in items) {
+				if (item != null) {
+					count++;
+					sum += Convert.ToDouble(item);
 				}
-			} catch (InvalidCastException) {
-				throw new UnexpectedTypeException();
 			}
 			if (count != 0) {
 				return sum / count;

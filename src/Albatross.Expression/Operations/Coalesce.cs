@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -14,8 +13,8 @@ namespace Albatross.Expression.Operations {
 		public Coalesce() : base("Coalesce", 1, int.MaxValue) { }
 
 		public override object? Eval(Func<string, object> context) {
-			List<object> list = GetOperands(context);
-			foreach (object obj in list) {
+			var list = this.GetOperandValues(context);
+			foreach (var obj in list) {
 				if (obj != null) {
 					return obj;
 				}

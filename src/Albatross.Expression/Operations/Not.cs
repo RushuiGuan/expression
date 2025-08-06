@@ -11,7 +11,7 @@ namespace Albatross.Expression.Operations {
 		public Not() : base("Not", 1, 1) { }
 		
 		public override object? Eval(Func<string, object> context) {
-			object value = GetOperands(context).First();
+			object value = GetRequiredOperandValues(context).First();
 			return !value.ConvertToBoolean();
 		}
 	}

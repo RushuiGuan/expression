@@ -9,13 +9,13 @@ namespace Albatross.Expression.Operations {
 		public Month() : base("Month", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
-			object a = GetOperands(context).First();
+			object a = GetRequiredOperandValues(context).First();
 			if (a == null) { return null; }
-			if (a is DateTime) {
-				return Convert.ToDouble(((DateTime)a).Month);
+			if (a is System.DateTime) {
+				return Convert.ToDouble(((System.DateTime)a).Month);
 			} else {
-				DateTime datetime;
-				if (DateTime.TryParse(Convert.ToString(a), out datetime)) {
+				System.DateTime datetime;
+				if (System.DateTime.TryParse(Convert.ToString(a), out datetime)) {
 					return Convert.ToDouble(datetime.Month);
 				} else {
 					throw new FormatException("Invalid Datetime Format");

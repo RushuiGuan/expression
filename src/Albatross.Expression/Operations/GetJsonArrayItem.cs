@@ -12,7 +12,7 @@ namespace Albatross.Expression.Operations {
 		public GetJsonArrayItem() : base("GetJsonArrayItem", 2, 2) { }
 
 		public override object? Eval(Func<string, object> context) {
-			var operands = GetOperands(context);
+			var operands = GetRequiredOperandValues(context);
 			object? value = operands.First();
 			JsonElement elem;
 			if (value is JsonElement) {

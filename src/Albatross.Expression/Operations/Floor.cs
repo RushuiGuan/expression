@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -11,12 +10,12 @@ namespace Albatross.Expression.Operations {
 		public Floor() : base("Floor", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
-			List<object> list = GetOperands(context);
-			try {
-				var value = Convert.ToDouble(list[0]);
-				return Math.Floor((double)value);
-			} catch (FormatException) {
-				throw new Exceptions.UnexpectedTypeException(list[0].GetType());
+			var obj = this.GetValue(0, context);
+			if (obj == null) {
+				return null;
+			} else {
+				var value = obj.ConvertToDouble();
+				return Math.Floor(value);
 			}
 		}
 	}

@@ -12,7 +12,7 @@ namespace Albatross.Expression.Operations {
 		public Today() : base("Today", 0, 0) { }
 		
 		public override object? Eval(Func<string, object> context) {
-			return DateTime.Today;
+			return System.DateTime.Today;
 		}
 	}
 }

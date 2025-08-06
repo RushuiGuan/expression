@@ -12,14 +12,14 @@ namespace Albatross.Expression.Operations {
 		public override object? Eval(Func<string, object> context) {
 			if (Operands.Count == 0) { return null; }
 			Type type;
-			IEnumerable list = GetParamsOperands(context, out type);
+			IEnumerable list = GetParamsOperandValues(context, out type);
 
 			if (type == null) {
 				return null;
 			} else if (type == typeof(double)) {
 				return GetMax<double>(list);
-			} else if (type == typeof(DateTime)) {
-				return GetMax<DateTime>(list);
+			} else if (type == typeof(System.DateTime)) {
+				return GetMax<System.DateTime>(list);
 			} else if (type == typeof(string)) {
 				return GetMaxString(list);
 			} else {

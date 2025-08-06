@@ -7,7 +7,7 @@ namespace Albatross.Expression.Operations {
 		public UtcNow() : base("UtcNow", 0, 0) { }
 
 		public override object? Eval(Func<string, object> context) {
-			return DateTime.UtcNow;
+			return System.DateTime.UtcNow;
 		}
 	}
 }

@@ -1,10 +1,42 @@
-﻿using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Exceptions;
+using Albatross.Expression.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Xml.Linq;
 
 namespace Albatross.Expression {
 	public static class Extensions {
+		public static object? GetValue(this PrefixExpression expression, int index, Func<string, object> context) {
+			if(index > expression.Operands.Count - 1) {
+				throw new OperandException($"prefix expression {expression.Name} is missing operand at position {index}");
+			}
+			return expression.Operands[index].Eval(context);
+		}
+
+		public static object GetRequiredValue(this PrefixExpression expression, int index, Func<string, object> context) {
+			return expression.GetValue(index, context) ?? throw new OperandException($"prefix expression {expression.Name} is missing required operand at position {index}");
+		}
+
+		public static string GetRequiredStringValue(this PrefixExpression expression, int index, Func<string, object> context) {
+			var value = expression.GetValue(index, context);
+			string result = $"{value}".Trim();
+			if (result == string.Empty) {
+				throw new OperandException($"prefix expression {expression.Name} is missing required string operand at position {index}");
+			} else {
+				return result;
+			}
+		}
+
+		public static List<Object?> GetOperandValues(this PrefixExpression expression, Func<string, object> context) {
+			var list = new List<object?>();
+			foreach (var token in expression.Operands) {
+				var value = token.Eval(context);
+				list.Add(value);
+			}
+			return list;
+		}
+
 		public static bool ConvertToBoolean(this object? obj) {
 			if (obj != null) {
 				if (obj is double d) {
@@ -17,6 +49,28 @@ namespace Albatross.Expression {
 			} else {
 				return false;
 			}
+		}
+
+		public static double ConvertToDouble(this object obj) {
+			if (obj is double d) {
+				return d;
+			} else if (obj is string text) {
+				if (double.TryParse(text, out d)) {
+					return d;
+				}
+			}
+			throw new FormatException($"Cannot convert {obj} to double");
+		}
+
+		public static int ConvertToInt(this object obj) {
+			if (obj is int value) {
+				return value;
+			} else if (obj is string text) {
+				if (int.TryParse(text, out value)) {
+					return value;
+				}
+			}
+			throw new FormatException($"Cannot convert {obj} to int");
 		}
 
 		public static object? GetJsonValue(this JsonElement elem) {

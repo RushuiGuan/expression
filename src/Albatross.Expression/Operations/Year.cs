@@ -13,13 +13,13 @@ namespace Albatross.Expression.Operations {
 		public Year() : base("Year", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
-			object value = GetOperands(context).First();
+			object value = GetRequiredOperandValues(context).First();
 			if (value == null) { return null; }
-			else if (value is DateTime) {
-				return Convert.ToDouble(((DateTime)value).Year);
+			else if (value is System.DateTime) {
+				return Convert.ToDouble(((System.DateTime)value).Year);
 			} else {
-				DateTime datetime;
-				if (DateTime.TryParse(Convert.ToString(value), out datetime)) {
+				System.DateTime datetime;
+				if (System.DateTime.TryParse(Convert.ToString(value), out datetime)) {
 					return Convert.ToDouble(datetime.Year);
 				} else {
 					throw new FormatException("Invalid DateTime Format");

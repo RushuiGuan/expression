@@ -26,10 +26,10 @@ namespace Albatross.Expression.Operations {
 		public CreateDate() : base("CreateDate", 3, 3) { }
 		
 		public override object? Eval(Func<string, object> context) {
-			var list = GetOperands(context);
-			int[] input = (from item in list 
-						   select (int)System.Convert.ChangeType(item, typeof(int))).ToArray();
-			return new DateTime(input[0], input[1], input[2]);
+			var year = this.GetRequiredValue(0, context);
+			var month = this.GetRequiredValue(1, context);
+			var day = this.GetRequiredValue(2, context);
+			return new System.DateTime(year.ConvertToInt(), month.ConvertToInt(), day.ConvertToInt());
 		}
 	}
 }

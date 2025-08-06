@@ -11,7 +11,7 @@ namespace Albatross.Expression.Operations {
 		public UnixTimestamp2DateTime() : base("UnixTimestamp2DateTime", 1, 1) { }
 		
 		public override object? Eval(Func<string, object> context) {
-			object value = GetOperands(context).First();
+			object value = GetRequiredOperandValues(context).First();
 			long seconds = Convert.ToInt64(value);
 			var item = DateTimeOffset.FromUnixTimeSeconds(seconds).UtcDateTime;
 			return item;

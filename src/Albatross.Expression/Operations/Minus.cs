@@ -15,10 +15,10 @@ namespace Albatross.Expression.Operations {
 				return null;
 			} else if (a is double && b is double) {
 				return (double)a - (double)b;
-			} else if (a is DateTime && b is double) {
-				return ( (DateTime)a ).AddDays(-1 * Convert.ToDouble(b));
-			} else if (a is DateTime && b is DateTime) {
-				return ( (DateTime)a - (DateTime)b ).TotalSeconds;
+			} else if (a is System.DateTime && b is double) {
+				return ( (System.DateTime)a).AddDays(-1 * Convert.ToDouble(b));
+			} else if (a is System.DateTime && b is System.DateTime) {
+				return ( (System.DateTime)a - (System.DateTime)b).TotalSeconds;
 			} else {
 				throw new UnexpectedTypeException(a.GetType());
 			}

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Exceptions;
 using System.Collections;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression.Nodes {
 	public class PrefixExpression : IExpression {
@@ -21,20 +20,16 @@ namespace Albatross.Expression.Nodes {
 		public List<IExpression> Operands { get; private set; } = new();
 
 		public string Text() {
-			if (Operands.Count < MinOperandCount || Operands.Count > MaxOperandCount) {
-				throw new OperandException(Name);
-			}
 			var sb = new StringBuilder();
 			sb.Append(Name);
-			sb.Append(ControlToken.LeftParenthesis);
+			sb.Append(ControlTokenFactory.LeftParenthesis.Token);
 			foreach (var token in Operands) {
 				sb.Append(token.Text());
 				if (token != Operands.Last()) {
-					sb.Append(ControlToken.Comma.ToString()).Append(' ');
+					sb.Append(ControlTokenFactory.Comma.ToString()).Append(' ');
 				}
 			}
-			//sb.Append(string.Join(ControlToken.Comma.ToString(), from token in Operands select token.EvalText(format)));
-			sb.Append(ControlToken.RightParenthesis);
+			sb.Append(ControlTokenFactory.RightParenthesis.Token);
 			return sb.ToString();
 		}
 
@@ -50,7 +45,7 @@ namespace Albatross.Expression.Nodes {
 
 		//if the operand count = 1 and it is an array, return the array
 		//otherwise return normal operand values
-		protected IEnumerable GetParamsOperands(Func<string, object> context, out Type? firstType) {
+		protected IEnumerable GetParamsOperandValues(Func<string, object> context, out Type? firstType) {
 			firstType = null;
 			if (Operands.Count == 0) {
 				return Array.Empty<object>();
@@ -69,11 +64,11 @@ namespace Albatross.Expression.Nodes {
 					return new object[] { op1 };
 				}
 			} else {
-				return GetOperands(context, out firstType);
+				return GetOperandValues(context, out firstType);
 			}
 		}
 
-		protected List<Object?> GetOperands(Func<string, object> context) {
+		protected List<Object?> GetRequiredOperandValues(Func<string, object> context) {
 			var list = new List<object?>();
 			foreach (var token in Operands) {
 				var value = token.Eval(context);
@@ -84,7 +79,7 @@ namespace Albatross.Expression.Nodes {
 		}
 
 		//return operands of the same type
-		protected List<Object?> GetOperands(Func<string, object> context, out Type? firstType) {
+		protected List<Object?> GetOperandValues(Func<string, object> context, out Type? firstType) {
 			var list = new List<object?>();
 			firstType = null;
 			foreach (var token in Operands) {
@@ -100,7 +95,7 @@ namespace Albatross.Expression.Nodes {
 			return list;
 		}
 
-		protected List<T?> GetOperands<T>(Func<string, object> context) {
+		protected List<T?> GetOperandValues<T>(Func<string, object> context) {
 			var list = new List<T?>();
 			foreach (var token in Operands) {
 				var value = token.Eval(context);

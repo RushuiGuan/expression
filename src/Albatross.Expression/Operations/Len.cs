@@ -11,7 +11,7 @@ namespace Albatross.Expression.Operations {
 		public Len() : base("Len", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
-			List<object> list =  GetOperands(context);
+			List<object> list =  GetRequiredOperandValues(context);
 
 			object value = list[0];
 			if (value == null) {

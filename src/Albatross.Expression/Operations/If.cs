@@ -25,9 +25,9 @@ namespace Albatross.Expression.Operations {
 
 		public override object? Eval(Func<string, object> context) {
 			ValidateOperands();
-			object obj = Operands.First().Eval(context);
+			object condition = this.GetRequiredValue(0, context);
 
-			if (obj.ConvertToBoolean()) {
+			if (condition.ConvertToBoolean()) {
 				return Operands[1].Eval(context);
 			} else {
 				if (Operands.Count >= 3) {

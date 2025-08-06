@@ -14,7 +14,7 @@ namespace Albatross.Expression.Operations {
 	public class Array : PrefixExpression {
 		public Array() : base("@", 0, int.MaxValue) { }
 		public override object? Eval(Func<string, object> context) {
-			return GetOperands(context);
+			return this.GetOperandValues(context);
 		}
 	}
 }

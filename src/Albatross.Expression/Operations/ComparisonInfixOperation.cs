@@ -19,10 +19,10 @@ namespace Albatross.Expression.Operations {
 			int result = 0;
 			if (type == typeof(double)) {
 				result = Comparer<double>.Default.Compare((double)a, (double)b);
-			} else if (type == typeof(DateTime)) {
-				result = Comparer<DateTime>.Default.Compare((DateTime)a, (DateTime)b);
+			} else if (type == typeof(System.DateTime)) {
+				result = Comparer<System.DateTime>.Default.Compare((System.DateTime)a, (System.DateTime)b);
 			} else if (type == typeof(String)) {
-				result = Comparer<String>.Default.Compare((String)a, (String)b);
+				result = Comparer<string>.Default.Compare((String)a, (String)b);
 			} else if (type == typeof(bool)) {
 				result = Comparer<bool>.Default.Compare((bool)a, (bool)b);
 			} else {

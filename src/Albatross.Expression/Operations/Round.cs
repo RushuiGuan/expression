@@ -17,7 +17,7 @@ namespace Albatross.Expression.Operations {
 		public Round() : base("Round", 2, 2) { }
 
 		public override object? Eval(Func<string, object> context) {
-			List<object> list = GetOperands(context);
+			List<object> list = GetRequiredOperandValues(context);
 			object value = list[0];
 			object digit = list[1];
 

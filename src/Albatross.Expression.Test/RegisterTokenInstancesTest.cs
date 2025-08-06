@@ -48,7 +48,7 @@ namespace Albatross.Expression.Test
 			public override object Eval(Func<string, object> context) {
 				if (Operands.Count == 0) { return null; }
 				Type type;
-				IEnumerable items = GetParamsOperands(context, out type);
+				IEnumerable items = GetParamsOperandValues(context, out type);
 
 				var parms = items.Cast<object>().ToArray();
 

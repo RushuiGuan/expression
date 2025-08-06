@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -13,9 +11,10 @@ namespace Albatross.Expression.Operations {
 		public Format() : base("Format", 2, 2) { }
 		
 		public override object? Eval(Func<string, object> context) {
-			List<object> list = GetOperands(context);
-			string format = "{0:" + list.Last() + "}";
-			return string.Format(format, list.First());
+			var formatText = this.GetRequiredStringValue(1, context);
+			var value= this.GetValue(0, context);
+			string format = $"{{0:{formatText}}}";
+			return string.Format(format, value);
 		}
 	}
 }

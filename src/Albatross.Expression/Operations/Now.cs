@@ -12,7 +12,7 @@ namespace Albatross.Expression.Operations {
 		public Now() : base("Now", 0, 0) { }
 
 		public override object? Eval(Func<string, object> context) {
-			return DateTime.Now;
+			return System.DateTime.Now;
 		}
 	}
 }

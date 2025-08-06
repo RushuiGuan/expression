@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Nodes;
-using System.Xml;
-using Albatross.Expression.Exceptions;
 
 using System.Globalization;
 
@@ -13,13 +8,9 @@ namespace Albatross.Expression.Operations {
 	public class ShortMonthName : PrefixExpression {
 		public ShortMonthName() : base("ShortMonthName", 1, 1) { }
 
-		public override object? Eval(Func<string, object> context) {
-			object value = GetRequiredOperandValues(context).First();
-
-			if (value is double){
-				return CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Convert.ToInt32(value));
-			}
-			throw new Exceptions.UnexpectedTypeException(value.GetType());
+		public override object Eval(Func<string, object> context) {
+			var date = this.GetValue(0, context).ConvertToDateTime();
+			return CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(date.Month);
 		}
 	}
 }

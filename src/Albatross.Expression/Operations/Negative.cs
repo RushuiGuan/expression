@@ -6,8 +6,8 @@ namespace Albatross.Expression.Operations {
 	public class Negative : UnaryExpression {
 		public Negative() : base("-") { }
 
-		public override object? Eval(Func<string, object> context) {
-			var a = this.Operand.Eval(context).ConvertToDouble();
+		public override object Eval(Func<string, object> context) {
+			var a = RequiredOperand.Eval(context).ConvertToDouble();
 			return a * -1;
 		}
 	}

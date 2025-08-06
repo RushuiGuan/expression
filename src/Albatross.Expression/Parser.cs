@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Albatross.Expression.Exceptions;
 using Albatross.Expression.Nodes;
 using System.Diagnostics;
+using Albatross.Expression.ExpressionFactory;
 
 namespace Albatross.Expression {
 	/// <summary>

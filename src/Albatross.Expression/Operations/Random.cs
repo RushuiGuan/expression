@@ -6,11 +6,10 @@ namespace Albatross.Expression.Operations {
 	public class Random : PrefixExpression {
 		public Random() : base("Random", 2, 2) { }
 
-		public override object? Eval(Func<string, object> context) {
-			var operands = GetRequiredOperandValues(context);
-			int min = Convert.ToInt32(operands[0]);
-			int max = Convert.ToInt32(operands[1]);
-			return new System.Random().Next(min, max);
+		public override object Eval(Func<string, object> context) {
+			var min = this.GetValue(0, context).ConvertToInt();
+			var max = this.GetValue(1, context).ConvertToInt();
+			return System.Random.Shared.Next(min, max);
 		}
 	}
 }

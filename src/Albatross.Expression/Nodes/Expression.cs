@@ -12,7 +12,7 @@ namespace Albatross.Expression.Nodes {
 			throw new NotImplementedException();
 		}
 
-		public object? Eval(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			throw new NotImplementedException();
 		}
 	}

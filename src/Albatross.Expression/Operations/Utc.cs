@@ -9,11 +9,8 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Utc : PrefixExpression {
 		public Utc() : base("Utc", 1, 1) { }
-		
-		public override object? Eval(Func<string, object> context) {
-			object value = GetRequiredOperandValues(context).First();
-			System.DateTime dateTime = (value as System.DateTime?) ?? System.DateTime.Parse(Convert.ToString(value));
-			return dateTime.ToUniversalTime();
-		}
+
+		public override object Eval(Func<string, object> context)
+			=> this.GetValue(0, context).ConvertToDateTime().ToUniversalTime();
 	}
 }

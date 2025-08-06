@@ -16,16 +16,10 @@ namespace Albatross.Expression.Operations {
 	public class Round : PrefixExpression {
 		public Round() : base("Round", 2, 2) { }
 
-		public override object? Eval(Func<string, object> context) {
-			List<object> list = GetRequiredOperandValues(context);
-			object value = list[0];
-			object digit = list[1];
-
-			if (value is double) {
-				return Math.Round((double)value,Convert.ToInt32(digit), MidpointRounding.AwayFromZero);
-			} else {
-				throw new Exceptions.UnexpectedTypeException(value.GetType());
-			}
+		public override object Eval(Func<string, object> context) {
+			var value = this.GetValue(0, context).ConvertToDouble();
+			var digit = this.GetValue(1, context).ConvertToInt();
+			return Math.Round(value, digit, MidpointRounding.AwayFromZero);
 		}
 	}
 }

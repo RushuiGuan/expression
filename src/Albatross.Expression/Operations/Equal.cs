@@ -13,7 +13,7 @@
 	/// </summary>
 	[ParserOperation]
 	public class Equal : ComparisonInfixOperation {
-		public Equal() : base("Equal", 50) { }
+		public Equal() : base("=", 50) { }
 
 		public override bool Interpret(int comparisonResult) {
 			return comparisonResult == 0;

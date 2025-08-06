@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -13,6 +14,9 @@ namespace Albatross.Expression.Operations {
 		public override object Eval(Func<string, object> context) {
 			var formatText = this.GetRequiredStringValue(1, context);
 			var value= this.GetValue(0, context);
+			if (value is JsonElement element) {
+				value = element.GetJsonValue();
+			}
 			string format = $"{{0:{formatText}}}";
 			return string.Format(format, value);
 		}

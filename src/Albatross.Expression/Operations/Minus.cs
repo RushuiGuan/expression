@@ -7,8 +7,8 @@ namespace Albatross.Expression.Operations {
 		public Minus() : base("-", 100) { }
 
 		public override object Eval(Func<string, object> context) {
-			var a = Left.Eval(context).ConvertToDouble();
-			var b = Right.Eval(context).ConvertToDouble();
+			var a = RequiredLeft.Eval(context).ConvertToDouble();
+			var b = RequiredRight.Eval(context).ConvertToDouble();
 			return a - b;
 		}
 	}

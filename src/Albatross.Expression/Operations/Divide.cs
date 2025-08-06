@@ -19,10 +19,10 @@ namespace Albatross.Expression.Operations {
 		public Divide() : base("/", 200) { }
 
 		public override object Eval(Func<string, object> context) {
-			var a = Left.Eval(context);
-			var b = Right.Eval(context);
-			
-			return a.ConvertToDouble() / b.ConvertToDouble();
+			var a = RequiredLeft.Eval(context).ConvertToDouble();
+			var b = RequiredRight.Eval(context).ConvertToDouble();
+
+			return a / b;
 		}
 	}
 }

@@ -3,10 +3,10 @@ using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
-	public class Lower : PrefixExpression {
-		public Lower() : base("Lower", 1, 1) { }
+	public class Number : PrefixExpression {
+		public Number() : base("Number", 1, 1) { }
 
 		public override object Eval(Func<string, object> context)
-			=> this.GetStringValue(0, context).ToLowerInvariant();
+			=> this.GetValue(0, context).ConvertToDouble();
 	}
 }

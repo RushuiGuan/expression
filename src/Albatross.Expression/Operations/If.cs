@@ -23,13 +23,12 @@ namespace Albatross.Expression.Operations {
 		public If() : base("If", 3, 3) { }
 
 		public override object Eval(Func<string, object> context) {
-			ValidateOperands();
 			object condition = this.GetValue(0, context);
 
 			if (condition.ConvertToBoolean()) {
-				return Operands[1].Eval(context);
+				return this.GetValue(1, context);
 			} else {
-				return Operands[2].Eval(context);
+				return this.GetValue(2, context);
 			}
 		}
 	}

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using System.Text.RegularExpressions;
-using Albatross.Expression.Exceptions;
 using Albatross.Expression.Nodes;
 
 
@@ -17,13 +15,12 @@ namespace Albatross.Expression.Operations {
 	public class RegexCapture : PrefixExpression {
 		public RegexCapture() : base("RegexCapture", 2, 3) { }
 
-		public override object? Eval(Func<string, object> context) {
-			var operands = GetRequiredOperandValues(context);
-			string text = Convert.ToString(operands[0]);
-			string pattern = Convert.ToString(operands[1]);
+		public override object Eval(Func<string, object> context) {
+			string text = this.GetStringValue(0, context);
+			string pattern = this.GetRequiredStringValue(1, context);
 			int index = 0;
-			if(operands.Count > 2) {
-				index = Convert.ToInt32(operands[2]);
+			if(this.Operands.Count > 2) {
+				index = this.GetValue(2, context).ConvertToInt();
 			}
 			Regex regex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
 			var match = regex.Match(text);
@@ -34,7 +31,7 @@ namespace Albatross.Expression.Operations {
 					throw new ArgumentException($"Regex pattern {pattern} doesn't have a capture group with the index of {index}");
 				}
 			} else {
-				return null;
+				throw new ArgumentException($"Regex pattern {pattern} does not match the input text '{text}'");
 			}
 		}
 	}

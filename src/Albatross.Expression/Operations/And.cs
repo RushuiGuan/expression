@@ -23,12 +23,10 @@ namespace Albatross.Expression.Operations {
 		public And() : base("And", 30) { }
 
 		public override object Eval(Func<string, object> context) {
-			var value = Left.Eval(context);
-			if (!value.ConvertToBoolean()) {
+			if (!RequiredLeft.Eval(context).ConvertToBoolean()) {
 				return false;
 			} else {
-				value = Right.Eval(context);
-				return value.ConvertToBoolean();
+				return RequiredRight.Eval(context).ConvertToBoolean();
 			}
 		}
 	}

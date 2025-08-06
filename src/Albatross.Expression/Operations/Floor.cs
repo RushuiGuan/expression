@@ -10,8 +10,7 @@ namespace Albatross.Expression.Operations {
 		public Floor() : base("Floor", 1, 1) { }
 
 		public override object Eval(Func<string, object> context) {
-			var obj = this.GetValue(0, context);
-			var value = obj.ConvertToDouble();
+			var value = this.GetValue(0, context).ConvertToDouble();
 			return Math.Floor(value);
 		}
 	}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Albatross.Expression.Exceptions;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -7,23 +8,24 @@ namespace Albatross.Expression.Operations {
 		protected ComparisonInfixOperation(string operatorSymbol, int precedence) : base(operatorSymbol, precedence) { }
 
 		public override object Eval(Func<string, object> context) {
-			var a = Left.Eval(context);
-			var b = Right.Eval(context);
-			Type type = a.GetType();
-			if (type != b.GetType()) {
-				throw new Exceptions.UnexpectedTypeException(type, b.GetType());
+			var a = RequiredLeft.Eval(context);
+			var b = RequiredRight.Eval(context);
+			var leftType = a.GetType();
+			var rightType = b.GetType();
+			if (leftType != rightType) {
+				throw new OperandException($"Infix expression '{this.Operator}' has mixed types ({leftType.Name}, {rightType.Name}) between its left and right operands");
 			}
 			int result = 0;
-			if (type == typeof(double)) {
+			if (leftType == typeof(double)) {
 				result = Comparer<double>.Default.Compare((double)a, (double)b);
-			} else if (type == typeof(System.DateTime)) {
+			} else if (leftType == typeof(DateTime)) {
 				result = Comparer<System.DateTime>.Default.Compare((System.DateTime)a, (System.DateTime)b);
-			} else if (type == typeof(String)) {
+			} else if (leftType == typeof(string)) {
 				result = Comparer<string>.Default.Compare((String)a, (String)b);
-			} else if (type == typeof(bool)) {
+			} else if (leftType == typeof(bool)) {
 				result = Comparer<bool>.Default.Compare((bool)a, (bool)b);
 			} else {
-				throw new NotSupportedException();
+				throw new OperandException($"Infix expression '{this.Operator}' does not support comparison for type {leftType.Name}");
 			}
 			return Interpret(result);
 		}

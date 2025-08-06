@@ -11,6 +11,11 @@ namespace Albatross.Expression.Nodes {
 			return expression.Operands[index].Eval(context);
 		}
 
+		public static string GetStringValue(this PrefixExpression expression, int index, Func<string, object> context) {
+			var value = expression.GetValue(index, context);
+			return $"{value}";
+		}
+
 		public static string GetRequiredStringValue(this PrefixExpression expression, int index, Func<string, object> context) {
 			var value = expression.GetValue(index, context);
 			string result = $"{value}".Trim();

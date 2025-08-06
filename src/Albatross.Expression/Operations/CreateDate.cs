@@ -22,10 +22,10 @@ namespace Albatross.Expression.Operations {
 		public CreateDate() : base("CreateDate", 3, 3) { }
 		
 		public override object Eval(Func<string, object> context) {
-			var year = this.GetValue(0, context);
-			var month = this.GetValue(1, context);
-			var day = this.GetValue(2, context);
-			return new System.DateTime(year.ConvertToInt(), month.ConvertToInt(), day.ConvertToInt());
+			var year = this.GetValue(0, context).ConvertToInt();
+			var month = this.GetValue(1, context).ConvertToInt();
+			var day = this.GetValue(2, context).ConvertToInt();
+			return new System.DateTime(year, month, day);
 		}
 	}
 }

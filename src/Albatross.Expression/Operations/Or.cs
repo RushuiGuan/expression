@@ -22,11 +22,11 @@ namespace Albatross.Expression.Operations {
 	public class Or : InfixExpression {
 		public Or() : base("Or", 20) { }
 
-		public override object? Eval(Func<string, object> context) {
-			if (Left.Eval(context).ConvertToBoolean()) {
+		public override object Eval(Func<string, object> context) {
+			if (RequiredLeft.Eval(context).ConvertToBoolean()) {
 				return true;
 			} else {
-				return Right.Eval(context).ConvertToBoolean();
+				return RequiredRight.Eval(context).ConvertToBoolean();
 			}
 		}
 	}

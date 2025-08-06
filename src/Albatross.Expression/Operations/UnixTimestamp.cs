@@ -20,10 +20,9 @@ namespace Albatross.Expression.Operations {
 	public class UnixTimestamp : PrefixExpression {
 		public UnixTimestamp() : base("UnixTimestamp", 1, 1) { }
 		
-		public override object? Eval(Func<string, object> context) {
-			object value = GetRequiredOperandValues(context).First();
-			System.DateTime dateTime = (value as System.DateTime?) ?? System.DateTime.Parse(Convert.ToString(value));
-			return new DateTimeOffset(dateTime).ToUnixTimeSeconds();
+		public override object Eval(Func<string, object> context) {
+			var value = this.GetValue(0, context).ConvertToDateTime();
+			return Convert.ToDouble(new DateTimeOffset(value).ToUnixTimeSeconds());
 		}
 	}
 }

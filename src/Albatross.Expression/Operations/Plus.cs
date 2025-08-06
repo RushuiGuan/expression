@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Nodes;
-using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -22,21 +18,10 @@ namespace Albatross.Expression.Operations {
 	public class Plus : InfixExpression {
 		public Plus() : base("+", 100) { }
 
-		public override object? Eval(Func<string, object> context) {
-			var a = Left.Eval(context);
-			var b = Right.Eval(context);
-
-			if (a == null || b == null) { return null; }
-			
-			if (a is double aa && b is double bb) {
-				return aa + bb;
-			}else if(a is System.DateTime dateTime && b is double days){
-				return dateTime.AddDays(days);
-			}else if(a is string || b is string){
-				return $"{a}{b}";
-			} else {
-				throw new Exceptions.UnexpectedTypeException(a.GetType());
-			}
+		public override object Eval(Func<string, object> context) {
+			var a = RequiredLeft.Eval(context).ConvertToDouble();
+			var b = RequiredRight.Eval(context).ConvertToDouble();
+			return a + b;
 		}
 	}
 }

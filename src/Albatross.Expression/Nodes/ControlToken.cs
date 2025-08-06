@@ -2,7 +2,7 @@
 
 namespace Albatross.Expression.Nodes {
 	public record class ControlToken : INode {
-		public ControlToken(string value) { Value = value; }
+		public ControlToken(char value) { Value = value.ToString(); }
 		public string Value { get; }
 		public string Text() => Value;
 	}

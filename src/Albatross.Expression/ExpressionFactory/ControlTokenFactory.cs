@@ -3,20 +3,20 @@ using System;
 
 namespace Albatross.Expression.ExpressionFactory {
 	public class ControlTokenFactory : IExpressionFactory<ControlToken> {
-		public const string LeftParenthesisText = "(";
-		public const string RightParenthesisText = ")";
-		public const string CommaText = ",";
-		public const string FuncParamStartText = "$"; // special symbol that mark the beginning of the function parameters
+		public const char LeftParenthesisChar = '(';
+		public const char RightParenthesisChar = ')';
+		public const char CommaChar = ',';
+		public const char FuncParamStartChar = '$'; // special symbol that mark the beginning of the function parameters
 
-		public static readonly ControlTokenFactory LeftParenthesis = new(LeftParenthesisText);
-		public static readonly ControlTokenFactory RightParenthesis = new(RightParenthesisText);
-		public static readonly ControlTokenFactory Comma = new(CommaText);
-		public static readonly ControlTokenFactory FuncParamStart = new(FuncParamStartText);
+		public static readonly ControlTokenFactory LeftParenthesis = new(LeftParenthesisChar);
+		public static readonly ControlTokenFactory RightParenthesis = new(RightParenthesisChar);
+		public static readonly ControlTokenFactory Comma = new(CommaChar);
+		public static readonly ControlTokenFactory FuncParamStart = new(FuncParamStartChar);
 
 
-		public ControlTokenFactory(string tokenText) {
-			TokenText = tokenText;
-			Token = new ControlToken(tokenText);
+		public ControlTokenFactory(char tokenChar) {
+			TokenText = tokenChar.ToString();
+			Token = new ControlToken(tokenChar);
 		}
 
 		public string TokenText { get; }

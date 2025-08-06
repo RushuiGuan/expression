@@ -1,5 +1,4 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
 using System;
 using System.Collections.Generic;
 
@@ -8,13 +7,13 @@ namespace Albatross.Expression {
 		Value = 0, Expression = 1, 
 	}
 	public class ContextValue {
-		public ContextValue(string name, object? value) {
+		public ContextValue(string name, object value) {
 			Name = name;
 			Value = value;
 		}
 
 		public string Name { get; }
-		public object? Value { get; }
+		public object Value { get; }
 		public ContextType ContextType { get; set; } = ContextType.Expression;
 		public bool External { get; set; }
 

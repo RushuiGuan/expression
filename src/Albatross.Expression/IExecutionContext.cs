@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression {
-	public delegate bool TryGetValueDelegate<T>(string name, T input, out object? value);
+	public delegate bool TryGetValueDelegate<T>(string name, T input, [NotNullWhen(true)] out object? value);
 
 	public interface IExecutionContext<T> :IEnumerable<ContextValue> {
 		bool CaseSensitive { get; }

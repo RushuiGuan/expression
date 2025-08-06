@@ -27,7 +27,7 @@ namespace Albatross.Expression.ExpressionFactory {
 						var c = text[i];
 						if (char.IsWhiteSpace(c)) {
 							continue;
-						} else if (c == Token.LeftParenthesis) {
+						} else if (c == ControlTokenFactory.LeftParenthesisChar) {
 							next = start + name.Length;
 							return func();
 						} else {

@@ -17,8 +17,8 @@ namespace Albatross.Expression.Operations {
 	public class DateTimeExpression : PrefixExpression {
 		public DateTimeExpression() : base("DateTime", 1, 1) { }
 
-		public override object? Eval(Func<string, object> context) {
-			var value = this.GetRequiredValue(0, context);
+		public override object Eval(Func<string, object> context) {
+			var value = this.GetValue(0, context);
 			if (value is System.DateTime) {
 				return value;
 			}else if(value is DateOnly date){

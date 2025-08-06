@@ -168,8 +168,8 @@ namespace Albatross.Expression {
 					stack.Push(token);
 				} else if (token is InfixExpression) {
 					InfixExpression infixOp = (InfixExpression)token;
-					infixOp.Operand2 = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand1");
-					infixOp.Operand1 = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand2");
+					infixOp.Right = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand1");
+					infixOp.Left = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand2");
 					stack.Push(infixOp);
 				} else if (token is PrefixExpression prefixOp) {
 					for (INode t = stack.Pop(); t.IsFuncParamStart(false); t = stack.Pop()) {

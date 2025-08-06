@@ -10,7 +10,7 @@ namespace Albatross.Expression.Operations {
 	public class NotEqual : ComparisonInfixOperation {
 		public NotEqual() : base("<>", 100) { }
 
-		public override bool interpret(int comparisonResult) {
+		public override bool Interpret(int comparisonResult) {
 			return comparisonResult != 0;
 		}
 	}

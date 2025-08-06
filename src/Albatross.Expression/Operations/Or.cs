@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Nodes;
-using System.Xml;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -25,14 +21,12 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Or : InfixExpression {
 		public Or() : base("Or", 20) { }
-		
+
 		public override object? Eval(Func<string, object> context) {
-			object value = Operand1.Eval(context);
-			if (value.ConvertToBoolean()) {
+			if (Left.Eval(context).ConvertToBoolean()) {
 				return true;
 			} else {
-				value = Operand2.Eval(context);
-				return value.ConvertToBoolean();
+				return Right.Eval(context).ConvertToBoolean();
 			}
 		}
 	}

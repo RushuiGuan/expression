@@ -42,24 +42,21 @@ namespace Albatross.Expression.Nodes {
 		public Variable(string name) {
 			this.Name = name;
 		}
+
 		public string Name { get; }
 		public string Text() => Name;
-		public object? Eval(Func<string, object>? context) {
-			if (context != null){
-				var value = context(Name);
-				if (value is int || value is float || value is long || value is short || value is uint || value is decimal || value is ushort || value is ulong) {
-					value = Convert.ToDouble(value);
-				}else if(value is JsonElement) {
-					value = ((JsonElement)value).GetJsonValue();
-				}
-				return value;
-			} else {
-				return null;
-				//throw new VariableNotFoundException(Name);
+
+		public object? Eval(Func<string, object> context) {
+			var value = context(Name);
+			if (value is int || value is float || value is long || value is short || value is uint || value is decimal || value is ushort || value is ulong) {
+				value = Convert.ToDouble(value);
+			} else if (value is JsonElement jsonElement) {
+				value = jsonElement.GetJsonValue();
 			}
+			return value;
 		}
 	}
-	
+
 	public class VariableFactory : IExpressionFactory<Variable> {
 		private readonly bool caseSensitive;
 
@@ -67,15 +64,16 @@ namespace Albatross.Expression.Nodes {
 		const string VariableNamePattern = @"^\s*([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)?) \b (?!\s*\() ";
 		static readonly Regex caseSensitiveVariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
 		static readonly Regex caseInsensitiveVariableNameRegex = new Regex(VariableNamePattern, RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace | RegexOptions.IgnoreCase);
-		
+
 		public VariableFactory(bool caseSensitive) {
 			this.caseSensitive = caseSensitive;
 		}
-		
+
 		public Variable? Parse(string expression, int start, out int next) {
 			next = expression.Length;
 			if (start < expression.Length) {
-				Match match = this.caseSensitive ? caseSensitiveVariableNameRegex.Match(expression.Substring(start))
+				Match match = this.caseSensitive
+					? caseSensitiveVariableNameRegex.Match(expression.Substring(start))
 					: caseInsensitiveVariableNameRegex.Match(expression.Substring(start));
 				if (match.Success) {
 					var node = new Variable(match.Groups[1].Value);

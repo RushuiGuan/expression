@@ -19,16 +19,9 @@ namespace Albatross.Expression.Operations {
 		public Multiply() : base("*", 200) { }
 
 		public override object? Eval(Func<string, object> context) {
-			object a = Operand1.Eval(context);
-			object b = Operand2.Eval(context);
-
-			if (a == null || b == null) { return null; }
-
-			if (a is double && b is double){
-				return (double)a * (double)b;
-			} else {
-				throw new FormatException();
-			}
+			var a = Left.Eval(context).ConvertToDouble();
+			var b = Right.Eval(context).ConvertToDouble();
+			return a * b;
 		}
 	}
 }

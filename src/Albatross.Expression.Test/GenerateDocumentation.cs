@@ -92,8 +92,8 @@ namespace Albatross.Expression.Test
 			writer.WriteLine("* `{0}`", token.Name);
 			level++;
 			if (token is InfixExpression) {
-				PrintToken(writer, ((InfixExpression)token).Operand1, level);
-				PrintToken(writer, ((InfixExpression)token).Operand2, level);
+				PrintToken(writer, ((InfixExpression)token).Left, level);
+				PrintToken(writer, ((InfixExpression)token).Right, level);
 			} else if (token is PrefixExpression) {
 				foreach (var child in ((PrefixExpression)token).Operands) {
 					PrintToken(writer, child, level);

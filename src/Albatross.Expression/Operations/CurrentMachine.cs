@@ -11,7 +11,7 @@ namespace Albatross.Expression.Operations {
 	public class CurrentMachine : PrefixExpression {
 		public CurrentMachine() : base("CurrentMachine", 0, 0) { }
 
-		public override object? Eval(Func<string, object> context) {
+		public override object Eval(Func<string, object> context) {
 			return System.Net.Dns.GetHostName();
 		}
 	}

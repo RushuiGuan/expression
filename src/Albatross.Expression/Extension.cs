@@ -1,54 +1,27 @@
-﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
-using System.Xml.Linq;
 
 namespace Albatross.Expression {
 	public static class Extensions {
-		public static object? GetValue(this PrefixExpression expression, int index, Func<string, object> context) {
-			if(index > expression.Operands.Count - 1) {
-				throw new OperandException($"prefix expression {expression.Name} is missing operand at position {index}");
-			}
-			return expression.Operands[index].Eval(context);
-		}
-
-		public static object GetRequiredValue(this PrefixExpression expression, int index, Func<string, object> context) {
-			return expression.GetValue(index, context) ?? throw new OperandException($"prefix expression {expression.Name} is missing required operand at position {index}");
-		}
-
-		public static string GetRequiredStringValue(this PrefixExpression expression, int index, Func<string, object> context) {
-			var value = expression.GetValue(index, context);
-			string result = $"{value}".Trim();
-			if (result == string.Empty) {
-				throw new OperandException($"prefix expression {expression.Name} is missing required string operand at position {index}");
-			} else {
-				return result;
-			}
-		}
-
-		public static List<Object?> GetOperandValues(this PrefixExpression expression, Func<string, object> context) {
-			var list = new List<object?>();
-			foreach (var token in expression.Operands) {
-				var value = token.Eval(context);
-				list.Add(value);
-			}
-			return list;
-		}
-
 		public static bool ConvertToBoolean(this object? obj) {
-			if (obj != null) {
-				if (obj is double d) {
-					return d != 0;
-				} else if (obj is bool b) {
-					return b;
-				} else {
-					return true;
-				}
-			} else {
+			if (obj == null) {
 				return false;
+			} else if (obj is double d) {
+				return d != 0;
+			} else if (obj is bool b) {
+				return b;
+			} else if (obj is string text && bool.TryParse(text, out b)) {
+				return b;
+			} else if (obj is JsonElement json) {
+				if (json.ValueKind == JsonValueKind.True) {
+					return true;
+				} else if (json.ValueKind == JsonValueKind.False) {
+					return false;
+				}
 			}
+			throw new FormatException($"Cannot convert {obj} to boolean");
 		}
 
 		public static double ConvertToDouble(this object obj) {
@@ -58,19 +31,45 @@ namespace Albatross.Expression {
 				if (double.TryParse(text, out d)) {
 					return d;
 				}
+			} else if (obj is JsonElement json && json.ValueKind == JsonValueKind.Number) {
+				return json.GetDouble();
 			}
 			throw new FormatException($"Cannot convert {obj} to double");
 		}
 
-		public static int ConvertToInt(this object obj) {
-			if (obj is int value) {
+		public static DateTime ConvertToDateTime(this object obj) {
+			if (obj is DateTime value) {
 				return value;
-			} else if (obj is string text) {
-				if (int.TryParse(text, out value)) {
+			} else if (obj is DateOnly dateOnly) {
+				return dateOnly.ToDateTime(TimeOnly.MinValue);
+			} else if (obj is string text && DateTime.TryParse(text, out value)) {
+				return value;
+			} else if (obj is JsonElement json && json.ValueKind == JsonValueKind.String) {
+				if (DateTime.TryParse(json.GetString(), out value)) {
 					return value;
 				}
 			}
+			throw new FormatException($"Cannot convert {obj} to DateTime");
+		}
+
+		public static int ConvertToInt(this object obj) {
+			if (obj is double d) {
+				return (int)Math.Round(d, 0, MidpointRounding.AwayFromZero);
+			} else if (obj is string text && int.TryParse(text, out var value)) {
+				return value;
+			} else if (obj is JsonElement json && json.ValueKind == JsonValueKind.Number) {
+				return json.GetInt32();
+			}
 			throw new FormatException($"Cannot convert {obj} to int");
+		}
+
+		public static JsonElement ConvertToJsonElement(this object obj) {
+			if (obj is JsonElement elem) {
+				return elem;
+			} else if (obj is string text) {
+				return JsonDocument.Parse(text).RootElement;
+			}
+			throw new FormatException($"Cannot convert {obj} to JsonElement");
 		}
 
 		public static object? GetJsonValue(this JsonElement elem) {
@@ -131,10 +130,6 @@ namespace Albatross.Expression {
 		#endregion
 
 		#region IToken
-
-		public static bool IsVariable(this INode token) {
-			return token is IVariable;
-		}
 
 		/// <summary>
 		/// Move find the next index that is not a space.  This method doesn't perform check of the starting index in any way.

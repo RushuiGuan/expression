@@ -33,13 +33,16 @@ namespace Albatross.Expression.Nodes {
 			return sb.ToString();
 		}
 
-		public virtual object? Eval(Func<string, object> context) {
+		public virtual object Eval(Func<string, object> context) {
 			throw new NotSupportedException();
 		}
 
 		protected void ValidateOperands() {
-			if (Operands.Count() < MinOperandCount || Operands.Count() > MaxOperandCount) {
-				throw new OperandException(Name);
+			if (Operands.Count < MinOperandCount) {
+				throw new OperandException($"Prefix operation '{Name}' requires at least {MinOperandCount} operands, but received {Operands.Count}.");
+			}
+			if (Operands.Count > MaxOperandCount) {
+				throw new OperandException($"Prefix operation '{Name}' allows at most {MaxOperandCount} operands, but received {Operands.Count}.");
 			}
 		}
 

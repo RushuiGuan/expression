@@ -62,7 +62,7 @@ namespace Albatross.Expression.Sample {
 		/// </summary>
 		[TestCase("max(-1, -2, -3)", ExpectedResult = 3)]
 		public object TestAbsoluteMaxOperation(string expression) {
-			Factory factory = new Factory().Replace<Max, AbsoluteMax>();
+			Factory factory = new Factory().Replace<MaxNumber, AbsoluteMax>();
 			return factory.Create().Compile(expression).Eval(null);
 		}
 	}

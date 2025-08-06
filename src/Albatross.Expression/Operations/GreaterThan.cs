@@ -1,6 +1,4 @@
-﻿using Albatross.Expression.Nodes;
-using System.Text.RegularExpressions;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -22,25 +20,8 @@ namespace Albatross.Expression.Operations {
 	public class GreaterThan : ComparisonInfixOperation {
 		public GreaterThan() : base(">", 50) { }
 
-		public override bool interpret(int comparisonResult) {
+		public override bool Interpret(int comparisonResult) {
 			return comparisonResult > 0;
-		}
-	}
-
-	public class GreaterThanExpressionFactory : IExpressionFactory<GreaterThan> {
-		const string Pattern = @"^\s*(\>)(?!=)";
-		static Regex regex = new Regex(Pattern, RegexOptions.Compiled | RegexOptions.Singleline);
-
-		public GreaterThan? Parse(string text, int start, out int next) {
-			next = text.Length;
-			if (start < text.Length) {
-				Match match = regex.Match(text.Substring(start));
-				if (match.Success) {
-					next = start + match.Value.Length;
-					return new GreaterThan();
-				}
-			}
-			return null;
 		}
 	}
 }

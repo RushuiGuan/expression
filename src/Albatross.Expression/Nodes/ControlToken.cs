@@ -19,15 +19,15 @@ namespace Albatross.Expression.Nodes {
 	}
 
 	public class ControlTokenFactory : IExpressionFactory<ControlToken> {
-		public const string LeftParenthesis_Text = "(";
-		public const string RightParenthesis_Text = ")";
-		public const string Comma_Text = ",";
-		public const string FuncParamStart_Text = "$"; // special symbol that mark the beginning of the function parameters
+		public const string LeftParenthesisText = "(";
+		public const string RightParenthesisText = ")";
+		public const string CommaText = ",";
+		public const string FuncParamStartText = "$"; // special symbol that mark the beginning of the function parameters
 
-		public static readonly ControlTokenFactory LeftParenthesis = new(LeftParenthesis_Text);
-		public static readonly ControlTokenFactory RightParenthesis = new(RightParenthesis_Text);
-		public static readonly ControlTokenFactory Comma = new(Comma_Text);
-		public static readonly ControlTokenFactory FuncParamStart = new(FuncParamStart_Text);
+		public static readonly ControlTokenFactory LeftParenthesis = new(LeftParenthesisText);
+		public static readonly ControlTokenFactory RightParenthesis = new(RightParenthesisText);
+		public static readonly ControlTokenFactory Comma = new(CommaText);
+		public static readonly ControlTokenFactory FuncParamStart = new(FuncParamStartText);
 
 
 		public ControlTokenFactory(string tokenText) {

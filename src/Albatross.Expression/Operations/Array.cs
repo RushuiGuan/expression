@@ -13,8 +13,8 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Array : PrefixExpression {
 		public Array() : base("@", 0, int.MaxValue) { }
-		public override object? Eval(Func<string, object> context) {
-			return this.GetOperandValues(context);
+		public override object Eval(Func<string, object> context) {
+			return this.GetValues(context);
 		}
 	}
 }

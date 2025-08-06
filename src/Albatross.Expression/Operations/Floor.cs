@@ -9,14 +9,10 @@ namespace Albatross.Expression.Operations {
 	public class Floor : PrefixExpression {
 		public Floor() : base("Floor", 1, 1) { }
 
-		public override object? Eval(Func<string, object> context) {
+		public override object Eval(Func<string, object> context) {
 			var obj = this.GetValue(0, context);
-			if (obj == null) {
-				return null;
-			} else {
-				var value = obj.ConvertToDouble();
-				return Math.Floor(value);
-			}
+			var value = obj.ConvertToDouble();
+			return Math.Floor(value);
 		}
 	}
 }

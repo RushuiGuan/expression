@@ -7,8 +7,7 @@ namespace Albatross.Expression.Nodes {
 		public Expression(string text) {
 			this.text = text;
 		}
-		
-		
+
 		public string Text() {
 			throw new NotImplementedException();
 		}

@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Albatross.Expression.Exceptions;
+using System;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -20,27 +20,13 @@ namespace Albatross.Expression.Operations {
 	public class Left : PrefixExpression {
 		public Left() : base("Left", 2, 2) { }
 
-		public override object? Eval(Func<string, object> context) {
-			int count;
-			List<object> list = GetRequiredOperandValues(context);
-			object value = list[1];
-
-			if (value == null) { return list[0]; }
-
-			if (value is double) {
-				count = (int)Math.Round((double)value, 0);
-			} else {
-				throw new Exceptions.UnexpectedTypeException(value.GetType());
-			}
+		public override object Eval(Func<string, object> context) {
+			var text = this.GetRequiredStringValue(0, context);
+			var count = this.GetValue(1, context).ConvertToInt();
 			if (count < 0) {
-				throw new Exceptions.OperandException("Left function expects a positive number for the second operand");
+				throw new OperandException("Left operation expects a positive number for the count parameter");
 			}
-			string text = Convert.ToString(list[0]);
-			if (count > text.Length) {
-				return text;
-			} else {
-				return text.Substring(0, count);
-			}
+			return text.Substring(0, count);
 		}
 	}
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -8,8 +7,8 @@ namespace Albatross.Expression.Operations {
 		public Text() : base("Text", 1, 1) { }
 
 		public override object? Eval(Func<string, object> context) {
-			object value = GetRequiredOperandValues(context).First();
-			return Convert.ToString(value);
+			var value = this.GetValue(0, context);
+			return $"{value}";
 		}
 	}
 }

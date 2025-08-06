@@ -10,7 +10,7 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class CurrentApp : PrefixExpression {
 		public CurrentApp() : base("CurrentApp", 0, 0) { }
-		public override object? Eval(Func<string, object> context) {
+		public override object Eval(Func<string, object> context) {
 			return AppDomain.CurrentDomain.FriendlyName;
 		}
 	}

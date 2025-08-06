@@ -15,7 +15,7 @@
 	public class Equal : ComparisonInfixOperation {
 		public Equal() : base("Equal", 50) { }
 
-		public override bool interpret(int comparisonResult) {
+		public override bool Interpret(int comparisonResult) {
 			return comparisonResult == 0;
 		}
 	}

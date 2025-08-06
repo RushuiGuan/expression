@@ -14,14 +14,14 @@ namespace Albatross.Expression.Nodes {
 		public string Text() => Value;
 
 		public object Eval(Func<string, object> context) {
-			double d;
-			if (double.TryParse(Value, out d)) {
+			if (double.TryParse(Value, out var d)) {
 				return d;
 			} else {
 				throw new FormatException($"Invalid numeric format: {Value}");
 			}
 		}
 	}
+	// TODO: support culture specific number formats
 	public class NumericLiteralFactory : IExpressionFactory<NumericLiteral> {
 		const string NumericPattern = @"^\s*([0-9]*\.?[0-9]+)";
 		static readonly Regex numericPatternRegex = new Regex(NumericPattern, 

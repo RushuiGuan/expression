@@ -6,12 +6,9 @@ namespace Albatross.Expression.Operations {
 	public abstract class ComparisonInfixOperation : InfixExpression {
 		protected ComparisonInfixOperation(string operatorSymbol, int precedence) : base(operatorSymbol, precedence) { }
 
-		public override object? Eval(Func<string, object> context) {
-			var a = Operand1.Eval(context);
-			var b = Operand2.Eval(context);
-			if (a == null || b == null) {
-				return false;
-			}
+		public override object Eval(Func<string, object> context) {
+			var a = Left.Eval(context);
+			var b = Right.Eval(context);
 			Type type = a.GetType();
 			if (type != b.GetType()) {
 				throw new Exceptions.UnexpectedTypeException(type, b.GetType());
@@ -28,9 +25,9 @@ namespace Albatross.Expression.Operations {
 			} else {
 				throw new NotSupportedException();
 			}
-			return interpret(result);
+			return Interpret(result);
 		}
 
-		public abstract bool interpret(int comparisonResult);
+		public abstract bool Interpret(int comparisonResult);
 	}
 }

@@ -10,7 +10,7 @@ namespace Albatross.Expression.Operations {
 	public class Format : PrefixExpression {
 		public Format() : base("Format", 2, 2) { }
 		
-		public override object? Eval(Func<string, object> context) {
+		public override object Eval(Func<string, object> context) {
 			var formatText = this.GetRequiredStringValue(1, context);
 			var value= this.GetValue(0, context);
 			string format = $"{{0:{formatText}}}";

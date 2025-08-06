@@ -16,6 +16,7 @@
 		<LangVersion>Latest</LangVersion>
 	</PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="Albatross.Dates" Version="7.5.12" />
 		<PackageReference Include="System.Text.Json" Version="8.0.6" />
 	</ItemGroup>
 	<ItemGroup>

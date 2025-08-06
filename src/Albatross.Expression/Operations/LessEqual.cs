@@ -3,7 +3,7 @@
 	public class LessEqual : ComparisonInfixOperation {
 		public LessEqual() : base("<=", 50) { }
 
-		public override bool interpret(int comparisonResult) {
+		public override bool Interpret(int comparisonResult) {
 			return comparisonResult <= 0;
 		}
 	}

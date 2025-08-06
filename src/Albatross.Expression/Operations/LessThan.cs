@@ -7,7 +7,7 @@ namespace Albatross.Expression.Operations {
 	public class LessThan : ComparisonInfixOperation {
 		public LessThan() : base("<", 50) { }
 
-		public override bool interpret(int comparisonResult) {
+		public override bool Interpret(int comparisonResult) {
 			return comparisonResult < 0;
 		}
 	}

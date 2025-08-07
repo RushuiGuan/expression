@@ -1,5 +1,6 @@
 ﻿using System;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -9,8 +10,8 @@ namespace Albatross.Expression.Operations {
 	public class Floor : PrefixExpression {
 		public Floor() : base("Floor", 1, 1) { }
 
-		public override object Eval(Func<string, object> context) {
-			var value = this.GetValue(0, context).ConvertToDouble();
+		public override object Run(List<object> operands) {
+			var value = operands[0].ConvertToDouble();
 			return Math.Floor(value);
 		}
 	}

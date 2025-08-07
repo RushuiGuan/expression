@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	/// <summary>
@@ -42,5 +43,6 @@ namespace Albatross.Expression.Nodes {
 		public string Name { get; }
 		public string Text() => Name;
 		public object Eval(Func<string, object> context) => context(Name);
+		public Task<object> EvalAsync(Func<string, Task<object>> context) => context(this.Name);
 	}
 }

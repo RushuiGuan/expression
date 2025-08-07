@@ -1,5 +1,6 @@
 ﻿using System;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -10,8 +11,7 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class CurrentApp : PrefixExpression {
 		public CurrentApp() : base("CurrentApp", 0, 0) { }
-		public override object Eval(Func<string, object> context) {
-			return AppDomain.CurrentDomain.FriendlyName;
-		}
+
+		public override object Run(List<object> operands) => AppDomain.CurrentDomain.FriendlyName;
 	}
 }

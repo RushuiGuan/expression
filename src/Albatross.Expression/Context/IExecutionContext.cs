@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Albatross.Expression {
+namespace Albatross.Expression.Context {
 	public delegate bool TryGetValueDelegate<in T>(string name, T input, [NotNullWhen(true)] out object? value);
 
 	public interface IExecutionContext<in T> {
@@ -10,7 +10,7 @@ namespace Albatross.Expression {
 		void Clear();
 		object GetValue(string name, T input);
 		bool TryGetValue(string name, T input, out object? data);
-		void Set(ContextValue value);
+		void Set(IContextValue value);
 		void Build();
 	}
 }

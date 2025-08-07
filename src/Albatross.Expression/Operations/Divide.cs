@@ -18,11 +18,7 @@ namespace Albatross.Expression.Operations {
 	public class Divide : InfixExpression {
 		public Divide() : base("/", 200) { }
 
-		public override object Eval(Func<string, object> context) {
-			var a = RequiredLeft.Eval(context).ConvertToDouble();
-			var b = RequiredRight.Eval(context).ConvertToDouble();
-
-			return a / b;
-		}
+		public override object Run(object left, object right)
+			=> left.ConvertToDouble() / right.ConvertToDouble();
 	}
 }

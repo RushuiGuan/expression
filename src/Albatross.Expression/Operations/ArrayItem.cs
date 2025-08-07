@@ -12,9 +12,9 @@ namespace Albatross.Expression.Operations {
 	public class ArrayItem : PrefixExpression {
 		public ArrayItem() : base("ArrayItem", 2, 2) { }
 
-		public override object Eval(Func<string, object> context) {
-			var values = this.GetValue(0, context);
-			var index = this.GetValue(1, context).ConvertToInt();
+		public override object Run(List<object> operands) {
+			var values = operands[0];
+			var	index = operands[1].ConvertToInt();
 			if (values is List<object> list) {
 				if (index >= list.Count) {
 					throw new ArgumentException($"Index {index} is out of bound for the array of {list.Count} elements");

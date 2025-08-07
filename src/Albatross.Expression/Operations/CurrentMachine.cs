@@ -1,5 +1,5 @@
-﻿using System;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -11,8 +11,6 @@ namespace Albatross.Expression.Operations {
 	public class CurrentMachine : PrefixExpression {
 		public CurrentMachine() : base("CurrentMachine", 0, 0) { }
 
-		public override object Eval(Func<string, object> context) {
-			return System.Net.Dns.GetHostName();
-		}
+		public override object Run(List<object> operands) => System.Net.Dns.GetHostName();
 	}
 }

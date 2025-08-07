@@ -1,5 +1,6 @@
 ﻿using System;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 
 namespace Albatross.Expression.Operations {
@@ -13,8 +14,6 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Array : PrefixExpression {
 		public Array() : base("@", 0, int.MaxValue) { }
-		public override object Eval(Func<string, object> context) {
-			return this.GetValues(context);
-		}
+		public override object Run(List<object> operands) => operands;
 	}
 }

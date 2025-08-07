@@ -1,5 +1,5 @@
-﻿using System;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -17,7 +17,6 @@ namespace Albatross.Expression.Operations {
 	public class DateTimeExpression : PrefixExpression {
 		public DateTimeExpression() : base("DateTime", 1, 1) { }
 
-		public override object Eval(Func<string, object> context)
-			=> this.GetValue(0, context).ConvertToDateTime();
+		public override object Run(List<object> operands) => operands[0].ConvertToDateTime();
 	}
 }

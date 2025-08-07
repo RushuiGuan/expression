@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Exceptions;
 using Albatross.Expression.ExpressionFactory;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	public class PrefixExpression : IExpression {
@@ -34,6 +35,18 @@ namespace Albatross.Expression.Nodes {
 		}
 
 		public virtual object Eval(Func<string, object> context) {
+			ValidateOperands();
+			var values = this.GetValues(context);
+			return Run(values);
+		}
+
+		public virtual async Task<object> EvalAsync(Func<string, Task<object>> context) {
+			ValidateOperands();
+			var values = await this.GetValuesAsync(context);
+			return Run(values);
+		}
+
+		public virtual object Run(List<object> operands) {
 			throw new NotSupportedException();
 		}
 
@@ -44,16 +57,6 @@ namespace Albatross.Expression.Nodes {
 			if (Operands.Count > MaxOperandCount) {
 				throw new OperandException($"Prefix operation '{Name}' allows at most {MaxOperandCount} operands, but received {Operands.Count}.");
 			}
-		}
-		
-		protected List<Object?> GetRequiredOperandValues(Func<string, object> context) {
-			var list = new List<object?>();
-			foreach (var token in Operands) {
-				var value = token.Eval(context);
-				list.Add(value);
-			}
-			if (list.Count < MinOperandCount || list.Count > MaxOperandCount) { throw new OperandException(Name); }
-			return list;
 		}
 	}
 }

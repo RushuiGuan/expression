@@ -1,6 +1,5 @@
-﻿using System;
-using Albatross.Expression.Nodes;
-using System.Collections;
+﻿using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Albatross.Expression.Operations {
@@ -8,9 +7,7 @@ namespace Albatross.Expression.Operations {
 	public class Avg : PrefixExpression {
 		public Avg() : base("Avg", 0, int.MaxValue) { }
 
-		public override object Eval(Func<string, object> context) {
-			if (Operands.Count == 0) { return 0; }
-			var items = this.GetValues(context);
+		public override object Run(List<object> items) {
 			return items.Sum(x => x.ConvertToDouble()) / items.Count;
 		}
 	}

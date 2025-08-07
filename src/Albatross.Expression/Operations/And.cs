@@ -22,11 +22,11 @@ namespace Albatross.Expression.Operations {
 	public class And : InfixExpression {
 		public And() : base("And", 30) { }
 
-		public override object Eval(Func<string, object> context) {
-			if (!RequiredLeft.Eval(context).ConvertToBoolean()) {
+		public override object Run(object left, object right) {
+			if (!left.ConvertToBoolean()) {
 				return false;
 			} else {
-				return RequiredRight.Eval(context).ConvertToBoolean();
+				return right.ConvertToBoolean();
 			}
 		}
 	}

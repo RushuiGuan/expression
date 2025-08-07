@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.Json;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -11,9 +12,10 @@ namespace Albatross.Expression.Operations {
 	public class Format : PrefixExpression {
 		public Format() : base("Format", 2, 2) { }
 		
-		public override object Eval(Func<string, object> context) {
-			var formatText = this.GetRequiredStringValue(1, context);
-			var value= this.GetValue(0, context);
+
+		public override object Run(List<object> operands) {
+			var formatText = operands[1].ConvertToString();
+			var value = operands[0];
 			if (value is JsonElement element) {
 				value = element.GetJsonValue();
 			}

@@ -1,6 +1,7 @@
 ﻿using Albatross.Expression.Exceptions;
 using System;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	public class InfixExpression : IExpression {
@@ -35,7 +36,19 @@ namespace Albatross.Expression.Nodes {
 		}
 
 		public virtual object Eval(Func<string, object> context) {
-			throw new NotSupportedException();
+			var left = RequiredLeft.Eval(context);
+			var right = RequiredRight.Eval(context);
+			return Run(left, right);
+		}
+
+		public async Task<object> EvalAsync(Func<string, Task<object>> context) {
+			var left = await RequiredLeft.EvalAsync(context);
+			var right = await RequiredRight.EvalAsync(context);
+			return Run(left, right);
+		}
+
+		public virtual object Run(object left, object right) {
+			throw new NotSupportedException($"Infix operation '{Operator}' is not implemented.");
 		}
 	}
 }

@@ -1,5 +1,5 @@
-﻿using System;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -21,10 +21,10 @@ namespace Albatross.Expression.Operations {
 	public class CreateDate : PrefixExpression {
 		public CreateDate() : base("CreateDate", 3, 3) { }
 		
-		public override object Eval(Func<string, object> context) {
-			var year = this.GetValue(0, context).ConvertToInt();
-			var month = this.GetValue(1, context).ConvertToInt();
-			var day = this.GetValue(2, context).ConvertToInt();
+		public override object Run(List<object> operands) {
+			var year = operands[0].ConvertToInt();
+			var month = operands[1].ConvertToInt();
+			var day = operands[2].ConvertToInt();
 			return new System.DateTime(year, month, day);
 		}
 	}

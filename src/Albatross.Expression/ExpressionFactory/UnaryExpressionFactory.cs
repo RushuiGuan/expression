@@ -4,11 +4,9 @@ using System;
 namespace Albatross.Expression.ExpressionFactory {
 	public class UnaryExpressionFactory<T> : IExpressionFactory<T> where T : UnaryExpression, new() {
 		private readonly string name;
-		private readonly bool caseSensitive;
 
-		public UnaryExpressionFactory(string name, bool caseSensitive) {
+		public UnaryExpressionFactory(string name) {
 			this.name = name;
-			this.caseSensitive = caseSensitive;
 		}
 
 		public T? Parse(string expression, int start, out int next) {
@@ -17,9 +15,7 @@ namespace Albatross.Expression.ExpressionFactory {
 				while (start < expression.Length && char.IsWhiteSpace(expression[start])) {
 					start++;
 				}
-				var index = caseSensitive 
-					? expression.IndexOf(name, start, StringComparison.Ordinal) 
-					: expression.IndexOf(name, start, StringComparison.InvariantCultureIgnoreCase);
+				var index = expression.IndexOf(name, start, StringComparison.Ordinal); 
 				if (index == start) {
 					next = start + name.Length;
 					return new T();

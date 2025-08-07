@@ -4,16 +4,16 @@ using System.Text;
 
 namespace Albatross.Expression.Nodes {
 	public class UnaryExpression : IExpression {
-		public UnaryExpression(string operatorName) {
-			this.Name = operatorName;
+		public UnaryExpression(string operatorOperator) {
+			this.Operator = operatorOperator;
 		}
-		public string Name { get; }
+		public string Operator { get; }
 		public IExpression? Operand { get; set; }
-		public IExpression RequiredOperand => Operand ?? throw new OperandException($"Unary expression '{this.Name}' is missing its operand");
+		public IExpression RequiredOperand => Operand ?? throw new OperandException($"Unary expression '{this.Operator}' is missing its operand");
 
 		public string Text() {
 			var sb = new StringBuilder();
-			sb.Append(Name).Append(RequiredOperand.Text());
+			sb.Append(Operator).Append(RequiredOperand.Text());
 			return sb.ToString();
 		}
 

@@ -11,7 +11,7 @@ namespace Albatross.Expression.Nodes {
 		public string Value { get; }
 		public string Text() => Value;
 
-		public object Eval(Func<string, object> context) {
+		public object Eval(Func<string, object> _) {
 			if (bool.TryParse(Value, out var value)) {
 				return value;
 			} else {

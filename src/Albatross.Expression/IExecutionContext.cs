@@ -6,9 +6,6 @@ namespace Albatross.Expression {
 	public delegate bool TryGetValueDelegate<T>(string name, T input, [NotNullWhen(true)] out object? value);
 
 	public interface IExecutionContext<T> :IEnumerable<ContextValue> {
-		bool CaseSensitive { get; }
-		bool CacheExternalValue { get; }
-		bool FailWhenMissingVariable { get; }
 		IParser Parser { get; }
 
 		void Clear();

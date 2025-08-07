@@ -1,8 +1,4 @@
-﻿using Albatross.Expression.Operations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression {
@@ -27,15 +23,8 @@ namespace Albatross.Expression {
 		/// </summary>
 		/// <param name="postfix"></param>
 		/// <returns></returns>
-		INode CreateTree(Stack<INode> postfix);
-		/// <summary>
-		/// Provided with a token tree, eval the value of the tree based on the supplied context
-		/// </summary>
-		/// <param name="token"></param>
-		/// <param name="context"></param>
-		/// <returns></returns>
-		object? Eval(IExpression token, Func<string, object> context);
-		
+		IExpression CreateTree(Stack<INode> postfix);
+
 		bool IsValidExpression(string expression);
 	}
 }

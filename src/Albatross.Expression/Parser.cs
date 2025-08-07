@@ -110,8 +110,8 @@ namespace Albatross.Expression {
 				}
 
 				// if it is an operand, put it on the postfix stack
-				if (token is IExpression) {
-					postfix.Push(token);
+				if (token is IExpression expression) {
+					postfix.Push(expression);
 				}
 
 				if (token == ControlTokenFactory.LeftParenthesis) {
@@ -159,7 +159,7 @@ namespace Albatross.Expression {
 			return postfix;
 		}
 
-		public INode CreateTree(Stack<INode> postfix) {
+		public IExpression CreateTree(Stack<INode> postfix) {
 			postfix = Reverse(postfix);
 			Stack<INode> stack = new Stack<INode>();
 			INode token;
@@ -169,8 +169,8 @@ namespace Albatross.Expression {
 					stack.Push(token);
 				} else if (token is InfixExpression) {
 					InfixExpression infixOp = (InfixExpression)token;
-					infixOp.Right = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand1");
-					infixOp.Left = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix operand2");
+					infixOp.Right = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix right operand");
+					infixOp.Left = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix left operand");
 					stack.Push(infixOp);
 				} else if (token is PrefixExpression prefixOp) {
 					for (INode t = stack.Pop(); t.IsFuncParamStart(false); t = stack.Pop()) {
@@ -180,12 +180,7 @@ namespace Albatross.Expression {
 					stack.Push(prefixOp);
 				}
 			}
-
-			return stack.Pop();
-		}
-
-		public object? Eval(IExpression token, Func<string, object> context) {
-			return token.Eval(context);
+			return stack.Pop() as IExpression ?? throw new StackException("");
 		}
 
 		public string Text(INode token) {

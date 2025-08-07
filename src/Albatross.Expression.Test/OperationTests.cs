@@ -157,7 +157,7 @@ namespace Albatross.Expression.Test {
 		public void ParsingFailure(string expression, Type errType) {
 			TestDelegate handler = new TestDelegate(()=>{
 				IParser parser = Factory.Instance.Create();
-				INode token = parser.Compile(expression);
+				IToken token = parser.Compile(expression);
 				token.Eval(null);
 			});
 			Assert.Throws(errType, handler);
@@ -167,7 +167,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("UnixTimestamp(now())")]
 		public void TestUnixTimeStamp(string expression) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = 	token.Eval(null);
 			ClassicAssert.True(result is long);
 		}
@@ -179,7 +179,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("NextWeekDay(\"2021-03-28\")", "2021-03-29")]
 		public void TestNextWeekDay(string expression, string expected) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = token.Eval(null);
 			ClassicAssert.AreEqual(result, DateTime.Parse(expected));
 		}
@@ -190,7 +190,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("PreviousWeekDay(\"2021-03-20\")", "2021-03-19")]
 		public void TestPreviousWeekDay(string expression, string expected) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = token.Eval(null);
 			ClassicAssert.AreEqual(result, DateTime.Parse(expected));
 		}
@@ -199,7 +199,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("DayOfWeek(\"2021-03-21\")", 0)]
 		public void TestDayOfWeek(string expression, int expected) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = token.Eval(null);
 			ClassicAssert.AreEqual(result, expected);
 		}
@@ -208,7 +208,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("Random(1, 10)", 1, 10)]
 		public void TestRandom(string expression, int min, int max) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = token.Eval(null);
 			Assert.That(result is int);
 			int number = (int)result;
@@ -222,7 +222,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\", \"name\")", ExpectedResult =null)]
 		public object TestGetJsonValue(string expression) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = token.Eval(null);
 			return result;
 		}
@@ -230,7 +230,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("GetJsonValue('{\"value\":{ \"number\": 2 }}',\"value\")", ExpectedResult = "{ \"number\": 2 }")]
 		public object TestGetJsonValue2(string expression) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = token.Eval(null);
 			return Convert.ToString(result);
 		}
@@ -271,7 +271,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("GetJsonArrayItem('[1,2,3]',0)", ExpectedResult = "1")]
 		public object TestGetJsonArrayItem(string expression) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			var result = token.Eval(null);
 			return Convert.ToString(result);
 		}
@@ -279,7 +279,7 @@ namespace Albatross.Expression.Test {
 		public void TestGetJsonArrayItemErrorCondition(string expression) {
 			Assert.Throws<ArgumentException>(() => {
 				IParser parser = Factory.Instance.Create();
-				INode token = parser.Compile(expression);
+				IToken token = parser.Compile(expression);
 				token.Eval(null);
 			});
 		}

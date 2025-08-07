@@ -32,7 +32,7 @@ namespace Albatross.Expression.Test {
 		[TestCase("2 > 1 and 3 > 1", ExpectedResult = true)]
 		public object PrecedenceTesting(string expression) {
 			IParser parser = Factory.Instance.Create();
-			INode token = parser.Compile(expression);
+			IToken token = parser.Compile(expression);
 			return token.Eval(null);
 		}
 	}

@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Albatross.Expression.Nodes {
-	public interface INode {
+	public interface IToken {
 		string Text();
 	}
 }

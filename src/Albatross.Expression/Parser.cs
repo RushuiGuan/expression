@@ -11,14 +11,14 @@ namespace Albatross.Expression {
 	/// An immutable implementation of the <see cref="Albatross.Expression.IParser"/> interface.
 	/// </summary>
 	public class Parser : IParser {
-		private readonly IReadOnlyList<IExpressionFactory<INode>> other_left;
-		private readonly IReadOnlyList<IExpressionFactory<INode>> other_left_right;
-		private readonly IReadOnlyList<IExpressionFactory<INode>> infix_comma_right;
-		private readonly IReadOnlyList<IExpressionFactory<INode>> left_parenthesis_only;
+		private readonly IReadOnlyList<IExpressionFactory<IToken>> other_left;
+		private readonly IReadOnlyList<IExpressionFactory<IToken>> other_left_right;
+		private readonly IReadOnlyList<IExpressionFactory<IToken>> infix_comma_right;
+		private readonly IReadOnlyList<IExpressionFactory<IToken>> left_parenthesis_only;
 
-		public Parser(IEnumerable<IExpressionFactory<INode>> factories) {
-			var infix = new List<IExpressionFactory<INode>>();
-			var others = new List<IExpressionFactory<INode>>();
+		public Parser(IEnumerable<IExpressionFactory<IToken>> factories) {
+			var infix = new List<IExpressionFactory<IToken>>();
+			var others = new List<IExpressionFactory<IToken>>();
 			foreach (var factory in factories) {
 				if (factory is IExpressionFactory<InfixExpression> infixFactory) {
 					infix.Add(infixFactory);
@@ -34,13 +34,13 @@ namespace Albatross.Expression {
 
 		//parse an expression and produce queue of tokens
 		//the expression is parse from left to right
-		public Queue<INode> Tokenize(string expression) {
-			var tokens = new Queue<INode>();
+		public Queue<IToken> Tokenize(string expression) {
+			var tokens = new Queue<IToken>();
 			int start = 0;
 			while (start < expression.Length) {
 				bool found = false;
 				var last = tokens.LastOrDefault();
-				IEnumerable<IExpressionFactory<INode>>? factories = null;
+				IEnumerable<IExpressionFactory<IToken>>? factories = null;
 				if (last == null || last.IsComma() || last is UnaryExpression || last is InfixExpression) {
 					factories = other_left;
 				} else if (last.IsLeftParenthesis()) {
@@ -76,29 +76,16 @@ namespace Albatross.Expression {
 			return tokens;
 		}
 
-		public bool IsValidExpression(string exp) {
-			if (string.IsNullOrWhiteSpace(exp)) {
-				return false;
-			} else {
-				try {
-					Tokenize(exp);
-					return true;
-				} catch {
-					return false;
-				}
-			}
-		}
-
-		public Stack<INode> BuildStack(Queue<INode> queue) {
-			INode token;
-			Stack<INode> postfix = new Stack<INode>();
-			Stack<INode> stack = new Stack<INode>();
+		public Stack<IToken> BuildPostfixStack(Queue<IToken> queue) {
+			IToken token;
+			var postfix = new Stack<IToken>();
+			var stack = new Stack<IToken>();
 
 			while (queue.Count > 0) {
 				token = queue.Dequeue();
-				if (token == ControlTokenFactory.Comma) {
+				if (token.IsComma()) {
 					//pop stack to postfix until we see left parenthesis
-					while (stack.Count > 0 && stack.Peek() != ControlTokenFactory.LeftParenthesis) {
+					while (stack.Count > 0 && stack.Peek().IsLeftParenthesis(false)) {
 						postfix.Push(stack.Pop());
 					}
 
@@ -110,13 +97,13 @@ namespace Albatross.Expression {
 				}
 
 				// if it is an operand, put it on the postfix stack
-				if (token is IExpression expression) {
+				if (token is IValueExpression expression) {
 					postfix.Push(expression);
 				}
 
-				if (token == ControlTokenFactory.LeftParenthesis) {
+				if (token.IsLeftParenthesis()) {
 					stack.Push(token);
-				} else if (token == ControlTokenFactory.RightParenthesis) {
+				} else if (token.IsRightParenthesis()) {
 					while (stack.Count > 0 && stack.Peek().IsLeftParenthesis(false)) {
 						postfix.Push(stack.Pop());
 					}
@@ -124,16 +111,16 @@ namespace Albatross.Expression {
 					if (stack.Count == 0) {
 						throw new StackException("missing left parenthesis");
 					} else {
+						// pop the left parenthesis
 						stack.Pop();
 					}
 				} else if (token is PrefixExpression) {
 					stack.Push(token);
 					postfix.Push(ControlTokenFactory.FuncParamStart.Token);
-				} else if (token is InfixExpression) {
+				} else if (token is InfixExpression infix) {
 					if (stack.Count == 0 || stack.Peek().IsLeftParenthesis()) {
 						stack.Push(token);
 					} else {
-						InfixExpression infix = (InfixExpression)token;
 						while (stack.Count > 0
 							   && stack.Peek().IsLeftParenthesis(false)
 							   && (stack.Peek() is PrefixExpression
@@ -159,40 +146,33 @@ namespace Albatross.Expression {
 			return postfix;
 		}
 
-		public IExpression CreateTree(Stack<INode> postfix) {
-			postfix = Reverse(postfix);
-			Stack<INode> stack = new Stack<INode>();
-			INode token;
-			while (postfix.Count > 0) {
-				token = postfix.Pop();
+		public IExpression CreateTree(Stack<IToken> postfix) {
+			var reversed = Reverse(postfix);
+			var stack = new Stack<IToken>();
+			while (reversed.Count > 0) {
+				var token = reversed.Pop();
 				if (token is IExpression || token.IsFuncParamStart()) {
 					stack.Push(token);
-				} else if (token is InfixExpression) {
-					InfixExpression infixOp = (InfixExpression)token;
-					infixOp.Right = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix right operand");
-					infixOp.Left = stack.Pop() as IExpression ?? throw new StackException("missing expression for infix left operand");
-					stack.Push(infixOp);
-				} else if (token is PrefixExpression prefixOp) {
-					for (INode t = stack.Pop(); t.IsFuncParamStart(false); t = stack.Pop()) {
-						prefixOp.Operands.Insert(0, t as IExpression ?? throw new StackException("missing expression for prefix operand"));
+				} else if (token is InfixExpression infix) {
+					infix.Right = stack.Pop() as IExpression ?? throw new StackException("misplaced control token as infix right operand");
+					infix.Left = stack.Pop() as IExpression ?? throw new StackException("misplaced control token as infix left operand");
+					stack.Push(infix);
+				} else if (token is PrefixExpression prefix) {
+					for (IToken t = stack.Pop(); t.IsFuncParamStart(false); t = stack.Pop()) {
+						// TODO: optimize this insert to avoid shifting
+						prefix.Operands.Insert(0, t as IExpression ?? throw new StackException("misplaced control token as prefix operand"));
 					}
-
-					stack.Push(prefixOp);
+					stack.Push(prefix);
 				}
 			}
-			return stack.Pop() as IExpression ?? throw new StackException("");
+			return stack.Pop() as IExpression ?? throw new StackException("misplace control token as expression root");
 		}
 
-		public string Text(INode token) {
-			return token.Text();
-		}
-
-		public static Stack<T> Reverse<T>(Stack<T> src) {
-			Stack<T> dst = new Stack<T>();
+		static Stack<T> Reverse<T>(Stack<T> src) {
+			var dst = new Stack<T>();
 			while (src.Count > 0) {
 				dst.Push(src.Pop());
 			}
-
 			return dst;
 		}
 	}

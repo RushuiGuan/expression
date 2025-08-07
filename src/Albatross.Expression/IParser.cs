@@ -11,20 +11,18 @@ namespace Albatross.Expression {
 		/// </summary>
 		/// <param name="expression"></param>
 		/// <returns></returns>
-		Queue<INode> Tokenize(string expression);
+		Queue<IToken> Tokenize(string expression);
 		/// <summary>
 		/// Convert a token queue to stack
 		/// </summary>
 		/// <param name="queue"></param>
 		/// <returns></returns>
-		Stack<INode> BuildStack(Queue<INode> queue);
+		Stack<IToken> BuildPostfixStack(Queue<IToken> queue);
 		/// <summary>
 		/// Using the token stack to build a token tree
 		/// </summary>
 		/// <param name="postfix"></param>
 		/// <returns></returns>
-		IExpression CreateTree(Stack<INode> postfix);
-
-		bool IsValidExpression(string expression);
+		IExpression CreateTree(Stack<IToken> postfix);
 	}
 }

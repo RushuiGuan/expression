@@ -4,7 +4,7 @@ namespace Albatross.Expression.Nodes {
 	/// <summary>
 	/// will only take true or false, case insensitive
 	/// </summary>
-	public class BooleanLiteral : IExpression {
+	public class BooleanLiteral : IValueExpression {
 		public BooleanLiteral(string value) {
 			this.Value = value;
 		}

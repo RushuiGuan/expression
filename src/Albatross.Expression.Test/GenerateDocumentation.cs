@@ -23,7 +23,7 @@ namespace Albatross.Expression.Test
 				}
 			}
 		}
-		string GetOperationType(INode token) {
+		string GetOperationType(IToken token) {
 			if (token is PrefixExpression) {
 				if (((PrefixExpression)token).Symbolic) {
 					return "Unary";
@@ -62,7 +62,7 @@ namespace Albatross.Expression.Test
 			using (FileStream stream = new FileStream(file, FileMode.OpenOrCreate)) {
 				using (StreamWriter writer = new StreamWriter(stream)) {
 					while (stack.Count > 0) {
-						INode token = stack.Pop();
+						IToken token = stack.Pop();
 						writer.WriteLine("\t* `{0}`", token.Name);
 					}
 					writer.Flush();
@@ -87,7 +87,7 @@ namespace Albatross.Expression.Test
 				}
 			}
 		}
-		void PrintToken(StreamWriter writer, INode token, int level) {
+		void PrintToken(StreamWriter writer, IToken token, int level) {
 			writer.Write("".PadRight(level, '\t'));
 			writer.WriteLine("* `{0}`", token.Name);
 			level++;

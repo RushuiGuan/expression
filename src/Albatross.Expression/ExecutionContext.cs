@@ -165,7 +165,7 @@ namespace Albatross.Expression {
 			Queue<IToken> queue = Parser.Tokenize(text);
 			contextValue.Dependees = NewSet();
 			foreach (IToken token in queue) { if (token.IsVariable()) { contextValue.Dependees.Add(token.Name); } }
-			Stack<IToken> stack = Parser.BuildStack(queue);
+			Stack<IToken> stack = Parser.BuildPostfixStack(queue);
 			contextValue.Tree = Parser.CreateTree(stack);
 		}
 		public void Build() {

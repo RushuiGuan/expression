@@ -35,7 +35,7 @@ namespace Albatross.Expression.Nodes {
 	/// <item><description>$cat$</description></item>
 	/// </list>
 	/// </summary>
-	public class Variable : IVariable {
+	public class Variable : IValueExpression {
 		public Variable(string name) {
 			this.Name = name;
 		}

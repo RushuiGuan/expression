@@ -1,5 +1,5 @@
 ﻿namespace Albatross.Expression.Nodes {
-	public interface IStringLiteral : IExpression {
+	public interface IStringLiteral : IValueExpression {
 		char Boundary { get; }
 	}
 }

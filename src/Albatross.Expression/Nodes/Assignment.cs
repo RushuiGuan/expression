@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Albatross.Expression.Nodes {
-	public class Assignment : INode {
+	public class Assignment : IToken {
 		const string Operator = "=";
 
 		public bool Match(string expression, int start, out int next) {

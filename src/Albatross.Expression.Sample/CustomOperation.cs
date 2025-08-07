@@ -7,7 +7,7 @@ using System.Linq;
 namespace Albatross.Expression.Sample {
 	[ParserOperation]
 	public class Sin : PrefixExpression {
-		public override INode Clone() {
+		public override IToken Clone() {
 			return new Sin();
 		}
 		public override int MaxOperandCount => 1;

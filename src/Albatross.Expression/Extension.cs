@@ -173,9 +173,9 @@ namespace Albatross.Expression {
 
 		#region IParser
 
-		public static INode Compile(this IParser parser, string expression) {
-			Queue<INode> queue = parser.Tokenize(expression);
-			Stack<INode> stack = parser.BuildStack(queue);
+		public static IToken Compile(this IParser parser, string expression) {
+			Queue<IToken> queue = parser.Tokenize(expression);
+			Stack<IToken> stack = parser.BuildPostfixStack(queue);
 			return parser.CreateTree(stack);
 		}
 

@@ -1,4 +1,4 @@
-using Albatross.Expression.Operations;
+using Albatross.Expression.InfixOperations;
 using System.Text.RegularExpressions;
 
 namespace Albatross.Expression.ExpressionFactory {

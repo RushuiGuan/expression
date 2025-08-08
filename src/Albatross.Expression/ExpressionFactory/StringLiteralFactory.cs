@@ -4,6 +4,9 @@ using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.ExpressionFactory {
 	public class StringLiteralFactory : IExpressionFactory<StringLiteral> {
+		public readonly static StringLiteralFactory DoubleQuote = new StringLiteralFactory('"');
+		public readonly static StringLiteralFactory SingleQuote = new StringLiteralFactory('\'');
+
 		private readonly char boundary;
 		public StringLiteralFactory(char boundary) {
 			this.boundary = boundary;

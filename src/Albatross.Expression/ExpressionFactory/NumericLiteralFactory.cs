@@ -8,8 +8,7 @@ namespace Albatross.Expression.ExpressionFactory {
 		static readonly Regex numericPatternRegex = new Regex(NumericPattern, 
 			RegexOptions.Compiled | 
 			RegexOptions.Singleline | 
-			RegexOptions.IgnorePatternWhitespace | 
-			RegexOptions.IgnoreCase);
+			RegexOptions.IgnorePatternWhitespace);
 		
 		public NumericLiteral? Parse(string text, int start, out int next) {
 			next = text.Length;

@@ -5,6 +5,7 @@ using Albatross.Expression.Exceptions;
 using Albatross.Expression.Nodes;
 using System.Diagnostics;
 using Albatross.Expression.ExpressionFactory;
+using Albatross.Expression.UnaryOperations;
 
 namespace Albatross.Expression.ExpressionFactory {
 	/// <summary>

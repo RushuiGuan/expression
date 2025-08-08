@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="NUnit" Version="4.2.2" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+		<PackageReference Include="SimpleInjector" Version="5.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj" />
+	</ItemGroup>
+</Project>

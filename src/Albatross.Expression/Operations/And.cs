@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Albatross.Expression.Nodes;
-
-namespace Albatross.Expression.Operations {
+﻿namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// <para>Infix AND operation.</para>
 	/// <para>Operand Count: 2</para>
@@ -23,22 +19,7 @@ namespace Albatross.Expression.Operations {
 	public class And : InfixExpression {
 		public And() : base("And", 30) { }
 
-		public override object Eval(Func<string, object> context) {
-			var left = RequiredLeft.Eval(context).ConvertToBoolean();
-			if(left) {
-				return RequiredRight.Eval(context).ConvertToBoolean();
-			} else {
-				return false;
-			}
-		}
-
-		public override async Task<object> EvalAsync(Func<string, Task<object>> context) {
-			var left = (await RequiredLeft.EvalAsync(context)).ConvertToBoolean();
-			if(left){
-				return (await RequiredRight.EvalAsync(context)).ConvertToBoolean();
-			} else {
-				return false;
-			}
-		}
+		public override object Run(object left, object right)
+			=> left.ConvertToBoolean() && right.ConvertToBoolean();
 	}
 }

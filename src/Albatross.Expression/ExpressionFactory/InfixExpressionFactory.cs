@@ -2,7 +2,7 @@
 using System;
 
 namespace Albatross.Expression.ExpressionFactory {
-	public class InfixExpressionFactory<T> : IExpressionFactory<T> where T : InfixExpression, new() {
+	public class InfixExpressionFactory<T> : IExpressionFactory<T> where T : class, IInfixExpression, new() {
 		private readonly bool caseSensitive;
 
 		public InfixExpressionFactory(bool caseSensitive) {

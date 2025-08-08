@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Albatross.Expression.Nodes;
-
-namespace Albatross.Expression.Operations {
+﻿namespace Albatross.Expression.Operations {
 	/// <summary>
 	/// <para>Infix OR operation.</para>
 	/// 
@@ -23,21 +19,7 @@ namespace Albatross.Expression.Operations {
 	public class Or : InfixExpression {
 		public Or() : base("Or", 20) { }
 
-		public override object Eval(Func<string, object> context) {
-			if (RequiredLeft.Eval(context).ConvertToBoolean()) {
-				return true;
-			} else {
-				return RequiredRight.Eval(context).ConvertToBoolean();
-			}
-		}
-
-		public override async Task<object> EvalAsync(Func<string, Task<object>> context) {
-			var left = await RequiredLeft.EvalAsync(context);
-			if(left.ConvertToBoolean()){
-				return true;
-			} else {
-				return (await RequiredRight.EvalAsync(context)).ConvertToBoolean();
-			}
-		}
+		public override object Run(object left, object right)
+			=> left.ConvertToBoolean() || right.ConvertToBoolean();
 	}
 }

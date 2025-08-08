@@ -12,18 +12,6 @@ namespace Albatross.Expression.Test {
 		}
 
 
-		[TestCase(" a b c d", 0, ExpectedResult = 1)]
-		[TestCase(" a b c d", 1, ExpectedResult = 1)]
-		[TestCase(" a b c d", 2, ExpectedResult = 3)]
-		[TestCase(" a b c d", 3, ExpectedResult = 3)]
-		[TestCase("  abc", 0, ExpectedResult = 2)]
-		[TestCase("  abc", 1, ExpectedResult = 2)]
-		[TestCase("  abc", 2, ExpectedResult = 2)]
-		[TestCase("  abc", 3, ExpectedResult = 3)]
-		[TestCase("   ", 3, ExpectedResult = 3)]
-		public int SkipWhiteSpaceCheck(string expression, int start) {
-			return Extensions.SkipSpace(expression, start);
-		}
 
 
 		[TestCase(" a = 1 + 1", ExpectedResult = "a")]

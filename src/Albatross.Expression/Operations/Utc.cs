@@ -1,6 +1,5 @@
-﻿using System;
-using System.Linq;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -10,7 +9,7 @@ namespace Albatross.Expression.Operations {
 	public class Utc : PrefixExpression {
 		public Utc() : base("Utc", 1, 1) { }
 
-		public override object Eval(Func<string, object> context)
-			=> this.GetValue(0, context).ConvertToDateTime().ToUniversalTime();
+		public override object Run(List<object> operands)
+			=> operands[0].ConvertToDateTime().ToUniversalTime();
 	}
 }

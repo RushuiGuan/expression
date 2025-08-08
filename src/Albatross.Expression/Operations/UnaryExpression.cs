@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
-	public class UnaryExpression : IExpression {
+	public class UnaryExpression : IUnaryExpression {
 		public UnaryExpression(string operatorOperator) {
 			this.Operator = operatorOperator;
 		}

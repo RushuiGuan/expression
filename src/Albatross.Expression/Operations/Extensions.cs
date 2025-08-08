@@ -1,9 +1,8 @@
-﻿using Albatross.Expression.Nodes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
-namespace Albatross.Expression {
+namespace Albatross.Expression.Operations {
 	public static class Extensions {
 		public static string ConvertToString(this object obj) {
 			if (obj is string text) {
@@ -85,7 +84,8 @@ namespace Albatross.Expression {
 			} else if (obj is string text) {
 				try {
 					return JsonDocument.Parse(text).RootElement;
-				} catch { 
+				} catch {
+					// ignored
 				}
 			}
 			throw new FormatException($"Cannot convert {obj} to JsonElement");
@@ -114,70 +114,5 @@ namespace Albatross.Expression {
 					return elem;
 			}
 		}
-
-		#region IExecutionContext
-
-		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression) {
-			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, });
-		}
-
-		public static void SetExpression<T>(this IExecutionContext<T> context, string name, string expression, Type dataType) {
-			context.Set(new ContextValue(name, expression) { ContextType = ContextType.Expression, DataType = dataType });
-		}
-
-		public static void SetValue<T>(this IExecutionContext<T> context, string name, object value) {
-			context.Set(new ContextValue(name, value) { ContextType = ContextType.Value });
-		}
-
-		public static object? GetValue<T>(this IExecutionContext<T> context, string name, T input) {
-			if (context.TryGetValue(name, input, out var data)) {
-				return data;
-			} else {
-				return null;
-			}
-		}
-
-		public static ValueType Eval<T, ValueType>(this IExecutionContext<T> context, string expression, T input) {
-			var result = context.Eval(expression, input, typeof(ValueType));
-			return (ValueType)Convert.ChangeType(result, typeof(ValueType));
-		}
-
-		public static bool TryGetValue<T, ValueType>(this IExecutionContext<T> context, string name, T input, out ValueType? data) {
-			if (context.TryGetValue(name, input, out var value)) {
-				data = (ValueType)Convert.ChangeType(value, typeof(ValueType));
-				return true;
-			} else {
-				data = default(ValueType);
-				return false;
-			}
-		}
-
-		#endregion
-
-		#region IToken
-
-		/// <summary>
-		/// Move find the next index that is not a space.  This method doesn't perform check of the starting index in any way.
-		/// </summary>
-		/// <param name="expression"></param>
-		/// <param name="start">The current index</param>
-		/// <returns></returns>
-		public static int SkipSpace(this string expression, int start) {
-			while (expression.Length > start && char.IsWhiteSpace(expression[start])) {
-				start++;
-			}
-			return start;
-		}
-
-		#endregion
-
-		#region IParser
-
-		public static IExpression Compile(this IParser parser, string expression) {
-			Queue<IToken> queue = parser.Tokenize(expression);
-			Stack<IToken> stack = parser.BuildPostfixStack(queue);
-			return parser.CreateTree(stack);
-		}
-		#endregion
 	}
 }

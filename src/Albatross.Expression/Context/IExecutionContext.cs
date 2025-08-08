@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Context {
-	public delegate bool TryGetValueDelegate<in T>(string name, T input, [NotNullWhen(true)] out object? value);
-
-	public interface IExecutionContext<in T> {
+	public interface IExecutionContext<T> {
 		IParser Parser { get; }
 		void Clear();
 		object GetValue(string name, T input);
 		bool TryGetValue(string name, T input, out object? data);
-		void Set(IContextValue value);
-		void Build();
+		Task<object> GetValueAsync(string name, T input);
+		void Set(IContextValue<T> value);
 	}
 }

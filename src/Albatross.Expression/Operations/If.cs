@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Albatross.Expression.Nodes;
+﻿using System.Collections.Generic;
 
 
 namespace Albatross.Expression.Operations {
@@ -24,21 +21,13 @@ namespace Albatross.Expression.Operations {
 	public class If : PrefixExpression {
 		public If() : base("If", 3, 3) { }
 
-		public override object Eval(Func<string, object> context) {
-			object condition = this.GetValue(0, context);
 
-			if (condition.ConvertToBoolean()) {
-				return this.GetValue(1, context);
+		public override object Run(List<object> operands) {
+			var condition = operands[0].ConvertToBoolean();
+			if (condition) {
+				return operands[1];
 			} else {
-				return this.GetValue(2, context);
-			}
-		}
-		public override async Task<object> EvalAsync(Func<string, Task<object>> context) {
-			object condition = await this.GetValueAsync(0, context);
-			if (condition.ConvertToBoolean()) {
-				return await this.GetValueAsync(1, context);
-			} else {
-				return await this.GetValueAsync(2, context);
+				return operands[2];
 			}
 		}
 	}

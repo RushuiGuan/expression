@@ -2,7 +2,7 @@ using Albatross.Expression.Nodes;
 using System;
 
 namespace Albatross.Expression.ExpressionFactory {
-	public class UnaryExpressionFactory<T> : IExpressionFactory<T> where T : UnaryExpression, new() {
+	public class UnaryExpressionFactory<T> : IExpressionFactory<T> where T : class, IUnaryExpression, new() {
 		private readonly string name;
 
 		public UnaryExpressionFactory(string name) {

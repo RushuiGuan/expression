@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using Albatross.Expression.Exceptions;
 using Albatross.Expression.ExpressionFactory;
+using Albatross.Expression.Nodes;
 using System.Threading.Tasks;
 
-namespace Albatross.Expression.Nodes {
-	public class PrefixExpression : IExpression {
+namespace Albatross.Expression.Operations {
+	public class PrefixExpression : IPrefixExpression {
 		public PrefixExpression(string name, int minOperandCount, int maxOperandCount) {
 			Name = name;
 			MinOperandCount = minOperandCount;
@@ -34,13 +35,13 @@ namespace Albatross.Expression.Nodes {
 			return sb.ToString();
 		}
 
-		public virtual object Eval(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			ValidateOperands();
 			var values = this.GetValues(context);
 			return Run(values);
 		}
 
-		public virtual async Task<object> EvalAsync(Func<string, Task<object>> context) {
+		public async Task<object> EvalAsync(Func<string, Task<object>> context) {
 			ValidateOperands();
 			var values = await this.GetValuesAsync(context);
 			return Run(values);

@@ -2,18 +2,18 @@ using Albatross.Expression.Nodes;
 using System;
 
 namespace Albatross.Expression.ExpressionFactory {
-	public class PrefixExpressionFactory : IExpressionFactory<PrefixExpression> {
-		private readonly Func<PrefixExpression> func;
+	public class PrefixExpressionFactory : IExpressionFactory<IPrefixExpression> {
+		private readonly Func<IPrefixExpression> func;
 		private readonly string name;
 		private readonly bool caseSensitive;
 
-		public PrefixExpressionFactory(Func<PrefixExpression> func, bool caseSensitive = false) {
+		public PrefixExpressionFactory(Func<IPrefixExpression> func, bool caseSensitive = false) {
 			this.func = func;
 			name = func().Name;
 			this.caseSensitive = caseSensitive;
 		}
 
-		public PrefixExpression? Parse(string text, int start, out int next) {
+		public IPrefixExpression? Parse(string text, int start, out int next) {
 			next = text.Length;
 			if (start < text.Length) {
 				while (start < text.Length && char.IsWhiteSpace(text[start])) {
@@ -39,7 +39,7 @@ namespace Albatross.Expression.ExpressionFactory {
 			return null;
 		}
 	}
-	public class PrefixExpressionFactory<T> : PrefixExpressionFactory where T : PrefixExpression, new() {
+	public class PrefixExpressionFactory<T> : PrefixExpressionFactory where T : IPrefixExpression, new() {
 		public PrefixExpressionFactory(bool caseSensitive):base(() => new T(), caseSensitive) {
 		}
 	}

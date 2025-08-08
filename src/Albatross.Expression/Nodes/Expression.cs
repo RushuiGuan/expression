@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	public class Expression : IExpression{
@@ -13,6 +14,10 @@ namespace Albatross.Expression.Nodes {
 		}
 
 		public object Eval(Func<string, object> context) {
+			throw new NotImplementedException();
+		}
+
+		public Task<object> EvalAsync(Func<string, Task<object>> context) {
 			throw new NotImplementedException();
 		}
 	}

@@ -1,5 +1,5 @@
-﻿using System;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 
 namespace Albatross.Expression.Operations {
@@ -7,7 +7,7 @@ namespace Albatross.Expression.Operations {
 	public class Year : PrefixExpression {
 		public Year() : base("Year", 1, 1) { }
 
-		public override object Eval(Func<string, object> context)
-			=> Convert.ToDouble(this.GetValue(0, context).ConvertToDateTime().Year);
+		public override object Run(List<object> operands) 
+			=> operands[0].ConvertToDateTime().Year;
 	}
 }

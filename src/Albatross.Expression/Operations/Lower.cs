@@ -8,6 +8,5 @@ namespace Albatross.Expression.Operations {
 
 		public override object Run(List<object> operands)
 			=> operands[0].ConvertToString().ToLowerInvariant();
-		}
 	}
 }

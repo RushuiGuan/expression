@@ -1,10 +1,11 @@
 ﻿using Albatross.Expression.Exceptions;
+using Albatross.Expression.Nodes;
 using System;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Albatross.Expression.Nodes {
-	public class InfixExpression : IExpression {
+namespace Albatross.Expression.Operations {
+	public class InfixExpression : IInfixExpression {
 		public string Operator { get; }
 		public int Precedence { get; }
 		
@@ -35,13 +36,13 @@ namespace Albatross.Expression.Nodes {
 			return sb.ToString();
 		}
 
-		public virtual object Eval(Func<string, object> context) {
+		public object Eval(Func<string, object> context) {
 			var left = RequiredLeft.Eval(context);
 			var right = RequiredRight.Eval(context);
 			return Run(left, right);
 		}
 
-		public async virtual Task<object> EvalAsync(Func<string, Task<object>> context) {
+		public async Task<object> EvalAsync(Func<string, Task<object>> context) {
 			var left = await RequiredLeft.EvalAsync(context);
 			var right = await RequiredRight.EvalAsync(context);
 			return Run(left, right);

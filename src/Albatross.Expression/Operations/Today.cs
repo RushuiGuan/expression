@@ -1,11 +1,12 @@
 ﻿using System;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Today : PrefixExpression {
 		public Today() : base("Today", 0, 0) { }
 
-		public override object Eval(Func<string, object> context) => System.DateTime.Today;
+		public override object Run(List<object> operands) => DateTime.Today;
 	}
 }

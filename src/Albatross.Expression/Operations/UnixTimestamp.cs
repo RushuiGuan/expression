@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -19,9 +19,9 @@ namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class UnixTimestamp : PrefixExpression {
 		public UnixTimestamp() : base("UnixTimestamp", 1, 1) { }
-		
-		public override object Eval(Func<string, object> context) {
-			var value = this.GetValue(0, context).ConvertToDateTime();
+
+		public override object Run(List<object> operands){
+			var value = operands[0].ConvertToDateTime();
 			return Convert.ToDouble(new DateTimeOffset(value).ToUnixTimeSeconds());
 		}
 	}

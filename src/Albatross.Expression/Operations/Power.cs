@@ -18,10 +18,10 @@ namespace Albatross.Expression.Operations {
 	public class Power : InfixExpression {
 		public Power() : base("^", 300) { }
 
-		public override object Eval(Func<string, object> context) {
-			var a = RequiredLeft.Eval(context).ConvertToDouble();
-			var b = RequiredRight.Eval(context).ConvertToDouble();
-			return Math.Pow(a, b);
+		public override object Run(object left, object right) {
+			var @base = left.ConvertToDouble();
+			var power = right.ConvertToDouble();
+			return Math.Pow(@base, power);
 		}
 	}
 }

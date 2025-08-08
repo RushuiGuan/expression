@@ -1,6 +1,7 @@
 using Albatross.Expression.Exceptions;
 using System;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	public class UnaryExpression : IExpression {
@@ -17,8 +18,18 @@ namespace Albatross.Expression.Nodes {
 			return sb.ToString();
 		}
 
-		public virtual object Eval(Func<string, object> context) {
-			throw new NotSupportedException();
+		public object Eval(Func<string, object> context) {
+			var value = this.RequiredOperand.Eval(context);
+			return Run(value);
+		}
+
+		public async Task<object> EvalAsync(Func<string, Task<object>> context) {
+			var value = await RequiredOperand.EvalAsync(context);
+			return Run(value);
+		}
+
+		public virtual object Run(object operand) {
+			throw new NotSupportedException($"Unary operation '{Operator}' is not implemented.");
 		}
 	}
 }

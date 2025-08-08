@@ -41,7 +41,7 @@ namespace Albatross.Expression.Nodes {
 			return Run(left, right);
 		}
 
-		public async Task<object> EvalAsync(Func<string, Task<object>> context) {
+		public async virtual Task<object> EvalAsync(Func<string, Task<object>> context) {
 			var left = await RequiredLeft.EvalAsync(context);
 			var right = await RequiredRight.EvalAsync(context);
 			return Run(left, right);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 using Json.Pointer;
 
@@ -11,9 +12,9 @@ namespace Albatross.Expression.Operations {
 	public class GetJsonProperty : PrefixExpression {
 		public GetJsonProperty() : base("JsonProperty", 2, 2) { }
 
-		public override object Eval(Func<string, object> context) {
-			var element = this.GetValue(0, context).ConvertToJsonElement();
-			var pointerText = this.GetRequiredStringValue(1, context);
+		public override object Run(List<object> operands) {
+			var element = operands[0].ConvertToJsonElement();
+			var pointerText = operands.GetRequiredStringValue(1);
 			var pointer = JsonPointer.Parse(pointerText);
 			var result = pointer.Evaluate(element);
 			if (result == null) {

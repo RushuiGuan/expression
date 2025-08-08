@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	/// <summary>
@@ -19,5 +20,6 @@ namespace Albatross.Expression.Nodes {
 				throw new FormatException($"Invalid numeric format: {Value}");
 			}
 		}
+		public Task<object> EvalAsync(Func<string, Task<object>> context) => Task.FromResult(Eval(_ => new object()));
 	}
 }

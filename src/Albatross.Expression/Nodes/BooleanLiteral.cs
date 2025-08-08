@@ -19,5 +19,6 @@ namespace Albatross.Expression.Nodes {
 				throw new FormatException($"Cannot convert {Value} to boolean");
 			}
 		}
+		public Task<object> EvalAsync(Func<string, Task<object>> context) => Task.FromResult(Eval(_ => new object()));
 	}
 }

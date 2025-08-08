@@ -2,6 +2,7 @@
 using System.Text;
 using Albatross.Expression.Exceptions;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	/// <summary>
@@ -45,5 +46,6 @@ namespace Albatross.Expression.Nodes {
 			}
 			return sb.ToString();
 		}
+		public Task<object> EvalAsync(Func<string, Task<object>> context) => Task.FromResult(Eval(_ => new object()));
 	}
 }

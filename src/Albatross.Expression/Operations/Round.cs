@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Albatross.Expression.Nodes;
-using System.Xml;
-using Albatross.Expression.Exceptions;
-
-using System.Globalization;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -16,9 +10,9 @@ namespace Albatross.Expression.Operations {
 	public class Round : PrefixExpression {
 		public Round() : base("Round", 2, 2) { }
 
-		public override object Eval(Func<string, object> context) {
-			var value = this.GetValue(0, context).ConvertToDouble();
-			var digit = this.GetValue(1, context).ConvertToInt();
+		public override object Run(List<object> operands) {
+			var value = operands[0].ConvertToDouble();
+			var digit = operands[1].ConvertToInt();
 			return Math.Round(value, digit, MidpointRounding.AwayFromZero);
 		}
 	}

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -6,7 +6,8 @@ namespace Albatross.Expression.Operations {
 	public class Lower : PrefixExpression {
 		public Lower() : base("Lower", 1, 1) { }
 
-		public override object Eval(Func<string, object> context)
-			=> this.GetStringValue(0, context).ToLowerInvariant();
+		public override object Run(List<object> operands)
+			=> operands[0].ConvertToString().ToLowerInvariant();
+		}
 	}
 }

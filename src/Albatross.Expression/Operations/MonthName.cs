@@ -1,14 +1,14 @@
-﻿using System;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class MonthName : PrefixExpression {
 		public MonthName() : base("MonthName", 1, 1) { }
 
-		public override object Eval(Func<string, object> context) {
-			var value = this.GetValue(0, context).ConvertToDateTime();
+		public override object Run(List<object> operands) {
+			var value = operands[0].ConvertToDateTime();
 			return CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(value.Month);
 		}
 	}

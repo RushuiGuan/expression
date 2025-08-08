@@ -1,6 +1,6 @@
 ﻿using Albatross.Dates;
-using System;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 
 namespace Albatross.Expression.Operations {
@@ -8,11 +8,11 @@ namespace Albatross.Expression.Operations {
 	public class NextWeekDay : PrefixExpression {
 		public NextWeekDay() : base("NextWeekDay", 1, 2) { }
 
-		public override object Eval(Func<string, object> context) {
-			var value = this.GetValue(0, context).ConvertToDateTime();
+		public override object Run(List<object> operands) {
+			var value = operands[0].ConvertToDateTime();
 			var count = 1;
 			if (this.Operands.Count == 2) {
-				count = this.GetValue(1, context).ConvertToInt();
+				count = operands[1].ConvertToInt();
 			}
 			return value.NextWeekday(count);
 		}

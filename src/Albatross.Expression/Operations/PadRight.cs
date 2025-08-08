@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -7,12 +7,12 @@ namespace Albatross.Expression.Operations {
 		public const char DefaultPaddingCharacter = ' ';
 		public PadRight() : base("PadRight", 2, 3) { }
 		
-		public override object Eval(Func<string, object> context) {
-			var text = this.GetStringValue(0, context);
-			var count = this.GetValue(1, context).ConvertToInt();
+		public override object Run(List<object> operands) {
+			var text = operands[0].ConvertToString();
+			var count = operands[1].ConvertToInt();
 			char paddingCharacter;
 			if (this.Operands.Count > 2) {
-				paddingCharacter = this.GetRequiredStringValue(2, context)[0];
+				paddingCharacter = operands.GetRequiredStringValue(2)[0];
 			} else {
 				paddingCharacter = DefaultPaddingCharacter;
 			}

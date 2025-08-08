@@ -1,6 +1,6 @@
 ﻿using Albatross.Expression.Exceptions;
-using System;
 using Albatross.Expression.Nodes;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -20,9 +20,9 @@ namespace Albatross.Expression.Operations {
 	public class Left : PrefixExpression {
 		public Left() : base("Left", 2, 2) { }
 
-		public override object Eval(Func<string, object> context) {
-			var text = this.GetStringValue(0, context);
-			var count = this.GetValue(1, context).ConvertToInt();
+		public override object Run(List<object> operands) {
+			var text = operands[0].ConvertToString();
+			var count = operands[1].ConvertToInt();
 			if (count < 0) {
 				throw new OperandException("Left operation expects a positive number for the second parameter");
 			}

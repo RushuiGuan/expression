@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -22,11 +23,21 @@ namespace Albatross.Expression.Operations {
 	public class And : InfixExpression {
 		public And() : base("And", 30) { }
 
-		public override object Run(object left, object right) {
-			if (!left.ConvertToBoolean()) {
-				return false;
+		public override object Eval(Func<string, object> context) {
+			var left = RequiredLeft.Eval(context).ConvertToBoolean();
+			if(left) {
+				return RequiredRight.Eval(context).ConvertToBoolean();
 			} else {
-				return right.ConvertToBoolean();
+				return false;
+			}
+		}
+
+		public override async Task<object> EvalAsync(Func<string, Task<object>> context) {
+			var left = (await RequiredLeft.EvalAsync(context)).ConvertToBoolean();
+			if(left){
+				return (await RequiredRight.EvalAsync(context)).ConvertToBoolean();
+			} else {
+				return false;
 			}
 		}
 	}

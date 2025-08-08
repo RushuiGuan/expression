@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -6,10 +7,9 @@ namespace Albatross.Expression.Operations {
 	public class MinNumber : PrefixExpression {
 		public MinNumber() : base("Min", 0, int.MaxValue) { }
 
-		public override object Eval(Func<string, object> context) {
-			this.ValidateOperands();
+		public override object Run(List<object> operands) {
 			var current = double.MaxValue;
-			foreach(var value in this.GetValues(context)) {
+			foreach (var value in operands) {
 				var item = value.ConvertToDouble();
 				if (item < current) {
 					current = item;

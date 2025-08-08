@@ -1,14 +1,12 @@
-﻿using System;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class Negative : UnaryExpression {
 		public Negative() : base("-") { }
 
-		public override object Eval(Func<string, object> context) {
-			var a = RequiredOperand.Eval(context).ConvertToDouble();
-			return a * -1;
+		public override object Run(object operand) {
+			return operand.ConvertToDouble() * -1;
 		}
 	}
 }

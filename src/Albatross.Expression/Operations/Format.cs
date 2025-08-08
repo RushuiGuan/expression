@@ -14,7 +14,7 @@ namespace Albatross.Expression.Operations {
 		
 
 		public override object Run(List<object> operands) {
-			var formatText = operands[1].ConvertToString();
+			var formatText = operands.GetRequiredStringValue(1);
 			var value = operands[0];
 			if (value is JsonElement element) {
 				value = element.GetJsonValue();

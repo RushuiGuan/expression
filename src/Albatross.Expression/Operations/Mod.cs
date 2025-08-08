@@ -1,5 +1,4 @@
-﻿using System;
-using Albatross.Expression.Nodes;
+﻿using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
 	/// <summary>
@@ -18,10 +17,8 @@ namespace Albatross.Expression.Operations {
 	public class Mod : InfixExpression {
 		public Mod() : base("%", 200) { }
 
-		public override object Eval(Func<string, object> context) {
-			var a = RequiredLeft.Eval(context).ConvertToDouble();
-			var b = RequiredRight.Eval(context).ConvertToDouble();
-			return a % b;
+		public override object Run(object left, object right) {
+			return left.ConvertToDouble() % right.ConvertToDouble();
 		}
 	}
 }

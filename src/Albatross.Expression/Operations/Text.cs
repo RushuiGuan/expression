@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -6,6 +6,7 @@ namespace Albatross.Expression.Operations {
 	public class Text : PrefixExpression {
 		public Text() : base("Text", 1, 1) { }
 
-		public override object Eval(Func<string, object> context) => this.GetValue(0, context).ConvertToString();
+		public override object Run(List<object> operands) 
+			=>  operands[0].ConvertToString();
 	}
 }

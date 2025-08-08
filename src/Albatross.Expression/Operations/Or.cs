@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Operations {
@@ -27,6 +28,15 @@ namespace Albatross.Expression.Operations {
 				return true;
 			} else {
 				return RequiredRight.Eval(context).ConvertToBoolean();
+			}
+		}
+
+		public override async Task<object> EvalAsync(Func<string, Task<object>> context) {
+			var left = await RequiredLeft.EvalAsync(context);
+			if(left.ConvertToBoolean()){
+				return true;
+			} else {
+				return (await RequiredRight.EvalAsync(context)).ConvertToBoolean();
 			}
 		}
 	}

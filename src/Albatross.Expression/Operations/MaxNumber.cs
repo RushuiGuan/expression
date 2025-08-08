@@ -1,15 +1,14 @@
 ﻿using System;
 using Albatross.Expression.Nodes;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Albatross.Expression.Operations {
 	[ParserOperation]
 	public class MaxNumber : PrefixExpression {
 		public MaxNumber() : base("Max", 1, int.MaxValue) { }
 
-		public override object Eval(Func<string, object> context) {
-			this.ValidateOperands();
-			IEnumerable list = this.GetValues(context);
+		public override object Run(List<object> list) {
 			var current = double.MinValue;
 			foreach (var item in list) {
 				var value = item.ConvertToDouble();

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Albatross.Expression.Nodes;
 
 
@@ -29,6 +31,14 @@ namespace Albatross.Expression.Operations {
 				return this.GetValue(1, context);
 			} else {
 				return this.GetValue(2, context);
+			}
+		}
+		public override async Task<object> EvalAsync(Func<string, Task<object>> context) {
+			object condition = await this.GetValueAsync(0, context);
+			if (condition.ConvertToBoolean()) {
+				return await this.GetValueAsync(1, context);
+			} else {
+				return await this.GetValueAsync(2, context);
 			}
 		}
 	}

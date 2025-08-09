@@ -6,7 +6,7 @@ namespace Albatross.Expression.Nodes {
 	/// <summary>
 	/// will take any numbers with decimals and without signs.
 	/// </summary>
-	public class NumericLiteral : IValueExpression {
+	public class NumericLiteral : IValueToken, IExpression {
 		public NumericLiteral(string value) {
 			Value = value;
 		}

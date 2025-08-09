@@ -10,19 +10,17 @@ namespace Albatross.Expression.ExpressionFactory {
 			return this;
 		}
 
-		public ParserBuilder AddNodeFactories(bool caseSensitive) {
+		public ParserBuilder AddValueNodeFactories(bool caseSensitive) {
 			AddFactory(new BooleanLiteralFactory(caseSensitive));
-			AddFactory(ControlTokenFactory.LeftParenthesis);
-			AddFactory(ControlTokenFactory.RightParenthesis);
-			AddFactory(ControlTokenFactory.Comma);
 			AddFactory(new NumericLiteralFactory());
-			AddFactory(new GreaterThanExpressionFactory());
-			AddFactory(new LessThanExpressionFactory());
 			AddFactory(StringLiteralFactory.DoubleQuote);
 			AddFactory(StringLiteralFactory.SingleQuote);
+			AddFactory(new VariableFactory());
 			return this;
 		}
 		public ParserBuilder AddInfixFactories(bool caseSensitive) {
+			AddFactory(new GreaterThanExpressionFactory());
+			AddFactory(new LessThanExpressionFactory());
 			AddFactory(new InfixExpressionFactory<InfixOperations.And>(caseSensitive));
 			AddFactory(new InfixExpressionFactory<InfixOperations.Divide>(caseSensitive));
 			AddFactory(new InfixExpressionFactory<InfixOperations.Equal>(caseSensitive));
@@ -89,7 +87,7 @@ namespace Albatross.Expression.ExpressionFactory {
 		}
 
 		public ParserBuilder AddDefault(bool caseSensitive = false) {
-			AddNodeFactories(caseSensitive);
+			AddValueNodeFactories(caseSensitive);
 			AddInfixFactories(caseSensitive);
 			AddUnaryFactories();
 			AddPrefixFactories(caseSensitive);

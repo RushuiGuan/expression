@@ -1,7 +1,7 @@
 ﻿using Albatross.Expression.ExpressionFactory;
 
 namespace Albatross.Expression.Nodes {
-	public record class ControlToken : IToken {
+	public record class ControlToken : IValueToken {
 		public ControlToken(char value) { Value = value.ToString(); }
 		public string Value { get; }
 		public string Text() => Value;

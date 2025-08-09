@@ -98,7 +98,7 @@ namespace Albatross.Expression.ExpressionFactory {
 				}
 
 				// if it is an operand, put it on the postfix stack
-				if (token is IValueExpression expression) {
+				if (token is IValueToken expression) {
 					postfix.Push(expression);
 				}
 

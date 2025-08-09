@@ -12,7 +12,7 @@ namespace Albatross.Expression.Context {
 			var queue = parser.Tokenize(expression);
 			foreach (var token in queue) {
 				if (token is Variable variable) {
-					Dependees.Add(variable.Name);
+					Dependees.Add(variable.Value);
 				}
 			}
 			var stack = parser.BuildPostfixStack(queue);

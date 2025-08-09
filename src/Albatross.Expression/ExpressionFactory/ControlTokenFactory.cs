@@ -2,7 +2,7 @@
 using System;
 
 namespace Albatross.Expression.ExpressionFactory {
-	public class ControlTokenFactory : IExpressionFactory<ControlToken> {
+	internal class ControlTokenFactory : IExpressionFactory<ControlToken> {
 		public const char LeftParenthesisChar = '(';
 		public const char RightParenthesisChar = ')';
 		public const char CommaChar = ',';

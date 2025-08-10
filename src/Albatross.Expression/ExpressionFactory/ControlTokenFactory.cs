@@ -2,7 +2,8 @@
 using System;
 
 namespace Albatross.Expression.ExpressionFactory {
-	internal class ControlTokenFactory : IExpressionFactory<ControlToken> {
+	//TODO: this is made public for unit testing.  should be internal instead
+	public class ControlTokenFactory : IExpressionFactory<ControlToken> {
 		public const char LeftParenthesisChar = '(';
 		public const char RightParenthesisChar = ')';
 		public const char CommaChar = ',';

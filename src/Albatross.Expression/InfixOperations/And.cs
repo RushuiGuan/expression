@@ -17,7 +17,7 @@
 	/// </summary>
 	[ParserOperation(Group = "Logical")]
 	public class And : InfixExpression {
-		public And() : base("And", 30) { }
+		public And() : base("and", 30) { }
 
 		public override object Run(object left, object right)
 			=> left.ConvertToBoolean() && right.ConvertToBoolean();

@@ -1,0 +1,16 @@
+﻿using Albatross.Expression.ExpressionFactory;
+using Xunit;
+
+namespace Albatross.Expression.Test.Parsing {
+	public class TestTokenize {
+		[Theory]
+		[InlineData("1+1", "1 + 1")]
+		[InlineData("1 * (2 - 3)", "1 * ( 2 - 3 )")]
+		public void Run(string text, string expected) {
+			var parser = new ParserBuilder().AddDefault(true).Build();
+			var tokens = parser.Tokenize(text);
+			var expectedTokens = expected.Split(' ');
+			Assert.Equivalent(expectedTokens, tokens.Select(x => x.Token).ToArray());
+		}
+	}
+}

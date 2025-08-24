@@ -9,16 +9,13 @@ using Xunit;
 
 namespace Albatross.Expression.Test.Parsing {
 	public class TestParser {
-
 		[Theory]
-		[InlineData("1+1", "1+1")]
-		public void Run(string text, string parsed) {
+		[InlineData("1+2", "+ 2 1")]
+		public void VerifyPostfixStack(string text, string expected) {
 			var parser = new ParserBuilder().AddDefault(true).Build();
 			var tokens = parser.Tokenize(text);
 			var stack = parser.BuildPostfixStack(tokens);
-			var tree = parser.CreateTree(stack);
-			var expected = tree.Text();
-			Assert.Equal(expected, parsed);
+			Assert.Equal(expected, string.Join(' ', stack.Select(x => x.Token)));
 		}
 	}
 }

@@ -9,6 +9,8 @@ namespace Albatross.Expression.Nodes {
 			this.text = text;
 		}
 
+		public string Token => text;
+
 		public string Text() {
 			throw new NotImplementedException();
 		}

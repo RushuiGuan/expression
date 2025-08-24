@@ -152,7 +152,7 @@ namespace Albatross.Expression.ExpressionFactory {
 			var stack = new Stack<IToken>();
 			while (reversed.Count > 0) {
 				var token = reversed.Pop();
-				if (token is IExpression || token.IsFuncParamStart()) {
+				if (token is IValueToken || token.IsFuncParamStart()) {
 					stack.Push(token);
 				} else if (token is IInfixExpression infix) {
 					infix.Right = stack.Pop() as IExpression ?? throw new StackException("misplaced control token as infix right operand");

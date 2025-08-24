@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Albatross.Expression.InfixOperations {
 	public class InfixExpression : IInfixExpression {
 		public string Operator { get; }
+		public string Token => Operator;
 		public int Precedence { get; }
 		
 		public InfixExpression(string operatorText, int precedence) {

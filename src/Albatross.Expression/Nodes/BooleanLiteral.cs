@@ -5,12 +5,9 @@ namespace Albatross.Expression.Nodes {
 	/// <summary>
 	/// will only take true or false, case insensitive
 	/// </summary>
-	public class BooleanLiteral : IValueToken, IExpression {
-		public BooleanLiteral(string value) {
-			this.Value = value;
+	public class BooleanLiteral : ValueToken, IExpression {
+		public BooleanLiteral(string value) : base(value) {
 		}
-		public string Value { get; }
-		public string Text() => Value;
 
 		public object Eval(Func<string, object> _) {
 			if (bool.TryParse(Value, out var value)) {
@@ -19,6 +16,7 @@ namespace Albatross.Expression.Nodes {
 				throw new FormatException($"Cannot convert {Value} to boolean");
 			}
 		}
+
 		public Task<object> EvalAsync(Func<string, Task<object>> context) => Task.FromResult(Eval(_ => new object()));
 	}
 }

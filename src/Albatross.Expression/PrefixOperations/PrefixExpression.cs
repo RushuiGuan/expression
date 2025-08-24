@@ -16,6 +16,7 @@ namespace Albatross.Expression.PrefixOperations {
 		}
 
 		public string Name { get; }
+		public string Token => Name;
 		public int MinOperandCount { get; }
 		public int MaxOperandCount { get; }
 
@@ -48,7 +49,7 @@ namespace Albatross.Expression.PrefixOperations {
 		}
 
 		public virtual object Run(List<object> operands) {
-			throw new NotSupportedException();
+			throw new NotSupportedException($"Prefix expression {this.Name} is not supported");
 		}
 
 		protected void ValidateOperands() {

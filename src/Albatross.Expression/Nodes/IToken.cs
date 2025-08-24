@@ -2,6 +2,7 @@
 
 namespace Albatross.Expression.Nodes {
 	public interface IToken {
+		string Token { get; }
 		string Text();
 	}
 }

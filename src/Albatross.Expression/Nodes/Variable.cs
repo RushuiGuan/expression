@@ -36,12 +36,10 @@ namespace Albatross.Expression.Nodes {
 	/// <item><description>$cat$</description></item>
 	/// </list>
 	/// </summary>
-	public class Variable : IValueToken, IExpression {
-		public Variable(string value) {
-			this.Value = value;
+	public class Variable : ValueToken, IExpression {
+		public Variable(string value) : base(value) {
 		}
-		public string Value { get; }
-		public string Text() => Value;
+
 		public object Eval(Func<string, object> context) => context(Value);
 		public Task<object> EvalAsync(Func<string, Task<object>> context) => context(this.Value);
 	}

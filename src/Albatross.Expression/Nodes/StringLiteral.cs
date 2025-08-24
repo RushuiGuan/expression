@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using Albatross.Expression.Exceptions;
-using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
@@ -9,16 +8,14 @@ namespace Albatross.Expression.Nodes {
 	/// will take any string literal enclosed by double quotes.  use back slash to escape.  
 	/// Check the GetStringEscape function for escapable chars
 	/// </summary>
-	public class StringLiteral : IStringLiteral {
+	public class StringLiteral : ValueToken, IStringLiteral {
 		public const char EscapeChar = '\\';
 		public char Boundary { get; }
 		
-		public StringLiteral(char boundary, string value) {
+		public StringLiteral(char boundary, string value):base(value) {
 			this.Boundary = boundary;
-			this.Value = value;
 		}
 
-		public string Value { get; protected set; }
 		char GetEscapedChar(char c) {
 			if (c == 'n') {
 				return '\n';
@@ -30,8 +27,7 @@ namespace Albatross.Expression.Nodes {
 				throw new TokenParsingException("Invalid string escape \\" + c);
 			}
 		}
-		public override string ToString() { return Value; }
-		public string Text() => Value;
+
 		public object Eval(Func<string, object> context) {
 			var sb = new StringBuilder();
 			bool escaped = false;

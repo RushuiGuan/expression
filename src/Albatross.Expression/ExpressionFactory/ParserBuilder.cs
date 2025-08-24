@@ -44,45 +44,51 @@ namespace Albatross.Expression.ExpressionFactory {
 			return this;
 		}
 
-		public ParserBuilder AddPrefixFactories(bool caseSensitive) {
+		public ParserBuilder AddGenericPrefixFactory(bool caseSensitive) {
+			var factory = new GenericPrefixExpressionFactory(caseSensitive);
+			factory.Add(new PrefixOperations.ArrayItem());
+			factory.Add(new PrefixOperations.Avg());
+			factory.Add(new PrefixOperations.CreateDate());
+			factory.Add(new PrefixOperations.CurrentApp());
+			factory.Add(new PrefixOperations.CurrentMachine());
+			factory.Add(new PrefixOperations.DateTimeExpression());
+			factory.Add(new PrefixOperations.DayOfWeek());
+			factory.Add(new PrefixOperations.Floor());
+			factory.Add(new PrefixOperations.Format());
+			factory.Add(new PrefixOperations.GetJsonProperty());
+			factory.Add(new PrefixOperations.If());
+			factory.Add(new PrefixOperations.Left());
+			factory.Add(new PrefixOperations.Len());
+			factory.Add(new PrefixOperations.Lower());
+			factory.Add(new PrefixOperations.MaxNumber());
+			factory.Add(new PrefixOperations.MinNumber());
+			factory.Add(new PrefixOperations.Month());
+			factory.Add(new PrefixOperations.MonthName());
+			factory.Add(new PrefixOperations.NextWeekDay());
+			factory.Add(new PrefixOperations.Not());
+			factory.Add(new PrefixOperations.Now());
+			factory.Add(new PrefixOperations.Number());
+			factory.Add(new PrefixOperations.PadLeft());
+			factory.Add(new PrefixOperations.PadRight());
+			factory.Add(new PrefixOperations.PreviousWeekDay());
+			factory.Add(new PrefixOperations.Random());
+			factory.Add(new PrefixOperations.RegexCapture());
+			factory.Add(new PrefixOperations.Right());
+			factory.Add(new PrefixOperations.Round());
+			factory.Add(new PrefixOperations.ShortMonthName());
+			factory.Add(new PrefixOperations.Text());
+			factory.Add(new PrefixOperations.Today());
+			factory.Add(new PrefixOperations.UnixTimestamp());
+			factory.Add(new PrefixOperations.Upper());
+			factory.Add(new PrefixOperations.Utc());
+			factory.Add(new PrefixOperations.UtcNow());
+			factory.Add(new PrefixOperations.Year());
+			AddFactory(factory);
+			return this;
+		}
+
+		public ParserBuilder AddNamedPrefixFactories(bool caseSensitive) {
 			AddFactory(new PrefixExpressionFactory<PrefixOperations.Array>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.ArrayItem>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Avg>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.CreateDate>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.CurrentApp>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.CurrentMachine>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.DateTimeExpression>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.DayOfWeek>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Floor>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Format>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.GetJsonProperty>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.If>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Left>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Len>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Lower>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.MaxNumber>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.MinNumber>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Month>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.MonthName>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.NextWeekDay>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Not>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Now>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Number>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.PadLeft>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.PadRight>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.PreviousWeekDay>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Random>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.RegexCapture>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Right>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Round>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.ShortMonthName>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Text>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Today>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.UnixTimestamp>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Upper>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Utc>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.UtcNow>(caseSensitive));
-			AddFactory(new PrefixExpressionFactory<PrefixOperations.Year>(caseSensitive));
 			return this;
 		}
 
@@ -90,7 +96,8 @@ namespace Albatross.Expression.ExpressionFactory {
 			AddValueNodeFactories(caseSensitive);
 			AddInfixFactories(caseSensitive);
 			AddUnaryFactories();
-			AddPrefixFactories(caseSensitive);
+			AddGenericPrefixFactory(caseSensitive);
+			AddNamedPrefixFactories(caseSensitive);
 			return this;
 		}
 

@@ -10,6 +10,7 @@ namespace Albatross.Expression.UnaryOperations {
 			Operator = operatorOperator;
 		}
 		public string Operator { get; }
+		public string Token => Operator;
 		public IExpression? Operand { get; set; }
 		public IExpression RequiredOperand => Operand ?? throw new OperandException($"Unary expression '{Operator}' is missing its operand");
 

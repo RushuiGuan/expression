@@ -1,17 +1,12 @@
 ﻿using Albatross.Expression.ExpressionFactory;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Albatross.Expression.Test.Parsing {
-	public class TestParser {
+	public class TestPostfixStack {
 		[Theory]
 		[InlineData("1+2", "+ 2 1")]
-		public void VerifyPostfixStack(string text, string expected) {
+		[InlineData("1+test(2)", "+ 2 1")]
+		public void Run(string text, string expected) {
 			var parser = new ParserBuilder().AddDefault(true).Build();
 			var tokens = parser.Tokenize(text);
 			var stack = parser.BuildPostfixStack(tokens);

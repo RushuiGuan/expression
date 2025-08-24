@@ -12,25 +12,33 @@ namespace Albatross.Expression.ExpressionFactory {
 	/// An immutable implementation of the <see cref="Albatross.Expression.IParser"/> interface.
 	/// </summary>
 	public class Parser : IParser {
-		private readonly IReadOnlyList<IExpressionFactory<IToken>> other_left;
-		private readonly IReadOnlyList<IExpressionFactory<IToken>> other_left_right;
-		private readonly IReadOnlyList<IExpressionFactory<IToken>> infix_comma_right;
-		private readonly IReadOnlyList<IExpressionFactory<IToken>> left_parenthesis_only;
+		private readonly IExpressionFactory<IToken>[] infixCommaRight;
+		private readonly IExpressionFactory<IToken>[] prefixValueLeft;
+		private readonly IExpressionFactory<IToken>[] left;
+		private readonly IExpressionFactory<IToken>[] prefixValueLeftRight;
 
 		public Parser(IEnumerable<IExpressionFactory<IToken>> factories) {
 			var infix = new List<IExpressionFactory<IToken>>();
-			var others = new List<IExpressionFactory<IToken>>();
+			var prefix = new List<IExpressionFactory<IToken>>();
+			var value = new List<IExpressionFactory<IToken>>();
+			var unary = new List<IExpressionFactory<IToken>>();
 			foreach (var factory in factories) {
-				if (factory is IExpressionFactory<IInfixExpression> infixFactory) {
-					infix.Add(infixFactory);
+				if (factory is IExpressionFactory<IInfixExpression>) {
+					infix.Add(factory);
+				} else if(factory is IExpressionFactory<IPrefixExpression>) {
+					prefix.Add(factory);
+				}else if (factory is IExpressionFactory<IValueToken>){
+					value.Add(factory);
+				} else if (factory is IExpressionFactory<UnaryExpression> unaryFactory) {
+					unary.Add(unaryFactory);
 				} else {
-					others.Add(factory);
+					throw new ArgumentException("Unknown factory type: " + factory.GetType().FullName);
 				}
 			}
-			this.other_left = others.Union([ControlTokenFactory.LeftParenthesis]).ToArray();
-			this.other_left_right = others.Union([ControlTokenFactory.LeftParenthesis, ControlTokenFactory.RightParenthesis]).ToArray();
-			this.infix_comma_right = infix.Union([ControlTokenFactory.Comma, ControlTokenFactory.RightParenthesis]).ToArray();
-			this.left_parenthesis_only = [ControlTokenFactory.LeftParenthesis];
+			this.left = [ControlTokenFactory.LeftParenthesis];
+			this.prefixValueLeft = prefix.Union(value).Union(this.left).ToArray();
+			this.prefixValueLeftRight = prefix.Union(value).Union(this.left).Union([ControlTokenFactory.RightParenthesis]).ToArray();
+			this.infixCommaRight = infix.Union([ControlTokenFactory.Comma, ControlTokenFactory.RightParenthesis]).ToArray();
 		}
 
 		//parse an expression and produce queue of tokens
@@ -42,14 +50,25 @@ namespace Albatross.Expression.ExpressionFactory {
 				bool found = false;
 				var last = tokens.LastOrDefault();
 				IEnumerable<IExpressionFactory<IToken>>? factories = null;
+				/*
+				if (last == null || last == ControlToken.Comma || (last is PrefixOperationToken && ((PrefixOperationToken)last).Symbolic) || last is InfixOperationToken) {
+					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
+				} else if (last == ControlToken.LeftParenthesis) {
+					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
+				} else if (last == ControlToken.RightParenthesis || last is IOperandToken) {
+					list = new IToken[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(infixOperationTokens);
+				} else if (last is PrefixOperationToken && !((PrefixOperationToken)last).Symbolic) {
+					list = new IToken[] { ControlToken.LeftParenthesis };
+				}
+				*/
 				if (last == null || last.IsComma() || last is UnaryExpression || last is IInfixExpression) {
-					factories = other_left;
+					factories = this.prefixValueLeft;
 				} else if (last.IsLeftParenthesis()) {
-					factories = other_left_right;
-				} else if (last.IsRightParenthesis() || last is IExpression) {
-					factories = infix_comma_right;
+					factories = this.prefixValueLeftRight;
+				} else if (last.IsRightParenthesis() || last is IValueToken) {
+					factories = this.infixCommaRight;
 				} else if (last is IPrefixExpression) {
-					factories = left_parenthesis_only;
+					factories = this.left;
 				} else {
 					Debug.Fail("Forgot to check an previous operation");
 				}

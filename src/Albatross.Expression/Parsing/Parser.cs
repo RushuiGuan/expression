@@ -50,17 +50,6 @@ namespace Albatross.Expression.Parsing {
 			while (start < expression.Length) {
 				bool found = false;
 				IEnumerable<IExpressionFactory<IToken>>? factories = null;
-				/*
-				if (last == null || last == ControlToken.Comma || (last is PrefixOperationToken && ((PrefixOperationToken)last).Symbolic) || last is InfixOperationToken) {
-					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis }.Union(prefixOperationTokens);
-				} else if (last == ControlToken.LeftParenthesis) {
-					list = new IToken[] { new BooleanLiteralToken(), VariableToken(), StringLiteralToken(), new NumericLiteralToken(), ControlToken.LeftParenthesis, ControlToken.RightParenthesis }.Union(prefixOperationTokens);
-				} else if (last == ControlToken.RightParenthesis || last is IOperandToken) {
-					list = new IToken[] { ControlToken.Comma, ControlToken.RightParenthesis }.Union(infixOperationTokens);
-				} else if (last is PrefixOperationToken && !((PrefixOperationToken)last).Symbolic) {
-					list = new IToken[] { ControlToken.LeftParenthesis };
-				}
-				*/
 				if (last == null || last.IsComma() || last is IUnaryExpression || last is IInfixExpression) {
 					factories = this.prefixUnaryValueLeft;
 				} else if (last.IsLeftParenthesis()) {
@@ -139,7 +128,8 @@ namespace Albatross.Expression.Parsing {
 						    peeked is IHasPrecedence previous 
 						    && previous.Precedence >= current.Precedence 
 						    && !(peeked is Power && current is Power)	// power is right associative
-						    && !(current is IUnaryExpression)	// unary is right associative.  if a unary operator is on the right side, it has higher precedence always.  for example: a ^ -b.  The - unary has higher precedence than ^ in this case.
+						    && !(current is IUnaryExpression)	// unary is right associative.  if a unary operator is on the right side, precedence doesn't matter.  the previous operator needs a proper operand.
+																// for example: a ^ -b.  the ^ operator needs a proper right operand.  Even though ^ has high precedence than unary -, it is not applicable in this case.
 						) {
 							postfix.Push(stack.Pop());
 						} else {
@@ -177,14 +167,23 @@ namespace Albatross.Expression.Parsing {
 					infix.Left = stack.Pop() as IExpression ?? throw new StackException("misplaced control token as infix left operand");
 					stack.Push(infix);
 				} else if (token is IPrefixExpression prefix) {
+					var operands = new List<IExpression>();
 					for (IToken t = stack.Pop(); t.IsFuncParamStart(false); t = stack.Pop()) {
-						// TODO: optimize this insert to avoid shifting
-						prefix.Operands.Insert(0, t as IExpression ?? throw new StackException("misplaced control token as prefix operand"));
+						operands.Add(t as IExpression ?? throw new StackException("misplaced control token as prefix operand"));
 					}
+					operands.Reverse();
+					prefix.Operands = operands;
 					stack.Push(prefix);
+				} else if (token is IUnaryExpression unary) {
+					var operand = stack.Pop();
+					unary.Operand = operand as IExpression ?? throw new StackException("misplaced control token as unary operand");
+					var next = stack.Pop();
+					if(next != ControlTokenFactory.FuncParamStart.Token) {
+						throw new StackException("missing func param start control token for unary expression");
+					}
+					stack.Push(unary);
 				}
 			}
-
 			return stack.Pop() as IExpression ?? throw new StackException("misplace control token as expression root");
 		}
 
@@ -193,7 +192,6 @@ namespace Albatross.Expression.Parsing {
 			while (src.Count > 0) {
 				dst.Push(src.Pop());
 			}
-
 			return dst;
 		}
 	}

@@ -229,6 +229,34 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData("a ^ ++b", "^ + + b $ $ a")]
 		[InlineData("-(a) ^ +(+b)", "- ^ + + b $ $ a $")] // -( a ^ +(+b) )
 		[InlineData("(-a) ^ +(+b)", "^ + + b $ $ - a $")] // (-a) ^ (+(+b))
+
+		[InlineData("'hello'", "'hello'")]
+		[InlineData("\"hello\"", "\"hello\"")]
+		[InlineData("'a' + 'b'", "+ 'b' 'a'")]
+		[InlineData("'a' + \"b\"", "+ \"b\" 'a'")]
+		[InlineData("(\"a\" + 'b') = \"ab\"", "= \"ab\" + 'b' \"a\"")]
+		[InlineData("'ab' = 'a' + 'b'", "= + 'b' 'a' 'ab'")]
+		[InlineData("'a' <> \"a\"", "<> \"a\" 'a'")]
+		[InlineData("\"a\" < \"b\" or \"c\" <= \"d\"", "or <= \"d\" \"c\" < \"b\" \"a\"")]
+		[InlineData("name = \"\"", "= \"\" name")]
+		[InlineData("name = ''", "= '' name")]
+		[InlineData("'It\\'s ok'", "'It\\'s ok'")]
+		[InlineData("\"He said \\\"Hi\\\"\"", "\"He said \\\"Hi\\\"\"")]
+		[InlineData("path = \"C:\\\\Temp\\\\file.txt\"", "= \"C:\\\\Temp\\\\file.txt\" path")]
+		[InlineData("msg = 'C:\\\\temp\\\\log'", "= 'C:\\\\temp\\\\log' msg")]
+		[InlineData("text = \"line1\\nline2\"", "= \"line1\\nline2\" text")]
+		[InlineData("tab = 'col1\\tcol2'", "= 'col1\\tcol2' tab")]
+		[InlineData("'O\\'Brien' = \"O'Brien\"", "= \"O'Brien\" 'O\\'Brien'")]
+		[InlineData("\"A \\\"quote\\\"\" = 'A \"quote\"'", "= 'A \"quote\"' \"A \\\"quote\\\"\"")]
+		[InlineData("contains(\"hello\",\"he\")", "contains \"he\" \"hello\" $")]
+		[InlineData("startsWith(\"hello\",\"he\") and endsWith('world','ld')", "and endsWith 'ld' 'world' $ startsWith \"he\" \"hello\" $")]
+		[InlineData("len(\"abc\") = 3", "= 3 len \"abc\" $")]
+		[InlineData("concat('a',\"b\",'c')", "concat 'c' \"b\" 'a' $")]
+		[InlineData("substr(\"hello\",1,2)", "substr 2 1 \"hello\" $")]
+		[InlineData("contains(\"a\\\"b\",\"\\\"b\")", "contains \"\\\"b\" \"a\\\"b\" $")]
+		[InlineData("replace(\"a\\\\b\",\"\\\\\",\"/\")", "replace \"/\" \"\\\\\" \"a\\\\b\" $")]
+		[InlineData("not(\"x\" = \"y\")", "not = \"y\" \"x\" $")]
+		[InlineData("contains(\"hello\",\"he\") and not(\"x\" = \"y\")", "and not = \"y\" \"x\" $ contains \"he\" \"hello\" $")]
 		public void Run(string text, string expected) {
 			var parser = new ParserBuilder().AddDefault(true).Build();
 			var tokens = parser.Tokenize(text);

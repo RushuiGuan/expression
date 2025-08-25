@@ -20,7 +20,7 @@ namespace Albatross.Expression.Prefix {
 		public int MinOperandCount { get; }
 		public int MaxOperandCount { get; }
 
-		public List<IExpression> Operands { get; private set; } = new();
+		public IReadOnlyList<IExpression> Operands { get; set; } = [];
 
 		public string Text() {
 			var sb = new StringBuilder();

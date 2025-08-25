@@ -5,6 +5,6 @@ namespace Albatross.Expression.Nodes {
 		string Name { get; }
 		int MinOperandCount { get; }
 		int MaxOperandCount { get; }
-		List<IExpression> Operands { get; }
+		IReadOnlyList<IExpression> Operands { get; set; }
 	}
 }

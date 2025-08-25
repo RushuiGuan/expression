@@ -1,5 +1,5 @@
-﻿using Albatross.Expression.ExpressionFactory;
-using Albatross.Expression.PrefixOperations;
+﻿using Albatross.Expression.Parsing;
+using Albatross.Expression.Prefix;
 using Xunit;
 
 namespace Albatross.Expression.Test.Parsing {

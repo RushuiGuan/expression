@@ -1,4 +1,4 @@
-﻿using Albatross.Expression.ExpressionFactory;
+﻿using Albatross.Expression.Parsing;
 
 namespace Albatross.Expression.Nodes {
 	public class ControlToken : IToken {

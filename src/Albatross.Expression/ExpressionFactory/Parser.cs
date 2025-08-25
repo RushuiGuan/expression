@@ -142,11 +142,12 @@ namespace Albatross.Expression.ExpressionFactory {
 					} else {
 						while (stack.Count > 0) {
 							var previous = stack.Peek();
-							if (previous is IPrefixExpression || previous is IUnaryExpression || previous is IInfixExpression previousInfix && infix.Precedence <= previousInfix.Precedence) {
+							if (previous is IPrefixExpression 
+							    || previous is IUnaryExpression 
+							    || previous is IInfixExpression previousInfix && infix.Precedence <= previousInfix.Precedence) {
 								postfix.Push(stack.Pop());
 							}
 						}
-
 						// while (stack.Count > 0
 						//        && stack.Peek().IsLeftParenthesis(false)
 						//        && ( stack.Peek() is IPrefixExpression

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class PadLeft : PrefixExpression {
 		public const char DefaultPaddingCharacter = ' ';
 		public PadLeft() : base("PadLeft", 2, 3) { }

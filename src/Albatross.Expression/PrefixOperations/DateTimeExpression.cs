@@ -13,7 +13,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// </list>
 	/// <para>Output Type: System.DateTime</para>
 	/// </summary>
-	[ParserOperation]
 	public class DateTimeExpression : PrefixExpression {
 		public DateTimeExpression() : base("DateTime", 1, 1) { }
 

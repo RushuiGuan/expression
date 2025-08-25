@@ -2,7 +2,6 @@
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Lower : PrefixExpression {
 		public Lower() : base("Lower", 1, 1) { }
 

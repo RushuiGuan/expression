@@ -2,7 +2,6 @@
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Random : PrefixExpression {
 		public Random() : base("Random", 2, 2) { }
 

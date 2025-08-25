@@ -17,7 +17,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <para>Output Type: System.DateTime</para>
 	/// <para>Usage: CreateDate(2018, 1, 31)</para>
 	/// </summary>
-	[ParserOperation]
 	public class CreateDate : PrefixExpression {
 		public CreateDate() : base("CreateDate", 3, 3) { }
 		

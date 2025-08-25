@@ -4,7 +4,6 @@ using Albatross.Expression.Nodes;
 
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Month : PrefixExpression {
 		public Month() : base("Month", 1, 1) { }
 

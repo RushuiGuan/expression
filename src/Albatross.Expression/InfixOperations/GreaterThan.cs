@@ -16,7 +16,6 @@ namespace Albatross.Expression.InfixOperations {
 	/// <para>Usage: 3 > 2</para>
 	/// <para>Precedance: 50</para>
 	/// </summary>
-	[ParserOperation]
 	public class GreaterThan : ComparisonInfixOperation {
 		public GreaterThan() : base(">", 50) { }
 

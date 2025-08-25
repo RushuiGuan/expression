@@ -3,7 +3,6 @@ using Albatross.Dates;
 
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class PreviousWeekDay : PrefixExpression {
 		public PreviousWeekDay() : base("PreviousWeekDay", 1, 2) { }
 

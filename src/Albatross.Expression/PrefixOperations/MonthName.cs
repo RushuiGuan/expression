@@ -3,7 +3,6 @@ using System.Globalization;
 using System.Collections.Generic;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class MonthName : PrefixExpression {
 		public MonthName() : base("MonthName", 1, 1) { }
 

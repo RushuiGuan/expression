@@ -6,7 +6,6 @@ using Albatross.Expression.Nodes;
 using System.Xml;
 
 namespace Albatross.Expression.InfixOperations {
-	[ParserOperation]
 	public class NotEqual : ComparisonInfixOperation {
 		public NotEqual() : base("<>", 50) { }
 

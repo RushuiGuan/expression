@@ -14,7 +14,6 @@ namespace Albatross.Expression.InfixOperations {
 	/// </list>
 	/// <para>Output Type: double</para>
 	/// </summary>
-	[ParserOperation]
 	public class Power : InfixExpression {
 		public Power() : base("^", 300) { }
 

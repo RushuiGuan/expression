@@ -11,7 +11,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <para>Output Type: <see cref="System.Collections.Generic.List{T}"/> where T is Object</para>
 	/// <para>Usage: @(1, 2, 3, 4, 5)</para>
 	/// </summary>
-	[ParserOperation]
 	public class Array : PrefixExpression {
 		public Array() : base("@", 0, int.MaxValue) { }
 		public override object Run(List<object> operands) => operands;

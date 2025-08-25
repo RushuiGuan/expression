@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class MinNumber : PrefixExpression {
 		public MinNumber() : base("Min", 0, int.MaxValue) { }
 

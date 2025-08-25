@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Number : PrefixExpression {
 		public Number() : base("Number", 1, 1) { }
 

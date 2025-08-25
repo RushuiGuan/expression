@@ -5,7 +5,6 @@ using System.Globalization;
 using System.Collections.Generic;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class ShortMonthName : PrefixExpression {
 		public ShortMonthName() : base("ShortMonthName", 1, 1) { }
 

@@ -1,5 +1,4 @@
 ﻿namespace Albatross.Expression.InfixOperations {
-	[ParserOperation]
 	public class LessThan : ComparisonInfixOperation {
 		public LessThan() : base("<", 50) { }
 

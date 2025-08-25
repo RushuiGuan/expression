@@ -7,7 +7,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <para>Operand Count: 0</para>
 	/// <para>Output Type: string</para>
 	/// </summary>
-	[ParserOperation]
 	public class CurrentMachine : PrefixExpression {
 		public CurrentMachine() : base("CurrentMachine", 0, 0) { }
 

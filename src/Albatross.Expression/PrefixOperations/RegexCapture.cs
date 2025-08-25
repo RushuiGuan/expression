@@ -12,7 +12,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// parameter 3 (integer): Captured group index.  If regex matches, return the specified captured group value.  The default value is
 	/// 0 if not specified
 	/// </summary>
-	[ParserOperation]
 	public class RegexCapture : PrefixExpression {
 		public RegexCapture() : base("RegexCapture", 2, 3) { }
 

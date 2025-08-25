@@ -8,7 +8,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// return the json property using the supplied path.  Operand 1 is the input json value, if the input is text, it will be parsed into a json element.
 	/// Operand 2 and beyond are the json property path.
 	/// </summary>
-	[ParserOperation]
 	public class GetJsonProperty : PrefixExpression {
 		public GetJsonProperty() : base("JsonProperty", 2, 2) { }
 

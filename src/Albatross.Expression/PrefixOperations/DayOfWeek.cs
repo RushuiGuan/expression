@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class DayOfWeek : PrefixExpression {
 		public DayOfWeek() : base("DayOfWeek", 1, 1) { }
 

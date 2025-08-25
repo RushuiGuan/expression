@@ -2,7 +2,6 @@
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Text : PrefixExpression {
 		public Text() : base("Text", 1, 1) { }
 

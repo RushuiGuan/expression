@@ -15,7 +15,6 @@
 	/// <para>Usage: 3 > 2 or 2 > 1</para>
 	/// <para>Precedance: 20</para>
 	/// </summary>
-	[ParserOperation]
 	public class Or : InfixExpression {
 		public Or() : base("or", 20) { }
 

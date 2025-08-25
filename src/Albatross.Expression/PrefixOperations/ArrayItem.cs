@@ -8,7 +8,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <summary>
 	/// Return the value of a json array item based on the provided index
 	/// </summary>
-	[ParserOperation]
 	public class ArrayItem : PrefixExpression {
 		public ArrayItem() : base("ArrayItem", 2, 2) { }
 

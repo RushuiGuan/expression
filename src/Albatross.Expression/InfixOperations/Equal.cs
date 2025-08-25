@@ -11,7 +11,6 @@
 	/// </list>
 	/// <para>Output Type: double</para>
 	/// </summary>
-	[ParserOperation]
 	public class Equal : ComparisonInfixOperation {
 		public Equal() : base("=", 50) { }
 

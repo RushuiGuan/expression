@@ -14,7 +14,6 @@ namespace Albatross.Expression.InfixOperations {
 	/// </list>
 	/// <para>Output Type: double</para>
 	/// </summary>
-	[ParserOperation]
 	public class Divide : InfixExpression {
 		public Divide() : base("/", 200) { }
 

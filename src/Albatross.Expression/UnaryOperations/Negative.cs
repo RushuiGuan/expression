@@ -1,7 +1,6 @@
 ﻿using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.UnaryOperations {
-	[ParserOperation]
 	public class Negative : UnaryExpression {
 		public Negative() : base("-") { }
 

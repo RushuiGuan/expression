@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class NextWeekDay : PrefixExpression {
 		public NextWeekDay() : base("NextWeekDay", 1, 2) { }
 

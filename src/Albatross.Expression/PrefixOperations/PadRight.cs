@@ -2,7 +2,6 @@
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class PadRight : PrefixExpression {
 		public const char DefaultPaddingCharacter = ' ';
 		public PadRight() : base("PadRight", 2, 3) { }

@@ -1,7 +1,6 @@
 ﻿using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.InfixOperations {
-	[ParserOperation]
 	public class Minus : InfixExpression {
 		public Minus() : base("-", 100) { }
 

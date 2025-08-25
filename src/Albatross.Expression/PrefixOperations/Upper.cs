@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Upper : PrefixExpression {
 		public Upper() : base("Upper", 1, 1) { }
 

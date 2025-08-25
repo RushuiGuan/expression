@@ -13,7 +13,6 @@ namespace Albatross.Expression.InfixOperations {
 	/// </list>
 	/// <para>Output Type: double</para>
 	/// </summary>
-	[ParserOperation]
 	public class Multiply : InfixExpression {
 		public Multiply() : base("*", 200) { }
 

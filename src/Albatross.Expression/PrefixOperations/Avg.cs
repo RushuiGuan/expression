@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Avg : PrefixExpression {
 		public Avg() : base("Avg", 0, int.MaxValue) { }
 

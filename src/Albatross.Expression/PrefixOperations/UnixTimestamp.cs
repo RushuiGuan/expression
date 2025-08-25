@@ -16,7 +16,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// </list>
 	/// <para>Output Type: long</para>
 	/// </summary>
-	[ParserOperation]
 	public class UnixTimestamp : PrefixExpression {
 		public UnixTimestamp() : base("UnixTimestamp", 1, 1) { }
 

@@ -5,7 +5,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <summary>
 	/// Convert a dateTime object to utc.  If the input operand is a string, the function will attempt to parse it first.
 	/// </summary>
-	[ParserOperation]
 	public class Utc : PrefixExpression {
 		public Utc() : base("Utc", 1, 1) { }
 

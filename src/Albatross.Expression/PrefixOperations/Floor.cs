@@ -6,7 +6,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <summary>
 	/// Floor the current number and remove all decimals
 	/// </summary>
-	[ParserOperation]
 	public class Floor : PrefixExpression {
 		public Floor() : base("Floor", 1, 1) { }
 

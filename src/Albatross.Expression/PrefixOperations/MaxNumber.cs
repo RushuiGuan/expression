@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class MaxNumber : PrefixExpression {
 		public MaxNumber() : base("Max", 1, int.MaxValue) { }
 

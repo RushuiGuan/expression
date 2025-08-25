@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Text.Json;
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Len : PrefixExpression {
 		public Len() : base("Len", 1, 1) { }
 

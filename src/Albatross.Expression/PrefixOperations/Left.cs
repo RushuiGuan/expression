@@ -1,5 +1,4 @@
 ﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Nodes;
 using System.Collections.Generic;
 
 namespace Albatross.Expression.PrefixOperations {
@@ -16,7 +15,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <para>Output Type: string</para>
 	/// <para>Usage: Left("test", 1) should return "t"</para>
 	/// </summary>
-	[ParserOperation]
 	public class Left : PrefixExpression {
 		public Left() : base("Left", 2, 2) { }
 

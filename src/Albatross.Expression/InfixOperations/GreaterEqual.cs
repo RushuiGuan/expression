@@ -14,7 +14,6 @@
 	/// <para>Usage: 3 >= 2</para>
 	/// <para>Precedance: 50</para>
 	/// </summary>
-	[ParserOperation]
 	public class GreaterEqual : ComparisonInfixOperation {
 		public GreaterEqual() : base(">=", 50) { }
 		

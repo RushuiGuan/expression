@@ -17,7 +17,6 @@ namespace Albatross.Expression.PrefixOperations {
 	/// <para>Output Type: any</para>
 	/// <para>Usage: if( 3 > 2, "OK", "No")</para>
 	/// </summary>
-	[ParserOperation]
 	public class If : PrefixExpression {
 		public If() : base("If", 3, 3) { }
 

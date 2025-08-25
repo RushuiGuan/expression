@@ -15,7 +15,6 @@
 	/// <para>Usage: 3 > 2 and 2 > 1</para>
 	/// <para>Precedence: 30</para>
 	/// </summary>
-	[ParserOperation(Group = "Logical")]
 	public class And : InfixExpression {
 		public And() : base("and", 30) { }
 

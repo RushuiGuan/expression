@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 
 namespace Albatross.Expression.PrefixOperations {
-	[ParserOperation]
 	public class Year : PrefixExpression {
 		public Year() : base("Year", 1, 1) { }
 

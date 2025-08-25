@@ -8,13 +8,16 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData('&', "&", 1)]
 		[InlineData('&', " &", 2)]
 		public void ControlTokenParsing_Success(char token, string text, int expected_next) {
-			new ControlTokenFactory(token).VerifyValueFactory(text, true, expected_next, $"{token}");
+			var result = new ControlTokenFactory(token).Parse(text, 0, out var next);
+			Assert.Equal($"{token}", result?.Token);
+			Assert.Equal(expected_next, next);
 		}
 
 		[Theory]
 		[InlineData('(', "a")]
 		public void ControlTokenParsing_Failure(char token, string text) {
-			new ControlTokenFactory(token).VerifyValueFactory(text, false, 0, "");
+			var result = new ControlTokenFactory(token).Parse(text, 0, out var next);
+			Assert.Equal($"{token}", result?.Token);
 		}
 	}
 }

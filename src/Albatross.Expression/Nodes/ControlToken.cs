@@ -1,8 +1,11 @@
 ﻿using Albatross.Expression.ExpressionFactory;
 
 namespace Albatross.Expression.Nodes {
-	public class ControlToken : ValueToken {
-		public ControlToken(char value) : base(value.ToString()) {
+	public class ControlToken : IToken {
+		public string Token { get; }
+		public string Text() => Token;
+		public ControlToken(char token) {
+			Token = token.ToString();
 		}
 	}
 

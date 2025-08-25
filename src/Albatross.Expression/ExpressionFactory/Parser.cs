@@ -13,9 +13,9 @@ namespace Albatross.Expression.ExpressionFactory {
 	/// </summary>
 	public class Parser : IParser {
 		private readonly IExpressionFactory<IToken>[] infixCommaRight;
-		private readonly IExpressionFactory<IToken>[] prefixValueLeft;
+		private readonly IExpressionFactory<IToken>[] prefixUnaryValueLeft;
 		private readonly IExpressionFactory<IToken>[] left;
-		private readonly IExpressionFactory<IToken>[] prefixValueLeftRight;
+		private readonly IExpressionFactory<IToken>[] prefixUnaryValueLeftRight;
 
 		public Parser(IEnumerable<IExpressionFactory<IToken>> factories) {
 			var infix = new List<IExpressionFactory<IToken>>();
@@ -25,9 +25,9 @@ namespace Albatross.Expression.ExpressionFactory {
 			foreach (var factory in factories) {
 				if (factory is IExpressionFactory<IInfixExpression>) {
 					infix.Add(factory);
-				} else if(factory is IExpressionFactory<IPrefixExpression>) {
+				} else if (factory is IExpressionFactory<IPrefixExpression>) {
 					prefix.Add(factory);
-				}else if (factory is IExpressionFactory<IValueToken>){
+				} else if (factory is IExpressionFactory<IValueToken>) {
 					value.Add(factory);
 				} else if (factory is IExpressionFactory<UnaryExpression> unaryFactory) {
 					unary.Add(unaryFactory);
@@ -36,8 +36,8 @@ namespace Albatross.Expression.ExpressionFactory {
 				}
 			}
 			this.left = [ControlTokenFactory.LeftParenthesis];
-			this.prefixValueLeft = prefix.Union(value).Union(this.left).ToArray();
-			this.prefixValueLeftRight = prefix.Union(value).Union(this.left).Union([ControlTokenFactory.RightParenthesis]).ToArray();
+			this.prefixUnaryValueLeft = prefix.Union(unary).Union(value).Union(this.left).ToArray();
+			this.prefixUnaryValueLeftRight = prefix.Union(unary).Union(value).Union(this.left).Union([ControlTokenFactory.RightParenthesis]).ToArray();
 			this.infixCommaRight = infix.Union([ControlTokenFactory.Comma, ControlTokenFactory.RightParenthesis]).ToArray();
 		}
 
@@ -46,9 +46,9 @@ namespace Albatross.Expression.ExpressionFactory {
 		public Queue<IToken> Tokenize(string expression) {
 			var tokens = new Queue<IToken>();
 			int start = 0;
+			IToken? last = null;
 			while (start < expression.Length) {
 				bool found = false;
-				var last = tokens.LastOrDefault();
 				IEnumerable<IExpressionFactory<IToken>>? factories = null;
 				/*
 				if (last == null || last == ControlToken.Comma || (last is PrefixOperationToken && ((PrefixOperationToken)last).Symbolic) || last is InfixOperationToken) {
@@ -61,10 +61,10 @@ namespace Albatross.Expression.ExpressionFactory {
 					list = new IToken[] { ControlToken.LeftParenthesis };
 				}
 				*/
-				if (last == null || last.IsComma() || last is UnaryExpression || last is IInfixExpression) {
-					factories = this.prefixValueLeft;
+				if (last == null || last.IsComma() || last is IUnaryExpression || last is IInfixExpression) {
+					factories = this.prefixUnaryValueLeft;
 				} else if (last.IsLeftParenthesis()) {
-					factories = this.prefixValueLeftRight;
+					factories = this.prefixUnaryValueLeftRight;
 				} else if (last.IsRightParenthesis() || last is IValueToken) {
 					factories = this.infixCommaRight;
 				} else if (last is IPrefixExpression) {
@@ -78,18 +78,18 @@ namespace Albatross.Expression.ExpressionFactory {
 						found = true;
 						start = next;
 						tokens.Enqueue(node);
+						last = node;
 						break;
 					}
 				}
-
-				if (found) { continue; }
-
+				if (found) {
+					continue;
+				}
 				if (start < expression.Length) {
 					if (expression.Substring(start).Trim().Length == 0) {
 						break;
 					}
 				}
-
 				throw new TokenParsingException("Unexpected token: " + expression.Substring(start));
 			}
 
@@ -108,26 +108,21 @@ namespace Albatross.Expression.ExpressionFactory {
 					while (stack.Count > 0 && stack.Peek().IsLeftParenthesis(false)) {
 						postfix.Push(stack.Pop());
 					}
-
 					if (stack.Count == 0) {
 						throw new StackException("misplace comma or missing left parenthesis");
 					} else {
 						continue;
 					}
 				}
-
 				// if it is an operand, put it on the postfix stack
-				if (token is IValueToken expression) {
-					postfix.Push(expression);
-				}
-
-				if (token.IsLeftParenthesis()) {
+				if (token is IValueToken valueToken) {
+					postfix.Push(valueToken);
+				} else if (token.IsLeftParenthesis()) {
 					stack.Push(token);
 				} else if (token.IsRightParenthesis()) {
 					while (stack.Count > 0 && stack.Peek().IsLeftParenthesis(false)) {
 						postfix.Push(stack.Pop());
 					}
-
 					if (stack.Count == 0) {
 						throw new StackException("missing left parenthesis");
 					} else {
@@ -137,18 +132,28 @@ namespace Albatross.Expression.ExpressionFactory {
 				} else if (token is IPrefixExpression) {
 					stack.Push(token);
 					postfix.Push(ControlTokenFactory.FuncParamStart.Token);
+				} else if (token is IUnaryExpression) {
+					stack.Push(token);
+					postfix.Push(ControlTokenFactory.FuncParamStart.Token);
+					stack.Push(ControlTokenFactory.LeftParenthesis.Token);
 				} else if (token is IInfixExpression infix) {
 					if (stack.Count == 0 || stack.Peek().IsLeftParenthesis()) {
 						stack.Push(token);
 					} else {
-						while (stack.Count > 0
-							   && stack.Peek().IsLeftParenthesis(false)
-							   && (stack.Peek() is IPrefixExpression
-									|| stack.Peek() is IInfixExpression
-									&& infix.Precedence <= ((IInfixExpression)stack.Peek()).Precedence)) {
-							postfix.Push(stack.Pop());
+						while (stack.Count > 0) {
+							var previous = stack.Peek();
+							if (previous is IPrefixExpression || previous is IUnaryExpression || previous is IInfixExpression previousInfix && infix.Precedence <= previousInfix.Precedence) {
+								postfix.Push(stack.Pop());
+							}
 						}
 
+						// while (stack.Count > 0
+						//        && stack.Peek().IsLeftParenthesis(false)
+						//        && ( stack.Peek() is IPrefixExpression
+						//             || stack.Peek() is IInfixExpression
+						//             && infix.Precedence <= ( (IInfixExpression)stack.Peek() ).Precedence )) {
+						// 	postfix.Push(stack.Pop());
+						// }
 						stack.Push(token);
 					}
 				}
@@ -182,9 +187,11 @@ namespace Albatross.Expression.ExpressionFactory {
 						// TODO: optimize this insert to avoid shifting
 						prefix.Operands.Insert(0, t as IExpression ?? throw new StackException("misplaced control token as prefix operand"));
 					}
+
 					stack.Push(prefix);
 				}
 			}
+
 			return stack.Pop() as IExpression ?? throw new StackException("misplace control token as expression root");
 		}
 
@@ -193,6 +200,7 @@ namespace Albatross.Expression.ExpressionFactory {
 			while (src.Count > 0) {
 				dst.Push(src.Pop());
 			}
+
 			return dst;
 		}
 	}

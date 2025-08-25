@@ -25,9 +25,9 @@ namespace Albatross.Expression.ExpressionFactory {
 			AddFactory(new InfixExpressionFactory<InfixOperations.Divide>(caseSensitive));
 			AddFactory(new InfixExpressionFactory<InfixOperations.Equal>(caseSensitive));
 			AddFactory(new InfixExpressionFactory<InfixOperations.GreaterEqual>(caseSensitive));
-			AddFactory(new InfixExpressionFactory<InfixOperations.GreaterThan>(caseSensitive));
+			AddFactory(new GreaterThanExpressionFactory());
 			AddFactory(new InfixExpressionFactory<InfixOperations.LessEqual>(caseSensitive));
-			AddFactory(new InfixExpressionFactory<InfixOperations.LessThan>(caseSensitive));
+			AddFactory(new LessThanExpressionFactory());
 			AddFactory(new InfixExpressionFactory<InfixOperations.Minus>(caseSensitive));
 			AddFactory(new InfixExpressionFactory<InfixOperations.Mod>(caseSensitive));
 			AddFactory(new InfixExpressionFactory<InfixOperations.Multiply>(caseSensitive));

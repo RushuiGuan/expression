@@ -15,6 +15,7 @@ namespace Albatross.Expression.Test.Parsing {
 
 		[Theory]
 		[InlineData("<=")]
+		[InlineData("<>")]
 		[InlineData("=")]
 		public void LessThanExpressionFactory_Failure(string text) {
 			var result = new LessThanExpressionFactory().Parse(text, 0, out var next);

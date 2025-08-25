@@ -1,4 +1,4 @@
-﻿using Albatross.Expression.Nodes;
+﻿	using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.InfixOperations {
 	/// <summary>

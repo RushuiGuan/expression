@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace Albatross.Expression.Context {
 	public class ExpressionContextValue<T> : IContextValue<T> {
-		public ExpressionContextValue(string name, string expression, bool caseSensitive, IParser parser) {
+		public ExpressionContextValue(string name, string expression, IParser parser) {
 			Name = name;
 			this.Expression = expression;
-			Dependees = caseSensitive ? new HashSet<string>() : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+			Dependees = parser.CaseSensitive ? new HashSet<string>() : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 			var queue = parser.Tokenize(expression);
 			foreach (var token in queue) {
 				if (token is Variable variable) {

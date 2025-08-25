@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Prefix {
 	public class Not : PrefixExpression {

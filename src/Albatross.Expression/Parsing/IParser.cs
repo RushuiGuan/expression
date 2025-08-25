@@ -6,6 +6,7 @@ namespace Albatross.Expression {
 	/// The interface contains functionalities to process an expression string.
 	/// </summary>
 	public interface IParser {
+		bool CaseSensitive { get; }
 		/// <summary>
 		/// Parse a text expression from left to right and generate a token Queue
 		/// </summary>

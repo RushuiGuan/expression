@@ -46,6 +46,8 @@ namespace Albatross.Expression {
 				} else if (json.ValueKind == JsonValueKind.String && double.TryParse(json.GetString(), out d)) {
 					return d;
 				}
+			} else {
+				return Convert.ToDouble(obj);
 			}
 			throw new FormatException($"Cannot convert {obj} to double");
 		}

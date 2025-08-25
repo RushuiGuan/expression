@@ -258,7 +258,7 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData("not(\"x\" = \"y\")", "not = \"y\" \"x\" $")]
 		[InlineData("contains(\"hello\",\"he\") and not(\"x\" = \"y\")", "and not = \"y\" \"x\" $ contains \"he\" \"hello\" $")]
 		public void Run(string text, string expected) {
-			var parser = new ParserBuilder().AddDefault(true).Build();
+			var parser = new ParserBuilder().BuildDefault(true);
 			var tokens = parser.Tokenize(text);
 			var stack = parser.BuildPostfixStack(tokens);
 			Assert.Equal(expected, string.Join(' ', stack.Select(x => x.Token)));

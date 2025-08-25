@@ -12,12 +12,14 @@ namespace Albatross.Expression.Parsing {
 	/// An immutable implementation of the <see cref="Albatross.Expression.IParser"/> interface.
 	/// </summary>
 	public class Parser : IParser {
+		public bool CaseSensitive { get; }
 		private readonly IExpressionFactory<IToken>[] infixCommaRight;
 		private readonly IExpressionFactory<IToken>[] prefixUnaryValueLeft;
 		private readonly IExpressionFactory<IToken>[] left;
 		private readonly IExpressionFactory<IToken>[] prefixUnaryValueLeftRight;
 
-		public Parser(IEnumerable<IExpressionFactory<IToken>> factories) {
+		public Parser(IEnumerable<IExpressionFactory<IToken>> factories, bool caseSensitive) {
+			this.CaseSensitive = caseSensitive;
 			var infix = new List<IExpressionFactory<IToken>>();
 			var prefix = new List<IExpressionFactory<IToken>>();
 			var value = new List<IExpressionFactory<IToken>>();

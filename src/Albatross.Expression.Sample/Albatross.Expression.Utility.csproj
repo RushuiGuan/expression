@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<OutputType>Library</OutputType>
-		<TargetFramework>net8.0</TargetFramework>
-		<ApplicationIcon />
-		<StartupObject />
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<PackageId>Albatross.Expression.Utility</PackageId>
+		<PackAsTool>True</PackAsTool>
+		<ToolCommandName>ex</ToolCommandName>
 	</PropertyGroup>
 	<ItemGroup>
+	  <PackageReference Include="Albatross.CommandLine" Version="7.8.7" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj" />

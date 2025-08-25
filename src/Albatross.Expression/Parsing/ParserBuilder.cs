@@ -18,6 +18,7 @@ namespace Albatross.Expression.Parsing {
 			AddFactory(new VariableFactory());
 			return this;
 		}
+
 		public ParserBuilder AddInfixFactories(bool caseSensitive) {
 			AddFactory(new GreaterThanExpressionFactory());
 			AddFactory(new LessThanExpressionFactory());
@@ -48,6 +49,7 @@ namespace Albatross.Expression.Parsing {
 			var factory = new GenericPrefixExpressionFactory(caseSensitive);
 			factory.Add(new Prefix.ArrayItem());
 			factory.Add(new Prefix.Avg());
+			factory.Add(new Prefix.Concat());
 			factory.Add(new Prefix.CreateDate());
 			factory.Add(new Prefix.CurrentApp());
 			factory.Add(new Prefix.CurrentMachine());
@@ -57,6 +59,7 @@ namespace Albatross.Expression.Parsing {
 			factory.Add(new Prefix.Format());
 			factory.Add(new Prefix.GetJsonProperty());
 			factory.Add(new Prefix.If());
+			factory.Add(new Prefix.JoinPath());
 			factory.Add(new Prefix.Left());
 			factory.Add(new Prefix.Len());
 			factory.Add(new Prefix.Lower());
@@ -83,6 +86,7 @@ namespace Albatross.Expression.Parsing {
 			factory.Add(new Prefix.Utc());
 			factory.Add(new Prefix.UtcNow());
 			factory.Add(new Prefix.Year());
+
 			AddFactory(factory);
 			return this;
 		}
@@ -101,6 +105,9 @@ namespace Albatross.Expression.Parsing {
 			return this;
 		}
 
-		public Parser Build() => new Parser(Factories);
+		public Parser BuildDefault(bool caseSensitive = false) {
+			this.AddDefault(caseSensitive);
+			return new Parser(Factories, caseSensitive);
+		}
 	}
 }

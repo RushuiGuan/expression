@@ -1,4 +1,5 @@
 ﻿using Albatross.Expression.Exceptions;
+using Albatross.Expression.Parsing;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -6,18 +7,16 @@ using System.Threading.Tasks;
 
 namespace Albatross.Expression.Context {
 	public class ExecutionContext<T> : IExecutionContext<T> {
-		public ExecutionContext(IParser parser, bool caseSensitive) {
-			this.caseSensitive = caseSensitive;
+		public ExecutionContext(IParser parser) {
 			this.Parser = parser;
-			Store = caseSensitive ? new Dictionary<string, IContextValue<T>>() : new Dictionary<string, IContextValue<T>>(StringComparer.InvariantCultureIgnoreCase);
+			Store = parser.CaseSensitive ? new Dictionary<string, IContextValue<T>>() : new Dictionary<string, IContextValue<T>>(StringComparer.InvariantCultureIgnoreCase);
 		}
 		
-		private readonly bool caseSensitive;
 		public Dictionary<string, IContextValue<T>> Store { get; private set; }
 		public IParser Parser { get; private set; }
 
 		ISet<string> NewSet(params IEnumerable<string> items) {
-			return this.caseSensitive
+			return this.Parser.CaseSensitive
 				? new HashSet<string>(items)
 				: new HashSet<string>(items, StringComparer.InvariantCultureIgnoreCase);
 		}

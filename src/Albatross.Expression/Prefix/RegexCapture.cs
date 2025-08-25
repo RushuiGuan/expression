@@ -13,7 +13,7 @@ namespace Albatross.Expression.Prefix {
 	/// 0 if not specified
 	/// </summary>
 	public class RegexCapture : PrefixExpression {
-		public RegexCapture() : base("RegexCapture", 2, 3) { }
+		public RegexCapture() : base("Regex", 2, 3) { }
 
 		public override object Run(List<object> operands) {
 			string text = operands[0].ConvertToString();

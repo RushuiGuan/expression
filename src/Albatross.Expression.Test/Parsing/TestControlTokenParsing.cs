@@ -17,7 +17,7 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData('(', "a")]
 		public void ControlTokenParsing_Failure(char token, string text) {
 			var result = new ControlTokenFactory(token).Parse(text, 0, out var next);
-			Assert.Equal($"{token}", result?.Token);
+			Assert.Null(result);
 		}
 	}
 }

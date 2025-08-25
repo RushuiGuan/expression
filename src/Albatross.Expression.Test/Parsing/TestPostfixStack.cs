@@ -16,10 +16,6 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData("1 + 2 * 3", "+ * 3 2 1")]
 		[InlineData("(1 + 2) * 3", "* 3 + 2 1")]
 		[InlineData("1 * (2 + 3)", "* + 3 2 1")]
-		[InlineData("2 ^ 3 ^ 4", "^ 4 ^ 3 2")]
-		
-		//TODO: fix right associativity for power operator
-		[InlineData("(2 ^ 3) ^ 4", "^ 4 ^ 3 2")]
 		[InlineData("10 / 5 % 3", "% 3 / 5 10")]
 		[InlineData("10 % 5 / 3", "/ 3 % 5 10")]
 
@@ -75,20 +71,20 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData("calc(a-b, x<y or p(q), r*s + u)", "calc + u * s r or p q $ < y x - b a $")]
 		[InlineData("not(isnull(a) and f(b,c,d))", "not and f d c b $ isnull a $ $")]
 		[InlineData("max(f(a, b), g(c, h(d)))", "max g h d $ c $ f b a $ $")]
-		
+
 		// no parameters
 		[InlineData("test()", "test $")]
-		
+
 		//unary
 		[InlineData("-1", "- 1 $")]
 		[InlineData("+1", "+ 1 $")]
 		[InlineData("2--1", "- - 1 $ 2")]
-		
+
 		// Zero-arg & identifier edge cases
 		[InlineData("now()", "now $")]
 		[InlineData("empty()", "empty $")]
 		[InlineData("F1_2(_x, y3)", "F1_2 y3 _x $")]
-		[InlineData("f ( a , b )", "f b a $")]  // whitespace-insensitive call
+		[InlineData("f ( a , b )", "f b a $")] // whitespace-insensitive call
 
 // Functions + nested ops
 		[InlineData("pow(add(a,b), 2)", "pow 2 add b a $ $")]
@@ -102,117 +98,137 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData("outer(inner1(a, b + c), inner2(d ^ e, f, g(h(i))))", "outer inner2 g h i $ $ f ^ e d $ inner1 + c b a $ $")]
 
 // Function names that collide with operators (function-call vs infix)
-		[InlineData("and(a,b)", "and b a $")]                         // function 'and'
+		[InlineData("and(a,b)", "and b a $")] // function 'and'
 		[InlineData("and(a,b) and and(c,d)", "and and d c $ and b a $")] // mix function + infix
-		[InlineData("or(and(a,b), c)", "or c and b a $ $")]            // function 'or' + nested function
+		[InlineData("or(and(a,b), c)", "or c and b a $ $")] // function 'or' + nested function
 
 // Mix with mult/div, comparisons, logical
 		[InlineData("max( a, b + c, d*e )", "max * e d + c b a $")]
 		[InlineData("f(a,b,c) = 0", "= 0 f c b a $")]
 		[InlineData("if(a < b, c, d)", "if d c < b a $")]
 		[InlineData("not(f(a)) and h(c)", "and h c $ not f a $ $")]
-		
-		// Power-only chains (left-assoc)
-		[InlineData("a ^ b ^ c", "^ c ^ b a")]          // (a ^ b) ^ c
-		[InlineData("(a ^ b) ^ c", "^ c ^ b a")]        // same as above
-		[InlineData("a ^ (b ^ c)", "^ ^ c b a")]        // parens force right grouping
 
-// Mixed with power chains
-		[InlineData("(a ^ b ^ c) and (d + e * f = g)", "and = g + * f e d ^ c ^ b a")]  // left side groups left
-		[InlineData("a ^ b ^ c and d", "and d ^ c ^ b a")]                               // (a ^ b) ^ c first
-
-// Power with functions (remember: function calls use $ and reverse-args rule)
-		[InlineData("f(a,b) ^ g(c) ^ h(d,e)", "^ h e d $ ^ g c $ f b a $")]              // (f^g) ^ h (left-assoc)
-		[InlineData("(f(a,b) ^ g(c)) ^ h(d,e)", "^ h e d $ ^ g c $ f b a $")]            // same as above
-		[InlineData("f(a, b ^ c ^ d)", "f ^ d ^ c b a $")]                               // inner power groups left
-
-
-		
 // Unary basics (unary treated as prefix with single operand + "$")
-[InlineData("-a", "- a $")]
-[InlineData("+a", "+ a $")]
-[InlineData("-(a)", "- a $")]
-[InlineData("+(a)", "+ a $")]
-[InlineData("--a", "- - a $ $")]
-[InlineData("++a", "+ + a $ $")]
-[InlineData("-+a", "- + a $ $")]
-[InlineData("+-a", "+ - a $ $")]
-[InlineData("-1", "- 1 $")]
-[InlineData("+1", "+ 1 $")]
-[InlineData("-2 ^ 2", "- ^ 2 2 $")]      // -(2^2)
-[InlineData("(-2) ^ 2", "^ 2 - 2 $")]     // (-2)^2
-
-// Unary with power (^ is LEFT-associative, and tighter than unary)
-[InlineData("-a ^ b", "- ^ b a $")]
-[InlineData("(-a) ^ b", "^ b - a $")]
-[InlineData("-(a ^ b)", "- ^ b a $")]
-[InlineData("a ^ -b", "^ - b $ a")]
-[InlineData("(-a) ^ (-b)", "^ - b $ - a $")]
-[InlineData("-a ^ b ^ c", "- ^ c ^ b a $")]         // -( (a ^ b) ^ c )
-[InlineData("(-a) ^ b ^ c", "^ c ^ b - a $")]
-[InlineData("a ^ (-b) ^ c", "^ c ^ - b $ a")]
-[InlineData("( -a ) ^ ( b ^ c )", "^ ^ c b - a $")]
+		[InlineData("-a", "- a $")]
+		[InlineData("+a", "+ a $")]
+		[InlineData("-(a)", "- a $")]
+		[InlineData("+(a)", "+ a $")]
+		[InlineData("--a", "- - a $ $")]
+		[InlineData("++a", "+ + a $ $")]
+		[InlineData("-+a", "- + a $ $")]
+		[InlineData("+-a", "+ - a $ $")]
 
 // Unary with multiplicative
-[InlineData("a * -b", "* - b $ a")]
-[InlineData("-a * b", "* b - a $")]
-[InlineData("a / -b", "/ - b $ a")]
-[InlineData("-a / b", "/ b - a $")]
-[InlineData("a % -b", "% - b $ a")]
-[InlineData("-a % b", "% b - a $")]
-[InlineData("a / -b % +c", "% + c $ / - b $ a")]
+		[InlineData("a * -b", "* - b $ a")]
+		[InlineData("-a * b", "* b - a $")]
+		[InlineData("a / -b", "/ - b $ a")]
+		[InlineData("-a / b", "/ b - a $")]
+		[InlineData("a % -b", "% - b $ a")]
+		[InlineData("-a % b", "% b - a $")]
+		[InlineData("a / -b % +c", "% + c $ / - b $ a")]
 
 // Unary with additive
-[InlineData("a + -b", "+ - b $ a")]
-[InlineData("-a + b", "+ b - a $")]
-[InlineData("a - -b", "- - b $ a")]
-[InlineData("-a - -b", "- - b $ - a $")]
-[InlineData("+a - +b", "- + b $ + a $")]
-[InlineData("-(a + b)", "- + b a $")]
-[InlineData("-(a - b)", "- - b a $")]
+		[InlineData("a + -b", "+ - b $ a")]
+		[InlineData("-a + b", "+ b - a $")]
+		[InlineData("a - -b", "- - b $ a")]
+		[InlineData("-a - -b", "- - b $ - a $")]
+		[InlineData("+a - +b", "- + b $ + a $")]
+		[InlineData("-(a + b)", "- + b a $")]
+		[InlineData("-(a - b)", "- - b a $")]
 
 // Unary with comparisons
-[InlineData("-a = +b", "= + b $ - a $")]
-[InlineData("-a <> +b", "<> + b $ - a $")]
-[InlineData("-a < +b", "< + b $ - a $")]
-[InlineData("-a <= +b", "<= + b $ - a $")]
-[InlineData("-a > +b", "> + b $ - a $")]
-[InlineData("-a >= +b", ">= + b $ - a $")]
-[InlineData("a * -b = c + -d", "= + - d $ c * - b $ a")]
-[InlineData("-(a) = -(b)", "= - b $ - a $")]
+		[InlineData("-a = +b", "= + b $ - a $")]
+		[InlineData("-a <> +b", "<> + b $ - a $")]
+		[InlineData("-a < +b", "< + b $ - a $")]
+		[InlineData("-a <= +b", "<= + b $ - a $")]
+		[InlineData("-a > +b", "> + b $ - a $")]
+		[InlineData("-a >= +b", ">= + b $ - a $")]
+		[InlineData("a * -b = c + -d", "= + - d $ c * - b $ a")]
+		[InlineData("-(a) = -(b)", "= - b $ - a $")]
 
 // Unary with logical
-[InlineData("-a < b and c < -d", "and < - d $ c < b - a $")]
-[InlineData("+x = -y or -m = +n", "or = + n $ - m $ = - y $ + x $")]
-[InlineData("(-a = b) and (c = -d)", "and = - d $ c = b - a $")]
-[InlineData("-(a = b) or c", "or c - = b a $")]
+		[InlineData("-a < b and c < -d", "and < - d $ c < b - a $")]
+		[InlineData("+x = -y or -m = +n", "or = + n $ - m $ = - y $ + x $")]
+		[InlineData("(-a = b) and (c = -d)", "and = - d $ c = b - a $")]
+		[InlineData("-(a = b) or c", "or c - = b a $")]
 
 // Unary with parentheses & mixing
-[InlineData("-(a + b) * c", "* c - + b a $")]
-[InlineData("-a * (b + c)", "* + c b - a $")]
-[InlineData("(-a) * (b - +c)", "* - + c $ b - a $")]
-[InlineData("(+a) / (-(b % c))", "/ - % c b $ + a $")]
-[InlineData("(-a) % (b * -c)", "% * - c $ b - a $")]
+		[InlineData("-(a + b) * c", "* c - + b a $")]
+		[InlineData("-a * (b + c)", "* + c b - a $")]
+		[InlineData("(-a) * (b - +c)", "* - + c $ b - a $")]
+		[InlineData("(+a) / (-(b % c))", "/ - % c b $ + a $")]
+		[InlineData("(-a) % (b * -c)", "% * - c $ b - a $")]
 
 // Functions mixed with unary (functions use "$")
-[InlineData("f(-a, +b)", "f + b $ - a $ $")]
-[InlineData("-f(a, b)", "- f b a $ $")]
-[InlineData("+f()", "+ f $ $")]
-[InlineData("g(-a^b, c*-d)", "g * - d $ c - ^ b a $ $")]
-[InlineData("h(-(a+b), +c)", "h + c $ - + b a $ $")]
-[InlineData("-(f(a, -b))", "- f - b $ a $ $")]
-[InlineData("f(--a, +-b)", "f + - b $ $ - - a $ $ $")]
-[InlineData("not(-a)", "not - a $ $")]
-[InlineData("not(-a) and +b", "and + b $ not - a $ $")]
-[InlineData("isnull(+a) or -f(b,c)", "or - f c b $ $ isnull + a $ $")]
+		[InlineData("f(-a, +b)", "f + b $ - a $ $")]
+		[InlineData("-f(a, b)", "- f b a $ $")]
+		[InlineData("+f()", "+ f $ $")]
+		[InlineData("h(-(a+b), +c)", "h + c $ - + b a $ $")]
+		[InlineData("-(f(a, -b))", "- f - b $ a $ $")]
+		[InlineData("f(--a, +-b)", "f + - b $ $ - - a $ $ $")]
+		[InlineData("not(-a)", "not - a $ $")]
+		[InlineData("not(-a) and +b", "and + b $ not - a $ $")]
+		[InlineData("isnull(+a) or -f(b,c)", "or - f c b $ $ isnull + a $ $")]
 
 // Heavier mixed combos
-[InlineData("a + -b * c ^ -d - +e % -f", "- % - f $ + e $ + * ^ - d $ c - b $ a")]
-[InlineData("(-a ^ b) and (c / -d = +e)", "and = + e $ / - d $ c - ^ b a $")]
-[InlineData("not(-a + b ^ -c) or -d <= +(e - f)", "or <= + - f e $ - d $ not + ^ - c $ b - a $ $")]
-[InlineData("-((a / -b) and (c + +d))", "- and + + d $ c / - b $ a $")]
+		[InlineData("a + -b * c ^ -d - +e % -f", "- % - f $ + e $ + * ^ - d $ c - b $ a")]
+		[InlineData("(-a ^ b) and (c / -d = +e)", "and = + e $ / - d $ c - ^ b a $")]
+		[InlineData("not(-a + b ^ -c) or -d <= +(e - f)", "or <= + - f e $ - d $ not + ^ - c $ b - a $ $")]
+		[InlineData("-((a / -b) and (c + +d))", "- and + + d $ c / - b $ a $")]
 
+		// Power-only chains (RIGHT-associative)
+		[InlineData("2 ^ 3 ^ 4", "^ ^ 4 3 2")]
+		[InlineData("(2 ^ 3) ^ 4", "^ 4 ^ 3 2")]
+		[InlineData("a ^ b ^ c", "^ ^ c b a")]
+		[InlineData("(a ^ b) ^ c", "^ c ^ b a")]
+		[InlineData("a ^ (b ^ c)", "^ ^ c b a")]
 
+// Parentheses override with numbers
+		[InlineData("(-2) ^ 2", "^ 2 - 2 $")]
+		[InlineData("-2 ^ 2", "- ^ 2 2 $")] // = -(2^2)
+
+// Unary (treated as prefix with "$") + power (RIGHT-assoc; ^ tighter than unary)
+		[InlineData("-a ^ b", "- ^ b a $")] // -(a ^ b)
+		[InlineData("(-a) ^ b", "^ b - a $")]
+		[InlineData("-(a ^ b)", "- ^ b a $")]
+		[InlineData("a ^ -b", "^ - b $ a")] // a ^ (-b)
+		[InlineData("(-a) ^ (-b)", "^ - b $ - a $")]
+		[InlineData("-a ^ b ^ c", "- ^ ^ c b a $")] // -(a ^ (b ^ c))
+		[InlineData("(-a) ^ b ^ c", "^ ^ c b - a $")] // (-a) ^ (b ^ c)
+		[InlineData("a ^ (-b) ^ c", "^ ^ c - b $ a")] // a ^ ((-b) ^ c)
+		[InlineData("a ^ -b ^ c", "^ - ^ c b $ a")] // a ^ (-(b ^ c))
+		[InlineData("( -a ) ^ ( b ^ c )", "^ ^ c b - a $")]
+
+// Power mixed with multiplicative/additive
+		[InlineData("a * b ^ c ^ d", "* ^ ^ d c b a")] // a * (b ^ (c ^ d))
+		[InlineData("a ^ b * c ^ d", "* ^ d c ^ b a")] // (a ^ b) * (c ^ d)
+		[InlineData("a + b ^ c ^ d", "+ ^ ^ d c b a")] // a + (b ^ (c ^ d))
+		[InlineData("a ^ b ^ c + d", "+ d ^ ^ c b a")] // (a ^ (b ^ c)) + d
+
+// Functions (calls use "$") with power RIGHT-assoc
+		[InlineData("f(a, b ^ c ^ d)", "f ^ ^ d c b a $")] // f(a, b ^ (c ^ d))
+		[InlineData("f(a, (b ^ c) ^ d)", "f ^ d ^ c b a $")]
+		[InlineData("f(a,b) ^ g(c) ^ h(d,e)", "^ ^ h e d $ g c $ f b a $")]
+		[InlineData("(f(a,b) ^ g(c)) ^ h(d,e)", "^ h e d $ ^ g c $ f b a $")]
+		[InlineData("f(a) ^ (g(b) ^ h(c))", "^ ^ h c $ g b $ f a $")]
+
+// Unary + functions + power
+		[InlineData("-f(a,b) ^ g(c)", "- ^ g c $ f b a $ $")]
+		[InlineData("f(-a, +b ^ c)", "f + ^ c b $ - a $ $")]
+		[InlineData("g(-a^b, c*-d)", "g * - d $ c - ^ b a $ $")]
+		[InlineData("h(-(a+b), +c^d)", "h + ^ d c $ - + b a $ $")]
+
+// Comparisons/logical around power
+		[InlineData("a ^ b ^ c = d", "= d ^ ^ c b a")]
+		[InlineData("a = b ^ c ^ d", "= ^ ^ d c b a")]
+		[InlineData("a ^ b ^ c and d", "and d ^ ^ c b a")]
+		[InlineData("(a ^ b ^ c) and (d + e * f = g)", "and = g + * f e d ^ ^ c b a")]
+
+// Extra unary chains (prefix with "$")
+		[InlineData("--a ^ b", "- - ^ b a $ $")]
+		[InlineData("a ^ ++b", "^ + + b $ $ a")]
+		[InlineData("-(a) ^ +(+b)", "- ^ + + b $ $ a $")] // -( a ^ +(+b) )
+		[InlineData("(-a) ^ +(+b)", "^ + + b $ $ - a $")] // (-a) ^ (+(+b))
 		public void Run(string text, string expected) {
 			var parser = new ParserBuilder().AddDefault(true).Build();
 			var tokens = parser.Tokenize(text);

@@ -2,6 +2,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using Albatross.Expression.Exceptions;
+using Albatross.Expression.Infix;
 using Albatross.Expression.Nodes;
 using System.Diagnostics;
 using Albatross.Expression.Unary;
@@ -131,32 +132,24 @@ namespace Albatross.Expression.Parsing {
 				} else if (token is IPrefixExpression) {
 					stack.Push(token);
 					postfix.Push(ControlTokenFactory.FuncParamStart.Token);
-				} else if (token is IUnaryExpression) {
-					stack.Push(token);
-					postfix.Push(ControlTokenFactory.FuncParamStart.Token);
-					stack.Push(ControlTokenFactory.LeftParenthesis.Token);
 				} else if (token is IHasPrecedence current) {
-					/*
-						 InfixOperationToken infix = (InfixOperationToken)token;
-						   while (stack.Count > 0
-							    && stack.Peek() != ControlToken.LeftParenthesis
-							    && (stack.Peek() is PrefixOperationToken
-								    || stack.Peek() is InfixOperationToken
-									    && infix.Precedence <= ((InfixOperationToken)stack.Peek()).Precedence)) {
-						    postfix.Push(stack.Pop());
-						   }
-						   stack.Push(token);
-						 */
 					while (stack.Count > 0) {
-						var previous = stack.Peek();
-						if (previous.IsLeftParenthesis()) {
-							break;
-						} else if (previous is IPrefixExpression
-						           || previous is IHasPrecedence previousWithPredence && current.Precedence <= previousWithPredence.Precedence) {
+						var peeked = stack.Peek();
+						if (peeked is IPrefixExpression || 
+						    peeked is IHasPrecedence previous 
+						    && previous.Precedence >= current.Precedence 
+						    && !(peeked is Power && current is Power)	// power is right associative
+						    && !(current is IUnaryExpression)	// unary is right associative.  if a unary operator is on the right side, it has higher precedence always.  for example: a ^ -b.  The - unary has higher precedence than ^ in this case.
+						) {
 							postfix.Push(stack.Pop());
+						} else {
+							break;
 						}
 					}
 					stack.Push(token);
+					if(token is IUnaryExpression) {
+						postfix.Push(ControlTokenFactory.FuncParamStart.Token);
+					}
 				}
 			}
 
@@ -188,7 +181,6 @@ namespace Albatross.Expression.Parsing {
 						// TODO: optimize this insert to avoid shifting
 						prefix.Operands.Insert(0, t as IExpression ?? throw new StackException("misplaced control token as prefix operand"));
 					}
-
 					stack.Push(prefix);
 				}
 			}

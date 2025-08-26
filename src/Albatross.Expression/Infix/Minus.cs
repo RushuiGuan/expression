@@ -4,7 +4,7 @@ namespace Albatross.Expression.Infix {
 	public class Minus : InfixExpression {
 		public Minus() : base("-", 100) { }
 
-		public override object Run(object left, object right)
+		protected override object Run(object left, object right)
 			=> left.ConvertToDouble() - right.ConvertToDouble();
 	}
 }

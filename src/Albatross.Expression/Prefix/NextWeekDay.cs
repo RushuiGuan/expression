@@ -7,7 +7,7 @@ namespace Albatross.Expression.Prefix {
 	public class NextWeekDay : PrefixExpression {
 		public NextWeekDay() : base("NextWeekDay", 1, 2) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var value = operands[0].ConvertToDateTime();
 			var count = 1;
 			if (this.Operands.Count == 2) {

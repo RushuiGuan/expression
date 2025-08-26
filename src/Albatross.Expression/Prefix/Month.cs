@@ -7,7 +7,7 @@ namespace Albatross.Expression.Prefix {
 	public class Month : PrefixExpression {
 		public Month() : base("Month", 1, 1) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			return operands[0].ConvertToDateTime().Month;
 		}
 	}

@@ -8,7 +8,7 @@ namespace Albatross.Expression.Prefix {
 	public class Utc : PrefixExpression {
 		public Utc() : base("Utc", 1, 1) { }
 
-		public override object Run(List<object> operands)
+		protected override object Run(List<object> operands)
 			=> operands[0].ConvertToDateTime().ToUniversalTime();
 	}
 }

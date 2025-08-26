@@ -17,7 +17,7 @@ namespace Albatross.Expression.Infix {
 	public class Power : InfixExpression {
 		public Power() : base("^", 300) { }
 
-		public override object Run(object left, object right) {
+		protected override object Run(object left, object right) {
 			var @base = left.ConvertToDouble();
 			var power = right.ConvertToDouble();
 			return Math.Pow(@base, power);

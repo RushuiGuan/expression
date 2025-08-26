@@ -20,7 +20,7 @@ namespace Albatross.Expression.Prefix {
 	public class CreateDate : PrefixExpression {
 		public CreateDate() : base("CreateDate", 3, 3) { }
 		
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var year = operands[0].ConvertToInt();
 			var month = operands[1].ConvertToInt();
 			var day = operands[2].ConvertToInt();

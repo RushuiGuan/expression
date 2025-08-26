@@ -6,6 +6,6 @@ namespace Albatross.Expression.Prefix {
 	public class Today : PrefixExpression {
 		public Today() : base("Today", 0, 0) { }
 
-		public override object Run(List<object> operands) => DateTime.Today;
+		protected override object Run(List<object> operands) => DateTime.Today;
 	}
 }

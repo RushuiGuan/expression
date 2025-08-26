@@ -5,20 +5,53 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Albatross.Expression.Infix {
+	/// <summary>
+	/// Base implementation for infix binary operation expressions.
+	/// </summary>
 	public class InfixExpression : IInfixExpression {
+		/// <summary>
+		/// The operator symbol for this infix operation.
+		/// </summary>
 		public string Operator { get; }
+		
+		/// <summary>
+		/// The token representation, which is the same as the Operator.
+		/// </summary>
 		public string Token => Operator;
+		
+		/// <summary>
+		/// The precedence level of this operation for proper evaluation order.
+		/// </summary>
 		public int Precedence { get; }
 		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InfixExpression"/> class.
+		/// </summary>
+		/// <param name="operatorText">The operator symbol.</param>
+		/// <param name="precedence">The precedence level for this operation.</param>
 		public InfixExpression(string operatorText, int precedence) {
 			Operator = operatorText;
 			Precedence = precedence;
 		}
 
+		/// <summary>
+		/// The left operand of the infix operation.
+		/// </summary>
 		public IExpression? Left { get; set; }
+		
+		/// <summary>
+		/// The right operand of the infix operation.
+		/// </summary>
 		public IExpression? Right { get; set; }
 
+		/// <summary>
+		/// Gets the required left operand, throwing an exception if it's null.
+		/// </summary>
 		public IExpression RequiredLeft => Left ?? throw new OperandException($"Infix expression '{this.Operator}' is missing its left operand");
+		
+		/// <summary>
+		/// Gets the required right operand, throwing an exception if it's null.
+		/// </summary>
 		public IExpression RequiredRight => Right ?? throw new OperandException($"Infix expression '{this.Operator}' is missing its right operand");
 
 		public string Text() {
@@ -49,7 +82,7 @@ namespace Albatross.Expression.Infix {
 			return Run(left, right);
 		}
 
-		public virtual object Run(object left, object right) {
+		protected virtual object Run(object left, object right) {
 			throw new NotSupportedException($"Infix operation '{Operator}' is not implemented.");
 		}
 	}

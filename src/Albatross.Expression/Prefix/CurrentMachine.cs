@@ -10,6 +10,6 @@ namespace Albatross.Expression.Prefix {
 	public class CurrentMachine : PrefixExpression {
 		public CurrentMachine() : base("CurrentMachine", 0, 0) { }
 
-		public override object Run(List<object> operands) => System.Net.Dns.GetHostName();
+		protected override object Run(List<object> operands) => System.Net.Dns.GetHostName();
 	}
 }

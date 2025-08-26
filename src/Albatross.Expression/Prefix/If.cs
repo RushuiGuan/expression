@@ -3,25 +3,17 @@
 
 namespace Albatross.Expression.Prefix {
 	/// <summary>
-	/// <para>Prefix if operation</para>
-	/// <para>Operand Count: 3</para>
-	/// <list type="number">
-	///		<listheader>
-	///		<description>Operands</description>
-	///		</listheader>
-	///		<item><description>condition: any</description></item>
-	///		<item><description>result when true: any</description></item>
-	///		<item><description>result when false: any</description></item>
-	/// </list>
-	/// 
-	/// <para>Output Type: any</para>
-	/// <para>Usage: if( 3 > 2, "OK", "No")</para>
+	/// Represents the conditional If function that returns different values based on a boolean condition.
+	/// Takes three operands: condition, value if true, value if false.
 	/// </summary>
 	public class If : PrefixExpression {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="If"/> class.
+		/// </summary>
 		public If() : base("If", 3, 3) { }
 
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var condition = operands[0].ConvertToBoolean();
 			if (condition) {
 				return operands[1];

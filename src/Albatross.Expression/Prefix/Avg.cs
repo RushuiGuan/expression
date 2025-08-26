@@ -6,7 +6,7 @@ namespace Albatross.Expression.Prefix {
 	public class Avg : PrefixExpression {
 		public Avg() : base("Avg", 0, int.MaxValue) { }
 
-		public override object Run(List<object> items) {
+		protected override object Run(List<object> items) {
 			return items.Sum(x => x.ConvertToDouble()) / items.Count;
 		}
 	}

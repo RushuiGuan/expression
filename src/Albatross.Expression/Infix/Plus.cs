@@ -3,21 +3,15 @@ using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Infix {
 	/// <summary>
-	/// <para>Infix operation that perform an plus operation</para>
-	/// <para>Operand Count: 2</para>
-	/// <list type="number">
-	///		<listheader>
-	///		<description>Operands</description>
-	///		</listheader>
-	///		<item><description>Operrand1 : double</description></item>
-	///		<item><description>Operrand2 : double</description></item>
-	/// </list>
-	/// <para>Output Type: double</para>
+	/// Represents the addition operator that adds two numeric values.
 	/// </summary>
 	public class Plus : InfixExpression {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Plus"/> class.
+		/// </summary>
 		public Plus() : base("+", 100) { }
 
-		public override object Run(object left, object right) {
+		protected override object Run(object left, object right) {
 			return left.ConvertToDouble() + right.ConvertToDouble();
 		}
 	}

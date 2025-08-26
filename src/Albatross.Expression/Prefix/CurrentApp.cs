@@ -11,6 +11,6 @@ namespace Albatross.Expression.Prefix {
 	public class CurrentApp : PrefixExpression {
 		public CurrentApp() : base("CurrentApp", 0, 0) { }
 
-		public override object Run(List<object> operands) => AppDomain.CurrentDomain.FriendlyName;
+		protected override object Run(List<object> operands) => AppDomain.CurrentDomain.FriendlyName;
 	}
 }

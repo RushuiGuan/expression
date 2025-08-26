@@ -15,7 +15,7 @@ namespace Albatross.Expression.Prefix {
 	public class RegexCapture : PrefixExpression {
 		public RegexCapture() : base("Regex", 2, 3) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			string text = operands[0].ConvertToString();
 			string pattern = operands.GetRequiredStringValue(1);
 			int index = 0;

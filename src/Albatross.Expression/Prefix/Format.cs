@@ -12,7 +12,7 @@ namespace Albatross.Expression.Prefix {
 		public Format() : base("Format", 2, 2) { }
 		
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var formatText = operands.GetRequiredStringValue(1);
 			var value = operands[0];
 			if (value is JsonElement element) {

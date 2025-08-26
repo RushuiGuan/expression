@@ -7,7 +7,7 @@ namespace Albatross.Expression.Prefix {
 	public class MaxNumber : PrefixExpression {
 		public MaxNumber() : base("Max", 1, int.MaxValue) { }
 
-		public override object Run(List<object> list) {
+		protected override object Run(List<object> list) {
 			var current = double.MinValue;
 			foreach (var item in list) {
 				var value = item.ConvertToDouble();

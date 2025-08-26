@@ -16,6 +16,6 @@ namespace Albatross.Expression.Prefix {
 	public class DateTimeExpression : PrefixExpression {
 		public DateTimeExpression() : base("DateTime", 1, 1) { }
 
-		public override object Run(List<object> operands) => operands[0].ConvertToDateTime();
+		protected override object Run(List<object> operands) => operands[0].ConvertToDateTime();
 	}
 }

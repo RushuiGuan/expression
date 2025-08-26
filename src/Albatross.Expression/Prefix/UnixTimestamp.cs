@@ -19,7 +19,7 @@ namespace Albatross.Expression.Prefix {
 	public class UnixTimestamp : PrefixExpression {
 		public UnixTimestamp() : base("UnixTimestamp", 1, 1) { }
 
-		public override object Run(List<object> operands){
+		protected override object Run(List<object> operands){
 			var value = operands[0].ConvertToDateTime();
 			return Convert.ToDouble(new DateTimeOffset(value).ToUnixTimeSeconds());
 		}

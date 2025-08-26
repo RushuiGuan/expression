@@ -18,7 +18,7 @@
 	public class Or : InfixExpression {
 		public Or() : base("or", 20) { }
 
-		public override object Run(object left, object right)
+		protected override object Run(object left, object right)
 			=> left.ConvertToBoolean() || right.ConvertToBoolean();
 	}
 }

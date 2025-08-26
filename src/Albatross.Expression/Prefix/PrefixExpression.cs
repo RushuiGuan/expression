@@ -8,18 +8,45 @@ using Albatross.Expression.Nodes;
 using System.Threading.Tasks;
 
 namespace Albatross.Expression.Prefix {
+	/// <summary>
+	/// Base implementation for prefix function expressions that operate on multiple operands.
+	/// </summary>
 	public class PrefixExpression : IPrefixExpression {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="PrefixExpression"/> class.
+		/// </summary>
+		/// <param name="name">The name of the prefix function.</param>
+		/// <param name="minOperandCount">The minimum number of operands required.</param>
+		/// <param name="maxOperandCount">The maximum number of operands accepted.</param>
 		public PrefixExpression(string name, int minOperandCount, int maxOperandCount) {
 			Name = name;
 			MinOperandCount = minOperandCount;
 			MaxOperandCount = maxOperandCount;
 		}
 
+		/// <summary>
+		/// The name of the prefix function.
+		/// </summary>
 		public string Name { get; }
+		
+		/// <summary>
+		/// The token representation, which is the same as the Name.
+		/// </summary>
 		public string Token => Name;
+		
+		/// <summary>
+		/// The minimum number of operands this function requires.
+		/// </summary>
 		public int MinOperandCount { get; }
+		
+		/// <summary>
+		/// The maximum number of operands this function accepts.
+		/// </summary>
 		public int MaxOperandCount { get; }
 
+		/// <summary>
+		/// The list of operand expressions passed to this function.
+		/// </summary>
 		public IReadOnlyList<IExpression> Operands { get; set; } = [];
 
 		public string Text() {
@@ -48,7 +75,7 @@ namespace Albatross.Expression.Prefix {
 			return Run(values);
 		}
 
-		public virtual object Run(List<object> operands) {
+		protected virtual object Run(List<object> operands) {
 			throw new NotSupportedException($"Prefix expression {this.Name} is not supported");
 		}
 

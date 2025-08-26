@@ -5,13 +5,24 @@ using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	/// <summary>
-	/// will take any string literal enclosed by double quotes.  use back slash to escape.  
-	/// Check the GetStringEscape function for escapable chars
+	/// Represents a string literal enclosed by quotes with support for escape sequences.
 	/// </summary>
 	public class StringLiteral : ValueToken, IStringLiteral {
+		/// <summary>
+		/// The character used to escape special characters within the string literal.
+		/// </summary>
 		public const char EscapeChar = '\\';
+		
+		/// <summary>
+		/// The boundary character (quote type) that delimits this string literal.
+		/// </summary>
 		public char Boundary { get; }
 		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="StringLiteral"/> class.
+		/// </summary>
+		/// <param name="boundary">The boundary character used to delimit the string.</param>
+		/// <param name="value">The raw string value including boundary characters.</param>
 		public StringLiteral(char boundary, string value):base(value) {
 			this.Boundary = boundary;
 		}

@@ -4,9 +4,13 @@ using System.Threading.Tasks;
 
 namespace Albatross.Expression.Nodes {
 	/// <summary>
-	/// will take any numbers with decimals and without signs.
+	/// Represents a numeric literal that can be parsed as a double value.
 	/// </summary>
 	public class NumericLiteral : ValueToken, IExpression {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="NumericLiteral"/> class.
+		/// </summary>
+		/// <param name="value">The string representation of the numeric value.</param>
 		public NumericLiteral(string value) : base(value) {
 		}
 

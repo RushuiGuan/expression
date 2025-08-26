@@ -2,14 +2,28 @@
 using System.Collections.Generic;
 
 namespace Albatross.Expression.Parsing {
+	/// <summary>
+	/// Builder class for creating Parser instances with customizable token factories.
+	/// Provides fluent interface for configuring different types of expression parsing capabilities.
+	/// </summary>
 	public class ParserBuilder {
 		readonly List<IExpressionFactory<IToken>> factories = new List<IExpressionFactory<IToken>>();
 
+		/// <summary>
+		/// Adds a custom expression factory to the parser configuration.
+		/// </summary>
+		/// <param name="factory">The factory to add for parsing specific token types.</param>
+		/// <returns>This ParserBuilder instance for method chaining.</returns>
 		public ParserBuilder AddFactory(IExpressionFactory<IToken> factory) {
 			factories.Add(factory);
 			return this;
 		}
 
+		/// <summary>
+		/// Adds standard value node factories (literals and variables) to the parser.
+		/// </summary>
+		/// <param name="caseSensitive">Whether parsing should be case-sensitive.</param>
+		/// <returns>This ParserBuilder instance for method chaining.</returns>
 		public ParserBuilder AddValueNodeFactories(bool caseSensitive) {
 			AddFactory(new BooleanLiteralFactory(caseSensitive));
 			AddFactory(new NumericLiteralFactory());
@@ -19,6 +33,11 @@ namespace Albatross.Expression.Parsing {
 			return this;
 		}
 
+		/// <summary>
+		/// Adds infix operation factories (binary operators like +, -, *, etc.) to the parser.
+		/// </summary>
+		/// <param name="caseSensitive">Whether parsing should be case-sensitive.</param>
+		/// <returns>This ParserBuilder instance for method chaining.</returns>
 		public ParserBuilder AddInfixFactories(bool caseSensitive) {
 			AddFactory(new GreaterThanExpressionFactory());
 			AddFactory(new LessThanExpressionFactory());
@@ -39,12 +58,21 @@ namespace Albatross.Expression.Parsing {
 			return this;
 		}
 
+		/// <summary>
+		/// Adds unary operation factories (unary operators like +x, -x) to the parser.
+		/// </summary>
+		/// <returns>This ParserBuilder instance for method chaining.</returns>
 		public ParserBuilder AddUnaryFactories() {
 			AddFactory(new UnaryExpressionFactory<Unary.Negative>());
 			AddFactory(new UnaryExpressionFactory<Unary.Positive>());
 			return this;
 		}
 
+		/// <summary>
+		/// Adds a comprehensive set of built-in prefix functions to the parser.
+		/// </summary>
+		/// <param name="caseSensitive">Whether parsing should be case-sensitive.</param>
+		/// <returns>This ParserBuilder instance for method chaining.</returns>
 		public ParserBuilder AddGenericPrefixFactory(bool caseSensitive) {
 			var factory = new GenericPrefixExpressionFactory(caseSensitive);
 			factory.Add(new Prefix.ArrayItem());
@@ -91,11 +119,21 @@ namespace Albatross.Expression.Parsing {
 			return this;
 		}
 
+		/// <summary>
+		/// Adds named prefix expression factories that require specific syntax.
+		/// </summary>
+		/// <param name="caseSensitive">Whether parsing should be case-sensitive.</param>
+		/// <returns>This ParserBuilder instance for method chaining.</returns>
 		public ParserBuilder AddNamedPrefixFactories(bool caseSensitive) {
 			AddFactory(new PrefixExpressionFactory<Prefix.Array>(caseSensitive));
 			return this;
 		}
 
+		/// <summary>
+		/// Adds all standard expression parsing capabilities (values, infix, unary, and prefix operations).
+		/// </summary>
+		/// <param name="caseSensitive">Whether parsing should be case-sensitive.</param>
+		/// <returns>This ParserBuilder instance for method chaining.</returns>
 		public ParserBuilder AddDefault(bool caseSensitive = false) {
 			AddValueNodeFactories(caseSensitive);
 			AddInfixFactories(caseSensitive);
@@ -105,6 +143,11 @@ namespace Albatross.Expression.Parsing {
 			return this;
 		}
 
+		/// <summary>
+		/// Creates a Parser instance with all default parsing capabilities enabled.
+		/// </summary>
+		/// <param name="caseSensitive">Whether parsing should be case-sensitive.</param>
+		/// <returns>A fully configured Parser instance.</returns>
 		public Parser BuildDefault(bool caseSensitive = false) {
 			this.AddDefault(caseSensitive);
 			return new Parser(factories, caseSensitive);

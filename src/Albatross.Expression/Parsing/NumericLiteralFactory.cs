@@ -2,9 +2,15 @@
 using System.Text.RegularExpressions;
 
 namespace Albatross.Expression.Parsing {
-	// TODO: support culture specific number formats
+	/// <summary>
+	/// Factory for parsing numeric literal tokens from expression text.
+	/// </summary>
 	public class NumericLiteralFactory : IExpressionFactory<NumericLiteral> {
 		const string NumericPattern = @"^\s*([0-9]+(\.[0-9]+)?)";
+		
+		/// <summary>
+		/// Compiled regex pattern for matching numeric literals.
+		/// </summary>
 		public static readonly Regex NumericPatternRegex = new Regex(NumericPattern, 
 			RegexOptions.Compiled | 
 			RegexOptions.Singleline | 

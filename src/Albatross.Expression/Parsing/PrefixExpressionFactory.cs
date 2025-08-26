@@ -2,11 +2,19 @@ using Albatross.Expression.Nodes;
 using System;
 
 namespace Albatross.Expression.Parsing {
+	/// <summary>
+	/// Factory for creating prefix expressions using a provided factory function.
+	/// </summary>
 	public class PrefixExpressionFactory : IExpressionFactory<IPrefixExpression> {
 		private readonly Func<IPrefixExpression> func;
 		private readonly string name;
 		private readonly bool caseSensitive;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="PrefixExpressionFactory"/> class.
+		/// </summary>
+		/// <param name="func">Function that creates instances of the prefix expression.</param>
+		/// <param name="caseSensitive">Whether function name matching should be case-sensitive.</param>
 		public PrefixExpressionFactory(Func<IPrefixExpression> func, bool caseSensitive = false) {
 			this.func = func;
 			name = func().Name;

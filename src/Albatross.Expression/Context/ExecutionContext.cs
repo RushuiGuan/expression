@@ -12,10 +12,16 @@ namespace Albatross.Expression.Context {
 		
 		public IParser Parser { get; private set; }
 
-		ISet<string> NewSet(params IEnumerable<string> items) {
+		ISet<string> NewSet(params string[] items) {
 			return this.Parser.CaseSensitive
 				? new HashSet<string>(items)
 				: new HashSet<string>(items, StringComparer.InvariantCultureIgnoreCase);
+		}
+		
+		ISet<string> NewSet(ISet<string> source) {
+			return this.Parser.CaseSensitive
+				? new HashSet<string>(source)
+				: new HashSet<string>(source, StringComparer.InvariantCultureIgnoreCase);
 		}
 
 		#region data retrieval

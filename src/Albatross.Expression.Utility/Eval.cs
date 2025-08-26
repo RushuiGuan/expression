@@ -21,9 +21,7 @@ namespace Albatross.Expression.Utility {
 		}
 
 		public override int Invoke(InvocationContext context) {
-			var node = parser.Build(options.Argument);
-			var obj = new object();
-			var result = node.Eval(name => this.executionContext.GetValue(name, obj));
+			var result = parser.Eval(options.Argument, this.executionContext, new object());
 			this.writer.WriteLine(result);
 			return 0;
 		}

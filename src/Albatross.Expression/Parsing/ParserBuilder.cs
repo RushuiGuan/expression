@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Albatross.Expression.Parsing {
 	public class ParserBuilder {
-		List<IExpressionFactory<IToken>> Factories = new List<IExpressionFactory<IToken>>();
+		readonly List<IExpressionFactory<IToken>> factories = new List<IExpressionFactory<IToken>>();
 
 		public ParserBuilder AddFactory(IExpressionFactory<IToken> factory) {
-			Factories.Add(factory);
+			factories.Add(factory);
 			return this;
 		}
 
@@ -107,7 +107,7 @@ namespace Albatross.Expression.Parsing {
 
 		public Parser BuildDefault(bool caseSensitive = false) {
 			this.AddDefault(caseSensitive);
-			return new Parser(Factories, caseSensitive);
+			return new Parser(factories, caseSensitive);
 		}
 	}
 }

@@ -33,7 +33,7 @@ namespace Albatross.Expression.Unary {
 			return Run(value);
 		}
 
-		public virtual object Run(object operand) {
+		protected virtual object Run(object operand) {
 			throw new NotSupportedException($"Unary operation '{Operator}' is not implemented.");
 		}
 	}

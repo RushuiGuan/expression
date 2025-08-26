@@ -15,7 +15,7 @@ namespace Albatross.Expression.Utility {
 		protected override bool TryGetValueHandler(string name, [NotNullWhen(true)] out IContextValue<T>? value) {
 			var file = Path.Join(config.AppDirectory, $"{name}.txt");
 			if (File.Exists(file)) {
-				var expression = File.ReadAllText(file);
+				var expression = File.ReadAllText(file).Trim();
 				value = new ExpressionContextValue<T>(name, expression, Parser);
 				return true;
 			}else{

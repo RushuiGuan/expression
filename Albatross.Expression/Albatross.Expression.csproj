@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<Title></Title>
+		<Description>Albatross.Expression api is created to process and evaluate text based expression strings.  The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and using it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.</Description>
+		<Authors>Rushui Guan</Authors>
+		<Nullable>enable</Nullable>
+		<PackageProjectUrl></PackageProjectUrl>
+		<PackageTags>expression parser eval context</PackageTags>
+		<Copyright>Copyright 2018</Copyright>
+		<PackageReleaseNotes></PackageReleaseNotes>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
+		<LangVersion>Latest</LangVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Albatross.Dates" Version="7.5.12" />
+		<PackageReference Include="JsonPointer.Net" Version="5.3.1" />
+		<PackageReference Include="System.Text.Json" Version="8.0.6" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\icon.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+</Project>

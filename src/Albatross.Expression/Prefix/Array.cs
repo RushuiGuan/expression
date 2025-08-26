@@ -13,6 +13,6 @@ namespace Albatross.Expression.Prefix {
 	/// </summary>
 	public class Array : PrefixExpression {
 		public Array() : base("@", 0, int.MaxValue) { }
-		public override object Run(List<object> operands) => operands;
+		protected override object Run(List<object> operands) => operands;
 	}
 }

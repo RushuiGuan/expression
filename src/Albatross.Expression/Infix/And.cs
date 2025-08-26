@@ -18,7 +18,7 @@
 	public class And : InfixExpression {
 		public And() : base("and", 30) { }
 
-		public override object Run(object left, object right)
+		protected override object Run(object left, object right)
 			=> left.ConvertToBoolean() && right.ConvertToBoolean();
 	}
 }

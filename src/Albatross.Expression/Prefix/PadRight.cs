@@ -6,7 +6,7 @@ namespace Albatross.Expression.Prefix {
 		public const char DefaultPaddingCharacter = ' ';
 		public PadRight() : base("PadRight", 2, 3) { }
 		
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var text = operands[0].ConvertToString();
 			var count = operands[1].ConvertToInt();
 			char paddingCharacter;

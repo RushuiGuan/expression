@@ -9,7 +9,7 @@ namespace Albatross.Expression.Infix {
 
 		public abstract bool Interpret(int comparisonResult);
 
-		public override object Run(object left, object right) {
+		protected override object Run(object left, object right) {
 			var leftType = left.GetType();
 			var rightType = right.GetType();
 			if (leftType != rightType) {

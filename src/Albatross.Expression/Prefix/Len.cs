@@ -8,7 +8,7 @@ namespace Albatross.Expression.Prefix {
 	public class Len : PrefixExpression {
 		public Len() : base("Len", 1, 1) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var value = operands[0];
 			if (value is ICollection collection) {
 				return collection.Count;

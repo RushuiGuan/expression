@@ -21,7 +21,7 @@ namespace Albatross.Expression.Prefix {
 		public If() : base("If", 3, 3) { }
 
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var condition = operands[0].ConvertToBoolean();
 			if (condition) {
 				return operands[1];

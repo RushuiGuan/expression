@@ -48,7 +48,7 @@ namespace Albatross.Expression.Prefix {
 			return Run(values);
 		}
 
-		public virtual object Run(List<object> operands) {
+		protected virtual object Run(List<object> operands) {
 			throw new NotSupportedException($"Prefix expression {this.Name} is not supported");
 		}
 

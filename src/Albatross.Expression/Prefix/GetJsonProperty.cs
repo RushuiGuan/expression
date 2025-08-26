@@ -11,7 +11,7 @@ namespace Albatross.Expression.Prefix {
 	public class GetJsonProperty : PrefixExpression {
 		public GetJsonProperty() : base("JsonProperty", 2, 3) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var element = operands[0].ConvertToJsonElement();
 			var pointerText = operands.GetRequiredStringValue(1);
 			var pointer = JsonPointer.Parse(pointerText);

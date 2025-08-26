@@ -17,7 +17,7 @@ namespace Albatross.Expression.Infix {
 	public class Plus : InfixExpression {
 		public Plus() : base("+", 100) { }
 
-		public override object Run(object left, object right) {
+		protected override object Run(object left, object right) {
 			return left.ConvertToDouble() + right.ConvertToDouble();
 		}
 	}

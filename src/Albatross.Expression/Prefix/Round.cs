@@ -9,7 +9,7 @@ namespace Albatross.Expression.Prefix {
 	public class Round : PrefixExpression {
 		public Round() : base("Round", 2, 2) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var value = operands[0].ConvertToDouble();
 			var digit = operands[1].ConvertToInt();
 			return Math.Round(value, digit, MidpointRounding.AwayFromZero);

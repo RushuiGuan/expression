@@ -49,7 +49,7 @@ namespace Albatross.Expression.Infix {
 			return Run(left, right);
 		}
 
-		public virtual object Run(object left, object right) {
+		protected virtual object Run(object left, object right) {
 			throw new NotSupportedException($"Infix operation '{Operator}' is not implemented.");
 		}
 	}

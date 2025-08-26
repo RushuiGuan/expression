@@ -16,7 +16,7 @@ namespace Albatross.Expression.Infix {
 	public class Mod : InfixExpression {
 		public Mod() : base("%", 200) { }
 
-		public override object Run(object left, object right) {
+		protected override object Run(object left, object right) {
 			return left.ConvertToDouble() % right.ConvertToDouble();
 		}
 	}

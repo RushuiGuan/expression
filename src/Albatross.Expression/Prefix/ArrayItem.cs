@@ -11,7 +11,7 @@ namespace Albatross.Expression.Prefix {
 	public class ArrayItem : PrefixExpression {
 		public ArrayItem() : base("ArrayItem", 2, 2) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var values = operands[0];
 			var	index = operands[1].ConvertToInt();
 			if (values is List<object> list) {

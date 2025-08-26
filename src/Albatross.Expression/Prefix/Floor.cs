@@ -9,7 +9,7 @@ namespace Albatross.Expression.Prefix {
 	public class Floor : PrefixExpression {
 		public Floor() : base("Floor", 1, 1) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var value = operands[0].ConvertToDouble();
 			return Math.Floor(value);
 		}

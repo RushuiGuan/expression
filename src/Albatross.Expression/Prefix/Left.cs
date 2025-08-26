@@ -18,7 +18,7 @@ namespace Albatross.Expression.Prefix {
 	public class Left : PrefixExpression {
 		public Left() : base("Left", 2, 2) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var text = operands[0].ConvertToString();
 			var count = operands[1].ConvertToInt();
 			if (count < 0) {

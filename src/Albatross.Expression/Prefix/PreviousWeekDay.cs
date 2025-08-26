@@ -6,7 +6,7 @@ namespace Albatross.Expression.Prefix {
 	public class PreviousWeekDay : PrefixExpression {
 		public PreviousWeekDay() : base("PreviousWeekDay", 1, 2) { }
 
-		public override object Run(List<object> operands) {
+		protected override object Run(List<object> operands) {
 			var date = operands[0].ConvertToDateTime();
 			var count = 1;
 			if (this.Operands.Count > 1) {

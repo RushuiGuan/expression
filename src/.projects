@@ -1,5 +1,6 @@
 # Packages
 Albatross.Expression
+Albatross.Expression.Utility
 
 # Tests
 Albatross.Expression.Test

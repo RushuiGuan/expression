@@ -3,7 +3,7 @@ using Albatross.Expression.Parsing;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Albatross.Expression.Test {
+namespace Albatross.Expression.Test.Context {
 	public class TestNormalOperation {
 		public static Task<string> GetCatFact() {
 			return Task.FromResult("Cats are great!");
@@ -19,7 +19,7 @@ namespace Albatross.Expression.Test {
 		[MemberData(nameof(TestCases))]
 		public void Run(string targetVariable, Dictionary<string, string> expressions, object expected) {
 			var parser = new ParserBuilder().BuildDefault();
-			var context = new Context.ExecutionContext<object>(parser);
+			var context = new DefaultExecutionContext<object>(parser);
 			foreach (var item in expressions) {
 				context.Set(new ExpressionContextValue<object>(item.Key, item.Value, parser));
 			}
@@ -30,7 +30,7 @@ namespace Albatross.Expression.Test {
 		[Fact]
 		public void RunWithExternalValues() {
 			var parser = new ParserBuilder().BuildDefault();
-			var context = new Context.ExecutionContext<Dictionary<string, object>>(parser);
+			var context = new DefaultExecutionContext<Dictionary<string, object>>(parser);
 			context.Set(new ExpressionContextValue<Dictionary<string, object>>("a", "b+c", parser));
 			context.Set(new ExternalContextValue<Dictionary<string, object>>("b", dict=>dict["b"]));
 			context.Set(new ExternalContextValue<Dictionary<string, object>>("c", dict => dict["c"]));
@@ -43,7 +43,7 @@ namespace Albatross.Expression.Test {
 		[Fact]
 		public async Task AsyncRunWithExternalValues() {
 			var parser = new ParserBuilder().BuildDefault();
-			var context = new Context.ExecutionContext<object>(parser);
+			var context = new DefaultExecutionContext<object>(parser);
 			context.Set(new ExpressionContextValue<object>("fact", "upper(cat_fact)", parser));
 			context.Set(new AsyncExternalContextValue<object>("cat_fact", async _ => await GetCatFact()));
 			var result = await context.GetValueAsync("fact", new object());
@@ -55,7 +55,7 @@ namespace Albatross.Expression.Test {
 		[Fact]
 		public void RunWithLocalValues() {
 			var parser = new ParserBuilder().BuildDefault();
-			var context = new Context.ExecutionContext<object>(parser);
+			var context = new DefaultExecutionContext<object>(parser);
 			context.Set(new ExpressionContextValue<object>("a", "b+c", parser));
 			context.Set(new LocalContextValue<object>("b", 3));
 			context.Set(new LocalContextValue<object>("c", 2));

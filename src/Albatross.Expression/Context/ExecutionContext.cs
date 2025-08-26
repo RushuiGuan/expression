@@ -1,30 +1,21 @@
 ﻿using Albatross.Expression.Exceptions;
-using Albatross.Expression.Parsing;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 namespace Albatross.Expression.Context {
-	public class ExecutionContext<T> : IExecutionContext<T> {
-		public ExecutionContext(IParser parser) {
+	public abstract class ExecutionContext<T> : IExecutionContext<T> {
+		protected ExecutionContext(IParser parser) {
 			this.Parser = parser;
-			Store = parser.CaseSensitive ? new Dictionary<string, IContextValue<T>>() : new Dictionary<string, IContextValue<T>>(StringComparer.InvariantCultureIgnoreCase);
 		}
 		
-		public Dictionary<string, IContextValue<T>> Store { get; private set; }
 		public IParser Parser { get; private set; }
 
 		ISet<string> NewSet(params IEnumerable<string> items) {
 			return this.Parser.CaseSensitive
 				? new HashSet<string>(items)
 				: new HashSet<string>(items, StringComparer.InvariantCultureIgnoreCase);
-		}
-
-		public void Clear() => Store.Clear();
-
-		public void Set(IContextValue<T> value) {
-			Store[value.Name] = value;
 		}
 
 		#region data retrieval
@@ -35,9 +26,11 @@ namespace Albatross.Expression.Context {
 				throw new MissingVariableException(name);
 			}
 		}
+		
+		protected abstract bool TryGetValueHandler(string name, [NotNullWhen(true)] out IContextValue<T>? value);
 
 		public bool TryGetValue(string name, T input, [NotNullWhen(true)] out object? data) {
-			if (this.Store.TryGetValue(name, out var contextValue)) {
+			if (this.TryGetValueHandler(name, out var contextValue)) {
 				if (contextValue is ExpressionContextValue<T> expressionContextValue) {
 					CheckCircularReference(expressionContextValue, NewSet());
 				}
@@ -50,7 +43,7 @@ namespace Albatross.Expression.Context {
 		}
 		
 		public async Task<object> GetValueAsync(string name, T input) {
-			if (this.Store.TryGetValue(name, out var contextValue)) {
+			if (this.TryGetValueHandler(name, out var contextValue)) {
 				if (contextValue is ExpressionContextValue<T> expressionContextValue) {
 					CheckCircularReference(expressionContextValue, NewSet());
 				}
@@ -67,14 +60,13 @@ namespace Albatross.Expression.Context {
 				if (chain.Contains(dependee)) {
 					throw new CircularReferenceException(dependee, contextValue.Name);
 				}
-				if (Store.TryGetValue(dependee, out var expression) && expression is ExpressionContextValue<T> expressionContextValue) {
+				if (TryGetValueHandler(dependee, out var expression) && expression is ExpressionContextValue<T> expressionContextValue) {
 					ISet<string> newChain = NewSet(chain);
 					newChain.Add(dependee);
 					CheckCircularReference(expressionContextValue, newChain);
 				}
 			}
 		}
-
 		#endregion
 	}
 }

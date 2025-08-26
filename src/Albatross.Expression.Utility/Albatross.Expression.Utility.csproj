@@ -10,6 +10,11 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <PackageReference Include="Albatross.CommandLine" Version="7.8.7" />
+	  <PackageReference Include="Albatross.Config" Version="9.0.1-9.main" />
+	  <PackageReference Include="Albatross.Logging" Version="9.0.0" />
+	  <PackageReference Include="Albatross.Reflection" Version="7.5.9" />
+	  <PackageReference Include="Albatross.Text" Version="8.0.11" />
+	  <PackageReference Include="Albatross.Text.Table" Version="8.0.11" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj" />

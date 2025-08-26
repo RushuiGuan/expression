@@ -3,7 +3,7 @@ using Albatross.Expression.Exceptions;
 using Albatross.Expression.Parsing;
 using Xunit;
 
-namespace Albatross.Expression.Test {
+namespace Albatross.Expression.Test.Context {
 	public class TestMissingVariableError {
 		public static IEnumerable<object[]> TestCases() {
 			return [
@@ -16,7 +16,7 @@ namespace Albatross.Expression.Test {
 		[MemberData(nameof(TestCases))]
 		public void Run(string targetVariable, Dictionary<string, string> expressions) {
 			var parser = new ParserBuilder().BuildDefault();
-			var context = new Context.ExecutionContext<object>(parser);
+			var context = new DefaultExecutionContext<object>(parser);
 			foreach (var item in expressions) {
 				context.Set(new ExpressionContextValue<object>(item.Key, item.Value, parser));
 			}

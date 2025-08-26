@@ -143,7 +143,6 @@ ex eval "myvar * 2"
 ## Project Structure
 
 ```
-src/
 ├── Albatross.Expression/              # Main expression library
 │   ├── Context/                       # ExecutionContext implementations
 │   ├── Exceptions/                    # Custom exception classes

@@ -1,5 +1,4 @@
-﻿using Albatross.Expression.Nodes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Albatross.Expression.Prefix {
@@ -19,8 +18,8 @@ namespace Albatross.Expression.Prefix {
 		/// </summary>
 		/// <param name="items">List containing zero or more numeric operands to average.</param>
 		/// <returns>The arithmetic mean of all operands as a double, or NaN for empty lists.</returns>
-		/// <exception cref="FormatException">Thrown when any operand cannot be converted to a numeric value.</exception>
-		/// <exception cref="DivideByZeroException">May return NaN when dividing by zero operands.</exception>
+		/// <exception cref="System.FormatException">Thrown when any operand cannot be converted to a numeric value.</exception>
+		/// <exception cref="System.DivideByZeroException">May return NaN when dividing by zero operands.</exception>
 		protected override object Run(List<object> items) {
 			return items.Sum(x => x.ConvertToDouble()) / items.Count;
 		}

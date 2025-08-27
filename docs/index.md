@@ -2,230 +2,230 @@
 
 ## Albatross.Expression
 
-[Extensions](./albatross.expression.extensions.md)
+[Extensions](./albatross/expression/extensions)
 
-[IParser](./albatross.expression.iparser.md)
+[IParser](./albatross/expression/iparser)
 
 ## Albatross.Expression.Context
 
-[AsyncExternalContextValue&lt;T&gt;](./albatross.expression.context.asyncexternalcontextvalue-1.md)
+[AsyncExternalContextValue&lt;T&gt;](./albatross/expression/context/asyncexternalcontextvalue-1)
 
-[DefaultExecutionContext&lt;T&gt;](./albatross.expression.context.defaultexecutioncontext-1.md)
+[DefaultExecutionContext&lt;T&gt;](./albatross/expression/context/defaultexecutioncontext-1)
 
-[ExecutionContext&lt;T&gt;](./albatross.expression.context.executioncontext-1.md)
+[ExecutionContext&lt;T&gt;](./albatross/expression/context/executioncontext-1)
 
-[ExpressionContextValue&lt;T&gt;](./albatross.expression.context.expressioncontextvalue-1.md)
+[ExpressionContextValue&lt;T&gt;](./albatross/expression/context/expressioncontextvalue-1)
 
-[ExternalContextValue&lt;T&gt;](./albatross.expression.context.externalcontextvalue-1.md)
+[ExternalContextValue&lt;T&gt;](./albatross/expression/context/externalcontextvalue-1)
 
-[IContextValue&lt;T&gt;](./albatross.expression.context.icontextvalue-1.md)
+[IContextValue&lt;T&gt;](./albatross/expression/context/icontextvalue-1)
 
-[IExecutionContext&lt;T&gt;](./albatross.expression.context.iexecutioncontext-1.md)
+[IExecutionContext&lt;T&gt;](./albatross/expression/context/iexecutioncontext-1)
 
-[LocalContextValue&lt;T&gt;](./albatross.expression.context.localcontextvalue-1.md)
+[LocalContextValue&lt;T&gt;](./albatross/expression/context/localcontextvalue-1)
 
 ## Albatross.Expression.Exceptions
 
-[CircularReferenceException](./albatross.expression.exceptions.circularreferenceexception.md)
+[CircularReferenceException](./albatross/expression/exceptions/circularreferenceexception)
 
-[MissingVariableException](./albatross.expression.exceptions.missingvariableexception.md)
+[MissingVariableException](./albatross/expression/exceptions/missingvariableexception)
 
-[OperandException](./albatross.expression.exceptions.operandexception.md)
+[OperandException](./albatross/expression/exceptions/operandexception)
 
-[StackException](./albatross.expression.exceptions.stackexception.md)
+[StackException](./albatross/expression/exceptions/stackexception)
 
-[TokenParsingException](./albatross.expression.exceptions.tokenparsingexception.md)
+[TokenParsingException](./albatross/expression/exceptions/tokenparsingexception)
 
 ## Albatross.Expression.Infix
 
-[And](./albatross.expression.infix.and.md)
+[And](./albatross/expression/infix/and)
 
-[ComparisonInfixOperation](./albatross.expression.infix.comparisoninfixoperation.md)
+[ComparisonInfixOperation](./albatross/expression/infix/comparisoninfixoperation)
 
-[Divide](./albatross.expression.infix.divide.md)
+[Divide](./albatross/expression/infix/divide)
 
-[Equal](./albatross.expression.infix.equal.md)
+[Equal](./albatross/expression/infix/equal)
 
-[GreaterEqual](./albatross.expression.infix.greaterequal.md)
+[GreaterEqual](./albatross/expression/infix/greaterequal)
 
-[GreaterThan](./albatross.expression.infix.greaterthan.md)
+[GreaterThan](./albatross/expression/infix/greaterthan)
 
-[InfixExpression](./albatross.expression.infix.infixexpression.md)
+[InfixExpression](./albatross/expression/infix/infixexpression)
 
-[LessEqual](./albatross.expression.infix.lessequal.md)
+[LessEqual](./albatross/expression/infix/lessequal)
 
-[LessThan](./albatross.expression.infix.lessthan.md)
+[LessThan](./albatross/expression/infix/lessthan)
 
-[Minus](./albatross.expression.infix.minus.md)
+[Minus](./albatross/expression/infix/minus)
 
-[Mod](./albatross.expression.infix.mod.md)
+[Mod](./albatross/expression/infix/mod)
 
-[Multiply](./albatross.expression.infix.multiply.md)
+[Multiply](./albatross/expression/infix/multiply)
 
-[NotEqual](./albatross.expression.infix.notequal.md)
+[NotEqual](./albatross/expression/infix/notequal)
 
-[Or](./albatross.expression.infix.or.md)
+[Or](./albatross/expression/infix/or)
 
-[Plus](./albatross.expression.infix.plus.md)
+[Plus](./albatross/expression/infix/plus)
 
-[Power](./albatross.expression.infix.power.md)
+[Power](./albatross/expression/infix/power)
 
 ## Albatross.Expression.Nodes
 
-[BooleanLiteral](./albatross.expression.nodes.booleanliteral.md)
+[BooleanLiteral](./albatross/expression/nodes/booleanliteral)
 
-[ControlToken](./albatross.expression.nodes.controltoken.md)
+[ControlToken](./albatross/expression/nodes/controltoken)
 
-[ControlTokenExtensions](./albatross.expression.nodes.controltokenextensions.md)
+[ControlTokenExtensions](./albatross/expression/nodes/controltokenextensions)
 
-[IExpression](./albatross.expression.nodes.iexpression.md)
+[IExpression](./albatross/expression/nodes/iexpression)
 
-[IHasPrecedence](./albatross.expression.nodes.ihasprecedence.md)
+[IHasPrecedence](./albatross/expression/nodes/ihasprecedence)
 
-[IInfixExpression](./albatross.expression.nodes.iinfixexpression.md)
+[IInfixExpression](./albatross/expression/nodes/iinfixexpression)
 
-[IPrefixExpression](./albatross.expression.nodes.iprefixexpression.md)
+[IPrefixExpression](./albatross/expression/nodes/iprefixexpression)
 
-[IStringLiteral](./albatross.expression.nodes.istringliteral.md)
+[IStringLiteral](./albatross/expression/nodes/istringliteral)
 
-[IToken](./albatross.expression.nodes.itoken.md)
+[IToken](./albatross/expression/nodes/itoken)
 
-[IUnaryExpression](./albatross.expression.nodes.iunaryexpression.md)
+[IUnaryExpression](./albatross/expression/nodes/iunaryexpression)
 
-[IValueToken](./albatross.expression.nodes.ivaluetoken.md)
+[IValueToken](./albatross/expression/nodes/ivaluetoken)
 
-[NumericLiteral](./albatross.expression.nodes.numericliteral.md)
+[NumericLiteral](./albatross/expression/nodes/numericliteral)
 
-[PrefixExpressionExtensions](./albatross.expression.nodes.prefixexpressionextensions.md)
+[PrefixExpressionExtensions](./albatross/expression/nodes/prefixexpressionextensions)
 
-[StringLiteral](./albatross.expression.nodes.stringliteral.md)
+[StringLiteral](./albatross/expression/nodes/stringliteral)
 
-[ValueToken](./albatross.expression.nodes.valuetoken.md)
+[ValueToken](./albatross/expression/nodes/valuetoken)
 
-[Variable](./albatross.expression.nodes.variable.md)
+[Variable](./albatross/expression/nodes/variable)
 
 ## Albatross.Expression.Parsing
 
-[BooleanLiteralFactory](./albatross.expression.parsing.booleanliteralfactory.md)
+[BooleanLiteralFactory](./albatross/expression/parsing/booleanliteralfactory)
 
-[ControlTokenFactory](./albatross.expression.parsing.controltokenfactory.md)
+[ControlTokenFactory](./albatross/expression/parsing/controltokenfactory)
 
-[Extensions](./albatross.expression.parsing.extensions.md)
+[Extensions](./albatross/expression/parsing/extensions)
 
-[GenericPrefixExpressionFactory](./albatross.expression.parsing.genericprefixexpressionfactory.md)
+[GenericPrefixExpressionFactory](./albatross/expression/parsing/genericprefixexpressionfactory)
 
-[GreaterThanExpressionFactory](./albatross.expression.parsing.greaterthanexpressionfactory.md)
+[GreaterThanExpressionFactory](./albatross/expression/parsing/greaterthanexpressionfactory)
 
-[IExpressionFactory&lt;T&gt;](./albatross.expression.parsing.iexpressionfactory-1.md)
+[IExpressionFactory&lt;T&gt;](./albatross/expression/parsing/iexpressionfactory-1)
 
-[InfixExpressionFactory&lt;T&gt;](./albatross.expression.parsing.infixexpressionfactory-1.md)
+[InfixExpressionFactory&lt;T&gt;](./albatross/expression/parsing/infixexpressionfactory-1)
 
-[LessThanExpressionFactory](./albatross.expression.parsing.lessthanexpressionfactory.md)
+[LessThanExpressionFactory](./albatross/expression/parsing/lessthanexpressionfactory)
 
-[NumericLiteralFactory](./albatross.expression.parsing.numericliteralfactory.md)
+[NumericLiteralFactory](./albatross/expression/parsing/numericliteralfactory)
 
-[Parser](./albatross.expression.parsing.parser.md)
+[Parser](./albatross/expression/parsing/parser)
 
-[ParserBuilder](./albatross.expression.parsing.parserbuilder.md)
+[ParserBuilder](./albatross/expression/parsing/parserbuilder)
 
-[PrefixExpressionFactory](./albatross.expression.parsing.prefixexpressionfactory.md)
+[PrefixExpressionFactory](./albatross/expression/parsing/prefixexpressionfactory)
 
-[PrefixExpressionFactory&lt;T&gt;](./albatross.expression.parsing.prefixexpressionfactory-1.md)
+[PrefixExpressionFactory&lt;T&gt;](./albatross/expression/parsing/prefixexpressionfactory-1)
 
-[StringLiteralFactory](./albatross.expression.parsing.stringliteralfactory.md)
+[StringLiteralFactory](./albatross/expression/parsing/stringliteralfactory)
 
-[UnaryExpressionFactory&lt;T&gt;](./albatross.expression.parsing.unaryexpressionfactory-1.md)
+[UnaryExpressionFactory&lt;T&gt;](./albatross/expression/parsing/unaryexpressionfactory-1)
 
-[VariableFactory](./albatross.expression.parsing.variablefactory.md)
+[VariableFactory](./albatross/expression/parsing/variablefactory)
 
 ## Albatross.Expression.Prefix
 
-[Array](./albatross.expression.prefix.array.md)
+[Array](./albatross/expression/prefix/array)
 
-[ArrayItem](./albatross.expression.prefix.arrayitem.md)
+[ArrayItem](./albatross/expression/prefix/arrayitem)
 
-[Avg](./albatross.expression.prefix.avg.md)
+[Avg](./albatross/expression/prefix/avg)
 
-[Concat](./albatross.expression.prefix.concat.md)
+[Concat](./albatross/expression/prefix/concat)
 
-[CreateDate](./albatross.expression.prefix.createdate.md)
+[CreateDate](./albatross/expression/prefix/createdate)
 
-[CurrentApp](./albatross.expression.prefix.currentapp.md)
+[CurrentApp](./albatross/expression/prefix/currentapp)
 
-[CurrentMachine](./albatross.expression.prefix.currentmachine.md)
+[CurrentMachine](./albatross/expression/prefix/currentmachine)
 
-[DateTimeExpression](./albatross.expression.prefix.datetimeexpression.md)
+[DateTimeExpression](./albatross/expression/prefix/datetimeexpression)
 
-[DayOfWeek](./albatross.expression.prefix.dayofweek.md)
+[DayOfWeek](./albatross/expression/prefix/dayofweek)
 
-[Floor](./albatross.expression.prefix.floor.md)
+[Floor](./albatross/expression/prefix/floor)
 
-[Format](./albatross.expression.prefix.format.md)
+[Format](./albatross/expression/prefix/format)
 
-[GetJsonProperty](./albatross.expression.prefix.getjsonproperty.md)
+[GetJsonProperty](./albatross/expression/prefix/getjsonproperty)
 
-[If](./albatross.expression.prefix.if.md)
+[If](./albatross/expression/prefix/if)
 
-[JoinPath](./albatross.expression.prefix.joinpath.md)
+[JoinPath](./albatross/expression/prefix/joinpath)
 
-[Left](./albatross.expression.prefix.left.md)
+[Left](./albatross/expression/prefix/left)
 
-[Len](./albatross.expression.prefix.len.md)
+[Len](./albatross/expression/prefix/len)
 
-[Lower](./albatross.expression.prefix.lower.md)
+[Lower](./albatross/expression/prefix/lower)
 
-[MaxNumber](./albatross.expression.prefix.maxnumber.md)
+[MaxNumber](./albatross/expression/prefix/maxnumber)
 
-[MinNumber](./albatross.expression.prefix.minnumber.md)
+[MinNumber](./albatross/expression/prefix/minnumber)
 
-[Month](./albatross.expression.prefix.month.md)
+[Month](./albatross/expression/prefix/month)
 
-[MonthName](./albatross.expression.prefix.monthname.md)
+[MonthName](./albatross/expression/prefix/monthname)
 
-[NextWeekDay](./albatross.expression.prefix.nextweekday.md)
+[NextWeekDay](./albatross/expression/prefix/nextweekday)
 
-[Not](./albatross.expression.prefix.not.md)
+[Not](./albatross/expression/prefix/not)
 
-[Now](./albatross.expression.prefix.now.md)
+[Now](./albatross/expression/prefix/now)
 
-[Number](./albatross.expression.prefix.number.md)
+[Number](./albatross/expression/prefix/number)
 
-[PadLeft](./albatross.expression.prefix.padleft.md)
+[PadLeft](./albatross/expression/prefix/padleft)
 
-[PadRight](./albatross.expression.prefix.padright.md)
+[PadRight](./albatross/expression/prefix/padright)
 
-[PrefixExpression](./albatross.expression.prefix.prefixexpression.md)
+[PrefixExpression](./albatross/expression/prefix/prefixexpression)
 
-[PreviousWeekDay](./albatross.expression.prefix.previousweekday.md)
+[PreviousWeekDay](./albatross/expression/prefix/previousweekday)
 
-[Random](./albatross.expression.prefix.random.md)
+[Random](./albatross/expression/prefix/random)
 
-[RegexCapture](./albatross.expression.prefix.regexcapture.md)
+[RegexCapture](./albatross/expression/prefix/regexcapture)
 
-[Right](./albatross.expression.prefix.right.md)
+[Right](./albatross/expression/prefix/right)
 
-[Round](./albatross.expression.prefix.round.md)
+[Round](./albatross/expression/prefix/round)
 
-[ShortMonthName](./albatross.expression.prefix.shortmonthname.md)
+[ShortMonthName](./albatross/expression/prefix/shortmonthname)
 
-[Text](./albatross.expression.prefix.text.md)
+[Text](./albatross/expression/prefix/text)
 
-[Today](./albatross.expression.prefix.today.md)
+[Today](./albatross/expression/prefix/today)
 
-[UnixTimestamp](./albatross.expression.prefix.unixtimestamp.md)
+[UnixTimestamp](./albatross/expression/prefix/unixtimestamp)
 
-[Upper](./albatross.expression.prefix.upper.md)
+[Upper](./albatross/expression/prefix/upper)
 
-[Utc](./albatross.expression.prefix.utc.md)
+[Utc](./albatross/expression/prefix/utc)
 
-[UtcNow](./albatross.expression.prefix.utcnow.md)
+[UtcNow](./albatross/expression/prefix/utcnow)
 
-[Year](./albatross.expression.prefix.year.md)
+[Year](./albatross/expression/prefix/year)
 
 ## Albatross.Expression.Unary
 
-[Negative](./albatross.expression.unary.negative.md)
+[Negative](./albatross/expression/unary/negative)
 
-[Positive](./albatross.expression.unary.positive.md)
+[Positive](./albatross/expression/unary/positive)
 
-[UnaryExpression](./albatross.expression.unary.unaryexpression.md)
+[UnaryExpression](./albatross/expression/unary/unaryexpression)

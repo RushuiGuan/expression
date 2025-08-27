@@ -13,6 +13,5 @@
 		<PackageIcon>icon.png</PackageIcon>
 		<Authors>Rushui Guan</Authors>
 		<Copyright>Copyright 2018</Copyright>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 </Project>

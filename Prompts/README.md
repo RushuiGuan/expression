@@ -1,0 +1,1 @@
+## AI Prompts should be stored here so that we have consistant output

@@ -10,6 +10,7 @@
 *.sln.docstates
 *.debug.txt
 .DS_Store
+dev-scripts.psm1
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

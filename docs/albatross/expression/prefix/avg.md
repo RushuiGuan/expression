@@ -111,10 +111,10 @@ The arithmetic mean of all operands as a double, or NaN for empty lists.
 
 #### Exceptions
 
-!:FormatException<br>
+[FormatException](https://docs.microsoft.com/en-us/dotnet/api/system.formatexception)<br>
 Thrown when any operand cannot be converted to a numeric value.
 
-!:DivideByZeroException<br>
+[DivideByZeroException](https://docs.microsoft.com/en-us/dotnet/api/system.dividebyzeroexception)<br>
 May return NaN when dividing by zero operands.
 
 ---

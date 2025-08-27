@@ -111,7 +111,7 @@ A random integer greater than or equal to min and less than max.
 
 #### Exceptions
 
-!:FormatException<br>
+[FormatException](https://docs.microsoft.com/en-us/dotnet/api/system.formatexception)<br>
 Thrown when operands cannot be converted to integers.
 
 !:ArgumentOutOfRangeException<br>

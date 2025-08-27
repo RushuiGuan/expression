@@ -16,3 +16,5 @@ xmldoc2md $working\Albatross.Expression.Utility\bin\Debug\net8.0\Albatross.Expre
 	--index-page-name $working\docs\index2
 
 Get-Content $working\docs\index2.md >> $PSScriptRoot\docs\index.md
+
+Remove-Item $working\docs\index2.md

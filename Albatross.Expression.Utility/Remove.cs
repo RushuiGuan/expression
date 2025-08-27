@@ -6,7 +6,7 @@ using System.IO;
 namespace Albatross.Expression.Utility {
 	[Verb("remove", typeof(Remove), Description = "Remove a varaible")]
 	public class RemoveOptions {
-		[Option("n", Description = "Variable name")]
+		[Argument(Description = "Variable name")]
 		public string Name { get; set; } = string.Empty;
 	}
 

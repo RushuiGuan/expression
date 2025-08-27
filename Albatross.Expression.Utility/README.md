@@ -87,21 +87,21 @@ Store a variable with a name and expression value.
 
 **Syntax:**
 ```bash
-ex set -n <name> <expression>
-ex a -n <name> <expression>    # Short alias
+ex set -n <name> -v <expression>
+ex s -n <name> -v <expression>    # Short alias
 ```
 
 **Examples:**
 ```bash
 # Set numeric variables
-ex set -n pi "3.14159"
-ex set -n radius "5"
+ex set -n pi -v 3.14159
+ex set -n radius -v 5
 
 # Set expression variables
-ex set -n area "pi * power(radius, 2)"
+ex set -n area -v "pi * power(radius, 2)"
 
 # Set string variables
-ex set -n greeting "concat('Hello, ', 'World!')"
+ex set -n greeting -v "concat('Hello, ', 'World!')"
 ```
 
 #### `list` - List All Variables
@@ -150,13 +150,13 @@ Delete a stored variable.
 
 **Syntax:**
 ```bash
-ex remove -n <variable_name>
+ex remove <variable_name>
 ```
 
 **Examples:**
 ```bash
-ex remove -n pi
-ex remove -n area
+ex remove pi
+ex remove area
 ```
 
 ### Working with Variables
@@ -165,13 +165,13 @@ Variables are automatically resolved when evaluating expressions. This allows yo
 
 ```bash
 # Step 1: Set base values
-ex set -n length "10"
-ex set -n width "5"
-ex set -n height "3"
+ex set -n length -v 10
+ex set -n width -v 5
+ex set -n height -v 3
 
 # Step 2: Calculate intermediate values
-ex set -n area "length * width"
-ex set -n volume "area * height"
+ex set -n area -v "length * width"
+ex set -n volume -v "area * height"
 
 # Step 3: Use in expressions
 ex eval "volume * 2"

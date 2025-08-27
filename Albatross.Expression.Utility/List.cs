@@ -17,6 +17,7 @@ namespace Albatross.Expression.Utility {
 				this.Name = name;
 				this.Value = value;
 			}
+
 			public string Name { get; }
 			public string Value { get; }
 		}
@@ -27,7 +28,10 @@ namespace Albatross.Expression.Utility {
 
 		public override int Invoke(InvocationContext context) {
 			var list = new System.Collections.Generic.List<ExpressionValue>();
-			foreach(var file in Directory.GetFiles(config.AppDirectory, "*.txt")) {
+			if (!Directory.Exists(config.AppDirectory)) {
+				Directory.CreateDirectory(config.AppDirectory);
+			}
+			foreach (var file in Directory.GetFiles(config.AppDirectory, "*.txt")) {
 				var content = File.ReadAllText(file);
 				content = content.Trim();
 				var name = Path.GetFileNameWithoutExtension(file);

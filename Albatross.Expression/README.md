@@ -131,7 +131,7 @@ After installing the CLI tool:
 ex eval "2 + 3 * 4"
 
 # Set variables
-ex set -n myvar "10 + 5" 
+ex set -n myvar -v "10 + 5" 
 
 # List all variables
 ex list
@@ -146,11 +146,11 @@ ex eval "myvar * 2"
 ├── Albatross.Expression/              # Main expression library
 │   ├── Context/                       # ExecutionContext implementations
 │   ├── Exceptions/                    # Custom exception classes
-│   ├── Infix/                        # Infix operations (+, -, *, /, etc.)
-│   ├── Nodes/                        # Expression tree node types
-│   ├── Parsing/                      # Core parsing logic
-│   ├── Prefix/                       # Prefix functions (if, max, concat, etc.)
-│   └── Unary/                        # Unary operations (-, +)
+│   ├── Infix/                         # Infix operations (+, -, *, /, etc.)
+│   ├── Nodes/                         # Expression tree node types
+│   ├── Parsing/                       # Core parsing logic
+│   ├── Prefix/                        # Prefix functions (if, max, concat, etc.)
+│   └── Unary/                         # Unary operations (-, +)
 ├── Albatross.Expression.Test/         # Unit tests
 └── Albatross.Expression.Utility/      # CLI utility tool
 ```
@@ -187,4 +187,4 @@ For detailed documentation, visit: https://rushuiguan.github.io/expression/
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Copyright (c) 2019 Rushui Guan
+Copyright (c) 2017 Rushui Guan

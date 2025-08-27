@@ -7,9 +7,6 @@
 		<PackageId>Albatross.Expression.Utility</PackageId>
 		<PackAsTool>True</PackAsTool>
 		<ToolCommandName>ex</ToolCommandName>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\icon.png">

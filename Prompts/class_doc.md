@@ -1,5 +1,4 @@
-You are given a C# codebase.  
-Your task is to add or improve **XML documentation comments** for all symbols with public accessibility.  Exclude class constructors with no parameters.
+Create or update XML documentation comments for Albatross.Expression and Albatross.Expression.Utility projects.  Your task is to add or improve **XML documentation comments** for all symbols with public or protected accessibility.  Exclude class constructors with no parameters.
 
 Requirements:
 1. Generate **triple-slash `///` XML documentation**.

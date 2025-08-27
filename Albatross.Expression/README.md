@@ -181,7 +181,7 @@ dotnet test ./Albatross.Expression.Test/
 
 ## Documentation
 
-For detailed documentation, visit: https://rushuiguan.github.io/expression/
+For Api Reference, visit: https://rushuiguan.github.io/expression/
 
 ## License
 

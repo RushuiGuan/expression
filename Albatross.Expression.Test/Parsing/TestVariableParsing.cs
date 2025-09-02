@@ -39,6 +39,8 @@ namespace Albatross.Expression.Test.Parsing {
 		[InlineData("1_cat + 1")]
 		// [InlineData("field.0_cat + 1")]  this would match field
 		[InlineData("0field._cat + 1")]
+		// function call
+		[InlineData("test(")]
 		public void VariableParsing_Failure(string text) {
 			new VariableFactory().VerifyValueFactory(text, false, 0, "");
 		}

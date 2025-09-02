@@ -8,6 +8,10 @@ namespace Albatross.Expression.Parsing {
 	/// </summary>
 	public class ParserBuilder {
 		readonly List<IExpressionFactory<IToken>> factories = new List<IExpressionFactory<IToken>>();
+		/// <summary>
+		/// Return a read-only list of the currently registered expression factories.
+		/// </summary>
+		public IReadOnlyList<IExpressionFactory<IToken>> Factories => factories;
 
 		/// <summary>
 		/// Adds a custom expression factory to the parser configuration.

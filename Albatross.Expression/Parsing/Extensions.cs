@@ -35,10 +35,13 @@ namespace Albatross.Expression.Parsing {
 			return tree.Eval(name => context.GetValue(name, t));
 		}
 
-		public static T? RegexParse<T>(this string expression, Regex regex, Func<Match, string> capture, Func<string, T> func, int start, out int next) where T : class {
-			next = expression.Length;
-			if (start < expression.Length) {
-				Match match = regex.Match(expression.Substring(start));
+		public static T? RegexParse<T>(this string text, Regex regex, Func<Match, string> capture, Func<string, T> func, int start, out int next) where T : class {
+			next = text.Length;
+			while (start < text.Length && char.IsWhiteSpace(text[start])) {
+				start++;
+			}
+			if (start < text.Length) {
+				Match match = regex.Match(text.Substring(start));
 				if (match.Success) {
 					var node = func(capture(match));
 					next = start + match.Value.Length;

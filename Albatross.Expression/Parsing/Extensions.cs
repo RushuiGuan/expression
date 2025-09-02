@@ -1,4 +1,7 @@
-﻿using Albatross.Expression.Context;
+﻿using System;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Albatross.Expression.Context;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression.Parsing {
@@ -30,6 +33,19 @@ namespace Albatross.Expression.Parsing {
 		public static object Eval<T>(this IParser parser, string expression, IExecutionContext<T> context, T t) {
 			var tree = parser.Build(expression);
 			return tree.Eval(name => context.GetValue(name, t));
+		}
+
+		public static T? RegexParse<T>(this string expression, Regex regex, Func<Match, string> capture, Func<string, T> func, int start, out int next) where T : class {
+			next = expression.Length;
+			if (start < expression.Length) {
+				Match match = regex.Match(expression.Substring(start));
+				if (match.Success) {
+					var node = func(capture(match));
+					next = start + match.Value.Length;
+					return node;
+				}
+			}
+			return null;
 		}
 	}
 }

@@ -18,7 +18,7 @@ namespace Albatross.Expression.Prefix {
 		/// </summary>
 		/// <param name="operands">List containing exactly one operand that can be converted to DateTime.</param>
 		/// <returns>An integer representing the year (e.g., 2024).</returns>
-		/// <exception cref="FormatException">Thrown when the operand cannot be converted to DateTime.</exception>
+		/// <exception cref="System.FormatException">Thrown when the operand cannot be converted to DateTime.</exception>
 		protected override object Run(List<object> operands) 
 			=> operands[0].ConvertToDateTime().Year;
 	}

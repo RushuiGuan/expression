@@ -20,7 +20,7 @@ namespace Albatross.Expression.Prefix {
 		/// </summary>
 		/// <param name="operands">List containing 1-2 operands: starting date and optional weekday count (defaults to 1).</param>
 		/// <returns>A DateTime representing the next weekday after advancing the specified count.</returns>
-		/// <exception cref="FormatException">Thrown when operands cannot be converted to appropriate types.</exception>
+		/// <exception cref="System.FormatException">Thrown when operands cannot be converted to appropriate types.</exception>
 		protected override object Run(List<object> operands) {
 			var value = operands[0].ConvertToDateTime();
 			var count = 1;

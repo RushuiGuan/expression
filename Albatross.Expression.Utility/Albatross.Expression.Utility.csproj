@@ -9,6 +9,12 @@
 		<ToolCommandName>ex</ToolCommandName>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\icon.png">
 			<Pack>True</Pack>

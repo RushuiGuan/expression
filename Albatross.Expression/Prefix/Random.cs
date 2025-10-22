@@ -19,7 +19,7 @@ namespace Albatross.Expression.Prefix {
 		/// <param name="operands">List containing exactly two operands: minimum and maximum integer values.</param>
 		/// <returns>A random integer greater than or equal to min and less than max.</returns>
 		/// <exception cref="System.FormatException">Thrown when operands cannot be converted to integers.</exception>
-		/// <exception cref="ArgumentOutOfRangeException">Thrown when min is greater than max.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">Thrown when min is greater than max.</exception>
 		protected override object Run(List<object> operands) {
 			var min = operands[0].ConvertToInt();
 			var max = operands[1].ConvertToInt();

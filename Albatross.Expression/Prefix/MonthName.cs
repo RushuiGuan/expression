@@ -19,7 +19,7 @@ namespace Albatross.Expression.Prefix {
 		/// </summary>
 		/// <param name="operands">List containing exactly one operand that can be converted to DateTime.</param>
 		/// <returns>A string containing the full month name in the current culture.</returns>
-		/// <exception cref="FormatException">Thrown when the operand cannot be converted to DateTime.</exception>
+		/// <exception cref="System.FormatException">Thrown when the operand cannot be converted to DateTime.</exception>
 		protected override object Run(List<object> operands) {
 			var value = operands[0].ConvertToDateTime();
 			return CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(value.Month);

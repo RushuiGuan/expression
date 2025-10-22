@@ -23,8 +23,8 @@ namespace Albatross.Expression.Prefix {
 		/// </summary>
 		/// <param name="operands">List containing 2-3 operands: source string, target width, and optional padding character.</param>
 		/// <returns>A string padded to the specified width with characters added to the right.</returns>
-		/// <exception cref="FormatException">Thrown when operands cannot be converted to appropriate types.</exception>
-		/// <exception cref="ArgumentOutOfRangeException">Thrown when the target width is negative.</exception>
+		/// <exception cref="System.FormatException">Thrown when operands cannot be converted to appropriate types.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">Thrown when the target width is negative.</exception>
 		protected override object Run(List<object> operands) {
 			var text = operands[0].ConvertToString();
 			var count = operands[1].ConvertToInt();

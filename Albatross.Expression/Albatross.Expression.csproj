@@ -7,6 +7,12 @@
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Albatross.Dates" Version="7.5.13" />
 		<PackageReference Include="JsonPointer.Net" Version="5.3.1" />

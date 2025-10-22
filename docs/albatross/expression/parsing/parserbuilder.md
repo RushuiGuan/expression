@@ -16,6 +16,20 @@ public class ParserBuilder
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [ParserBuilder](./albatross/expression/parsing/parserbuilder)<br>
 Attributes [NullableContextAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.nullablecontextattribute), [NullableAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.nullableattribute)
 
+## Properties
+
+### **Factories**
+
+Return a read-only list of the currently registered expression factories.
+
+```csharp
+public IReadOnlyList<IExpressionFactory<IToken>> Factories { get; }
+```
+
+#### Property Value
+
+[IReadOnlyList&lt;IExpressionFactory&lt;IToken&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
+
 ## Constructors
 
 ### **ParserBuilder()**

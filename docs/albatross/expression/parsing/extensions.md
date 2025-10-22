@@ -70,6 +70,34 @@ The input object containing context data.
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
 The result of evaluating the expression.
 
+### **RegexParse&lt;T&gt;(String, Regex, Func&lt;Match, String&gt;, Func&lt;String, T&gt;, Int32, Int32&)**
+
+```csharp
+public static T RegexParse<T>(string text, Regex regex, Func<Match, string> capture, Func<string, T> func, int start, Int32& next)
+```
+
+#### Type Parameters
+
+`T`<br>
+
+#### Parameters
+
+`text` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+
+`regex` Regex<br>
+
+`capture` [Func&lt;Match, String&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.func-2)<br>
+
+`func` Func&lt;String, T&gt;<br>
+
+`start` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
+
+`next` [Int32&](https://docs.microsoft.com/en-us/dotnet/api/system.int32&)<br>
+
+#### Returns
+
+T<br>
+
 ---
 
 [`< Back`](../../../)

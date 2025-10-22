@@ -8,11 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		.projects = .projects
-		.version = .version
 		Directory.Build.props = Directory.Build.props
 		LICENSE = LICENSE
-		pack.ps1 = pack.ps1
-		build.ps1 = build.ps1
 		Prompts\class_doc.md = Prompts\class_doc.md
 	EndProjectSection
 EndProject

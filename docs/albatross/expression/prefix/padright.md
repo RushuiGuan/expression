@@ -121,10 +121,10 @@ A string padded to the specified width with characters added to the right.
 
 #### Exceptions
 
-!:FormatException<br>
+[FormatException](https://docs.microsoft.com/en-us/dotnet/api/system.formatexception)<br>
 Thrown when operands cannot be converted to appropriate types.
 
-!:ArgumentOutOfRangeException<br>
+[ArgumentOutOfRangeException](https://docs.microsoft.com/en-us/dotnet/api/system.argumentoutofrangeexception)<br>
 Thrown when the target width is negative.
 
 ---

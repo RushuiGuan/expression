@@ -110,7 +110,7 @@ An integer representing the year (e.g., 2024).
 
 #### Exceptions
 
-!:FormatException<br>
+[FormatException](https://docs.microsoft.com/en-us/dotnet/api/system.formatexception)<br>
 Thrown when the operand cannot be converted to DateTime.
 
 ---

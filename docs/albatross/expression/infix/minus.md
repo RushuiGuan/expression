@@ -137,7 +137,7 @@ The result of left minus right as a double.
 
 #### Exceptions
 
-!:FormatException<br>
+[FormatException](https://docs.microsoft.com/en-us/dotnet/api/system.formatexception)<br>
 Thrown when either operand cannot be converted to double.
 
 ---

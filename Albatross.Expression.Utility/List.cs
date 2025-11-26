@@ -1,5 +1,4 @@
-﻿using Albatross.Text.Table;
-using Albatross.CommandLine;
+﻿using Albatross.CommandLine;
 using Microsoft.Extensions.Options;
 using System.CommandLine.Invocation;
 using System.IO;
@@ -22,7 +21,7 @@ namespace Albatross.Expression.Utility {
 		/// <summary>
 		/// Represents a variable name-value pair for display purposes.
 		/// </summary>
-		public class ExpressionValue {
+		public record class ExpressionValue {
 			/// <summary>
 			/// Initializes a new instance of the ExpressionValue class.
 			/// </summary>
@@ -68,9 +67,8 @@ namespace Albatross.Expression.Utility {
 				var content = File.ReadAllText(file);
 				content = content.Trim();
 				var name = Path.GetFileNameWithoutExtension(file);
-				list.Add(new ExpressionValue(name, content));
+				this.writer.WriteLine(new ExpressionValue(name, content));
 			}
-			list.StringTable().PrintConsole();
 			return 0;
 		}
 	}

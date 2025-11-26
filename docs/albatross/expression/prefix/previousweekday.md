@@ -111,7 +111,7 @@ A DateTime representing the previous weekday after going back the specified coun
 
 #### Exceptions
 
-!:FormatException<br>
+[FormatException](https://docs.microsoft.com/en-us/dotnet/api/system.formatexception)<br>
 Thrown when operands cannot be converted to appropriate types.
 
 ---

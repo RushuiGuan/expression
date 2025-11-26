@@ -111,7 +111,7 @@ A DateTime representing the next weekday after advancing the specified count.
 
 #### Exceptions
 
-!:FormatException<br>
+[FormatException](https://docs.microsoft.com/en-us/dotnet/api/system.formatexception)<br>
 Thrown when operands cannot be converted to appropriate types.
 
 ---

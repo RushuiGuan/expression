@@ -2,6 +2,9 @@
 
 **Albatross.Expression** is a powerful .NET expression parsing and evaluation library that processes and evaluates text-based expression strings. The library tokenizes expression text, creates a tree model from the tokens, and can evaluate expressions or convert them to different formats. It includes a comprehensive ExecutionContext class that allows evaluation of expressions with variables that can be read internally or directly from external objects.
 
+## Notice
+Version 4.*.* has a critical bug and has been deprecated. Please use version 5 instead.
+
 ## Features
 
 - **Expression Parsing**: Tokenize and parse complex mathematical and logical expressions

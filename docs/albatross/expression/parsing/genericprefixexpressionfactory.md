@@ -23,12 +23,12 @@ Attributes [NullableContextAttribute](https://docs.microsoft.com/en-us/dotnet/ap
 Gets the collection of registered prefix expressions by name.
 
 ```csharp
-public IReadOnlyDictionary<string, IPrefixExpression> RegisteredExpressions { get; }
+public IReadOnlyDictionary<string, Func<IPrefixExpression>> RegisteredExpressions { get; }
 ```
 
 #### Property Value
 
-[IReadOnlyDictionary&lt;String, IPrefixExpression&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlydictionary-2)<br>
+[IReadOnlyDictionary&lt;String, Func&lt;IPrefixExpression&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlydictionary-2)<br>
 
 ## Constructors
 
@@ -47,23 +47,18 @@ Whether prefix expression names should be matched case-sensitively.
 
 ## Methods
 
-### **Add&lt;T&gt;(T)**
+### **Add&lt;T&gt;()**
 
 Adds a prefix expression to the factory's registered collection.
 
 ```csharp
-public void Add<T>(T t)
+public void Add<T>()
 ```
 
 #### Type Parameters
 
 `T`<br>
 The type of prefix expression to add.
-
-#### Parameters
-
-`t` T<br>
-The prefix expression instance to register.
 
 ### **Parse(String, Int32, Int32&)**
 

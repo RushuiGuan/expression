@@ -1,4 +1,11 @@
-﻿using System.CommandLine.Parsing;
+﻿using Albatross.CommandLine;
+using Albatross.CommandLine.Defaults;
+using Albatross.Config;
+using Albatross.Expression.Context;
+using Albatross.Expression.Parsing;
+using Microsoft.Extensions.DependencyInjection;
+using System.CommandLine;
+using System.CommandLine.Parsing;
 using System.Threading.Tasks;
 
 namespace Albatross.Expression.Utility {
@@ -14,9 +21,20 @@ namespace Albatross.Expression.Utility {
 		/// <param name="args">Command-line arguments passed to the application.</param>
 		/// <returns>A task representing the asynchronous operation, with exit code 0 for success or non-zero for errors.</returns>
 		static async Task<int> Main(string[] args) {
-			return await new MySetup().AddCommands()
-						.CommandBuilder.Build()
-						.InvokeAsync(args);
+			await using var host = new CommandHost("Albatross Expression Utility")
+				.RegisterServices(RegisterServices)
+				.AddCommands()
+				.Parse(args)
+				.WithDefaults()
+				.Build();
+			return await host.InvokeAsync();
+		}
+
+		static void RegisterServices(ParseResult result, IServiceCollection services) {
+			services.RegisterCommands();
+			services.AddConfig<ExpressionConfig>();
+			services.AddSingleton<IParser>(x => new ParserBuilder().BuildDefault(false));
+			services.AddScoped<IExecutionContext<object>, CustomExecutionContext<object>>();
 		}
 	}
 }

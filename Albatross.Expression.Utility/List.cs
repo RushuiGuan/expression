@@ -1,21 +1,23 @@
 ﻿using Albatross.CommandLine;
-using Microsoft.Extensions.Options;
-using System.CommandLine.Invocation;
+using Albatross.CommandLine.Annotations;
+using System.CommandLine;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Utility {
 	/// <summary>
-	/// Command options for the list command that displays all stored variables.
+	/// Command parameters for the list command that displays all stored variables.
 	/// </summary>
-	[Verb("list", typeof(List), Alias = ["l"], Description = "List all variables")]
-	public class ListOptions {
+	[Verb<List>("list", Alias = ["l"], Description = "List all variables")]
+	public class ListParams {
 	}
 
 	/// <summary>
 	/// Command handler for listing all stored variables in a tabular format.
 	/// Reads all text files from the application directory and displays their names and values.
 	/// </summary>
-	public class List : BaseHandler<EvalOptions> {
+	public class List : BaseHandler<EvalParams> {
 		private readonly ExpressionConfig config;
 
 		/// <summary>
@@ -46,9 +48,9 @@ namespace Albatross.Expression.Utility {
 		/// <summary>
 		/// Initializes a new instance of the List class.
 		/// </summary>
-		/// <param name="options">Command options for evaluation (inherited from base handler).</param>
+		/// <param name="parameters">Command parameters for evaluation (inherited from base handler).</param>
 		/// <param name="config">Configuration providing application directory path.</param>
-		public List(IOptions<EvalOptions> options, ExpressionConfig config) : base(options) {
+		public List(ParseResult result, EvalParams parameters, ExpressionConfig config) : base(result, parameters) {
 			this.config = config;
 		}
 
@@ -58,7 +60,7 @@ namespace Albatross.Expression.Utility {
 		/// </summary>
 		/// <param name="context">The invocation context for the command.</param>
 		/// <returns>Returns 0 on successful completion.</returns>
-		public override int Invoke(InvocationContext context) {
+		public override Task<int> InvokeAsync(CancellationToken cancellationToken) {
 			var list = new System.Collections.Generic.List<ExpressionValue>();
 			if (!Directory.Exists(config.AppDirectory)) {
 				Directory.CreateDirectory(config.AppDirectory);
@@ -67,9 +69,9 @@ namespace Albatross.Expression.Utility {
 				var content = File.ReadAllText(file);
 				content = content.Trim();
 				var name = Path.GetFileNameWithoutExtension(file);
-				this.writer.WriteLine(new ExpressionValue(name, content));
+				this.Writer.WriteLine(new ExpressionValue(name, content));
 			}
-			return 0;
+			return Task.FromResult(0);
 		}
 	}
 }

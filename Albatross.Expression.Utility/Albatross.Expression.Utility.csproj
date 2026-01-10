@@ -7,7 +7,6 @@
 		<PackageId>Albatross.Expression.Utility</PackageId>
 		<PackAsTool>True</PackAsTool>
 		<ToolCommandName>ex</ToolCommandName>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<NoWarn>1701;1702;1591</NoWarn>
@@ -26,10 +25,12 @@
 		</None>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Albatross.CommandLine" Version="8.0.0" />
-		<PackageReference Include="Albatross.Config" Version="10.0.0-16.main" />
-		<PackageReference Include="Albatross.Logging" Version="10.0.0-11.main" />
-		<PackageReference Include="Albatross.Reflection" Version="10.0.0-44.main" />
+		<PackageReference Include="Albatross.CommandLine" Version="8.0.1" />
+		<PackageReference Include="Albatross.CommandLine.Defaults" Version="8.0.1" />
+		<PackageReference Include="Albatross.CommandLine.Inputs" Version="8.0.1" />
+		<PackageReference Include="Albatross.Config" Version="7.5.11" />
+		<PackageReference Include="Albatross.Logging" Version="10.0.1" />
+		<PackageReference Include="Albatross.Reflection" Version="8.0.7" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Albatross.Expression\Albatross.Expression.csproj" />

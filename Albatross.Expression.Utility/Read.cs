@@ -1,15 +1,17 @@
 ﻿using Albatross.CommandLine;
+using Albatross.CommandLine.Annotations;
 using Albatross.Expression.Context;
 using Albatross.Expression.Parsing;
-using Microsoft.Extensions.Options;
-using System.CommandLine.Invocation;
+using System.CommandLine;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Utility {
 	/// <summary>
-	/// Command options for the read command that retrieves and displays a stored variable value.
+	/// Command parameters for the read command that retrieves and displays a stored variable value.
 	/// </summary>
-	[Verb("read", typeof(Read), Alias = ["r"], Description = "Read a variable")]
-	public class ReadOptions {
+	[Verb<Read>("read", Alias = ["r"], Description = "Read a variable")]
+	public class ReadParams {
 		/// <summary>
 		/// Gets or sets the name of the variable to read.
 		/// </summary>
@@ -21,17 +23,11 @@ namespace Albatross.Expression.Utility {
 	/// Command handler for reading and displaying stored variable values.
 	/// Retrieves a variable from the execution context and outputs its current value.
 	/// </summary>
-	public class Read : BaseHandler<EvalOptions> {
+	public class Read : BaseHandler<EvalParams> {
 		private readonly IParser parser;
 		private readonly IExecutionContext<object> executionContext;
 
-		/// <summary>
-		/// Initializes a new instance of the Read class.
-		/// </summary>
-		/// <param name="options">Command options containing the variable name to read.</param>
-		/// <param name="parser">Expression parser for building variable references.</param>
-		/// <param name="executionContext">Execution context providing access to stored variables.</param>
-		public Read(IOptions<EvalOptions> options, IParser parser, IExecutionContext<object> executionContext) : base(options) {
+		public Read(EvalParams parameters, IParser parser, ParseResult result, IExecutionContext<object> executionContext) : base(result, parameters) {
 			this.parser = parser;
 			this.executionContext = executionContext;
 		}
@@ -42,11 +38,11 @@ namespace Albatross.Expression.Utility {
 		/// </summary>
 		/// <param name="context">The invocation context for the command.</param>
 		/// <returns>Returns 0 on successful variable retrieval, non-zero if variable not found.</returns>
-		public override int Invoke(InvocationContext context) {
-			var node = parser.Build(options.Argument);
-			var result = this.executionContext.GetValue(this.options.Argument, new object());
-			this.writer.WriteLine(result);
-			return 0;
+		public override Task<int> InvokeAsync(CancellationToken cancellationToken) {
+			var node = parser.Build(parameters.Argument);
+			var result = this.executionContext.GetValue(this.parameters.Argument, new object());
+			this.Writer.WriteLine(result);
+			return Task.FromResult(0);
 		}
 	}
 }

@@ -1,14 +1,16 @@
 ﻿using Albatross.CommandLine;
-using Microsoft.Extensions.Options;
-using System.CommandLine.Invocation;
+using Albatross.CommandLine.Annotations;
+using System.CommandLine;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Utility {
 	/// <summary>
-	/// Command options for the remove command that deletes a stored variable.
+	/// Command parameters for the remove command that deletes a stored variable.
 	/// </summary>
-	[Verb("remove", typeof(Remove), Description = "Remove a varaible")]
-	public class RemoveOptions {
+	[Verb<Remove>("remove", Description = "Remove a varaible")]
+	public class RemoveParams {
 		/// <summary>
 		/// Gets or sets the name of the variable to remove.
 		/// </summary>
@@ -20,15 +22,10 @@ namespace Albatross.Expression.Utility {
 	/// Command handler for removing stored variables from the file system.
 	/// Deletes the text file associated with the specified variable name.
 	/// </summary>
-	public class Remove : BaseHandler<RemoveOptions> {
+	public class Remove : BaseHandler<RemoveParams> {
 		private readonly ExpressionConfig config;
 
-		/// <summary>
-		/// Initializes a new instance of the Remove class.
-		/// </summary>
-		/// <param name="options">Command options containing the variable name to remove.</param>
-		/// <param name="config">Configuration providing application directory path.</param>
-		public Remove(IOptions<RemoveOptions> options, ExpressionConfig config) : base(options) {
+		public Remove(RemoveParams parameters, ParseResult result, ExpressionConfig config) : base(result, parameters) {
 			this.config = config;
 		}
 
@@ -38,12 +35,12 @@ namespace Albatross.Expression.Utility {
 		/// </summary>
 		/// <param name="context">The invocation context for the command.</param>
 		/// <returns>Returns 0 on successful completion regardless of whether the file existed.</returns>
-		public override int Invoke(InvocationContext context) {
-			var filePath = Path.Join(config.AppDirectory, $"{options.Name}.txt");
+		public override Task<int> InvokeAsync(CancellationToken cancellationToken) {
+			var filePath = Path.Join(config.AppDirectory, $"{parameters.Name}.txt");
 			if (File.Exists(filePath)) {
 				File.Delete(filePath);
 			}
-			return 0;
+			return Task.FromResult(0);
 		}
 	}
 }

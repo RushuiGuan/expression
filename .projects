@@ -4,3 +4,6 @@ Albatross.Expression.Utility
 
 # tests
 Albatross.Expression.Test
+
+# apps
+Albatross.Expression.Utility

@@ -1,15 +1,17 @@
 ﻿using Albatross.CommandLine;
+using Albatross.CommandLine.Annotations;
 using Albatross.Expression.Context;
 using Albatross.Expression.Parsing;
-using Microsoft.Extensions.Options;
-using System.CommandLine.Invocation;
+using System.CommandLine;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Albatross.Expression.Utility {
 	/// <summary>
-	/// Command options for the eval command that evaluates mathematical, logical, or string expressions.
+	/// Command parameters for the eval command that evaluates mathematical, logical, or string expressions.
 	/// </summary>
-	[Verb("eval", typeof(Eval), Alias = ["e"], Description = "Eval an expression")]
-	public class EvalOptions {
+	[Verb<Eval>("eval", Alias = ["e"], Description = "Eval an expression")]
+	public class EvalParams {
 		/// <summary>
 		/// Gets or sets the expression string to evaluate.
 		/// </summary>
@@ -21,17 +23,11 @@ namespace Albatross.Expression.Utility {
 	/// Command handler for evaluating expressions using the Albatross.Expression parser.
 	/// Supports mathematical, logical, string operations, date/time functions, and variable references.
 	/// </summary>
-	public class Eval : BaseHandler<EvalOptions> {
+	public class Eval : BaseHandler<EvalParams> {
 		private readonly IParser parser;
 		private readonly IExecutionContext<object> executionContext;
 
-		/// <summary>
-		/// Initializes a new instance of the Eval class.
-		/// </summary>
-		/// <param name="options">Command options containing the expression to evaluate.</param>
-		/// <param name="parser">Expression parser for tokenizing and evaluating expressions.</param>
-		/// <param name="executionContext">Execution context providing variable scope and built-in functions.</param>
-		public Eval(IOptions<EvalOptions> options, IParser parser, IExecutionContext<object> executionContext) : base(options) {
+		public Eval(EvalParams parameters, IParser parser, ParseResult result, IExecutionContext<object> executionContext) : base(result, parameters) {
 			this.parser = parser;
 			this.executionContext = executionContext;
 		}
@@ -42,10 +38,10 @@ namespace Albatross.Expression.Utility {
 		/// </summary>
 		/// <param name="context">The invocation context for the command.</param>
 		/// <returns>Returns 0 on successful evaluation, non-zero on parsing or evaluation errors.</returns>
-		public override int Invoke(InvocationContext context) {
-			var result = parser.Eval(options.Argument, this.executionContext, new object());
-			this.writer.WriteLine(result);
-			return 0;
+		public override Task<int> InvokeAsync(CancellationToken cancellationToken) {
+			var result = parser.Eval(parameters.Argument, this.executionContext, new object());
+			this.Writer.WriteLine(result);
+			return Task.FromResult(0);
 		}
 	}
 }

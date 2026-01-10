@@ -46,7 +46,7 @@ dotnet tool install -g --add-source ./Albatross.Expression.Utility/bin/Debug Alb
 The tool is invoked using the `ex` command followed by subcommands:
 
 ```bash
-ex <command> [options] [arguments]
+ex <command> [parameters] [arguments]
 ```
 
 ### Commands

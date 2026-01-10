@@ -1,42 +1,193 @@
-# Albatross Expression Api
+# About
 
-## Summary
-Albatross.Expression api is created to process and evaluate text based expression strings.  
+**Albatross.Expression** is a powerful .NET expression parsing and evaluation library that processes and evaluates text-based expression strings. The library tokenizes expression text, creates a tree model from the tokens, and can evaluate expressions or convert them to different formats. It includes a comprehensive ExecutionContext class that allows evaluation of expressions with variables that can be read internally or directly from external objects.
 
-## Description
-The api tokenizes the expression text and create a tree model from the tokens.  Using the model, it can evaluate the expression or convert it to a expression of different format.  Some applications revert the process by creating the model first and use it to generate certain expression such as a sql query statement.  The api also contains a useful ExecutionContext class that allows evaluation of expressions with variables.  The variables can be read internally or directly from external objects.
+## Notice
+Version 4.*.* has a critical bug and has been deprecated. Please use version 5 instead.
 
-## Release
-* 2.0.4
-	* No breaking changes.
-	* License change from GNU GPLv3 to MIT.
-	* Allow direct registration of IToken instances in the [Factory](xref:Albatross.Expression.Factory) class.
-* 2.0.3
-	* Breaking Changes
-		* The Add method of the [IParser](xref:Albatross.Expression.IParser) interface has been removed.  Adding new operations to the instance of [Parser](xref:Albatross.Expression.Parser) class will alter its state.  This change will make the [Parser](xref:Albatross.Expression.Parser) class immutable.
-		* The Compile method of the [IParser](xref:Albatross.Expression.IParser) interface has been removed.  It is replaced by a extension method - [Compile](xref:Albatross.Expression.Extensions.Compile(Albatross.Expression.IParser,System.String)).  The Compile method is a short hand for the Tokenize, BuildStack and CreateTree process.  It doesn't introduce any functionality therefore it doesn't belong in the interface.
-    * New StringTokenLiteral - [SingleDoubleQuoteStringLiteralToken](xref:Albatross.Expression.Tokens.SingleDoubleQuoteStringLiteralToken) class has been created to accept single quote or double quote strings.
-    * New ExecutionContextFactory - [ReflectionExecutionContextFactory<T>](xref:Albatross.Expression.ReflectionExecutionContextFactory`1) class has been created to supply variable value from the public instance properties of the input object (of class T) using reflection.  The execution context created by this factory is always case sensitive.
-* 2.0.2
-    * Breaking Changes
-        * Mininum target framework has been changed from net40 to net45.
-        * Precedence for ``and, or`` operations has been set to the lowest (30, 20) among all infix operations.  As the result of this change, the following expression will now return true: ``2 > 1 and 3 > 1``.
-        * [IParser](xref:Albatross.Expression.IParser) interface no longer has the ``SetVariableToken`` and ``SetStringLiteralToken`` methods.  That means Variabletoken or StringLiteralToken types can no longer be changed after the parser has been created.
-        * Change to the constructor of the [Parser](xref:Albatross.Expression.Parser) class to require two additional parameter [IVariableToken](xref:Albatross.Expression.Tokens.IVariableToken) and [IStringLiteralToken](xref:Albatross.Expression.Tokens.IVariableToken).
-        * [IExecutionContextFactory](xref:Albatross.Expression.IExecutionContextFactory`1) is now a generic interface.  It requires a type to specify the input data type.
-        * [IExecutionContext](xref:Albatross.Expression.IExecutionContext`1) interface is now a generic interface as well.  It has been redefined and reduced so that it is easier to use.
-    * [ParserOperationAttribute](xref:Albatross.Expression.ParserOperationAttribute) (new)
-        * A custom attribute used to mark the operations so that it will be used by the Factory class when constructing a parser object.
-    * [Factory](xref:Albatross.Expression.Factory) class (new)
-        * Allow quick creation of a Parser instance.
-        * The class can scan an assembly and register any parser operation class with the [ParserOperationAttribute](xref:Albatross.Expression.ParserOperationAttribute) attribute.
-    * [DataRowExecutionContextFactory](xref:Albatross.Expression.DataRowExecutionContextFactory) class (new)
-        * A prewired execution context factory that works with the external data type System.Data.DataRow.
-    * [DictionaryExecutionContextFactory](xref:Albatross.Expression.DictionaryExecutionContextFactory) class (new)
-        * A prewired execution context factory that works with the external data type System.Collection.Generic.IDictionary<string, object>
-    * [ExpressionBuilder](xref:Albatross.Expression.ExpressionBuilder) is marked as Obsolete.
-    * Add additional target framework netstandard2.0
-    * Strengthen Unit testing.
-    * Add lots of documentation.
-* 1.3.6218.36673 - Orignal release
-    * Created: 1/10/2017
+## Features
+
+- **Expression Parsing**: Tokenize and parse complex mathematical and logical expressions
+- **Multiple Operation Types**: Support for infix, prefix, and unary operations
+- **Variable Support**: Evaluate expressions with variables using ExecutionContext
+- **External Data Integration**: Access external data sources during expression evaluation
+- **Asynchronous Evaluation**: Support for async operations within expressions
+- **Type Conversion**: Built-in support for string, boolean, and numeric literals
+- **Rich Function Library**: Comprehensive set of built-in functions including:
+	- Mathematical operations (Add, Subtract, Multiply, Divide, Power, Floor, Round, etc.)
+	- String operations (Concat, Left, Right, Upper, Lower, PadLeft, PadRight, etc.)
+	- Date/Time operations (Now, Today, Year, Month, DayOfWeek, etc.)
+	- Logical operations (And, Or, Not, comparison operators)
+	- Array operations (Array creation, GetJsonArrayItem)
+	- Regex operations (RegexCapture)
+	- Utility functions (Format, If, Random, etc.)
+- **Command Line Utility**: CLI tool for expression evaluation and variable management
+
+## Prerequisites
+
+- .NET 8.0 SDK or later
+- C# 12.0 language features support
+
+## Installation
+
+### NuGet Package
+
+Install the main library via NuGet Package Manager:
+
+```bash
+dotnet add package Albatross.Expression
+```
+
+Or via Package Manager Console:
+
+```powershell
+Install-Package Albatross.Expression
+```
+
+### CLI Tool
+
+Install the command-line utility globally:
+
+```bash
+dotnet tool install -g Albatross.Expression.Utility
+```
+
+### Build from Source
+
+```bash
+git clone https://github.com/RushuiGuan/expression.git
+cd expression
+dotnet restore
+dotnet build
+```
+
+## Usage Examples
+
+### Basic Expression Evaluation
+
+```csharp
+using Albatross.Expression.Parsing;
+
+// Create parser instance
+var parser = new ParserBuilder().BuildDefault();
+
+// Evaluate simple expressions
+var result1 = parser.Eval("1 + 5", null); // Returns: 6
+var result2 = parser.Eval("10 * (2 + 3)", null); // Returns: 50
+var result3 = parser.Eval("upper('hello world')", null); // Returns: "HELLO WORLD"
+```
+
+### Using ExecutionContext with Variables
+
+```csharp
+using Albatross.Expression.Context;
+using Albatross.Expression.Parsing;
+
+var parser = new ParserBuilder().BuildDefault();
+var context = new DefaultExecutionContext<object>(parser);
+
+// Set variables
+context.Set(new ExpressionContextValue<object>("a", "10", parser));
+context.Set(new ExpressionContextValue<object>("b", "20", parser)); 
+context.Set(new ExpressionContextValue<object>("sum", "a + b", parser));
+
+// Evaluate expression with variables
+var result = context.GetValue("sum", new object()); // Returns: 30
+```
+
+### External Data Integration
+
+```csharp
+var parser = new ParserBuilder().BuildDefault();
+var context = new DefaultExecutionContext<Dictionary<string, object>>(parser);
+
+// Set up expression that references external data
+context.Set(new ExpressionContextValue<Dictionary<string, object>>("total", "price + tax", parser));
+context.Set(new ExternalContextValue<Dictionary<string, object>>("price", dict => dict["price"]));
+context.Set(new ExternalContextValue<Dictionary<string, object>>("tax", dict => dict["tax"]));
+
+// Provide external data
+var data = new Dictionary<string, object> { { "price", 100.0 }, { "tax", 8.5 } };
+var result = context.GetValue("total", data); // Returns: 108.5
+```
+
+### Asynchronous Operations
+
+```csharp
+var parser = new ParserBuilder().BuildDefault();
+var context = new DefaultExecutionContext<object>(parser);
+
+// Set up async external value
+context.Set(new AsyncExternalContextValue<object>("api_data", async _ => await FetchDataAsync()));
+context.Set(new ExpressionContextValue<object>("result", "upper(api_data)", parser));
+
+// Evaluate asynchronously
+var result = await context.GetValueAsync("result", new object());
+```
+
+### Command Line Usage
+
+After installing the CLI tool:
+
+```bash
+# Evaluate expressions
+ex eval "2 + 3 * 4"
+
+# Set variables
+ex set -n myvar -v "10 + 5" 
+
+# List all variables
+ex list
+
+# Evaluate with variables
+ex eval "myvar * 2"
+```
+
+## Project Structure
+
+```
+├── Albatross.Expression/              # Main expression library
+│   ├── Context/                       # ExecutionContext implementations
+│   ├── Exceptions/                    # Custom exception classes
+│   ├── Infix/                         # Infix operations (+, -, *, /, etc.)
+│   ├── Nodes/                         # Expression tree node types
+│   ├── Parsing/                       # Core parsing logic
+│   ├── Prefix/                        # Prefix functions (if, max, concat, etc.)
+│   └── Unary/                         # Unary operations (-, +)
+├── Albatross.Expression.Test/         # Unit tests
+└── Albatross.Expression.Utility/      # CLI utility tool
+```
+
+## Running Tests
+
+To run the unit tests:
+
+```bash
+# Run all tests
+dotnet test
+
+# Run tests with detailed output
+dotnet test --logger "console;verbosity=detailed"
+
+# Run specific test project
+dotnet test ./Albatross.Expression.Test/
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add or update tests as needed
+5. Ensure all tests pass
+6. Submit a pull request
+
+## Documentation
+
+For Api Reference, visit: https://rushuiguan.github.io/expression/
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2017 Rushui Guan

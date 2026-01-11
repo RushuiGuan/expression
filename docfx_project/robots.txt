@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rushuiguan.github.io/commandline/sitemap.xml

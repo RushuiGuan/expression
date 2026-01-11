@@ -1,144 +1,294 @@
 # Parser
-The class [Albatross.Expression.Parser](xref:Albatross.Expression.Parser) implements interface [Albatross.Expression.IParser](xref:Albatross.Expression.IParser).  It performs the function of processing, evaluating and generating of expressions.
 
-## Design
-The [Parser](xref:Albatross.Expression.Parser) class parses the expression by
-1. Tokenize the text
-1. Build a stack
-1. Create a token tree
+The @Albatross.Expression.Parsing.Parser class is the core component that processes, evaluates, and generates expressions. It implements the @Albatross.Expression.Parsing.IParser interface and transforms text-based expressions into executable code.
 
-Once the token tree is created, the parser can evaluate the result of the expression by evaluating the tree nodes recursively.  
+## Overview
 
-The implementation of the design supports the following functionalties:
-* Tokens
-    * String Literal - `"yes"`
-    * Numeric Literal - `100 + 4.0`
-        * The [NumericLiteralToken](xref:Albatross.Expression.Tokens.NumericLiteralToken) class handles number and it converts all numeric value to C# type `System.Double`.
-    * Variable - `a + 4`
-    * Parantheses - `4 * (1 + 2)`
-* Infix operation - Operations with two operands and a operator in the middle: `1 + 2`
-    * operation precedence
-* unary operation - Negative sign: `-1`
-* prefix operation - Functions with fixed or optional parameter and a return value: `Now(), Left("Orange", 4)`
-* unlimited optional function parameters - `max(1,2,3,4,5)`
-* Array - Array is a special function that returns an array object: `@(1, 2, 3, 4, 5)`
+The Parser provides comprehensive expression processing capabilities including:
+- **Tokenization**: Breaking down expression text into individual tokens
+- **Tree Building**: Creating an abstract syntax tree (AST) from tokens
+- **Evaluation**: Computing expression results with optional variables
+- **Regeneration**: Converting expressions back to text format
 
+## Getting Started
 
-## Tokenization
-Tokenization reads the expression from left to right.  Its function is to recognize individual components (tokens) of an expression.  This step will throw [TokenParsingException](xref:Albatross.Expression.Exceptions.TokenParsingException) if the expression has errors.  The resulting tokens are inserted into a queue.  The implementation is in the [Tokenize](xref:Albatross.Expression.Parser.Tokenize(System.String)) method of the [Parser](xref:Albatross.Expression.Parser) class.
+### Basic Usage
 
-Here are some examples:
-* Expression: `4 + 5 * 6 - max(7, 1)`
-    * `4`
-    * `+`
-    * `5`
-    * `*`
-    * `6`
-    * `-`
-    * `max`
-    * `(`
-    * `7`
-    * `,`
-    * `1`
-    * `)`
-* Expression: `if (a > b, "Yes", "No")`
-    * `if`
-    * `(`
-    * `a`
-    * `>`
-    * `b`
-    * `,`
-    * `"Yes"`
-    * `,`
-    * `"No"`
-    * `)`
+The easiest way to create a parser is using the @Albatross.Expression.Parsing.ParserBuilder:
 
-Notice that comma and parentheses are considered as control tokens but the string boundary (double quote) are not.  String boundaries are part of the string token and will be stripped and disgarded by the [StringLiteralToken](xref:Albatross.Expression.Tokens.StringLiteralToken) class during the evaluation process.
-
-## Create a Stack
-This step converts the tokenized queue into a postfix stack using the [Shunting-yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm).  The implementation is in the [BuildStack](xref:Albatross.Expression.Parser.BuildStack(System.Collections.Generic.Queue{Albatross.Expression.Tokens.IToken})) method of the [Parser](xref:Albatross.Expression.Parser) class.  A postfix stack is also called a [Reverse polish notion](https://en.wikipedia.org/wiki/Reverse_Polish_notation).  
-
-Here are the top popping stack for the example above:
-* Expression: `4 + 5 * 6 - max(7, 1)`
-    * `-`
-	* `max`
-	* `1`
-	* `7`
-	* `$`
-	* `+`
-	* `*`
-	* `6`
-	* `5`
-	* `4`
-* Expression: `if (a > b, "Yes", "No")`
-	* `If`
-	* `"No"`
-	* `"Yes"`
-	* `>`
-	* `b`
-	* `a`
-	* `$`
-* Expression: `Format(Today(), "yyyy-MM-DD")`
-	* `Format`
-	* `"yyyy-MM-DD"`
-	* `Today`
-	* `$`
-	* `$`
-
-A special control token `$` is used to indicate the end of parameters for prefix operations.  This allows functions with unknown number of optional parameters.  It also simplify the tree creation logic because it doesn't need to know how many parameters the prefix function has.
-
-## Create a Tree
-This step is to create a tree from the postfix stack.  The process of converting a stack to a tree is the same process of evaluating (popping) the postfix stack.  The tree is created so that the expression can be evaluated multiple times without rebuilding the stack.  The result object is of type [IToken](xref:Albatross.Expression.Tokens.IToken).
-
-Here are the trees for the example above:
-
-* Expression: `4 + 5 * 6 - max(7, 1)`
-	* `-`
-		* `+`
-			* `4`
-			* `*`
-				* `5`
-				* `6`
-		* `max`
-			* `7`
-			* `1`
-* Expression: `if (a > b, "Yes", "No")`
-	* `If`
-		* `>`
-			* `a`
-			* `b`
-		* `"Yes"`
-		* `"No"`
-* Expression: `Format(Today(), "yyyy-MM-DD")`
-	* `Format`
-		* `Today`
-		* `"yyyy-MM-DD"`
-
-## Evaluate a tree
-With a tree built, the evaluation process is a simple recursive call to the [EvalValue](xref:Albatross.Expression.Tokens.IToken.EvalValue(System.Func{System.String,System.Object})) function of the [IToken](xref:Albatross.Expression.Tokens.IToken) interface.
-
-## Regenerate the expression
-Using the same [IToken](xref:Albatross.Expression.Tokens.IToken) object, the parser can regenerate the original expression or convert it to an expression of different format by calling the [EvalText](xref:Albatross.Expression.Tokens.IToken.EvalText(System.String)) method.  The default EvalText method will produce an expression string with equal functionality as the original with consistent spacing and mininum usage of parantheses.  For example: if the original expression is `1+(2*3)`, the regenerated expression will be: `1 + 2 * 3`.
-
-## Use of variable in an expression
-When evaluating expressions with variables, the [EvalValue](xref:Albatross.Expression.Tokens.IToken.EvalValue(System.Func{System.String,System.Object})) has a second parameter of type `Func<object, string>` that can be used to return the value of a variable. Here is an example:
 ```csharp
-[TestCase("a + b * c", ExpectedResult = 7)]
-[TestCase("a + b + c", ExpectedResult =6)]
-public object Run(string expression) {
-	Func<string, object> func = name => {
-		switch (name.ToLower()) {
-			case "a":
-				return 1;
-			case "b":
-				return 2;
-			case "c":
-				return 3;
-			default:
-				return null;
-		}
-	};
-	IParser parser = Factory.Instance.Create();
-	return parser.Compile(expression).EvalValue(func);
-}	
+using Albatross.Expression.Parsing;
+
+var parser = new ParserBuilder().BuildDefault();
+var result = parser.Eval("2 + 3 * 4", null); // Returns: 14
+```
+
+### Compiling vs Direct Evaluation
+
+For expressions that will be evaluated multiple times, compile them first for better performance:
+
+```csharp
+// Direct evaluation (good for one-time use)
+var result1 = parser.Eval("x + y", variableResolver);
+
+// Compiled expression (better for repeated use)
+var compiledExpression = parser.Compile("x + y");
+var result2 = compiledExpression.EvalValue(variableResolver);
+var result3 = compiledExpression.EvalValue(variableResolver); // Reuse compiled expression
+```
+
+## Architecture
+
+The Parser processes expressions through a three-step pipeline:
+
+### 1. Tokenization
+Converts expression text into individual tokens (numbers, operators, functions, variables)
+
+### 2. Stack Building  
+Uses the Shunting-yard algorithm to convert tokens into a postfix stack
+
+### 3. Tree Creation
+Builds an Abstract Syntax Tree (AST) from the postfix stack for evaluation
+
+This design enables:
+- **Performance**: Expressions are compiled once and can be evaluated multiple times
+- **Flexibility**: Support for complex nested expressions with proper operator precedence
+- **Extensibility**: Easy to add new operations and functions
+
+## Supported Expression Types
+
+The parser supports a rich variety of expression elements:
+
+### Literals
+- **Numeric**: `123`, `45.67`, `-89.1` (all converted to `double`)
+- **String**: `"hello"`, `'world'` (single or double quotes)
+- **Boolean**: `true`, `false`
+
+### Variables
+- **Simple**: `x`, `userName`, `totalAmount`
+- **Case-sensitive**: Variables are case-sensitive by default
+
+### Operators
+- **Arithmetic**: `+`, `-`, `*`, `/`, `^` (power), `%` (modulo)
+- **Comparison**: `>`, `<`, `>=`, `<=`, `=`, `<>` (not equal)
+- **Logical**: `and`, `or`, `not`
+- **Unary**: `-x` (negative), `+x` (positive)
+
+### Functions
+- **Built-in**: `max(1,2,3)`, `if(condition, true_value, false_value)`, `now()`, `upper("text")`
+- **Unlimited Parameters**: Functions can accept variable numbers of arguments
+
+### Arrays
+- **Creation**: `@(1, 2, 3, 4, 5)` creates an array
+- **Access**: Array elements can be accessed through array functions
+
+### Parentheses
+- **Grouping**: `(a + b) * c` controls evaluation order
+- **Function Calls**: `max(1, 2)`, `left("text", 3)`
+
+
+## Processing Pipeline Details
+
+### Tokenization
+
+Tokenization reads the expression from left to right, recognizing individual components (tokens). This step validates syntax and throws @Albatross.Expression.Exceptions.TokenParsingException for invalid expressions.
+
+**Example**: `4 + 5 * 6 - max(7, 1)`
+
+Tokens produced:
+- `4` (numeric literal)
+- `+` (operator) 
+- `5` (numeric literal)
+- `*` (operator)
+- `6` (numeric literal)
+- `-` (operator)
+- `max` (function)
+- `(` (open parenthesis)
+- `7` (numeric literal)
+- `,` (comma separator)
+- `1` (numeric literal)
+- `)` (close parenthesis)
+
+**String Handling**: String boundaries (quotes) are part of the token and are processed by @Albatross.Expression.Nodes.StringLiteral during evaluation.
+
+### Stack Building (Shunting-yard Algorithm)
+
+Converts the tokenized queue into a postfix stack using the [Shunting-yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm), creating a [Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) representation.
+
+**Example**: `4 + 5 * 6 - max(7, 1)`
+
+Postfix stack (top to bottom):
+```
+-
+max
+1
+7
+$
++
+*
+6
+5
+4
+```
+
+The special `$` token marks the end of function parameters, enabling support for functions with variable argument counts.
+
+### Tree Creation
+
+Converts the postfix stack into an Abstract Syntax Tree (AST) for efficient evaluation and reuse.
+
+**Example Tree**: `4 + 5 * 6 - max(7, 1)`
+```
+    -
+   / \
+  +   max
+ / \   |
+4   *  7,1
+   / \
+  5   6
+```
+
+## Expression Evaluation
+
+### Basic Evaluation
+
+Once the AST is built, evaluation is performed through recursive calls to the @Albatross.Expression.Nodes.IExpression interface:
+
+```csharp
+var parser = new ParserBuilder().BuildDefault();
+
+// Simple evaluation
+var result1 = parser.Eval("2 + 3", null); // Returns: 5
+
+// With parentheses
+var result2 = parser.Eval("(2 + 3) * 4", null); // Returns: 20
+
+// String operations
+var result3 = parser.Eval("upper('hello')", null); // Returns: "HELLO"
+```
+
+### Using Variables
+
+Variables are resolved through a function delegate that provides variable values:
+
+```csharp
+var parser = new ParserBuilder().BuildDefault();
+
+// Define variable resolver
+Func<string, object> variableResolver = variableName => {
+    return variableName.ToLower() switch {
+        "x" => 10,
+        "y" => 20,
+        "name" => "World",
+        _ => null
+    };
+};
+
+// Evaluate with variables
+var result1 = parser.Eval("x + y", variableResolver); // Returns: 30
+var result2 = parser.Eval("'Hello ' + name", variableResolver); // Returns: "Hello World"
+```
+
+### Advanced Variable Usage
+
+```csharp
+public class CalculatorTest
+{
+    [TestCase("a + b * c", ExpectedResult = 7)]
+    [TestCase("a + b + c", ExpectedResult = 6)]
+    [TestCase("max(a, b, c)", ExpectedResult = 3)]
+    public object Run(string expression) 
+    {
+        var parser = new ParserBuilder().BuildDefault();
+        
+        Func<string, object> variableResolver = name => {
+            return name.ToLower() switch {
+                "a" => 1,
+                "b" => 2, 
+                "c" => 3,
+                _ => throw new ArgumentException($"Unknown variable: {name}")
+            };
+        };
+        
+        return parser.Eval(expression, variableResolver);
+    }
+}
+```
+
+## Expression Regeneration
+
+The parser can convert expressions back to text format, applying consistent formatting and minimal parentheses:
+
+```csharp
+var parser = new ParserBuilder().BuildDefault();
+var compiled = parser.Compile("1+(2*3)");
+
+// Regenerate with clean formatting
+var regenerated = compiled.EvalText(null); // Returns: "1 + 2 * 3"
+```
+
+### Use Cases for Regeneration
+- **Formatting**: Clean up user-entered expressions
+- **Validation**: Verify expression parsing by round-trip conversion
+- **Translation**: Convert between different expression formats
+- **Optimization**: Remove unnecessary parentheses while preserving logic
+
+## Error Handling
+
+The parser provides detailed error information for invalid expressions:
+
+```csharp
+try 
+{
+    var parser = new ParserBuilder().BuildDefault();
+    var result = parser.Eval("2 + + 3", null); // Invalid syntax
+}
+catch (TokenParsingException ex)
+{
+    Console.WriteLine($"Syntax error: {ex.Message}");
+    Console.WriteLine($"Position: {ex.Position}");
+}
+catch (OperandException ex)
+{
+    Console.WriteLine($"Operand error: {ex.Message}");
+}
+```
+
+## Performance Considerations
+
+### Compilation Strategy
+```csharp
+// For single use - direct evaluation
+var oneTimeResult = parser.Eval("x + y", resolver);
+
+// For repeated use - compile once, evaluate many times
+var compiled = parser.Compile("x + y");
+for (int i = 0; i < 1000; i++)
+{
+    var result = compiled.EvalValue(GetResolver(i));
+}
+```
+
+### Best Practices
+- **Compile once**: For expressions used multiple times, compile once and reuse
+- **Cache compiled expressions**: Store compiled expressions for frequently used formulas
+- **Validate early**: Compile expressions during application startup to catch errors early
+- **Use appropriate types**: The parser converts all numbers to `double` - consider this for precision requirements
+
+## Integration with ExecutionContext
+
+For complex scenarios with multiple variables and dependencies, consider using ExecutionContext:
+
+```csharp
+var parser = new ParserBuilder().BuildDefault();
+var context = new DefaultExecutionContext<MyDataModel>(parser);
+
+// Define variables that reference model properties
+context.Set(new ExternalContextValue<MyDataModel>("revenue", m => m.Revenue));
+context.Set(new ExternalContextValue<MyDataModel>("expenses", m => m.Expenses));
+context.Set(new ExpressionContextValue<MyDataModel>("profit", "revenue - expenses", parser));
+
+// Evaluate with model data
+var model = new MyDataModel { Revenue = 100000, Expenses = 75000 };
+var profit = context.GetValue("profit", model); // Returns: 25000
 ```

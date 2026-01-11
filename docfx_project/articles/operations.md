@@ -1,48 +1,48 @@
 # Built-In Operations
-Infix Operation | Class | Operation Type
---- | --- | ---
-- | [Albatross.Expression.Operations.Minus](xref:Albatross.Expression.Operations.Minus) | infix
-- | [Albatross.Expression.Operations.Negative](xref:Albatross.Expression.Operations.Negative) | Unary
-% | [Albatross.Expression.Operations.Mod](xref:Albatross.Expression.Operations.Mod) | infix
-* | [Albatross.Expression.Operations.Multiply](xref:Albatross.Expression.Operations.Multiply) | infix
-/ | [Albatross.Expression.Operations.Divide](xref:Albatross.Expression.Operations.Divide) | infix
-@ | [Albatross.Expression.Operations.Array](xref:Albatross.Expression.Operations.Array) | Unary
-^ | [Albatross.Expression.Operations.Power](xref:Albatross.Expression.Operations.Power) | infix
-+ | [Albatross.Expression.Operations.Plus](xref:Albatross.Expression.Operations.Plus) | infix
-+ | [Albatross.Expression.Operations.Positive](xref:Albatross.Expression.Operations.Positive) | Unary
-< | [Albatross.Expression.Operations.LessThan](xref:Albatross.Expression.Operations.LessThan) | infix
-<= | [Albatross.Expression.Operations.LessEqual](xref:Albatross.Expression.Operations.LessEqual) | infix
-<> | [Albatross.Expression.Operations.NotEqual](xref:Albatross.Expression.Operations.NotEqual) | infix
-= | [Albatross.Expression.Operations.Equal](xref:Albatross.Expression.Operations.Equal) | infix
-> | [Albatross.Expression.Operations.GreaterThan](xref:Albatross.Expression.Operations.GreaterThan) | infix
->= | [Albatross.Expression.Operations.GreaterEqual](xref:Albatross.Expression.Operations.GreaterEqual) | infix
-and | [Albatross.Expression.Operations.And](xref:Albatross.Expression.Operations.And) | infix
-avg | [Albatross.Expression.Operations.Avg](xref:Albatross.Expression.Operations.Avg) | prefix
-Coalesce | [Albatross.Expression.Operations.Coalesce](xref:Albatross.Expression.Operations.Coalesce) | prefix
-CurrentApp | [Albatross.Expression.Operations.CurrentApp](xref:Albatross.Expression.Operations.CurrentApp) | prefix
-CurrentMachine | [Albatross.Expression.Operations.CurrentMachine](xref:Albatross.Expression.Operations.CurrentMachine) | prefix
-CurrentUser | [Albatross.Expression.Operations.CurrentUser](xref:Albatross.Expression.Operations.CurrentUser) | prefix
-date | [Albatross.Expression.Operations.Date](xref:Albatross.Expression.Operations.Date) | prefix
-Format | [Albatross.Expression.Operations.Format](xref:Albatross.Expression.Operations.Format) | prefix
-If | [Albatross.Expression.Operations.If](xref:Albatross.Expression.Operations.If) | prefix
-IsBlank | [Albatross.Expression.Operations.IsBlank](xref:Albatross.Expression.Operations.IsBlank) | prefix
-Left | [Albatross.Expression.Operations.Left](xref:Albatross.Expression.Operations.Left) | prefix
-len | [Albatross.Expression.Operations.Len](xref:Albatross.Expression.Operations.Len) | prefix
-max | [Albatross.Expression.Operations.Max](xref:Albatross.Expression.Operations.Max) | prefix
-min | [Albatross.Expression.Operations.Min](xref:Albatross.Expression.Operations.Min) | prefix
-Month | [Albatross.Expression.Operations.Month](xref:Albatross.Expression.Operations.Month) | prefix
-MonthName | [Albatross.Expression.Operations.MonthName](xref:Albatross.Expression.Operations.MonthName) | prefix
-not | [Albatross.Expression.Operations.Not](xref:Albatross.Expression.Operations.Not) | prefix
-Now | [Albatross.Expression.Operations.Now](xref:Albatross.Expression.Operations.Now) | prefix
-or | [Albatross.Expression.Operations.Or](xref:Albatross.Expression.Operations.Or) | infix
-PadLeft | [Albatross.Expression.Operations.PadLeft](xref:Albatross.Expression.Operations.PadLeft) | prefix
-PadRight | [Albatross.Expression.Operations.PadRight](xref:Albatross.Expression.Operations.PadRight) | prefix
-pi | [Albatross.Expression.Operations.Pi](xref:Albatross.Expression.Operations.Pi) | prefix
-Right | [Albatross.Expression.Operations.Right](xref:Albatross.Expression.Operations.Right) | prefix
-ShortMonthName | [Albatross.Expression.Operations.ShortMonthName](xref:Albatross.Expression.Operations.ShortMonthName) | prefix
-Text | [Albatross.Expression.Operations.Text](xref:Albatross.Expression.Operations.Text) | prefix
-Today | [Albatross.Expression.Operations.Today](xref:Albatross.Expression.Operations.Today) | prefix
-Year | [Albatross.Expression.Operations.Year](xref:Albatross.Expression.Operations.Year) | prefix
+| Operation | Class | Operation Type |
+|---|---|---|
+| `-` | @Albatross.Expression.Infix.Minus | infix |
+| `-` | @Albatross.Expression.Unary.Negative | Unary |
+| `%` | @Albatross.Expression.Infix.Mod | infix |
+| `*` | @Albatross.Expression.Infix.Multiply | infix |
+| `/` | @Albatross.Expression.Infix.Divide | infix |
+| `@` | @Albatross.Expression.Prefix.Array | Unary |
+| `^` | @Albatross.Expression.Infix.Power | infix |
+| `+` | @Albatross.Expression.Infix.Plus | infix |
+| `+` | @Albatross.Expression.Unary.Positive | Unary |
+| `<` | @Albatross.Expression.Infix.LessThan | infix |
+| `<=` | @Albatross.Expression.Infix.LessEqual | infix |
+| `<>` | @Albatross.Expression.Infix.NotEqual | infix |
+| `=` | @Albatross.Expression.Infix.Equal | infix |
+| `>` | @Albatross.Expression.Infix.GreaterThan | infix |
+| `>=` | @Albatross.Expression.Infix.GreaterEqual | infix |
+| `and` | @Albatross.Expression.Infix.And | infix |
+| `avg` | @Albatross.Expression.Prefix.Avg | prefix |
+| `Coalesce` | @Albatross.Expression.Prefix.Coalesce | prefix |
+| `CurrentApp` | @Albatross.Expression.Prefix.CurrentApp | prefix |
+| `CurrentMachine` | @Albatross.Expression.Prefix.CurrentMachine | prefix |
+| `CurrentUser` | @Albatross.Expression.Prefix.CurrentUser | prefix |
+| `date` | @Albatross.Expression.Prefix.Date | prefix |
+| `Format` | @Albatross.Expression.Prefix.Format | prefix |
+| `If` | @Albatross.Expression.Prefix.If | prefix |
+| `IsBlank` | @Albatross.Expression.Prefix.IsBlank | prefix |
+| `Left` | @Albatross.Expression.Prefix.Left | prefix |
+| `len` | @Albatross.Expression.Prefix.Len | prefix |
+| `max` | @Albatross.Expression.Prefix.Max | prefix |
+| `min` | @Albatross.Expression.Prefix.Min | prefix |
+| `Month` | @Albatross.Expression.Prefix.Month | prefix |
+| `MonthName` | @Albatross.Expression.Prefix.MonthName | prefix |
+| `not` | @Albatross.Expression.Prefix.Not | prefix |
+| `Now` | @Albatross.Expression.Prefix.Now | prefix |
+| `or` | @Albatross.Expression.Infix.Or | infix |
+| `PadLeft` | @Albatross.Expression.Prefix.PadLeft | prefix |
+| `PadRight` | @Albatross.Expression.Prefix.PadRight | prefix |
+| `pi` | @Albatross.Expression.Prefix.Pi | prefix |
+| `Right` | @Albatross.Expression.Prefix.Right | prefix |
+| `ShortMonthName` | @Albatross.Expression.Prefix.ShortMonthName | prefix |
+| `Text` | @Albatross.Expression.Prefix.Text | prefix |
+| `Today` | @Albatross.Expression.Prefix.Today | prefix |
+| `Year` | @Albatross.Expression.Prefix.Year | prefix |
 
 ## What is an **Infix operation**?
 It is a math expression with an operator in the middle and two operands, one on each side of the operator.  Here are some examples.
@@ -60,20 +60,20 @@ The **parentheses** can be used to supersede the precedence of the operators as 
 A **unary operator** such as the negative sign in #6 will always have precedence over any infix operators.
 
 ## The Precedence of Infix Operations
-Infix Operation | Class | Precedence
---- | --- | ---
-or | [Albatross.Expression.Operations.Or](xref:Albatross.Expression.Operations.Or) | 20
-and | [Albatross.Expression.Operations.And](xref:Albatross.Expression.Operations.And) | 30
-= | [Albatross.Expression.Operations.Equal](xref:Albatross.Expression.Operations.Equal) | 50
->= | [Albatross.Expression.Operations.GreaterEqual](xref:Albatross.Expression.Operations.GreaterEqual) | 50
-> | [Albatross.Expression.Operations.GreaterThan](xref:Albatross.Expression.Operations.GreaterThan) | 50
-<= | [Albatross.Expression.Operations.LessEqual](xref:Albatross.Expression.Operations.LessEqual) | 50
-< | [Albatross.Expression.Operations.LessThan](xref:Albatross.Expression.Operations.LessThan) | 50
-- | [Albatross.Expression.Operations.Minus](xref:Albatross.Expression.Operations.Minus) | 100
-<> | [Albatross.Expression.Operations.NotEqual](xref:Albatross.Expression.Operations.NotEqual) | 100
-+ | [Albatross.Expression.Operations.Plus](xref:Albatross.Expression.Operations.Plus) | 100
-/ | [Albatross.Expression.Operations.Divide](xref:Albatross.Expression.Operations.Divide) | 200
-% | [Albatross.Expression.Operations.Mod](xref:Albatross.Expression.Operations.Mod) | 200
-* | [Albatross.Expression.Operations.Multiply](xref:Albatross.Expression.Operations.Multiply) | 200
-^ | [Albatross.Expression.Operations.Power](xref:Albatross.Expression.Operations.Power) | 300
+| Operation | Class | Precedence |
+|---|---|---|
+| `or` | @Albatross.Expression.Infix.Or | 20 |
+| `and` | @Albatross.Expression.Infix.And | 30 |
+| `=` | @Albatross.Expression.Infix.Equal | 50 |
+| `>=` | @Albatross.Expression.Infix.GreaterEqual | 50 |
+| `>` | @Albatross.Expression.Infix.GreaterThan | 50 |
+| `<=` | @Albatross.Expression.Infix.LessEqual | 50 |
+| `<` | @Albatross.Expression.Infix.LessThan | 50 |
+| `-` | @Albatross.Expression.Infix.Minus | 100 |
+| `<>` | @Albatross.Expression.Infix.NotEqual | 100 |
+| `+` | @Albatross.Expression.Infix.Plus | 100 |
+| `/` | @Albatross.Expression.Infix.Divide | 200 |
+| `%` | @Albatross.Expression.Infix.Mod | 200 |
+| `*` | @Albatross.Expression.Infix.Multiply | 200 |
+| `^` | @Albatross.Expression.Infix.Power | 300 |
 

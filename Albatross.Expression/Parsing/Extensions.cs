@@ -35,6 +35,17 @@ namespace Albatross.Expression.Parsing {
 			return tree.Eval(name => context.GetValue(name, t));
 		}
 
+		/// <summary>
+		/// Parses a token from text using a regular expression pattern.
+		/// </summary>
+		/// <typeparam name="T">The type of token to create.</typeparam>
+		/// <param name="text">The text to parse.</param>
+		/// <param name="regex">The regular expression pattern to match.</param>
+		/// <param name="capture">Function to extract the captured value from the match.</param>
+		/// <param name="func">Function to create the token from the captured value.</param>
+		/// <param name="start">The starting position in the text.</param>
+		/// <param name="next">When this method returns, contains the position after the matched text.</param>
+		/// <returns>The created token if the pattern matched; otherwise, null.</returns>
 		public static T? RegexParse<T>(this string text, Regex regex, Func<Match, string> capture, Func<string, T> func, int start, out int next) where T : class {
 			next = text.Length;
 			while (start < text.Length && char.IsWhiteSpace(text[start])) {

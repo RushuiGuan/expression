@@ -14,6 +14,7 @@ namespace Albatross.Expression.Nodes {
 		public NumericLiteral(string value) : base(value) {
 		}
 
+		/// <inheritdoc />
 		public object Eval(Func<string, object> context) {
 			if (double.TryParse(Value, out var d)) {
 				return d;
@@ -22,6 +23,7 @@ namespace Albatross.Expression.Nodes {
 			}
 		}
 
+		/// <inheritdoc />
 		public Task<object> EvalAsync(Func<string, Task<object>> context) => Task.FromResult(Eval(_ => new object()));
 	}
 }

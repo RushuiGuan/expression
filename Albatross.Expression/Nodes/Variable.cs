@@ -14,7 +14,10 @@ namespace Albatross.Expression.Nodes {
 		public Variable(string value) : base(value) {
 		}
 
+		/// <inheritdoc />
 		public object Eval(Func<string, object> context) => context(Value);
+
+		/// <inheritdoc />
 		public Task<object> EvalAsync(Func<string, Task<object>> context) => context(this.Value);
 	}
 }

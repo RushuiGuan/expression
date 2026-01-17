@@ -1,29 +1,35 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Albatross.Expression.Nodes;
 
 namespace Albatross.Expression {
 	/// <summary>
-	/// The interface contains functionalities to process an expression string.
+	/// Defines the core expression parsing functionality for tokenizing, converting, and building expression trees.
 	/// </summary>
 	public interface IParser {
+		/// <summary>
+		/// Indicates whether this parser performs case-sensitive matching for keywords and identifiers.
+		/// </summary>
 		bool CaseSensitive { get; }
+
 		/// <summary>
-		/// Parse a text expression from left to right and generate a token Queue
+		/// Parses an expression string from left to right and produces a queue of tokens in infix notation.
 		/// </summary>
-		/// <param name="expression"></param>
-		/// <returns></returns>
+		/// <param name="expression">The expression string to tokenize.</param>
+		/// <returns>A queue of tokens in the order they appear in the expression.</returns>
 		Queue<IToken> Tokenize(string expression);
+
 		/// <summary>
-		/// Convert a token queue to stack
+		/// Converts a token queue from infix notation to postfix (reverse Polish) notation using the shunting-yard algorithm.
 		/// </summary>
-		/// <param name="queue"></param>
-		/// <returns></returns>
+		/// <param name="queue">The token queue in infix notation.</param>
+		/// <returns>A stack of tokens in postfix notation for tree construction.</returns>
 		Stack<IToken> BuildPostfixStack(Queue<IToken> queue);
+
 		/// <summary>
-		/// Using the token stack to build a token tree
+		/// Constructs an abstract syntax tree from a postfix token stack.
 		/// </summary>
-		/// <param name="postfix"></param>
-		/// <returns></returns>
+		/// <param name="postfix">The token stack in postfix notation.</param>
+		/// <returns>The root expression node of the constructed syntax tree.</returns>
 		IExpression CreateTree(Stack<IToken> postfix);
 	}
 }

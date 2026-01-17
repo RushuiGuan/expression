@@ -39,6 +39,7 @@ namespace Albatross.Expression.Nodes {
 			}
 		}
 
+		/// <inheritdoc />
 		public object Eval(Func<string, object> context) {
 			var sb = new StringBuilder();
 			bool escaped = false;
@@ -53,6 +54,8 @@ namespace Albatross.Expression.Nodes {
 			}
 			return sb.ToString();
 		}
+
+		/// <inheritdoc />
 		public Task<object> EvalAsync(Func<string, Task<object>> context) => Task.FromResult(Eval(_ => new object()));
 	}
 }

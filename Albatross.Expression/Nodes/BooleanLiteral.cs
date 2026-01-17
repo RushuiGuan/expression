@@ -13,6 +13,7 @@ namespace Albatross.Expression.Nodes {
 		public BooleanLiteral(string value) : base(value) {
 		}
 
+		/// <inheritdoc />
 		public object Eval(Func<string, object> _) {
 			if (bool.TryParse(Value, out var value)) {
 				return value;
@@ -21,6 +22,7 @@ namespace Albatross.Expression.Nodes {
 			}
 		}
 
+		/// <inheritdoc />
 		public Task<object> EvalAsync(Func<string, Task<object>> context) => Task.FromResult(Eval(_ => new object()));
 	}
 }

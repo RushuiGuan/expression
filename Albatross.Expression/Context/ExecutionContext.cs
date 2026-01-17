@@ -81,6 +81,14 @@ namespace Albatross.Expression.Context {
 			}
 		}
 		
+		/// <summary>
+		/// Asynchronously gets the value of a variable by name from the execution context.
+		/// Includes circular reference detection for expression-based context values.
+		/// </summary>
+		/// <param name="name">The name of the variable to retrieve.</param>
+		/// <param name="input">The root context object.</param>
+		/// <returns>A task containing the variable value.</returns>
+		/// <exception cref="MissingVariableException">Thrown when the variable is not found in the context.</exception>
 		public async Task<object> GetValueAsync(string name, T input) {
 			if (this.TryGetValueHandler(name, out var contextValue)) {
 				if (contextValue is ExpressionContextValue<T> expressionContextValue) {

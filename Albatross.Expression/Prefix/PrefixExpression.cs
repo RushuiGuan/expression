@@ -49,6 +49,7 @@ namespace Albatross.Expression.Prefix {
 		/// </summary>
 		public IReadOnlyList<IExpression> Operands { get; set; } = [];
 
+		/// <inheritdoc />
 		public string Text() {
 			var sb = new StringBuilder();
 			sb.Append(Name);
@@ -63,22 +64,34 @@ namespace Albatross.Expression.Prefix {
 			return sb.ToString();
 		}
 
+		/// <inheritdoc />
 		public object Eval(Func<string, object> context) {
 			ValidateOperands();
 			var values = this.GetValues(context);
 			return Run(values);
 		}
 
+		/// <inheritdoc />
 		public async Task<object> EvalAsync(Func<string, Task<object>> context) {
 			ValidateOperands();
 			var values = await this.GetValuesAsync(context);
 			return Run(values);
 		}
 
+		/// <summary>
+		/// Executes the prefix function with the evaluated operand values.
+		/// Derived classes should override this method to implement specific function logic.
+		/// </summary>
+		/// <param name="operands">The list of evaluated operand values.</param>
+		/// <returns>The result of the function.</returns>
 		protected virtual object Run(List<object> operands) {
 			throw new NotSupportedException($"Prefix expression {this.Name} is not supported");
 		}
 
+		/// <summary>
+		/// Validates that the number of operands is within the allowed range.
+		/// </summary>
+		/// <exception cref="OperandException">Thrown when the operand count is outside the valid range.</exception>
 		protected void ValidateOperands() {
 			if (Operands.Count < MinOperandCount) {
 				throw new OperandException($"Prefix operation '{Name}' requires at least {MinOperandCount} operands, but received {Operands.Count}.");

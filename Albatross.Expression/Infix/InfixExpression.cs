@@ -54,6 +54,7 @@ namespace Albatross.Expression.Infix {
 		/// </summary>
 		public IExpression RequiredRight => Right ?? throw new OperandException($"Infix expression '{this.Operator}' is missing its right operand");
 
+		/// <inheritdoc />
 		public string Text() {
 			var sb = new StringBuilder();
 			if (Left is InfixExpression left && left.Precedence < Precedence) {
@@ -70,18 +71,27 @@ namespace Albatross.Expression.Infix {
 			return sb.ToString();
 		}
 
+		/// <inheritdoc />
 		public object Eval(Func<string, object> context) {
 			var left = RequiredLeft.Eval(context);
 			var right = RequiredRight.Eval(context);
 			return Run(left, right);
 		}
 
+		/// <inheritdoc />
 		public async Task<object> EvalAsync(Func<string, Task<object>> context) {
 			var left = await RequiredLeft.EvalAsync(context);
 			var right = await RequiredRight.EvalAsync(context);
 			return Run(left, right);
 		}
 
+		/// <summary>
+		/// Executes the infix operation with the evaluated left and right operands.
+		/// Derived classes should override this method to implement specific operations.
+		/// </summary>
+		/// <param name="left">The evaluated left operand value.</param>
+		/// <param name="right">The evaluated right operand value.</param>
+		/// <returns>The result of the operation.</returns>
 		protected virtual object Run(object left, object right) {
 			throw new NotSupportedException($"Infix operation '{Operator}' is not implemented.");
 		}

@@ -4,5 +4,9 @@
   href: parser.md
 - name: Operations
   href: operations.md
+- name: Infix Operations
+  href: infix-operations.md
+- name: Prefix Operations
+  href: prefix-operations.md
 - name: Execution Context
   href: execution-context.md

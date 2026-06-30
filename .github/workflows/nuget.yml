@@ -1,0 +1,39 @@
+name: nuget deploy
+
+# Publishing:
+#   - push to `rc`      -> prerelease to GitHub Packages (reusable workflow)
+#   - push tag `vX.Y.Z` -> stable release to nuget.org (composite action; tag must be on `production`)
+# `main` is the work branch and publishes nothing.
+#
+# nuget.org uses Trusted Publishing. The composite action runs NuGet/login + push in
+# THIS job, so the OIDC job_workflow_ref claim is this repo's workflow, matching the
+# nuget.org policy (Repository: exceptions, Workflow: nuget.yml).
+on:
+  push:
+    branches:
+      - rc
+    tags:
+      - 'v*'
+  workflow_dispatch:   # manual "Run workflow" button (select the rc branch to publish a prerelease)
+
+permissions:
+  contents: read
+  packages: write   # caps the token for the prerelease reusable workflow
+
+jobs:
+  prerelease:
+    if: github.ref == 'refs/heads/rc'
+    uses: RushuiGuan/devops/.github/workflows/nuget-prerelease.yml@v1
+    secrets: inherit
+
+  nuget-release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # create the GitHub Release
+      packages: read    # restore from the GitHub feed
+      id-token: write   # Trusted Publishing OIDC exchange (NuGet/login)
+    steps:
+      - uses: RushuiGuan/devops/.github/actions/nuget-release-nugetorg@v1
+        with:
+          nuget-user: Rushui

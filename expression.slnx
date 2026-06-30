@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path=".projects" />
+    <File Path="alias.ps1" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENSE" />
+    <File Path="Prompts/class_doc.md" />
+  </Folder>
+  <Project Path="Albatross.Expression.Test/Albatross.Expression.Test.csproj" />
+  <Project Path="Albatross.Expression.Utility/Albatross.Expression.Utility.csproj" />
+  <Project Path="Albatross.Expression/Albatross.Expression.csproj" />
+</Solution>
